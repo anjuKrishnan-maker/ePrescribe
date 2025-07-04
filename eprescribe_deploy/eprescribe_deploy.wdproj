@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  Microsoft Visual Studio 2010 Web Deployment Project 
+  http://go.microsoft.com/fwlink/?LinkID=104956
+
+-->
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.30319</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8E3CBC93-8165-45AA-89E8-67B632381073}</ProjectGuid>
+    <SourceWebPhysicalPath>..\eRxWeb</SourceWebPhysicalPath>
+    <SourceWebProject>{EE9C29A9-AEBD-4E17-8CF3-21EC86D2A21D}|C:\Projects\DotNet4Upgrade\Release_15.2.0\ePrescribe\eRxWeb</SourceWebProject>
+    <SourceWebVirtualPath>/eRxWeb</SourceWebVirtualPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>.\Debug</OutputPath>
+    <EnableUpdateable>true</EnableUpdateable>
+    <UseMerge>true</UseMerge>
+    <SingleAssemblyName>eprescribe_deploy</SingleAssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>.\Release</OutputPath>
+    <EnableUpdateable>true</EnableUpdateable>
+    <UseMerge>true</UseMerge>
+    <SingleAssemblyName>eRxWeb_deploy</SingleAssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Allscripts.ePrescribe.CCR\Allscripts.ePrescribe.CCR.csproj">
+      <Project>{A8626650-B9EA-4C72-96A4-A091AAADD72A}</Project>
+      <Name>Allscripts.ePrescribe.CCR</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Allscripts.ePrescribe.Common\Allscripts.ePrescribe.Common.csproj">
+      <Project>{064B73F5-49BD-4456-B68F-4C410145EC74}</Project>
+      <Name>Allscripts.ePrescribe.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Allscripts.ePrescribe.Data\Allscripts.ePrescribe.Data.csproj">
+      <Project>{0D9E94C9-8F14-48ED-A54A-54E24B23CE45}</Project>
+      <Name>Allscripts.ePrescribe.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Allscripts.Impact.Utilities\Allscripts.Impact.Utilities.csproj">
+      <Project>{381F83B3-D0FB-416D-B6A2-B334A0062ECE}</Project>
+      <Name>Allscripts.Impact.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Allscripts.Impact\Allscripts.Impact.csproj">
+      <Project>{BC97F0E8-6421-4F5A-8BF2-342863FFB887}</Project>
+      <Name>Allscripts.Impact</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WebDeployment\v10.0\Microsoft.WebDeployment.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.WebDeployment.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="BeforeMerge">
+  </Target>
+  <Target Name="AfterMerge">
+  </Target>
+  -->
+  <Target Name="AfterBuild">
+    <!--Web.config -->
+    <!--<Copy Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' " SourceFiles="$(SourceWebPhysicalPath)\Web.PROD.config" DestinationFiles="$(OutputPath)\Web.config" /> -->
+  </Target>
+</Project>

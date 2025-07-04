@@ -1,0 +1,1 @@
+module.exports = require('./SPAConfig/webpack.dev.js');

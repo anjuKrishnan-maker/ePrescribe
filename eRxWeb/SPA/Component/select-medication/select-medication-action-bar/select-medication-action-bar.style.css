@@ -1,0 +1,12 @@
+﻿.action-bar__layout {
+    height: 25px;
+}
+
+.action-bar-inner__layout {
+    padding-top: 1px;
+    padding-left: 4px;
+}
+
+.action-bar-button__layout {
+    width: 170px;
+}

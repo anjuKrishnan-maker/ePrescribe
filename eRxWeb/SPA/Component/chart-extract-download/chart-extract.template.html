@@ -1,0 +1,55 @@
+﻿<div>
+    <div class="h1title">
+        <td class="Phead indnt">
+            Download Chart Information
+        </td>
+    </div>
+    <div class="h2title" style="height:auto">
+        <erx-message [Messages]="StaticMessageStrip"></erx-message>
+    </div>
+    <br />
+    <div colspan="7" class="action-bar-inner__layout">
+        <button type="button" id="btnBack" class="btnstyle" (click)="navigateToSettings()">Back</button>
+        <div style="margin-top: 10px; margin-left: 20px;">
+            <main role="main" class="container-fluid">
+                <div class="row text-center col-6">
+                    <div class="panel panel-default" *ngIf="!isPageLoading">
+                        <div class="panel panel-heading">
+                        </div>
+                        <div class="panel-body" *ngIf="!isPageLoading">
+                            <p>Please click a button below to download the corresponding chart information.</p>
+                            <hr />
+                            <table class="extractTable">
+                                <tr>
+                                    <td class="extractColumn">
+                                        <div>
+                                            <p>Patient Demographics</p>
+                                        </div>
+                                        <hr />
+                                        <div *ngFor="let request of demographicsRequests">
+                                            <button class="extractButton" (click)="HandleClick(request);">{{request.startTime | date}} - {{request.endTime | date}}</button>
+                                        </div>
+                                    </td>
+                                    <td class="extractColumn">
+                                        <div>
+                                            <p>Prescription</p>
+                                        </div>
+                                        <hr />
+                                        <div *ngFor="let request of pharmacyRequests">
+                                            <button class="extractButton" (click)="HandleClick(request);">{{request.startTime | date}} - {{request.endTime | date}}</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <hr />
+                            <strong>Disclaimer: These reports may contain PHI. Users are solely responsible for maintaining the privacy and security of all the information printed or downloaded from the ePrescribe application.</strong>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</div>
+
+<div id="divLoadingAngComponent" *ngIf="isPageLoading">
+</div>

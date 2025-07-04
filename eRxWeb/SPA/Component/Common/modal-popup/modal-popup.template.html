@@ -1,0 +1,15 @@
+﻿<div class="modal fade" id="mdlPopupMain" role="dialog">
+    <div class="modal-dialog" style="width: 80%;">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">{{title}}</h4>
+            </div>
+            <div class="modal-body"  *ngIf="_src !== null">
+                <iframe name="modal-frame" [src]="_src" id="frameMdlPopup" onLoad="autoResize();" style=""  seamless="seamless" (load)="modalPopupLoaded($event)"></iframe>
+            </div>
+        </div>
+
+    </div>
+</div>

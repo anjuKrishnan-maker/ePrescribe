@@ -1,0 +1,186 @@
+﻿
+
+
+<table cellspacing="0" cellpadding="0" border="0">
+    <tbody>
+        <tr>
+            <td colspan="3">
+                Please fill out the form below to request a pharmacy addition.
+                <br>
+                <br>
+                Please note that pharmacies will not be listed in the ePrescribe program until they
+                have been fully registered with one of the script routing services. This process
+                may take several weeks, and pharmacies may choose not to sign up. Submission of
+                this form does not guarantee that a pharmacy will be made available in the ePrescribe
+                program.
+                <br>
+                <br>
+                <i>Required fields are in <b>BOLD</b></i><br>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<form (ngSubmit)="onSubmit()"
+      class="ui form" #f="ngForm">
+    <div class="form-group">
+        <label for="PharmacyName"><b> Pharmacy Name:</b></label>
+        <input type="text" class="form-control form-control-width"
+               form-required
+               [(ngModel)]="pharmaModel.Name" name="PharmacyName"
+               #pharmacyName="ngModel" />
+               <span *ngIf="pharmacyName.errors?.formRequired" 
+              class="alert-danger">
+            *
+        </span>
+    </div>
+    <div class="form-group">
+        <label for="txtAddress1"><b> Address 1:</b></label>
+        <input type="text" class="form-control form-control-width"
+               form-required
+               [(ngModel)]="pharmaModel.Address1" name="txtAddress1"  #address1="ngModel"  />
+        <span *ngIf="address1.errors?.formRequired" 
+              class="alert-danger">
+            *
+        </span>
+    </div>
+    <div class="form-group">
+        <label for="txtAddress2">Address 2:</label>
+        <input type="text" class="form-control form-control-width"
+               
+               [(ngModel)]="pharmaModel.Address2" name="txtAddress2" />
+
+    </div>
+    <div class="form-group">
+        <label for="City"><b> City:</b></label>
+        <input type="text" class="form-control form-control-width"
+               form-required
+               [(ngModel)]="pharmaModel.City" name="City"
+               #city="ngModel" />
+        <span *ngIf="city.errors?.formRequired"
+              class="alert-danger">
+            *
+        </span>
+    </div>
+
+    <div class="form-group">
+        <label for="State">State:</label>
+        <select name="State" [(ngModel)]="pharmaModel.State" form-required  #state="ngModel" >
+            <option value="AK">AK</option>
+            <option value="AL">AL</option>
+            <option value="AR">AR</option>
+            <option value="AZ">AZ</option>
+            <option value="CA">CA</option>
+            <option value="CO">CO</option>
+            <option value="CT">CT</option>
+            <option value="DC">DC</option>
+            <option value="DE">DE</option>
+            <option value="FL">FL</option>
+            <option value="GA">GA</option>
+            <option value="GU">GU</option>
+            <option value="HI">HI</option>
+            <option value="IA">IA</option>
+            <option value="ID">ID</option>
+            <option value="IL">IL</option>
+            <option value="IN">IN</option>
+            <option value="KS">KS</option>
+            <option value="KY">KY</option>
+            <option value="LA">LA</option>
+            <option value="MA">MA</option>
+            <option value="MD">MD</option>
+            <option value="ME">ME</option>
+            <option value="MI">MI</option>
+            <option value="MN">MN</option>
+            <option value="MO">MO</option>
+            <option value="MS">MS</option>
+            <option value="MT">MT</option>
+            <option value="NC">NC</option>
+            <option value="ND">ND</option>
+            <option value="NE">NE</option>
+            <option value="NH">NH</option>
+            <option value="NJ">NJ</option>
+            <option value="NM">NM</option>
+            <option value="NV">NV</option>
+            <option value="NY">NY</option>
+            <option value="OH">OH</option>
+            <option value="OK">OK</option>
+            <option value="OR">OR</option>
+            <option value="PA">PA</option>
+            <option value="PR">PR</option>
+            <option value="RI">RI</option>
+            <option value="SC">SC</option>
+            <option value="SD">SD</option>
+            <option value="TN">TN</option>
+            <option value="TX">TX</option>
+            <option value="UT">UT</option>
+            <option value="VA">VA</option>
+            <option value="VI">VI</option>
+            <option value="VT">VT</option>
+            <option value="WA">WA</option>
+            <option value="WI">WI</option>
+            <option value="WV">WV</option>
+            <option value="WY">WY</option>
+
+        </select>
+        <span *ngIf="state.errors?.formRequired"
+              class="alert-danger">
+            *
+        </span>
+    </div>
+    <div class="form-group">
+        <label for="ZIPCode"><b> ZIP Code:</b></label>
+        <input type="text" class="form-control form-control-width"
+                 form-required form-regx="\d{5}(-\d{4})?"
+               [(ngModel)]="pharmaModel.ZipCode" name="ZIPCode" maxlength="5"
+               #zIPCode="ngModel" />
+        <span *ngIf="zIPCode.errors?.formRequired"
+              class="alert-danger">
+            *
+        </span>
+    </div>
+    <div class="form-group">
+        <label for="PhoneNumber"><b>Phone Number:</b></label>
+        <input type="text" class="form-control form-control-width"
+                 form-required form-regx="^[01]?[- .]?(\([2-9]\d{2}\)|[2-9]\d{2})[- .]?\d{3}[- .]?\d{4}$"
+               [(ngModel)]="pharmaModel.Phone" name="PhoneNumber" maxlength="12"
+               #phoneNumber="ngModel" />
+        <span *ngIf="phoneNumber.errors?.formRequired"
+              class="alert-danger">
+            *
+        </span>
+       
+    </div>
+    <div class="form-group">
+        <label for="FaxNumber"> Fax Number:</label>
+        <input type="text" class="form-control form-control-width"
+               
+               [(ngModel)]="pharmaModel.Fax" name="FaxNumber" />
+    </div>
+    <div class="form-group">
+        <label for="Comments">Comments:</label>
+        <input type="text" class="form-control form-control-width" multiple="true"
+               
+               [(ngModel)]="pharmaModel.Comment" name="Comments" />
+    </div>
+    
+    <button type="submit" [disabled]="submitted" (click)="validate(f)"  >Submit</button>
+   
+
+</form>
+
+<div>
+    <ul *ngIf="!isValid && submitted"  class="alert-danger">
+        <li *ngIf="pharmacyName.errors?.formRequired" >Pharmacy name is required</li>
+        <li *ngIf="address1.errors?.formRequired" >Address is required</li>
+        <li *ngIf="city.errors?.formRequired">City is required</li>
+        <li *ngIf="zIPCode.errors?.formRequired">Zip is required</li>
+        <li *ngIf="zIPCode.errors?.formRegx">ZIP not in correct format </li>
+        <li *ngIf="phoneNumber.errors?.formRequired">Phone is required</li>
+        <li *ngIf="phoneNumber.errors?.formRegx">Phone Number not in correct format </li>
+    </ul>
+    <br>
+    <i class="response-info">
+        Thanks for helping us make a better product!<br>
+        <span  [innerHtml]="Response">
+        </span>
+    </i>
+</div>

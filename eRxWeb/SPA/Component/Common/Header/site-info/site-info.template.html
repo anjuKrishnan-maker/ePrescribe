@@ -1,0 +1,41 @@
+﻿ <div class="appStripe site-info-stripe"></div>
+<div [style.visibility]="(visible) ? 'visible':'hidden' ">
+    <table style="width: auto">
+        <tr style="height: 50px">
+            <td class="valgn" style="width: 18%; text-align: right; padding-right: 20px">
+                <span *ngIf="!isException" id="lblSiteName" title="{{siteInfo.siteDetails}}"
+                      style="font-weight: bold; word-wrap:break-word">{{siteInfo.siteName}}</span>&nbsp;
+                <input *ngIf='siteInfo.IsMultipleSite && !isException && isEditable' type="image" name="btnSites" id="btnSites" title="Change Site" src="images/Swap.png" style="border-width: 0px;" (click)="RedirectToSiteSelection()" />
+            </td>
+        </tr>
+
+        <tr>
+            <td class="valgn" colspan="2" style="width: 20%; text-align: right; padding-right: 20px">
+                <span id="lblLastLoginLabel" style="font-style: italic">Last Sign In </span>&nbsp;
+                <span id="lblLastLogin" style="font-weight: bold;">{{siteInfo.user.Login.lastLogin}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <br>
+            </td>
+        </tr>
+        <tr>
+            <td class="valgn" colspan="2" style="width: 20%; text-align: right; padding-right: 20px">
+
+                <span *ngIf="!isException" id="ctl00_lblUser" title="{{siteInfo. shieldStatus}}" style="font-weight: bold;">{{siteInfo.user.Login.FirstName}} {{siteInfo.user.Login.LastName}}</span>&nbsp;&nbsp;
+                <img id="lnkProfile" *ngIf="!isException && !isRestrictedMenu"
+                     title="Edit" src="images/Edit.gif" style="cursor:pointer;"
+                     (click)="navigateToEditUser()" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td rowspan="3" colspan="3" class="head valgn" style="width: 30%; padding-top: 10px;">
+                <div>
+                </div>
+
+                <erx-header-tool [isRestrictedMenu]="isRestrictedMenu">loading...</erx-header-tool>
+            </td>
+        </tr>
+    </table>
+
+</div>

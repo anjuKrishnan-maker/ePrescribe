@@ -1,0 +1,23 @@
+﻿.branded-background-color {
+    background-color: #0067B2;
+}
+
+.branded-font-color {
+    color: #ffffff;
+}
+
+.branded-logo {
+    background-image: url('../images/CooperClinic/CooperClinicReg.jpg');
+    background-repeat: no-repeat;
+    height: 70px;
+    background-size: contain;
+}
+    
+.branded-footer-stripe {
+    background-color: #ffffff; /*keep this white, for veradigm, its the orange stripe above the footer*/
+}
+
+.branded-footer-color {
+    background-color: #0067B2;
+    color: #ffffff;
+}

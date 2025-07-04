@@ -1,0 +1,15 @@
+﻿.upload-btn-group {
+    width: auto;
+    padding: 5px;
+    border-radius: 3px;
+    padding-top: 7px;
+}
+
+.upload-btn {
+    margin-right: 5px;
+}
+
+.error-wrap {
+    max-width: 100%;
+    word-wrap: break-word;
+}

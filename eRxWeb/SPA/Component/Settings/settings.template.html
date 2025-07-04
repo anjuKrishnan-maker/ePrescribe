@@ -1,0 +1,20 @@
+﻿<div>
+    <div class="h1title"></div>
+    <div class="h2title">
+        <erx-message [(Messages)]="Messages"></erx-message>
+    </div>
+    <div style="margin-top: 10px; margin-left: 20px;">
+        <div *ngFor="let link of SettingsLinks" style="height: 22px;">
+            <div style="padding-top: 1px; width: 30px; float: left">
+                <img height="15" src="../../../images/bulletSmall.png" width="18" alt="bullet" />
+            </div>
+            <div style="padding-top: 2px;">
+                <a *ngIf="link.LaunchType == LinkLaunchType.NewWindow" class="linkText" href="{{link.ActionUrl}}" target="_blank">{{link.Label}}</a>
+                <a *ngIf="link.LaunchType == LinkLaunchType.InPlace" class="linkText" (click)="LinkClicked(link.ActionUrl)">{{link.Label}}</a>
+                <a *ngIf="link.LaunchType == LinkLaunchType.Modal" class="linkText" (click)="TriggerUIEvent(link.ActionUrl)">{{link.Label}}</a>
+            </div>
+        </div>        
+    </div>
+    <erx-pdmp-epcs-teaser (closeModalEvent)="onClose($event)"></erx-pdmp-epcs-teaser>
+    <erx-pdmp-enrollment></erx-pdmp-enrollment>
+</div>

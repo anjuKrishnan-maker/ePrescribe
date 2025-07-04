@@ -1,0 +1,111 @@
+﻿.autocomplete {
+    /*the container must be positioned relative:*/
+    position: relative;
+    display: inline-block;
+}
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-top: none;
+    z-index: 99;
+    top: 100%;
+    left: 0;
+    right: 0;
+}
+
+    .autocomplete-items div {
+        cursor: pointer;
+        background-color: #fff;
+    }
+
+        .autocomplete-items div:hover {
+            /*when hovering an item:*/
+            background-color: #e9e9e9;
+        }
+
+.autocomplete-active {
+    /*when navigating through the items using the arrow keys:*/
+    background-color: #e9e9e9 !important;
+}
+
+.searchControlTextBox {
+    -ms-border-top-left-radius: 12px !important;
+    border-top-left-radius: 12px !important;
+    -ms-border-bottom-left-radius: 12px !important;
+    border-bottom-left-radius: 12px !important;
+    border: solid 1px #666666;
+    height: 24px;
+    padding-left: 25px;
+    color: black;
+}
+
+.searchControlTextBoxDefaultValue {
+    -ms-border-top-left-radius: 12px !important;
+    border-top-left-radius: 12px !important;
+    -ms-border-bottom-left-radius: 12px !important;
+    border-bottom-left-radius: 12px !important;
+    border: solid 1px #666666;
+    height: 24px;
+    padding-left: 25px;
+    color: rgb(102, 102, 102);
+}
+
+.searchControlTextBoxOnly {
+    -ms-border-radius: 12px !important;
+    border-radius: 12px !important;
+    border: solid 1px #666666;
+    height: 24px;
+    padding-left: 25px;
+    color: black;
+}
+
+.searchControlTextBoxOnlyDefaultValue {
+    -ms-border-radius: 12px !important;
+    border-radius: 12px !important;
+    border: solid 1px #666666;
+    height: 24px;
+    padding-left: 25px;
+    color: rgb(102, 102, 102);
+}
+
+.searchControlButton {
+    -ms-border-top-right-radius: 12px !important;
+    border-top-right-radius: 12px !important;
+    -ms-border-bottom-right-radius: 12px !important;
+    border-bottom-right-radius: 12px !important;
+    height: 24px;
+    background-image: linear-gradient(to bottom, #ffffff, #cccccc);
+    border: solid 1px #666666;
+    margin-left: -7px;
+    color: #464646;
+    margin-right: 10px;
+}
+
+.medication-filters {
+    display: inline-block;
+    padding-left: 3px;
+    padding-right: 3px;
+    margin-right: 5px;
+}
+
+.medication-filters--border {
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+.medication-filters__radio {
+    margin-right: 5px;
+    color: #E7e7e7;
+}
+
+.medication-filters__radio--no-margin {
+    margin-right: 0px;
+}
+
+.medication-filters__label {
+    font-weight: normal;
+    bottom: 2.8px;
+    position: relative;
+}
+

@@ -1,0 +1,735 @@
+<%@ Master Language="C#" AutoEventWireup="true"
+    Inherits="eRxWeb.PhysicianMasterPage" Codebehind="PhysicianMasterPage.master.cs" %>
+
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<%@ Register Assembly="SessionTimeoutControl" Namespace="eRx.WebControls" TagPrefix="stc" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+
+<!DOCTYPE html>
+<html>
+<head id="Head1" runat="server">
+    <meta http-equiv="x-ua-compatible" content="IE=Edge"/>
+    <title></title>
+    <link id="lnkDefaultStyleSheet" href="Style/Default.css" runat="server" rel="stylesheet" type="text/css" />
+    <link id="lnkStyleSheet" runat="server" rel="stylesheet" type="text/css" />
+    <link id="PageIcon" rel="SHORTCUT ICON" runat="server" href="images/favicon.ico" />
+    <link href="telerik/Skins/Allscripts/Grid/Grid.Allscripts.css" runat="server" rel="stylesheet"
+        type="text/css" />
+    <link href="telerik/Skins/Allscripts/ComboBox/ComboBox.Allscripts.css" runat="server"
+        rel="stylesheet" type="text/css" />
+    <link href="telerik/Skins/Allscripts/Calendar/Calendar.Allscripts.css" runat="server"
+        rel="stylesheet" type="text/css" />
+    <link href="telerik/Skins/Allscripts/Input/Input.Allscripts.css" runat="server" rel="stylesheet"
+        type="text/css" />
+    <link href="telerik/Skins/Allscripts/PanelBar/PanelBar.Allscripts.css" runat="server"
+        rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeaderPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+ <link href="<%=ResolveUrl("~/Style/SpecialtyMed.css?version="+SessionAppVersion)%>" rel="stylesheet" />
+<body onload="backButtonOverride();">
+    <script language="javascript" type="text/javascript" src="js/jquery-1.4.2.js">
+    </script>
+    <script language="javascript" type="text/javascript" src="<%=ResolveUrl("~/js/PageUtil.js?version="+ SessionAppVersion) %>">
+    </script>
+    <script language="javascript" type="text/javascript" src="js/gridUtil.js">
+    </script>
+    <script language="javascript" type="text/javascript" src="js/ePA_Questions.js">
+    </script>
+     <script language="javascript" type="text/javascript" src="js/ePA_InitiationQuestions.js">
+     </script>
+     <script language="javascript" type="text/javascript" src="js/privacyOverride.js">
+     </script>
+    <script language="javascript" type="text/javascript">
+        
+        setLogOutControlId("<%=lnkLogout.ClientID %>");
+        function TABLE1_onclick() 
+        {
+
+        }
+        
+        function showEditLink(option) {
+        
+            if (option === 'editPatient') {
+                var elem = document.getElementById('<%=lnkEditPatient.ClientID %>');
+
+                if ('<%=AllowPatientEdit%>' !== "True") 
+                {
+                    var spn = document.getElementById('spn' + option);
+                    spn.removeAttribute("onclick");
+                    spn.className = '';
+                } 
+                else 
+                {
+                    elem.style.visibility = 'visible';
+                }
+            }
+            else if (option === 'Allergy') {
+                var elem = document.getElementById('<%=lnkAlleryEdit.ClientID %>');
+
+                if ('<%=AllowAllergyEdit%>' !== "True") 
+                {
+                    var spn = document.getElementById('spn' + option);
+                    spn.removeAttribute("onclick");
+                    spn.className = '';
+                } 
+                else 
+                {
+                    elem.style.visibility = 'visible';
+                }
+            }
+            else if (option === 'Problem') {
+                var elem = document.getElementById('<%=lbEditDx.ClientID %>');
+
+                if ('<%=AllowDiagnosisEdit%>' !== "True") 
+                {
+                    var spn = document.getElementById('spn' + option);
+                    spn.removeAttribute("onclick");
+                    spn.className = '';
+                } 
+                else 
+                {
+                    elem.style.visibility = 'visible';
+                }
+            }else if (option === 'RetailPharm') {
+                var elem = document.getElementById('<%=lnkEditPharmacy.ClientID %>');
+
+                if ('<%=AllowPharmacyEdit%>' !== "True") 
+                {
+                    var spn = document.getElementById('spn' + option);
+                    spn.removeAttribute("onclick");
+                    spn.className = '';
+                } 
+                else 
+                {
+                    elem.style.visibility = 'visible';
+                }
+            }else if (option === 'MoPharm') {
+                var elem = document.getElementById('<%=lnkEditMOPharm.ClientID %>');
+
+                if ('<%=AllowPharmacyEdit%>' !== "True") 
+                {
+                    var spn = document.getElementById('spn' + option);
+                    spn.removeAttribute("onclick");
+                    spn.className = '';
+                } 
+                else 
+                {
+                    elem.style.visibility = 'visible';
+                }
+            }
+        }
+
+        function hideEditLink(option) {
+            if (option === 'editPatient') {
+                document.getElementById('<%=lnkEditPatient.ClientID %>').style.visibility = 'hidden';
+            }else if (option === 'Allergy') {
+                document.getElementById('<%=lnkAlleryEdit.ClientID %>').style.visibility = 'hidden';
+            }else if (option === 'Problem') {
+                document.getElementById('<%=lbEditDx.ClientID %>').style.visibility = 'hidden';
+            }else if (option === 'RetailPharm') {
+                document.getElementById('<%=lnkEditPharmacy.ClientID %>').style.visibility = 'hidden';
+            }else if (option === 'MoPharm') {
+                document.getElementById('<%=lnkEditMOPharm.ClientID %>').style.visibility = 'hidden';
+            }
+        }
+
+        function postit(what)
+        {
+            var btn = document.getElementById("ctl00_" + what);
+            if (btn != null)
+            {
+                if (btn.clicked == null || btn.clicked == false)
+                {
+                    //Set the clicked attribute to be true
+                    btn.clicked = true;
+			
+                    if (btn.click)
+                        btn.click();
+                    else
+                    {
+                        //Handle Firefox, Netscape event firing. 
+                        var evObj = document.createEvent('MouseEvents');
+                        evObj.initEvent( 'click', true, true );
+                        btn.dispatchEvent(evObj);
+                    }
+                }
+                else
+                    btn.clicked = false;
+            }
+        }
+
+        function getURL() { 
+            var arr = window.location.href.split("/"); 
+            delete arr[arr.length - 1]; 
+            return arr.join("/"); 
+        }
+
+        function fnSetValues() {
+            var sFeatures = "dialogHeight:600px;dialogWidth: 800px;center:1;resizable:1;status:0;edge:sunken;";
+            return sFeatures;
+        }
+
+        function fnOpen() {
+            var sFeatures = fnSetValues();
+            window.showModalDialog(getURL() + "ClinicalViewer.aspx", "hello", sFeatures)
+        }
+
+        function bannerRedirect(canEdit, location)
+        {
+            if (canEdit === 'True')
+            {
+                window.location.replace(location);
+            } 
+        }
+
+        var doc = document.documentElement;
+        doc.setAttribute('data-useragent', navigator.userAgent);
+    
+        
+    </script>
+    <form id="form1" runat="server" style="overflow-x:hidden;overflow-y:auto;">
+    <asp:ScriptManager ID="masterScriptManager" runat="server" EnablePartialRendering="true"
+        ScriptMode="Release" OnAsyncPostBackError="masterScriptManager_AsyncPostBackError">
+          <Scripts>
+        <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js" />
+    </Scripts>
+    </asp:ScriptManager>
+        <script type="text/javascript">
+            var sysApplication = Sys.WebForms.PageRequestManager.getInstance();
+           
+            ignoreIeEvents();
+            function beginRequest() {
+                ShowLoadingSpinner();
+            }
+
+            function endRequest() {
+                HideLoadingSpinner();
+            }
+            RegisterPopupOvelay('');
+            sysApplication.add_initializeRequest(beginRequest);
+            sysApplication.add_endRequest(endRequest);
+
+           
+
+        </script>
+    <asp:UpdatePanel ID="patientPanel" runat="server"  UpdateMode="Conditional" RenderMode="inline">
+        <ContentTemplate>
+            <table id="Header" width="100%" cellspacing="0" cellpadding="0" style="height: 126px; border-color: transparent;">
+                <tr>
+                    <td class="appStripe" rowspan="7" style="height: 8%; vertical-align: top; width: 100px">
+                        <img id="mainLogo" src="images/shim.gif" width="120" height="65" alt="Allscripts" />
+                        <img src="images/powered_by.gif" id="poweredByImage" class="sponsored" alt="Allscripts" />
+                        <center>
+                            <img src="images/spinner.gif" alt="" id="loading" style="display: none" runat="server" /></center>
+                    </td>
+                    <td colspan="3" class="appStripe" style="height: 5px">
+                    </td>
+                </tr>
+                <tr style="height: 50px;">
+                    <td class="indent head valgn" style="width: 90px">
+                        Patient
+                    </td>
+                    <td class="indent head valgn" style="width: 1015px">
+                        &nbsp;<asp:Image ImageUrl="~\images\PrivacyImages\sensitivehealth-global-24-x-24.png" Visible="false" ID="imgVIP" runat="server" />
+                        <asp:Label ID="lblNoPatient" CssClass="HeaderFirstName largeText" Text="[No Patient Selected]" runat="server"></asp:Label><span class="editRollover" id="spneditPatient" onclick="bannerRedirect('<%=AllowPatientEdit%>','<%= editPatientRedirect %>');" onmouseover="showEditLink('editPatient');" onmouseout="hideEditLink('editPatient');" ><asp:Label ID="lblPatientLast" CssClass="HeaderLastName largeText" runat="server"></asp:Label><asp:Label ID="lblPatientFirst" CssClass="HeaderFirstName largeText" runat="server"></asp:Label></span>
+                        <asp:ImageButton ID="lnkEditPatient" ImageUrl="~/images/Edit.gif" ToolTip="Edit"
+                            runat="server" CssClass="noEditRollover" CausesValidation="False" OnClick="lnkEditPatient_Click">
+                        </asp:ImageButton>
+                        <asp:Panel ID="pnlPatientDetails" runat="server">
+                            &nbsp;<asp:Label ID="lblGenderDob" runat="server"></asp:Label>
+                            &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+
+                            <span style="font-style: italic; font-size: smaller">MRN</span>&nbsp;
+                            <asp:Label ID="lblMrn" runat="server" ></asp:Label>
+                        
+                            <asp:Panel ID="pnlPatientWeight" style="display:inline;" runat="server">
+                                &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                                <asp:Label ID="lblWeightLbs" runat="server"></asp:Label>
+                                <asp:Label ID="lblWeightOzs" runat="server"></asp:Label>
+                                <asp:Label ID="lblWeightKgs" runat="server"></asp:Label>
+                            </asp:Panel>
+                        </asp:Panel>
+                    </td>
+                    <td class="valgn nowrap" style="width: 18%; text-align: right; padding-right: 10px">
+                        <asp:Label ID="lblSiteName" runat="server" Font-Bold="true"></asp:Label>&nbsp;
+                        <asp:ImageButton runat="server" ID="btnSites" CausesValidation="false" ToolTip="Change Site"
+                            Visible="false" ImageUrl="~/images/Swap.png" OnClick="btnSites_Click"></asp:ImageButton>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="indent head valgn nowrap">
+                        <asp:Label ID="lblAllergyLabel" runat="server" Text="Act. Allergies" CssClass="head"></asp:Label>
+                    </td>
+                    <td class="indent valgn">
+                        &nbsp;<span id="spnAllergy" class="editRollover" onclick="bannerRedirect('<%=AllowAllergyEdit%>', '<%= editAllergyRedirect %>');" onmouseover="showEditLink('Allergy');" onmouseout="hideEditLink('Allergy');"><asp:Label ID="lblAllergy" runat="server" CssClass="navi"></asp:Label></span>
+                        <asp:ImageButton ID="imgMoreActiveAllergy" CssClass="imgMore" runat="server" CausesValidation="false"
+                            Visible="false" ImageUrl="~/images/more_icon.gif" />&nbsp;
+                        <asp:ImageButton ID="lnkAlleryEdit" runat="server" CausesValidation="False" CssClass="noEditRollover"
+                            ToolTip="Edit" ImageUrl="~/images/Edit.gif" OnClick="lnkAlleryEdit_Click"></asp:ImageButton>
+                        <telerik:RadToolTip runat="server" ID="RadToolTip1" ShowEvent="OnClick" ShowDelay="0"
+                            Overlay="true" Position="BottomRight" HideEvent="ManualClose" Width="385px" TargetControlID="imgMoreActiveAllergy"
+                            Modal="true" RelativeTo="Element" Height="200px" ContentScrolling="Y" EnableShadow="false">
+                            <div style="font-size: medium; font-weight: bold;">
+                                Active Allergies</div>
+                            <br />
+                            <telerik:RadGrid ID="grdViewAllergies" runat="server" Skin="Allscripts" EnableEmbeddedSkins="false"
+                                GridLines="None" AllowAutomaticUpdates="false" AllowMultiRowSelection="false"
+                                EnableViewState="true" AllowPaging="false" Width="360px" HorizontalAlign="Left"
+                                AutoGenerateColumns="False">
+                                <MasterTableView GridLines="None" Style="width: 100%; vertical-align: top" CommandItemDisplay="None">
+                                    <HeaderStyle Font-Bold="true" />
+                                    <Columns>
+                                        <telerik:GridBoundColumn DataField="AllergyName" HeaderText="Class/Medication">
+                                            <ItemStyle Width="280px"></ItemStyle>
+                                        </telerik:GridBoundColumn>
+                                        <telerik:GridBoundColumn DataField="StartDate" HeaderText="Start Date" DataFormatString="{0:MM/dd/yyyy}">
+                                            <ItemStyle Width="70px"></ItemStyle>
+                                        </telerik:GridBoundColumn>
+                                    </Columns>
+                                </MasterTableView>
+                                <ClientSettings>
+                                    <Selecting AllowRowSelect="True"></Selecting>
+                                </ClientSettings>
+                            </telerik:RadGrid>
+                        </telerik:RadToolTip>
+                    </td>
+                    <td class="valgn" style="width: 20%; text-align: right; padding-right: 10px">
+                        <asp:Label ID="lblLastLoginLabel" runat="server" Text="Last Sign In " Style="font-style: italic"></asp:Label>&nbsp;
+                        <asp:Label ID="lblLastLogin" runat="server" Text="" Font-Bold="true"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <br />
+                    </td>
+                </tr>
+                <tr style="height: 19px;">
+                    <td class="indent head valgn nowrap">
+                        <asp:Label ID="lblProblemLabel" runat="server" Text="Act. Problems" CssClass="head"></asp:Label>
+                    </td>
+                    <td class="indent valgn">
+                         &nbsp;<span id="spnProblem" class="editRollover" onclick="bannerRedirect('<%=AllowDiagnosisEdit%>','<%= editProblemRedirect %>');" onmouseover="showEditLink('Problem');" onmouseout="hideEditLink('Problem');"><asp:Label ID="lblDx" runat="server"></asp:Label></span>
+                        <asp:ImageButton ID="imgMoreActiveProblem" CssClass="imgMore" runat="server" CausesValidation="false"
+                            Visible="false" ImageUrl="~/images/more_icon.gif" />&nbsp;
+                        <asp:ImageButton ID="lbEditDx" runat="server" ImageUrl="~/images/Edit.gif" CssClass="noEditRollover"
+                            ToolTip="Edit" OnClick="lbEditDx_Click"></asp:ImageButton>
+                        <telerik:RadToolTip runat="server" ID="RadToolTip2" ShowEvent="OnClick" ShowDelay="0"
+                            Overlay="true" HideEvent="ManualClose" Width="425px" Position="BottomRight" TargetControlID="imgMoreActiveProblem"
+                            Modal="true" RelativeTo="Mouse" Height="200px" ContentScrolling="Y">
+                            <div style="font-size: medium; font-weight: bold">
+                                Active Problems</div>
+                            <br />
+                            <telerik:RadGrid ID="radGrdActiveProbs" runat="server" Skin="Allscripts" EnableEmbeddedSkins="false"
+                                GridLines="None" AllowAutomaticUpdates="false" AllowMultiRowSelection="false"
+                                EnableViewState="true" AllowPaging="false" Style="width: 400px; vertical-align: top;"
+                                AutoGenerateColumns="False">
+                                <MasterTableView GridLines="None" Style="width: 100%; vertical-align: top" CommandItemDisplay="None">
+                                    <HeaderStyle Font-Bold="true" />
+                                    <Columns>
+                                        <telerik:GridBoundColumn DataField="Description" HeaderText="Diagnosis">
+                                            <ItemStyle Width="250px"></ItemStyle>
+                                        </telerik:GridBoundColumn>                                       
+                                        <telerik:GridBoundColumn DataField="StartDate" HeaderText="Start Date" DataFormatString="{0:MM/dd/yyyy}">
+                                            <ItemStyle Width="70px"></ItemStyle>
+                                        </telerik:GridBoundColumn>
+                                    </Columns>
+                                </MasterTableView>
+                                <ClientSettings>
+                                    <Selecting AllowRowSelect="True"></Selecting>
+                                </ClientSettings>
+                            </telerik:RadGrid>
+                        </telerik:RadToolTip>
+                    </td>
+                    <td class="valgn" style="width: 20%; text-align: right; padding-right: 10px">
+                        <asp:Label ID="lblAccountID" runat="server" Text="" Font-Bold="true" Visible="false"></asp:Label>
+                        <asp:Label ID="lblUser" runat="server" Text="" Font-Bold="true"></asp:Label>&nbsp;&nbsp;
+                        <asp:ImageButton ID="lnkProfile" runat="server" ImageUrl="~/images/Edit.gif" ToolTip="Edit"
+                            CausesValidation="false"></asp:ImageButton>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="indent head nowrap">
+                        <asp:Label ID="lblActiveMedLabel" runat="server" Text="Act. Meds" CssClass="head"></asp:Label>
+                    </td>
+                    <td class="indent valgn">
+                        &nbsp;<asp:Label ID="lblActiveMed" runat="server"></asp:Label>
+                        <asp:ImageButton ID="imgMoreActiveMed" CssClass="imgMore" runat="server" CausesValidation="false" Visible="false"
+                            ImageUrl="~/images/more_icon.gif" />
+                        <telerik:RadToolTip runat="server" ID="RadToolTip3" ShowEvent="OnClick" ShowDelay="0"
+                            Overlay="true" HideEvent="ManualClose" Width="385px" Position="BottomRight" TargetControlID="imgMoreActiveMed"
+                            Modal="true" RelativeTo="Mouse" Height="200px" ContentScrolling="Y">
+                            <div style="font-size: medium; font-weight: bold">
+                                Active Medications</div>
+                            <br />
+                            <telerik:RadGrid ID="radgrdActiveMed" runat="server" Skin="Allscripts" EnableEmbeddedSkins="false"
+                                GridLines="None" AllowAutomaticUpdates="false" AllowMultiRowSelection="false"
+                                EnableViewState="true" AllowPaging="false" Style="width: 360px; vertical-align: top;"
+                                AutoGenerateColumns="False">
+                                <MasterTableView GridLines="None" Style="width: 100%; vertical-align: top" CommandItemDisplay="None">
+                                    <HeaderStyle Font-Bold="true" />
+                                    <Columns>
+                                        <telerik:GridBoundColumn DataField="Medication" HeaderText="Medication">
+                                            <ItemStyle Width="280px"></ItemStyle>
+                                        </telerik:GridBoundColumn>
+                                        <telerik:GridBoundColumn DataField="StartDate" HeaderText="Start Date">
+                                            <ItemStyle Width="70px"></ItemStyle>
+                                        </telerik:GridBoundColumn>
+                                    </Columns>
+                                </MasterTableView>
+                                <ClientSettings>
+                                    <Selecting AllowRowSelect="True"></Selecting>
+                                </ClientSettings>
+                            </telerik:RadGrid>
+                        </telerik:RadToolTip>
+                    </td>
+                    <td rowspan="3" class="head valgn" style="width: 30%;
+                      padding-top: 10px;">
+                        <div>
+                        </div>
+                        <div class="alignRight">
+                        <div id="divClinicalViewer" runat="server" class="headerIcon"
+                            visible="false">
+                            <div id="divClinicalViewerIcon" runat="server" style="display: inline; border: none; vertical-align: middle;">
+                                 <div style="float: left; border: none;">
+                               <asp:ImageButton ID="hlClinicalViewer" CssClass="hlClinicalViewer" ImageUrl="images/shim.gif" runat="server" style="vertical-align:middle; border: none" OnClientClick="fnOpen();"/><br />
+                               &nbsp;<span class="headerIconDescription">viewer</span>
+                            </div>
+                            </div>
+                            <div id="divClinicalViewerSeparator" runat="server" style="display: inline; vertical-align: middle;
+                                font-weight: bold">
+                                &nbsp;&nbsp;
+                            </div>
+                        </div>
+                        <%  if (base.SessionLicense.EnterpriseClient.ShowMessageQueueReport)
+                            { %>
+                        <div id="divMessageIcon" class="headerIcon iconHeighAdjustment" style="border: none;">
+                            <asp:HyperLink ID="lnkMessageQueue" runat="server" Height="25px" Width="24px"><img src="images/shim.gif" id="messageQueueIcon" style="vertical-align:middle; border: 0px;" /></asp:HyperLink>
+                            <br /> &nbsp;<span class="headerIconDescription">msg</span>
+                        </div>
+                        &nbsp;&nbsp;
+                        <% } %>                        
+                        <div class="headerIcon" style="border: none;">                            
+                            <asp:HyperLink ID="lnkILearn" runat="server" Target="_blank" Height="25px" Width="24px"><img src="images/shim.gif" id="iLearnIcon" style="vertical-align:middle; border:0px;" /></asp:HyperLink>
+                            <div id="notification" class ="iLearnNotification" style="display:none;"></div>
+                            <br /> &nbsp;<span class="headerIconDescription">i-Learn</span>
+                        </div>
+                        <div  class="headerIcon" style="border: none; width: 60px">
+                            <asp:HyperLink ID="lnkHelp" runat="server" Target="_blank" Height="25px" Width="24px" NavigateUrl="https://eprescribe.allscripts.com/help"><img src="images/shim.gif" id="helpIcon" style="vertical-align:middle; border:0px" /></asp:HyperLink>
+                            <br /> &nbsp;<span class="headerIconDescription">help</span>
+                        </div>
+                        <%  if (base.SessionLicense.EnterpriseClient.ShowLogoutIcon)
+                            { %>
+                        &nbsp;&nbsp;
+                        <% } %>
+                        <div class="headerIcon" style="border: none; width: 35px">
+                            <asp:HyperLink ID="lnkLogout" runat="server" Height="25px" Width="24px" NavigateUrl="~/logout.aspx"><img id="logoutIcon" src="images/shim.gif" style="vertical-align:middle; border:0px"/></asp:HyperLink>
+                            <br />
+                            &nbsp;<span runat="server" id="splogout" class="headerIconDescription">logout</span></div>
+                            </div>
+                    </td>
+                </tr>
+                <asp:Panel ID="pnlPharmacyDetails" runat="server">
+                    <tr style="height: 17px">
+                        <%  if (ShowPharmacy)
+                            { %>
+                        <td class="indent head valgn nowrap">
+                            <asp:Label ID="lblPharmacyLabel" runat="server" Text="Preferred Pharm." CssClass="head"></asp:Label>
+                        </td>
+                        <td class="indent valgn nowrap" colspan="6">
+                            <div class="floatleft">
+                                <!-- old pharmacy star logic has been replaced with EPCS indicator -->
+                                <span id="spnRetailPharm" class="editRollover valgn" onclick="bannerRedirect('<%=AllowPharmacyEdit%>','<%= EditRetailPharmRedirect %>');" onmouseover="showEditLink('RetailPharm');" onmouseout="hideEditLink('RetailPharm');">
+                                    <div class="floatleft divPaddingTop"><asp:Image CssClass="imgPaddingLeft" ID="imgPharmacyRating" runat="server" Visible="false" /></div>
+                                    <div class="floatleft divMarginLeft divPaddingTop"><asp:Label ID="lblLastPharmacyName" runat="server"></asp:Label></div>
+                                </span>
+                                <div class="floatleft divMarginLeft divPaddingTopMore"><asp:ImageButton ID="imgMoreRetailPharm" CssClass="imgMore" runat="server" CausesValidation="false"
+                                    Visible="false" ImageUrl="~/images/more_icon.gif" />&nbsp;</div>
+                                <div class="floatleft divMarginLeft divPaddingTop"><asp:ImageButton ID="lnkEditPharmacy" runat="server" ImageUrl="~/images/Edit.gif"
+                                    CausesValidation="false" CssClass="noEditRollover" ToolTip="Edit" OnClick="lnkEditPharmacy_Click">
+                                </asp:ImageButton>&nbsp;</div>
+                                <div class="floatleft divMarginLeft"><asp:ImageButton ID="lnkRemPharmacy" runat="server" ImageUrl="~/images/Delete.gif"
+                                    CausesValidation="false" Visible="false" ToolTip="Remove" OnClick="lnkRemPharmacy_Click">
+                                </asp:ImageButton></div>
+                                    
+                            </div>
+                            <div style="background: white; font-size: large; font-weight: bold">
+                                <telerik:RadToolTip runat="server" ID="RadToolTip4" ShowEvent="OnClick" ShowDelay="0"
+                                    Overlay="true" HideEvent="ManualClose" Width="350px" Position="BottomRight" TargetControlID="imgMoreRetailPharm"
+                                    Modal="true" RelativeTo="Mouse">
+                                    <div style="font-size: medium; font-weight: bold">
+                                        Patient's Retail Pharmacy</div>
+                                    <br />
+                                    <asp:DetailsView ID="detailsViewPharmInfo" runat="server" AutoGenerateRows="false"
+                                        GridLines="none" BorderStyle="none" Width="100%">
+                                        <Fields>
+                                            <asp:BoundField DataField="Name" ItemStyle-Font-Bold="true" />
+                                            <asp:BoundField DataField="Address1" />
+                                            <asp:TemplateField>
+                                                <ItemTemplate>
+                                                    <asp:Label ID="lblCity" runat="server" Text='<%# Bind("City") %>'></asp:Label>,
+                                                    <asp:Label ID="lblState" runat="server" Text='<%# Bind("State") %>'></asp:Label>&nbsp
+                                                    <asp:Label ID="lblZIP" runat="server" Text='<%# Bind("Zip") %>'></asp:Label>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                            <asp:TemplateField>
+                                                <ItemTemplate>
+                                                    Tel:
+                                                    <asp:Label ID="lblPhone" runat="server"></asp:Label>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                            <asp:TemplateField>
+                                                <ItemTemplate>
+                                                    Fax:
+                                                    <asp:Label ID="lblFax" runat="server"></asp:Label>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                            <asp:TemplateField>
+                                                <ItemTemplate>
+                                                    NCPDP Id:
+                                                    <asp:Label ID="lblNCPDPId" runat="server" Text='<%# Bind("NABP") %>'></asp:Label>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                            <asp:TemplateField>
+                                                <ItemTemplate>
+                                                    Method:
+                                                    <asp:Label ID="lblTransMethod" runat="server" Text="N/A"></asp:Label>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                            <asp:TemplateField>
+                                                <ItemTemplate>
+                                                    Cross-street:
+                                                    <asp:Label ID="lblCrossStreets" runat="server" Text='<%# Bind("CrossStreet") %>'></asp:Label>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                            <asp:TemplateField>
+                                                <ItemTemplate>
+                                                    EPCS:
+                                                    <asp:Label ID="lblEpcs" runat="server" Text='<%# Bind("EPCS") %>'></asp:Label>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                        </Fields>
+                                    </asp:DetailsView>
+                                    <asp:ObjectDataSource ID="pharmInfoObjDataSource" runat="server" SelectMethod="LoadPharmacy"
+                                        ConvertNullToDBNull="False" TypeName="Allscripts.Impact.Pharmacy" OnSelected="pharmInfoObjDataSource_Selected">
+                                        <SelectParameters>
+                                            <asp:SessionParameter Name="PharmacyID" SessionField="LASTPHARMACYID" Type="Object" />
+                                            <asp:SessionParameter Name="dbID" SessionField="DBID" Type="Object" />
+                                        </SelectParameters>
+                                    </asp:ObjectDataSource>
+                                </telerik:RadToolTip>
+                            </div>
+                        </td>
+                        <% } %>
+                    </tr>
+                    <tr>
+                        <% if (ShowPharmacy)
+                           {%>
+                        <td class="indent head valgn nowrap">
+                            <asp:Label ID="lblMailOPharm" runat="server" Text="MO. Pharm." CssClass="head"></asp:Label>&nbsp;
+                        </td>
+                        <td class="indent head valgn nowrap" colspan="6">
+                            <div class="floatleft">
+                                <div class="floatleft"><span id="spnMoPharm" class="editRollover valgn" onclick="bannerRedirect('<%=AllowPharmacyEdit%>','<%= EditMoPharmRedirect %>');" onmouseover="showEditLink('MoPharm');" onmouseout="hideEditLink('MoPharm');">
+                                    <div id="divCsImg" class="floatleft divPaddingTop"><asp:Image CssClass="imgPaddingLeft" ID="imgMOPRating" runat="server" Visible="false" /></div>
+                                    <div id="divMoLabel" class="floatleft divMarginLeft divPaddingTop"><asp:Label ID="lblPrefMOP" runat="server"></asp:Label></div>
+                                 </span></div>
+                                <div id="divMoMore" class="floatleft divMarginLeft divPaddingTopMore"><asp:ImageButton ID="imgMoreMailOrderPharm" CssClass="imgMore" runat="server" CausesValidation="false"
+                                    Visible="false" ImageUrl="~/images/more_icon.gif" />&nbsp;</div>
+                                <div id="divMoEdit" class="floatleft divMarginLeft divPaddingTop"><asp:ImageButton ID="lnkEditMOPharm" runat="server" CausesValidation="false" ImageUrl="~/images/Edit.gif"
+                                    ToolTip="Edit" CssClass="noEditRollover" OnClick="lnkEditMOPharmacy_Click"></asp:ImageButton>&nbsp;</div>
+                                <div id="divMoRemove" class="floatleft divMarginLeft"><asp:ImageButton ID="lnkRemMOPharm" runat="server" CausesValidation="false" ImageUrl="~/images/Delete.gif"
+                                    ToolTip="Remove" Visible="false" OnClick="lnkRemMOPharm_Click"></asp:ImageButton></div>
+                             </div>
+                            <telerik:RadToolTip runat="server" ID="RadToolTip5" ShowEvent="OnClick" ShowDelay="0"
+                                Overlay="true" HideEvent="ManualClose" Width="350px" Position="BottomRight" TargetControlID="imgMoreMailOrderPharm"
+                                Modal="true" RelativeTo="Mouse">
+                                <div style="font-size: medium; font-weight: bold">
+                                    Patient's Mail Order Pharmacy</div>
+                                <br />
+                                <asp:DetailsView ID="datailViewMOPharm" runat="server" AutoGenerateRows="false" GridLines="none"
+                                    BorderStyle="none" Width="100%">
+                                    <Fields>
+                                        <asp:BoundField DataField="Name" ItemStyle-Font-Bold="true" />
+                                        <asp:BoundField DataField="Address1" />
+                                        <asp:TemplateField>
+                                            <ItemTemplate>
+                                                <asp:Label ID="lblMCity" runat="server" Text='<%# Bind("City") %>'></asp:Label>,
+                                                <asp:Label ID="lblMState" runat="server" Text='<%# Bind("State") %>'></asp:Label>&nbsp
+                                                <asp:Label ID="lblMZIP" runat="server" Text='<%# Bind("Zip") %>'></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField>
+                                            <ItemTemplate>
+                                                Tel:
+                                                <asp:Label ID="lblMPhone" runat="server"></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField>
+                                            <ItemTemplate>
+                                                Fax:
+                                                <asp:Label ID="lblMFax" runat="server"></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField>
+                                            <ItemTemplate>
+                                                NCPDP Id:
+                                                <asp:Label ID="lblMNCPDPId" runat="server" Text='<%# Bind("NABP") %>'></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField>
+                                            <ItemTemplate>
+                                                Method:
+                                                <asp:Label ID="lblMTransMethod" runat="server" Text="N/A"></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField>
+                                            <ItemTemplate>
+                                                Cross-street:
+                                                <asp:Label ID="lblMCrossStreets" runat="server" Text='<%# Bind("CrossStreet") %>'></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField>
+                                            <ItemTemplate>
+                                                EPCS:
+                                                <asp:Label ID="lblMEpcs" runat="server" Text='<%# Bind("EPCS") %>'></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                    </Fields>
+                                </asp:DetailsView>
+                                <asp:ObjectDataSource ID="MPharmInfoObjDataSource" runat="server" SelectMethod="LoadPharmacy"
+                                    ConvertNullToDBNull="False" TypeName="Allscripts.Impact.Pharmacy" OnSelected="MPharmInfoObjDataSource_Selected">
+                                    <SelectParameters>
+                                        <asp:SessionParameter Name="PharmacyID" SessionField="MOB_PHARMACY_ID" Type="Object" />
+                                        <asp:SessionParameter Name="dbID" SessionField="DBID" Type="Object" />
+                                    </SelectParameters>
+                                </asp:ObjectDataSource>
+                            </telerik:RadToolTip>
+                        </td>
+                        <% } %>
+                    </tr>
+                </asp:Panel>
+                <tr style="width: 100%">
+                    <td colspan="3" align="left" class="divider">
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <tr class="valgn">
+                                <td>
+                                    <asp:Panel ID="patientsTab" runat="server" Height="21px" Style="margin-left: 4px;" Width="100px" CssClass="tabUnSelected">
+                                        <asp:HyperLink CssClass="tabUnSelectedLink" ID="patientsLink"
+                                            runat="server" Text="Patients"></asp:HyperLink>
+                                    </asp:Panel>
+                                    <ajaxToolkit:RoundedCornersExtender ID="patientsCornerExtender" runat="server" TargetControlID="patientsTab"
+                                        Radius="3" Corners="Top" Enabled="true">
+                                    </ajaxToolkit:RoundedCornersExtender>
+                                </td>
+                                <td>
+                                    <asp:Panel ID="tasksTab" runat="server" Width="100px" Height="21px" CssClass="tabUnSelected">
+                                        <asp:HyperLink NavigateUrl="docrefillmenu.aspx" CssClass="tabUnSelectedLink" ID="tasksLink"
+                                            runat="server" Text="Tasks"></asp:HyperLink>
+                                    </asp:Panel>
+                                    <ajaxToolkit:RoundedCornersExtender ID="tasksCornerExtender" runat="server" TargetControlID="tasksTab"
+                                        Radius="3" Corners="Top">
+                                    </ajaxToolkit:RoundedCornersExtender>
+                                </td>
+                                <td>
+                                    <asp:Panel ID="libraryTab" runat="server" Width="100px"  Height="21px" CssClass="tabUnSelected">
+                                        <asp:HyperLink NavigateUrl="Library.aspx" CssClass="tabUnSelectedLink" ID="libraryLink"
+                                            runat="server" Text="Library"></asp:HyperLink>
+                                    </asp:Panel>
+                                    <ajaxToolkit:RoundedCornersExtender ID="libraryCornerExtender" runat="server" TargetControlID="libraryTab"
+                                        Radius="3" Corners="Top" Enabled="true">
+                                    </ajaxToolkit:RoundedCornersExtender>
+                                </td>
+                                <td>
+                                    <asp:Panel ID="reportsTab" runat="server" Width="100px" Height="21px"  CssClass="tabUnSelected">
+                                        <asp:HyperLink NavigateUrl="Reports.aspx" CssClass="tabUnSelectedLink" ID="reportsLink"
+                                            Text="Reports" runat="server"></asp:HyperLink>
+                                    </asp:Panel>
+                                    <ajaxToolkit:RoundedCornersExtender ID="reportsCornerExtender" runat="server" TargetControlID="reportsTab"
+                                        Radius="3" Corners="Top" Enabled="true">
+                                    </ajaxToolkit:RoundedCornersExtender>
+                                </td>
+                                <td>
+                                    <asp:Panel ID="settingsTab" runat="server" Width="100px" Height="21px"  CssClass="tabUnSelected">
+                                        <asp:HyperLink NavigateUrl="" CssClass="tabUnSelectedLink" ID="settingsLink"
+                                            runat="server" Text="Settings"></asp:HyperLink>
+                                    </asp:Panel>
+                                    <ajaxToolkit:RoundedCornersExtender ID="settingsCornerExtender" runat="server" TargetControlID="settingsTab"
+                                        Radius="3" Corners="Top" Enabled="true">
+                                    </ajaxToolkit:RoundedCornersExtender>
+                                </td>
+                                <td>
+                                    <asp:Panel ID="ManageAccountTab" runat="server" Width="100px"  Height="21px" CssClass="tabUnSelected">
+                                        <asp:HyperLink NavigateUrl="IntegrationSolutionsList.aspx" CssClass="tabUnSelectedLink"
+                                            ID="ManageAccountLink" runat="server" Text="Manage Account"></asp:HyperLink>
+                                    </asp:Panel>
+                                    <ajaxToolkit:RoundedCornersExtender ID="integrationCornerExtender" runat="server"
+                                        TargetControlID="ManageAccountTab" Radius="3" Corners="Top" Enabled="true">
+                                    </ajaxToolkit:RoundedCornersExtender>
+                                </td>
+                                <td>
+                                    <asp:Panel ID="myerxTab" runat="server" Width="100px"  Height="21px" CssClass="tabUnSelected">
+                                        <asp:HyperLink NavigateUrl="~/MyProfile.aspx" CssClass="tabUnSelectedLink" ID="myerxLink"
+                                            runat="server" Text="My eRx"></asp:HyperLink>
+                                    </asp:Panel>
+                                    <ajaxToolkit:RoundedCornersExtender ID="EPCSReportsCornersExtender" runat="server"
+                                        TargetControlID="myerxTab" Radius="3" Corners="Top" Enabled="true">
+                                    </ajaxToolkit:RoundedCornersExtender>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td align="right" valign="bottom" style="width: 25%; height: 5px; padding-right: 0px;
+                        padding-left: 0px; padding-bottom: 0px; padding-top: 0px;" class="divider">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <td align="right" width="100%" valign="top" colspan="3" style="height: 5px">
+                                    <table border="0" cellpadding="0" cellspacing="0" style="padding-right: 2px; padding-left: 0px;
+                                        padding-bottom: 0px; padding-top: 0px;" width="100%">
+                                        <tr>
+                                            <td align="right" width="100%" valign="middle">
+                                                <div id="medicationSearch" runat="server">                                                    
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="height: 0px; padding-right: 0px; padding-left: 0px; padding-bottom: 0px;
+                                                padding-top: 0px;">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+    <table id="Content" width="100%" cellspacing="0" cellpadding="0">
+        <tr>
+            <td style="width: 80%">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+            <!--  27/10/06 HA/Kumar.V  css class added for right side content color -->
+            <td style="width: 20%" class="content2backcolor hidden" id="cp2" runat="server">
+                <div id="rightPanel">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                </asp:ContentPlaceHolder>
+               
+                    </div>
+            </td>
+        </tr>
+    </table>
+    <table id="footer" width="100%" cellspacing="0" runat="server">
+        <tr>
+            <td colspan="2" class="h1title" align="right" style="padding-right: 3px">
+                <asp:Label ID="lblVersion" ForeColor="white" Font-Size="9px" runat="server"></asp:Label>
+            </td>
+        </tr>
+    </table>
+    <stc:SessionTimeoutControl ID="ctrlSessionTimeoutControl" runat="server">
+    </stc:SessionTimeoutControl>
+    </form>
+    <script type="text/javascript">
+       // var navTop = $('#rightPanel').offset().top;
+    </script>
+</body>
+</html>

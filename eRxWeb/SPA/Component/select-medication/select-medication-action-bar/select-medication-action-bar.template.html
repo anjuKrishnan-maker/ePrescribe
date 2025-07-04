@@ -1,0 +1,30 @@
+﻿<div class="h4title action-bar__layout">
+    <div colspan="7" class="action-bar-inner__layout">
+        <button type="button" id="btnBack" class="btnstyle" (click)="NavigateToSelectPatient()">Back</button>
+        <button type="button" *ngIf="hasDiagnosis && medFilter != 10" (click)="NavigateToSelectDiagnosis()" id="btnSelectDx"
+                title="Click to select a diagnosis." class="btnstyle">
+            Select Dx
+        </button>
+        <button type="button" *ngIf="hasDiagnosis" id="btnRemoveDx"
+                title="Click to clear diagnosis." (click)="actionEventStarted(); clearDiagnosis()" class="btnstyle">
+            No Diagnosis
+        </button>&nbsp;
+        <button type="button" class="btnstyle" [disabled]="!isMedSelectedFromGrid" title="Click to select a SIG." id="btnSig"
+                *ngIf="medFilter == 10" (click)="actionEventStarted(); SelectSIG()">
+            Select Sig
+        </button>
+        <button type="button" id="btnAddScriptPad" (click)="actionEventStarted(); AddToScriptPad()" [disabled]="!isMedSelectedFromGrid"
+                *ngIf="medFilter != 10" title="Add to script pad" class="btnStyleOneArrow action-bar-button__layout">
+            Add to Script Pad
+        </button>&nbsp;&nbsp;&nbsp;
+        <button type="button" id="btnAdd&Review" (click)="actionEventStarted(); AddAndReview()" [disabled]="!isMedSelectedFromGrid"
+                *ngIf="medFilter != 10" title="Add & Review" class="btnStyleTwoArrows action-bar-button__layout">
+            Add & Review
+        </button>&nbsp;&nbsp;&nbsp;
+        <button type="button" id="btnReviewScriptPad" (click)="actionEventStarted(); ReviewScriptPad()"
+                *ngIf="medFilter != 10 && hasScriptPadMed == true" class="btnstyle">
+            Review Script Pad
+        </button>
+    </div>
+</div>
+<erx-select-medication-formulary-override></erx-select-medication-formulary-override>

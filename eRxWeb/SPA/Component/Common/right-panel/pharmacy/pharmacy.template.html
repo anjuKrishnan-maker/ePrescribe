@@ -1,0 +1,55 @@
+﻿<table *ngIf="pharmaModel" cellspacing="0" border="0" id="detailsViewPharmInfo" style="border-style:None;width:100%;border-collapse:collapse;">
+    <tbody>
+        <tr>
+            <td>&nbsp;</td>
+            <td style="font-weight:bold;">{{pharmaModel.Name}}</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>{{pharmaModel.Address1}}</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <span id="detailsViewPharmInfo_lblCity">{{pharmaModel.City}}</span>,
+                <span id="detailsViewPharmInfo_lblState">{{pharmaModel.State}}</span>&nbsp;
+                <span id="detailsViewPharmInfo_lblZIP">{{pharmaModel.ZipCode}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                Tel:
+                <span id="detailsViewPharmInfo_lblPhone">{{pharmaModel.Phone}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                Fax:
+                <span id="detailsViewPharmInfo_lblFax">{{pharmaModel.Fax}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                Method:
+                <span id="detailsViewPharmInfo_lblTransMethod">{{pharmaModel.TransMethod}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                Cross-street:
+                <span id="detailsViewPharmInfo_lblCrossStreets">{{pharmaModel.CrossStreet}} </span>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                EPCS:
+                <span id="detailsViewPharmInfo_lblEpcs">{{pharmaModel.EPCS}}</span>
+            </td>
+        </tr>
+    </tbody>
+</table>

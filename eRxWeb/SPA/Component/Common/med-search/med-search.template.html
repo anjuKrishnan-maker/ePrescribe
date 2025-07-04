@@ -1,0 +1,9 @@
+﻿<!-- Medication CSE Search Box Begins -->
+<div id="medicationSearchBox" width="100%" style="padding-right: 8px" *ngIf='medSearchModel.IsAllowed' [style.visibility]="(visible) ? 'visible':'hidden' ">
+    <input type="hidden" name="cx" value="007346535748368836231:sbx1cfoc2pg" />
+    <input id="searchbox_007346535748368836231:sbx1cfoc2pg" name="q" type="text" [class.back_search_med]="searchText != undefined && searchText.length <= 0" class="search-med-input searchControlTextBox"
+       [(ngModel)] ="searchText"  (keydown)='CheckEnter($event)'  />
+    <input type="button" name="sa" value="Search" class="searchControlButton" 
+    style="width: 60px; height:22px; padding: 0px;" (click)="OpenSearch()" (keydown)='CheckEnter($event)' />
+
+</div>

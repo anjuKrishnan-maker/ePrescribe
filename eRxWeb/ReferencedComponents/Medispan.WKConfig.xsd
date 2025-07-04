@@ -1,0 +1,99 @@
+<?xml version="1.0" ?>
+<xs:schema id="Medispan" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+	attributeFormDefault="unqualified" elementFormDefault="qualified">
+	<xs:element name="Medispan" msdata:IsDataSet="true" msdata:EnforceConstraints="False">
+		<xs:complexType>
+			<xs:sequence minOccurs="1" maxOccurs="1">
+				<!-- Logging settings -->
+				<xs:element name="Logging" minOccurs="1" maxOccurs="1">
+					<xs:complexType>
+						<xs:all maxOccurs="1">
+							<xs:element name="SQLQuery" type="typeLoglevel" maxOccurs="1" />
+							<xs:element name="ConstructorCall" type="typeLoglevel" maxOccurs="1" />
+							<xs:element name="FunctionCall" type="typeLoglevel" maxOccurs="1" />
+							<xs:element name="CustomLogFileLocation" type="xs:string" maxOccurs="1" />
+						</xs:all>
+						<xs:attributeGroup ref="attribGrpEnabled" />
+					</xs:complexType>
+				</xs:element>
+				<!-- Content elements -->
+				<xs:element name="DataSource" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attributeGroup ref="attribGrpSource" />
+					</xs:complexType>
+				</xs:element>
+				<!-- DataSource Definition elements -->
+				<xs:element name="Database" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:group ref="grpDatabase" minOccurs="1" maxOccurs="1" />
+						<xs:attribute name="id" type="xs:string" use="required" />
+					</xs:complexType>
+				</xs:element>
+				<!-- XMLContent Definition elements -->
+				<xs:element name="XMLContent" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="id" type="xs:string" use="required" />
+						<xs:attribute name="dir" type="xs:string" use="required" />
+					</xs:complexType>
+				</xs:element>
+				<!-- Images Definition elements -->
+				<xs:element name="Images" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="id" type="xs:string" use="required" />
+						<xs:attribute name="dir" type="xs:string" use="required" />
+					</xs:complexType>
+				</xs:element>
+				<!-- Caching settings -->
+				<xs:element name="Cache" minOccurs="1" maxOccurs="1">
+					<xs:complexType>
+						<xs:all maxOccurs="1">
+							<xs:element name="LastUpdateInterval" type="xs:string" maxOccurs="1" />
+							<xs:element name="SecondsTillStale" type="xs:string" maxOccurs="1" />
+							<xs:element name="Enabled" type="xs:string" maxOccurs="1" />
+						</xs:all>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- Defines the Database connection settings -->
+	<xs:group name="grpDatabase">
+		<xs:sequence>
+			<xs:element name="ConnectionString" type="xs:string" maxOccurs="1" />
+			<xs:choice>
+				<xs:element name="ProviderType" maxOccurs="1">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="OleDB" />
+							<xs:enumeration value="SQLServer" />
+							<xs:enumeration value="Oracle" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="ProviderAssemblyFile" type="xs:string" maxOccurs="1" />
+			</xs:choice>
+		</xs:sequence>
+	</xs:group>
+	<!-- Defines a logging level and should be used for all additional logging levels -->
+	<xs:complexType name="typeLoglevel">
+		<xs:attributeGroup ref="attribGrpEnabled" />
+	</xs:complexType>
+	<!-- Defines an attribute group to with attibute named "enabled" and valid values of "true" and "false" -->
+	<xs:attributeGroup name="attribGrpEnabled">
+		<xs:attribute name="enabled" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="true" />
+					<xs:enumeration value="false" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<!-- Defines an attribute group for the Content Source tags-->
+	<xs:attributeGroup name="attribGrpSource">
+		<xs:attribute name="id" use="required" type="xs:string"/>
+		<xs:attribute name="Database" use="required" type="xs:string"/>
+		<xs:attribute name="XMLContent" use="optional" type="xs:string"/>
+		<xs:attribute name="Images" use="optional" type="xs:string"/>
+	</xs:attributeGroup>
+</xs:schema>

@@ -1,0 +1,76 @@
+.reg-header {
+    padding: 5px 0px;
+}
+
+.reg-footer {
+    clear: both;
+    min-height: 200px;
+    text-align: center;
+}
+
+.reg-content {
+    min-height: 100px;
+}
+
+.reg-divider {
+    height: 10px;
+    border: 0px;
+    margin-top: 0px;
+}
+
+.reg-container {
+    font-family: verdana, arial, sans-serif;
+    font-size: 13px;
+}
+
+.reg-contactus {
+    padding: 10px 0px 5px;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 0.2px;
+}
+
+.reg-supportlink-anchor {
+    font-size: 11px;
+}
+
+.reg-supportlink {
+    color: #ffffff;
+}
+
+.reg-app-version {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.loader {
+    display: block;
+    z-index: 999999999;
+    background-color: #fefefe;
+    background-image: url('../../../images/loading.gif');
+    -ms-opacity: 0.6;
+    opacity: 0.6;
+    -ms-background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    -ms-background-position: center;
+    position: fixed;
+    background-position: center;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+}
+
+.reg-error-message {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    padding: .9em;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin: 1em;
+}

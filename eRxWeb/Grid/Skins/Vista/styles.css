@@ -1,0 +1,338 @@
+.RadGrid_Vista
+{
+    border:1px solid #a7bac5;
+    background:#fcfcfc;
+    color:#333;
+}
+
+.RadGrid_Vista,
+.MasterTable_Vista,
+.GroupPanel_Vista,
+.GridFilterMenu_Vista table,
+.GridEditForm_Vista,
+.GridEditForm_Vista table,
+.GridEditForm_Vista table input,
+.GridEditForm_Vista table textarea
+{
+    font:11px/14px "segoe ui",arial,sans-serif;
+}
+
+.MasterTable_Vista
+{
+    border-collapse:separate !important;
+}
+
+.MasterTable_Vista th,
+.MasterTable_Vista td
+{
+	padding-left: 9px;
+	padding-right:0;
+}
+
+.MasterTable_Vista .GridHeader_Vista,
+.MasterTable_Vista .ResizeHeader_Vista
+{
+	background:url(img/headerBg.gif) repeat-x #f1f2f4;
+	border-bottom:1px solid #d5d5d5;
+	padding:4px 1px 4px 10px;
+	text-align:left;
+}
+
+/*hierarchy*/
+
+.MasterTable_Vista table
+{
+	border-left:2px solid #ededed;
+	border-bottom:1px solid #ededed;
+}
+
+.MasterTable_Vista td:first-child,
+.MasterTable_Vista table td{overflow:visible !important}
+* html .MasterTable_Vista table{border-left-width:1px}
+*+html .MasterTable_Vista table{border-left-width:1px}
+.MasterTable_Vista .GridCommandRow_Vista table,
+.MasterTable_Vista .GridEditForm_Vista table,
+.MasterTable_Vista .GridRow_Vista table,
+.MasterTable_Vista .GridAltRow_Vista table
+{border:0;}
+
+.GridHeader_Vista,
+.GridHeader_Vista a
+{
+    color:#333;
+    font-weight:normal;
+    text-decoration:none;
+}
+
+.GridRow_Vista td,
+.GridAltRow_Vista td,
+.GridEditRow_Vista td
+{
+    padding-top:3px;
+    padding-bottom:3px;
+}
+
+.GridRow_Vista td,
+.GridAltRow_Vista td
+{
+	border:1px solid;
+	border-color:#fcfcfc #fff #fcfcfc #ededed;
+}
+
+.GridRow_Vista a,
+.GridAltRow_Vista a,
+.SelectedRow_Vista a,
+.ActiveRow_Vista a,
+.GridEditRow_Vista a,
+.GridEditForm_Vista a
+{
+	color:#333;
+}
+
+.GridRow_Vista .ResizeItem_Vista,
+.GridAltRow_Vista .ResizeItem_Vista
+{
+    border-left:0;
+    padding-left:10px;
+}
+
+.SelectedRow_Vista
+{
+    background:url(img/selectedBg.gif) 0 100% repeat-x #f6fbfd;
+}
+
+.SelectedRow_Vista td
+{
+	border-left:0;
+	border-right:0;
+	padding-left:10px;
+	padding-right:1px;
+	border-top:1px solid #99defd;
+	border-bottom:1px solid #99defd;
+}
+
+.ActiveRow_Vista
+{
+    background:url(img/activeBg.gif) 0 100% repeat-x #f6fbfd;
+}
+
+.ActiveRow_Vista td,
+.GridEditRow_Vista td
+{
+	border-left:0;
+	border-right:0;
+	padding-left:10px;
+	padding-right:1px;
+	border-top:1px solid #d8f0fa;
+	border-bottom:1px solid #d8f0fa;
+}
+
+.GridEditRow_Vista
+{
+    background:url(img/activeBg.gif) repeat-x #e7f5fd;
+}
+
+.GridFooter_Vista,
+.RadGrid_Vista .GridFooterDiv tr
+{
+    color:#999;
+}
+
+.GridFooter_Vista td
+{
+    border-top:1px solid #dbe4e9;
+    padding-top:3px;
+    padding-bottom:3px;
+    padding-left:10px;
+}
+
+.GridPager_Vista
+{
+    background:url(img/pagerBg.gif) repeat-x #f1fbfe;
+}
+
+.GridPager_Vista td
+{
+    border-top:1px solid #9db6c5;
+    padding-top:3px;
+    padding-bottom:3px;
+}
+
+.GridPager_Vista a
+{
+    color:#333;
+}
+
+.GroupPanel_Vista,
+.GridCommandRow_Vista td
+{
+    background:url(img/groupBg.gif) repeat-x #4b92aa;
+    border-top:1px solid #032941;
+    color:#fff;
+    font-weight:normal;
+    height:30px;
+    padding-top:0;
+    padding-bottom:0px;
+}
+
+.GroupPanel_Vista
+{
+	font-weight:bold;
+}
+
+.GridCommandRow_Vista td td
+{
+	background:transparent none;
+	border-top:0;
+	height:27px;
+}
+
+.GridCommandRow_Vista div
+{
+	padding-top:0 !important;
+	padding-bottom:0 !important;
+}
+
+.GridCommandRow_Vista a
+{
+	color:#fff;
+	text-decoration:none;
+}
+
+.GridCommandRow_Vista a img
+{
+	vertical-align:bottom;
+}
+
+.GroupHeader_Vista
+{
+    font-size:1.27em;
+    font-weight:bold;
+    background:url(img/groupHeaderBg.gif) left center repeat-x #fcfcfc;
+	color:#039;
+}
+
+.GroupHeader_Vista td
+{
+    padding:6px 9px 6px 0;
+}
+
+.GroupHeader_Vista td p
+{
+    display:inline;
+    padding:0 10px;
+    background:#fcfcfc;
+}
+
+.GroupHeader_Vista td div div
+{
+	top:-0.5em;
+	padding:0 15px;
+	background:#fcfcfc;
+}
+
+.GroupHeader_Vista td div div div
+{
+	top:0;
+	padding:0;
+	border:0;
+}
+
+.GridFilterRow_Vista td
+{
+    padding-top:4px;
+    padding-bottom:4px;
+    border-left:1px solid #ededed;
+    border-right:1px solid #fff;
+}
+
+.GridFilterRow_Vista input
+{
+	border:1px solid;
+	border-color:#abadb3 #dbdfe6 #e3e9ef #e2e3ea;
+    margin:0 4px 0 0;
+}
+
+.GridFilterMenu_Vista
+{
+    cursor:default;
+    border:1px solid #979797 !important;
+}
+
+.GridFilterMenu_Vista td
+{
+    background:url(img/filterMenuSeparator.gif) repeat-y 22px 0 #f0f0f0;
+}
+
+.GridFilterMenu_Vista table
+{
+    border-collapse:separate;
+}
+
+.GridFilterMenu_Vista td td
+{
+    background:none transparent;
+}
+
+.GridFilterMenu_Vista .GridFilterMenuSelectColumn_Vista,
+.GridFilterMenu_Vista .GridFilterMenuTextColumn_Vista
+{
+	padding:4px 4px;
+}
+
+.GridFilterMenu_Vista .GridFilterMenuSelectColumn_Vista
+{
+    text-align:center;
+    /*border-right:1px solid #e2e3e3;*/
+}
+
+.GridFilterMenu_Vista .GridFilterMenuTextColumn_Vista
+{
+    color:#333;
+    /*border-left:1px solid #fff;*/
+}
+
+.GridFilterMenu_Vista .GridFilterMenuHover_Vista
+{
+    background:url(img/filterMenuHoverBg.gif) repeat-x #e3eff4;
+}
+
+.TopReorderIndicator_Vista
+{
+	background: url(img/MoveDown.gif) no-repeat;
+	margin-left:-5px;
+}
+
+.BottomReorderIndicator_Vista
+{
+	background: url(img/MoveUp.gif) no-repeat;
+	margin-left:-5px;
+}
+
+/*AJAX Loading*/
+
+.GridLoadingTemplate_Vista
+{
+	background:#fff !important;
+	font:normal 24px/54px arial,sans-serif;
+	color:#039;
+}
+
+/* rtl support */
+
+.RadGridRTL_Vista .GridHeader_Vista,
+.RadGridRTL_Vista td
+{
+    text-align:right;
+}
+
+.RadGridRTL_Vista .GridPager_Vista td
+{
+    padding-right:11px;
+    padding-left:1px;
+}
+
+.RadGridRTL_Vista .GridPager_Vista span
+{
+    float:none !important;
+}

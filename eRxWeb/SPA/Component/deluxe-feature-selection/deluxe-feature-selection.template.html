@@ -1,0 +1,114 @@
+﻿
+<div class="h1title"></div>
+<div>
+    <erx-message [Messages]="MessageStripArray"></erx-message>
+</div>
+<div *ngIf="isBackButtonVisible" class="h2title action-bar__layout">
+    <input type="submit" name="btnBack" value="Back" id="btnBack" (click)="onBackBtnClicked()" class="btnstyle" tabindex="0">
+</div>
+
+<div class="content-container">
+    <div class="feature-container">
+        <div class="feature-header-title">
+            Enroll in Veradigm ePrescribe&trade;
+        </div>
+
+        <div class="feature-row feature-row-font-style">
+            Select the additional Premium features and cost saving options.
+        </div>
+
+        <div class="feature-row">
+            <span id="divFeatureComparisonLink" *ngIf="isFeatureComparisionLinkVisible" (click)="FeatureComparisionClicked()" class="feature-comparision-link">
+                View Feature Comparison
+            </span>
+            <erx-feature-comparison #FeatureComparisionComponent></erx-feature-comparison>
+        </div>
+
+        <div class="feature-row">
+            <div class="feature-subscription-option-row" *ngIf="isCompulsaryBasicRbtnVisible">
+                <input type="radio" id="basic" [(ngModel)]="currentRadiobtnSelected" name="CompulsoryBasic" value="CompulsoryBasic" (change)="onItemChange()" />
+                <span class="feature-subscription-option">Veradigm ePrescribe&trade; Basic.</span>
+            </div>
+
+            <div class="feature-subscription-option-row" *ngIf="isDeluxeRbtnVisible">
+                <input type="radio" id="DeluxeEpa" [(ngModel)]="currentRadiobtnSelected" name="DeluxeEpa" value="DeluxeEpa" (change)="onItemChange()" />
+                <span class="feature-subscription-option">Veradigm ePrescribe&trade; Deluxe.</span>
+            </div>
+
+            <div class="feature-subscription-option-row" *ngIf="isDeluxeLogRxRbtnVisible">
+                <input type="radio" id="DeluxeEpaLogRx" [(ngModel)]="currentRadiobtnSelected" name="DeluxeEpaLogRx" value="DeluxeEpaLogRx" (change)="onItemChange()" />
+                <span class="feature-subscription-option">Veradigm ePrescribe&trade; Deluxe with Sponsored Messages.</span>
+            </div>
+
+            <div class="feature-subscription-option-row" *ngIf="isDeluxeEPCSRbtnVisible">
+                <input type="radio" id="DeluxeEPCSEpa2017" [(ngModel)]="currentRadiobtnSelected" name="DeluxeEPCSEpa2017" value="DeluxeEPCSEpa2017" (change)="onItemChange()" />
+                <span class="feature-subscription-option">Veradigm ePrescribe&trade; Deluxe with EPCS.</span>
+            </div>
+            <div class="feature-subscription-option-row" *ngIf="isDeluxeEPCSEpaLogRxRbtnVisible">
+                <input type="radio" id="DeluxeEPCSEpaLogRx2017" [(ngModel)]="currentRadiobtnSelected" name="DeluxeEPCSEpaLogRx2017" value="DeluxeEPCSEpaLogRx2017" (change)="onItemChange()" />
+                <span class="feature-subscription-option">Veradigm ePrescribe&trade; Deluxe with EPCS with Sponsored Messages.</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="divSupscriptionCard" *ngIf="isSubscriptionVisible" class="subscription-container">
+        <div class="subscription-card">
+            <div class="subscription-card-header">
+                <div>
+                    <img *ngFor="let noOfBadge of noOfBadges" class="subscription-badge" src="/images/registration/starPreRegdLogo.png" />
+                </div>
+                <div class="subscription-header-title">
+                    Veradigm ePrescribe&trade; {{ headerTitle }}
+                </div>
+            </div>
+            <div class="subscription-card-body">
+                <div class="subscription-card-group">
+                    <div id="feature1" class="subscription-card-row" *ngIf="isFeature1Visible">
+                        Prescribe Medications Electronically
+                    </div>
+                    <div id="feature7" class="subscription-card-row" *ngIf="isFeature7Visible">
+                        Electronic Prior Authorization (ePA)
+                    </div>
+                    <div id="feature6" class="subscription-card-row" *ngIf="isFeature6Visible">
+                        Prescription Drug Monitoring Program (PDMP)
+                    </div>
+                    <div id="feature5" class="subscription-card-row" *ngIf="isFeature5Visible">
+                        Electronic Prescription Controlled Substances (EPCS)
+                    </div>
+                    <div id="feature4" class="subscription-card-row" *ngIf="isFeature4Visible">
+                        No sponsored messages
+                    </div>
+                    <div id="feature3" class="subscription-card-row" *ngIf="isFeature3Visible">
+                        Access Live Customer Support
+                    </div>
+                    <div id="feature2" class="subscription-card-row" *ngIf="isFeature2Visible">
+                        Easy to Use
+                    </div>
+                </div>
+                <div class="subscription-card-row">
+                    <span id="subscriptionPrice" class="subscription-price">Only ${{ Price }} a month per prescriber </span>
+                </div>
+                <div class="subscription-card-row" id="oneTimeFee" *ngIf="isOneTimeFeeVisible">
+                    Note: There is a ${{ oneTimePrice }} per prescriber one-time setup fee for EPCS
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer-container">
+    <input id="btnSubmit" type="submit" class="btnstyle" value="Continue" (click)="onContinueClicked()" />
+</div>
+
+<div id="Modal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <map id="teaserAdButtonsMap" name="TeaserAdMap">
+                    <area shape="rect" (click)="ClosePopUp()" coords="36,228,199,263" alt="Register and Pay">
+                </map>
+                <img src="{{TeaserAddSrc}}" id="divTeaserAdMap" style="width: auto;" alt="ePrescribe Advertisement" usemap="#TeaserAdMap">
+            </div>
+        </div>
+    </div>
+</div>
+

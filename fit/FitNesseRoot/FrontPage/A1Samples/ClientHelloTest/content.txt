@@ -1,0 +1,6 @@
+!| import |
+| Allscripts.ePrescribe.Client.AcceptanceTest|
+
+!|Client Hello Test|
+|Caller|Say Hello?|
+|Me|Client Hello, Me|

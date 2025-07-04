@@ -1,0 +1,156 @@
+﻿.eRxHealthSheet_Panel
+{
+	background-color:#424242; 
+}
+img#loginLogo{background:url(../images/Wisconsin/Wisconsin.jpg); background-repeat:no-repeat; background-position:center;}
+img#mainLogo{background:url(../images/Wisconsin/Wisconsin.jpg); background-repeat:no-repeat; background-position:center;}
+
+.appStripe {
+    border-top: 5px #424242 solid;
+}
+.accordionHeader{background-color:#424242}
+.accordionHeaderText{background-color:#424242}
+.rightBoxHeader {
+	background-color:#424242;}
+.rightBoxTable 
+{
+	border: solid 2px #424242;
+}
+img#helpIcon:hover{background:url(../images/Wisconsin/headerhelpWisconsin.gif); background-repeat:no-repeat; background-position:center;}
+img#helpIconLogin:hover{background:url(../images/Wisconsin/headerhelpWisconsin.gif); background-repeat:no-repeat; background-position:center;}
+img#profileIcon:hover{background:url(../images/Wisconsin/headerprofileWisconsin.gif); background-repeat:no-repeat; background-position:center;}
+img#logoutIcon:hover{background:url(../images/Wisconsin/headerlogoutWisconsin.gif); background-repeat:no-repeat; background-position:center;}
+img#messageQueueIcon:hover{background:url(../images/Wisconsin/headerMsgQueueWisconsin.gif); background-repeat:no-repeat; background-position:center;}
+img#iLearnIcon {height: 24px; width: 24px;border: none; background-image:url(../images/Allscripts/gradCap.png); background-repeat:no-repeat; background-position:center;}
+img#iLearnIcon:hover{height: 24px; width: 24px; background-image:url(../images/Wisconsin/Wisconsin_ILearn.png); background-repeat:no-repeat; background-position:center;}
+
+.editRollover:hover span
+{
+    color: #424242;
+	cursor:pointer;
+}
+.rpText
+{
+    color: black;
+}
+.headerIcon:hover span
+{
+    color: #e0393d
+}
+.rgSelectedRow {
+    background: #edf6ff 0 -5900px repeat-x url('../telerik/Skins/Allscripts/Grid/Img/sprite.gif');
+}
+
+
+.primaryForeColor {
+    color: #424242
+}
+
+
+
+.rightPanelMed {
+    border-left: 3px solid #424242 !important;
+    border-right: 3px solid #424242 !important;
+}
+
+.erxSelectedRow {
+    background-color: #edf6ff !important;
+}
+
+
+.loginbanner
+{
+	background-color:#424242;
+}
+
+.loginMessageTable
+{
+	border-bottom: solid 1px #424242;
+	border-left: solid 1px #424242;
+	border-right: solid 1px #424242;
+}
+
+.loginMessageRow
+{
+	border-top: solid 3px #424242;
+	border-bottom: solid 1px #424242;
+}
+
+
+
+.SelectedRow
+{
+	background-color: #CBCBCB;
+}
+.DURHeading
+{
+	color: #AE0910;
+}
+
+a:hover {
+	color: #424242;
+}
+.h1title {
+	background-color: #424242;
+}
+.Titbarcolor1 
+{
+	background-color:#424242;
+}
+.tabSelected
+{	
+	background-color:#424242;
+}
+
+a.tabSelectedLink
+{		
+	background-color:#424242;
+}
+
+.divider
+{
+	border-bottom:solid 1px #424242;
+}
+.redborder     { height:1px; background-color:#424242; }
+.subheadred		{ font-size:12px; font-weight:bold; color: #424242; }
+
+.accordionHeaderScriptPad
+{
+    color: #424242;
+	background-color: #424242;
+}
+.accordionHeaderTextScriptPad
+{
+	background-color: #424242;
+}
+td.PopUpHeader
+{ 
+    background-color: #424242;
+}
+.deluxeComparisons
+{
+	border:solid 1px #424242;
+}
+.deluxeComparisons th
+{
+	 color:#424242;
+	 border:solid 1px #424242;
+}
+.deluxeComparisons td
+{
+	 border:solid 1px #424242;
+}
+
+
+/*bootstrap override*/
+.nav-tabs>li>a {
+   color:white;
+}
+
+.nav-tabs>li>a:hover {	
+  border:none;
+}
+.nav-tabs>li.active>a,.nav-tabs>li.active>a:focus,.nav-tabs>li.active>a:hover {
+     background-color:#424242;
+     border-color:#424242;
+}

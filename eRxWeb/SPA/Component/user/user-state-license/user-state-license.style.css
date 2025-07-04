@@ -1,0 +1,58 @@
+﻿.user-license-add-lic-btn, .user-license-add-lic-btn-disabled {
+    border: 1px solid grey;
+    padding: 5px;
+    margin: 10px;
+    display: inline-block;
+    margin-left: 0px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.user-license-add-lic-btn-disabled{
+    cursor: not-allowed;
+}
+
+.user-state-license-messages {
+}
+
+.user-state-license-table {
+    display: table;
+    min-width: 570px;
+    max-width: 1000px;
+}
+
+.user-state-license-table-row {
+    display: table-row;
+    padding: 5px;
+    width: 100%;
+}
+
+.add-user-state-license-table-row {
+    display: table-caption;
+    align-content: center;
+    width: 100%;
+}
+
+.user-state-license-table-header {
+    display: table-header-group;
+    padding: 5px;
+    width: 100%;
+    background-color: #f2f2f2;
+}
+
+.user-state-license-table-header-cell {
+    display: table-cell;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.user-state-license-table-cell {
+    display: table-cell;
+    padding: 5px;
+}
+
+.user-state-license-table-row:nth-child(even) {
+    background-color: #f2f2f2;
+}

@@ -1,0 +1,98 @@
+.deffont {
+FONT-SIZE: 10pt;
+COLOR: #454665;
+FONT-STYLE: normal;
+FONT-FAMILY: arial, helvetica, san-serif, serif, Helvetica;
+TEXT-DECORATION: none
+}
+
+.defTable {
+BACKGROUND-COLOR: #C8C8C8;
+}
+
+.tableBorder {
+background-color: #ABD498;
+}
+
+P {
+FONT: 12px arial, helvetica, san-serif, serif, Helvetica;
+COLOR: #454665;
+}
+
+.p3 {
+FONT: 12px arial, helvetica, san-serif, serif, Helvetica;
+COLOR: #454665;
+}
+
+.p4 {
+FONT: 12px arial, helvetica, san-serif, serif, Helvetica;
+COLOR: #454665;
+}
+
+.p5 {
+FONT: 12px arial, helvetica, san-serif, serif, Helvetica;
+COLOR: #454665;
+}
+
+.level1 {
+FONT: 12px arial, helvetica, san-serif, serif, Helvetica;
+COLOR: #454665;
+}
+
+.level2 {
+FONT: 12px arial, helvetica, san-serif, serif, Helvetica;
+COLOR: #454665;
+}
+
+.level3 {
+FONT: 12px arial, helvetica, san-serif, serif, Helvetica;
+COLOR: #454665;
+}
+
+.level4 {
+FONT: 12px arial, helvetica, san-serif, serif, Helvetica;
+COLOR: #454665;
+}
+
+.level5 {
+FONT: 12px arial, helvetica, san-serif, serif, Helvetica;
+COLOR: #454665;
+}
+
+.tableBorder_Blue {
+background-color: #98C1D4;
+}
+
+
+.tablehead_Blue {
+FONT-WEIGHT: bold;
+FONT-SIZE: 12px;
+COLOR: #196C92;
+BACKGROUND-COLOR: #DDEBF1;
+FONT-STYLE: normal;
+FONT-FAMILY: arial, helvetica, san-serif, serif, Helvetica;
+TEXT-DECORATION: none
+}
+
+.tableBorder_Blue {
+background-color: #98C1D4;
+}
+
+.smalllinks_Blue {
+FONT-SIZE: 12px;
+COLOR: #196C92;
+LINE-HEIGHT: 1.4;
+FONT-STYLE: normal;
+FONT-FAMILY: arial, helvetica, san-serif, serif, Helvetica;
+TEXT-DECORATION: underline
+}
+
+.warninghead {
+FONT-WEIGHT: bold;
+FONT-SIZE: 14px;
+COLOR: WHITE;
+BACKGROUND-COLOR: #FF0000;
+FONT-STYLE: normal;
+FONT-FAMILY: arial, helvetica, san-serif, serif, Helvetica;
+TEXT-DECORATION: none
+}

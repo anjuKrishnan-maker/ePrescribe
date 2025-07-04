@@ -1,0 +1,9 @@
+<div *ngIf="links && links.length > 0" class="sponsoredLink">
+    <div *ngFor="let link of links">
+        <div *ngFor ="let data of link.MessageLines">
+            <a [href]="data.ClickLink" *ngIf="data.URL !=  undefined && data.URL.trim().length > 0" [target]="data.ClickLink" [class.small-text]="data.SeqNumber > 0">{{data.DescriptionText}}</a>
+            <span  class="lable-text"   *ngIf="data.URL ==  undefined || (data.URL !=  undefined && data.URL.trim().length <= 0)">{{data.DescriptionText}}</span>
+            <br />
+        </div>
+    </div>
+</div>

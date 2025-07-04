@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) Microsoft Corporation.  All rights reserved.
+    
+    The use and distribution terms for this software are covered by the
+    Common Public License 1.0 (http://opensource.org/licenses/cpl.php)
+    which can be found in the file CPL.TXT at the root of this distribution.
+    By using this software in any fashion, you are agreeing to be bound by
+    the terms of this license.
+    
+    You must not remove this notice, or any other, from this software.
+-->
+<!--
+First-time install dialog sequence:      Maintenance dialog sequence:
+ - WixUI_WelcomeDlg                     - WixUI_MaintenanceWelcomeDlg
+ - WixUI_LicenseAgreementDlg            - WixUI_MaintenanceTypeDlg
+ - WixUI_SetupTypeDlg                     - WixUI_CustomizeDlg
+   - WixUI_VerifyReadyDlg                 - WixUI_VerifyReadyDlg
+   - WixUI_CustomizeDlg
+     - WixUI_DiskCostDlg
+     - WixUI_BrowseDlg
+-->
+<!--NOTE: DO NOT CHANGE ANYTHING IN THIS FILE UNLESS INTENDED-->
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+
+    <!-- SourceFile path is relative to MSI_UI.wxs-->
+    <Binary Id="Wix.CAs.CA.dll" SourceFile="..\..\Shared\Allscripts.ePrescribe.Shared\Allscripts.ePrescribe.Wix.CustomActions\bin\$(var.Configuration)\Wix.Actions.CA.dll"/>
+    <CustomAction Id="ReplaceWebConfigAction"
+                  Return="check"
+                  Execute="immediate"
+                  BinaryKey="Wix.CAs.CA.dll"
+                  DllEntry="ReplaceWebConfig"/>
+
+    
+    <InstallExecuteSequence>
+      <Custom Action="ReplaceWebConfigAction"  After="InstallFinalize" Overridable="yes">NOT (REMOVE="ALL")</Custom>
+    </InstallExecuteSequence>    
+
+    
+    <UI Id="WEB_UI">
+      <TextStyle Id="WixUI_Font_Normal" FaceName="Tahoma" Size="8" />
+      <TextStyle Id="WixUI_Font_Bigger" FaceName="Tahoma" Size="12" />
+      <TextStyle Id="WixUI_Font_Title" FaceName="Tahoma" Size="9" Bold="yes" />
+
+      <Property Id="DefaultUIFont" Value="WixUI_Font_Normal" />
+      <Property Id="WixUI_Mode" Value="InstallDir" />
+      <DialogRef Id="BrowseDlg" />
+      <DialogRef Id="DiskCostDlg" />
+      <DialogRef Id="ErrorDlg" />
+      <DialogRef Id="FatalError" />
+      <DialogRef Id="FilesInUse" />
+      <DialogRef Id="MsiRMFilesInUse" />
+      <DialogRef Id="PrepareDlg" />
+      <DialogRef Id="ProgressDlg" />
+      <DialogRef Id="ResumeDlg" />
+      <DialogRef Id="UserExit" />
+      <DialogRef Id="InvalidWebAliasAliasDlg"/>
+      
+      <Publish Dialog="BrowseDlg" Control="OK" Event="DoAction" Value="WixUIValidatePath" Order="3">1</Publish>
+      <Publish Dialog="BrowseDlg" Control="OK" Event="SpawnDialog" Value="InvalidDirDlg" Order="4"><![CDATA[WIXUI_INSTALLDIR_VALID<>"1"]]></Publish>
+      
+      <Publish Dialog="ExitDialog" Control="Finish" Event="EndDialog" Value="Return" Order="999">1</Publish>
+      
+      <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="Environments1">NOT Installed</Publish>
+      <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="VerifyReadyDlg">Installed AND PATCH</Publish>
+
+      <Publish Dialog="Environments1" Control="Back" Event="NewDialog" Value="WelcomeDlg"></Publish>
+      <Publish Dialog="Environments1" Control="Next" Event="NewDialog" Value="Environments2"></Publish>
+      <Publish Dialog="Environments1" Control="Cancel" Event="SpawnDialog" Value="CancelDlg">1</Publish>
+
+      <Publish Dialog="Environments2" Control="Back" Event="NewDialog" Value="Environments1"></Publish>
+      <Publish Dialog="Environments2" Control="Next" Event="NewDialog" Value="VerifyReadyDlg"></Publish>
+      <Publish Dialog="Environments2" Control="Cancel" Event="SpawnDialog" Value="CancelDlg">1</Publish>
+
+      
+      <Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="Environments1" Order="1">NOT Installed</Publish>
+      <Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="MaintenanceTypeDlg" Order="2">Installed AND NOT PATCH</Publish>
+      <Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="WelcomeDlg" Order="2">Installed AND PATCH</Publish>
+      
+      <Publish Dialog="MaintenanceWelcomeDlg" Control="Next" Event="NewDialog" Value="MaintenanceTypeDlg">1</Publish>
+      
+      <Publish Dialog="MaintenanceTypeDlg" Control="RepairButton" Event="NewDialog" Value="VerifyReadyDlg">1</Publish>
+      <Publish Dialog="MaintenanceTypeDlg" Control="RemoveButton" Event="NewDialog" Value="VerifyReadyDlg">1</Publish>
+      <Publish Dialog="MaintenanceTypeDlg" Control="Back" Event="NewDialog" Value="MaintenanceWelcomeDlg">1</Publish>
+      
+      <Property Id="ARPNOMODIFY" Value="1" />
+      <Dialog Id="Environments1" Width="370" Height="270" Title="IIS Settings - [ProductName]" NoMinimize="yes">
+        <Control Id="Back" Type="PushButton" X="169" Y="243" Width="56" Height="17" Text="&amp;Back"/>
+        <Control Id="Next" Type="PushButton" X="236" Y="243" Width="56" Height="17" Default="yes" Text="&amp;Next"/>
+        <Control Id="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Cancel="yes" Text="&amp;Cancel"/>
+        <Control Id="BannerBitmap" Type="Bitmap" X="0" Y="0" Width="370" Height="44" TabSkip="no" Text="WixUI_Bmp_Banner" />
+        <Control Id="Description" Type="Text" X="19" Y="56" Width="329" Height="28" Transparent="yes" NoPrefix="yes">
+          <Text>Please select Target Environment.  Production, INT and QA are listed below.  To choose Staging or DR choose None and click Next</Text>
+        </Control>
+        <Control Id="BottomLine" Type="Line" X="0" Y="234" Width="370" Height="0" />
+        <Control Id="Title" Type="Text" X="15" Y="6" Width="200" Height="15" Transparent="yes" NoPrefix="yes">
+          <Text>Select Target Environment</Text>
+        </Control>
+        <Control Type="RadioButtonGroup" Property="ENVIRONMENT1" Id="BTNENVIRONMENT1" Width="90" Height="93" X="30" Y="101" Text="Environments" Default="yes">
+          <RadioButtonGroup Property="ENVIRONMENT1">
+            <RadioButton Text="Production" Height="17" Value="1" Width="90" X="0" Y="0" />
+            <RadioButton Text="INT" Height="17" Value="2" Width="50" X="0" Y="25" />
+            <RadioButton Text="QA" Height="17" Value="3" Width="50" X="0" Y="51" />
+            <RadioButton Text="None" Height="17" Value="4" Width="50" X="0" Y="76" />
+          </RadioButtonGroup>
+        </Control>
+        <Control Id="BannerLine" Type="Line" X="0" Y="44" Width="370" Height="0" />
+      </Dialog>
+      <Dialog Id="Environments2" Width="370" Height="270" Title="IIS Settings - [ProductName]" NoMinimize="yes">
+        <Control Id="Back" Type="PushButton" X="169" Y="243" Width="56" Height="17" Text="&amp;Back"/>
+        <Control Id="Next" Type="PushButton" X="236" Y="243" Width="56" Height="17" Default="yes" Text="&amp;Next"/>
+        <Control Id="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Cancel="yes" Text="&amp;Cancel"/>
+        <Control Id="BannerBitmap" Type="Bitmap" X="0" Y="0" Width="370" Height="44" TabSkip="no" Text="WixUI_Bmp_Banner" />
+        <Control Id="Description" Type="Text" X="19" Y="56" Width="329" Height="28" Transparent="yes" NoPrefix="yes">
+          <Text>If you have selected the target environment on the previous page, select None and click Next.</Text>
+        </Control>
+        <Control Id="BottomLine" Type="Line" X="0" Y="234" Width="370" Height="0" />
+        <Control Id="Title" Type="Text" X="15" Y="6" Width="200" Height="15" Transparent="yes" NoPrefix="yes">
+          <Text>Select Target Environment continued</Text>
+        </Control>
+        <Control Type="RadioButtonGroup" Property="ENVIRONMENT2" Id="BTNENVIRONMENT2" Width="90" Height="102" X="30" Y="101" Text="Environments2" Default="yes">
+          <RadioButtonGroup Property="ENVIRONMENT2">
+            <RadioButton Text="Staging" Height="17" Value="1" Width="90" X="0" Y="0" />
+            <RadioButton Text="DR" Height="17" Value="2" Width="50" X="0" Y="25" />
+            <RadioButton Text="INT2" Height="17" Value="3" Width="50" X="0" Y="51" />            
+            <RadioButton Text="None" Height="17" Value="4" Width="50" X="0" Y="76" />
+          </RadioButtonGroup>
+        </Control>
+        <Control Id="BannerLine" Type="Line" X="0" Y="44" Width="370" Height="0" />
+      </Dialog>
+
+      <Dialog Id="InvalidWebAliasAliasDlg" Width="260" Height="85" Title="Invalid Directory">
+        <Control Id="OK" Type="PushButton" X="102" Y="57" Width="56" Height="17" Default="yes" Cancel="yes" Text="Ok">
+          <Publish Event="EndDialog" Value="Return">1</Publish>
+        </Control>
+        <Control Id="Text" Type="Text" X="48" Y="22" Width="194" Height="30" Text="The web application name cannot be a blank value." />
+        <Control Id="Icon" Type="Icon" X="15" Y="15" Width="24" Height="24" ToolTip="!(loc.InvalidDirDlgIconTooltip)" FixedSize="yes" IconSize="32" Text="!(loc.InvalidDirDlgIcon)" />
+      </Dialog>
+    </UI>
+
+    <UIRef Id="WixUI_Common" />
+  </Fragment>
+</Wix>

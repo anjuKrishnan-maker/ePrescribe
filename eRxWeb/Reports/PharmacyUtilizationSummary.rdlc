@@ -1,0 +1,817 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="cheetah_CheetahDEV_dbo">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=172.21.49.60;Initial Catalog=CheetahDEV;User ID=sa;Password=flipper</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>cd7e6938-ce5c-41df-acca-0e657269a5a3</rd:DataSourceID>
+    </DataSource>
+    <DataSource Name="CheetahDEVConnectionString">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:DataSourceID>1a686513-8c5f-4333-b9f1-4066bf5a8a30</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="PharmacyUtilizationSummary_CHPharmacyUtilizationReport">
+      <Query>
+        <DataSourceName>CheetahDEVConnectionString</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>dbo.PharmacyUtilizationReport</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="PharmacyName">
+          <DataField>PharmacyName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TotalPrescription">
+          <DataField>TotalPrescription</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Created">
+          <DataField>Created</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>PharmacyUtilizationSummary</rd:DataSetName>
+        <rd:TableName>CHPharmacyUtilizationReport</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>CHPharmacyUtilizationReportTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Rectangle Name="rectangle5">
+            <ReportItems>
+              <Tablix Name="list1">
+                <TablixBody>
+                  <TablixColumns>
+                    <TablixColumn>
+                      <Width>5.35417in</Width>
+                    </TablixColumn>
+                  </TablixColumns>
+                  <TablixRows>
+                    <TablixRow>
+                      <Height>1.5in</Height>
+                      <TablixCells>
+                        <TablixCell>
+                          <CellContents>
+                            <Rectangle Name="list1_Contents">
+                              <ReportItems>
+                                <Rectangle Name="rectangle9">
+                                  <ReportItems>
+                                    <Textbox Name="Created">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=Fields!Created.Value</Value>
+                                              <Style />
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Created</rd:DefaultName>
+                                      <Top>0.08333in</Top>
+                                      <Left>0.67708in</Left>
+                                      <Height>0.25in</Height>
+                                      <Width>1.54167in</Width>
+                                      <Style>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="textbox5">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>Date:</Value>
+                                              <Style>
+                                                <FontFamily>Times New Roman</FontFamily>
+                                                <FontSize>11pt</FontSize>
+                                                <FontWeight>Bold</FontWeight>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>textbox5</rd:DefaultName>
+                                      <Top>0.07292in</Top>
+                                      <Left>0.08333in</Left>
+                                      <Height>0.25in</Height>
+                                      <Width>0.54167in</Width>
+                                      <ZIndex>1</ZIndex>
+                                      <Style>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                  </ReportItems>
+                                  <DataElementOutput>ContentsOnly</DataElementOutput>
+                                  <Top>0.125in</Top>
+                                  <Left>0.125in</Left>
+                                  <Height>0.375in</Height>
+                                  <Width>2.875in</Width>
+                                  <Style />
+                                </Rectangle>
+                                <Tablix Name="list2">
+                                  <TablixBody>
+                                    <TablixColumns>
+                                      <TablixColumn>
+                                        <Width>5.19792in</Width>
+                                      </TablixColumn>
+                                    </TablixColumns>
+                                    <TablixRows>
+                                      <TablixRow>
+                                        <Height>0.80208in</Height>
+                                        <TablixCells>
+                                          <TablixCell>
+                                            <CellContents>
+                                              <Rectangle Name="list2_Contents">
+                                                <ReportItems>
+                                                  <Rectangle Name="rectangle10">
+                                                    <ReportItems>
+                                                      <Textbox Name="textbox9">
+                                                        <CanGrow>true</CanGrow>
+                                                        <KeepTogether>true</KeepTogether>
+                                                        <Paragraphs>
+                                                          <Paragraph>
+                                                            <TextRuns>
+                                                              <TextRun>
+                                                                <Value>=Fields!PharmacyName.Value</Value>
+                                                                <Style />
+                                                              </TextRun>
+                                                            </TextRuns>
+                                                            <Style />
+                                                          </Paragraph>
+                                                        </Paragraphs>
+                                                        <Top>0.03125in</Top>
+                                                        <Left>0.03125in</Left>
+                                                        <Height>0.25in</Height>
+                                                        <Width>2.73958in</Width>
+                                                        <Style>
+                                                          <PaddingLeft>2pt</PaddingLeft>
+                                                          <PaddingRight>2pt</PaddingRight>
+                                                          <PaddingTop>2pt</PaddingTop>
+                                                          <PaddingBottom>2pt</PaddingBottom>
+                                                        </Style>
+                                                      </Textbox>
+                                                    </ReportItems>
+                                                    <DataElementOutput>ContentsOnly</DataElementOutput>
+                                                    <Top>0.375in</Top>
+                                                    <Left>0.03125in</Left>
+                                                    <Height>0.375in</Height>
+                                                    <Width>2.77083in</Width>
+                                                    <Style />
+                                                  </Rectangle>
+                                                  <Tablix Name="table1">
+                                                    <TablixBody>
+                                                      <TablixColumns>
+                                                        <TablixColumn>
+                                                          <Width>2.82292in</Width>
+                                                        </TablixColumn>
+                                                        <TablixColumn>
+                                                          <Width>2.35417in</Width>
+                                                        </TablixColumn>
+                                                      </TablixColumns>
+                                                      <TablixRows>
+                                                        <TablixRow>
+                                                          <Height>0.25in</Height>
+                                                          <TablixCells>
+                                                            <TablixCell>
+                                                              <CellContents>
+                                                                <Textbox Name="textbox6">
+                                                                  <CanGrow>true</CanGrow>
+                                                                  <KeepTogether>true</KeepTogether>
+                                                                  <Paragraphs>
+                                                                    <Paragraph>
+                                                                      <TextRuns>
+                                                                        <TextRun>
+                                                                          <Value>Pharmacy</Value>
+                                                                          <Style>
+                                                                            <FontFamily>Times New Roman</FontFamily>
+                                                                            <FontSize>12pt</FontSize>
+                                                                            <FontWeight>Bold</FontWeight>
+                                                                          </Style>
+                                                                        </TextRun>
+                                                                      </TextRuns>
+                                                                      <Style />
+                                                                    </Paragraph>
+                                                                  </Paragraphs>
+                                                                  <ZIndex>1</ZIndex>
+                                                                  <Style>
+                                                                    <TopBorder>
+                                                                      <Style>Solid</Style>
+                                                                    </TopBorder>
+                                                                    <BottomBorder>
+                                                                      <Style>Solid</Style>
+                                                                    </BottomBorder>
+                                                                    <LeftBorder>
+                                                                      <Style>Solid</Style>
+                                                                    </LeftBorder>
+                                                                    <BackgroundColor>LightGrey</BackgroundColor>
+                                                                    <PaddingLeft>2pt</PaddingLeft>
+                                                                    <PaddingRight>2pt</PaddingRight>
+                                                                    <PaddingTop>2pt</PaddingTop>
+                                                                    <PaddingBottom>2pt</PaddingBottom>
+                                                                  </Style>
+                                                                </Textbox>
+                                                              </CellContents>
+                                                            </TablixCell>
+                                                            <TablixCell>
+                                                              <CellContents>
+                                                                <Textbox Name="textbox8">
+                                                                  <CanGrow>true</CanGrow>
+                                                                  <KeepTogether>true</KeepTogether>
+                                                                  <Paragraphs>
+                                                                    <Paragraph>
+                                                                      <TextRuns>
+                                                                        <TextRun>
+                                                                          <Value>Total Prescription</Value>
+                                                                          <Style>
+                                                                            <FontFamily>Times New Roman</FontFamily>
+                                                                            <FontSize>12pt</FontSize>
+                                                                            <FontWeight>Bold</FontWeight>
+                                                                          </Style>
+                                                                        </TextRun>
+                                                                      </TextRuns>
+                                                                      <Style />
+                                                                    </Paragraph>
+                                                                  </Paragraphs>
+                                                                  <Style>
+                                                                    <TopBorder>
+                                                                      <Style>Solid</Style>
+                                                                    </TopBorder>
+                                                                    <BottomBorder>
+                                                                      <Style>Solid</Style>
+                                                                    </BottomBorder>
+                                                                    <RightBorder>
+                                                                      <Style>Solid</Style>
+                                                                    </RightBorder>
+                                                                    <BackgroundColor>LightGrey</BackgroundColor>
+                                                                    <PaddingLeft>2pt</PaddingLeft>
+                                                                    <PaddingRight>2pt</PaddingRight>
+                                                                    <PaddingTop>2pt</PaddingTop>
+                                                                    <PaddingBottom>2pt</PaddingBottom>
+                                                                  </Style>
+                                                                </Textbox>
+                                                              </CellContents>
+                                                            </TablixCell>
+                                                          </TablixCells>
+                                                        </TablixRow>
+                                                      </TablixRows>
+                                                    </TablixBody>
+                                                    <TablixColumnHierarchy>
+                                                      <TablixMembers>
+                                                        <TablixMember />
+                                                        <TablixMember />
+                                                      </TablixMembers>
+                                                    </TablixColumnHierarchy>
+                                                    <TablixRowHierarchy>
+                                                      <TablixMembers>
+                                                        <TablixMember>
+                                                          <KeepWithGroup>After</KeepWithGroup>
+                                                          <RepeatOnNewPage>true</RepeatOnNewPage>
+                                                          <KeepTogether>true</KeepTogether>
+                                                        </TablixMember>
+                                                      </TablixMembers>
+                                                    </TablixRowHierarchy>
+                                                    <DataSetName>PharmacyUtilizationSummary_CHPharmacyUtilizationReport</DataSetName>
+                                                    <Top>0.125in</Top>
+                                                    <Height>0.25in</Height>
+                                                    <Width>5.17709in</Width>
+                                                    <ZIndex>1</ZIndex>
+                                                    <Style />
+                                                  </Tablix>
+                                                  <Rectangle Name="rectangle11">
+                                                    <ReportItems>
+                                                      <Textbox Name="textbox11">
+                                                        <CanGrow>true</CanGrow>
+                                                        <KeepTogether>true</KeepTogether>
+                                                        <Paragraphs>
+                                                          <Paragraph>
+                                                            <TextRuns>
+                                                              <TextRun>
+                                                                <Value>=Fields!TotalPrescription.Value</Value>
+                                                                <Style />
+                                                              </TextRun>
+                                                            </TextRuns>
+                                                            <Style>
+                                                              <TextAlign>Left</TextAlign>
+                                                            </Style>
+                                                          </Paragraph>
+                                                        </Paragraphs>
+                                                        <rd:DefaultName>textbox11</rd:DefaultName>
+                                                        <Top>0.05902in</Top>
+                                                        <Left>0.12153in</Left>
+                                                        <Height>0.25in</Height>
+                                                        <Width>0.5in</Width>
+                                                        <Style>
+                                                          <Border>
+                                                            <Style>None</Style>
+                                                          </Border>
+                                                          <PaddingRight>2pt</PaddingRight>
+                                                          <PaddingTop>2pt</PaddingTop>
+                                                          <PaddingBottom>2pt</PaddingBottom>
+                                                        </Style>
+                                                      </Textbox>
+                                                    </ReportItems>
+                                                    <DataElementOutput>ContentsOnly</DataElementOutput>
+                                                    <Top>0.38542in</Top>
+                                                    <Left>2.85764in</Left>
+                                                    <Height>0.375in</Height>
+                                                    <Width>2.31945in</Width>
+                                                    <ZIndex>2</ZIndex>
+                                                    <Style />
+                                                  </Rectangle>
+                                                </ReportItems>
+                                                <KeepTogether>true</KeepTogether>
+                                                <Style />
+                                              </Rectangle>
+                                            </CellContents>
+                                          </TablixCell>
+                                        </TablixCells>
+                                      </TablixRow>
+                                    </TablixRows>
+                                  </TablixBody>
+                                  <TablixColumnHierarchy>
+                                    <TablixMembers>
+                                      <TablixMember />
+                                    </TablixMembers>
+                                  </TablixColumnHierarchy>
+                                  <TablixRowHierarchy>
+                                    <TablixMembers>
+                                      <TablixMember>
+                                        <Group Name="list2_Details_Group">
+                                          <DocumentMapLabel>=Fields!PharmacyName.Value</DocumentMapLabel>
+                                          <GroupExpressions>
+                                            <GroupExpression>=Fields!PharmacyName.Value</GroupExpression>
+                                          </GroupExpressions>
+                                        </Group>
+                                        <DataElementOutput>Output</DataElementOutput>
+                                        <KeepTogether>true</KeepTogether>
+                                      </TablixMember>
+                                    </TablixMembers>
+                                  </TablixRowHierarchy>
+                                  <DataSetName>PharmacyUtilizationSummary_CHPharmacyUtilizationReport</DataSetName>
+                                  <Top>0.55208in</Top>
+                                  <Left>0.125in</Left>
+                                  <Height>0.80208in</Height>
+                                  <Width>5.19792in</Width>
+                                  <ZIndex>1</ZIndex>
+                                  <Style />
+                                </Tablix>
+                              </ReportItems>
+                              <KeepTogether>true</KeepTogether>
+                              <Style />
+                            </Rectangle>
+                          </CellContents>
+                        </TablixCell>
+                      </TablixCells>
+                    </TablixRow>
+                  </TablixRows>
+                </TablixBody>
+                <TablixColumnHierarchy>
+                  <TablixMembers>
+                    <TablixMember />
+                  </TablixMembers>
+                </TablixColumnHierarchy>
+                <TablixRowHierarchy>
+                  <TablixMembers>
+                    <TablixMember>
+                      <Group Name="list1_Details_Group">
+                        <DocumentMapLabel>=Fields!Created.Value</DocumentMapLabel>
+                        <GroupExpressions>
+                          <GroupExpression>=Fields!Created.Value</GroupExpression>
+                        </GroupExpressions>
+                      </Group>
+                      <DataElementOutput>Output</DataElementOutput>
+                      <KeepTogether>true</KeepTogether>
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixRowHierarchy>
+                <DataSetName>PharmacyUtilizationSummary_CHPharmacyUtilizationReport</DataSetName>
+                <Top>0.125in</Top>
+                <Height>1.5in</Height>
+                <Width>5.35417in</Width>
+                <Style />
+              </Tablix>
+            </ReportItems>
+            <DataElementOutput>ContentsOnly</DataElementOutput>
+            <Top>0.11459in</Top>
+            <Left>0.08124in</Left>
+            <Height>1.69791in</Height>
+            <Width>5.35417in</Width>
+            <Style />
+          </Rectangle>
+        </ReportItems>
+        <Height>1.82292in</Height>
+        <Style />
+      </Body>
+      <Width>6.57916in</Width>
+      <Page>
+        <PageHeader>
+          <Height>1.375in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Rectangle Name="rectangle1">
+              <ReportItems>
+                <Textbox Name="textbox1">
+                  <CanGrow>true</CanGrow>
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>=Parameters!SiteName.Value</Value>
+                          <Style>
+                            <FontFamily>Times New Roman</FontFamily>
+                            <FontSize>12pt</FontSize>
+                            <FontWeight>Bold</FontWeight>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <rd:DefaultName>textbox1</rd:DefaultName>
+                  <Top>0.075in</Top>
+                  <Left>0.07291in</Left>
+                  <Height>0.25in</Height>
+                  <Width>2.30209in</Width>
+                  <Style>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                </Textbox>
+              </ReportItems>
+              <DataElementOutput>ContentsOnly</DataElementOutput>
+              <Top>0.06111in</Top>
+              <Left>0.14375in</Left>
+              <Height>0.4in</Height>
+              <Width>2.45833in</Width>
+              <Style />
+            </Rectangle>
+            <Rectangle Name="rectangle2">
+              <ReportItems>
+                <Textbox Name="textbox2">
+                  <CanGrow>true</CanGrow>
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>="Pharmacy Report"</Value>
+                          <Style>
+                            <FontFamily>Times New Roman</FontFamily>
+                            <FontSize>12pt</FontSize>
+                            <FontWeight>Bold</FontWeight>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <rd:DefaultName>textbox2</rd:DefaultName>
+                  <Top>0.075in</Top>
+                  <Left>0.07291in</Left>
+                  <Height>0.25in</Height>
+                  <Width>2.30209in</Width>
+                  <Style>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                </Textbox>
+              </ReportItems>
+              <DataElementOutput>ContentsOnly</DataElementOutput>
+              <Top>0.475in</Top>
+              <Left>0.13333in</Left>
+              <Height>0.4in</Height>
+              <Width>2.46875in</Width>
+              <ZIndex>1</ZIndex>
+              <Style />
+            </Rectangle>
+            <Rectangle Name="rectangle3">
+              <ReportItems>
+                <Textbox Name="textbox3">
+                  <CanGrow>true</CanGrow>
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>="Date Range: " &amp; Parameters!FromDate.Value &amp; " - " &amp; Parameters!ToDate.Value</Value>
+                          <Style>
+                            <FontFamily>Times New Roman</FontFamily>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <rd:DefaultName>textbox3</rd:DefaultName>
+                  <Top>0.0625in</Top>
+                  <Left>0.07291in</Left>
+                  <Height>0.25in</Height>
+                  <Width>2.29167in</Width>
+                  <Style>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                </Textbox>
+              </ReportItems>
+              <DataElementOutput>ContentsOnly</DataElementOutput>
+              <Top>0.91042in</Top>
+              <Left>0.14375in</Left>
+              <Height>0.375in</Height>
+              <Width>2.45833in</Width>
+              <ZIndex>2</ZIndex>
+              <Style />
+            </Rectangle>
+            <Rectangle Name="rectangle4">
+              <ReportItems>
+                <Textbox Name="textbox4">
+                  <CanGrow>true</CanGrow>
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>="Printed By: " &amp; Parameters!UserName.Value &amp; " " &amp; Parameters!PrintDate.Value</Value>
+                          <Style>
+                            <FontFamily>Times New Roman</FontFamily>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                      </Style>
+                    </Paragraph>
+                  </Paragraphs>
+                  <rd:DefaultName>textbox4</rd:DefaultName>
+                  <Top>0.06111in</Top>
+                  <Left>0.29375in</Left>
+                  <Height>0.94792in</Height>
+                  <Width>3.48749in</Width>
+                  <Style>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                </Textbox>
+              </ReportItems>
+              <DataElementOutput>ContentsOnly</DataElementOutput>
+              <Top>0.0875in</Top>
+              <Left>2.79791in</Left>
+              <Height>1.13542in</Height>
+              <Width>3.78124in</Width>
+              <ZIndex>3</ZIndex>
+              <Style />
+            </Rectangle>
+            <Line Name="line1">
+              <Top>1.35in</Top>
+              <Height>0in</Height>
+              <Width>6.57916in</Width>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                  <Width>2pt</Width>
+                </Border>
+              </Style>
+            </Line>
+          </ReportItems>
+          <Style />
+        </PageHeader>
+        <PageFooter>
+          <Height>0.5in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Rectangle Name="rectangle6">
+              <ReportItems>
+                <Textbox Name="textbox7">
+                  <CanGrow>true</CanGrow>
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>="Pharmacy Report"</Value>
+                          <Style>
+                            <FontFamily>Times New Roman</FontFamily>
+                            <FontSize>8pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <rd:DefaultName>textbox7</rd:DefaultName>
+                  <Top>0.07292in</Top>
+                  <Left>0.04167in</Left>
+                  <Height>0.25in</Height>
+                  <Width>1.92708in</Width>
+                  <Style>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                </Textbox>
+              </ReportItems>
+              <DataElementOutput>ContentsOnly</DataElementOutput>
+              <Top>0.07292in</Top>
+              <Left>0.13333in</Left>
+              <Height>0.40625in</Height>
+              <Width>2.125in</Width>
+              <Style />
+            </Rectangle>
+            <Rectangle Name="rectangle7">
+              <ReportItems>
+                <Textbox Name="textbox10">
+                  <CanGrow>true</CanGrow>
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>= Globals!PageNumber &amp; " of " &amp; Globals.TotalPages</Value>
+                          <Style>
+                            <FontFamily>Times New Roman</FontFamily>
+                            <FontSize>8pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <rd:DefaultName>textbox10</rd:DefaultName>
+                  <Top>0.07292in</Top>
+                  <Left>0.08333in</Left>
+                  <Height>0.25in</Height>
+                  <Width>0.54167in</Width>
+                  <Style>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                </Textbox>
+              </ReportItems>
+              <DataElementOutput>ContentsOnly</DataElementOutput>
+              <Top>0.0625in</Top>
+              <Left>3.00833in</Left>
+              <Height>0.40625in</Height>
+              <Width>0.75in</Width>
+              <ZIndex>1</ZIndex>
+              <Style />
+            </Rectangle>
+            <Rectangle Name="rectangle8">
+              <ReportItems>
+                <Textbox Name="textbox13">
+                  <CanGrow>true</CanGrow>
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>="Copyright © " &amp; Year(Now()) &amp; " Veradigm™, Allscripts Company"</Value>
+                          <Style>
+                            <FontFamily>Times New Roman</FontFamily>
+                            <FontSize>8pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                      </Style>
+                    </Paragraph>
+                  </Paragraphs>
+                  <rd:DefaultName>textbox13</rd:DefaultName>
+                  <Top>0.07291in</Top>
+                  <Left>0.125in</Left>
+                  <Height>0.25in</Height>
+                  <Width>2.50832in</Width>
+                  <Style>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                </Textbox>
+              </ReportItems>
+              <DataElementOutput>ContentsOnly</DataElementOutput>
+              <Top>0.07292in</Top>
+              <Left>3.94583in</Left>
+              <Height>0.40625in</Height>
+              <Width>2.63332in</Width>
+              <ZIndex>2</ZIndex>
+              <Style />
+            </Rectangle>
+          </ReportItems>
+          <Style />
+        </PageFooter>
+        <LeftMargin>1in</LeftMargin>
+        <RightMargin>0.5in</RightMargin>
+        <TopMargin>0.5in</TopMargin>
+        <BottomMargin>0.5in</BottomMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="FromDate">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_0</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ToDate">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SiteName">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_2</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="UserName">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_3</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PrintDate">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_4</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>2</NumberOfColumns>
+      <NumberOfRows>3</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>FromDate</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>ToDate</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>SiteName</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>UserName</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>PrintDate</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+  <Language>en-US</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>611cb160-86e9-4a0e-892e-9e1ca2163f75</rd:ReportID>
+</Report>

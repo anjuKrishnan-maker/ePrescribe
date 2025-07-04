@@ -1,0 +1,22 @@
+﻿.link-account-conf-dialog-size {
+    width: 600px;
+}
+
+.success-dialog {
+    margin-left: 10px;
+    background-color: #d6ecee;
+    padding-bottom: 5px;
+}
+
+.information-dialog {
+    margin-left: 10px;
+    background-color: #fff2cd;
+    padding-bottom: 5px;
+}
+.status-image-size {
+    width: 25px;
+}
+.link-account-conf-label-text {
+    font-weight: normal;
+    padding-top:1px;
+}

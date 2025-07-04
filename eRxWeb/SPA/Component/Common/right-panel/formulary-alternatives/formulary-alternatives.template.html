@@ -1,0 +1,26 @@
+﻿<div class="form-alt-main__layout">
+    <table *ngIf="FormularyAlternatives && FormularyAlternatives.length > 0" rules="rows" width="95%" class="rightPanelTable">
+        <tbody>
+            <tr>
+                <td><b>Drug Name</b></td>
+                <td align="center" colspan="4" class="form-alt-data__layout-18"><b>Status</b></td>
+            </tr>
+            <tr valign="top" *ngFor="let data of FormularyAlternatives">
+                <td class="form-alt-data__font-11">
+                    <a href="javascript:void(0);" (click)="FormularyMedLinkClicked(data.DrugName)" besylate="" [style.font-weight]="data.IsGeneric == true?'':'bold'">{{data.DrugName}}</a>
+                    <br>
+                    {{data.Copay}}
+                </td>
+                <td align="right" valign="top" class="form-alt-data__layout-8">
+                    <img alt='' [title]="data.ToolTip" [src]="data.ImageUrl" class="form-alt-data__border" />
+                </td>
+                <td class="form-alt-data__font-8">{{data.LevelOfPreferedness}}</td>
+                <td class="form-alt-data__layout-4"></td>
+            </tr>
+
+        </tbody>
+    </table>
+    <div *ngIf="FormularyAlternatives && FormularyAlternatives.length == 0">
+    </div>
+</div>
+

@@ -1,0 +1,182 @@
+/* Telerik RadGrid inox skin */
+
+/* 
+	To correctly apply this skin
+	specify Border="0" in the Telerik RadGrid server tag
+	<mastertableview border="0"></mastertableview>
+*/
+
+.RadGrid_Inox
+{
+	background: #c7c7c7 url('Img/rowBg.gif') repeat-y;
+	border: solid 1px #626262;
+	border-top: 0px;
+	scrollbar-face-color: #888fa9; 
+	scrollbar-highlight-color: #6b6f83; 
+	scrollbar-shadow-color: #6b6f83; 
+	scrollbar-3dlight-color: #888fa9; 
+	scrollbar-arrow-color: #6b6f83; 
+	scrollbar-track-color: #b2b8ca;
+	scrollbar-darkshadow-color: #888fa9; 
+}
+
+.RadGrid_Inox,
+.MasterTable_Inox
+{
+	font: normal 11px Arial, Verdana, Sans-serif;
+}
+
+.MasterTable_Inox
+{
+	border: 0px;
+	border-collapse: separate !important;
+	/*-moz-user-select: none;*/ /*disables text selecting in Firefox to combat unpleasant visual appearance*/
+}
+
+.GridRow_Inox td,
+.GridAltRow_Inox td,
+.SelectedRow_Inox td,
+.ActiveRow_Inox td,
+.GridEditRow_Inox td
+{
+	border-top: solid 1px #dcdddf;
+	border-bottom: solid 1px #b5bac0;
+}
+
+.SelectedRow_Inox
+{
+    background: #f8f8f8;
+}
+
+.GridEditRow_Inox
+{
+    background: #ffffe1;
+}
+
+.GridEditRow_Inox input
+{
+	font-size: 11px;
+}
+
+.ActiveRow_Inox
+{
+	background: #c7c7c7;
+}
+
+th.GridHeader_Inox,
+th.ResizeHeader_Inox
+{
+	background: url('Img/headerBg.gif') repeat-x 0 100% #a0a3b9;
+	border-top: solid 1px #868b8f;
+	border-bottom: solid 1px #6b6f83;
+	height: 30px !important;
+	color: #f0f5f6;
+	font-size: 13px;
+	text-align: left;
+}
+
+th.GridHeader_Inox a
+{
+	text-decoration: none;
+	color: #f0f5f6 !important;
+}
+
+/* ascending / descending sorting arrow */
+.GridHeader_Inox img,
+.GroupPanelItems_Inox input
+{
+	vertical-align: middle;
+}
+
+td.GridHeader_Inox input
+{
+	width: auto;
+	float: left;
+	border: solid 1px #474b38;
+	background-color: #fafafa;
+	font: bold 10px Verdana, Arial, Sans-serif;
+	color: #989cb0;
+	margin-right: 2px;
+}
+
+.GroupPanel_Inox
+{
+	background: #626262 url('Img/GroupPanelBg.gif') no-repeat center;
+	width: 100%;
+	height: 29px;
+	color: #fff;
+}
+
+/* grouping button */
+.GroupPanelItems_Inox
+{
+	background: #a7c0d9 url('Img/GroupPanelItemsBg.gif') repeat-x;
+	color: #54626f;
+	border: solid 1px #fff;
+	padding-left: 4px;
+	white-space:  nowrap;
+	font-size: 11px;
+}
+
+tr.GroupHeader_Inox
+{
+	color: #f0f5f6;
+	background-color: #8d8d8d;
+	font-weight: bold;
+}
+
+tr.GridPager_Inox
+{
+	background: #989898 url('Img/PagerBg.gif') repeat-y;
+	color: white;
+}
+
+tr.GridPager_Inox div /*slider mode*/
+{
+	color: #000;
+}
+
+.GridPager_Inox a
+{
+	color: #f0f5f6;
+	font-weight: bold;
+}
+
+.TopReorderIndicator_Inox
+{
+	background: url('MoveDown.gif') no-repeat;
+}
+
+.BottomReorderIndicator_Inox
+{
+	background: url('MoveUp.gif') no-repeat;
+}
+
+.GridFilterMenu_Inox
+{
+    cursor:default;
+}
+
+.GridFilterMenu_Inox .GridFilterMenuSelectColumn_Inox,
+.GridFilterMenu_Inox .GridFilterMenuTextColumn_Inox
+{
+	padding:3px 4px;
+}
+
+.GridFilterMenu_Inox .GridFilterMenuSelectColumn_Inox
+{
+    background:#e4e4e4;
+    text-align:center;
+}
+
+.GridFilterMenu_Inox .GridFilterMenuTextColumn_Inox
+{
+    background:#fff;
+    color:#333;
+}
+
+.GridFilterMenu_Inox .GridFilterMenuHover_Inox
+{
+    background:#4c4c4c;
+    color:#fff;
+}

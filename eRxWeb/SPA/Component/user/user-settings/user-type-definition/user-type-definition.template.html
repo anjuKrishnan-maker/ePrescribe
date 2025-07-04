@@ -1,0 +1,66 @@
+﻿<div class="modal-backdrop fade in" id="mdlUserTypeDefinition" role="dialog" [style.display]="showModalPopup ? 'block' : 'none'"></div>
+<div class="modal" id="userTypeDefinition" role="dialog" [style.display]="'block'" *ngIf="showModalPopup">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="overlayTitle utd-overlay-formatting">
+                User Type Definitions
+            </div>
+            <div class="overlayContent">
+                <div>
+                    <div class="utd-paragraph">
+                        <span class="utd-bold">Doctor or Physician</span> – This user is considered a full provider, requiring
+                        a State License, NPI, may have a DEA and has full prescribing and tasking rights.
+                    </div>
+                    <div class="utd-paragraph">
+                        <span class="utd-bold">Midlevel Without Supervision</span> - This user is considered a mid level practitioner,
+                        require their own State license and NPI, may have a DEA license, and can prescribe
+                        medications according to protocol. The supervising provider information (Name, State
+                        License, and DEA) is NOT required to be included on the prescription.
+                    </div>
+                    <div class="utd-paragraph">
+                        <span class="utd-bold">Midlevel with Supervision Required</span> – This user is considered a mid level
+                        practitioner, require their own State license and NPI, may have a DEA license, and
+                        can prescribe medications according to protocol. The supervising provider information
+                        (Name, State License, NPI, and DEA (when required)) will be included on the prescription.
+                    </div>
+                    <div class="utd-paragraph">
+                        <span class="utd-bold">Prescribe on Behalf of (No Review Required)</span> - This type of user can create
+                        prescriptions on behalf of a selected provider, send the completed prescription
+                        to a pharmacy or print for signature. If a prescription is created that displays
+                        a DUR (Drug Utilization Review warning), the user will be required to select a reason
+                        for ignoring the warning but will be able to send the completed prescription to
+                        a pharmacy or print for signature. A record of the prescription, the DUR presented,
+                        and the reason for ignoring the DUR will be able to be reviewed by the selected
+                        provider. This user will also have the option of sending to the provider for the
+                        providers review. When prescribing they inherit the limitations of the selected
+                        provider. Tasking is available.
+                    </div>
+                    <div class="utd-paragraph">
+                        <span class="utd-bold">Prescribe on Behalf of (Some Review Required)</span> – This type of user can create
+                        prescriptions on behalf of a selected provider, send the completed prescription
+                        to a pharmacy or print for signature. If a prescription is created that displays
+                        a DUR (Drug Utilization Review warning), the prescription will be sent to the selected
+                        provider for review. When prescribing they inherit the limitations of the selected
+                        provider. Tasking is available.
+                    </div>
+                    <div class="utd-paragraph">
+                        <span class="utd-bold">Prescribe on Behalf of (All Review Required)</span> – This type of user can create
+                        prescriptions on behalf of a selected provider, and send the completed prescriptions
+                        to the provider for approval. When prescribing they inherit the limitations of the
+                        selected provider. No tasking available. This user doesn't have access to referral
+                        functionality.
+                    </div>
+                    <div class="utd-paragraph">
+                        <span class="utd-bold">Staff</span> – This type of user can check patients in, add a new patient, and edit
+                        patient header information. No tasking available. This user doesn't have access
+                        to referral functionality.
+                    </div>
+                </div>
+            </div>
+            <div class="overlayFooter utd-overlay-formatting">
+                <input type="button" id="btnCloseUserTypeDesc" value="Close" class="btnstyle btnStyleAction" (click)="toggleModalPopup()" />
+            </div>
+        </div>
+    </div>
+</div>
+

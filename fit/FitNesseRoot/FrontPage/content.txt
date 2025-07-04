@@ -1,0 +1,13 @@
+!1 Welcome to EPCS !-RxArchive-! [[FitNesse][FitNesse.FitNesse]]!
+!3 The fully integrated acceptance testing framework and wiki for EPCS project.
+
+
+
+!3 ''Code without tests is bad code. It doesn’t matter how well written it is; it doesn’t matter how pretty or object-oriented or well-encapsulated it is. With tests, we can change the behavior of our code quickly and verifiably. Without them, we really don’t know if our code is getting better or worse.''
+Michael C. Feathers. Working effectively with legacy code
+
+
+!note !-FitNesse-! Release ${FITNESSE_VERSION}
+
+
+!contents -R2 -g -p -f -h

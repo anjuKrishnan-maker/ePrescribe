@@ -1,0 +1,13 @@
+﻿<div class="report-menu">
+    <div *ngFor="let reportGroup of reportMenu?.ReportGroupList">
+        <div class="report-group-wrapper">
+            <div class="report-group-name">{{reportGroup.Name}}</div>
+            <div *ngFor="let reportLink of reportGroup.ReportLinkList" id="report-{{reportLink.Page}}"
+                 class="report-link" (click)="navigateToReport(reportLink.Page, reportLink.ShowDeluxeAd)">
+                <div class="report-link-name">{{reportLink.Name}}</div>
+                <div class="report-link-description">{{reportLink.Description}}</div>
+            </div>
+        </div>
+    </div>
+    <erx-deluxe-report-teaser [showDeluxeAlert]="showDeluxeAlert" (closeModalEvent)="onCloseDeluxeReportTeaser()"></erx-deluxe-report-teaser>
+</div>

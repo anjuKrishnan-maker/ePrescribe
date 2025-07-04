@@ -1,0 +1,49 @@
+﻿
+
+<erx-modal-popup-control ModalId="mdlPopupMedHistCompletion" title="Duplicate Therapy Notification" [Width]="''" [Height]="''">
+    <div modal-body>
+        <div [hidden]="anySelected">
+
+            <table width="100%" class="error-dialog">
+                <tbody>
+                    <tr valign="middle">
+                        <td class="alert-image__td">
+                            <img src="images/alert-global-16-x-16.png" class="alert-image__border">
+                        </td>
+                        <td valign="middle"><div>{{warningMessage}}</div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p><b>The following prescriptions are currently active in this patient’s history.</b></p>
+        <p class="pat-history__margin">To complete a prescription, select the medication(s) below and click the <i>Mark as Complete and Continue</i> button.</p>
+        <p class="pat-history__margin">
+            The new prescriptions you create will become the active medications for this patient.
+            If active medications are not completed you may receive a Duplicate Therapy warning displayed on the DUR Review page.
+        </p>
+        <br>
+        <div class="overlayscrollable">
+            <input name="chkSelectAll" type="checkbox" id="chkSelectAll" value="Select All" [checked]="selectAll" (change)="checkbox(selectAll)" class="chkSelectAll__text">
+            <span class="select-all__span"><b><u>Select All</u></b></span>
+            <br>
+            <table id="cblHistory" border="0">
+                <tbody>
+                    <tr *ngFor="let mh of medCompletionHistories">
+                        <td><input id="cblHistory_0" type="checkbox" name="0" [checked]="selectAll" (click)="checkIndividual(mh)"></td>
+                        <td><div class="cblHistory_medication" for="cblHistory_0" [innerHTML]="mh.Medication"></div></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+    <div modal-footer>
+        <div class="DUR-footer__style">
+            <input type="button" (click)="Continue()" value="Continue" id="btnContinue" class="btnstyle">&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" (click)="CompleteAndContinue()" value="Mark As Complete And Continue" id="btnCompleteAndContinue" class="btnstyle">&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" (click)="Cancel()" value="Cancel" id="btnHxCancel" class="btnstyle">
+        </div>
+    </div>
+</erx-modal-popup-control>

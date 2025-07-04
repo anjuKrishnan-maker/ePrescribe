@@ -1,0 +1,5 @@
+﻿<div *ngIf="error != null" id="snackbar" [class]="error.Message != null?'show':''" >
+     <!--[class]="error.type == 0 ?'alert-danger':'alert-info'"  role="alert" class="alert alert-dismissible">-->
+    <button type="button" class="close" (click)="close()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong *ngIf="error.Error == 0">Warning!</strong>   {{error.Message}}
+</div>

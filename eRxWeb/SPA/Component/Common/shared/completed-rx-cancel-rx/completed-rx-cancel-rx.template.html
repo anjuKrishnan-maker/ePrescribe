@@ -1,0 +1,32 @@
+﻿<erx-modal-popup-control ModalId="mdlPopupCompletedCancelRx" title="Cancel - Completed Medications" [Width]="''" [Height]="''">
+    <div modal-body>
+        <p style="margin-top: 5px">
+            Select the prescriptions below that you would like to send a <i>Cancel</i> notification to the pharmacy.
+        </p>
+        <p style="margin-top: 5px">
+            This will inform the pharmacy <b>NOT</b> to dispense any medication associated to this prescription.
+        </p>
+        <br>
+        <div class="overlayscrollable">
+            <input type="checkbox" value="Select All" [(ngModel)]="AllSelected"
+                   (change)="SelectAllCheckedForCancelRx($event.target.checked)" style="font-weight: bold" />
+            <span style="padding-left:2px"><b><u>Select All</u></b></span>
+            <br>
+            <table border="0">
+                <tbody>
+                    <tr *ngFor="let rxItem of CancelRxItems">
+                        <td><input type="checkbox" [(ngModel)]="rxItem.IsSelected" /></td>
+                        <td><div style="padding-left:4px" [innerHTML]="rxItem.Prescription | safeHtml"></div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div modal-footer>
+        <div style="display:table;text-align:center;width:100%">
+            <button class="btnstyle" style="width: 100px" (click)="ExecuteAction(0)" type="button">Continue</button>&nbsp;&nbsp;
+            <button class="btnstyle" [disabled]="IsAnyMedSelected()?'':'disabled'" (click)="ExecuteAction(1)" type="button">Send <i>Cancel</i> to Pharmacy and Continue</button>&nbsp;&nbsp;
+            <button class="btnstyle" style="width: 100px" (click)="ExecuteAction(2)" type="button">Back</button>
+        </div>
+    </div>
+</erx-modal-popup-control>

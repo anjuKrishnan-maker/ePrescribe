@@ -1,0 +1,121 @@
+﻿/* added newly */
+
+img#loginLogo{background:url(../images/NYSDA/NYSDA_loginlogo.png); background-repeat:no-repeat; background-position:center;}
+img#mainLogo{background:url(../images/NYSDA/NYSDA.png); background-repeat:no-repeat; background-position:center;}
+
+.appStripe {
+    border-top: 5px #E8112D solid;
+}
+.accordionHeader{background-color:#0051BA}
+.accordionHeaderText{background-color:#0051BA}
+.rightBoxHeader {
+	background-color:#ffffff;}
+.rightBoxTable 
+{
+	border: solid 2px #0051BA;
+	color: #ffffff;
+} 
+.sponsored {display:inline; text-align:center}
+img#helpIcon:hover{background:url(../images/NYSDA/headerhelpNYSDA.gif); background-repeat:no-repeat; background-position:center;}
+img#helpIconLogin:hover{background:url(../images/NYSDA/headerhelpNYSDA.gif); background-repeat:no-repeat; background-position:center;}
+img#profileIcon:hover{background:url(../images/NYSDA/headerprofileNYSDA.gif); background-repeat:no-repeat; background-position:center;}
+img#logoutIcon:hover{background:url(../images/NYSDA/headerlogoutNYSDA.gif); background-repeat:no-repeat; background-position:center;}
+img#messageQueueIcon:hover{background:url(../images/NYSDA/headerMsgQueueNYSDA.gif); background-repeat:no-repeat; background-position:center;}
+img#iLearnIcon {height: 24px; width: 24px;border: none; background-image:url(../images/Allscripts/gradCap.png); background-repeat:no-repeat; background-position:center;}
+img#iLearnIcon:hover{height: 24px; width: 24px; background-image:url(../images/NYSDA/NYSDA_ILearn.png); background-repeat:no-repeat; background-position:center;}
+
+
+.editRollover:hover span
+{
+    color: #0051BA;
+	cursor:pointer;
+}
+.rpText
+{
+    color: black;
+}
+.headerIcon:hover span
+{
+    color: #0051BA
+}
+.rgSelectedRow {
+    background: #f0f5ff 0 -5900px repeat-x url('../telerik/Skins/Allscripts/Grid/Img/sprite.gif');
+}
+
+
+.primaryForeColor {
+    color: #0051BA
+}
+
+
+
+.rightPanelMed {
+    border-left: 3px solid #0051BA !important;
+    border-right: 3px solid #0051BA !important;
+}
+
+.erxSelectedRow {
+    background-color: #f0f5ff !important;
+}
+
+
+a:hover {
+	color: #ff0000;
+}
+.h1title {
+	background-color: #0051BA;
+}
+.h2title {
+	background-color: #0051BA;
+}
+.h3title {
+	background-color: #0051BA;
+}
+.tabSelected
+{	
+	background-color:#0051BA;
+
+}
+a.tabSelectedLink
+{		
+	background-color:#0051BA;
+}
+.divider
+{
+	border-bottom:solid 1px #0051BA;
+}
+
+
+/* *****************    LOGIN SCREEN      ************************ 
+ */
+.loginbanner
+{
+	background-color:#0051BA;
+	height: 36px;
+	text-align: right;
+}
+ 
+
+.redborder     { height:1px; background-color:#e4002b; }
+.subheadred		{ font-size:12px; font-weight:bold; color: #e4002b; }
+.accordionHeaderScriptPad
+{
+	background-color: #AA5908;
+}
+
+.accordionHeaderTextScriptPad
+{
+	background-color: #AA5908;
+}
+/*bootstrap override*/
+.nav-tabs>li>a {
+   color:white;
+}
+
+.nav-tabs>li>a:hover {
+  border:none;
+}
+.nav-tabs>li.active>a,.nav-tabs>li.active>a:focus,.nav-tabs>li.active>a:hover {
+     background-color:#0051BA;
+     border-color:#0051BA;
+}

@@ -1,0 +1,12 @@
+﻿.summary-template-header__layout-no-overflow {
+	padding-left: 2px;
+	color: #fff;
+	background-color: #045360;
+	margin-bottom: 0;
+	height: 24px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	line-height: 23px;
+	width: 95%;
+}

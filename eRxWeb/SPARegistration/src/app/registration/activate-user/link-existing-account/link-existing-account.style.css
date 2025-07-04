@@ -1,0 +1,31 @@
+﻿.not-registered-style {
+    margin-top: 4px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.success-dialog {
+    background-color: #d6ecee;
+    margin-left: 10px;
+    width:100%;
+}
+
+.error-dialog {
+    background-color: #ffe4e4;
+    margin-left: 10px;
+    width: 100%;
+}
+
+.information-dialog {
+    background-color: #fff2cd;
+    margin-left: 10px;
+    width: 100%;
+}
+
+.link-existing-account-dialog-size {
+    width: 600px;
+}
+
+.status-image-size {
+    width: 25px;
+}

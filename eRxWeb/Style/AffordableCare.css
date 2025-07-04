@@ -1,0 +1,348 @@
+﻿.eRxHealthSheet_Panel {
+    background-color: #1D428A;
+}
+
+img#loginLogo {
+    background: url(../images/AffordableCare/logo.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+img#mainLogo {
+    background: url(../images/AffordableCare/logo.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#colapsable-panel-header-script-pad > div,
+#colapsable-panel-header-script-pad > div > table > tbody > tr > td.header-div > div > div:nth-child(2) > span {
+    background-color: #1D428A !important;
+}
+
+.appStripe {
+    border-top: 5px #1D428A solid;
+}
+
+.accordionHeader {
+    background-color: #1D428A;
+}
+
+.accordionHeaderText {
+    background-color: #1D428A;
+}
+
+.rightBoxHeader {
+    background-color: #1D428A;
+}
+
+.rightBoxTable {
+    border: solid 2px #1D428A;
+}
+
+img#helpIcon:hover {
+    background-image: url(../images/AffordableCare/help.gif) !important;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+img#helpIconLogin:hover {
+    background-image: url(../images/AffordableCare/help.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+img#profileIcon:hover {
+    background-image: url(../images/AffordableCare/profile.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+img#logoutIcon:hover {
+    background-image: url(../images/AffordableCare/logout.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+img#messageQueueIcon:hover {
+    background-image: url(../images/AffordableCare/messageQueue.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+img#iLearnIcon:hover {
+    height: 24px;
+    width: 24px;
+    background-image: url(../images/AffordableCare/iLearn.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.RadPanelBar div.rpHeaderTemplate, a.rpLink {
+    background: linear-gradient(#1D428A, #6294b5);
+    background: -webkit-linear-gradient(#1D428A, #6294b5); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#1D428A, #6294b5); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#1D428A, #6294b5); /* For Firefox 3.6 to 15 */
+    color: white;
+}
+
+.editRollover:hover span {
+    color: #1D428A;
+    cursor: pointer;
+}
+
+.rpText {
+    color: white;
+}
+
+.headerIcon:hover span {
+    color: #1D428A
+}
+
+.rgSelectedRow {
+    background: #eaeffb 0 -5900px repeat-x url('../telerik/Skins/Allscripts/Grid/Img/sprite.gif') !important;
+}
+
+.primaryForeColor {
+    color: #1D428A
+}
+
+.rightPanelMed {
+    border-left: 3px solid #1D428A !important;
+    border-right: 3px solid #1D428A !important;
+}
+
+.erxSelectedRow {
+    background-color: #eaeffb !important;
+}
+
+.loginbanner {
+    background-color: #1D428A;
+}
+
+.loginMessageTable {
+    border-bottom: solid 1px #1D428A;
+    border-left: solid 1px #1D428A;
+    border-right: solid 1px #1D428A;
+}
+
+.loginMessageRow {
+    border-top: solid 3px #1D428A;
+    border-bottom: solid 1px #1D428A;
+}
+
+.adminlink {
+    font: normal 12px arial, verdana, sans-serif;
+    color: #1D428A;
+}
+
+.normal {
+    font: normal 12px arial, verdana, sans-serif;
+    color: #1D428A;
+}
+
+.head {
+    font: bold 12px arial, verdana, sans-serif;
+    color: #1D428A;
+    vertical-align: middle;
+}
+
+.Pheadblack {
+    font: bold 12px arial, verdana, sans-serif;
+    color: #1D428A;
+    text-indent: 10px;
+    vertical-align: middle;
+}
+
+.GridHeader {
+    color: #1D428A;
+}
+
+.SelectedRow {
+    background-color: #eaeffb;
+}
+
+.NormalCenter {
+    color: #1D428A;
+}
+
+.NormalVerticalCenter {
+    color: #1D428A;
+}
+
+.NormalCenterSmall {
+    color: #1D428A;
+}
+
+.NormalRightSmall {
+    color: #1D428A;
+}
+
+.DURWarning {
+    color: #1D428A;
+}
+
+.headName {
+    font: italic normal 14px arial, verdana, sans-serif;
+    color: #1D428A;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+.Itallic {
+    font: italic bold 10px arial, verdana, sans-serif;
+    color: #1D428A;
+    vertical-align: middle;
+}
+
+.center {
+    font: normal 12px arial, verdana, sans-serif;
+    color: #1D428A;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.NormalForScript {
+    font: normal 9px arial, verdana, sans-serif;
+    color: #1D428A;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.table {
+    border-bottom-style: solid;
+    border-bottom-color: #1D428A;
+    border-bottom-width: thin;
+}
+
+.DEANUMBER {
+    font: italic normal 11px arial, verdana, sans-serif;
+    color: #1D428A;
+    vertical-align: middle;
+}
+
+.DURHeading {
+    color: #1D428A;
+}
+
+.RSSHeading {
+    font: normal 11px arial, sans-serif;
+    color: #1D428A;
+    vertical-align: middle;
+}
+
+.RSSDetail {
+    font: normal 10px arial, sans-serif;
+    color: #1D428A;
+    vertical-align: middle;
+}
+
+a {
+    color: #1D428A;
+}
+
+    a:visited {
+        color: #1D428A;
+    }
+
+    a:hover {
+        color: #1D428A;
+    }
+
+.h1title {
+    background-color: #1D428A;
+}
+
+.h4titleText {
+    color: #1D428A;
+}
+
+.Titbarcolor1 {
+    background-color: #1D428A;
+}
+
+.tabSelected {
+    background-color: #0077C8;
+}
+
+a.tabSelectedLink {
+    background-color: #1D428A;
+}
+
+.divider {
+    border-bottom: solid 1px #1D428A;
+}
+
+.redborder {
+    height: 1px;
+    background-color: #1D428A;
+}
+
+.normaltxt {
+    font-size: 12px;
+    color: #1D428A;
+}
+
+.subheadred {
+    font-size: 12px;
+    font-weight: bold;
+    color: #1D428A;
+}
+
+.borderbox {
+    background-color: #ffffff;
+    border: thin solid #1D428A;
+    padding: 8px;
+    height: 30px;
+    width: 300px;
+    text-align: center;
+    margin: auto;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    color: #1D428A;
+    margin: 0px;
+    padding: 0px;
+}
+
+.accordionHeaderScriptPad {
+    color: #1D428A;
+    background-color: #1D428A;
+}
+
+.accordionHeaderTextScriptPad {
+    background-color: #1D428A;
+}
+
+.PopUpTable {
+    border: 1px #1D428A solid;
+}
+
+td.PopUpHeader {
+    background-color: #1D428A;
+}
+
+.deluxeComparisons {
+    border: solid 1px #1D428A;
+}
+
+    .deluxeComparisons th {
+        color: #1D428A;
+        border: solid 1px #1D428A;
+    }
+
+    .deluxeComparisons td {
+        border: solid 1px #1D428A;
+    }
+
+/*bootstrap override*/
+.nav-tabs > li > a:hover {
+    border: none;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    background-color: #0077C8;
+    border-color: #0077C8;
+}

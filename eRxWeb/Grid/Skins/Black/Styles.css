@@ -1,0 +1,302 @@
+.RadGrid_Black
+{
+    border:1px solid #000;
+    background:#191919;
+    color:#717171;
+}
+
+.RadGrid_Black,
+.MasterTable_Black,
+.GridFilterMenu_Black table,
+.GridEditForm_Black,
+.GridEditForm_Black table,
+.GridEditForm_Black table input,
+.GridEditForm_Black table textarea{
+    font:11px/1.4 "segoe ui",arial,sans-serif;
+}
+
+.MasterTable_Black
+{
+    border-collapse:separate !important;
+}
+
+.MasterTable_Black th,
+.MasterTable_Black td
+{
+	padding-left: 10px;
+}
+
+.MasterTable_Black .GridHeader_Black,
+.MasterTable_Black .ResizeHeader_Black
+{
+    height:36px;
+    background:url(img/headerBg.gif) repeat-x #191919;
+    text-align:left;
+    padding-left:12px;
+    border-bottom:1px solid #040404;
+}
+
+/*hierarchy*/
+
+.MasterTable_Black table
+{
+	border-left:1px solid #000;
+	border-bottom:1px solid #000;
+	border-collapse:separate !important;
+}
+.MasterTable_Black .GridCommandRow_Black table{border:0}
+.MasterTable_Black .GridEditForm_Black table{border:0}
+
+.GridHeader_Black
+{
+    font-size:1.3em;
+    color:#0d5776;
+}
+
+.GridHeader_Black a
+{
+    color:#0d5776;
+    font-weight:normal;
+    text-decoration:none;
+}
+
+
+.GridRow_Black td,
+.GridAltRow_Black td,
+.GridEditRow_Black td
+{
+    padding-top:3px;
+    padding-bottom:4px;
+}
+
+.GridRow_Black td,
+.GridAltRow_Black td
+{
+	border:1px solid;
+	border-color:#191919 #1e1e1f #191919 #080808;
+}
+
+.GridRow_Black td:first-child,
+.GridAltRow_Black td:first-child
+{
+    border-left-color:#191919;
+}
+
+.SelectedRow_Black td
+{
+	border-top-color:#494949;
+	border-bottom-color:#141414;
+	border-left:0;
+	border-right:0;
+	padding-left:11px;
+    background:url(img/selectedBg.gif) repeat-x #343434;
+    color:#ccc;
+}
+
+.ActiveRow_Black td
+{
+	border-top-color:#2f2f2f;
+	border-bottom-color:#191919;
+	border-left:0;
+	border-right:0;
+	padding-left:11px;
+    background:url(img/activeBg.gif) repeat-x #262626;
+}
+
+.GridEditRow_Black td
+{
+    background:#131313;
+}
+
+.GridEditRow_Black td input
+{
+    background:#1a1a1a;
+    color:#787878;
+}
+
+.GridEditRow_Black td input[type="text"]
+{
+	border:1px solid #242424;
+}
+
+.GridEditForm_Black table td
+{
+	border:0;
+}
+
+.GridRow_Black a,
+.GridAltRow_Black a,
+.GridEditRow_Black a,
+.SelectedRow_Black a,
+.GridEditForm_Black table a,
+.GridPager_Black a
+{
+	color:#ccc;
+}
+
+.GridFooter_Black td
+{
+	border-top:1px solid #0f0f0f;
+	border-bottom:1px solid #232323;
+    color:#373737;
+}
+
+.GridPager_Black td
+{
+    border-top:1px solid #080808;
+    border-bottom:1px solid #232323;
+    padding-top:0.3em;
+    padding-bottom:0.3em;
+    color:#9a9a9a;
+}
+
+.GroupPanel_Black,
+.GridCommandRow_Black td
+{
+    background:#333;
+    border-top:1px solid #3e3e3e;
+    font-weight:normal;
+}
+
+.GridCommandRow_Black td td
+{
+	border:0;
+}
+
+.GroupPanel_Black
+{
+	color:#484848;
+}
+
+.GridCommandRow_Black td,
+.GridCommandRow_Black td a
+{
+	color:#9a9a9a;
+	text-decoration:none;
+}
+
+.GridCommandRow_Black a img
+{
+	vertical-align:bottom;
+}
+
+.GroupHeader_Black
+{
+    font-size:1.1em;
+}
+
+.GroupHeader_Black td
+{
+    padding-top:0.5em;
+    padding-bottom:0.5em;
+    padding-left:0;
+    color:#959595;
+}
+
+* html .GroupHeader_Black td{padding-right:10px;}
+*+html .GroupHeader_Black td{padding-right:10px;}
+
+.GroupHeader_Black td p
+{
+    display:inline;
+    padding:0 10px;
+}
+
+.GroupHeader_Black td div div
+{
+	top:-0.7em;
+	padding:0 15px;
+}
+
+.GroupHeader_Black td div div div
+{
+	top:0;
+	padding:0;
+}
+
+.GridFilterRow_Black td
+{
+    padding-top:0.2em;
+    padding-bottom:0.2em;
+    background:#0a0a0a;
+    border-bottom:1px solid #151515;
+}
+
+.GridFilterRow_Black input
+{
+    border:1px solid  #4e4e4e;
+    background:#242424;
+    margin:0 4px 0 0;
+    color:#999;
+}
+
+.GridFilterMenu_Black
+{
+    cursor:default;
+	background:url(img/filterMenuBg.gif) 21px 0 repeat-y #292929 !important;
+    color:#707070;
+    border:1px solid #0c0c0c !important;
+}
+
+.GridFilterMenu_Black .GridFilterMenuSelectColumn_Black,
+.GridFilterMenu_Black .GridFilterMenuTextColumn_Black
+{
+	padding:3px 4px;
+	background:none transparent;
+}
+
+.GridFilterMenu_Black .GridFilterMenuSelectColumn_Black
+{
+    text-align:center;
+}
+
+.GridFilterMenu_Black .GridFilterMenuTextColumn_Black
+{
+
+}
+
+.GridFilterMenu_Black .GridFilterMenuHover_Black
+{
+    background:url(img/filterMenuHover.gif) repeat-x #343434;
+    color:#a3a3a3;
+}
+
+.TopReorderIndicator_Black
+{
+	background: url('img/MoveDown.gif') no-repeat;
+	margin-left:-5px;
+}
+
+.BottomReorderIndicator_Black
+{
+	background: url('img/MoveUp.gif') no-repeat;
+	margin-left:-5px;
+}
+
+.GridCommandRow_Black
+{
+	
+}
+
+/*AJAX Loading*/
+
+.GridLoadingTemplate_Black
+{
+	background:#0f0f0f !important;
+	font:normal 24px/54px arial,sans-serif;
+	color:#1f1f1f;
+}
+
+
+/* rtl support */
+
+.RadGridRTL_Black th,
+.RadGridRTL_Black td
+{
+    text-align:right;
+}
+
+.RadGridRTL_Black .GridPager_Black span
+{
+    float:none !important;
+}

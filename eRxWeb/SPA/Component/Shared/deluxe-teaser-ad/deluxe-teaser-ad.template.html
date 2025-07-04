@@ -1,0 +1,20 @@
+﻿<div id="mdlDeluxeTeaserAd" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+        <div *ngIf="adType === 1" id="divBasicPromoAd" style="width: auto">
+            <map name="map_basicpromoad">
+                <area shape="rect" coords="36, 227, 200, 263" (click)="btnUpgradeClicked()" alt="Upgrade your account.">
+                <area shape="rect" coords="249, 227, 563, 263" (click)="closeModal()" alt="Continue to ePrescribe.">
+            </map>
+            <img id="imgBasicPromoAd" src="/images/TeaserAd/BasicPromoNew.png" alt="ePrescribe Advertisement" usemap="#map_basicpromoad">
+        </div>
+        <div *ngIf="adType === 2" id="divTeaserAd" style="width: auto;">
+            <div *ngFor="let teaserAdItem of teaserAdHtmlContent" style="top: 0px; left: 0px; background-color: white; border: 1px solid; padding: 5px 2px; margin-left: 10px; float: left;">
+                <div (click)="btnCloseTeaserAd(teaserAdItem.idField)" style="cursor: pointer; float: right; padding-right: 5px;">
+                    <img src="../../../../images/CloseModal.png" />
+                </div>
+                <div style="clear: both;"></div>
+                <div [innerHTML]="teaserAdItem.contentField | safeHtml"></div>
+            </div>
+        </div>
+    </div>
+</div>

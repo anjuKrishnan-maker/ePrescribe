@@ -1,0 +1,36 @@
+﻿<div [id]="id" [comp-visible]="Visible" class="collapsible-border">
+
+    <div class="panel-header-spacing" [id]="'colapsable-panel-header-'+id" data-toggle="collapse" aria-expanded="true" [attr.data-target]="'#colapsable-panel-'+id" (click)="toggleCollapse()">
+
+        <div class="accordion-header accordionHeader" [ngStyle]="{'background-color':HeaderBgColor}">
+
+            <table cellspacing="0" cellpadding="0">
+                <tbody>
+                    <tr>
+                        <td class="header-div">
+                            <div class="headertext-spacing">
+                                <div style="float: left; margin-top: -1px; margin-right: 2px;">
+                                    <img [src]="InfoImageUrl" [style.display]="InfoImageUrl != undefined && InfoImageUrl.length > 0? '':'none'" style="height: 16px; width: 16px; border-width: 0px; display: none" />
+                                </div>
+                                <div style="margin-top: 2px;">
+                                    <span class="accordionHeaderText " [ngStyle]="{'background-color':HeaderBgColor}">{{HeaderText}}<sup>{{SuperScript}}</sup></span>
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width: 16px">
+                            <div [class.hidden]="!Loading" aria-hidden="true">
+                                <div class="erx-collapsible-panel-spinner"></div>
+                            </div>
+                        </td>
+                        <td class="image-toggle" style="padding-top:0px;">
+                            <img [src]="isCollapsed ? 'images/chevrondown-nor-light-12-x-12.png' :'images/chevronup-nor-light-16-x-16.png'" />&nbsp;&nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div [id]="'colapsable-panel-'+id" [ngClass]="IsDefaultOpen == true?'accordionContent accordion-body collapse in':'accordionContent accordion-body collapse'">
+        <ng-content></ng-content>
+    </div>
+</div>

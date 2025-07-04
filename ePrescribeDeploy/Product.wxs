@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:iis="http://schemas.microsoft.com/wix/IIsExtension"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+  <!-- Virtual directory name -->
+  <?define BaseProductName="eprescribe.allscripts.com"?>
+  <!-- Install folder name -->
+  <?define InstallFolderName="ePrescribe"?>
+  <!-- The registry key for saving setup info. -->
+  <?define DefaultRegistryKey="SOFTWARE\Allscripts\ePrescribe\Main\Installer"?>
+  <!-- The web application name property value. -->
+  <?define WebAppNameProperty="WebAppNameProperty"?>
+  <!-- The web site name registry value. -->
+  <?define WebSiteProperty="WebSiteProperty"?>
+  <!-- The virtual directory app pool value.-->
+  <Product Id="8FD14DDB-234B-4DF3-8491-39563EC41595"
+           Name="ePrescribe"
+           Language="1033"
+           Version="1.0.0.0"
+           Manufacturer="Allscrpts"
+           UpgradeCode="2C2CAC35-EB8E-479B-A380-BD7C095BF076">
+    <Package InstallerVersion="300"
+             Description="ePrescribe eRxWeb"
+             Comments="Main ePrescribe Web Site"
+             Manufacturer="Allscripts"
+             Languages="1033"
+             InstallPrivileges="elevated"
+             Compressed="yes" />
+    <!-- Major upgrade checks. -->
+    <MajorUpgrade Schedule="afterInstallInitialize"
+                  DowngradeErrorMessage="A later version of [ProductName] is already installed. Setup will now exit."/>
+
+    <Property Id="ENVIRONMENT1" Value="1"/>
+    <Property Id="ENVIRONMENT2" Value="3"/>
+    
+    <!-- Go find the IIS root directory from the registry. On most machines 
+         that defaults to C:\inetpub\wwwroot. This will be the directory we 
+         install into. -->
+    <Property Id="IISROOT">
+      <RegistrySearch Id="IISROOT"
+                      Type="directory"
+                      Root="HKLM"
+                      Key="Software\Microsoft\InetStp"
+                      Name="PathWWWRoot" />
+    </Property>
+
+    <Property Id="ISWEBSITEINSTALLEDATLEASTONCEPROPERTY">
+      <RegistrySearch Id="IsWebSiteInstalledAtLeastOnce"
+                Root="HKLM"
+                Key="$(var.DefaultRegistryKey)"
+                Name="IsWebSiteInstalledAtLeastOnce" 
+                Type="raw" 
+                      />
+    </Property>
+
+    <Condition Message="IIS does not appear to be installed correctly, the  
+                       root directory is not set.">
+      Installed OR IISROOT
+    </Condition>
+
+    <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="IISROOT" Name='WebDir'>
+        <Directory Id='INSTALLLOCATION' Name="$(var.InstallFolderName)">
+          
+          <Component Id="ePrescribeWebSitePoolCmp" Guid="9E5D6EB5-DA57-451F-9146-DC4272027961" KeyPath="yes" Permanent="yes">
+            <iis:WebAppPool Id="$(var.BaseProductName)"
+                                       Name="$(var.BaseProductName)"
+                                       ManagedRuntimeVersion="v4.0"
+                                       ManagedPipelineMode="Integrated"
+                                       Identity="applicationPoolIdentity"
+                            >
+            </iis:WebAppPool>
+          </Component>
+
+          <Component Id="WebVirtualDirCmp" Guid="1FA0BA7B-7517-4530-BE36-8AF8D098BAFA" KeyPath="yes" Permanent="yes" >
+            <Condition><![CDATA[ISWEBSITEINSTALLEDATLEASTONCEPROPERTY <> "#1"]]></Condition>
+            <RegistryValue Root='HKLM' Key='$(var.DefaultRegistryKey)' Name='IsWebSiteInstalledAtLeastOnce' Type="integer" Value="1"/>
+            <iis:WebSite Id="$(var.BaseProductName)"
+             Description="$(var.BaseProductName)"
+             Directory="INSTALLLOCATION">
+              <iis:WebAddress Id="AllUnassigned" Port="81" />
+              <iis:WebApplication Id="RootApp" Name="RootApp" WebAppPool="$(var.BaseProductName)" >
+              </iis:WebApplication>
+            </iis:WebSite>
+            <iis:WebAppPool Id="IISWebAppPool" Name="$(var.BaseProductName)" />
+            <CreateFolder/>
+          
+          </Component>
+          <Component Id="REGINSTALLLOCATION"
+                Guid="0876EFC0-4603-435B-8D50-2CB7203943E9"
+                KeyPath="yes" >
+            <RemoveFolder Id='INSTALLLOCATION' On='uninstall' />
+            <RegistryValue Root='HKLM' Key='$(var.DefaultRegistryKey)' Name='$(var.WebSiteProperty)'
+                           Value='$(var.BaseProductName)'
+                           Type='string'/>
+          </Component>
+
+        </Directory>
+      </Directory>
+    </Directory>
+
+
+    <Feature Id="ProductFeature" Title="ePrescribe Main Web Site" Level="1">
+      <ComponentRef	Id="ePrescribeWebSitePoolCmp"/> 
+      <ComponentRef	Id="WebVirtualDirCmp"/>
+      <ComponentRef Id="REGINSTALLLOCATION" />
+      <ComponentGroupRef Id="ePrescribeWebComponents"/>
+    </Feature>
+    <UI>
+      <UIRef Id="WEB_UI" />
+      <UIRef Id="WixUI_ErrorProgressText" />
+    </UI>
+  </Product>
+</Wix>

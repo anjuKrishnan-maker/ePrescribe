@@ -1,0 +1,239 @@
+/* Telerik RadGrid WebBlue skin */
+
+.RadGrid_WebBlue
+{
+	background: #bbc1c9;
+	border: solid 1px #898d8f;
+	border-top: 0px;
+	scrollbar-face-color: #bbc1c9; 
+	scrollbar-highlight-color: #bbc1c9; 
+	scrollbar-shadow-color: #bbc1c9; 
+	scrollbar-3dlight-color: #d2d6db; 
+	scrollbar-arrow-color: #333; 
+	scrollbar-track-color: #d2d6db;
+	scrollbar-darkshadow-color: #d2d6db; 
+}
+
+.RadGrid_WebBlue,
+.RadGrid_WebBlue table,
+.GridFilterMenu_WebBlue table
+{
+	font: normal 11px Arial, Verdana, Sans-serif;
+}
+
+.MasterTable_WebBlue
+{
+	border: 0px;
+	border-collapse: separate !important;
+	color: black;
+	-moz-user-select: -moz-none;
+}
+
+.GridRow_WebBlue td,
+.GridAltRow_WebBlue td,
+.GridEditRow_WebBlue td
+{
+	border-top: solid 1px #d2d8db;
+	border-bottom: solid 1px white;
+}
+
+.GridRow_WebBlue
+{
+	background: #f0f2f4;
+}
+.GridAltRow_WebBlue
+{
+	background: white;
+}
+
+.SelectedRow_WebBlue
+{
+	background: #f9f6dd;
+}
+.SelectedRow_WebBlue td
+{
+	border-top: solid 1px #d2d8db;
+	border-bottom: solid 1px white;
+}
+
+.GridEditRow_WebBlue
+{
+	background-color: #ffffe1;
+}
+.GridEditRow_WebBlue input
+{
+	font-size: 11px;
+}
+
+.ActiveRow_WebBlue
+{
+	background: #d2d8db;
+}
+.ActiveRow_WebBlue td
+{
+	border-top: solid 1px #abb4b9;
+	border-bottom: solid 1px white;
+}
+
+.GridHeader_WebBlue,
+.ResizeHeader_WebBlue
+{
+	background: url('Img/headerBg.gif') repeat-x;
+	border-top: solid 1px #8d9092;
+	border-bottom: solid 1px #8d9092;
+	height: 26px !important;
+	color: black;
+	font-size: 11px;
+	text-align: left;
+}
+
+.GridHeader_WebBlue a
+{
+	text-decoration: none;
+	color: black !important;
+}
+
+/* ascending / descending sorting arrow */
+.GridHeader_WebBlue img,
+.GroupPanelItems_WebBlue input
+{
+	vertical-align: middle;
+}
+
+td.GridHeader_WebBlue input
+{
+	width: auto;
+	float: left;
+	border: solid 1px #474b38;
+	background-color: #fafafa;
+	font: bold 10px Verdana, Arial, Sans-serif;
+	color: #989cb0;
+	margin-right: 2px;
+}
+
+.GroupPanel_WebBlue
+{
+	background: #bbc2c9 url('Img/GroupPanelBg.gif') repeat-x;
+	width: 100%;
+	height: 25px;
+	border-top: solid 1px #898d8f;
+}
+
+/* grouping button */
+
+.GroupPanelItems_WebBlue
+{
+	background: #f0f2f4;
+	color: #999;
+	border-top: solid 1px white;
+	border-right: solid 1px #8d9092;
+	border-bottom: solid 1px #8d9092;
+	border-left: solid 1px white;
+	padding-left: 4px;
+	white-space:  nowrap;
+	font-size: 11px;
+}
+
+tr.GroupHeader_WebBlue
+{
+	background: #c7d0d9;
+	color: black;
+}
+
+.GroupHeader_WebBlue td div div
+{
+	top:-0.5em;
+}
+
+.GroupHeader_WebBlue td div div div
+{
+	top:0;
+}
+
+tr.GridPager_WebBlue
+{
+	background: #d2d6db;
+	color: #6e7376;
+	cursor: default;
+}
+
+tr.GridPager_WebBlue td
+{
+    padding-top:3px;
+    padding-bottom:3px;
+}
+
+.GridPager_WebBlue a
+{
+	color: #6e7376;
+}
+
+.GridPager_WebBlue a:hover
+{
+	color: #333;
+}
+
+.TopReorderIndicator_WebBlue
+{
+	background: url('MoveDown.gif') no-repeat;
+}
+
+.BottomReorderIndicator_WebBlue
+{
+	background: url('MoveUp.gif') no-repeat;
+}
+
+.GridCommandRow_WebBlue a
+{
+	color:#333;
+}
+
+.GridFilterMenu_WebBlue
+{
+    cursor:default;
+}
+
+.GridFilterMenu_WebBlue .GridFilterMenuSelectColumn_WebBlue,
+.GridFilterMenu_WebBlue .GridFilterMenuTextColumn_WebBlue
+{
+	padding:3px 4px;
+}
+
+.GridFilterMenu_WebBlue .GridFilterMenuSelectColumn_WebBlue
+{
+    background:#f0f2f4;
+    text-align:center;
+}
+
+.GridFilterMenu_WebBlue .GridFilterMenuTextColumn_WebBlue
+{
+    background:#fff;
+    color:#333;
+}
+
+.GridFilterMenu_WebBlue .GridFilterMenuHover_WebBlue
+{
+    background:#c7d0d9;
+}
+
+/*AJAX Loading*/
+
+.GridLoadingTemplate_WebBlue
+{
+	background:#fff !important;
+	font:normal 24px/54px arial,sans-serif;
+	color:#72bc1b;
+}
+
+/* rtl support */
+
+.RadGridRTL_WebBlue th,
+.RadGridRTL_WebBlue td
+{
+    text-align:right;
+}
+
+.RadGridRTL_WebBlue .GridPager_WebBlue span
+{
+    float:none !important;
+}

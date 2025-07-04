@@ -1,0 +1,44 @@
+﻿<div class="modal fade" id="mdlPrivacyOverride" role="dialog">
+    <div class="modal-dialog">
+        <div id="div1" class="overlaymain" style="width: 450px;">
+            <form (ngSubmit)="SaveOverrideReason()"class="ui form" #f="ngForm">
+                <div class="overlayTitle">
+                    Privacy Override
+                </div>
+                <div class="overlayContent">
+
+                    <div style="font-weight: bold; float: left;">
+                        You are restricted from accessing this patient. If you would like to access
+                        <br />
+                        this patient, please provide the override reason and click override.
+                        <br />
+                        <br />
+                    </div>
+                    <div class="form-group">
+                        <label for="OverrideText" *ngIf="overrideText.errors?.formRequired && !isValid && submited">
+                            <font color="red">Please provide the override reason.</font>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <textarea type="text" class="form-control form-control-width"
+                                  form-required
+                                 maxlength="210"
+                                  style="width:400px; height:100px;"
+                                  [(ngModel)]="privacyOverride.OverrideText"
+                                  name="OverrideText"
+                                  #overrideText="ngModel">
+                        </textarea>
+                    </div>
+                    (Maximum 210 Characters / {{210 - privacyOverride.OverrideText?.length}}   
+                    characters remaining.)
+                    <br />
+                    <br />
+                </div>
+                <div class="overlayFooter modal-footer">
+                    <button type="button" CssClass="btnstyle" (click)="Cancel()">Cancel</button>&nbsp;
+                    <button type="submit" CssClass="btnstyle btnStyleAction" (click)="validate(f)">Override</button> 
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

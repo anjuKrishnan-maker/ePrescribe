@@ -1,0 +1,135 @@
+﻿<!-- css overflow does not belong at this level,
+    you will need to scroll back to the top to click buttons if the list of patients is long and you've selected from the bottom -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="overflow:auto">
+    <tr *ngIf="startupParameters.IsSsoLockdownMode !== true" class="h1title">
+        <td>
+            <erx-patient-search-bar (selectPatient)="NavigateToAddPatientPage()" [reset]="resetSearchBar" (OnPatientSearchSubmitEvent)="onPatientSearchSubmit($event)">Loading results...</erx-patient-search-bar>
+        </td>
+    </tr>
+    <tr *ngIf="Messages.length > 0" class="h3title">
+        <td class="Phead indnt">
+            <erx-message [(Messages)]="Messages"></erx-message>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="select-patient-actionbar__buttons">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="3" class="h4title">
+                            <tr align="left">
+                                <td *ngIf="startupParameters.UserType === SearchPatientUserType.Provider">
+                                    <input type="button" class="btnstyle" title="See patient's medication history"
+                                           (click)="ReviewHistoryClicked()" [disabled]="selectedPatientId == ''" style="width: 100px; margin-right:5px;padding-left:5px;" value="Review History" />
+                                    <input type="button" *ngIf="startupParameters.IsAddDiagnosisVisible" class="btnStyleOneArrow"
+                                           (click)="NewDiagnosisClicked()" title="Add/Edit patient diagnosis" style="width: 100px; margin-right:5px;"
+                                           [disabled]="selectedPatientId == '' || selectedInactivePatient" value="Select Dx" />
+                                    <input type="button" class="btnStyleTwoArrows" (click)="NewRxClicked()"
+                                           title="Start the prescription by selecting a medication" style="width: 100px; margin-right:5px;"
+                                           [disabled]="selectedPatientId == '' || selectedInactivePatient" value="Select Med" />
+                                    <input type="button" class="btnstyle" title="Medication and Medication Allergy Reconciliation"
+                                           (click)="DocumentVisitClicked()" [disabled]="selectedPatientId == '' || selectedInactivePatient" style="float: right; width: 100px;" value="Document Visit" />
+                                </td>
+                                <td *ngIf="startupParameters.UserType === SearchPatientUserType.PAwithSupervision">
+                                    <input type="button" class="btnstyle"
+                                           title='"Check In" a patient who has arrived so that the doctor can easily select the arrived patient and create a script quickly'
+                                           (click)="CheckInClicked(CurrentDelegateProviderSelection.ProviderId)" [disabled]="selectedPatientId == '' || selectedInactivePatient" style="width: 100px; margin-right:5px;" value="Check In" />
+                                    <input type="button" class="btnstyle" title="See patient's medication history"
+                                           (click)="ReviewHistoryClicked()" [disabled]="selectedPatientId == '' || selectedInactivePatient" style="width: 100px; margin-right:5px;" value="Review History" />
+                                    <select [(ngModel)]="CurrentDelegateProviderSelection" (ngModelChange)="DelegateProviderSelected($event)" style="margin-right:5px;">
+                                        <option *ngFor="let provider of startupParameters.Providers" [ngValue]="provider">{{provider.ProviderName}}</option>
+                                    </select>
+                                    <input type="button" class="btnStyleTwoArrows" (click)="NewRxClicked()"
+                                           title="Click to select a medication" style="width: 100px"
+                                           [disabled]="CurrentDelegateProviderSelection.ProviderId == '' || selectedPatientId == '' || selectedInactivePatient" value="New Rx" />
+                                    <input type="button" class="btnstyle" title="Medication and Medication Allergy Reconciliation"
+                                           (click)="DocumentVisitClicked()" [disabled]="selectedPatientId == '' || selectedInactivePatient" style="float: right; width: 100px;" value="Document Visit" />
+                                </td>
+                                <td *ngIf="startupParameters.UserType === SearchPatientUserType.Staff">
+                                    <input type="button" class="btnstyle"
+                                           title='"Check In" a patient who has arrived so that the doctor can easily select the arrived patient and create a script quickly'
+                                           (click)="CheckInClicked(CurrentDelegateProviderSelection.ProviderId)" [disabled]="selectedPatientId == '' || selectedInactivePatient" style="width: 100px; margin-right:5px;" value="Check In" />
+                                    <input type="button" class="btnstyle" title="Medication and Medication Allergy Reconciliation"
+                                           (click)="DocumentVisitClicked()" [disabled]="selectedPatientId == '' || selectedInactivePatient" style="float: right; width: 100px;" value="Document Visit" />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div tabindex="0" class="RadGrid RadGrid_Allscripts med-div-wrapper" style="width: 100%; vertical-align: top; min-height: 60vh">
+                            <table class="rgMasterTable" sortable-table (sorted)="onSorted($event)" style="width: 100%; vertical-align: top; table-layout: auto; empty-cells: show; overflow: auto">
+                                <colgroup>
+                                    <col />
+                                    <col />
+                                    <col />
+                                    <col />
+                                    <col />
+                                    <col />
+                                </colgroup>
+                                <thead style="border-bottom: 1px solid">
+                                    <tr>
+                                        <th class="erxTableHeader" [ngStyle]="{'padding-left':'7px', 'padding-right':'7px', 'width': hasInactivePatients?'100px':'30px'}" scope="col"></th>
+                                        <th class="erxTableHeader" style="width: 10%;">
+                                            <a scope="col" sortable-column="MRN" sort-direction="{{ColumnSortDirection.Up}}" title="Click here to sort">Patient ID</a>
+                                        </th>
+                                        <th class="erxTableHeader" style="width: 25%">
+                                            <a scope="col" sortable-column="Name" title="Click here to sort">Patient Name</a>
+                                        </th>
+                                        <th class="erxTableHeader" style="width: 10%">
+                                            <a scope="col" sortable-column="DOB" title="Click here to sort">DOB</a>
+                                        </th>
+                                        <th class="erxTableHeader" style="width: 15%">
+                                            <a scope="col" sortable-column="Phone" title="Click here to sort">Phone Number</a>
+                                        </th>
+                                        <th class="erxTableHeader">
+                                            <a scope="col" sortable-column="Address" title="Click here to sort">Street Address</a>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody *ngIf="this.startupParameters && this.startupParameters.SearchPatientResponse">
+                                    <tr *ngIf="!isInitialLoad && this.startupParameters.SearchPatientResponse.Patients === null" style="border-style: none; width: 100%; height: 27px;">
+                                        <td colspan="6">
+                                            <div>No Patients found</div>
+                                        </td>
+                                    </tr>
+                                    <tr *ngIf="isInitialLoad && this.startupParameters.SearchPatientResponse.Patients !== undefined && this.startupParameters.SearchPatientResponse.Patients !== null && this.startupParameters.SearchPatientResponse.Patients.length === 0" style="border-style: none; width: 100%; height: 27px;">
+                                        <td colspan="6">
+                                            <div>No Patients Checked In</div>
+                                        </td>
+                                    </tr>
+                                    <tr *ngFor="let patientItem of this.startupParameters.SearchPatientResponse.Patients let even=even let odd=odd;" style="cursor: pointer; height: 27px;"
+                                        [ngClass]="{'rgRow' : even == true, 'rgAltRow' : odd == true, 'rgSelectedRow' : patientItem.Selected == true, 'InactivePatient' : patientItem.StatusID==0}"
+                                        (click)="[onPatientSelected(patientItem), resetPatientSearchBar()]">
+                                        <td>
+                                            <input type="radio" [checked]="patientItem.Selected" />
+                                            <span *ngIf="patientItem.StatusID == 0">(INACTIVE)</span>
+                                        </td>
+                                        <td>{{patientItem.MRN}}</td>
+                                        <td><img *ngIf="patientItem.IsVIPPatient || patientItem.IsRestrictedPatient" src="/images/PrivacyImages/sensitivehealth-global-16-x-16.png" /> {{patientItem.Name}}</td>
+                                        <td style="min-width: 90px;">{{patientItem.DOB | date: 'dd-MMM-yyyy'}}</td>
+                                        <td>{{patientItem.Phone}}</td>
+                                        <td>{{patientItem.Address}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<div *ngIf="isMedReconciliationInfoLoaded == true">
+    <patmed-medallergy-reconciliation ModalId="medAllergyRecSelectPat" [ShouldShowSaveNPrescribe]="true" [PatientMedRecDetails]="PatientMedRecInfo" (SelectionComplete)="PatientMedAllergySelectionCompleted($event)"> Loading...</patmed-medallergy-reconciliation>
+</div>
+<div *ngIf="isInitialLoading == true">
+    <erx-pdmp-epcs-teaser (closeModalEvent)="onEPCSTeaserClose($event)">Loading...</erx-pdmp-epcs-teaser>
+    <erx-pdmp-enrollment>Loading..</erx-pdmp-enrollment>
+</div>
+<privacy-override (SelectionComplete)="PrivacyOverrideSelectionComplete($event)">Loading...</privacy-override>
+<supervising-provider>Loading...</supervising-provider>
+<erx-welcome-tour>Loading...</erx-welcome-tour>
+<erx-deluxe-teaser-ad>Loading...</erx-deluxe-teaser-ad>
+<erx-creditcard-expiring ModalId="ccExpiringSelectPat">Loading...</erx-creditcard-expiring>

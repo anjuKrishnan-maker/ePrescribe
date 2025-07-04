@@ -1,0 +1,40 @@
+﻿<div id="DEALicPanelDetail">
+
+    <div id="btn-add-dea-license" [ngClass]="userDeaLicensesModel.IsRestrictedMode ? 'user-dea-add-dea-btn-disabled': 'user-dea-add-dea-btn'" (click)="addDeaLicense()">
+        <img src="../../../../images/Insert.gif" id="imgColExpStateLic" />
+        Add<span *ngIf="userDeaLicensesModel.DEALicenses.length != 0"> Additional</span> DEA License
+    </div>
+
+    <div class="dea-table">
+        <div class="dea-table-header-row">
+            <div id="dea-header-license" class="dea-table-header-cell">DEA License Number</div>
+            <div id="dea-header-exp-date" class="dea-table-header-cell">Expiration Date</div>
+            <div id="dea-header-dea-schedule" class="dea-table-header-cell">DEA Schedule</div>
+            <div id="dea-header-dea-type" class="dea-table-header-cell">DEA Type</div>
+            <div class="dea-table-header-cell"></div>
+            <div class="dea-table-header-cell"></div>
+        </div>
+        <div class="add-dea-license-table-row">
+            <erx-add-user-dea-license (status)="statusHandler($event)" [DeaLicense]="DeaLicense" (updatedLicense)="updateHandler($event)"
+                                      [DEALicenseRequest]="DEALicenseRequest" [userDeaLicensesModel]="userDeaLicensesModel" (addedLicense)="addedDEALicense($event)">
+            </erx-add-user-dea-license>
+        </div>
+        <div class="dea-table-row" *ngFor="let DeaLicense of userDeaLicensesModel.DEALicenses; let i = index">
+            <div id="number-dea-list-{{i}}" class="dea-table-cell">{{DeaLicense.DEANumber}}</div>
+            <div id="exp-date-dea-list-{{i}}" class="dea-table-cell">{{DeaLicense.DEAExpirationDate}}</div>
+            <div id="dea-schedule-parent-dea-list-{{i}}" class="dea-table-cell">
+                <div class="user-dea-levels"><input id="sch-2-dea-list-{{i}}" type="checkbox" class="user-dea-levels-input" [(ngModel)]="DeaLicense.DEAIIAllowed" disabled /><span class="user-dea-levels-label">II</span></div>
+                <div class="user-dea-levels"><input id="sch-3-dea-list-{{i}}" type="checkbox" class="user-dea-levels-input" [(ngModel)]="DeaLicense.DEAIIIAllowed" disabled /><span class="user-dea-levels-label">III</span></div>
+                <div class="user-dea-levels"><input id="sch-4-dea-list-{{i}}" type="checkbox" class="user-dea-levels-input" [(ngModel)]="DeaLicense.DEAIVAllowed" disabled /><span class="user-dea-levels-label">IV</span></div>
+                <div class="user-dea-levels"><input id="sch-5-dea-list-{{i}}" type="checkbox" class="user-dea-levels-input" [(ngModel)]="DeaLicense.DEAVAllowed" disabled /><span class="user-dea-levels-label">V</span></div>
+            </div>
+            <div id="license-type-dea-list-{{i}}" class="dea-table-cell">{{ConvertDEALicenseTypeIdToText(DeaLicense.DEALicenseTypeId)}}</div>
+            <div id="link-edit-dea-dea-list-{{i}}" class="dea-table-cell"><a [ngClass]="userDeaLicensesModel.IsRestrictedMode ? 'erx-hyperlink-disabled' : 'erx-hyperlink'" (click)="editDeaLicense(DeaLicense)">Edit</a></div>
+            <div id="link-delete-dea-list-{{i}}" class="dea-table-cell"><a [ngClass]="userDeaLicensesModel.IsRestrictedMode ? 'erx-hyperlink-disabled' : 'erx-hyperlink'" (click)="deleteDeaLicense(DeaLicense)">Delete</a></div>
+        </div>
+        <div class="dea-table-row">
+            <div class="dea-table-cell" *ngIf="userDeaLicensesModel.DEALicenses.length == 0">No DEA licenses exist for this user</div>
+        </div>
+    </div>
+</div>
+

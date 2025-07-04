@@ -1,0 +1,4 @@
+﻿<div id="topStripe" class="appStripe"></div>
+<div id="divRightHandAd" *ngIf="page != null && isTieEnabled">
+    <iframe *ngIf="page != null" id="logRx-frame" [src]="page | safeUrl" [style.height]="addHeight +'px'" (load)="frameLoad($event)"></iframe>
+</div>

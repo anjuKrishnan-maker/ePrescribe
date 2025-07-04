@@ -1,0 +1,43 @@
+﻿.editLi {
+    border-width: 0px;
+    position: absolute;
+}
+
+.editOvr {
+    display: inline;
+}
+
+.editOvrOut {
+    display: none;
+}
+
+.modal-title {
+    font-size: medium; 
+    font-weight: bold;
+}
+
+.modal-body {
+    padding: 3px !important;
+}
+
+.modal-header {
+    padding: 5px !important;
+}
+
+.patient-info-gridView-table {
+    width: 100%;
+    vertical-align: top;
+    table-layout: auto;
+    empty-cells: show;
+    border : 0px;
+}
+
+.patient-info-grid-position {
+    vertical-align: top;
+}
+
+#realNamePopover {
+    top: 30.1094px;
+    left: 159.664px;
+    display: block;
+}

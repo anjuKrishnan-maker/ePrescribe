@@ -1,0 +1,119 @@
+﻿/* added newly */
+
+img#mainLogo{background:url(../images/TeamPraxis/TeamPraxis.GIF); background-repeat:no-repeat; background-position:center;}
+.appStripe { background-color:#005599;}
+.accordionHeader{background-color:#005599}
+.accordionHeaderText{background-color:#005599}
+.rightBoxHeader {
+	background-color:#005599;}
+.rightBoxTable 
+{
+	border: solid 2px #005599;
+	color: #ffffff;
+}
+.sponsored {display:inline; text-align:center}
+img#helpIcon:hover{background:url(../images/TeamPraxis/headerhelpTeamPraxis.gif); background-repeat:no-repeat; background-position:center;}
+img#helpIconLogin:hover{background:url(../images/NewCo/headerhelpNewCoLogin.gif); background-repeat:no-repeat; background-position:center;}
+img#profileIcon:hover{background:url(../images/TeamPraxis/headerprofileTeamPraxis.gif); background-repeat:no-repeat; background-position:center;}
+img#logoutIcon:hover{background:url(../images/TeamPraxis/headerlogoutTeamPraxis.gif); background-repeat:no-repeat; background-position:center;}
+img#messageQueueIcon:hover{background:url(../images/TeamPraxis/headerMsgQueueTeamPraxis.gif); background-repeat:no-repeat; background-position:center;}
+img#iLearnIcon {height: 24px; width: 24px;border: none; background-image:url(../images/Allscripts/gradCap.png); background-repeat:no-repeat; background-position:center;}
+img#iLearnIcon:hover{height: 24px; width: 24px; background-image:url(../images/TeamPraxis/TeamPraxis_ILearn.png); background-repeat:no-repeat; background-position:center;}
+
+.editRollover:hover span
+{
+    color: #ff0000;
+	cursor:pointer;
+}
+.rpText
+{
+    color: black;
+}
+.headerIcon:hover span
+{
+    color: #004185
+}
+.rgSelectedRow {
+    background: #edf6ff 0 -5900px repeat-x url('../telerik/Skins/Allscripts/Grid/Img/sprite.gif');
+ }
+
+
+
+.primaryForeColor {
+    color: #005599
+}
+
+
+
+.rightPanelMed {
+    border-left: 3px solid #005599 !important;
+    border-right: 3px solid #005599 !important;
+}
+
+.erxSelectedRow {
+    background-color: #edf6ff !important;
+}
+
+
+
+a.tabUnSelectedLink:visited, a.tabUnSelectedLink:link
+{
+    color: white;
+}
+
+a:hover {
+	color: #ff0000;
+}
+.h1title {
+	background-color: #005599;
+}
+.h2title {
+	background-color: #7AB800;
+}
+.h3title {
+	background-color: #7AB800;
+}
+.tabSelected
+{	
+	background-color:#005599;
+}
+
+a.tabSelectedLink
+{		
+	background-color:#005599;
+}
+
+.divider
+{
+    background-color:#7AB800;
+	border-bottom:solid 1px #005599;
+}
+
+
+/* *****************    LOGIN SCREEN      ************************ 
+ */
+
+.redborder     { height:1px; background-color:#AD0808; }
+.subheadred		{ font-size:12px; font-weight:bold; color: #AD0808; }
+.accordionHeaderScriptPad
+{
+	background-color: #AA5908;
+}
+
+.accordionHeaderTextScriptPad
+{
+	background-color: #AA5908;
+}
+/*bootstrap override*/
+.nav-tabs>li>a {
+   color:white;
+}
+
+.nav-tabs>li>a:hover {	
+        background-color:#7AB800;
+  border:none;
+}
+.nav-tabs>li.active>a,.nav-tabs>li.active>a:focus,.nav-tabs>li.active>a:hover {
+     background-color:#005599;
+     border-color:#005599;
+}

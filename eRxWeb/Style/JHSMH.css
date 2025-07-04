@@ -1,0 +1,155 @@
+﻿.eRxHealthSheet_Panel
+{
+	background-color:#002065; 
+}
+
+img#loginLogo{background:url(../images/JHSMH/JHSMH_Logo.jpg); background-repeat:no-repeat; background-position:center;}
+img#mainLogo{background:url(../images/JHSMH/JHSMH_Logo_sm.jpg); background-repeat:no-repeat; background-position:center;}
+
+.appStripe {
+    border-top: 5px #002065 solid;
+}
+.accordionHeader{background-color:#002065}
+.accordionHeaderText{background-color:#002065}
+.rightBoxHeader {
+	background-color:#002065;}
+.rightBoxTable 
+{
+	border: solid 2px #002065;
+}
+img#helpIcon:hover{background:url(../images/JHSMH/headerhelpJHSMH.gif); background-repeat:no-repeat; background-position:center;}
+img#helpIconLogin:hover{background:url(../images/JHSMH/headerhelpJHSMH.gif); background-repeat:no-repeat; background-position:center;}
+img#profileIcon:hover{background:url(../images/JHSMH/headerprofileJHSMH.gif); background-repeat:no-repeat; background-position:center;}
+img#logoutIcon:hover{background:url(../images/JHSMH/headerlogoutJHSMH.gif); background-repeat:no-repeat; background-position:center;}
+img#messageQueueIcon:hover{background:url(../images/JHSMH/headerMsgQueueJHSMH.gif); background-repeat:no-repeat; background-position:center;}
+img#iLearnIcon {height: 24px; width: 24px;border: none; background-image:url(../images/Allscripts/gradCap.png); background-repeat:no-repeat; background-position:center;}
+img#iLearnIcon:hover{height: 24px; width: 24px; background-image:url(../images/JHSMH/JHSMH_ILearn.png); background-repeat:no-repeat; background-position:center;}
+
+
+.editRollover:hover span
+{
+    color: #002065;
+	cursor:pointer;
+}
+.rpText
+{
+    color: black;
+}
+.headerIcon:hover span
+{
+    color: #002065
+}
+.rgSelectedRow {
+    background: #f0f5ff 0 -5900px repeat-x url('../telerik/Skins/Allscripts/Grid/Img/sprite.gif');
+}
+
+
+.primaryForeColor {
+    color: #002065
+}
+
+
+
+.rightPanelMed {
+    border-left: 3px solid #002065 !important;
+    border-right: 3px solid #002065 !important;
+}
+
+.erxSelectedRow {
+    background-color: #f0f5ff !important;
+}
+
+.loginbanner
+{
+	background-color:#002065;
+}
+
+.loginMessageTable
+{
+	border-bottom: solid 1px #002065;
+	border-left: solid 1px #002065;
+	border-right: solid 1px #002065;
+}
+
+.loginMessageRow
+{
+	border-top: solid 3px #002065;
+	border-bottom: solid 1px #002065;
+}
+
+
+.SelectedRow
+{
+	background-color: #CBCBCB;
+}					
+
+.DURHeading
+{
+	color: #AE0910;
+}
+
+a:hover {
+	color: #002065;
+}
+.h1title {
+	background-color: #002065;
+}
+.Titbarcolor1 
+{
+	background-color:#002065;
+}
+.tabSelected
+{	
+	background-color:#002065;
+}
+
+a.tabSelectedLink
+{		
+	background-color:#002065;
+}
+.divider
+{
+	border-bottom:solid 1px #002065;
+}
+
+
+.redborder     { height:1px; background-color:#002065; }
+.subheadred		{ font-size:12px; font-weight:bold; color: #002065; }
+
+.accordionHeaderScriptPad
+{
+    color: #002065;
+	background-color: #002065;
+}
+
+.accordionHeaderTextScriptPad
+{
+	background-color: #002065;
+}
+
+td.PopUpHeader
+{ 
+    background-color: #002065;
+}
+.deluxeComparisons
+{
+	border:solid 1px #002065;
+}
+.deluxeComparisons th
+{
+	 color:#002065;
+	 border:solid 1px #002065;
+}
+
+.deluxeComparisons td
+{
+	 border:solid 1px #002065;
+}
+/*bootstrap override*/
+.nav-tabs>li>a:hover {
+  border:none;
+}
+.nav-tabs>li.active>a,.nav-tabs>li.active>a:focus,.nav-tabs>li.active>a:hover {
+     background-color:#002065;
+     border-color:#002065;
+}

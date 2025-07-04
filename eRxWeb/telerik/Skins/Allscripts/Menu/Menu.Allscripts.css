@@ -1,0 +1,320 @@
+/* RadMenu Telerik Skin */
+
+.RadMenu_Allscripts .rmRootGroup
+{
+	border: 1px solid #828282;
+}
+
+.RadMenu_Allscripts .rmItem
+{
+	background: transparent url('Img/MenuBg.gif') repeat 0 0;
+}
+
+.RadMenu_Allscripts .rmLink,
+.RadMenu_Allscripts .rmTemplate
+{
+	color: #333;
+	font: 12px Arial,sans-serif;
+	text-decoration: none;
+}
+
+.RadMenu_Allscripts .rmLink
+{
+	padding: 4px 18px 5px;
+}
+
+.RadMenu_Allscripts .rmHorizontal .rmLink
+{
+	background: transparent url('Img/MenuBgRight.gif') repeat-y 100% 0;
+}
+
+.RadMenu_Allscripts .rmLast .rmLink,
+.RadMenu_Allscripts .rmRootGroup .rmLast .rmDisabled,
+.RadMenu_Allscripts .rmRootGroup .rmLast .rmDisabled:hover
+{
+	background: none;
+}
+
+.RadMenu_Allscripts .rmExpanded
+{
+	position: relative;
+	z-index: 10000;
+}
+
+.RadMenu_Allscripts .rmGroup .rmText
+{
+	padding: 0 40px 0 0;
+}
+
+.RadMenu_Allscripts .rmLeftImage+.rmText
+{
+	padding-left: 18px;
+}
+
+.RadMenu_Allscripts .rmLink:hover,
+.RadMenu_Allscripts .rmItem .rmExpanded
+{
+	background: #fff;
+}
+
+.RadMenu_Allscripts .rmHorizontal .rmLink:hover,
+.RadMenu_Allscripts .rmHorizontal .rmExpanded
+{
+	border: solid #828282;
+	border-width: 0 1px;
+	padding: 4px 17px 5px;
+}
+
+.RadMenu_Allscripts .rmHorizontal .rmFirst .rmLink:hover,
+.RadMenu_Allscripts .rmHorizontal .rmFirst .rmExpanded
+{
+	border-left: 0;
+	padding-left: 18px;
+}
+
+.RadMenu_Allscripts .rmHorizontal .rmLast .rmLink:hover,
+.RadMenu_Allscripts .rmHorizontal .rmLast .rmExpanded
+{
+	border-right: 0;
+	padding-right: 18px;
+}
+
+.RadMenu_Allscripts .rmVertical.rmRootGroup .rmLink
+{
+	border-bottom: 1px solid #898989;
+	padding-bottom: 4px;
+}
+
+.RadMenu_Allscripts .rmVertical.rmRootGroup .rmLink:hover,
+.RadMenu_Allscripts .rmVertical.rmRootGroup .rmExpanded
+{
+	border-top: 0;
+	padding-top: 4px;
+}
+
+.RadMenu_Allscripts .rmVertical.rmRootGroup .rmGroup .rmLink
+{
+	border-bottom: 0;
+	padding-bottom: 5px;
+}
+
+.RadMenu_Allscripts .rmVertical .rmLast .rmLink
+{
+	border-bottom: 0;
+	padding-bottom: 5px;
+}
+
+.RadMenu_Allscripts .rmVertical .rmLink:hover,
+.RadMenu_Allscripts .rmVertical .rmExpanded
+{
+	border: solid #828282;
+	border-width: 1px 0;
+	padding: 3px 18px 4px 18px;
+}
+
+.RadMenu_Allscripts .rmVertical .rmFirst .rmLink:hover,
+.RadMenu_Allscripts .rmVertical .rmFirst .rmExpanded
+{
+	border-top: 0;
+	padding-top: 4px;
+}
+
+.RadMenu_Allscripts .rmVertical .rmLast .rmLink:hover,
+.RadMenu_Allscripts .rmVertical .rmLast .rmExpanded
+{
+	border-bottom: 0;
+	padding-bottom: 5px;
+}
+
+.RadMenu_Allscripts .rmRootGroup .rmDisabled,
+.RadMenu_Allscripts .rmRootGroup .rmDisabled:hover
+{
+	border: 0;
+	padding: 4px 18px 5px;
+	color: #999;
+	background: transparent;
+}
+
+.RadMenu_Allscripts .rmHorizontal .rmDisabled,
+.RadMenu_Allscripts .rmHorizontal .rmDisabled:hover
+{
+	background: transparent url('Img/MenuBgRight.gif') repeat-y 100% 0;
+}
+
+.RadMenu_Allscripts .rmRootGroup .rmItem .rmGroup .rmItem .rmDisabled,
+.RadMenu_Allscripts .rmRootGroup .rmItem .rmGroup .rmItem .rmDisabled:hover
+{
+	border: 0;
+	padding: 4px 18px 5px;
+	color: #999;
+	background: transparent;
+}
+
+.RadMenu_Allscripts .rmVertical.rmRootGroup .rmItem .rmDisabled,
+.RadMenu_Allscripts .rmVertical.rmRootGroup .rmItem .rmDisabled:hover
+{
+	border-bottom: 1px solid #898989;
+	padding-bottom: 4px;
+}
+
+.RadMenu_Allscripts .rmVertical.rmRootGroup .rmLast .rmDisabled,
+.RadMenu_Allscripts .rmVertical.rmRootGroup .rmLast .rmDisabled:hover
+{
+	border-bottom: 0;
+	padding-bottom: 5px;
+}
+
+.RadMenu_Allscripts .rmRootGroup .rmDisabled .rmLeftImage,
+.RadMenu_Allscripts .rmRootGroup .rmDisabled .rmRightImage
+{
+	filter: alpha(opacity=50);
+	-moz-opacity: .5;
+	opacity: .5;
+}
+
+.RadMenu_Allscripts .rmGroup
+{
+	background: #fff;
+	border: 1px solid #828282;
+}
+
+.RadMenu_Allscripts .rmGroup .rmExpandRight
+{
+	background: transparent url('Img/ExpandArrows.gif') no-repeat 100% -4px;
+}
+
+.RadMenu_Allscripts .rmGroup .rmLink,
+.RadMenu_Allscripts .rmGroup .rmLink:hover
+{
+	padding-right: 1px;
+}
+
+.RadMenu_Allscripts .rmGroup .rmLink:hover .rmExpandRight,
+.RadMenu_Allscripts .rmGroup .rmExpanded .rmExpandRight
+{
+	background-position: 100% -29px;
+}
+
+.RadMenu_Allscripts .rmVertical.rmGroup .rmLink:hover,
+.RadMenu_Allscripts .rmVertical.rmGroup .rmExpanded,
+.RadMenu_Allscripts .rmFirst .rmVertical.rmGroup .rmLink:hover,
+.RadMenu_Allscripts .rmFirst .rmVertical.rmGroup .rmExpanded
+{
+	background: #dfdfdf;
+	color: #6b6b6b;
+	border: solid #a5a5a5;
+	border-width: 1px 0;
+	padding: 3px 1px 4px 18px;
+}
+
+.RadMenu_Allscripts .rmGroup .rmItem,
+.RadMenu_Allscripts .rmGroup .rmLink
+{
+	background: transparent;
+}
+
+.RadMenu_Allscripts .rmHorizontal .rmSlide
+{
+	margin: -1px 0 0 0;
+}
+
+.RadMenu_Allscripts .rmHorizontal .rmFirst .rmSlide,
+.RadMenu_Allscripts .rmHorizontal .rmFirst .rmVertical .rmSlide
+{
+	margin: -1px 0 0 -1px;
+}
+
+.RadMenu_Allscripts .rmVertical .rmSlide
+{
+	margin: -1px 0 0 -1px;
+}
+
+.RadMenu_Allscripts .rmTopArrowDisabled,
+.RadMenu_Allscripts .rmBottomArrowDisabled,
+.RadMenu_Allscripts .rmLeftArrowDisabled,
+.RadMenu_Allscripts .rmRightArrowDisabled
+{
+	display: none;
+}
+
+.RadMenu_Allscripts .rmTopArrow,
+.RadMenu_Allscripts .rmBottomArrow,
+.RadMenu_Allscripts .rmLeftArrow,
+.RadMenu_Allscripts .rmRightArrow
+{
+	font-size: 0;
+	color: #fff;
+	line-height: 0;
+}
+
+.RadMenu_Allscripts .rmTopArrow,
+.RadMenu_Allscripts .rmBottomArrow
+{
+	height: 10px;
+	width: 100%;
+	background: #fff url('Img/ScrollArrowUpDown.gif') no-repeat top center;
+}
+
+.RadMenu_Allscripts .rmBottomArrow
+{
+	background-position: center -18px;
+}
+
+.RadMenu_Allscripts .rmLeftArrow,
+.RadMenu_Allscripts .rmRightArrow
+{
+	width: 10px;
+	height: 100%;
+	background: #fff url('Img/ScrollArrowLeftRight.gif') no-repeat left center;
+}
+
+.RadMenu_Allscripts_Context .rmGroup
+{
+	background: #fff url('Img/ContextMenuBg.gif') repeat-y 0 0;
+} 
+
+div.RadMenu_Allscripts_Context ul.rmGroup
+{
+	padding: 2px 0;
+}
+
+.RadMenu_Allscripts_Context .rmGroup .rmItem .rmLink
+{
+	padding-left: 5px;
+	padding-right: 1px;
+	border-width: 0;
+	margin: 0 2px;
+}
+
+.RadMenu_Allscripts_Context .rmGroup .rmItem .rmLink:hover,
+.RadMenu_Allscripts_Context .rmGroup .rmItem .rmExpanded,
+.RadMenu_Allscripts_Context .rmFirst .rmGroup .rmItem .rmLink:hover,
+.RadMenu_Allscripts_Context .rmFirst .rmGroup .rmItem .rmExpanded
+{
+	border-width: 1px;
+	padding-left: 4px;
+	padding-right: 0;
+	margin: 0 2px;
+}
+
+.RadMenu_Allscripts_Context .rmGroup .rmItem .rmDisabled,
+.RadMenu_Allscripts_Context .rmGroup .rmItem .rmDisabled:hover,
+.RadMenu_Allscripts_Context .rmFirst .rmGroup .rmItem .rmDisabled,
+.RadMenu_Allscripts_Context .rmFirst .rmGroup .rmItem .rmDisabled:hover
+{
+	color: #999;
+	background: transparent;
+	padding: 3px 1px 4px 5px;
+	border-width: 0;
+	margin: 0 2px;
+}
+
+.RadMenu_Allscripts_Context .rmGroup .rmItem .rmText
+{
+	padding-left: 30px;
+}
+
+.RadMenu_Allscripts .rmRightArrow
+{
+	background-position: -18px center;
+}

@@ -1,0 +1,317 @@
+/*Registration Page*/
+.branded-background-color {
+    background-color: #2F2257;
+}
+
+.branded-font-color {
+    color: #FFFFFF;
+}
+
+.branded-logo {
+    background-image: url('../images/Allscripts/Veradigm_Web_Logo.png');
+    background-repeat: no-repeat;
+    height: 70px;
+    background-size: contain;
+}
+
+.branded-footer-stripe {
+    background-color: #F0584C;
+}
+
+.branded-footer-color {
+    background-color: #2F2257;
+    color: #ffffff;
+}
+
+/*Header Master Page*/
+.primaryForeColor {
+    color: #2f2257
+}
+
+
+.appStripe {
+    border-top: 5px #2F2257 solid;
+}
+
+.redborder {
+    background-color: #2F2257;
+}
+
+img#mainLogo {
+    background: url(../images/Allscripts/veradigmTopLogo.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 73px;
+    width: 127px;
+    margin-top: 28px;
+}
+
+.loginbanner {
+    background-color: #2F2257;
+}
+
+
+.headerIcon:hover span {
+    color: #2F2257;
+}
+
+.editRollover:hover span {
+    color: #2F2257;
+    cursor: pointer;
+}
+
+.noEditRollover {
+    visibility: hidden;
+}
+
+.RadPanelBar div.rpHeaderTemplate, a.rpLink {
+    background: linear-gradient(#665999, #2F2257);
+    background: -webkit-linear-gradient(#665999, #2F2257); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#665999, #2F2257); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#665999, #2F2257); /* For Firefox 3.6 to 15 */
+    color: white;
+}
+
+.rpText {
+    color: White;
+}
+
+.RadPanelBar_Hay div.rpHeaderTemplate, .RadPanelBar_Hay a.rpLink {
+    color: white;
+}
+
+/*Tabs*/
+.divider {
+    border-bottom-color: #2F2257;
+}
+
+a.tabSelectedLink {
+    background-color: #2F2257;
+    color: White;
+}
+
+.tabSelected {
+    background-color: #2F2257;
+}
+
+a {
+    color: #2F2257;
+}
+
+a:hover {
+    color: #2F2257;
+}
+
+a:visited {
+    color: #2F2257;
+}
+
+/*Icons*/
+.hlClinicalViewer {
+    height: 24px;
+    width: 24px;
+    border: none;
+    background-image: url(../images/Allscripts/headerClinicalViewer.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+    .hlClinicalViewer:hover {
+        height: 24px;
+        width: 24px;
+        background-image: url(../images/Allscripts/headerClinicalViewerHover.gif);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+img#helpIcon {
+    height: 24px;
+    width: 24px;
+    border: none;
+    background-image: url(../images/Allscripts/headerhelp.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+    img#helpIcon:hover {
+        height: 24px;
+        width: 24px;
+        background-image: url(../images/Allscripts/headerhelpHover.gif) !important;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+img#helpIconLogin {
+    height: 24px;
+    width: 24px;
+    background-image: url(../images/Allscripts/headerhelp.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+    img#helpIconLogin:hover {
+        height: 24px;
+        width: 24px;
+        background-image: url(../images/Allscripts/headerhelpHover.gif);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+img#profileIcon {
+    height: 24px;
+    width: 24px;
+    border: none;
+    background-image: url(../images/Allscripts/headerprofile.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+img#logoutIcon {
+    height: 24px;
+    width: 24px;
+    border: none;
+    background-image: url(../images/Allscripts/headerlogout.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+    img#logoutIcon:hover {
+        height: 24px;
+        width: 24px;
+        background-image: url(../images/Allscripts/headerlogoutHover.gif);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+img#documentIcon {
+    height: 24px;
+    width: 24px;
+    border: none;
+    background-image: url(../images/Allscripts/document_NonDark.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+    img#documentIcon:hover {
+        height: 24px;
+        width: 24px;
+        background-image: url(../images/Allscripts/document_Hover.gif);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+
+img#messageQueueIcon {
+    height: 24px;
+    width: 24px;
+    border: none;
+    background-image: url(../images/Allscripts/headermsgqueue.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+    img#messageQueueIcon:hover {
+        height: 24px;
+        width: 24px;
+        background-image: url(../images/Allscripts/headermsgqueueHover.gif);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+img#iLearnIcon {
+    height: 24px;
+    width: 24px;
+    border: none;
+    background-image: url(../images/Allscripts/gradCap.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+    img#iLearnIcon:hover {
+        height: 24px;
+        width: 24px;
+        background-image: url(../images/Allscripts/gradCapHover.png);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+/*Footer -- Bar under master*/
+.h1title {
+    background-color: #2F2257;
+}
+
+/*Right Panel Accordion*/
+.accordionHeader {
+    background-color: #999999
+}
+
+.accordionHeaderText {
+    background-color: #999999
+}
+
+
+.rgAltRow {
+    background: #f2f2f2;
+    background-color: #f2f2f2;
+}
+
+
+.rightPanelMed {
+    border-left: 3px solid #2F2257 !important;
+    border-right: 3px solid #2F2257 !important;
+}
+
+.erxSelectedRow {
+    background-color: #ECE8F7 !important;
+}
+
+.overlayTitle,
+.erxOverlayTitle {
+    -ms-border-top-left-radius: 10px;
+    border-top-left-radius: 10px;
+    -ms-border-top-right-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #e3e3e3;
+    text-align: left;
+    color: #665999;
+    text-shadow: 0 1px 0 #ffffff;
+    height: 30px;
+    padding-left: 15px;
+    padding-top: 10px;
+    font-size: 1.5em;
+}
+
+.overlayTitleText {
+    color: #665999 !important;
+    text-shadow: 0 1px 0 #ffffff;
+    font-size: 1.5em;
+}
+
+.overlayTitleAngular {
+    color: #665999 !important;
+    text-shadow: 0 1px 0 #ffffff;
+    padding-left: 15px;
+    font-size: 2em;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    color: #fff;
+    cursor: default;
+    background-color: #665999;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+    font-weight: bold;
+    width: 100%;
+}
+
+
+.btnStyleAction {
+    background-image: -moz-linear-gradient(#ffffff, #d7ceff);
+    background-image: -webkit-linear-gradient(#ffffff, #d7ceff);
+    background-image: -o-linear-gradient(#ffffff, #d7ceff);
+    background-image: linear-gradient(#ffffff, #d7ceff);
+    border: solid 1px #665999;
+}
+.rgSelectedRow {
+    background-color: #ECE8F7 !important;
+ }

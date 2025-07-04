@@ -1,0 +1,8 @@
+﻿<div *ngIf="eAuthMsg">
+    <div *ngIf="eAuthMsg.EPAOpenMsgVisible" style="margin-left: 8px;">
+        <a href="javascript:void(0);" (click)="RedirectTo(eAuthMsg.EPAOpenMsgUrl)">{{eAuthMsg.EPAOpenMsg}}</a>
+    </div>
+    <div *ngIf="eAuthMsg.EPAResolvedMsgVisible" style="margin-left: 8px;">
+        <a href="javascript:void(0);" (click)="RedirectTo(eAuthMsg.EPAResolvedMsgUrl)">{{eAuthMsg.EPAResolvedMsg}}</a>
+    </div>
+</div>

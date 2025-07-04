@@ -1,0 +1,233 @@
+﻿/*{#PRIMARY#}: #004D43*/
+/*{#LIGHT#}: #ccdbd9*/
+
+.eRxHealthSheet_Panel
+{
+	background-color:#004D43; 
+}
+
+img#loginLogo{background:url(logo.jpg); background-repeat:no-repeat; background-position:center;}
+img#mainLogo{background:url(logo.jpg); background-repeat:no-repeat; background-position:center;}
+
+#colapsable-panel-header-script-pad > div,
+#colapsable-panel-header-script-pad > div > table > tbody > tr > td.header-div > div > div:nth-child(2) > span {
+    background-color: #004D43 !important;
+}
+.appStripe {
+    border-top: 5px #004D43 solid;
+}
+.accordionHeader{background-color:#004D43}
+.accordionHeaderText{background-color:#004D43}
+.rightBoxHeader {
+	background-color:#004D43;}
+.rightBoxTable 
+{
+	border: solid 2px #004D43;
+}
+img#helpIcon:hover{background:url(help.gif) !important; background-repeat:no-repeat; background-position:center;}
+img#helpIconLogin:hover{background:url(help.gif); background-repeat:no-repeat; background-position:center;}
+img#logoutIcon:hover{background:url(logout.gif); background-repeat:no-repeat; background-position:center;}
+img#messageQueueIcon:hover{background:url(messageQueue.gif); background-repeat:no-repeat; background-position:center;}
+img#iLearnIcon:hover{height: 24px; width: 24px; background-image:url(ilearn.png); background-repeat:no-repeat; background-position:center;}
+
+.RadPanelBar div.rpHeaderTemplate, a.rpLink
+{
+    background: linear-gradient(#004D43, #ccdbd9);
+    background: -webkit-linear-gradient(#004D43, #ccdbd9); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#004D43, #ccdbd9); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#004D43, #ccdbd9); /* For Firefox 3.6 to 15 */
+    color: white;
+}
+.editRollover:hover span
+{
+    color: #004D43;
+	cursor:pointer;
+}
+.rpText
+{
+    color: white;
+}
+.headerIcon:hover span
+{
+    color: #004D43
+}
+.rgSelectedRow {
+    background: #e4eff6 0 -5900px repeat-x url('../../telerik/Skins/Allscripts/Grid/Img/sprite.gif') !important;
+}
+
+
+
+.primaryForeColor {
+    color: #004D43
+}
+
+
+
+.rightPanelMed {
+    border-left: 3px solid #004D43 !important;
+    border-right: 3px solid #004D43 !important;
+}
+
+.erxSelectedRow {
+    background-color: #ccdbd9 !important;
+}
+
+
+.loginbanner
+{
+	background-color:#004D43;
+}
+
+.loginMessageTable
+{
+	border-bottom: solid 1px #004D43;
+	border-left: solid 1px #004D43;
+	border-right: solid 1px #004D43;
+}
+
+.loginMessageRow
+{
+	border-top: solid 3px #004D43;
+	border-bottom: solid 1px #004D43;
+}
+.adminlink					{font:normal 12px arial, verdana, sans-serif; color:#004D43;}
+.normal						{font:normal 12px arial, verdana, sans-serif; color:#004D43;}
+.head						{font:bold 12px arial, verdana, sans-serif; color:#004D43; vertical-align:middle;}
+.Pheadblack					{font:bold 12px arial, verdana, sans-serif; color:#004D43; text-indent:10px;vertical-align:middle;}
+
+
+.GridHeader
+{	
+	color: #004D43;
+}
+.SelectedRow
+{
+	background-color: #ccdbd9;
+}
+.NormalCenter				{
+	color:#004D43;
+}	
+.NormalVerticalCenter				{
+	color:#004D43;
+}	
+.NormalCenterSmall				{
+	color:#004D43;
+}					
+.NormalRightSmall				{
+	color:#004D43;
+}	
+.DURWarning
+{
+	color: #004D43;
+}	
+.headName			{font:italic normal 14px arial, verdana, sans-serif;color:#004D43;vertical-align:middle;font-weight:bold;}			
+.Itallic			{font:italic bold 10px arial, verdana, sans-serif;color:#004D43;vertical-align:middle;}
+.center				{font:normal 12px arial, verdana, sans-serif;color:#004D43;vertical-align:middle;text-align: center;}
+.NormalForScript	{font:normal 9px arial, verdana, sans-serif; color:#004D43; vertical-align:middle; text-align: center;}									
+.table				{border-bottom-style: solid;border-bottom-color: #004D43;border-bottom-width: thin;}
+.DEANUMBER			{font:italic normal 11px arial, verdana, sans-serif;color:#004D43;vertical-align:middle;}	
+
+.DURHeading
+{
+	color: #AE0910;
+}
+.RSSHeading
+{
+	font:normal 11px arial, sans-serif; color:#004D43; vertical-align:middle;
+}
+.RSSDetail
+{
+	font:normal 10px arial, sans-serif; color:#004D43; vertical-align:middle;
+}
+
+/* CSS Design by Kumar */
+
+a {
+	color: #004D43;
+}
+a:visited {
+	color: #004D43;
+}
+a:hover {
+	color: #004D43;
+}
+.h1title {
+	background-color: #004D43;
+}
+.h4titleText {
+	color: #004D43;
+}
+.Titbarcolor1 
+{
+	background-color:#004D43;
+}
+
+.tabSelected
+{	
+	background-color:#004D43;
+}
+a.tabSelectedLink
+{		
+	background-color:#004D43;
+}
+.divider
+{
+	border-bottom:solid 1px #004D43;
+}
+
+.redborder     { height:1px; background-color:#004D43; }
+.normaltxt		{ font-size:12px; color:#004D43; }
+
+.subheadred		{ font-size:12px; font-weight:bold; color: #004D43; }
+.borderbox		{ background-color: #ffffff; border:thin solid #004D43; padding: 8px; height: 30px; width: 300px; text-align: center; margin: auto;}
+
+.title      { font-weight:bold; font-size:14px; font-family: Arial, sans-serif;  color: #004D43; margin: 0px; padding: 0px;}
+
+
+/*  ******************** BUTTON  STYLES ************************ */
+
+
+.accordionHeaderScriptPad
+{
+    color: #004D43;
+	background-color: #004D43;
+}
+
+.accordionHeaderTextScriptPad
+{
+	background-color: #004D43;
+}
+
+
+.PopUpTable
+{
+    border: 1px #004D43 solid;
+}
+td.PopUpHeader
+{ 
+    background-color: #004D43;
+}
+
+.deluxeComparisons
+{
+	border:solid 1px #004D43;
+}
+
+.deluxeComparisons th
+{
+	 color:#004D43;
+	 border:solid 1px #004D43;
+}
+
+.deluxeComparisons td
+{
+	 border:solid 1px #004D43;
+}
+/*bootstrap override*/
+.nav-tabs>li>a:hover {
+  border:none;
+}
+.nav-tabs>li.active>a,.nav-tabs>li.active>a:focus,.nav-tabs>li.active>a:hover {
+     background-color:#004D43;
+     border-color:#004D43;
+}

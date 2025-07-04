@@ -1,0 +1,344 @@
+<div class="subscription-container">
+    <div *ngIf="!model.enterprisePricing">
+
+        <div class="subscription-card">
+            <div class="subscription-card-header">
+                <div>
+                    <img class="subscription-badge" src="/images/registration/starPreRegdLogo.png" />
+                </div>
+                <div class="subscription-header-title">
+                    Veradigm ePrescribe&trade; Basic
+                </div>
+            </div>
+            <div class="subscription-card-body">
+                <div class="subscription-card-group">
+                    <div class="subscription-card-row">
+                        Prescribe Medications Electronically
+                    </div>
+                    <div class="subscription-card-row">
+                        Electronic Prior Authorization (ePA)
+                    </div>
+                    <div class="subscription-card-row">
+                        Easy to Use
+                    </div>
+                </div>
+                <div class="subscription-card-row">
+                    <span id="subscription-basicPrice" class="subscription-price">Only ${{model.price.basic}} per month per prescriber</span>
+                    - 30 day free trial!
+                </div>
+                <div class="subscription-card-row">
+
+                    <span id="linkBasicRegister" (click)="redirectToCreateUser('CompulsoryBasic')" class="subscription-link">Register Now</span>
+                </div>
+                <div class="subscription-card-row">
+                    Already registered? <span id="linkBasicLogin" (click)="redirectToLogin()" class="subscription-link">Sign in here</span>
+                </div>
+            </div>
+        </div> <!--End of First Panel-->
+
+        <div class="subscription-card">
+            <div class="subscription-card-header">
+                <div>
+                    <img class="subscription-badge" src="/images/registration/starPreRegdLogo.png" />
+                    <img class="subscription-badge" src="/images/registration/starPreRegdLogo.png" />
+                </div>
+                <div class="subscription-header-title">
+                    Veradigm ePrescribe&trade; Deluxe
+                </div>
+            </div>
+            <div class="subscription-card-body">
+                <div class="subscription-card-group">
+                    <div class="subscription-card-row">
+                        Prescribe Medications Electronically
+                    </div>
+                    <div class="subscription-card-row">
+                        Electronic Prior Authorization (ePA)
+                    </div>
+                    <div class="subscription-card-row">
+                        Access Live Customer Support
+                    </div>
+                    <div class="subscription-card-row">
+                        Easy to Use
+                    </div>
+                </div>
+                <div class="subscription-card-row">
+                    <span id="subscription-deluxePrice" class="subscription-price">Only ${{model.price.deluxeLogRx}} per month per prescriber</span>
+                </div>
+                <div class="subscription-card-row">
+
+                    <span id="linkDeluxeRegister" (click)="redirectToCreateUser('DeluxeEpaLogRx')" class="subscription-link">Register Now</span> for ePrescribe Basic.
+                </div>
+                <div class="subscription-card-row">
+                    Once completed and you're logged in the application, click on the Manage Account tab to upgrade to Deluxe.
+                </div>
+                <div class="subscription-card-row">
+                    Already registered? <span id="linkBasicLogin" (click)="redirectToLogin()" class="subscription-link">Sign in here</span> and click on the Manage Account
+                </div>
+            </div>
+        </div> <!--End of Second Panel-->
+
+        <div class="subscription-card">
+            <div class="subscription-card-header">
+                <div>
+                    <img class="subscription-badge" src="/images/registration/starPreRegdLogo.png" />
+                    <img class="subscription-badge" src="/images/registration/starPreRegdLogo.png" />
+                    <img class="subscription-badge" src="/images/registration/starPreRegdLogo.png" />
+                </div>
+                <div class="subscription-header-title">
+                    Veradigm ePrescribe&trade; Deluxe with EPCS
+                </div>
+            </div>
+            <div class="subscription-card-body">
+                <div class="subscription-card-group">
+                    <div class="subscription-card-row">
+                        Prescribe Medications Electronically
+                    </div>
+                    <div class="subscription-card-row">
+                        Electronic Prior Authorization (ePA)
+                    </div>
+                    <div class="subscription-card-row">
+                        Prescription Drug Monitoring Program (PDMP)
+                    </div>
+                    <div class="subscription-card-row">
+                        Electronic Prescription Controlled Substances (EPCS)
+                    </div>
+                    <div class="subscription-card-row">
+                        Access Live Customer Support
+                    </div>
+                    <div class="subscription-card-row">
+                        Easy to Use
+                    </div>
+                </div>
+                <div class="subscription-card-row">
+                    <span id="subscription-epcsPrice" class="subscription-price">Only ${{model.price.deluxeEpcsLogRx}} per month per prescriber</span>
+                </div>
+                <div class="subscription-card-row">
+
+                    <span id="linkEpcsRegister" (click)="redirectToCreateUser('DeluxeEPCSEpaLogRx2017')" class="subscription-link">Register Now</span> for ePrescribe Basic.
+                </div>
+                <div class="subscription-card-row">
+                    Once completed and you're logged in the application, click on the Get EPCS tab to upgrade to Deluxe with EPCS.
+                </div>
+                <div class="subscription-card-row">
+                    Already registered? <span id="linkBasicLogin" (click)="redirectToLogin()" class="subscription-link">Sign in here</span> and click on Get EPCS
+                </div>
+            </div>
+        </div> <!--End of Third Panel-->
+
+    </div>
+
+    <div *ngIf="model.enterprisePricing">
+        <div class="subscription-card" *ngIf="model.price.basic">
+            <div class="subscription-card-header">
+                <div>
+                    <img class="subscription-badge" src="/images/registration/starPreRegdLogo.png" />
+                    <img class="subscription-badge" src="/images/registration/starPreRegdLogo.png" />
+                    <img class="subscription-badge" src="/images/registration/starPreRegdLogo.png" />
+                </div>
+                <div class="subscription-header-title">
+                    Veradigm ePrescribe&trade; Basic
+                </div>
+            </div>
+            <div class="subscription-card-body">
+                <div class="subscription-card-group">
+                    <div class="subscription-card-row">
+                        Prescribe Medications Electronically
+                    </div>
+                    <div class="subscription-card-row">
+                        Electronic Prior Authorization (ePA)
+                    </div>
+                    <div class="subscription-card-row">
+                        Easy to Use
+                    </div>
+                </div>
+                <div class="subscription-card-row">
+                    <span id="subscription-entBasicPrice" class="subscription-price">Only ${{model.price.basic}} per month per prescriber</span>
+                </div>
+                <div class="subscription-card-row">
+                    <span id="linkEntBasicRegister" (click)="redirectToCreateUser('CompulsoryBasic')" class="subscription-link">Register Now</span>
+                </div>
+                <div class="subscription-card-row">
+                    Already registered? <span id="linkBasicLogin" (click)="redirectToLogin()" class="subscription-link">Sign in here</span>
+                </div>
+            </div>
+        </div> <!--End of enterprise Basic Panel-->
+        
+        <div class="subscription-card" *ngIf="model.price.deluxeLogRx">
+            <div class="subscription-card-header">
+                <div>
+                    <img class="subscription-badge" src="/images/registration/starPreRegdLogo.png" />
+                    <img class="subscription-badge" src="/images/registration/starPreRegdLogo.png" />
+                    <img class="subscription-badge" src="/images/registration/starPreRegdLogo.png" />
+                </div>
+                <div class="subscription-header-title">
+                    Veradigm ePrescribe&trade; Deluxe with Sponsored Messages
+                </div>
+            </div>
+            <div class="subscription-card-body">
+                <div class="subscription-card-group">
+                    <div class="subscription-card-row">
+                        Prescribe Medications Electronically
+                    </div>
+                    <div class="subscription-card-row">
+                        Electronic Prior Authorization (ePA)
+                    </div>
+                      <div class="subscription-card-row">
+                        Access Live Customer Support
+                    </div>
+                    <div class="subscription-card-row">
+                        Easy to Use
+                    </div>
+                </div>
+                <div class="subscription-card-row">
+                    <span id="subscription-entDeluxeLogRxPrice" class="subscription-price">Only ${{model.price.deluxeLogRx}} per month per prescriber</span>
+                </div>
+                <div class="subscription-card-row">
+                    <span id="linkEntDeluxeLogRxRegister" (click)="redirectToCreateUser('DeluxeEpaLogRx')" class="subscription-link">Register Now</span>
+                </div>
+                <div class="subscription-card-row">
+                    Already registered? <span id="linkEntDeluxeLogRxLogin" (click)="redirectToLogin()" class="subscription-link">Sign in here</span>
+                </div>
+            </div>
+
+
+        </div> <!--End of enterprise deluxe with ads Panel-->
+       
+        <div class="subscription-card" *ngIf="model.price.deluxe">
+            <div class="subscription-card-header">
+                <div>
+                    <img class="subscription-badge" src="/images/registration/starPreRegdLogo.png" />
+                    <img class="subscription-badge" src="/images/registration/starPreRegdLogo.png" />
+                    <img class="subscription-badge" src="/images/registration/starPreRegdLogo.png" />
+                </div>
+                <div class="subscription-header-title">
+                    Veradigm ePrescribe&trade; Deluxe
+                </div>
+            </div>
+            <div class="subscription-card-body">
+                <div class="subscription-card-group">
+                    <div class="subscription-card-row">
+                        Prescribe Medications Electronically
+                    </div>
+                    <div class="subscription-card-row">
+                        Electronic Prior Authorization (ePA)
+                    </div>
+                    <div class="subscription-card-row">
+                        No Sponsored Messages
+                    </div>
+                    <div class="subscription-card-row">
+                        Access Live Customer Support
+                    </div>
+                    <div class="subscription-card-row">
+                        Easy to Use
+                    </div>
+                </div>
+                <div class="subscription-card-row">
+                    <span id="subscription-entDeluxePrice" class="subscription-price">Only ${{model.price.deluxe}} per month per prescriber</span>
+                </div>
+                <div class="subscription-card-row">
+                    <span id="linkEntDeluxeRegister" (click)="redirectToCreateUser('DeluxeEpa')" class="subscription-link">Register Now</span>
+                </div>
+               <div class="subscription-card-row">
+                    Already registered? <span id="linkEntDeluxeLogin" (click)="redirectToLogin()" class="subscription-link">Sign in here</span>
+                </div>
+            </div>
+        </div> <!--End of enterprise deluxe Panel-->
+
+        <div class="subscription-card" *ngIf="model.price.deluxeEpcsLogRx">
+            <div class="subscription-card-header">
+                <div>
+                    <img class="subscription-badge" src="/images/registration/starPreRegdLogo.png" />
+                    <img class="subscription-badge" src="/images/registration/starPreRegdLogo.png" />
+                    <img class="subscription-badge" src="/images/registration/starPreRegdLogo.png" />
+                </div>
+                <div class="subscription-header-title">
+                    Veradigm ePrescribe&trade; Deluxe with EPCS with Sponsored Messages
+                </div>
+            </div>
+            <div class="subscription-card-body">
+                <div class="subscription-card-group">
+                    <div class="subscription-card-row">
+                        Prescribe Medications Electronically
+                    </div>
+                    <div class="subscription-card-row">
+                        Electronic Prior Authorization (ePA)
+                    </div>
+                    <div class="subscription-card-row">
+                        Prescription Drug Monitoring Program (PDMP)
+                    </div>
+                    <div class="subscription-card-row">
+                        Electronic Prescription Controlled Substances (EPCS)
+                    </div>
+                    <div class="subscription-card-row">
+                        Access Live Customer Support
+                    </div>
+                    <div class="subscription-card-row">
+                        Easy to Use
+                    </div>
+                </div>
+                <div class="subscription-card-row">
+                    <span id="subscription-entDeluxeEpcsLogRxPrice" class="subscription-price">Only ${{model.price.deluxeEpcsLogRx}} per month per prescriber</span>
+                </div>
+                <div class="subscription-card-row">
+                    NOTE: There is a ${{model.price.epcsSetup}} per prescriber one-time setup fee for EPCS
+                </div>
+                <div class="subscription-card-row">
+                    <span id="linkEntDeluxeEpcsLogRxRegister" (click)="redirectToCreateUser('DeluxeEPCSEpaLogRx2017')" class="subscription-link">Register Now</span>
+                </div>
+                <div class="subscription-card-row">
+                    Already registered? <span id="linkEntDeluxeEpcsLogRxLogin" (click)="redirectToLogin()" class="subscription-link">Sign in here</span>
+                </div>
+            </div>
+        </div> <!--End of enterprise deluxe with EPCS with ads Panel-->
+
+        <div class="subscription-card" *ngIf="model.price.deluxeEpcs">
+            <div class="subscription-card-header">
+                <div>
+                    <img class="subscription-badge" src="/images/registration/starPreRegdLogo.png" />
+                    <img class="subscription-badge" src="/images/registration/starPreRegdLogo.png" />
+                    <img class="subscription-badge" src="/images/registration/starPreRegdLogo.png" />
+                </div>
+                <div class="subscription-header-title">
+                    Veradigm ePrescribe&trade; Deluxe with EPCS
+                </div>
+            </div>
+            <div class="subscription-card-body">
+                <div class="subscription-card-group">
+                    <div class="subscription-card-row">
+                        Prescribe Medications Electronically
+                    </div>
+                    <div class="subscription-card-row">
+                        Electronic Prior Authorization (ePA)
+                    </div>
+                    <div class="subscription-card-row">
+                        Prescription Drug Monitoring Program (PDMP)
+                    </div>
+                    <div class="subscription-card-row">
+                        Electronic Prescription Controlled Substances (EPCS)
+                    </div>
+                    <div class="subscription-card-row">
+                        No Sponsored Messages
+                    </div>
+                    <div class="subscription-card-row">
+                        Access Live Customer Support
+                    </div>
+                    <div class="subscription-card-row">
+                        Easy to Use
+                    </div>
+                </div>
+                <div class="subscription-card-row">
+                    <span id="subscription-entDeluxeEpcsPrice" class="subscription-price">Only ${{model.price.deluxeEpcs}} per month per prescriber</span>
+                </div>
+                <div class="subscription-card-row">
+                    NOTE: There is a ${{model.price.epcsSetup}} per prescriber one-time setup fee for EPCS
+                </div>
+                <div class="subscription-card-row">
+                    <span id="linkEntDeluxeRegister" (click)="redirectToCreateUser('DeluxeEPCSEpa2017')" class="subscription-link">Register Now</span>
+                </div>
+                <div class="subscription-card-row">
+                    Already registered? <span id="linkEntDeluxeLogin" (click)="redirectToLogin()" class="subscription-link">Sign in here</span>
+                </div>
+            </div>
+        </div> <!--End of enterprise deluxe with EPCS Panel-->
+    </div>
+</div>

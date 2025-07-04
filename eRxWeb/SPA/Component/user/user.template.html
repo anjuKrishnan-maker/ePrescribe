@@ -1,0 +1,160 @@
+﻿<form #userForm="ngForm" (ngSubmit)="onSubmit(user)">
+    <div *ngIf='user' class="user-container-controls">
+        <div class="user-btn-group">
+            <input type="button" id="btnBack" value="Back" class="btnstyle user-btn" (click)="onBackButtonClick()" />
+            <input [disabled]="!isSaveAllowed" type="submit" id="btnSave" value="{{saveUserText}}" class="btnstyle user-btn" />
+        </div>
+        <div class="user-message-strip">
+            <erx-message [Messages]="messageStrip"></erx-message>
+        </div>
+    </div>
+
+    <div class="user-container-body">
+        <!--User Information-->
+        <div *ngIf='user?.UserInformation'>
+            <mat-expansion-panel [expanded]="true">
+                <mat-expansion-panel-header [collapsedHeight]="'35px'" [expandedHeight]="'35px'">
+                    <mat-panel-title>
+                        <span class="user-panel-title">User Information</span>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <div id="userInfoPanelDetail" class="user-panel-body-content">
+                    <erx-user-information [userInformation]="user.UserInformation" (isUserInformationFormValid)="setChildFormStatus($event, 'userinformation')"></erx-user-information>
+                </div>
+            </mat-expansion-panel>
+        </div>
+
+        <!--Security Settings-->
+        <div *ngIf='user?.UserSecurity'>
+            <mat-expansion-panel [expanded]="true">
+                <mat-expansion-panel-header [collapsedHeight]="'35px'" [expandedHeight]="'35px'">
+                    <mat-panel-title>
+                        <span class="user-panel-title">Security Settings</span>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <div id="" class="user-panel-body-content">
+                    <erx-user-security-settings [userSecurity]="user.UserSecurity"></erx-user-security-settings>
+                </div>
+            </mat-expansion-panel>
+        </div>
+
+        <!--User Settings-->
+        <div *ngIf='user?.UserSettings'>
+            <mat-expansion-panel [expanded]="true">
+                <mat-expansion-panel-header [collapsedHeight]="'35px'" [expandedHeight]="'35px'">
+                    <mat-panel-title>
+                        <span class="user-panel-title">User Settings</span>
+                        &nbsp;&nbsp;
+                        <span>
+                            <a ID="lnkUserSettingsDesc" class="erx-hyperlink" (click)="displayUserTypeDefinition();$event.stopPropagation()">Learn more</a>
+                        </span>
+                        <span class="user-right-link">
+                            <a ID="lnkMoreInfo" *ngIf="isEditUser()" class="erx-hyperlink" (click)="displayUserMoreInformation(user.UserID);$event.stopPropagation()">more</a>
+                        </span>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <div id="" class="user-panel-body-content">
+                    <erx-user-settings [userSettings]="user.UserSettings" (isUserSettingsFormValid)="setChildFormStatus($event, 'usersettings')"></erx-user-settings>
+                </div>
+            </mat-expansion-panel>
+        </div>
+
+        <!--User Credentials-->
+        <div *ngIf='user?.UserCredentials && isUserPrescriber()'>
+            <mat-expansion-panel [expanded]="true">
+                <mat-expansion-panel-header [collapsedHeight]="'35px'" [expandedHeight]="'35px'">
+                    <mat-panel-title>
+                        <span class="user-panel-title">Credentials</span>
+
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <div id="" class="user-panel-body-content">
+                    <erx-user-credentials [userCredentials]="user.UserCredentials" [hasDEALicense]="hasDEALicense" (isUserCredentialsFormValid)="setChildFormStatus($event, 'usercredentials')"></erx-user-credentials>
+                </div>
+            </mat-expansion-panel>
+        </div>
+
+        <!--DEA License-->
+        <div *ngIf="user?.UserDEALicenses && isUserPrescriber()" >
+            <mat-expansion-panel [expanded]="true">
+                <mat-expansion-panel-header [collapsedHeight]="'35px'" [expandedHeight]="'35px'">
+                    <mat-panel-title>
+                        <span class="user-panel-title">DEA License</span>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div id="" class="user-panel-body-content">
+                    <erx-user-dea-license [userDeaLicensesModel]="user.UserDEALicenses" (hasDEALicense)="updateHasDEALicense($event)"></erx-user-dea-license>
+                </div>
+            </mat-expansion-panel>
+        </div>
+
+        <!--State License-->
+        <div *ngIf="user?.UserStateLicenses && isUserPrescriber()">
+            <mat-expansion-panel [expanded]="true">
+                <mat-expansion-panel-header [collapsedHeight]="'35px'" [expandedHeight]="'35px'">
+                    <mat-panel-title>
+                        <span class="user-panel-title">State License</span>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div id="" class="user-panel-body-content">
+                    <erx-user-state-license [userStateLicensesModel]="user.UserStateLicenses"></erx-user-state-license>
+                </div>
+            </mat-expansion-panel>
+        </div>
+
+        <!--User Preferences-->
+        <div *ngIf='user?.UserPreferences && isUserPrescriber()'>
+            <mat-expansion-panel [expanded]="true">
+                <mat-expansion-panel-header [collapsedHeight]="'35px'" [expandedHeight]="'35px'">
+                    <mat-panel-title>
+                        <span class="user-panel-title">User Preferences</span>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div id="" class="user-panel-body-content">
+                    <erx-user-preferences [userPreferences]="user.UserPreferences" [redirectionParam]="initialUrlQuery"></erx-user-preferences>
+                </div>
+            </mat-expansion-panel>
+        </div>
+
+        <!--EPCS Settings-->
+        <div *ngIf='user?.UserEPCSSettings && (user?.UserEPCSSettings.IsLicenseShieldEnabled && (user?.UserEPCSSettings.IsEnterpriseClientEPCSEnabled || user?.UserEPCSSettings.IsLicenseEPCSPurchased))'>
+            <mat-expansion-panel [expanded]="true">
+                <mat-expansion-panel-header [collapsedHeight]="'35px'" [expandedHeight]="'35px'">
+                    <mat-panel-title>
+                        <span class="user-panel-title">EPCS Settings</span>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <div id="userInfoPanelDetail" class="user-panel-body-content">
+                    <erx-user-epcs-settings [userEpcsSettings]="user.UserEPCSSettings" [redirectionParam]="initialUrlQuery"></erx-user-epcs-settings>
+                </div>
+            </mat-expansion-panel>
+        </div>
+
+        <!--Mobile Messaging (SMS) Settings-->
+        <div *ngIf='user?.UserMobileMessageSettings && (isUserPrescriber() || user?.IsAdmin) && isSelfEdit() && user?.UserMobileMessageSettings.IsSMSEnabled'>
+            <mat-expansion-panel [expanded]="true">
+                <mat-expansion-panel-header [collapsedHeight]="'35px'" [expandedHeight]="'35px'">
+                    <mat-panel-title>
+                        <span class="user-panel-title">Mobile Messaging (SMS) Settings</span>&nbsp;&nbsp;
+                        <a ID="lnkBtnSMSLearnMore" class="erx-hyperlink" (click)="displayUserMobileMessageDescription(); $event.stopPropagation()">Learn More</a>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <div id="userInfoPanelDetail" class="user-panel-body-content">
+                    <erx-user-mobile-messaging-settings [userMobileMessageSettings]="user.UserMobileMessageSettings"></erx-user-mobile-messaging-settings>
+                </div>
+            </mat-expansion-panel>
+        </div>
+    </div>
+</form>
+
+<!--Overlays-->
+<erx-new-user-activation-modal-popup #NewUserActivationModalPopup></erx-new-user-activation-modal-popup>
+<erx-user-type-definition #UserTypeDefinition></erx-user-type-definition>
+<erx-user-guid-modal #UserGuidModal></erx-user-guid-modal>
+<erx-user-mobile-messaging-description #UserMobileMessageDescription></erx-user-mobile-messaging-description>

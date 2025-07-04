@@ -1,0 +1,353 @@
+<%@ Master Language="C#" AutoEventWireup="true"
+    Inherits="eRxWeb.PhysicianMasterPageBlank" Codebehind="PhysicianMasterPageBlank.master.cs" %>
+
+<%@ Register Assembly="SessionTimeoutControl" Namespace="eRx.WebControls" TagPrefix="stc" %>
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <title></title>
+    <link id="lnkDefaultStyleSheet" href="Style/Default.css" runat="server" rel="stylesheet" type="text/css" />
+    <link id="lnkStyleSheet" runat="server" rel="stylesheet" type="text/css" />
+    <link id="lnkDefaultPrintStyleSheet" href="Style/DefaultPrint.css" runat="server"
+        rel="stylesheet" type="text/css" media="print" />
+    <link id="PageIcon" rel="SHORTCUT ICON" runat="server" href="images/favicon.ico" />
+    <link id="Link1" href="telerik/Skins/Allscripts/Grid/Grid.Allscripts.css" runat="server"
+        rel="stylesheet" type="text/css" />
+    <link id="Link2" href="telerik/Skins/Allscripts/ComboBox/ComboBox.Allscripts.css"
+        runat="server" rel="stylesheet" type="text/css" />
+    <link id="Link3" href="telerik/Skins/Allscripts/Calendar/Calendar.Allscripts.css"
+        runat="server" rel="stylesheet" type="text/css" />
+    <link id="Link4" href="telerik/Skins/Allscripts/Input/Input.Allscripts.css" runat="server"
+        rel="stylesheet" type="text/css" />
+    <link id="Link5" href="telerik/Skins/Allscripts/PanelBar/PanelBar.Allscripts.css"
+        runat="server" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeaderPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body onload="Wrapper()">
+    <script language="javascript" type="text/javascript" src="js/jquery-1.4.2.js">
+    </script>
+    <script language="javascript" type="text/javascript" src="<%=ResolveUrl("~/js/PageUtil.js?version="+ SessionAppVersion) %>">
+    </script>
+    <script language="javascript" type="text/javascript" src="js/gridUtil.js">
+    </script>
+    <script type="text/javascript" language="javascript" src="js/plugins.js">
+    </script>
+    <script language="javascript" type="text/javascript" src="js/privacyOverride.js">
+    </script>
+       <script language="javascript" type="text/javascript" src="<%=ResolveUrl("~/js/deluxeFeatureSelection.js?version="+ SessionAppVersion) %>">
+    </script>
+    <script language="javascript" type="text/javascript">
+    
+        
+        <%-- function expireSession()
+    {
+        var timeoutURL = "logout.aspx?Timeout=YES";
+        var lnkLogout = document.getElementById("<%=lnkLogout.ClientID %>");
+        if (lnkLogout != null)
+        {
+            var logoutURL = lnkLogout.getAttribute("href")
+            if (logoutURL != null && logoutURL != "")
+            {
+                if (logoutURL.indexOf('?') >= 0)
+                {
+                    timeoutURL = logoutURL + "&Timeout=YES"
+                }
+                else
+                {
+                    timeoutURL = logoutURL + "?Timeout=YES"
+                }            
+            }
+        }
+                
+        window.location = timeoutURL;
+    }--%>
+    setLogOutControlId("<%=lnkLogout.ClientID %>");
+
+    function TABLE1_onclick() {
+
+    }
+    function hideHeader()
+    {
+        var thetable = document.getElementById("Header");
+        thetable.style.display = 'none';    
+    }
+    function hideFooter()
+    {
+        var thetable = document.getElementById("footer");
+        thetable.style.display = 'none';    
+    }
+    function hideSideBar()
+    {
+        var thebar = document.getElementById("sidebar");
+        thebar.style.display = 'none';
+    }
+    function postit(what)
+    {
+        var btn = document.getElementById("ctl00_" + what);
+        if (btn != null)
+        {
+		    if (btn.clicked == null || btn.clicked == false)
+		    {
+			    //Set the clicked attribute to be true
+			    btn.clicked = true;
+    			
+			    if (btn.click)
+				    btn.click();
+			    else
+			    {
+				    //Handle Firefox, Netscape event firing. 
+				    var evObj = document.createEvent('MouseEvents');
+				    evObj.initEvent( 'click', true, true );
+				    btn.dispatchEvent(evObj);
+			    }
+		    }
+		    else
+			    btn.clicked = false;
+        }
+    }
+
+
+    //function is added to basically check for Acrobat reader. If the Acrobat reader plugin is 
+    // Presentin the browser then we will enable the print button on the multipleview.aspx page 
+    // so that print option will be enalbed for vieweing and printing the report.
+    //Added by AKS on Jan 15th 2007. 
+    ///http://www.aspfree.com/c/a/Windows-Scripting/Detecting-Plugins-in-Internet-Explorer/4/
+    function CheckPlugin()
+    {
+       //alert(pluginlist);
+        if (pluginlist.indexOf("Acrobat Reader")!=-1)  // Get the list of pulugins and check for Acrobat reader plugin is present or not
+        {
+       
+            var objPrint;
+            objPrint=document.getElementById('btnPrintRpt');
+            if(objPrint != null)
+            {
+                 objPrint.disabled=false;  // if the plugin is present then enable the print button.
+            }
+         }
+    }
+
+    //Wrapper Function to call both the functionality...AKS for plugin detection..
+    function Wrapper()
+    {
+        backButtonOverride();  // First call the backbuttonoverride and then checkpulgin.
+        CheckPlugin();
+    }
+
+    
+        
+    var doc = document.documentElement;
+    doc.setAttribute('data-useragent', navigator.userAgent);
+    </script>
+    <form id="form1" runat="server" style="overflow-x:hidden;overflow-y:hidden;">
+    <div id="divLoading" style="display: none"> 
+    </div>
+    <asp:ScriptManager ID="masterScriptManager" runat="server" EnablePartialRendering="true"
+        ScriptMode="Release">
+    </asp:ScriptManager>
+        <script type="text/javascript">
+            var sysApplication = Sys.WebForms.PageRequestManager.getInstance();
+            ignoreIeEvents();
+            sysApplication.add_initializeRequest(beginRequest);
+            sysApplication.add_endRequest(endRequest);
+
+            function beginRequest() {
+                document.getElementById("divLoading").style.display = "inline";
+                //You can show a div or 
+            }
+
+            function endRequest() {
+                document.getElementById("divLoading").style.display = "none";
+            }       
+            RegisterPopupOvelay('');
+        </script>
+    <table id="Header" width="100%" cellspacing="0" cellpadding="0" style="height: 126px"  runat="server">
+        <tr>
+            <td class="appStripe" rowspan="5" style="height: 8%; vertical-align: top; width: 100px">
+                <img id="mainLogo" src="images/shim.gif" width="120" height="65" alt="Allscripts" />
+                <img src="images/powered_by.gif" id="poweredByImage" class="sponsored" alt="Allscripts" />
+            </td>
+            <td height="5" class="appStripe" width="100%">
+            </td>
+        </tr>
+        <tr style="height: 20px">
+            <td class="head valgn nowrap" style="text-align: right; padding-right: 10px" colspan="2">
+                <asp:Label ID="lblSiteName" runat="server" Font-Bold="true"></asp:Label>&nbsp;
+                <asp:ImageButton runat="server" ID="btnSites" CausesValidation="false" Visible="false"
+                    ImageUrl="~/images/Swap.png" ToolTip="Change Site" OnClick="btnSites_Click">
+                </asp:ImageButton>
+            </td>
+        </tr>
+        <tr style="height: 20px">
+            <td class="head valgn" style="text-align: right; padding-right: 10px" colspan="2">
+           <asp:Label ID="lblLastLoginLabel" runat="server" Text="Last Sign In :" Font-Bold="true"></asp:Label>  <asp:Label ID="lblLastLogin" runat="server" Text="" Font-Bold="true"></asp:Label> <br />
+                <asp:Label ID="lblAccountID" runat="server" Text="" Font-Bold="true" Visible="false"></asp:Label>
+                <asp:Label ID="lblUser" runat="server" Font-Bold="true"></asp:Label>
+                <%  if (Session["EditUser"] != null && bool.Parse(Session["EditUser"].ToString()))
+                    { %>
+                <asp:ImageButton ID="lnkProfile" runat="server" ImageUrl="~/images/Edit.gif" Text="Edit"
+                    ToolTip="Edit" CausesValidation="false"></asp:ImageButton>
+                <% } %>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: right; padding-right: 10px" colspan="2">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="head valgn" style="width: 30%; text-align: right; padding-right: 10px">
+                <div>
+                        </div>
+                        <div class="alignRight">
+                <div id="messageIcon" runat="server" style="display: inline;">
+                    <%  if (Session["SessionLicense"] != null && base.SessionLicense.EnterpriseClient.ShowMessageQueueReport)
+                        { %>
+                     <div class="headerIcon">
+                            <asp:HyperLink ID="lnkMessageQueue" runat="server"><img id="messageQueueIcon"src="images/shim.gif" style="vertical-align:middle; border: 0px;" /></asp:HyperLink>
+                            <br /> &nbsp;<span class="headerIconDescription">messages</span>
+                        </div>
+                    &nbsp;&nbsp;
+                    <% } %>
+                </div>                
+                <div id="iLearnLink" runat="server" style="display: inline;">
+                    <div class="headerIcon" style="border: none;">                            
+                        <asp:HyperLink ID="lnkILearn" runat="server" Target="_blank" Height="25px" Width="24px"><img src="images/shim.gif" id="iLearnIcon" style="vertical-align:middle; border:0px; margin-left: -10px;" /></asp:HyperLink>
+                        <div id="notification" class ="iLearnNotification" style="display:none;"></div>
+                        <br /> &nbsp;<span class="headerIconDescription">i-Learn</span>
+                    </div>
+                </div>
+                <div id="helpLink" runat="server" style="display: inline;">
+                   <div  class="headerIcon">
+                            <asp:HyperLink ID="lnkHelp" runat="server" Target="_blank" NavigateUrl="https://eprescribe.allscripts.com/help"><img src="images/shim.gif"id="helpIcon" style="vertical-align:middle; border:0px" /></asp:HyperLink>
+                            <br /> &nbsp;<span class="headerIconDescription">help</span>
+                        </div>
+                    &nbsp;&nbsp;
+                </div>
+                <div class="headerIcon">
+                            <asp:HyperLink ID="lnkLogout" runat="server" NavigateUrl="~/logout.aspx"><img src="images/shim.gif"id="logoutIcon" style="vertical-align:middle; border:0px"/></asp:HyperLink>
+                            <br />
+                            &nbsp;<span class="headerIconDescription">logout</span></div>
+               </div>
+            </td>
+        </tr>
+        <tr style="width: 100%">
+            <td align="left" class="divider" colspan="2">
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>
+                            <asp:Panel ID="patientsTab" runat="server" Width="100px" CssClass="tabUnSelected">
+                                <asp:HyperLink CssClass="tabUnSelectedLink" ID="patientsLink"
+                                    runat="server" Text="Patients"></asp:HyperLink>
+                            </asp:Panel>
+                            <ajaxToolkit:RoundedCornersExtender ID="patientsCornerExtender" runat="server" TargetControlID="patientsTab"
+                                Radius="3" Corners="Top" Enabled="true">
+                            </ajaxToolkit:RoundedCornersExtender>
+                        </td>
+                        <td>
+                            <asp:Panel ID="tasksTab" runat="server" Width="100px" CssClass="tabUnSelected">
+                                <asp:HyperLink NavigateUrl="docrefillmenu.aspx" CssClass="tabUnSelectedLink" ID="tasksLink"
+                                    runat="server" Text="Tasks"></asp:HyperLink>
+                            </asp:Panel>
+                            <ajaxToolkit:RoundedCornersExtender ID="tasksCornerExtender" runat="server" TargetControlID="tasksTab"
+                                Radius="3" Corners="Top">
+                            </ajaxToolkit:RoundedCornersExtender>
+                        </td>
+                        <td>
+                            <asp:Panel ID="libraryTab" runat="server" Width="100px" CssClass="tabUnSelected">
+                                <asp:HyperLink NavigateUrl="Library.aspx" CssClass="tabUnSelectedLink" ID="libraryLink"
+                                    runat="server" Text="Library"></asp:HyperLink>
+                            </asp:Panel>
+                            <ajaxToolkit:RoundedCornersExtender ID="libraryCornerExtender" runat="server" TargetControlID="libraryTab"
+                                Radius="3" Corners="Top" Enabled="true">
+                            </ajaxToolkit:RoundedCornersExtender>
+                        </td>
+                        <td>
+                            <asp:Panel ID="reportsTab" runat="server" Width="100px" CssClass="tabUnSelected">
+                                <asp:HyperLink NavigateUrl="Reports.aspx" CssClass="tabUnSelectedLink" ID="reportsLink"
+                                    Text="Reports" runat="server"></asp:HyperLink>
+                            </asp:Panel>
+                            <ajaxToolkit:RoundedCornersExtender ID="reportsCornerExtender" runat="server" TargetControlID="reportsTab"
+                                Radius="3" Corners="Top" Enabled="true">
+                            </ajaxToolkit:RoundedCornersExtender>
+                        </td>
+                        <td>
+                            <asp:Panel ID="settingsTab" runat="server" Width="100px" CssClass="tabUnSelected">
+                                <asp:HyperLink NavigateUrl="" CssClass="tabUnSelectedLink" ID="settingsLink"
+                                    runat="server" Text="Settings"></asp:HyperLink>
+                            </asp:Panel>
+                            <ajaxToolkit:RoundedCornersExtender ID="settingsCornerExtender" runat="server" TargetControlID="settingsTab"
+                                Radius="3" Corners="Top" Enabled="true">
+                            </ajaxToolkit:RoundedCornersExtender>
+                        </td>
+                        <td>
+                            <asp:Panel ID="ManageAccountTab" runat="server" Width="100px" CssClass="tabUnSelected">
+                                <asp:HyperLink NavigateUrl="IntegrationSolutionsList.aspx" CssClass="tabUnSelectedLink"
+                                    ID="ManageAccountLink" runat="server" Text="Manage Account"></asp:HyperLink>
+                            </asp:Panel>
+                            <ajaxToolkit:RoundedCornersExtender ID="integrationCornerExtender" runat="server"
+                                TargetControlID="ManageAccountTab" Radius="6" Corners="Top" Enabled="true">
+                            </ajaxToolkit:RoundedCornersExtender>
+                        </td>
+                        <td>
+                            <asp:Panel ID="myerxTab" runat="server" Width="100px" CssClass="tabUnSelected">
+                                <asp:HyperLink NavigateUrl="~/MyProfile.aspx" CssClass="tabUnSelectedLink" ID="myerxLink"
+                                    runat="server" Text="My eRx"></asp:HyperLink>
+                            </asp:Panel>
+                            <ajaxToolkit:RoundedCornersExtender ID="EPCSReportsCornersExtender" runat="server"
+                                TargetControlID="myerxTab" Radius="6" Corners="Top" Enabled="true">
+                            </ajaxToolkit:RoundedCornersExtender>
+                        </td>
+                         <td>
+                            <asp:Panel ID="getEpcsTab" runat="server" Width="100px" CssClass="tabUnSelected">
+                                <asp:HyperLink NavigateUrl="~/DeluxeFeatureSelectionPage.aspx?From=Menu" CssClass="tabUnSelectedLink" ID="GetEpcsLink"
+                                    runat="server" Text="Get EPCS"></asp:HyperLink>
+                            </asp:Panel>
+                            <ajaxToolkit:RoundedCornersExtender ID="getEpcsTabCornersExtender" runat="server"
+                                TargetControlID="getEpcsTab" Radius="6" Corners="Top" Enabled="true">
+                            </ajaxToolkit:RoundedCornersExtender>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table id="Content" width="100%" cellspacing="0" cellpadding="0">
+        <tr>
+            <td style="width: 80%">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    <p>
+                    </p>
+                </asp:ContentPlaceHolder>
+            </td>
+            <!--  27/10/06 HA/Kumar.V  css class added for right side content color -->
+            <td style="width: 20%" class="content2backcolor" id="cp2" runat="server">
+                <div id="rightPanel">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                </asp:ContentPlaceHolder>
+                
+                    </div>
+            </td>
+        </tr>
+    </table>
+    <table id="footer" width="100%" cellspacing="0" runat="server">
+        <tr>
+            <td colspan="2" class="h1title" align="right" style="padding-right: 3px">
+                <asp:Label ID="lblVersion" ForeColor="white" Font-Size="9px" runat="server"></asp:Label>
+            </td>
+        </tr>
+    </table>
+    <stc:SessionTimeoutControl ID="ctrlSessionTimeoutControl" runat="server">
+    </stc:SessionTimeoutControl>
+    </form>
+   
+    <script type="text/javascript">
+       // var navTop = $('#rightPanel').offset().top;
+    </script>
+</body>
+</html>

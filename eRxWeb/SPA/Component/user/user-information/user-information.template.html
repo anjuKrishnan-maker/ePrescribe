@@ -1,0 +1,110 @@
+﻿<form #userInformationForm="ngForm">
+    <div class="user-content-row">
+        <div class="ma-display-inline">
+            <label class="user-input-label"><span class="ma-form-mandatory-star">* </span>First Name </label>
+        </div>
+        <div class="ma-display-inline">
+            <input type="text" id="txtFirstName" [(ngModel)]="userInformation.FirstName" [disabled]="userInformation.IsEditedBySomeoneElse || userInformation.IsRestrictedMode"
+                   name="firstname" required maxlength="35" [pattern]="namePattern" #firstname="ngModel">
+        </div>
+        <div class="ma-display-inline user-input-validation">
+            <span *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)">
+                <span id="firstNameRequiredError" *ngIf="firstname.errors.required" class="validation-color">
+                    First name is required.
+                </span>
+                <span id="firstnamePatternError" *ngIf="firstname.errors.pattern" class="validation-color">
+                    Invalid first name. First name has to be characters, maximum of 35.
+                </span>
+            </span>
+        </div>
+        <div id="isActiveCheck" class="user-input-right" *ngIf="userInformation.IsEditedBySomeoneElse">
+            <input type="checkbox" name="isActive" [(ngModel)]="inactive" (ngModelChange)="isActiveStatusChanged()" />
+            <span class="user-info-inactive">Inactive</span>
+        </div>
+    </div>
+
+    <div class="user-content-row">
+        <div class="ma-display-inline">
+            <label class="user-input-label">Middle Name</label>
+        </div>
+        <div class="ma-display-inline">
+            <input type="text" id="txtMiddleName" [(ngModel)]="userInformation.MI" [disabled]="userInformation.IsEditedBySomeoneElse || userInformation.IsRestrictedMode"
+                   name="mi" maxlength="35" [pattern]="namePattern" #mi="ngModel">
+        </div>
+        <div class="ma-display-inline user-input-validation" *ngIf="mi.invalid && (mi.dirty || mi.touched)">
+            <span id="miPatternError" *ngIf="mi.errors.pattern" class="validation-color">
+                Invalid middle name. Middle name has to be characters, maximum of 35.
+            </span>
+        </div>
+    </div>
+
+    <div class="user-content-row">
+        <div class="ma-display-inline">
+            <label class="user-input-label"><span class="ma-form-mandatory-star">* </span>Last Name </label>
+        </div>
+        <div class="ma-display-inline">
+            <input type="text" id="txtLastName" [(ngModel)]="userInformation.LastName" [disabled]="userInformation.IsEditedBySomeoneElse || userInformation.IsRestrictedMode"
+                   name="lastname" required maxlength="35" [pattern]="namePattern" #lastname="ngModel">
+        </div>
+        <div class="ma-display-inline user-input-validation" *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)">
+            <span id="lastnameRequiredError" *ngIf="lastname.errors.required" class="validation-color">
+                Last name is required.
+            </span>
+            <span id="lastnamePatternError" *ngIf="lastname.errors.pattern" class="validation-color">
+                Invalid last name. Last name has to be characters, maximum of 35.
+            </span>
+        </div>
+    </div>
+
+    <div class="user-content-row" id="panelLoginID" *ngIf="userInformation.IsDisplayLoginID">
+        <div class="ma-display-inline">
+            <label class="user-input-label">Login ID </label>
+        </div>
+        <div class="ma-display-inline">
+            <input type="text" id="txtLoginID" [(ngModel)]="userInformation.LoginID" disabled maxlength="15"
+                   name="loginid" #loginid />
+        </div>
+    </div>
+
+    <div class="user-content-row">
+        <div class="ma-display-inline">
+            <label class="user-input-label"><span class="ma-form-mandatory-star">* </span>Work Email </label>
+        </div>
+        <div class="ma-display-inline">
+            <input type="text" id="txtEmail" [(ngModel)]="userInformation.WorkEmail" class="user-input-large" [disabled]="userInformation.IsEditedBySomeoneElse || userInformation.IsRestrictedMode"
+                   name="workEmail" required maxlength="70" #workEmail="ngModel" email [ngModelOptions]="{ updateOn: 'blur' }">
+        </div>
+        <div class="ma-display-inline user-input-validation" *ngIf="workEmail.invalid && (workEmail.dirty || workEmail.touched)">
+            <span id="workEmailRequiredError" *ngIf="workEmail.errors.required" class="validation-color">
+                Work email is required.
+            </span>
+            <span id="workEmailPatternError" *ngIf="workEmail.errors.email" class="validation-color">
+                Enter valid email address.
+            </span>
+        </div>
+    </div>
+
+    <div *ngIf="!userInformation.IsEditedBySomeoneElse" class="user-content-row">
+        <div class="ma-display-inline">
+            <label class="user-input-label">
+                <span class="ma-form-mandatory-star">* </span>Confirm Email
+            </label>
+        </div>
+        <div class="ma-display-inline">
+            <input type="text" id="txtConfirmEmail" [(ngModel)]="confirmEmail" class="user-input-large" [disabled]="userInformation.IsRestrictedMode"
+                   name="confirmEmailValidator" required maxlength="70" pattern="{{userInformation.WorkEmail}}" #confirmEmailValidator="ngModel"
+                   [ngModelOptions]="{ updateOn: 'blur' }">
+        </div>
+        <div class="ma-display-inline user-input-validation" *ngIf="confirmEmailValidator.invalid && (confirmEmailValidator.dirty || confirmEmailValidator.touched)">
+            <span id="confirmEmailRequiredError" *ngIf="confirmEmailValidator.errors.required" class="validation-color">
+                Confirm email is required.
+            </span>
+            <span id="confirmEmailPatternError" *ngIf="confirmEmailValidator.errors.pattern" class="validation-color">
+                Confirm email should match the work email.
+            </span>
+        </div>
+    </div>
+    <!--<input type="checkbox" id="chkAccLocked" />Locked
+
+    <input type="checkbox" id="chkLastPasswordChange" />Force password change-->
+</form>

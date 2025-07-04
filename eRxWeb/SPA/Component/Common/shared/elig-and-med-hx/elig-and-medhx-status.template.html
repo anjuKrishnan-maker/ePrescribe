@@ -1,0 +1,77 @@
+﻿<erx-modal-popup-control ModalId="{{ModalId}}" title="Eligibility & Med History Status" [Width]="''" [Height]="''">
+    <div  modal-body>
+        <div [style.display]="isDataLoading == true ? 'block':'none'" class="overlay-eligibilitymed"></div>
+        <div>
+            <!--    <div *ngIf="!IsDatasetLoaded">No eligibility and med history status records exist for this patient.</div>-->
+            <div style="width: auto">
+                <table class="erxTable">
+                    <thead>
+                    <tr>
+                        <th class="erxTableHeader" style="padding-left: 5px;">Type</th>
+                        <th class="erxTableHeader">Date/Time</th>
+                        <th class="erxTableHeader">Message</th>
+                        <th class="erxTableHeader">Audit ID</th>
+                    </tr>
+                    </thead>
+                    <!--<tr *ngFor="let EligAndMedHxStatusItem of EligAndMedHxStatusList">
+                        <td style="width: 30px; padding: 5px">
+                            {{EligAndMedHxStatusItem.Type}}
+                        </td>
+                        <td style="width: 30px; padding: 5px">
+                            {{EligAndMedHxStatusItem.ProcessedDate | date: 'dd/MM/yyyy'}}
+                        </td>
+                        <td style="width: 65px">
+                            {{EligAndMedHxStatusItem.Message}}
+                        </td>
+                        <td style="width: 125px">
+                            {{EligAndMedHxStatusItem.AuditID}}
+                        </td>
+                    </tr>-->
+                    <ng-template let-EligAndMedHxStatusItem ngFor [ngForOf]="EligibityMedHistoryItems" let-even="even" let-odd="odd">
+                        <tr [ngClass]="{ 'erxRow': (even), 'erxAltRow': (odd) }">
+                            <td style="width: 232px; padding-left: 5px">
+                                {{EligAndMedHxStatusItem.Type}}
+                            </td>
+                            <td style="width: 148px;">
+                                {{EligAndMedHxStatusItem.ProcessedDate}}
+                            </td>
+                            <td style="width: 156px;">
+                                {{EligAndMedHxStatusItem.Message}}
+                            </td>
+                            <td style="width: 148px;">
+                                {{EligAndMedHxStatusItem.AuditID}}
+                            </td>
+                        </tr>
+                    </ng-template>
+                </table>
+            </div>
+            <div style="margin-top: 10px">
+                <p class="smalltext" style="padding-bottom: 5px; text-decoration: underline">
+                    <b>Message Definitions</b>
+                </p>
+                <p class="smalltext" style="padding-bottom: 5px">
+                    <b>Request Sent Successfully: </b>
+                    Message indicates that Veradigm has successfully requested this.
+                </p>
+                <p class="smalltext" style="padding-bottom: 5px">
+                    <b>Successfully Processed - [Payor/PBM]: </b>
+                    Message indicates that Veradigm has successfully received & processed the patient’s most recent eligibility data from the network. *The date & time reflect the last positive response received.
+                </p>
+                <p class="smalltext" style="padding-bottom: 5px">
+                    <b>Successfully Processed: </b>
+                    Message indicates that Veradigm successfully received & processed this patient’s most recent medication history records. *The Med History Response Status will only appear if there has been a positive response. The date & time reflect the last positive response received.
+                </p>
+                <p class="smalltext" style="padding-bottom: 15px">
+                    <b>Patient Not Found: </b>
+                    Message indicates that Veradigm did receive an eligibility response, however the patient was either not found in the network or there was an error processing.
+                </p>
+                <p class="smalltext">
+                    <a href="Help/faq.aspx" target="_blank">Click here</a> for more information on eligibility & med history transactions.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div modal-footer>
+        <button type="button" (click)="cancel()" class="btnstyle btnStyleAction" value="Close" width="100px">Close</button>
+    </div>
+</erx-modal-popup-control>

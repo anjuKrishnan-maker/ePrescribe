@@ -1,0 +1,94 @@
+<form #securityQuestionForm="ngForm" id="securityQuestionForm">
+    <div class="erx-form-row">
+        <span class="erx-form-label"></span>
+        <span class="user-creation-security-questions">
+            Select Security Questions
+        </span>
+        <span>
+            Provide Answers
+        </span>
+    </div>
+    <div class="erx-form-row user-creation-security-questions-first-row">
+        <span class="erx-form-label"></span>
+        <span class="erx-form-input">
+            <select ID="questionOne" name="questionOne" Width="335px" [(ngModel)]="securityQuestionAnswerModel.selectedShieldQuestionOne" class="input-x-large">
+                <option *ngFor="let item of ShieldQuestions" [value]="item.questionIDField">
+                    {{item.questionField}}
+                </option>
+            </select>
+        </span>
+        <span class="erx-form-input">
+            <span class="highlight-star erx-form-star-position">*</span>
+            <input type="text" id="ansOne" name="ansOne" Width="335" class="input-medium"
+                   required [(ngModel)]="securityQuestionAnswerModel.securityAnswerOne" #ansOne="ngModel" />
+
+
+            <span *ngIf="ansOne.invalid && (ansOne.dirty || ansOne.touched)">
+                <span *ngIf="ansOne.errors.required" class="validation-color">
+                    Select security questions and provide answers.
+                </span>
+            </span>
+        </span>
+    </div>
+    <div class="erx-form-row">
+        <span class="erx-form-label"></span>
+        <span class="erx-form-input">
+            <select ID="questionTwo" name="questionTwo" Width="335px" [(ngModel)]="securityQuestionAnswerModel.selectedShieldQuestionTwo" class="input-x-large">
+                <option *ngFor="let item of ShieldQuestions" [value]="item.questionIDField">
+                    {{item.questionField}}
+                </option>
+            </select>
+        </span>
+        <span class="erx-form-input">
+            <span class="highlight-star erx-form-star-position">*</span>
+            <input id="ansTwo" name="ansTwo" Width="335" class="input-medium"
+                   required [(ngModel)]="securityQuestionAnswerModel.securityAnswerTwo" #ansTwo="ngModel" />
+            <span *ngIf="ansTwo.invalid && (ansTwo.dirty || ansTwo.touched)">
+                <span *ngIf="ansTwo.errors.required" class="validation-color">
+                    Select security questions and provide answers.
+                </span>
+            </span>
+            <span *ngIf="(securityQuestionAnswerModel.selectedShieldQuestionTwo == securityQuestionAnswerModel.selectedShieldQuestionThree 
+                  || securityQuestionAnswerModel.selectedShieldQuestionTwo==securityQuestionAnswerModel.selectedShieldQuestionOne) 
+                  && securityQuestionAnswerModel.selectedShieldQuestionTwo" class="validation-color">
+                Select different question.
+            </span>
+            <span *ngIf="(securityQuestionAnswerModel.securityAnswerTwo == securityQuestionAnswerModel.securityAnswerThree 
+                  || securityQuestionAnswerModel.securityAnswerTwo==securityQuestionAnswerModel.securityAnswerOne) 
+                  && securityQuestionAnswerModel.securityAnswerTwo" class="validation-color">
+                Select different answer.
+            </span>
+        </span>
+    </div>
+    <div class="erx-form-row">
+        <span class="erx-form-label"></span>
+        <span class="erx-form-input">
+            <select ID="questionThree" name="questionThree" Width="335px" [(ngModel)]="securityQuestionAnswerModel.selectedShieldQuestionThree" class="input-x-large">
+                <option *ngFor="let item of ShieldQuestions" [value]="item.questionIDField">
+                    {{item.questionField}}
+                </option>
+            </select>
+        </span>
+        <span class="erx-form-input">
+            <span class="highlight-star erx-form-star-position">*</span>
+            <input id="ansThree" name="ansThree" Width="335" class="input-medium"
+                   required [(ngModel)]="securityQuestionAnswerModel.securityAnswerThree" #ansThree="ngModel" />
+            <span *ngIf="ansThree.invalid && (ansThree.dirty || ansThree.touched)">
+                <span *ngIf="ansThree.errors.required" class="validation-color">
+                    Select security questions and provide answers.
+                </span>
+            </span>
+            <span *ngIf="(securityQuestionAnswerModel.selectedShieldQuestionThree == securityQuestionAnswerModel.selectedShieldQuestionTwo 
+                  || securityQuestionAnswerModel.selectedShieldQuestionThree==securityQuestionAnswerModel.selectedShieldQuestionOne) 
+                  && securityQuestionAnswerModel.selectedShieldQuestionThree" class="validation-color">
+                Select different question.
+            </span>
+            <span *ngIf="(securityQuestionAnswerModel.securityAnswerThree == securityQuestionAnswerModel.securityAnswerTwo 
+                  || securityQuestionAnswerModel.securityAnswerThree==securityQuestionAnswerModel.securityAnswerOne) 
+                  && securityQuestionAnswerModel.securityAnswerThree" class="validation-color">
+                Select different answer.
+            </span>
+        </span>
+    </div>
+    </form>
+

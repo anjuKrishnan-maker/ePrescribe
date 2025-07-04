@@ -1,0 +1,17 @@
+﻿<div class="modal" id="myModal" role="dialog" [style.display]="'block'" [style.top]="'25%'">
+    <div class="modal-dialog">
+        <div class="modal-content">
+             <div class="reg-overlayTitle">
+               User Creation Information
+            </div>
+            <div class="modal-body">
+                User creation is taking longer than usual, please re-login with your created Username ({{shieldUserName}}) after 15 minutes
+                <br /><br />
+                You will be now redirected to Login page. Click continue.
+            </div>
+            <div class="reg-overlayFooter">
+                <button type="button" class="button-style" data-dismiss="modal" (click)="hide()">Continue</button>
+            </div>
+        </div>
+    </div>
+</div>

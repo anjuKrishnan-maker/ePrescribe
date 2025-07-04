@@ -1,0 +1,24 @@
+﻿/*Registration Page*/
+.branded-background-color {
+    background-color: #D6E3D6;
+}
+
+.branded-font-color {
+    color: #525252;
+}
+
+.branded-logo {
+    background-image: url('../images/CorrectCareSolutions/CorrectCareSolutionsLogoReg.jpg');
+    background-repeat: no-repeat;
+    height: 70px;
+    background-size: contain;
+}
+
+.branded-footer-stripe {
+    background-color: #ffffff;
+}
+
+.branded-footer-color {
+    background-color: #D6E3D6;
+    color: #525252;
+}

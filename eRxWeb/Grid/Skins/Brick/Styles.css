@@ -1,0 +1,200 @@
+﻿/* Telerik RadGrid brick skin */
+
+.RadGrid_Brick
+{
+	background: #930015;
+	border-left: solid 1px #B4B3A6;
+	border-right: solid 1px #B4B3A6;
+	border-top: 1px solid #cccaba;
+	border-bottom: 1px solid #c2b12e;
+	font: normal 11px arial, verdana, sans-serif;
+}
+
+.MasterTable_Brick
+{
+    font:11px tahoma,sans-serif;
+}
+
+.RadGrid_Brick th,
+.RadGrid_Brick th a
+{ 
+	font-weight:bold;
+	color:#fff;
+	text-align: left;
+}
+.RadGrid_Brick,
+.RadGrid_Brick a
+{ 
+	color:#000;
+}
+
+.MasterTable_Brick
+{
+	border:0px !important;
+	/*-moz-user-select: none;*/ /*disables text selecting in Firefox to combat unpleasant visual appearance*/
+}
+.GridHeader_Brick
+{
+	color:#fff;
+	height: 34px;
+	background: #930015;
+}
+.GridHeader_Brick a
+{
+	color:#fff;
+}
+
+.GridRow_Brick td,
+.GridAltRow_Brick td,
+.SelectedRow_Brick td,
+.ActiveRow_Brick td,
+.GridEditRow_Brick td
+{
+    padding-top:4px;
+    padding-bottom:5px;
+}
+
+.GridRow_Brick
+{
+	background-color:#FBF4F3;
+}
+.GridRow_Brick td
+{
+	border-bottom:1px solid #ecd6cf;
+}
+
+.SelectedRow_Brick
+{
+	background-color: #ffffff !important;
+}
+.SelectedRow_Brick td,
+.GridEditRow_Brick td
+{
+	border-bottom:1px solid #ecd6cf;
+}
+
+.GridEditRow_Brick
+{
+	background-color: #ffffce !important;
+}
+
+.ActiveRow_Brick
+{
+	background-color: #ecd6cf !important;
+}
+.ActiveRow_Brick td
+{
+	border-bottom:1px solid #ecd6cf;
+}
+
+.GridAltRow_Brick
+{
+	background-color: #F5E9E7;
+}
+.GridAltRow_Brick td
+{
+	border-bottom:1px solid #ecd6cf;
+}
+
+.GridPager_Brick
+{
+	background: #e7d0c8;
+}
+.GridPager_Brick td
+{
+	border-top: 1px solid #c2a9a0;
+	padding-left: 11px;
+	padding-top:2px;
+	padding-bottom:3px;
+}
+.GridPager_Brick a
+{
+	color: #333;	
+}
+.GridHeader_Brick img
+{
+	vertical-align: middle;
+}
+td.GridHeader_Brick input
+{
+	width: auto;
+	float: left;
+	border: solid 1px #666;
+	background: #fafafa;
+	font: bold 10px Verdana, Arial, Sans-serif;
+	color: #989cb0;
+	height: 14px;
+	vertical-align:middle;
+}
+
+/* grouping button */
+.GroupPanelItems_Brick
+{
+	background: #930015;
+	color: white !important;
+	border: solid 1px #bc988c;
+	white-space:  nowrap;
+	font-size: 11px;
+}
+
+tr.GroupHeader_Brick
+{
+	background: #e7d0c8;
+	color: #706e65;
+	font-weight: bold;
+	height:20px;
+}
+
+.GroupPanel_Brick
+{
+	height: 20px;
+	width: 100%;
+	background: #69000f;
+	border-bottom: 1px solid #bc988c;
+	border-collapse: collapse;
+}
+
+.GroupPanel_Brick td
+{
+	color:#fff;
+}
+
+
+.TopReorderIndicator_Brick
+{
+	background: url('MoveDown.gif') no-repeat;
+}
+
+.BottomReorderIndicator_Brick
+{
+	background: url('MoveUp.gif') no-repeat;
+}
+
+.GridFilterMenu_Brick
+{
+    cursor:default;
+}
+
+.GridFilterMenu_Brick .GridFilterMenuSelectColumn_Brick,
+.GridFilterMenu_Brick .GridFilterMenuTextColumn_Brick
+{
+	padding:3px 4px;
+}
+
+.GridFilterMenu_Brick .GridFilterMenuSelectColumn_Brick
+{
+    background:#e4e4e4;
+    text-align:center;
+}
+
+.GridFilterMenu_Brick .GridFilterMenuTextColumn_Brick
+{
+    background:#fff;
+    color:#333;
+}
+
+.GridFilterMenu_Brick .GridFilterMenuHover_Brick
+{
+    background:#4c4c4c;
+    color:#fff;
+}

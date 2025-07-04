@@ -1,0 +1,212 @@
+.RadGrid_Desert
+{
+	background: #e6e9e4 /*url('Img/headerBg.gif') repeat-x*/;
+	border-left: 1px solid #C6CDC3;
+	border-right: 1px solid #C6CDC3;
+}
+
+.RadGrid_Desert,
+.MasterTable_Desert,
+.GridFilterMenu_Desert table
+{
+    font:normal 11px arial, verdana, sans-serif;
+}
+
+.MasterTable_Desert
+{
+	/*-moz-user-select: none;*/ /*disables text selecting in Firefox to combat unpleasant visual appearance*/
+}
+
+.GridHeader_Desert,
+.ResizeHeader_Desert
+{
+	font-weight: bold;
+	height: 35px;
+	background: /*#E6E9E4*/ #fff url('Img/headerBg.gif') repeat-x 0 100%;
+	border-top:1px solid #eef1ed;
+	padding-top:8px;
+	padding-bottom:8px;
+}
+.GridHeader_Desert a
+{
+	color: #242500;
+}
+
+.GridRow_Desert td,
+.GridAltRow_Desert td,
+.SelectedRow_Desert td,
+.ActiveRow_Desert td,
+.GridEditRow_Desert td
+{
+	padding-top:4px;
+	padding-bottom:5px;
+}
+
+/*all except IE5/6*/
+tbody>.GridRow_Desert,tbody>.GridAltRow_Desert
+{
+	background: url('Img/rowBg.gif') repeat-x bottom;
+}
+/*IE5/6 - apply to the table to resolve rendering bottleneck*/
+* html .MasterTable_Desert
+{
+	background: url('Img/rowBg.gif') repeat-x bottom;
+}
+
+tbody .SelectedRow_Desert
+{
+	background: #f3f6f0 url('Img/rowBg.gif') repeat-x bottom;
+}
+
+tbody .GridEditRow_Desert
+{
+	background: #ffffe1 url('Img/rowBg.gif') repeat-x bottom;
+}
+
+.GridEditRow_Desert input
+{
+	font-size: 11px;
+}
+
+.ActiveRow_Desert
+{
+	background: #f9fbf6 url('Img/rowBg.gif') repeat-x bottom;
+}
+
+.GridPager_Desert
+{
+	background: url('Img/footerBg.gif') repeat-x;
+	color: #242500;
+}
+.GridPager_Desert td
+{
+	padding:3px 14px 4px;
+}
+.GridPager_Desert a
+{
+	color: #242500;
+}
+
+td.GridHeader_Desert input
+{
+	width: 50px;
+	float: left;
+	border: solid 1px #474b38;
+}
+
+.GroupPanel_Desert
+{
+	background: #9da29a;
+	width: 100%;
+}
+
+.GroupPanel_Desert table
+{ 
+     border-collapse: collapse;
+     border: 0;
+}
+
+.GridCommandRow_Desert a
+{ 
+	color:#000;
+}
+
+/* filtering button */
+.GroupPanelItems_Desert
+{
+	background: #E6E9E4 url('Img/headerBg.gif') repeat-x bottom;
+	color: #333;
+	padding-left: 3px;
+	border-right: solid 1px #515d23;
+	border-bottom: solid 1px #515d23;
+	white-space:  nowrap;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+/* filtering direction input[image] */
+.GroupPanelItems_Desert input
+{
+	vertical-align: middle;
+}
+/* filtering table row */
+
+tr.GroupHeader_Desert td
+{
+	background: #bcc2b8;
+	color: #5b6048;
+	font-weight: bold;
+	border-bottom: solid 1px #9da29a;
+}
+
+.GroupHeader_Desert td div div
+{
+	top:-0.5em;
+}
+
+.GroupHeader_Desert td div div div
+{
+	top:0;
+}
+
+.TopReorderIndicator_Desert
+{
+	background: url('MoveDown.gif') no-repeat;
+	margin-left:-5px;
+}
+
+.BottomReorderIndicator_Desert
+{
+	background: url('MoveUp.gif') no-repeat;
+	margin-left:-5px;
+}
+
+.GridFilterMenu_Desert
+{
+    cursor:default;
+}
+
+.GridFilterMenu_Desert .GridFilterMenuSelectColumn_Desert,
+.GridFilterMenu_Desert .GridFilterMenuTextColumn_Desert
+{
+	padding:3px 4px;
+}
+
+.GridFilterMenu_Desert .GridFilterMenuSelectColumn_Desert
+{
+    background:#f3f6f1;
+    text-align:center;
+}
+
+.GridFilterMenu_Desert .GridFilterMenuTextColumn_Desert
+{
+    background:#fff;
+    color:#333;
+}
+
+.GridFilterMenu_Desert .GridFilterMenuHover_Desert
+{
+    background:#d9ddd6;
+}
+
+/*AJAX Loading*/
+
+.GridLoadingTemplate_Desert
+{
+	background:#fff !important;
+	font:normal 24px/54px arial,sans-serif;
+	color:#333;
+}
+
+/* rtl support */
+
+.RadGridRTL_Desert th,
+.RadGridRTL_Desert td
+{
+    text-align:right;
+}
+
+.RadGridRTL_Desert .GridPager_Desert span
+{
+    float:none !important;
+}

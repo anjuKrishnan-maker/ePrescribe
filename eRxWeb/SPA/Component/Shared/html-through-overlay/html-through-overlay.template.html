@@ -1,0 +1,14 @@
+﻿<div class="erx-modal erx-fade" id="mdlSimple" role="dialog">
+    <div class="erx-modal-dialog" style="width: 80%; height:80vh">
+        <!-- Modal content-->
+        <div class="modal-content" >
+            <div class="modal-header overlayTitleAngular overlayHeaderAngular">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                {{_title}}
+            </div>
+            <div class="erx-modal-body" style="height: 80vh;overflow-y: scroll; margin-left: 30px;" >
+                <div [innerHtml]="_html | safeHtml" ></div>
+            </div>
+        </div>
+    </div>
+</div>

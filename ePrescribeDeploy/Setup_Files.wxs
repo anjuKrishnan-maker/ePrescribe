@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <DirectoryRef Id="INSTALLLOCATION"/>
+    <ComponentGroup Id="ePrescribeWebComponents">
+      <Component Id="FILECOMPONENTID" Directory="INSTALLLOCATION" DiskId="1" Guid="E07052A3-75E3-4F34-85F4-8D8EA3770A88">
+        <CreateFolder/>
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>
+
+<!-- This file is in here just to make compiler happy. The content is to be replaced by files/components produced by heat.exe -->

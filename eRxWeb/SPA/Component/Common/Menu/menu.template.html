@@ -1,0 +1,24 @@
+﻿<table class="menu-height" width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr *ngIf="!isException" style="width: 100%">
+        <td colspan="7" align="left" class="divider">
+
+
+            <div [style.display]="(visible  ) ? 'table':'none' " class="with-nav-tabs" style="margin-bottom:0px;" id="navbar">
+                <div class="panel-heading" style="padding-bottom:0px;padding-top:0px;">
+                    <ul class="nav nav-tabs">
+                        <li *ngFor="let menuItem of MenuItems" (click)="onSelectTab(menuItem)" [class.active]="selectedTab === menuItem.Order">
+                            <a data-toggle="tab">{{menuItem.Name}}</a>
+                        </li>
+
+
+                    </ul>                 
+
+                </div>
+            </div>
+        </td>
+        <td align="right" valign="bottom" colspan="2" style="width: 25%; height: 5px; padding-right: 0px; padding-left: 0px; padding-bottom: 0px; padding-top: 0px;"
+            class="divider">
+            <erx-med-help-search>Loading.....</erx-med-help-search>
+        </td>
+    </tr>
+</table>

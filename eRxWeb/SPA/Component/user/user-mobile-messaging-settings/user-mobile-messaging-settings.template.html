@@ -1,0 +1,71 @@
+﻿<div id="pnlMobileMessaging">
+    <div>
+        Mobile Phone Number:&nbsp;
+        <span id="divSMSRegisterMobile" *ngIf="!userMobileMessageSettings.IsNumberAvailable">
+            <a id="lnkSMSRegisterMobile" class="erx-hyperlink" (click)="registerMobile()">Enroll in SMS alerts</a>
+        </span>
+        <span id="divEditSMSRegisterMobile" *ngIf="userMobileMessageSettings.IsNumberAvailable">
+            <label id="lblPhoneNumber">{{userMobileMessageSettings.PhoneNumber}}</label>&nbsp;&nbsp;
+            <a id="lnkEditRegisterMobile" class="erx-hyperlink" (click)="editMobile()">Edit</a>&nbsp;&nbsp;
+            <a id="lnkDeleteRegisterMobile" class="erx-hyperlink" (click)="deleteMobile()">Delete</a>
+        </span>
+        <input type="button" id="hiddenSMSAlertPopup" Style="display: none;" />
+        <input type="button" id="hiddenSMSTempDown" Style="display: none;" />        
+    </div>
+    <erx-user-mobile-registration [userMobileMessageSettings]="userMobileMessageSettings" (newUserMobileMessageSettings)="updateHandler($event)">Loading...</erx-user-mobile-registration>
+    <div>
+        <div id="divProviderSpecificSMSPreference" *ngIf="isUserPrescriber()">
+            <div>
+                <input type="checkbox" [(ngModel)]="userMobileMessageSettings.SmsAlertTransmissionError" [disabled]="!userMobileMessageSettings.IsNumberAvailable" (ngModelChange)="updateChildCheckbox()">
+                <span class="user-list-label">
+                    Send me alerts regarding transmission errors to pharmacies for:
+                </span>
+            </div>
+            <div class="user-list-spacing">
+                <input type="checkbox" [(ngModel)]="userMobileMessageSettings.SmsAlertNewRxError" [disabled]="!userMobileMessageSettings.IsNumberAvailable" (ngModelChange)="updateParentCheckbox()">
+                <span class="user-list-label">
+                    New scripts
+                </span>
+            </div>
+            <div class="user-list-spacing">
+                <input type="checkbox" [(ngModel)]="userMobileMessageSettings.SmsAlertRefillRxError" [disabled]="!userMobileMessageSettings.IsNumberAvailable" (ngModelChange)="updateParentCheckbox()">
+                <span class="user-list-label">
+                    Refill approvals/denials
+                </span>
+            </div>
+            <div class="user-list-spacing">
+                <input type="checkbox" [(ngModel)]="userMobileMessageSettings.SmsAlertChangeRxError" [disabled]="!userMobileMessageSettings.IsNumberAvailable" (ngModelChange)="updateParentCheckbox()">
+                <span class="user-list-label">
+                    Rx Change approvals/denials
+                </span>
+            </div>
+            <div class="user-list-spacing">
+                <input type="checkbox" [(ngModel)]="userMobileMessageSettings.SmsAlertCancelRxError" [disabled]="!userMobileMessageSettings.IsNumberAvailable" (ngModelChange)="updateParentCheckbox()">
+                <span class="user-list-label">
+                    Rx Cancel requests
+                </span>
+            </div>
+            <div>
+                <input type="checkbox" [(ngModel)]="userMobileMessageSettings.SmsAlertChangeRxRequest" [disabled]="!userMobileMessageSettings.IsNumberAvailable" (ngModelChange)="isChanged()">
+                <span class="user-list-label">
+                    Send me alerts regarding new pharmacy Rx Change requests
+                </span>
+            </div>
+            <div>
+                <input type="checkbox" [(ngModel)]="userMobileMessageSettings.SmsAlertDEALicenseExpiration" [disabled]="!userMobileMessageSettings.IsNumberAvailable" (ngModelChange)="isChanged()">
+                <span class="user-list-label">
+                    Send alert when my DEA or state license is scheduled to expire soon
+                </span>
+            </div>
+        </div>
+        <div id="divAllUserSMSPreference">
+            <div>
+                <input type="checkbox" [(ngModel)]="userMobileMessageSettings.SmsAlertServiceUpdate" [disabled]="!userMobileMessageSettings.IsNumberAvailable" (ngModelChange)="isChanged()">
+                <span class="user-list-label">
+                    Send me alerts regarding ePrescribe service updates
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+

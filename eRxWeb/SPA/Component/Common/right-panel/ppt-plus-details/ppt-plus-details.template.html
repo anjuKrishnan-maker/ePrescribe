@@ -1,0 +1,16 @@
+﻿<div class="modal fade" id="ppt-details-modal" role="dialog">
+    <div class="modal-dialog" style="width: 850px;">
+        <div class="modal-content pptDetailsModalContent">            
+            <div class="modal-body" style="padding: 0">
+                <div *ngIf="showDetailsIFrame">
+                    <iframe name="ppt-details-iframe" id="ppt-details-iframe" [src]="frameSrc | safeUrl" class="pptDetailsIframe"></iframe>
+                </div>
+                <div *ngIf="!showDetailsIFrame" style="width: 818px; height: 600px;">
+                </div>
+                <div *ngIf="showDetailsUserMessages">
+                    <span>{{detailsUserMessage}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

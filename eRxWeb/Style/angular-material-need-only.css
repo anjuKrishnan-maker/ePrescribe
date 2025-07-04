@@ -1,0 +1,243 @@
+﻿/*
+    This is a stripped down version of the angular material css to support date picker in 20.0.3
+    Ideally we need to move forward with a custom theme generation approach with veradigm / partner themes mentioned in angular docs.
+*/
+
+.cdk-visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    outline: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none
+}
+
+.cdk-global-overlay-wrapper, .cdk-overlay-container {
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%
+}
+
+.cdk-overlay-container {
+    position: fixed;
+    z-index: 1000
+}
+
+    .cdk-overlay-container:empty {
+        display: none
+    }
+
+.cdk-global-overlay-wrapper {
+    display: flex;
+    position: absolute;
+    z-index: 1000
+}
+
+.cdk-overlay-pane {
+    position: absolute;
+    pointer-events: auto;
+    box-sizing: border-box;
+    z-index: 1000;
+    display: flex;
+    max-width: 100%;
+    max-height: 100%
+}
+
+.cdk-overlay-backdrop {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    pointer-events: auto;
+    -webkit-tap-highlight-color: transparent;
+    transition: opacity .4s cubic-bezier(.25,.8,.25,1);
+    opacity: 0
+}
+
+    .cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+        opacity: 1
+    }
+
+@media screen and (-ms-high-contrast:active) {
+    .cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+        opacity: .6
+    }
+}
+
+.cdk-overlay-dark-backdrop {
+    background: rgba(0,0,0,.32)
+}
+
+.cdk-overlay-transparent-backdrop, .cdk-overlay-transparent-backdrop.cdk-overlay-backdrop-showing {
+    opacity: 0
+}
+
+.cdk-overlay-connected-position-bounding-box {
+    position: absolute;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    min-width: 1px;
+    min-height: 1px
+}
+
+.mat-calendar {
+    font-family: Roboto,"Helvetica Neue",sans-serif
+}
+
+.mat-calendar-body {
+    font-size: 13px
+}
+
+.mat-calendar-body-label, .mat-calendar-period-button {
+    font-size: 14px;
+    font-weight: 500
+}
+
+.mat-calendar-table-header th {
+    font-size: 11px;
+    font-weight: 400
+}
+
+.mat-calendar-arrow {
+    border-top-color: rgba(0,0,0,.54)
+}
+
+.mat-datepicker-content .mat-calendar-next-button, .mat-datepicker-content .mat-calendar-previous-button, .mat-datepicker-toggle {
+    color: rgba(0,0,0,.54)
+}
+
+.mat-calendar-table-header {
+    color: rgba(0,0,0,.38)
+}
+
+.mat-calendar-table-header-divider::after {
+    background: rgba(0,0,0,.12)
+}
+
+.mat-calendar-body-label {
+    color: rgba(0,0,0,.54)
+}
+
+.mat-calendar-body-cell-content {
+    color: rgba(0,0,0,.87);
+    border-color: transparent
+}
+
+.mat-calendar-body-disabled > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected) {
+    color: rgba(0,0,0,.38)
+}
+
+.cdk-keyboard-focused .mat-calendar-body-active > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected), .cdk-program-focused .mat-calendar-body-active > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected), .mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected) {
+    background-color: rgba(0,0,0,.04)
+}
+
+.mat-calendar-body-today:not(.mat-calendar-body-selected) {
+    border-color: rgba(0,0,0,.38)
+}
+
+.mat-calendar-body-disabled > .mat-calendar-body-today:not(.mat-calendar-body-selected) {
+    border-color: rgba(0,0,0,.18)
+}
+
+.mat-calendar-body-selected {
+    background-color: #3f51b5;
+    color: #fff
+}
+
+.mat-calendar-body-disabled > .mat-calendar-body-selected {
+    background-color: rgba(63,81,181,.4)
+}
+
+.mat-calendar-body-today.mat-calendar-body-selected {
+    box-shadow: inset 0 0 0 1px #fff
+}
+
+.mat-datepicker-content {
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
+    background-color: #fff;
+    color: rgba(0,0,0,.87)
+}
+
+    .mat-datepicker-content.mat-accent .mat-calendar-body-selected {
+        background-color: #ff4081;
+        color: #fff
+    }
+
+    .mat-datepicker-content.mat-accent .mat-calendar-body-disabled > .mat-calendar-body-selected {
+        background-color: rgba(255,64,129,.4)
+    }
+
+    .mat-datepicker-content.mat-accent .mat-calendar-body-today.mat-calendar-body-selected {
+        box-shadow: inset 0 0 0 1px #fff
+    }
+
+    .mat-datepicker-content.mat-warn .mat-calendar-body-selected {
+        background-color: #f44336;
+        color: #fff
+    }
+
+    .mat-datepicker-content.mat-warn .mat-calendar-body-disabled > .mat-calendar-body-selected {
+        background-color: rgba(244,67,54,.4)
+    }
+
+    .mat-datepicker-content.mat-warn .mat-calendar-body-today.mat-calendar-body-selected {
+        box-shadow: inset 0 0 0 1px #fff
+    }
+
+.mat-datepicker-content {
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
+    background-color: #fff;
+    color: rgba(0,0,0,.87)
+}
+
+    .mat-datepicker-content.mat-accent .mat-calendar-body-selected {
+        background-color: #ff4081;
+        color: #fff
+    }
+
+    .mat-datepicker-content.mat-accent .mat-calendar-body-disabled > .mat-calendar-body-selected {
+        background-color: rgba(255,64,129,.4)
+    }
+
+    .mat-datepicker-content.mat-accent .mat-calendar-body-today.mat-calendar-body-selected {
+        box-shadow: inset 0 0 0 1px #fff
+    }
+
+    .mat-datepicker-content.mat-warn .mat-calendar-body-selected {
+        background-color: #f44336;
+        color: #fff
+    }
+
+    .mat-datepicker-content.mat-warn .mat-calendar-body-disabled > .mat-calendar-body-selected {
+        background-color: rgba(244,67,54,.4)
+    }
+
+    .mat-datepicker-content.mat-warn .mat-calendar-body-today.mat-calendar-body-selected {
+        box-shadow: inset 0 0 0 1px #fff
+    }
+
+.mat-datepicker-content-touch {
+    box-shadow: 0 0 0 0 rgba(0,0,0,.2),0 0 0 0 rgba(0,0,0,.14),0 0 0 0 rgba(0,0,0,.12)
+}
+
+.mat-datepicker-toggle-active {
+    color: #3f51b5
+}
+
+    .mat-datepicker-toggle-active.mat-accent {
+        color: #ff4081
+    }
+
+    .mat-datepicker-toggle-active.mat-warn {
+        color: #f44336
+    }

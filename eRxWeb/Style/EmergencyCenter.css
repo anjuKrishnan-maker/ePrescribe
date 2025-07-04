@@ -1,0 +1,128 @@
+﻿
+/*Header Master Page*/
+
+.appStripe {
+    border-top: 5px #04525f solid;
+}
+
+.redborder     {background-color:#017c89; }
+
+img#loginLogo{background:url(../images/EmergencyCenter/EmergencyCenterLogo.jpg); background-repeat:no-repeat; background-position:center;}
+img#mainLogo{background:url(../images/EmergencyCenter/EmergencyCenterLogo.jpg); background-repeat:no-repeat; background-position:center;}
+.loginbanner {
+    background-color: #017c89;
+}
+
+
+.headerIcon:hover span
+{
+    color: #007d8a
+}
+
+.editRollover:hover span
+{
+    color: #007d8a;
+	cursor:pointer;
+}
+
+.noEditRollover
+{
+    visibility: hidden;
+}
+
+.RadPanelBar div.rpHeaderTemplate, a.rpLink
+{
+    background: linear-gradient(#007d8a, #045360);
+    background: -webkit-linear-gradient(#007d8a, #045360); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#007d8a, #045360); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#007d8a, #045360); /* For Firefox 3.6 to 15 */
+    color: white;
+}
+.rpText
+{
+    color: White;
+}
+.RadPanelBar_Hay div.rpHeaderTemplate, .RadPanelBar_Hay a.rpLink
+{
+    color: white;
+}
+
+/*Tabs*/
+.divider { border-bottom-color: #017c89; }
+a.tabSelectedLink { 
+    background-color:#017c89;
+    color:White;
+}
+.tabSelected {
+	background-color:#017c89;
+}
+
+a {
+	color: #3e8d98;
+}
+a:visited {
+	color: #3e8d98;
+}
+
+/*Icons*/
+.hlClinicalViewer {height: 24px;width: 24px;border: none; background-image:url(../images/Allscripts/headerClinicalViewer.gif); background-repeat:no-repeat; background-position:center;}
+.hlClinicalViewer:hover{height: 24px;width: 24px; background-image:url(../images/Allscripts/headerClinicalViewerHover.gif); background-repeat:no-repeat; background-position:center;}
+
+img#helpIcon {height: 24px;width: 24px;border: none; background-image:url(../images/Allscripts/headerhelp.gif); background-repeat:no-repeat; background-position:center;}
+img#helpIcon:hover{height: 24px;width: 24px; background-image:url(../images/Allscripts/headerhelpHover.gif) !important; background-repeat:no-repeat; background-position:center;}
+
+img#helpIconLogin {height: 24px;width: 24px; background-image:url(../images/Allscripts/headerhelp.gif); background-repeat:no-repeat; background-position:center;}
+img#helpIconLogin:hover{height: 24px;width: 24px; background-image:url(../images/Allscripts/headerhelpHover.gif); background-repeat:no-repeat; background-position:center;}
+
+img#profileIcon{height: 24px;width: 24px;border: none; background-image:url(../images/Allscripts/headerprofile.gif); background-repeat:no-repeat; background-position:center;}
+
+img#logoutIcon {height: 24px;width: 24px;border: none; background-image:url(../images/Allscripts/headerlogout.gif); background-repeat:no-repeat; background-position:center;}
+img#logoutIcon:hover{height: 24px;width: 24px; background-image:url(../images/Allscripts/headerlogoutHover.gif); background-repeat:no-repeat; background-position:center;}
+
+img#messageQueueIcon {height: 24px;width: 24px;border: none; background-image:url(../images/Allscripts/headermsgqueue.gif); background-repeat:no-repeat; background-position:center;}
+img#messageQueueIcon:hover{height: 24px;width: 24px; background-image:url(../images/Allscripts/headermsgqueueHover.gif); background-repeat:no-repeat; background-position:center;}
+
+/*Footer -- Bar under master*/
+.h1title { background-color: #04525f; }
+
+/*Right Panel Accordion*/
+.accordionHeader{background-color:#999999}
+.accordionHeaderText{background-color:#999999}
+
+
+ .rgAltRow{
+    background: #f2f2f2;
+    background-color: #f2f2f2;
+}
+.rgSelectedRow {
+    background: #d5ebed 0 -5900px repeat-x url('../telerik/Skins/Allscripts/Grid/Img/sprite.gif');
+}
+
+
+.primaryForeColor {
+    color: #04525f
+}
+
+
+
+.rightPanelMed {
+    border-left: 3px solid #04525f !important;
+    border-right: 3px solid #04525f !important;
+}
+
+.erxSelectedRow {
+    background-color: #d5ebed !important;
+}
+
+/*bootstrap override*/
+.nav-tabs>li>a {
+   color:white;
+}
+
+.nav-tabs>li>a:hover {
+  border:none;
+}
+.nav-tabs>li.active>a,.nav-tabs>li.active>a:focus,.nav-tabs>li.active>a:hover {
+     background-color:#017c89;
+     border-color:#017c89;
+}

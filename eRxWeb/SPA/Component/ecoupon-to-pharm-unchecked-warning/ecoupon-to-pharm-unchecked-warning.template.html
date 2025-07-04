@@ -1,0 +1,23 @@
+<div class="modal fade" style="top: 30% !important;" id="patProgramUnchecked" role="dialog">
+    <div class="modal-dialog" style="width: 40%;">
+        <div style="text-align: center">
+            <p class="erxOverlayTitle">Warning</p>
+        </div>
+        <div class="overlayContent" style="background: white;">
+            <p>By unchecking this option, the coupon will not be electronically sent to the pharmacy for the patient.</p>
+            <br />
+            <p>
+                Reduce your patient's out of pocket costs with eCoupons. Manufacturer Coupons can be used in combination with commercially
+                insured patients prescription plans (not applicable for Medicare patients).
+                Sending the coupon electronically to the pharmacy will enable the pharmacist to apply the cost savings option if it's
+                applicable for the patient.
+            </p>
+            <br />
+            Do not show me this message again <input type="checkbox" id="chkHideForever" [(ngModel)]="neverShowMessageAgain" style="margin-bottom: 4px;"/>
+        </div>
+        <div style="text-align: center;" class="erxOverlayFooter">
+            <button class="btnstyle" style="width: 170px" (click)="ContinueWithoutCoupon()" type="button">Continue Without eCoupon</button>
+            <button class="btnstyle" style="width: 109px; margin-left: 25px;" (click)="IncludeCoupon()" type="button">Include eCoupon</button>
+        </div>
+    </div>
+</div>

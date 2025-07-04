@@ -1,0 +1,61 @@
+﻿<div *ngIf="!StartupParameters" class="div-medication-filters">
+    <span class="SheadText">Loading..</span>
+</div>
+<div *ngIf="StartupParameters && !StartupParameters.IsSearchDisabled" class="medication-filters">
+    <div style="display: inline-block;">
+        <img src="images/searchBoxImage.png" class="searchControlImage">
+        <div class="autocomplete" style="width:150px;">
+            <input name="txtSearchMed" type="text" maxlength="50" id="txtSearchMed" title="Enter partial or full medication name"
+                   [ngClass]="MedicationName == 'Select Medication' ? 'searchControlTextBoxDefaultValue' : 'searchControlTextBox'" autocomplete="off"
+                   style="width:150px;" [(ngModel)]="MedicationName"
+                   (blur)="MedicationFocus(false)" (focus)="MedicationFocus(true)" (input)="MedicationFocus(true)"
+                   (keydown)="MedicationKeyDown($event)" />
+            <div *ngIf="MedicationDropDownItems && MedicationDropDownItems.length > 0" class="autocomplete-items">
+                <ng-container *ngFor="let med of MedicationDropDownItems; let i = index">
+                    <div (click)="MedicationDropDownItemSelected(med)" [innerHTML]="med | replaceStrong: MedicationName | safeHtml" [ngClass]="i == MedicationDropDownCurrentItemIndex ? 'autocomplete-active' : ''">
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+        <input type="button" name="btnGo" value="GO" id="btnGo"
+               title="Shows all medications matching the text entered in the Search field. Enter partial or full medication name in the text-box."
+               class="searchControlButton" (click)="SearchMedication()" />
+    </div>
+
+    <div class="medication-filters medication-filters--border">
+        <span class="medication-filters__radio" *ngIf="!showOnlyAllMeds" >
+            <input type="radio" name="rblSearch"   id="rblSearch-P" [checked]="MedicationSearch.MedicationSearchOption === patientHistory" (click)="SelectMedSearchRequestDataType(patientHistory)" />
+            <label class="medication-filters__label" for="rblSearch-P">Patient History</label>
+        </span>
+        <span class="medication-filters__radio" *ngIf="!showOnlyAllMeds" >
+            <input type="radio" name="rblSearch" id="rblSearch-M" [checked]="MedicationSearch.MedicationSearchOption === providerHistory" (click)="SelectMedSearchRequestDataType(providerHistory)" />
+            <label class="medication-filters__label" for="rblSearch-M">{{StartupParameters.DoctorHistoryOptionDisplayText}}</label>
+        </span>
+        <span style="color:#E7e7e7;">
+            <input type="radio" name="rblSearch" id="rblSearch-A" [checked]="MedicationSearch.MedicationSearchOption === allMedication || showOnlyAllMeds" (click)="SelectMedSearchRequestDataType(allMedication)" />
+            <label class="medication-filters__label" for="rblSearch-A">All Meds</label>
+        </span>
+    </div>
+
+
+    <div *ngIf="StartupParameters.IsShowPreBuiltGroup && !showOnlyAllMeds" id="divShowCategory" class="medication-filters medication-filters--border">
+        <span class="medication-filters__radio medication-filters__radio--no-margin">
+            <input type="radio" name="rblSearch" id="rblSearch-G" [checked]="MedicationSearch.MedicationSearchOption === preBuiltGroup" (click)="SetMedicationSearchOption(preBuiltGroup)" />
+            <label class="medication-filters__label" for="rblSearch-G">By Group:</label>
+        </span>
+        <img src="images/searchBoxImage.png" class="searchControlImage">
+        <div class="autocomplete" style="width:150px;">
+            <input name="txtGroupName" type="text" maxlength="50" id="txtGroupName" title="Enter partial or full group name"
+                   [ngClass]="PreBuiltGroupName == 'Select Group' ? 'searchControlTextBoxOnlyDefaultValue' : 'searchControlTextBoxOnly'" autocomplete="off"
+                   style="width:150px;" [(ngModel)]="PreBuiltGroupName"
+                   (blur)="PreBuiltGroupFocus(false)" (focus)="PreBuiltGroupFocus(true)" (input)="PreBuiltGroupFocus(true)" (keydown)="PreBuiltGroupKeyDown($event)" />
+            <div *ngIf="PreBuiltGroupDropDownItems && PreBuiltGroupDropDownItems.length > 0" class="autocomplete-items">
+                <ng-container *ngFor="let grp of PreBuiltGroupDropDownItems; let i = index">
+                    <div (click)="PreBuiltGroupDropDownItemSelected(grp)" [innerHTML]="grp | replaceStrong: PreBuiltGroupName | safeHtml" [ngClass]="i == PreBuiltGroupDropDownCurrentItemIndex ? 'autocomplete-active' : ''">
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+
+</div>

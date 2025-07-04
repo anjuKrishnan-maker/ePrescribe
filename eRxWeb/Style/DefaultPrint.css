@@ -1,0 +1,96 @@
+﻿.eRxHealthSheet_Panel
+{
+	background-color:#FF5800; 
+}
+
+img#loginLogo{background:url(../images/NewCo/AllscriptsMisysWebLogo.gif); background-repeat:no-repeat; background-position:center;}
+img#mainLogo{background:url(../images/NewCo/AllscriptsMisysWebLogo_sm.gif); background-repeat:no-repeat; background-position:center;}
+.appStripe { background-color:#FF5800;}
+.rightBoxHeader {
+	background-color:#FF5800;}
+.rightBoxTable 
+{
+	border: solid 2px #FF5800;
+}
+img#helpIcon{background:url(../images/NewCo/headerhelpNewCo.gif); background-repeat:no-repeat; background-position:center;}
+img#helpIconLogin{background:url(../images/NewCo/headerhelpNewCo.gif); background-repeat:no-repeat; background-position:center;}
+img#profileIcon{background:url(../images/NewCo/headerprofileNewCo.gif); background-repeat:no-repeat; background-position:center;}
+img#logoutIcon{background:url(../images/NewCo/headerlogoutNewCo.gif); background-repeat:no-repeat; background-position:center;}
+img#messageQueueIcon{background:url(../images/NewCo/headerMsgQueueNewCo.gif); background-repeat:no-repeat; background-position:center;}
+img#iLearnIcon {height: 24px; width: 24px;border: none; background-image:url(../images/Allscripts/gradCap.png); background-repeat:no-repeat; background-position:center;}
+
+.loginMessageRow
+{
+	border-top: solid 3px #FF5800;
+}
+
+.Phead						{font:bold 12px arial, verdana, sans-serif; color:#ffffff; text-indent:10px;vertical-align:middle;}
+
+.SelectedRow
+{
+	background-color: #CBCBCB;
+}
+
+.DURHeading
+{
+	color: #AE0910;
+}
+
+a:hover {
+	color: #FF5800;
+}
+
+
+.redborder     { height:1px; background-color:#FF5800; }
+.subheadred		{ font-size:12px; font-weight:bold; color: #FF5800; }
+
+
+.btnstyle 
+{
+    display:none;
+    /*
+    height:22px; 
+    width:auto; 
+    background-image: url(../images/buttongradient.gif); 
+    background-repeat:repeat-x; 
+    border: solid 1px #858585; 
+    vertical-align:middle; 
+    */
+}
+
+.accordionHeaderScriptPad
+{
+	background-color: #FF5800;
+}
+
+.accordionHeaderTextScriptPad
+{
+	background-color: #FF5800;
+}
+
+
+td.PopUpHeader
+{ 
+    background-color: #ff5800;
+}
+.deluxeComparisons
+{
+	border:solid 1px #FF5800;
+}
+
+.deluxeComparisons th
+{
+	 color:#FF5800;
+	 border:solid 1px #FF5800;
+}
+
+.deluxeComparisons td
+{
+	 border:solid 1px #FF5800;
+}
+
+
+.sponsoredLink a:hover
+{
+	color:#FF5800
+}

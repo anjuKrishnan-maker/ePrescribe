@@ -1,0 +1,11 @@
+﻿.extractTable {
+    width: 100%;
+}
+
+.extractColumn {
+    width: 50%;
+}
+
+.extractButton {
+    margin-bottom: 20px;
+}

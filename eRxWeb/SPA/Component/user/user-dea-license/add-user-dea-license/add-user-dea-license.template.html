@@ -1,0 +1,62 @@
+﻿<erx-message [Messages]="MessageStripArray"></erx-message>
+<form #userDEALicenseForm="ngForm">
+    <div class="addLicense" *ngIf="showForm">
+        <div class="add-dea-table">
+            <div class="add-dea-table-row">
+                <div class="add-dea-table-cell-label">
+                    <span class="ma-form-mandatory-star">* </span>DEA#
+                </div>
+                <div class="add-dea-table-cell-field">
+                    <input id="deaNumber" name="deaNumber" type="text" [(ngModel)]="DeaLicense.DEANumber" pattern="[a-zA-Z]{2}\d{7}(-{1}[a-zA-Z\d]{0,20})?$" #deaNumber="ngModel" title="DEA format is 2 characters + 7 digits, and if necessary, followed by a dash and an alphanumeric suffix up to 20 characters. For example: AA1234567-001" required />
+                    <span *ngIf="deaNumber.invalid && (deaNumber.dirty || deaNumber.touched)">
+                        <span class="validation-color" *ngIf="deaNumber.errors.required || deaNumber.errors.pattern">
+                            Invalid Format
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="add-dea-table-row">
+                <div class="add-dea-table-cell-label">
+                    <span class="ma-form-mandatory-star">* </span>DEA Expiration Date
+                </div>
+                <div class="add-dea-table-cell-field user-date-picker-row-padding-override">
+                    <mat-form-field>
+                        <input matInput [matDatepicker]="picker" id="deaExpirationDate" type="text" [(ngModel)]="DeaLicense.DatePickerDate" name="deaExpirationDate" />
+                        <mat-datepicker-toggle matSuffix [for]="picker" class="user-date-picker-toggle"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="add-dea-table-row">
+                <div class="add-dea-table-cell-label">
+                    <span class="ma-form-mandatory-star">* </span>DEA Type
+                </div>
+                <div class="add-dea-table-cell-field">
+                    <input type="radio" [value]="1" id="deatype_primary" name="deatype" [(ngModel)]="DeaLicense.DEALicenseTypeId" (change)="handleChange(1)" required /><span class="add-user-dea-type">Primary</span>
+                    <input type="radio" [value]="3" id="deatype_nadean" name="deatype" [(ngModel)]="DeaLicense.DEALicenseTypeId" (change)="handleChange(3)" required /><span class="add-user-dea-type">NADEAN</span>
+                    <input type="radio" [value]="2" id="deatype_additional" name="deatype" [(ngModel)]="DeaLicense.DEALicenseTypeId" (change)="handleChange(2)" required /><span class="add-user-dea-type">Additional</span>
+                </div>
+            </div>
+            <div class="add-dea-table-row">
+                <div class="add-dea-table-cell-label">
+                    <span class="ma-form-mandatory-star">* </span>DEA Schedule
+                </div>
+                <div class="add-dea-table-cell-field">
+                    <input type="checkbox" id="deaScheduleII" name="deaScheduleII" [(ngModel)]="DeaLicense.DEAIIAllowed" /><span class="add-user-dea-levels">II</span>
+                    <input type="checkbox" id="deaScheduleIII" name="deaScheduleIII" [(ngModel)]="DeaLicense.DEAIIIAllowed" /><span class="add-user-dea-levels">III</span>
+                    <input type="checkbox" id="deaScheduleIV" name="deaScheduleIV" [(ngModel)]="DeaLicense.DEAIVAllowed" /><span class="add-user-dea-levels">IV</span>
+                    <input type="checkbox" id="deaScheduleV" name="deaScheduleV" [(ngModel)]="DeaLicense.DEAVAllowed" /><span class="add-user-dea-levels">V</span>
+                </div>
+            </div>
+            <div class="add-dea-table-row">
+                <div class="add-dea-table-cell-label"></div>
+                <div class="add-dea-table-cell-field">
+                    <button *ngIf="!isEdit" class="btnstyle" (click)="insertDEALicense();$event.preventDefault()">Insert</button>
+                    <button *ngIf="isEdit" class="btnstyle" (click)="updateDEALicense();$event.preventDefault()">Update</button>
+                    &nbsp; &nbsp;
+                    <button class="btnstyle" (click)="cancel()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

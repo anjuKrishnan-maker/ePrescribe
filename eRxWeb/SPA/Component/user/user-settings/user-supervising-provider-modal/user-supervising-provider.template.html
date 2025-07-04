@@ -1,0 +1,43 @@
+﻿<div class="modal-backdrop fade in" id="mdlSelectSupervisingProviders" role="dialog" [style.display]="showModalPopup ? 'block' : 'none'"></div>
+<div class="modal" id="selectedProviders" role="dialog" [style.display]="'block'" *ngIf="showModalPopup">
+    <div class="modal-dialog">
+        <div class="overlaymain">
+            <form (ngSubmit)="onSubmit()">
+               
+                    <div class="overlayTitle" *ngIf="userName">
+                        Selected Providers to be associated with {{userName}}
+                    </div>
+                    <div class="overlayTitle" *ngIf="!userName">
+                        Select Providers
+                    </div>
+                
+
+                <div class="overlayContent">
+                    <table id="" class="table table-striped">
+                        <tr>
+                            <th><input id="chk-sup-provider" type="checkbox" name="selectAllProviders" [(ngModel)]="isAllCheckboxSelected" (ngModelChange)="onSelectAllProviders()" />Select/Unselect</th>
+                            <th>Last Name</th>
+                            <th>First Name</th>
+                            <th>NPI</th>
+                            <th>DEA</th>
+                        </tr>
+                        <tr *ngFor="let provider of userSupervisingProvidersList; let i = index" [attr.data-index]="i">
+                            <td><input id="chk-sup-provider-{{i}}" type="checkbox" name="supervisingProvider" [checked]="provider.Selected" (change)="onProviderSelected(i)" /></td>
+                            <td id="lname-sup-provider-{{i}}">{{provider.LastName}}</td>
+                            <td id="fname-sup-provider-{{i}}">{{provider.FirstName}}</td>
+                            <td id="npi-sup-provider-{{i}}">{{provider.NPI}}</td>
+                            <td id="dea-sup-provider-{{i}}">{{provider.DEA}}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="overlayFooter">
+                    <div>
+                        <button id="btnOK" type="submit" class="btnstyle btnStyleAction buttonOK" (click)="verifyChanges()">OK</button>&nbsp;&nbsp;
+                        <button id="btnCancel" type="reset" class="btnstyle btnStyleAction" (click)="cancel()">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

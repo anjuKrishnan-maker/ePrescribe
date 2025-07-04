@@ -1,0 +1,20 @@
+﻿<table *ngIf="visible">
+    <tr *ngIf="rtBxModel.pRightBoxHeaderText && rtBxModel.pRightBoxHeaderText.length > 0">
+        <td class="rightBoxHeader"> {{rtBxModel.pRightBoxHeaderText}}</td>
+    </tr>
+    <tr *ngIf="rtBxModel.RightBoxImageURL">
+        <td>
+            <img alt="" [src]="rtBxModel?.RightBoxImageURL"/>
+        </td>
+    </tr>
+    <tr *ngIf="rtBxModel.RightBoxBodyText && rtBxModel.RightBoxBodyText.length > 0">
+        <td>{{rtBxModel.RightBoxBodyText}}</td>
+    </tr>
+    <tr *ngIf="rtBxModel.Links && rtBxModel.Links.length > 0">
+        <td>
+            <ng-template ngFor let-data [ngForOf]="rtBxModel.Links">
+                <a [href]="data.Url" target=_blank>{{data.Text}}</a><br />
+            </ng-template>
+        </td>
+    </tr>
+</table>

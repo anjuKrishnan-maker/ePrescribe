@@ -1,0 +1,60 @@
+﻿.popover__title {
+    font-size: medium; 
+    font-weight: bold;
+}
+
+.popover__wrapper {
+    position: relative;
+   display:none;
+}
+.popover__wrapper-visible {
+    display: inline-block;
+}
+.popover__content {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: -15px;
+    left: 105%;
+    margin-left:10px;
+    transform: translate(0,10px);
+    background-color: white;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    width: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.popover__wrapper .popover__content-visible {
+    z-index: 10;
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0,-20px);
+    transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+}
+
+.popover__message {
+    text-align: center;
+}
+
+.popover__content > .arrow {
+    top: 50%;
+    left: -11px;
+    margin-top: -11px;
+    border-right-color: #999;
+    border-right-color: rgba(0,0,0,.25);
+    border-left-width: 0;
+    border-width: 11px;
+}
+
+    .popover__content > .arrow:after {
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
+        border-color: transparent;
+        border-style: solid;
+        content: "";
+        border-width: 10px;
+    }

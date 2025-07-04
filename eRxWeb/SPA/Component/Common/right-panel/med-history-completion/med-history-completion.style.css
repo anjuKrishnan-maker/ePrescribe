@@ -1,0 +1,31 @@
+﻿.alert-image__td {
+    width: 25px;
+}
+.alert-image__border {
+    border-width: 0px;
+}
+
+
+.cblHistory_medication {
+    font-weight: 100;
+    padding-left: 4px;
+}
+
+.select-all__span {
+    padding-left: 2px;
+}
+
+.chkSelectAll__text{
+    font-weight: bold;
+}
+
+.pat-history__margin {
+    margin-top: 5px;
+}
+
+.DUR-footer__style {
+    display: table;
+    text-align: center;
+    width: 100%;
+}
+

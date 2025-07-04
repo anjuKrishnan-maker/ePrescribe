@@ -1,0 +1,113 @@
+/* telerik RadPanelBar 4 Telerik skin */
+
+/* panelbae wrapper */
+.RadPanelBar_Allscripts
+{
+	background: #fff;
+	white-space: nowrap;
+}
+
+.RadPanelBar_Allscripts .rpRootGroup
+{
+	border: 1px solid #828282;
+}
+
+.RadPanelBar_Allscripts .rpLink,
+.RadPanelBar_Allscripts .rpTemplate
+{
+	color: White;
+	font: normal 11px/27px Verdana, Sans-serif;
+}
+
+.RadPanelBar_Allscripts .rpLink
+{
+	text-overflow: ellipsys;
+	overflow: hidden;
+	height: 30px;
+	background: #E4E4E4;
+	border: 1px solid #828282;
+	color: White;
+}
+
+.RadPanelBar_Allscripts .rpImage
+{
+	margin: 4px 2px;
+	height: 30px
+}
+
+.RadPanelBar_Allscripts .rpLink:hover
+{
+	background: #e4e4e4;
+	height: 30px;
+	border: 1px solid #828282;
+
+}
+
+.RadPanelBar_Allscripts .rpExpanded,
+.RadPanelBar_Allscripts .rpExpanded:hover
+{
+	background: #ADBDDE;
+	color: Black;
+}
+
+.RadPanelBar_Allscripts .rpText
+{
+	padding: 0px 8px;
+}
+
+.RadPanelBar_Allscripts .rpExpandable .rpText
+{
+	background: transparent url('Img/panel_plus.bmp') no-repeat 100%;
+}
+
+.RadPanelBar_Allscripts .rpExpanded .rpText
+{
+	background: transparent url('Img/panel_minus_select.bmp') no-repeat 100%;
+}
+
+.RadPanelBar_Allscripts .rpGroup .rpLink,
+.RadPanelBar_Allscripts .rpGroup .rpTemplate
+{
+	font: normal 11px/16px Arial, Verdana, Sans-serif;
+	color: #666;
+}
+
+.RadPanelBar_Allscripts .rpGroup .rpLink
+{
+	background: none;
+}
+
+.RadPanelBar_Allscripts .rpItem .rpGroup
+{
+	background: #fff url('Img/RootItemBgHover.gif') repeat-x 0 100%;
+	padding: 5px 0;
+}
+
+.RadPanelBar_Allscripts .rpGroup .rpText
+{
+	padding: 0px 17px;
+}
+
+.RadPanelBar_Allscripts .rpGroup .rpSelected
+{
+	text-decoration: underline;
+}
+
+.RadPanelBar_Allscripts .rpDisabled,
+.RadPanelBar_Allscripts .rpDisabled:hover
+{
+	color: #ccc;
+	background: #fff url('Img/RootItemBg.gif') repeat-x 0 100%;
+}
+
+.RadPanelBar_Allscripts .rpDisabled .rpText
+{
+	cursor: default;
+}
+
+.RadPanelBar_Allscripts .rpGroup .rpDisabled,
+.RadPanelBar_Allscripts .rpGroup .rpDisabled:hover
+{
+	color: #ccc;
+	background: none;
+}

@@ -1,0 +1,108 @@
+﻿<div class="modal-backdrop fade in" id="mdlregisterMobileS1" role="dialog" [style.display]="showS1ModalPopup ? 'block' : 'none'"></div>
+<div class="modal" id="registerMobileS1Popup" role="dialog" [style.display]="'block'" *ngIf="showS1ModalPopup">
+    <div class="modal-dialog">
+        <form #mobileRegistrationS1="ngForm">
+            <div id="divRegistration" class="overlaymain" style="padding:0">
+                <div class="overlayTitle">
+                    Register Your Mobile Device (Step 1 of 2)
+                </div>
+                <div class="overlayContent">
+                    Mobile Phone Number :
+                    <input type="text" [(ngModel)]="verificationCodeSMS.phoneNumber" name="phoneNumber" #phoneNumber="ngModel" pattern="^[01]?[- .]?(\([2-9]\d{2}\)|[2-9]\d{2})[- .]?\d{3}[- .]?\d{4}$"
+                           (keypress)="numericKeyPressOnly($event)" (focus)="parseNumberInput()" (blur)="formatPhoneInput()" required />
+                    <span *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched)">
+                        <span id="phoneNumberRequiredError" *ngIf="phoneNumber.errors.required" class="validation-color">
+                            Mobile Number is required.
+                        </span>
+                        <span id="phoneNumberPatternError" *ngIf="phoneNumber.errors.pattern" class="validation-color">
+                            Please enter a valid 10 digit phone number.
+                        </span>
+                    </span>
+
+                    <br />
+                    <br />
+                    <p style="padding-bottom: 5px">
+                        By entering a mobile phone number, you consent to receive text messages related to Veradigm ePrescribe on your mobile device.  You attest that the number entered is your phone number and that you will update Veradigm ePrescribe should your number change.  Message and data rates may apply.
+                    </p>
+                    <br />
+                    <p style="padding-bottom: 5px">
+                        To cancel text messages, update your preferences displayed under Mobile Messaging (SMS) Settings.
+                    </p>
+                    <br />
+                    <input class="umr-input-alignment" type="checkbox" id="chkRegisterMobileTerms" [(ngModel)]="termsAndConditionsCheck" name="chkRegisterMobileTerms" />
+                    <label>I have read and agree to the above terms.</label>
+                </div>
+                <div class="overlayFooter">
+                    <button id="btnRegisterMobileContinue" [disabled]="!((termsAndConditionsCheck)&&(mobileRegistrationS1.valid))" class="btnstyle btnStyleAction" (click)="registerMobileS1Continue()">Continue</button>&nbsp;&nbsp;
+                    <button id="btnRegisterMobileCanceSl" class="btnstyle btnStyleAction" (click)="registerMobileS1Cancel()">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="modal-backdrop fade in" id="mdlregisterMobileS2" role="dialog" [style.display]="showS2ModalPopup ? 'block' : 'none'"></div>
+<div class="modal" id="registerMobileS2Popup" role="dialog" [style.display]="'block'" *ngIf="showS2ModalPopup">
+    <div class="modal-dialog">
+        <form #mobileRegistrationS2="ngForm">
+            <div id="divMobileVerification" class="overlaymain" style="padding:0">
+                <div class="overlayTitle">
+                    Register Your Mobile Device (Step 2 of 2)
+                </div>
+                <div class="overlayContent">
+                    <p>
+                        <span id="spnVerificationCodeInfoMsg" *ngIf="!resending">{{s2Message}}</span>
+                    </p>
+                    <br />
+                    Verification Code :
+                    <input type="text" id="providedOtp" [(ngModel)]="enteredOTP" #providedOtp="ngModel" name="providedOtp" (keypress)="numericKeyPressOnly($event)" pattern="{{verificationCodeSMS.otp}}">
+                    <span class="validation-color">{{otpErrorMessage}}</span>
+                </div>
+                <div class="overlayFooter">
+                    <button id="btnRegisterMobileVerify" class="btnstyle btnStyleAction" (click)="registerMobileVerify()">Verify and Finish</button>&nbsp;&nbsp;
+                    <button id="btnRegisterMobileResendCode" class="btnstyle btnStyleAction" (click)="registerMobileResendCode()" [disabled]="resending">Resend Code</button>&nbsp;&nbsp;
+                    <button id="btnRegisterMobileCancelS2" class="btnstyle btnStyleAction" (click)="registerMobileS2Cancel()">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="modal-backdrop fade in" id="mdlSMSTempDown" role="dialog" [style.display]="showSMSTempDownPopup ? 'block' : 'none'"></div>
+<div class="modal" id="SMSTempDownPopup" role="dialog" [style.display]="'block'" *ngIf="showSMSTempDownPopup">
+    <div class="modal-dialog">
+        <form #SMSTempDown="ngForm">
+            <div class="overlaymainwide">
+                <div class="overlayTitle">
+                    Mobile Messaging (SMS) Settings
+                </div>
+                <div class="overlayContent">
+                    Sorry, SMS is temporarily unavailable. Please try again later.
+                </div>
+                <div class="overlayFooter">
+                    <button id="btnCloseSMSTempDown" class="btnstyle btnStyleAction" (click)="closeSMSTempDown()">Close</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="modal-backdrop fade in" id="mdlDeleteMobile" role="dialog" [style.display]="showDeletePopup ? 'block' : 'none'"></div>
+<div class="modal" id="deleteMobilePopup" role="dialog" [style.display]="'block'" *ngIf="showDeletePopup">
+    <div class="modal-dialog">
+        <form #deleteMobileNumber="ngForm">
+            <div id="divDeleteMobileNumber" class="overlaymain" style="padding:0">
+                <div class="overlayTitle">
+                    Delete your Mobile Device Registration
+                </div>
+                <div class="overlayContent">
+                    Are you sure you want to delete your mobile device registration?
+                </div>
+                <div class="overlayFooter">
+                    <button id="btnContinueDelete" class="btnstyle btnStyleAction" (click)="continueDelete()">Continue</button>&nbsp;&nbsp;
+                    <button id="btnCancelMobileNumber" class="btnstyle btnStyleAction" (click)="cancelDelete()">Cancel</button>
+                </div>
+            </div>
+            </form>
+    </div>
+</div>

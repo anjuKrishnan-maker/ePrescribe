@@ -1,0 +1,60 @@
+﻿<div class="modal-backdrop fade in" [style.display]="showLinkedAccountConfLayout ? 'block' : 'none'"></div>
+<div *ngIf="showLinkedAccountConfPopup">
+    <div class="modal" id="mdlLinkedAccount" [style.display]="'block'" role="dialog" [style.top]="'30%'">
+        <div class="modal-dialog link-account-conf-dialog-size">
+            <div class="modal-content">
+                <div class="reg-overlayTitle">
+                    Veradigm Security Account Confirmation
+                </div>
+                <div class="modal-body">
+                    <div id="dvMessage" [class]="imageIcon" *ngIf="showMessage">
+                        <span class="status-image-size">
+                            <img id="imgStatus" [src]="linkConfImageUrl" />
+                        </span>
+                        <span>
+                            {{ linkConfMessageText }}
+                        </span>
+                    </div>
+                    <div class="erx-form-row">
+                        Your existing Veradigm Security Account has been successfully linked to this eRX System.
+                    </div>
+                    <div class="erx-form-row">
+                        <span class="erx-form-label">
+                            <label>First Name:</label>
+                        </span>
+                        <span >
+                            <label id="lblFirstName" class="link-account-conf-label-text">{{ linkExistingUserResponse.FirstName}}</label>
+                        </span>
+                    </div>
+                    <div class="erx-form-row">
+                        <span class="erx-form-label">
+                            <label>Last Name:</label>
+                        </span>
+                        <span >
+                            <label id="lblLastName" class="link-account-conf-label-text">{{ linkExistingUserResponse.LastName}}</label>
+                        </span>
+                    </div>
+                    <div class="erx-form-row">
+                        <span class="erx-form-label">
+                            <label>Email:</label>
+                        </span>
+                        <span>
+                            <label id="lblEmail" class="link-account-conf-label-text">{{ linkExistingUserResponse.Email}}</label>
+                        </span>
+                    </div>
+                    <div class="erx-form-row">
+                        <span class="erx-form-label">
+                            <label>Security Account Name:</label>
+                        </span>
+                        <span>
+                            <label id="lblAccountName"  class="link-account-conf-label-text">{{ linkExistingUserResponse.AccountName}}</label>
+                        </span>
+                    </div>
+                </div>
+                <div class="reg-overlayFooter">
+                        <button type="submit" class="button-style" ID="btnLinkNext" (click)="goNext();">Next</button>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>

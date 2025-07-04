@@ -1,0 +1,13 @@
+﻿<erx-modal-popup-control ModalId="{{ModalId}}" title="Your Credit Card Will Expire Soon" [Width]="''" [Height]="''">
+    <div modal-body>
+        According to our records, your credit card will expire soon.
+        Please update your credit card information to ensure that your
+        ePrescribing service is not interrupted.
+        <br />
+        <br />
+    </div>
+    <div modal-footer>
+        <button id="btnUpdateBillingNow" class="btnstyle btnStyleAction" (click)="btnUpdateBillingNowClick()">Update billing now</button>
+        <button id="btnOkThanks" class="btnstyle" (click)="btnOkThanksClick()">Ok, thanks!</button>
+    </div>
+</erx-modal-popup-control>

@@ -1,0 +1,927 @@
+﻿@charset "UTF-8";
+
+body, td, p {
+    font-family: HelveticaNeue, sans-serif,Arial;
+    font-size: 11px;
+    font-weight: normal;
+    color: #000000;
+}
+
+.primaryColor {
+    color: #2F2257;
+}
+
+.primaryColor2 {
+    color: #F0584C;
+}
+
+h1 {
+    color: #2F2257;
+    font-size: 24px;
+}
+
+.ePAHeader {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #2F2257;
+}
+
+.nav {
+    font-family: HelveticaNeue,Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    color: #616365;
+    padding-left: 7px;
+    padding-top: 4px;
+    text-align: right;
+    padding-right: 7px;
+}
+
+.navDivider {
+    font-family: HelveticaNeue,Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    color: #000;
+}
+
+.pageHeader1 {
+    font-size: 34px;
+    font-weight: bold;
+    color: #2F2257;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+}
+
+.pageHeader2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #2F2257;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+}
+
+.copy {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    color: white;
+    padding-top: 4px;
+    text-align: left;
+    padding-right: 7px;
+}
+
+.copyIndent20 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    color: #000000;
+    padding-top: 4px;
+    padding-left: 20px;
+}
+
+.copyIndent40 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    color: #000000;
+    padding-top: 4px;
+    padding-left: 40px;
+}
+
+.copyIndent60 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    color: #000000;
+    padding-top: 4px;
+    padding-left: 60px;
+}
+
+.copyBold {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #000000;
+    text-align: left;
+}
+
+.sideBoxHeader {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #000000;
+    text-align: left;
+    padding-bottom: 0px;
+}
+
+.footer {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #999999;
+    bottom: auto;
+}
+
+a:link {
+    color: #F0584C;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #F0584C;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.NoHoverLink:hover {
+    background-color: #F0584C;
+    cursor: pointer;
+}
+
+.NoHoverLink {
+    background-color: #F0584C;
+    cursor: pointer;
+}
+
+a:active {
+    text-decoration: none;
+    color: #F0584C;
+}
+
+.footer a:link {
+    color: #999999;
+    text-decoration: none;
+}
+
+.footer a:visited {
+    color: #999999;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #2F2257;
+    text-decoration: none;
+}
+
+.footer a:active {
+    text-decoration: none;
+    color: #999999;
+}
+
+.orangeBox a:link {
+    color: #000000;
+    text-decoration: none;
+}
+
+.orangeBox a:visited {
+    color: #000000;
+    text-decoration: none;
+}
+
+.orangeBox a:hover {
+    color: #999999;
+    text-decoration: none;
+}
+
+.orangeBox a:active {
+    text-decoration: none;
+    color: #000000;
+}
+
+.sideBoxBold a:link {
+    color: #F0584C;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.sideBoxBold a:visited {
+    color: #F0584C;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.sideBox a:link {
+    color: #F0584C;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.sideBox a:visited {
+    color: #F0584C;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.sideBox a:hover {
+    text-decoration: underline;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.sideBox a:active {
+    text-decoration: none;
+    color: #F0584C;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.faqTitle {
+    text-align: center;
+    font-weight: bold;
+    margin: 15px 0 15px 0;
+}
+
+#faqStyle p {
+    margin: 0 0 20px 0;
+}
+
+#faqStyle ol, #faqStyle ul {
+    margin: 0 0 20px 0;
+}
+
+img#helpIcon {
+    height: 24px;
+    width: 24px;
+    border: none;
+    background-image: url(../images/Allscripts/headerhelp.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+img#logoutIcon {
+    height: 24px;
+    width: 24px;
+    border: none;
+    background-image: url(../images/Allscripts/headerlogout.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+img#mainLogo {
+    background: url(../images/Allscripts/Allscripts_Logo_sm.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#helpMainLogo {
+    background: url(../images/Allscripts/Allscripts_Logo.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 165px;
+    height: 42px;
+    border: none;
+}
+
+#helpImageBullet {
+    background: url(../images/Allscripts/Bullet.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 19px;
+    height: 19px;
+    border: none;
+}
+
+#roundTop {
+    background: url(https://eprescribe.allscripts.com/media/images/round_top.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 588px;
+    height: 18px;
+    border: none;
+}
+
+#roundBottom {
+    background: url(https://eprescribe.allscripts.com/media/images/round_bottom.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 588px;
+    height: 14px;
+    border: none;
+}
+
+#greySidesLeft {
+    background: url(https://eprescribe.allscripts.com/media/images/grey_sides.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 1px;
+    height: 12px;
+    border: none;
+}
+
+#greySidesRight {
+    background: url(https://eprescribe.allscripts.com/media/images/grey_sides.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 1px;
+    height: 12px;
+    border: none;
+}
+
+#greyHR {
+    background: url(https://eprescribe.allscripts.com/media/images/grey_hr.gif);
+    background-repeat: no-repeat;
+    background-position: left;
+    width: 800px;
+    height: 1px;
+    border: none;
+}
+
+#navRightRed {
+    background: url(https://eprescribe.allscripts.com/media/images/nav_right_red.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 775px;
+    height: 1px;
+    border: none;
+}
+
+
+.help {
+    width: 980px;
+    height: auto;
+    background-color: #FFFFFF;
+    border: thin solid #999999;
+}
+
+.helpHeader {
+    left: 15px;
+    width: 980px;
+    height: 90px;
+    background-color: Transparent;
+    border: none;
+}
+
+.helpMainContent {
+    width: 980px;
+    padding-right: 12px;
+    background-color: Transparent;
+    border: none;
+    overflow: auto;
+}
+
+.helpRightHandPanel {
+    position: absolute;
+    top: 175px;
+    left: 614px;
+    width: 170px;
+    background-color: Transparent;
+    border: none;
+    padding-top: 12px;
+    padding-left: 10px;
+}
+
+.helpRightHandPanelBlob {
+    width: 278px;
+    border: 1px solid #cccccc;
+    background-color: #EBEBEB;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.helpMainContentBlob {
+    width: 588px;
+    padding: 12px;
+}
+
+.userHeader {
+    position: absolute;
+    top: 15px;
+    left: 216px;
+    width: 588px;
+    background-color: Transparent;
+    border: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.appStripe {
+    background-color: #F0584C;
+}
+
+.FAQ_Question {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #2F2257;
+    padding-top: 4px;
+    text-align: left;
+    padding-right: 7px;
+}
+
+.FAQ_Answer {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: Gray;
+    margin-top: 4px;
+    text-align: left;
+}
+
+.FAQ_Additional {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: Black;
+    padding-top: 4px;
+    text-align: left;
+}
+
+.FAQ_Toggle a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #2F2257;
+    padding-top: 4px;
+    text-align: left;
+    padding-right: 40px;
+}
+
+.ImportItem {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #747b7d;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+    .ImportItem a {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+        color: #747b7d;
+        text-align: left;
+    }
+
+.ImportItemSmall a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #2F2257;
+    text-align: left;
+}
+
+ul {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.copyHeader a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: White;
+    text-align: left;
+}
+
+.btnstyle {
+    height: 22px;
+    width: auto;
+    background-image: url(https://eprescribe.allscripts.com/media/images/buttongradient.gif);
+    background-repeat: repeat-x;
+    border: solid 1px #858585;
+    vertical-align: middle;
+}
+
+.modalBackground {
+    FILTER: alpha(opacity=80);
+    BACKGROUND-COLOR: gray;
+    opacity: 0.8;
+}
+
+.interstitialAdModal {
+    width: 637px;
+    height: 550px;
+    background-color: White;
+    border: solid 1px black;
+}
+
+.interstitialAdMain {
+    position: relative;
+    top: 1px;
+    left: 1px;
+    width: 635px;
+    height: 550px;
+    background-color: Transparent;
+    border-style: none;
+    max-width: 635px;
+    max-height: 550px;
+    overflow: hidden;
+}
+
+a.interstitialAdSkip {
+    position: relative;
+    top: 5px;
+    right: 21px;
+    display: inline;
+    font: normal 12px arial, verdana, sans-serif;
+    font-size: small;
+    color: Black;
+    vertical-align: text-top;
+}
+
+img.interstitialAdClose {
+    position: relative;
+    top: 5px;
+    right: 5px;
+    vertical-align: bottom;
+}
+
+.interstitialAdContent {
+    position: relative;
+    top: 50px;
+    left: 5px;
+    width: 625px;
+    height: 500px;
+    overflow: hidden;
+}
+
+.interstitialAdModalContent {
+    width: 625px;
+    overflow: hidden;
+}
+
+
+.strongText {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    color: #000000;
+    text-align: left;
+}
+
+
+.accordionPanelContent {
+    background-color: White;
+    color: #595959;
+    border: 1px none #2F2257;
+    border-top: none;
+    width: 70%;
+}
+
+.accordionPanelHeader {
+    background-color: #EBEBEB;
+    border: none;
+    border-bottom: 1px solid #2F2257;
+    color: Black;
+    font-family: Arial, Sans-Serif;
+    font-size: 12px;
+    font-weight: bold;
+    padding: .5px;
+    padding-left: 1px;
+    padding-top: 1px;
+    cursor: pointer;
+    height: 18px;
+    width: 90%;
+}
+
+/**overide bootstrap */
+.navbar-default {
+    background-color: white;
+}
+
+@media (min-width: 768px) {
+    .HeaderBorder {
+        border-top: 5px solid #2F2257 !important;
+        padding-left: 0px;
+    }
+
+    .navbar {
+        margin-bottom: 0px;
+        border: none;
+    }
+
+    .header-nav {
+        padding-left: 20px;
+    }
+
+
+        .header-nav > li > a {
+            padding: 7px !important;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+            .header-nav > li > a img {
+                margin-right: 5px;
+            }
+
+    .dashboard-tile .caption {
+        height: 75px;
+    }
+
+    .white-body {
+        height: 110px;
+    }
+
+    .list-group .imp-ptn-box-top {
+        height: 120px !important;
+    }
+
+    .list-group .imp-ptn-box-down {
+        height: 120px !important;
+    }
+}
+
+.dashboard-body {
+    background-color: #e3e3e3 !important;
+    padding: 5em;
+}
+
+html,
+body {
+    height: 100%;
+    background-color: #2F2257;
+}
+
+.linkSecondaryColor {
+    color: #F0584C !important;
+}
+
+.dashboard-tile {
+    border-radius: 10px !important;
+    text-align: center;
+    padding: 0px;
+    text-decoration: none !important;
+}
+
+    .dashboard-tile .caption {
+        font-size: 17px !important;
+        font-weight: bold !important;
+        font-style: normal !important;
+        font-stretch: normal !important;
+        text-align: center !important;
+        color: #666666;
+    }
+
+    .dashboard-tile:hover {
+        background-color: #2F2257;
+        border-radius: 10px !important;
+        color: white;
+        border-color: #2F2257;
+    }
+
+        .dashboard-tile:hover .caption {
+            color: white;
+        }
+
+.white-body {
+    background-color: white;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 15px 10px;
+}
+
+    .white-body p {
+        font-size: 13px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.31;
+        text-align: center;
+        color: #464646;
+    }
+
+.ilearn {
+    height: 30px !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 20px;
+}
+
+.home {
+    background-image: url('../Help/Images/Icons/icoIlearn.PNG');
+}
+
+.dashboard-tile:hover .home {
+    background-image: url('../Help/Images/Icons/icoIlearn-nor.PNG');
+}
+
+.new {
+    background-image: url('../Help/Images/Icons/icoWhatsNew.PNG');
+}
+
+.dashboard-tile:hover .new {
+    background-image: url('../Help/Images/Icons/icoWhatsNew-nor.PNG');
+}
+
+.impPtn {
+    background-image: url('../Help/Images/Icons/icoImpPatient.PNG');
+}
+
+.dashboard-tile:hover .impPtn {
+    background-image: url('../Help/Images/Icons/icoImpPatient-nor.PNG');
+}
+
+.addOn {
+    background-image: url('../Help/Images/Icons/icoAddon.PNG');
+}
+
+.dashboard-tile:hover .addOn {
+    background-image: url('../Help/Images/Icons/icoAddon-nor.PNG');
+}
+
+.list-group .imp-ptn-box-top {
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+}
+
+.list-group .imp-ptn-box-down {
+    border-bottom-left-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
+}
+
+
+.list-group .imp-ptn-box-left-icon {
+    background-image: url('../Help/Images/Icons/icoImpPatient.PNG');
+    background-position: top;
+    background-repeat: no-repeat;
+    height: 100px;
+    margin-right: 15px;
+    width: 30px;
+}
+
+.list-group p {
+    font-size: 12px;
+}
+
+.list-group .link {
+    font-size: 12px;
+    color: #2F2257;
+}
+
+.help-content-header {
+    background-color: #2F2257;
+    color: #ffffff;
+}
+
+.addon-tile {
+    margin: 20px 0px;
+    width: 352px;
+    height: 228px;
+    border: 2px solid #e3e3e3;
+    border-radius: 5px;
+}
+
+    .addon-tile > img {
+        width: 100%;
+    }
+
+    .addon-tile:hover {
+        cursor: pointer;
+        border: 2px solid #2F2257;
+    }
+
+.HeaderTitle {
+    font-size: 16px !important;
+    font-weight: bold !important;
+    padding-top: 5px;
+    vertical-align: middle;
+    height: auto;
+}
+
+    .HeaderTitle img {
+        margin-right: 5px;
+    }
+
+    .HeaderTitle span {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: normal;
+    }
+
+.Headr-logout {
+    padding-top: 5px;
+}
+
+.footer-text {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 15px;
+}
+
+.footer-contact {
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    text-align: center;
+    color: #F0584C;
+}
+
+.page-title-header {
+    background-color: #2F2257;
+    padding-left: 9em;
+}
+
+    .page-title-header div {
+        height: 4em;
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .page-title-header span {
+        vertical-align: middle;
+    }
+
+    .page-title-header img {
+        margin-right: 5px;
+    }
+
+    .page-title-header .page-title {
+        color: white;
+        font-size: 2em;
+        font-weight: bold !important;
+    }
+
+.header-nav > li > a span {
+    vertical-align: middle;
+}
+
+.header-nav > li > a:hover {
+    color: #2F2257 !important;
+    text-decoration: underline;
+}
+
+    .header-nav > li > a:hover img {
+        background-position-y: 0px;
+    }
+
+.header-nav-link {
+    font-size: 14px;
+}
+
+.home-small-ico {
+    background-image: url('../Help/Images/Icons/ico-home-small.png');
+    height: 12px;
+    width: 12px;
+    border: none;
+    background-repeat: no-repeat;
+    background-position-y: -12px;
+    padding-bottom: 3px;
+}
+
+.whats-new-small-ico {
+    background-image: url('../Help/Images/Icons/ico-whats-new-small.png');
+    height: 12px;
+    width: 12px;
+    border: none;
+    background-repeat: no-repeat;
+    background-position-y: -12px;
+    padding-bottom: 3px;
+}
+
+.import-patient-small-ico {
+    background-image: url('../Help/Images/Icons/ico-import-patient-small.png');
+    height: 12px;
+    width: 12px;
+    border: none;
+    background-repeat: no-repeat;
+    background-position-y: -12px;
+    padding-bottom: 3px;
+}
+
+.add-on-small-ico {
+    background-image: url('../Help/Images/Icons/ico-add-on-small.png');
+    height: 12px;
+    width: 12px;
+    border: none;
+    background-repeat: no-repeat;
+    background-position-y: -12px;
+    padding-bottom: 3px;
+}
+
+.popou-background {
+    background-color: white !important;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.tablespacing {
+    border-spacing: 0 1rem;
+    border-collapse: separate;
+}
+
+.footerColor {
+    background-color: #2F2257;
+    border-top: 8px solid #665999;
+}
+
+.eulaTxt {
+    color: black;
+}

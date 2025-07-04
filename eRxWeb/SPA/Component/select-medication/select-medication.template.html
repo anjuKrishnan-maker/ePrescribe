@@ -1,0 +1,78 @@
+﻿<div [comp-visible]="!IsNavigatingAway" class="selectmedication__layout">
+    <div class="h1title selectmedication-header__layout">
+        <erx-select-medication-search [MedicationSearch]="MedicationSearchCriterion" (OnMedicationSearchCriteriaChanged)="MedSearchCriteriaChanged($event)"></erx-select-medication-search>
+        <input type="button" id="btnfreeform" class="btnstyle" value="Write Free Form Rx"
+               (click)="NavigateToFreeFormDrug()" title={{freeFormText}} [attr.disabled]="!isFreeFormEnabled ? '' : null"/>
+    </div>
+
+    <!-- Message Control -->
+    <div>
+        <erx-message [Messages]="StaticMessageStrip"></erx-message>
+        <erx-message [Messages]="StaticMessageRxStrip"></erx-message>
+        <erx-message [Messages]="SelectMedicationMessageStrip"></erx-message>
+    </div>
+    <div class="patient-info-row">
+        <!--Coverage-->
+        <div id="fsCoverage" class="patient-info-row__element">
+
+            <div class="indnt Shead coverage-label">
+                <span *ngIf="isAutoEligiblityCheckInprogress == true" class="coverage-auto-update-indicator__dot"></span>
+                Coverage:
+            </div>
+            <div *ngIf="CoverageList" class="coverage-list__layout">
+                <div *ngIf="CoverageList.length > 1" class="coverage-value">
+                    <select id="ddlCoverageDropDown" (change)="coverageChange($event.target.value)">
+                        <option *ngFor="let Coverage of CoverageList" value="{{Coverage.ID}}" [selected]="Coverage.ID == CoverageId">
+                            {{Coverage.Name}}
+                        </option>
+                    </select>&nbsp;&nbsp;
+                </div>
+                <div *ngIf="CoverageList.length === 1" class="coverage-value">
+                    <span class="SheadText">{{CoverageList[0].Name}}</span> &nbsp;&nbsp;
+                </div>
+                <div *ngIf="CoverageList.length < 1" class="coverage-value">
+                    <span class="SheadText">None Available</span>&nbsp; &nbsp;
+                </div>
+            </div>
+            <div *ngIf="!CoverageList" class="coverage-value">
+                <span class="SheadText">Loading..</span>
+            </div>
+        </div>
+
+        <!--Diagnosis-->
+        <div *ngIf="hasDiagnosis" class="patient-info-row__element diagnosis__spacing">
+            <span class="SheadText"><b>Current Dx: </b> {{diagnosisName}}</span>
+        </div>
+
+        <!--Patient Options-->
+        <div class="patient-info-row__element patient-options__position">
+            <div class="dropdown patient-options-dropdown__layout">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);">
+                    Patient Options
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="javascript:void(0);" (click)="showPatientMedHistoryPopup()">Review Med History</a></li>
+                    <li><a href="javascript:void(0);" (click)="showEligAndMedHxStatus()">View Eligibility &amp; Med History Status</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div>
+        <erx-select-medication-action [hasDiagnosis]="hasDiagnosis" [(isMedSelectedFromGrid)]="isMedSelectedFromGrid"
+                                      [medFilter]="SelectedMedFilter" [selectedMeds]="selectMedicationModel" (isDiagnosisRemoved)="RemoveDiagnosis($event)" (message)="displayMessage($event)"
+                                      (OnActionEventStarted)="StopAutoEligbilityCheck()" (selectSigPressed)="selectSigPressedAction()"></erx-select-medication-action>
+    </div>
+</div>
+<!-- Grid Filter Radio Buttons -->
+<div [comp-visible]="isGridDataLoading == false && MedicationSearchCriterion.MedicationSearchOption === patientHistory" class="h4title grid-filters__layout">
+    <input id="rbActive" type="radio" [checked]="PatientRecordStatusFilter === active" name="PatStatusFilter"
+           value="0" (click)="SelectMedicationFilters_OnClick(active)" /><label class="erxRdbText" for="rbActive">Active</label> &nbsp;
+    <input id="rbInactive" type="radio" [checked]="PatientRecordStatusFilter === inActive" name="PatStatusFilter"
+           value="1" (click)="SelectMedicationFilters_OnClick(inActive)" /><label class="erxRdbText" for="rbInactive">Inactive</label> &nbsp;
+    <input id="rbBoth" type="radio" [checked]="PatientRecordStatusFilter === both" name="PatStatusFilter"
+           value="2" (click)="SelectMedicationFilters_OnClick(both)" /><label class="erxRdbText" for="rbBoth">Both</label> &nbsp;
+</div>
+<erx-select-medication-grid [SelectMedDataRequest]="requestData" (OnMedSelected)="OnMedicationSelected($event)" (OnGridPopulationComplete)="GridPopulationComplete($event)">Loading.</erx-select-medication-grid>
+<eligibility-medhistory-status ModalId="eligMedHistorySelMed"></eligibility-medhistory-status>
+<erx-patient-med-history></erx-patient-med-history>

@@ -1,0 +1,148 @@
+/*Telerik RadInput Allscripts Skin*/
+
+/*global*/
+
+.radInput_Allscripts
+{
+	font:12px/22px arial,verdana,sans-serif;
+	vertical-align:top;
+}
+
+.radInput_Allscripts table,
+.radInput_Allscripts table td
+{
+	border:0;
+	height:12px; 
+}
+
+.radInput_Allscripts table
+{
+	vertical-align:top;
+}
+
+.radInput_Allscripts td
+{
+	padding:0;
+	vertical-align:top;
+	overflow:visible;/*RadGrid*/
+}
+
+.radInput_Allscripts td.inputCell 
+{
+	padding-right:4px;
+}
+
+.radInput_Allscripts textarea
+{
+	vertical-align:top;
+	overflow:auto;
+}
+
+/*textbox states*/
+
+html body .radInput_Allscripts .radEnabledCss_Allscripts,
+html body .radInput_Allscripts .radEmptyMessageCss_Allscripts,
+html body .radInput_Allscripts .radHoverCss_Allscripts,
+html body .radInput_Allscripts .radFocusedCss_Allscripts,
+html body .radInput_Allscripts .radReadOnlyCss_Allscripts,
+html body .radInput_Allscripts .radDisabledCss_Allscripts,
+html body .radInput_Allscripts .radNegativeCss_Allscripts,
+html body .radInput_Allscripts .radInvalidCss_Allscripts
+{
+	border:1px solid #8e8e8e;
+	padding:1px 1px 1px 1px;
+	background:#fff;
+	color:#333;
+	font:12px arial,verdana,sans-serif;
+}
+
+html body .radInput_Allscripts .radEmptyMessageCss_Allscripts
+{
+	color:#999;
+}
+
+html body .radInput_Allscripts .radHoverCss_Allscripts
+{
+	border-color:#575757;
+}
+
+html body .radInput_Allscripts .radFocusedCss_Allscripts
+{
+	border-color:#000;
+	color:#000;
+}
+
+html body .radInput_Allscripts .radReadOnlyCss_Allscripts,
+html body .radInput_Allscripts .radDisabledCss_Allscripts
+{
+	border-color:#ccc;
+}
+
+html body .radInput_Allscripts .radDisabledCss_Allscripts
+{
+	color:#999;
+	cursor:default;
+}
+
+html body .radInput_Allscripts .radInvalidCss_Allscripts
+{
+	border-color:#f32800;
+	color:#f32800;
+}
+
+html body .radInput_Allscripts .radNegativeCss_Allscripts
+{
+	color:#666;
+}
+
+/*buttons*/
+
+.radInput_Allscripts a
+{
+	display:block;
+	text-indent:-4444px;
+	overflow:hidden;
+	position:relative;/*FF*/
+	outline:none;/*FF*/
+	z-index:2;/*Opera*/
+	background:url('Img/sprite.gif') no-repeat;
+}
+* html .radInput_Allscripts a{position:static}/*IE6*/
+*+html .radInput_Allscripts a{position:static}/*IE7*/
+
+/*go*/
+
+.radInput_Allscripts a.gobutton
+{
+	width:20px;
+	height:18px; 
+	line-height:18px;
+	background-position:4px 4px;
+}
+
+.radInput_Allscripts a.spinbutton
+{
+	width:11px;
+	height:7px; 
+	line-height:7px;
+}
+
+.radInput_Allscripts a.up
+{
+	background-position:2px -31px;
+}
+
+.radInput_Allscripts a.down
+{
+	background-position:2px -62px;
+	margin-top:2px;
+}
+
+/*label*/
+
+.radLabelCss_Allscripts
+{
+	margin:0 0 0 0;
+	color:#333;
+	white-space:nowrap;
+}

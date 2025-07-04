@@ -1,0 +1,20 @@
+﻿<div style="position:relative">
+    <div *ngIf="ShowNoDetailsOverlay" class='summary' style='border-width:1px;border-style:solid; background: #665999; opacity: .7;
+       z-index: 10; width:100%; height:100%; text-align: center; position: absolute'
+         (click)="CloseNoDetails()">
+        <div style='margin-top: 7px;'>
+            <img src='/images/info-nor-light-16-x-16@2x.png'>
+        </div>
+        <div style='margin-top: 11px;color:white;font-size: larger;font-weight: bold;'>
+            Pricing and therapeutic <br /> alternative information <br />unavailable
+        </div>
+    </div>
+
+    <div *ngIf="pptPlusScriptPadSummaryModel.SummaryItems && pptPlusScriptPadSummaryModel.SummaryItems.length > 0">
+        <ng-template let-summaryItem ngFor [ngForOf]="pptPlusScriptPadSummaryModel.SummaryItems">
+            <div [innerHTML]="summaryItem | safeHtml" (click)="OpenDetails()" style="cursor:pointer;line-height:11.5px"></div>
+            <br />
+        </ng-template>
+    </div>
+</div>
+

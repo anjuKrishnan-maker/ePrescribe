@@ -1,0 +1,222 @@
+/* RadGrid Outlook2007 embedded skin */
+
+.RadGrid_Outlook2007
+{
+	background-color: #dfecff;
+	color: WindowText;
+	border: 1px solid #4977b2;
+}
+
+.RadGrid_Outlook2007,
+.RadGrid_Outlook2007 table,
+.GridEditForm_Outlook2007 input,
+.GridEditForm_Outlook2007 textarea
+{
+		font:normal 11px 'Segoe UI', Tahoma, Sans-Serif;
+}
+
+.RadGrid_Outlook2007 a,
+.GridPager_Outlook2007 a
+{
+	color: WindowText;
+}
+
+.MasterTable_Outlook2007
+{
+	background-color: #ffffff;
+	color: WindowText;
+	border: 0;
+	-moz-user-select: -moz-none;
+	border-top: solid 1px #6593cf;
+}
+
+.MasterTable_Outlook2007 th,
+.MasterTable_Outlook2007 td
+{
+	padding: 2px 2px 2px 5px;
+}
+
+.MasterTable_Outlook2007 .GridHeader_Outlook2007,
+.MasterTable_Outlook2007 .ResizeHeader_Outlook2007
+{
+	background:url(Img/headerBg.gif) 0 100% #fff;
+	color: WindowText;
+	font-weight:normal;
+	text-align: left;
+	font-weight:normal;
+	border-bottom: solid 1px #6593cf;
+}
+.MasterTable_Outlook2007 .ResizeHeader_Outlook2007,
+.MasterTable_Outlook2007 .GridHeader_Outlook2007:first-child
+{
+	background-position:-1px 100%;
+}
+
+.GridHeader_Outlook2007 a
+{
+	text-decoration: none;
+	color: WindowText;
+}
+
+.GridHeader_Outlook2007 span
+{
+	text-decoration: none;
+	color: WindowText;
+	cursor: default;
+}
+
+.GridRow_Outlook2007 td,
+.GridAltRow_Outlook2007 td,
+.GridEditRow_Outlook2007 td,
+.SelectedRow_Outlook2007 td
+{
+	border-bottom: 1px solid #e3efff;	
+}
+
+/* IE6 can't use bottom borders, because they remain visible when collapsing groups of rows */
+* html .GridRow_Outlook2007 td,
+* html .GridAltRow_Outlook2007 td,
+* html .GridEditRow_Outlook2007 td
+{
+    border-bottom:0;
+}
+* html .GridRow_Outlook2007,
+* html .GridAltRow_Outlook2007,
+* html .GridEditRow_Outlook2007
+{
+    background:url(Img/borderbottom.gif) left bottom repeat-x;
+}
+
+.SelectedRow_Outlook2007
+{
+	background: #a7cdf0 !important;
+}
+
+.GridEditRow_Outlook2007
+{
+	background-color: #ffffe1;
+}
+
+.GridEditForm_Outlook2007 table
+{
+	border:0;
+}
+
+.ActiveRow_Outlook2007
+{
+	background: #ffffe1 !important;
+	color: black;
+}
+
+.GridPager_Outlook2007
+{
+	background: #c0dbff url(Img/pagerBg.gif) repeat-x;
+	color: WindowText;
+	cursor: default;
+}
+.GridPager_Outlook2007 td
+{
+	padding-top:3px;
+	padding-bottom:3px;
+}
+
+.GroupPanelItems_Outlook2007
+{
+	white-space:nowrap;
+	color: white;
+	padding-bottom:4px;
+}
+
+.GroupPanel_Outlook2007
+{
+	background: #6f9dd9 url(Img/groupHeaderBg.gif) repeat-x bottom;
+	width: 100%;
+	height: 20px;
+	border-collapse: collapse;
+	color: white;
+}
+
+.GroupPanel_Outlook2007 td
+{
+	padding-left: 4px;
+}
+
+.GroupPanel_Outlook2007 table table
+{
+	border-collapse: collapse;
+}
+
+.GroupHeader_Outlook2007 td
+{
+	border-bottom: 2px solid #7BA4E0;
+	padding-top:11px;
+	color: #3768b9;
+	font-weight: bold;
+}
+
+.GroupHeader_Outlook2007 div
+{
+	top: -2px;
+}
+
+.TopReorderIndicator_Outlook2007
+{
+	background: url('Img/MoveDown.gif') no-repeat;
+}
+
+.BottomReorderIndicator_Outlook2007
+{
+	background: url('Img/MoveUp.gif') no-repeat;
+}
+
+.GridFilterMenu_Outlook2007
+{
+    cursor:default;
+}
+
+.GridFilterMenu_Outlook2007 .GridFilterMenuSelectColumn_Outlook2007,
+.GridFilterMenu_Outlook2007 .GridFilterMenuTextColumn_Outlook2007
+{
+	padding:3px 4px;
+}
+
+.GridFilterMenu_Outlook2007 .GridFilterMenuSelectColumn_Outlook2007
+{
+    background:#e4e4e4;
+    text-align:center;
+}
+
+.GridFilterMenu_Outlook2007 .GridFilterMenuTextColumn_Outlook2007
+{
+    background:#fff;
+    color:#333;
+}
+
+.GridFilterMenu_Outlook2007 .GridFilterMenuHover_Outlook2007
+{
+    background:#4c4c4c;
+    color:#fff;
+}
+
+
+/*AJAX Loading*/
+
+.GridLoadingTemplate_Outlook2007
+{
+	background:#fff !important;
+	font:normal 16px/16px arial,sans-serif;
+	color:#01285c;
+}
+
+/* rtl support */
+
+.RadGridRTL_Outlook2007 th,
+.RadGridRTL_Outlook2007 td
+{
+    text-align:right;
+}
+
+.RadGridRTL_Outlook2007 .GridPager_Outlook2007 span
+{
+    float:none !important;
+}

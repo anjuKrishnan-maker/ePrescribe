@@ -1,0 +1,19 @@
+.account-creation-form-label-spacing {
+    width: 155px;
+}
+
+.account-creation-user-name-control-spacing {
+    padding-left: 59px;
+}
+
+.account-creation-user-password-control-spacing {
+    padding-left: 0px;
+}
+
+.account-creation-security-control-spacing {
+    padding-left: 154px;
+}
+
+.account-creation-captcha-control-spacing {
+    padding-left: 85px;
+}

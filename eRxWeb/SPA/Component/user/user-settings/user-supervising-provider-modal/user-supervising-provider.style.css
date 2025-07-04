@@ -1,0 +1,65 @@
+﻿.header {
+    background-color: #E3E3E3;
+    padding: 10px;
+}
+
+.footer {
+    background-color: #E3E3E3;
+    padding: 6px;
+}
+
+
+.modal-dialog {
+    padding-top: 10%;
+    border-radius: 10px;
+    width: 50% !important;
+}
+
+.validation-color {
+    color: red;
+}
+
+.col-width{
+    width:20%
+}
+
+
+.table {
+    display: table;
+    border-bottom: none;
+}
+
+.modal {
+    display: block !important; 
+}
+
+.modal-dialog {
+    overflow-y: initial !important
+}
+
+.modal-body {
+    height: 250px;
+    overflow-y: auto;
+}
+
+
+input[type="checkbox"] {
+    vertical-align: sub;
+}
+
+.overlayContent {
+    background-color: white;
+}
+
+.overlayTitle {
+    font-size: 1.5em;
+    height: 35px;
+}
+
+.overlayFooter {
+    height: 35px;
+}
+
+.buttonOK {
+    width: 50px;
+}

@@ -1,0 +1,83 @@
+﻿<div class="modal fade" id="mdlFailedRxMsg" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                <h4 class="modal-title">{{title}}</h4>
+            </div>
+            <div class="modal-body">
+                <div id="pnlFailedRegs" >
+
+                    <table style="border-collapse: collapse; border: solid 1px black; background-color: White" cellpadding="5" cellspacing="5">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div id="LoadingPanel1" style="display:none;">
+
+                                        <img id="Image2" src="telerik/Skins/Allscripts/Grid/Img/LoadingProgressBar.gif" style="border-width:0px;border: 0; vertical-align:middle; text-align:center">
+
+                                    </div>
+                                    <div id="pnlFailedRegistrations">
+
+                                        <b>Enrollment for electronic prescribing services failed for the users below. To reach Veradigm Technical Support for assistance, please <a href="../Help/ContactUs.aspx" target="_blank">fill out the contact form</a>.</b>
+                                        <br><br>
+
+                                        <div id="RadAjaxLoadingPanel1" style="display:none;">
+
+                                            <img id="loadingBar" src="telerik/Skins/Allscripts/Grid/Img/LoadingProgressBar.gif" style="border-width:0px;border: 0; vertical-align:middle; text-align:center">
+
+                                        </div>
+                                        <div class="RadAjaxPanel" id="grdFailedRegistrationsPanel" style="display: inline;">
+                                            <div id="grdFailedRegistrations" class="RadGrid RadGrid_Allscripts" style="width:100%" tabindex="0">
+
+                                                <table class="rgMasterTable" border="0" style="width:100%;width:100%;table-layout:auto;empty-cells:show;">
+                                                    <colgroup>
+                                                        <col>
+                                                        <col>
+                                                        <col>
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" class="rgHeader">User</th>
+                                                            <th scope="col" class="rgHeader">Created</th>
+                                                            <th scope="col" class="rgHeader">&nbsp;</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="rgRow" *ngFor="let data of failedRxMsg">
+                                                            <td style="width:55%;">
+                                                                <span>{{data.Name}}</span>
+                                                            </td>
+                                                            <td style="width:40%;">{{data.RequestCreated}}</td>
+                                                            <td style="width:5%;">
+                                                            <a href="javascript:void(0);" (click)="Confirm(data.RequestID)">Confirm</a></td>
+                                                        </tr>
+                                                       
+                                                    </tbody>
+
+                                                </table><input type="hidden" autocomplete="off">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <br>
+                                    
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+

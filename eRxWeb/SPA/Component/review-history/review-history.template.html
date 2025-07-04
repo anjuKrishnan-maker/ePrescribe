@@ -1,0 +1,159 @@
+﻿<div *ngIf="!IsNavigatingAway" style="height: 100%">
+    <!-- Page Header -->
+    <div class="h1title">
+        <span class="Phead indnt">Review History</span>
+    </div>
+    <!-- Message Control -->
+    <erx-message [(Messages)]="Messages"></erx-message>
+    <!-- Navigation Buttons, set No Active Meds, and Patient Options Links-->
+    <div class="h2title" style="height: auto; padding: 5px 0px;">
+        <div style="display: inline-block;">
+            <div *ngIf="startupParameters.UserType === 1" style="margin-left: 5px;">
+                <!-- Navigation Buttons for Provider/PA -->
+                <button class="btnstyle" value="Back" type="button"
+                        (click)="NavigateToSelectPatient()" title="Click to select a patient" style="width: 75px;">
+                    Back
+                </button>
+                <button *ngIf="startupParameters.IsAddDiagnosisVisible" class="btnStyleOneArrow" value="Select Dx" type="button"
+                        (click)="NewDiagnosisClicked()" title="Add/Edit patient diagnosis" style="width: 150px;"
+                        [disabled]="startupParameters.IsInactivePatient?'disabled':''">
+                    Select Dx
+                </button>
+                <button class="btnStyleOneArrow" value="Select Med" (click)="NewRxClicked()" type="button"
+                        title="Start the prescription by selecting a medication" style="width: 150px;"
+                        [disabled]="startupParameters.IsInactivePatient?'disabled':''">
+                    Select Med
+                </button>
+                <button class="btnStyleOneArrow" value="Add Pt. Reported Med" (click)="NavigateToSelfReportedMed()" type="button"
+                        title="Add a prescription reported by the patient" style="width: 160px;"
+                        [disabled]="startupParameters.IsInactivePatient?'disabled':''">
+                    Add Pt. Reported Med
+                </button>
+            </div>
+            <div *ngIf="startupParameters.UserType === 2" style="margin-left: 5px;">
+                <!-- Navigation Buttons for POB -->
+                <button class="btnstyle" value="Back" type="button"
+                        (click)="NavigateToSelectPatientForPOB()" title="Click to select a patient" style="width: 75px;">
+                    Back
+                </button>
+                <button class="btnstyle" value="New Rx" (click)="NewRxClicked()" type="button"
+                        [disabled]="(startupParameters.IsInactivePatient || CurrentDelegateProviderSelection.ProviderId =='')?'disabled':''"
+                        title="Click to select a medication">
+                    New Rx
+                </button>
+                <button class="btnStyleOneArrow" value="Add Pt. Reported Med" (click)="NavigateToSelfReportedMed()" type="button"
+                        [disabled]="(startupParameters.IsInactivePatient || CurrentDelegateProviderSelection.ProviderId =='')?'disabled':''"
+                        title="Click to Add a prescription reported by the patient." style="width: 160px;">
+                    Add Pt. Reported Med
+                </button>
+                <select [(ngModel)]="CurrentDelegateProviderSelection" (ngModelChange)="DelegateProviderSelected($event)">
+                    <option *ngFor="let provider of startupParameters.Providers" [ngValue]="provider">{{provider.ProviderName}}</option>
+                </select>
+            </div>
+        </div>
+        <div style="display: inline-block">
+            <!-- Show for All users -->
+            <button *ngIf="!ActiveMedsPresent" type="button" class="btnstyle" (click)="SetNoActiveMedsFlag()" type="button"
+                    value="No Active Meds" title="No Active Medications" style="width: 150px;">
+                No Active Meds
+            </button>
+        </div>
+        <!-- Patient Options Links -->
+        <div style="display: inline-block; float: right; margin-right: 5px;">
+            <!--<nav>-->
+            <div class="dropdown" style="background-color: white; padding: 3px 15px;">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);">
+                    Patient Options
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="javascript:void(0);" (click)="showEligAndMedHxStatus()">View Eligibility &amp; Med History Status</a></li>
+                    <li><a *ngIf="!IsMedReconciliationInfoLoaded">Loading Reconciliation Details...</a><a *ngIf="IsMedReconciliationInfoLoaded" href="javascript:void(0);" (click)="showPatMedAndMedAllergyReconciliation()">Med &amp; Med Allergy Reconciliation Performed</a></li>
+                    <!-- send user to report page -->
+                    <li><a href="javascript:void(0);" *ngIf="!IsRestrictedPatient" (click)="NavigateToMultipleViewReport()">Print Current Meds</a></li>
+                </ul>
+            </div>
+            <!--</nav>-->
+        </div>
+    </div>
+    <!-- Grid Filter Radio Buttons -->
+    <div class="h4title" style="height: auto; padding-left: 5px;">
+        <input id="rbActive" type="radio" [checked]="CurrentStatusFilter === 0" name="StatusFilter"
+               value="0" (click)="GetDataWithFilter('Active')" /><label class="erxRdbText" for="rbActive">Active</label> &nbsp;
+        <input id="rbInactive" type="radio" [checked]="CurrentStatusFilter === 1" name="StatusFilter"
+               value="1" (click)="GetDataWithFilter('Inactive')" /><label class="erxRdbText" for="rbInactive">Inactive</label> &nbsp;
+        <input id="rbAll" type="radio" [checked]="CurrentStatusFilter === 2" name="StatusFilter"
+               value="2" (click)="GetDataWithFilter('All')" /><label class="erxRdbText" for="rbAll">All</label> &nbsp;
+    </div>
+    <!-- Action Buttons -->
+    <div class="h4title" style="height: auto; padding-left: 5px; padding-bottom: 5px;">
+        <input title="Click to discontinue a script. (To select a script/scripts click the check-box on that row.)" type="button"
+               [disabled]="isDiscontiueEnabled?'':'disabled'" class="btnstyle" style="width: 150px;" type="button" value="Discontinue" (click)="ExecuteAction('Discontinue')">
+        <input title="Click to complete a script. (To select a script/scripts click the check-box on that row.)" type="button"
+               [disabled]="isCompleteEnabled?'':'disabled'" class="btnstyle" style="width: 150px;" type="button" value="Complete" (click)="ExecuteAction('Complete')">
+        <input title="Click to mark a script as Entered In Error. (To select a script/scripts click the check-box on that row.)" type="button"
+               [disabled]="isEnterInErrorEnabled?'':'disabled'" class="btnstyle" style="width: 150px;" type="button" value="EIE" (click)="ExecuteAction('EIE')">
+    </div>
+    <!-- Review History Grid-->
+
+    <div class="erxTableReviewHistory">
+        <table class="erxTableReviewHistory" sortable-table (sorted)="onSorted($event)">
+            <tr>
+                <th class="erxTableHeader" style="width: 30px;"></th>
+                <th class="erxTableHeader" style="width: 30px;"></th>
+                <th class="erxTableHeader" style="width: 79px">
+                    <a sortable-column="RxDate" sort-direction="{{ColumnSortDirection.Down}}" title="Click here to sort">Rx Date</a>
+                </th>
+                <th class="erxTableHeader" style="width: 125px">Diagnosis</th>
+                <th class="erxTableHeader" style="width: 125px">Status</th>
+                <th class="erxTableHeader" style="width: 100px;">
+                    <a sortable-column="RxSourceDescription" title="Click here to sort">Source</a>
+                </th>
+                <th class="erxTableHeader">
+                    <a sortable-column="Prescription" title="Click here to sort">Medication & Sig</a>
+                </th>
+            </tr>
+            <ng-template *ngIf="!IsMainDatasetLoading && reviewHistory.HistoryItems !== undefined" let-historyItem ngFor [ngForOf]="reviewHistory.HistoryItems" let-even="even" let-odd="odd">
+                <tr [ngClass]="{ 'eRxRow': (even && !historyItem.Selected), 'erxAltRow': (odd && !historyItem.Selected), 'erxSelectedRow': historyItem.Selected }">
+                    <td style="width: 30px; padding: 5px">
+                        <input type="checkbox"
+                               [checked]="historyItem.Selected"
+                               [disabled]="historyItem.IsSelectionDisabled?'disabled':''"
+                               (change)="selectionChanged(historyItem)" />
+                    </td>
+                    <td style="width: 30px; padding: 5px">
+                        <img *ngIf="historyItem.MedHistoryExists" id="imgMedHistory" title="Click to show medication history time line."
+                             (click)="PopulateFillHistoryDetails(historyItem)" src="../../../images/info-global-16-x-16.png" />
+                    </td>
+                    <td style="width: 79px">{{historyItem.RxDate}}</td>
+                    <td style="width: 125px">{{historyItem.Diagnosis}}</td>
+                    <td style="width: 125px; font-weight: bold; color: red">{{historyItem.StatusDescription}}</td>
+                    <td style="width: 100px;">{{historyItem.RxSource}}</td>
+                    <td>
+                        <div [innerHTML]="historyItem.Prescription | safeHtml"> </div><b *ngIf="historyItem.ExtraDetailAvailable" style="color: red"> (more details...)</b>
+                    </td>
+                </tr>
+                <tr *ngIf="historyItem.MedHistoryExists && historyItem.DisplayFillDetails">
+                    <td colspan="7">
+                        <div [innerHTML]="historyItem.FillDetailsHtml | safeHtml" (click)="ShowFillDetailOverlay(historyItem)"></div>
+                        <erx-rxfill-history-details [FillHistoryTimelineItems]="FillHistoryItems">Loading...</erx-rxfill-history-details>
+                    </td>
+                </tr>
+            </ng-template>
+        </table>
+    </div>
+    <div *ngIf="!IsMainDatasetLoading && !IsNavigatingAway" id="PagingNavigation" style="margin-top: 10px;">
+        <button class="erxBtn-arrow-left eRxNavButton" *ngIf="isPreviousAvailable" (click)="FetchPreviousPage()" type="button">Previous</button>
+        <button *ngIf="isNextAvailable" class="erxBtn-arrow-right eRxNavButton" (click)="FetchNextPage()" type="button">Next</button>
+        <span style="vertical-align: initial; position: relative; top: 1px;" [innerHTML]="GetPaginatorVerbiage() | safeHtml"></span>
+    </div>
+    <div *ngIf="IsMainDatasetLoading" id="divLoading"></div>
+</div>
+<div *ngIf="IsNavigatingAway" style="height: 100%" id="divLoading"></div>
+<eligibility-medhistory-status>Loading...</eligibility-medhistory-status>
+<div *ngIf="IsMedReconciliationInfoLoaded == true">
+    <patmed-medallergy-reconciliation ModalId="medAllergyRecReviewHistory" [PatientMedRecDetails]="PatientMedRecInfo" (SelectionComplete)="PatientMedAllergySelectionCompleted($event)"> Loading...</patmed-medallergy-reconciliation>
+</div>
+<erx-sup-prov-prompt (supervisingProviderSelected)="onSupervisingProviderSelected($event)"></erx-sup-prov-prompt>
+<erx-cancel-rx [CancelRxItems]="CancelRxList" (SelectionComplete)="CancelRxDialogSelectionCompleted($event)">Loading CancelRx...</erx-cancel-rx>
+<eligibility-medhistory-status ModalId="eligMedHistoryReviewHistory"></eligibility-medhistory-status>

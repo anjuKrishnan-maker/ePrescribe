@@ -1,0 +1,44 @@
+﻿<form #userActivationForm="ngForm" (ngSubmit)="activateUser(userActivationForm)">
+    <div class="modal-backdrop fade in" [style.display]="ShowModal ? 'block' : 'none'"></div>
+    <div *ngIf="ShowModal">
+        <div class="modal" id="mdlUserActivation" [style.display]="'block'" role="dialog" [style.top]="'30%'">
+            <div class="modal-dialog user-activation-dialog-size">
+                <div class="modal-content">
+                    <div class="reg-overlayTitle" id="divTitle">
+                        Activate Profile
+                    </div>
+                    <div class="modal-body">
+                        <div id="erx-form-row">
+                            Please enter the activation code provided by an Administrator.
+                        </div>
+                        <div class="erx-form-row">
+                            <span class="erx-form-label">
+                                <label>Activation Code</label>
+                            </span>
+                            <span class="erx-form-input">
+                                <span class="highlight-star erx-form-star-position">*</span>
+                                <input id="txtActivationCode" name="txtActivationCode" #txtActivationCode="ngModel" class="input-medium" required [(ngModel)]="activationCodeModel.ActivationCode" />
+                                <span *ngIf="txtActivationCode.invalid && (txtActivationCode.dirty || txtActivationCode.touched)">
+                                    <span id="requiredActivationCodeError" *ngIf="txtActivationCode.errors.required" class="validation-color">
+                                        Activation code is required.
+                                    </span>
+                                    <span id="alreadyUsedActivationCodeError" *ngIf="!txtActivationCode.errors.required && txtActivationCode.errors.used" class="validation-color">
+                                        Activation code is not valid or has already been used.
+                                    </span>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="erx-form-row user-activation-captcha-control-spacing">
+                            <show-captcha #captchaControl></show-captcha>
+                        </div>
+                    </div>
+                    <div class="reg-overlayFooter">
+                        <button class="button-style"  type="submit" name="btnActivate" id="btnActivate">Activate</button>
+                        <button type="button" class="button-style btn-spacing"  data-dismiss="modal" (click)="hide()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<link-existing-account-template #linkExistingAccountControl></link-existing-account-template>

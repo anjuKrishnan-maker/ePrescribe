@@ -1,0 +1,155 @@
+﻿/*Registration Page*/
+.branded-background-color {
+    background-color: #0b2972;
+}
+
+.branded-font-color {
+    color: #ffffff;
+}
+
+.branded-logo {
+    background-image: url(../images/Excela/Excela_Logo.gif);
+    background-repeat: no-repeat;
+    height: 70px;
+    background-size: contain;
+}
+
+.branded-footer-stripe {
+    background-color: #ffffff;
+}
+
+.branded-footer-color {
+    background-color: #0b2972;
+    color: #ffffff;
+}
+/*End of Registration Page*/
+
+/* added newly */
+img#mainLogo{background:url(../images/Excela/Excela_Logo.gif); background-repeat:no-repeat; background-position:center;}
+.appStripe {
+    border-top: 5px #0b2972 solid;
+}
+
+.accordionHeader{background-color:#0b2972}
+.accordionHeaderText{background-color:#0b2972}
+.rightBoxHeader {
+	background-color:#0b2972;}
+.rightBoxTable 
+{
+	border: solid 2px #0b2972;
+	color: #ffffff;
+}
+.sponsored {display:inline; text-align:center}
+img#helpIcon:hover{background:url(../images/Excela/headerhelpExcela.gif); background-repeat:no-repeat; background-position:center;}
+img#helpIconLogin:hover{background:url(../images/NewCo/headerhelpNewCoLogin.gif); background-repeat:no-repeat; background-position:center;}
+img#profileIcon:hover{background:url(../images/Excela/headerprofileExcela.gif); background-repeat:no-repeat; background-position:center;}
+img#logoutIcon:hover{background:url(../images/Excela/headerlogoutExcela.gif); background-repeat:no-repeat; background-position:center;}
+img#messageQueueIcon:hover{background:url(../images/Excela/headerMsgQueueExcela.gif); background-repeat:no-repeat; background-position:center;}
+img#iLearnIcon {height: 24px; width: 24px;border: none; background-image:url(../images/Allscripts/gradCap.png); background-repeat:no-repeat; background-position:center;}
+img#iLearnIcon:hover{height: 24px; width: 24px; background-image:url(../images/Excela/Excela_ILearn.png); background-repeat:no-repeat; background-position:center;}
+
+.RadPanelBar div.rpHeaderTemplate, a.rpLink
+{
+    background: linear-gradient(#f6f6f6, #ececec);
+    background: -webkit-linear-gradient(#f6f6f6, #ececec); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#f6f6f6, #ececec); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#f6f6f6, #ececec); /* For Firefox 3.6 to 15 */
+    color: white;
+}
+.rpExpandHandle
+{
+    background-image: url(../images/arrowdown-nor-dark-12-x-12.png);
+    background-repeat: no-repeat;
+}
+.editRollover:hover span
+{
+    color: #0b2972;
+	cursor:pointer;
+}
+.rpText
+{
+    color: black;
+}
+.headerIcon:hover span
+{
+    color: #0b2972
+}
+.rgSelectedRow {
+    background: #e8efff 0 -5900px repeat-x url('../telerik/Skins/Allscripts/Grid/Img/sprite.gif');
+}
+
+
+.primaryForeColor {
+    color: #0b2972
+}
+
+
+
+.rightPanelMed {
+    border-left: 3px solid #0b2972 !important;
+    border-right: 3px solid #0b2972 !important;
+}
+
+.erxSelectedRow {
+    background-color: #e8efff !important;
+}
+
+a:hover
+{
+    color: black;
+}
+
+.h1title {
+	background-color: #0b2972;
+}
+.h2title {
+	background-color: #898989;
+}
+.h3title {
+	background-color: #898989;
+}
+.Titbarcolor2 
+{
+	background-color:#898989;
+}
+#quickSearchContent{
+	background: 		#898989;
+}
+.tabSelected
+{	
+	background-color:#0b2972;
+}
+
+a.tabSelectedLink
+{		
+	background-color:#0b2972;
+}
+.divider
+{
+	border-bottom:solid 1px #0b2972;
+}
+
+
+/* *****************    LOGIN SCREEN      ************************ 
+ */
+
+.redborder     { height:1px; background-color:#AD0808; }
+.subheadred		{ font-size:12px; font-weight:bold; color: #AD0808; }
+
+.accordionHeaderScriptPad
+{
+	background-color: #AA5908;
+}
+
+.accordionHeaderTextScriptPad
+{
+	background-color: #AA5908;
+}
+/*bootstrap override*/
+.nav-tabs>li>a:hover {
+  border:none;
+}
+.nav-tabs>li.active>a,.nav-tabs>li.active>a:focus,.nav-tabs>li.active>a:hover {
+     background-color:#0b2972;
+     border-color:#0b2972;
+}

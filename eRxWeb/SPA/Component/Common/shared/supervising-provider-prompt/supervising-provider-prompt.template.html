@@ -1,0 +1,23 @@
+﻿<div class="modal fade" id="mdlPopupSetSupervisorProvider" role="dialog">
+    <div class="modal-dialog" style="width: 40%; margin-top: 15%;">
+        <!-- Modal content-->
+        <div class="modal-content overlaymainwide" style="width:400px">
+            <div class="modal-header overlayTitle" style="height: 40px">
+                Select Supervising Provider
+            </div>
+            <div class="modal-body">
+                <div class="overlaysub1">
+                    <select [(ngModel)] ="currentProvId" class="form-control" style="font-size:12px" name="ProvList">
+                        <option *ngFor="let provider of providers, let i = index" [value]="provider.ProviderID" [attr.selected]= "i == 0 ? true : null">
+                            {{ provider.ProviderName }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="overlayFooter" style="height: 40px;">
+                <input type="button" ID="btnCancel" (click)="closePopup()" value="Cancel" Class="btnstyle" width="100" />
+                <input type="button" ID="btnSetSupervisingProvider" (click)="setSupervisingProvider()" value="Set Supervising Provider" Class="btnstyle btnStyleAction" width="100" />
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+﻿<div class="modal-backdrop fade in" id="mdlUserGuidModal" role="dialog" [style.display]="showModalPopup ? 'block' : 'none'"></div>
+<div class="modal" id="userGuidModal" role="dialog" [style.display]="'block'" *ngIf="showModalPopup">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="overlayTitle ugm-overlay-formatting">
+                More Information
+            </div>
+            <div class="overlayContent">
+                UserID : {{userGuid}}
+            </div>
+            <div class="overlayFooter ugm-overlay-formatting">
+                <input type="button" id="btnCloseMoreInfo" value="Close" class="btnstyle btnStyleAction" (click)="toggleModalPopup()" />
+            </div>
+        </div>
+    </div>
+</div>
+

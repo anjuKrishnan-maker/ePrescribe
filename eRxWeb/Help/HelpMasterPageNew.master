@@ -1,0 +1,186 @@
+<%@ Master Language="C#" Inherits="eRxWeb.HelpMasterPageNew" CodeBehind="HelpMasterPageNew.master.cs" AutoEventWireup="True" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ Register Src="~/Controls/UserHeader.ascx" TagName="UserHeader" TagPrefix="ePrescribe" %>
+<%@ Register Src="~/Controls/Message.ascx" TagName="Message" TagPrefix="ePrescribe" %>
+<!--15.1.3 Changes- New Tool Tips link added - Rags -12/15/10 -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Veradigm ePrescribe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+    <link href="../Style/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <asp:placeholder runat="server">
+    <link href="<%= "/Style/DefaultHelp.css?v="+base.SessionAppVersion %>" rel="stylesheet" type="text/css" />
+        <link href="../Style/AdvertisementTag.css" rel="stylesheet" />
+    </asp:placeholder>
+    <link id="lnkEnterpriseClientStyle" runat="server" href="~/Style/DefaultHelp.css"
+        rel="stylesheet" type="text/css" />
+    <link id="PageIcon" rel="SHORTCUT ICON" runat="server" href="~/images/Allscripts/favicon.ico" />
+    <link href="~/telerik/Skins/Allscripts/Grid/Grid.Allscripts.css" runat="server" rel="stylesheet"
+        type="text/css" />
+    <link href="~/telerik/Skins/Allscripts/ComboBox/ComboBox.Allscripts.css" runat="server"
+        rel="stylesheet" type="text/css" />
+    <link href="~/telerik/Skins/Allscripts/Input/Input.Allscripts.css" runat="server"
+        rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../jquery/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/respond.min.js"></script>
+    
+</head>
+<%if (PlacementResponse != null && ShowAdForThisPage)
+    { %>
+<%=PlacementResponse.Header%>
+<%} %>
+<body>
+    <script type="text/javascript" src="../js/gridUtil.js"></script>
+
+    <%--<script type="text/javascript" language="javascript" src="../js/formUtil.js"></script>--%>
+    <form id="masterForm" runat="server" autocomplete="off">
+        <asp:ScriptManager ID="masterScriptManager" runat="server" EnablePartialRendering="true"
+            ScriptMode="Release">
+        </asp:ScriptManager>
+        <nav class="navbar navbar-default" style="border-radius: 0px;">
+            <%-- <div class="container-fluid">--%>
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img id="mainLogo" style="height: 32px; margin-top: -7px;" src="../images/Allscripts/Allscripts_Logo_sm.jpg" alt="Allscripts" />
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse HeaderBorder" id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav">
+
+                    <li role="presentation">
+                        <div class="HeaderTitle">
+                            <img src="../images/shim.gif" id="helpIcon" style="vertical-align: middle; border: 0px" />
+                            <span>Welcome to ePrescribe Help</span>
+                        </div>
+                    </li>
+
+                </ul>
+                  <ul class="nav navbar-nav header-nav" id="navLink" runat="server" >
+
+                    <li role="presentation">
+                        <a href="Default.aspx">
+                            <img src="../images/shim.gif" class="home-small-ico"/>
+                            <span class="header-nav-link">HOME</span>
+                        </a>
+                    </li>
+                      <li role="presentation">
+                        <a id="lnkWhatsNew" target="_blank"  runat="server">
+                            <img src="../images/shim.gif" class="whats-new-small-ico"/>
+                            <span class="header-nav-link">WHAT'S NEW</span>
+                        </a>
+                    </li>
+                       <li role="presentation">
+                        <a href="Import.aspx">
+                            <img src="../images/shim.gif" class="import-patient-small-ico"/>
+                            <span class="header-nav-link">IMPORT YOUR PATIENTS</span>
+                        </a>
+                    </li>
+                      <li role="presentation">
+                        <a href="Add-on.aspx">
+                            <img src="../images/shim.gif" class="add-on-small-ico"/>
+                            <span class="header-nav-link">ADD ON FEATURES</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li role="presentation" class="Headr-logout">
+                        <div style="margin-right: 12px;">
+                            <ePrescribe:UserHeader ID="userLogin" runat="server" />
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+            <!-- /.navbar-collapse -->
+            <%--  </div>--%>
+            <!-- /.container-fluid -->
+        </nav>
+
+        <div class="container-fluid" style="overflow:hidden;">
+            <div id="divHelpHeader" runat="server" class="row page-title-header">
+                <div>
+                <asp:Image ID="imgHelpHeaderTitle" runat="server" />
+                <span id="divHelpHeaderText" runat="server" class="page-title"></span>
+                    </div>
+            </div>
+            <div class="row dashboard-body">
+                <div class="col-xs-12 col-sm-9 ">
+                    <div style="padding: 0px 10px 10px 15px">
+                        <ePrescribe:Message ID="ucMessage" runat="server" Visible="false" />
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-9 ">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+
+                </div>
+                <div class="col-sm-3 hidden-xs">
+                    <%if (PlacementResponse != null && ShowAdForThisPage)
+                        { %>
+                    <div id="divRightHandAd" runat="server">
+                        <div style="margin-top: 5px;">
+
+                             <% if (PlacementResponse.Content["right_hand"].ToString() != string.Empty)
+                            {%>
+                             <div  id="divAdvertisementHeader" class="advertisement-tag_block gray-font" >Advertisement</div>
+                              <%  }%>
+                            <%= PlacementResponse.Content["right_hand"] %>
+                        </div>
+                        <% if (PlacementResponse.Content["right_hand"].ToString() != string.Empty)
+                            {%>
+                        <div id="divADPrivacyPolicy" runat="server" visible="true">
+                            <span class="smalltext">
+                                <asp:HyperLink ID="lnkADPrivacyPolicy" runat="server" Visible="true"
+                                    NavigateUrl="~/AdPrivacyPolicy.aspx" Target="_blank">Ad Privacy Policy
+                                </asp:HyperLink>
+                            </span>
+                        </div>
+                        <%  }%>
+                    </div>
+                    <%} %>
+                </div>
+            </div>
+
+            <div class="row footerColor">
+                <p class="text-center footer-text">ePrescribe Customer Support</p>
+                <div class="text-center footer-contact">
+                    ePrescribeSupport@allscripts.com     <span id="contactPhone" runat="server" class="sideBoxBold" visible="false">&nbsp;&bull;&nbsp;
+                        (877) 933-7274                                                           
+                    </span>
+                </div>
+                <div id="divBottomAd" runat="server" style="margin-top: 5px; margin-left: 135px;">
+                    <%if (PlacementResponse != null && ShowAdForThisPage)
+                        { %>
+                     <% if (PlacementResponse.Content["bottom"].ToString() != string.Empty)
+                            {%>
+                             <div id="divAdvertisementFooter" class="advertisement-tag_block white-font" >Advertisement</div>
+                      <%  }%>
+                    <%= PlacementResponse.Content["bottom"]  %>
+                    <%} %>
+                </div>
+            </div>
+        </div>        
+
+    </form>
+    <%if (PlacementResponse != null && ShowAdForThisPage)
+        { %>
+
+    <%=PlacementResponse.Footer%>
+    <%} %>
+</body>
+</html>

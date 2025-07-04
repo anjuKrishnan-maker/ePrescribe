@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="eRxWeb.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="eRxWeb_DataManagerSvc_DataManagerSvc" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:1646/DataManagerService/DataManagerSvc.asmx</Value>
+    </Setting>
+    <Setting Name="eRxWeb_ePrescribeSvc_ePrescribeSvc" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:3245/ePrescribeService/ePrescribeSvc.asmx</Value>
+    </Setting>
+    <Setting Name="eRxWeb_sforce_SforceService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://www.salesforce.com/services/Soap/u/12.0</Value>
+    </Setting>
+    <Setting Name="eRxWeb_sforce_SforceService1" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://www.salesforce.com/services/Soap/u/12.0</Value>
+    </Setting>
+    <Setting Name="eRxWeb_Care360ws_UserSummaryWebService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://portal.care180.com:443/care360-services/UserSummaryWebService</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

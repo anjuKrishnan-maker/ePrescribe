@@ -1,0 +1,245 @@
+/* Telerik RadGrid glassy skin */
+
+.RadGrid_Glassy
+{
+	background: #3393e7;
+}
+
+.RadGrid_Glassy,
+.MasterTable_Glassy,
+.GridFilterMenu_Glassy table	
+{
+	font: normal 11px Arial, Verdana, Sans-serif;
+}
+
+.MasterTable_Glassy
+{
+	border-left: 1px solid #319AEA;
+	border-right: 1px solid #319AEA;
+	border-collapse: separate !important;
+	/*-moz-user-select: none;*/ /*disables text selecting in Firefox to combat unpleasant visual appearance*/
+}
+
+.GridHeader_Glassy,
+.ResizeHeader_Glassy
+{
+	font-weight: bold;
+	color: #fff;
+	padding-top: 13px;
+	padding-bottom: 14px; 
+	background: url('Img/headerBg.gif');
+    text-align:left;
+}
+.GridHeader_Glassy a
+{
+	text-decoration: none;
+	color: #fff;
+}
+.GridHeader_Glassy a:hover
+{
+	text-decoration: underline;
+}
+
+.GridRow_Glassy td,
+.GridAltRow_Glassy td,
+.SelectedRow_Glassy td,
+.ActiveRow_Glassy td,
+.GridEditRow_Glassy td
+{
+	padding-top:8px;
+	padding-bottom:8px;
+}
+
+/*all except IE5/6*/
+tbody>.GridRow_Glassy
+{
+	background: #ddf2fc url('Img/rowBg.gif') repeat-x;
+}
+/*IE5/6 - apply to the table to resolve rendering bottleneck*/
+* html .MasterTable_Glassy,
+* html .MasterTable_Glassy table .GridRow_Glassy
+{
+	background: #ddf2fc url('Img/rowBg.gif') repeat-x;
+}
+
+.GridAltRow_Glassy
+{
+	background: #c6e3f1 url('Img/altRowBg.gif') repeat-x;
+}
+
+tbody .SelectedRow_Glassy,
+tbody .GridEditRow_Glassy
+{
+	background: #ffffe1;
+}
+
+.GridEditRow_Glassy input
+{
+	font-size: 11px;
+}
+
+.ActiveRow_Glassy
+{
+	background: #fff;
+}
+
+.ActiveRow_Glassy td,
+.GridEditRow_Glassy td
+{
+	border-top: solid 1px #d4d4b3;
+}
+
+.GridPager_Glassy
+{
+	background:#ddf2fc url(Img/pagerBg.gif) repeat-x 0 100%;
+	color: #333;
+}
+
+.GridPager_Glassy td
+{
+	padding-left: 5px;
+}
+
+.GridPager_Glassy a
+{
+	color: #333;
+}
+
+.GridCommandRow_Glassy
+{
+	background:#3393e7;
+}
+
+.GridCommandRow_Glassy a
+{
+	color:#fff;
+}
+
+
+/* filtering direction input[image] */
+.GroupPanelItems_Glassy input
+{
+	vertical-align: middle;
+}
+
+.GroupPanel_Glassy
+{
+	background: #ffdf00 url('Img/groupHeaderBg.gif') repeat-x;
+	border-left: 1px solid #b69759;
+	border-right: 1px solid #b69759;
+	color: #9d6b0b;
+	height: 20px !important;
+	border-collapse: collapse; 
+}
+
+.GroupPanel_Glassy td
+{
+	padding: 2px;
+}
+
+.GroupPanelItems_Glassy
+{
+	font-weight: bold;
+	white-space: nowrap;
+	background: #fff;
+	margin: 0px;
+	color: #9d6b0b;
+}
+
+.GroupPanel_Glassy TABLE TABLE 
+{ 
+     border-collapse: collapse; 
+}
+
+/* filtering table row */
+tr.GroupHeader_Glassy
+{
+	color: #fff;
+	background: #4998d4;
+	font-weight: normal;
+	height: 24px;
+}
+
+.GroupHeader_Glassy td div div{top:-0.6em}
+* html .GroupHeader_Glassy td div div{top:0.5em;}
+*+html .GroupHeader_Glassy td div div{top:0.5em;}
+.GroupHeader_Glassy td div div div{top:0;}
+
+
+.GroupPanelItems_Glassy
+{
+	background: #ffae00;
+	color: #fff;
+	border: solid 1px #ce5d30;
+	white-space:  nowrap;
+	font-size: 11px;
+	padding-left: 4px;
+}
+
+.GroupPanelItems_Glassy td
+{
+	padding: 2px;
+}
+
+.TopReorderIndicator_Glassy
+{
+	background: url('MoveDown.gif') no-repeat;
+	margin-left:-6px;
+}
+
+.BottomReorderIndicator_Glassy
+{
+	background: url('MoveUp.gif') no-repeat;
+	margin-left:-6px;
+}
+
+.GridFilterMenu_Glassy
+{
+    cursor:default;
+}
+
+.GridFilterMenu_Glassy .GridFilterMenuSelectColumn_Glassy,
+.GridFilterMenu_Glassy .GridFilterMenuTextColumn_Glassy
+{
+	padding:3px 4px;
+}
+
+.GridFilterMenu_Glassy .GridFilterMenuSelectColumn_Glassy
+{
+    background:#e0f5ff;
+    text-align:center;
+}
+
+.GridFilterMenu_Glassy .GridFilterMenuTextColumn_Glassy
+{
+    background:#fff;
+    color:#333;
+}
+
+.GridFilterMenu_Glassy .GridFilterMenuHover_Glassy
+{
+    background:#3a90d2;
+    color:#fff;
+}
+
+/*AJAX Loading*/
+
+.GridLoadingTemplate_Glassy
+{
+	background:#fff !important;
+	font:normal 24px/54px arial,sans-serif;
+	color:#197ac4;
+}
+
+/* rtl support */
+
+.RadGridRTL_Glassy th,
+.RadGridRTL_Glassy td
+{
+    text-align:right;
+}
+
+.RadGridRTL_Glassy .GridPager_Glassy span
+{
+    float:none !important;
+}

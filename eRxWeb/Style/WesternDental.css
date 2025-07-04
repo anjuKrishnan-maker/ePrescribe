@@ -1,0 +1,169 @@
+﻿
+img#loginLogo{background:url(../images/WesternDental/WesternDentalMainLogo.jpg); background-repeat:no-repeat; background-position:center;}
+img#mainLogo{background:url(../images/WesternDental/WesternDentalMainLogo.jpg); background-repeat:no-repeat; background-position:center;}
+
+.appStripe {
+    border-top: 5px #1E428A solid;
+}
+.accordionHeader{background-color:#1E428A}
+.accordionHeaderText{background-color:#1E428A}
+.rightBoxHeader {
+	background-color:#1E428A;}
+.rightBoxTable 
+{
+	border: solid 2px #1E428A;
+}
+img#helpIcon:hover{background:url(../images/WesternDental/headerhelpWD.gif); background-repeat:no-repeat; background-position:center;}
+img#helpIconLogin:hover{background:url(../images/WesternDental/headerhelpWD.gif); background-repeat:no-repeat; background-position:center;}
+img#profileIcon:hover{background:url(../images/WesternDental/headerprofileWD.gif); background-repeat:no-repeat; background-position:center;}
+img#logoutIcon:hover{background:url(../images/WesternDental/headerlogoutWD.gif); background-repeat:no-repeat; background-position:center;}
+img#messageQueueIcon:hover{background:url(../images/WesternDental/headerMsgQueueWD.gif); background-repeat:no-repeat; background-position:center;}
+img#iLearnIcon {height: 24px; width: 24px;border: none; background-image:url(../images/Allscripts/gradCap.png); background-repeat:no-repeat; background-position:center;}
+img#iLearnIcon:hover{height: 24px; width: 24px; background-image:url(../images/WesternDental/WesternDental_ILearn.png); background-repeat:no-repeat; background-position:center;}
+
+.editRollover:hover span
+{
+    color: #1E428A;
+	cursor:pointer;
+}
+.rpText
+{
+    color: black;
+}
+.headerIcon:hover span
+{
+    color: #1E428A
+}
+.rgSelectedRow {
+    background: #edf6ff 0 -5900px repeat-x url('../telerik/Skins/Allscripts/Grid/Img/sprite.gif');
+}
+
+
+.primaryForeColor {
+    color: #1E428A
+}
+
+
+
+.rightPanelMed {
+    border-left: 3px solid #1E428A !important;
+    border-right: 3px solid #1E428A !important;
+}
+
+.erxSelectedRow {
+    background-color: #edf6ff !important;
+}
+
+
+a.tabUnSelectedLink:visited, a.tabUnSelectedLink:link
+{
+    color: white;
+}
+
+.loginbanner
+{
+	background-color:#1E428A;
+}
+
+.loginMessageTable
+{
+	border-bottom: solid 1px #1E428A;
+	border-left: solid 1px #1E428A;
+	border-right: solid 1px #1E428A;
+}
+
+.loginMessageRow
+{
+	border-top: solid 3px #1E428A;
+	border-bottom: solid 1px #1E428A;
+}
+
+
+a:hover {
+	color: #1E428A;
+}
+.h1title {
+	background-color: #1E428A;
+}
+.Titbarcolor1 
+{
+	background-color:#1E428A;
+}
+
+.tabSelected
+{	
+	background-color:#1E428A;
+}
+
+
+a.tabSelectedLink
+{		
+	background-color:#1E428A;
+}
+
+
+.divider
+{
+	background-color:#00AEEF;
+	border-bottom:solid 1px #1E428A;
+}
+
+.redborder     { height:1px; background-color:#1E428A; }
+.brownborder   { background-color:#1E428A; height:28px; }
+.subheadred		{ font-size:12px; font-weight:bold; color: #1E428A; }
+
+.accordionHeaderScriptPad
+{
+    color: #1E428A;
+	background-color: #1E428A;
+}
+
+.accordionHeaderTextScriptPad
+{
+	background-color: #1E428A;
+}
+.accordionContent
+{
+    color:#1E428A;
+}
+.accordionContentScriptPad
+{
+    color:#1E428A;
+}
+
+.reportPanelContent
+{
+    color:#1E428A;
+}
+
+td.PopUpHeader
+{ 
+    background-color: #1E428A;
+}
+
+.deluxeComparisons
+{
+	border:solid 1px #1E428A;
+}
+.deluxeComparisons th
+{
+	 color:#1E428A;
+}
+
+.deluxeComparisons td
+{
+	 border:solid 1px #1E428A;
+}
+/*bootstrap override*/
+.nav-tabs>li>a {
+   color:white;
+}
+
+.nav-tabs>li>a:hover {	
+	background-color:#00AEEF;
+  border:none;
+}
+.nav-tabs>li.active>a,.nav-tabs>li.active>a:focus,.nav-tabs>li.active>a:hover {
+     background-color:#1E428A;
+     border-color:#1E428A;
+}

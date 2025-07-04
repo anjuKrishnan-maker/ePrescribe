@@ -1,0 +1,72 @@
+﻿<div class="modal-backdrop fade in" id="mdlNewUserActivation" role="dialog" [style.display]="showModalPopup ? 'block' : 'none'"></div>
+<div class="modal" id="myModal" role="dialog" [style.display]="'block'" *ngIf="showModalPopup">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form (ngSubmit)="onSubmit()">
+                <div class="modal-header header">
+                    <button type="button" class="close" data-dismiss="modal" style="float: right;">&times;</button>
+                    <h4 class="modal-title">Activation Code</h4>
+                </div>
+                <div class="modal-body">
+                    <div><b>The user has been successfully added.</b></div><br />
+                    <div><b>You must now provide the Activation Code to new user.</b></div>
+                    <p>
+                    </p>
+                    <br />
+                    <div>
+                        {{userActivationInfo.FirstName}} {{userActivationInfo.LastName}} has been successfully added to the system, but the new user must now activate their account. In order to activate their account you must provide the new user with their unique Activation Code listed below.
+                    </div><br />
+                    <p style="color: Red;">
+                        Important: Only the new user can complete this process. You cannot complete this process for them!
+                    </p>
+                    <br />
+                    <p>
+                        Instructions to provide to the new user for activating their account:
+                    </p>
+                    <ol style="padding-top: 10px; padding-left: 15px;">
+                        <li>
+                            Navigate to {{userActivationInfo.RegistrationUrl}}
+                        </li>
+                        <li>
+                            Activation Code {{ userActivationInfo.ActivationCode }}
+                        </li>
+                        <li>Follow the onscreen instructions to complete the activation process.</li>
+                    </ol>
+                    <p>
+                        Please choose how you want to provide the Activation Code to the new user.
+                    </p>
+                    <br />
+                    <div>
+                        <input id="chkEmailAC" type="checkbox" name="chkEmailAC" (change)="validateEmailorPrintChecked()" [(ngModel)]="userActivationInfo.UserCommunicationStatus.IsEmailChecked" #IsEmailChecked="ngModel">
+                        <span class="new-user-label">Send to user's email</span>
+                        <ng-container *ngIf="userActivationInfo.UserCommunicationStatus.IsEmailChecked">
+                            <input type="email" id="personalEmail" name="personalEmail" required email class="user-input-large" [(ngModel)]="userActivationInfo.PersonalEmail" #personalEmail="ngModel" />
+                            <span *ngIf="personalEmail.invalid && (personalEmail.dirty || personalEmail.touched)">
+                                <span id="emailRequiredError" *ngIf="personalEmail.errors.required" class="validation-color">
+                                    Personal Email is required.
+                                </span>
+                                <span id="emailPatternError" *ngIf="personalEmail.errors.email && !personalEmail.errors.required " class="validation-color">
+                                    Enter valid email address.
+                                </span>
+                            </span>
+                        </ng-container>
+                    </div><br />
+                    <div>
+                        <input id="chkPrintAC" type="checkbox" name="chkPrintAC" (change)="validateEmailorPrintChecked()" [(ngModel)]="userActivationInfo.UserCommunicationStatus.IsPrintChecked" #IsPrintChecked="ngModel">
+                        <span class="new-user-label">Print</span>
+                    </div>
+                    <span id="validationError" *ngIf="!isCommunicationModeSelected" class="validation-color">
+                        Please select atleast one mode for communication.
+                    </span>
+                </div>
+                <div class="modal-footer footer">
+                    <div id="btnProcessNewUser">
+                        <button type="submit" class="btn btn-default">Process</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+

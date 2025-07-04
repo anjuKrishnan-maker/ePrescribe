@@ -1,0 +1,1 @@
+eggtext=|The ePrescribe Team...||Development|===========|Stanley Crane|David Pearah|Mike Wagener|Erik Kins|Jason Tithof|Gary Gallagher|Wenzheng Jia|Igor Tchmil|Gerald Green||QA|===========|Sandy Coelho|Sudha Mallajosyula|Denise Rogers||A special thanks to the Team Krupa

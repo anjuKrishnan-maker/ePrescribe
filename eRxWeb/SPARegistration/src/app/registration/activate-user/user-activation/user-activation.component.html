@@ -1,0 +1,42 @@
+﻿<div id="activation-title" class="title-bar title-bar-heading branded-background-color branded-font-color">
+    Welcome to the Veradigm Security Account Activation Wizard!
+</div>
+<div *ngIf="workflow" class="activation-container">
+    <div id="divEnrollNow" class="activation-card">
+        <div class="activation-card-header">
+            <span class="activation-header-title">Enroll Now</span>
+        </div>
+        <div class="activation-card-body">
+            <div class="activation-card-row">
+                <span ID="lblEnrollDescription">Please use this option to create a new Veradigm Security Account.</span>
+            </div>
+            <div class="activation-card-row">
+                <span class="activationText" id="lblEnrollActivation" *ngIf="isActivationCodeVisible">(Activation code is required).</span>
+            </div>
+        </div>
+        <div>
+            <button id="btnSignUp" Text="Sign Up" class="button-style" (click)="OpenNewUserActivationPopup()">Sign Up</button>
+        </div>
+    </div>
+
+    <div id="divLinkAccounts" class="activation-card">
+        <div class="activation-card-header">
+            <span class="activation-header-title">Link Accounts</span>
+        </div>
+        <div class="activation-card-body">
+            <div class="activation-card-row">
+                <span id="Label1">Please use this option to use an existing Veradigm Security Account Login if you have one.</span>
+            </div>
+            <div class="activation-card-row">
+                <span class="activationText" id="lblLinkActivation" *ngIf="isLinkActivationCodeVisible">(Activation code is required).</span>
+            </div>
+        </div>
+        <div>
+            <button id="btnLinkAccounts" class="button-style" (click)="OpenLinkAccountActivationPopup()">Link Accounts</button>
+        </div>
+    </div>
+</div>
+
+<user-activation-popup #userActivationModalPopup></user-activation-popup>
+
+

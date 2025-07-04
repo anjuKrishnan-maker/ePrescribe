@@ -1,0 +1,107 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+
+/// <summary>
+/// Summary description for RxProcessor
+/// </summary>
+public class RxProcessor
+{
+    private System.Web.UI.Page _page;
+    Hashtable _providerPreferences;
+
+    public Prescription _rx;
+    string licenseID = string.Empty;
+    string rxID = Guid.NewGuid().ToString();
+    string rxDate = DateTime.Today.ToShortDateString();
+    string patientID = "";
+    bool _formularyActive = false;
+
+
+    string providerID = "";
+    string pharmacyID = "";
+
+    PrescriptionStatus status = PrescriptionStatus.NEW;
+    string planID = "";
+    string groupID = "";
+    string formularyID = "";
+    string type = "N";
+    bool printMonograph = false;
+    string comments = "";
+    //RxDetail
+    string ddi = "";
+    string medicationName = "";
+    string dosageFormCode = "";
+    string routeOfAdminCode = "";
+    string strength = "";
+    string strengthUOM = "";
+    string SIGID = "";
+    string sigText = "";
+    decimal quantity = 0;
+    int refillQuantity = 0;
+    int daySupply = 0;
+    string GPPC = "";
+    decimal PackageSize = 0;
+    string PackageUOM = "";
+    int PackageQuantity = 0;
+    string PackageDescription = "";
+    bool daw = false;
+    string startDate = DateTime.Today.ToShortDateString();
+    string transmissionMethod = "P";
+    string originalDDI = "";
+    int originalFormStatusCode = 0;
+    string originalIsListed = "";
+    int formStatusCode = 0;
+    string isListed = "N";
+    FormularyStatus formularyStatus = FormularyStatus.ACCEPTED;
+
+
+    string rxFormat = "";
+    string notes = "";
+    string originalRxID = Guid.Empty.ToString();
+    int originalLineNumber = 0;
+    string createType = "Q";
+    string doucmentID = System.Guid.Empty.ToString();
+    string icd9cd = "";
+    string site_Id = "";
+
+
+    //DUR Check
+    bool _performFormulary = false;
+    bool _performDosageChecks = false;
+    bool _performInteractions = false;
+    bool _performDuplicateTherapy = false;
+    bool _performPAR = false;
+
+    public RxProcessor()
+    {
+        //
+        // TODO: Add constructor logic here
+        //
+        
+    }
+    public RxProcessor(System.Web.UI.Page page)
+    {
+        _page = page;
+    }
+    public string SavePrescription()
+    {
+        if (Session["LICENSEID"] != null)
+            licenseID = Session["LICENSEID"].ToString();
+        else
+            Server.Transfer("Logout.aspx?Timeout=YES");
+
+
+        if (Session["PATIENTID"] != null)
+            patientID = Session["PATIENTID"].ToString();
+        else
+            patientID = System.Guid.Empty.ToString();
+    }
+    
+}

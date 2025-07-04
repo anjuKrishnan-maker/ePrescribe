@@ -1,0 +1,2271 @@
+{
+  "cards": [
+    {
+      "summary": "PPT+ Response from Surescripts Partner",
+      "indicator": "warning",
+      "detail": "Rtbi pricing information",
+      "source": { "label": "PPT+ Response from Surescripts Partner" },
+      "suggestions": [
+        {
+          "label": "Create Operation",
+          "actions": [
+            {
+              "type": "create",
+              "resource": {
+                "id": "fd9d21c7-55f8-4d4e-8a23-9de165142879",
+                "resourceType": "Bundle",
+                "meta": { "lastUpdated": "2019-05-17T09:03:50Z" },
+                "type": "transaction",
+                "identifier": {
+                  "system": "bundletype",
+                  "value": "drugPriceInfoResponse"
+                },
+                "entry": [
+                  {
+                    "resource": {
+                      "resourceType": "MessageHeader",
+                      "id": "57ec9b62-8b95-4238-823d-420283ac7b71",
+                      "event": {
+                        "system": "http://hl7.hub.allscriptscloud.com/fhir/message-events",
+                        "code": "pptx-response"
+                      },
+                      "sender": { "reference": "Organization/3141592653" },
+                      "receiver": { "reference": "Organization/2457242" },
+                      "timestamp": "2019-05-17T09:03:50Z",
+                      "source": {
+                        "name": "Allscripts-Hub",
+                        "software": "Hub-PPTx",
+                        "version": "1.0.0"
+                      },
+                      "response": {
+                        "identifier": "5a4a91bd9e9a437fbbdbccc4e5c2c83a",
+                        "code": "ok",
+                        "details": { "reference": "OperationOutcome/f1adf4a6-9a4e-43ce-a6e3-d65dddd140fc" }
+                      },
+                      "extension": [
+                        {
+                          "url": "https://fhir.allscripts.com/pptx/messageHeader-partnerResponseId",
+                          "valueString": "SomePBMGeneratedId"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "resource": {
+                      "resourceType": "OperationOutcome",
+                      "id": "f1adf4a6-9a4e-43ce-a6e3-d65dddd140fc",
+                      "issue": [
+                        {
+                          "severity": "information",
+                          "code": "informational",
+                          "details": {
+                            "coding": {
+                              "code": "Processed",
+                              "display": ""
+                            },
+                            "text": ""
+                          },
+                          "diagnostics": "PMBC"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "resource": {
+                      "resourceType": "Organization",
+                      "id": "2457242",
+                      "text": {
+                        "status": "generated",
+                        "div": ""
+                      },
+                      "identifier": [
+                        {
+                          "system": "SiteId",
+                          "value": "1"
+                        }
+                      ],
+                      "name": "Site IL"
+                    }
+                  },
+                  {
+                    "resource": {
+                      "resourceType": "Organization",
+                      "id": "3141592653",
+                      "text": {
+                        "status": "generated",
+                        "div": ""
+                      },
+                      "identifier": [
+                        {
+                          "system": "subsystem",
+                          "value": "PPTplus"
+                        }
+                      ],
+                      "name": "Allscripts Rtbi hub"
+                    }
+                  },
+                  {
+                    "resource": {
+                      "resourceType": "Patient",
+                      "id": "f87f9f0d1fb14728b5cb65507d5da307",
+                      "text": {
+                        "status": "generated",
+                        "div": ""
+                      },
+                      "identifier": [
+                        {
+                          "use": "usual",
+                          "type": {
+                            "coding": [
+                              {
+                                "system": "http://hl7.org/fhir/v2/0203",
+                                "code": "MB"
+                              }
+                            ]
+                          },
+                          "value": "PBMF TESTKID 8951-001"
+                        }
+                      ],
+                      "active": true,
+                      "name": [
+                        {
+                          "use": "official",
+                          "family": "RODGERSSON",
+                          "given": [ "TEAGUE" ]
+                        }
+                      ],
+                      "telecom": [
+                        {
+                          "system": "phone",
+                          "use": "work"
+                        }
+                      ],
+                      "gender": "male",
+                      "birthDate": "2010-05-01",
+                      "address": [
+                        {
+                          "line": [ "191 SCREAMING VILLAGE BLVD", "" ],
+                          "city": "YONKERS",
+                          "state": "NY",
+                          "postalCode": "10705",
+                          "country": "USA"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "resource": {
+                      "resourceType": "Practitioner",
+                      "id": "7d468528-0442-49eb-b372-f05394baeffd",
+                      "text": {
+                        "status": "generated",
+                        "div": ""
+                      },
+                      "identifier": [
+                        {
+                          "use": "usual",
+                          "type": {
+                            "coding": [
+                              {
+                                "system": "http://hl7.org/fhir/v2/0203",
+                                "code": "NPI"
+                              }
+                            ]
+                          },
+                          "value": "1023052818"
+                        },
+                        {
+                          "use": "usual",
+                          "type": {
+                            "coding": [
+                              {
+                                "system": "http://hl7.org/fhir/v2/0203",
+                                "code": "DEA"
+                              }
+                            ]
+                          },
+                          "value": "AB1171189"
+                        }
+                      ],
+                      "name": [
+                        {
+                          "use": "official",
+                          "family": "PallaviENLN",
+                          "given": [ "ProviderTenENFN" ]
+                        }
+                      ],
+                      "telecom": [
+                        {
+                          "system": "phone",
+                          "value": "(312) 555-5555",
+                          "use": "work"
+                        },
+                        {
+                          "system": "email",
+                          "value": "Pallavi.Shailja@allscripts.com",
+                          "use": "work"
+                        }
+                      ],
+                      "address": [
+                        {
+                          "line": [ "123 Main St.", "Ste 104" ],
+                          "city": "Chicago",
+                          "state": "IL",
+                          "postalCode": "60115",
+                          "country": "USA"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "resource": {
+                      "resourceType": "Organization",
+                      "id": "affd36e8-f791-4c39-a529-cad718d639da",
+                      "meta": {
+                        "tag": [
+                          {
+                            "code": "Pharmacy",
+                            "display": "Pharmacy"
+                          }
+                        ]
+                      },
+                      "extension": [
+                        {
+                          "url": "Default",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "ExcludeLocal",
+                          "valueBoolean": false
+                        }
+                      ],
+                      "identifier": [
+                        {
+                          "use": "usual",
+                          "type": {
+                            "coding": [
+                              {
+                                "system": "http://hl7.org/fhir/v2/0203",
+                                "code": "NPI"
+                              }
+                            ]
+                          },
+                          "value": "1801849179"
+                        },
+                        {
+                          "use": "usual",
+                          "type": {
+                            "coding": [
+                              {
+                                "system": "http://hl7.org/fhir/v2/0203",
+                                "code": "NCPDP"
+                              }
+                            ]
+                          },
+                          "value": "9911557"
+                        }
+                      ],
+                      "active": true,
+                      "type": [
+                        {
+                          "coding": [
+                            {
+                              "code": "RETAIL",
+                              "display": "RETAIL"
+                            }
+                          ]
+                        }
+                      ],
+                      "name": "CA PHARMACY 10.6MU",
+                      "telecom": [
+                        {
+                          "system": "phone",
+                          "value": "(707) 515-7071",
+                          "use": "work"
+                        }
+                      ],
+                      "address": [
+                        {
+                          "line": [ "65432 CABERNET TURN", "" ],
+                          "city": "SONOMA",
+                          "state": "CA",
+                          "postalCode": "95476",
+                          "country": "USA"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "resource": {
+                      "resourceType": "Coverage",
+                      "identifier": [
+                        {
+                          "use": "usual",
+                          "type": {
+                            "coding": [
+                              {
+                                "system": "http://hl7.org/fhir/v2/0203",
+                                "code": "CoverageID"
+                              }
+                            ]
+                          },
+                          "value": "COV102"
+                        },
+                        {
+                          "use": "usual",
+                          "type": {
+                            "coding": [
+                              {
+                                "system": "http://hl7.org/fhir/v2/0203",
+                                "code": "CopayID"
+                              }
+                            ]
+                          },
+                          "value": "COP102"
+                        },
+                        {
+                          "use": "usual",
+                          "type": {
+                            "coding": [
+                              {
+                                "system": "http://hl7.org/fhir/v2/0203",
+                                "code": "formularyid"
+                              }
+                            ]
+                          },
+                          "value": "FSL102"
+                        }
+                      ],
+                      "subscriberId": "",
+                      "relationship": {
+                        "coding": [
+                          {
+                            "system": "http://hl7.org/fhir/ValueSet/policyholder-relationship",
+                            "code": "self"
+                          }
+                        ]
+                      },
+                      "grouping": {
+                        "group": "R230036",
+                        "groupDisplay": "MITSU-36",
+                        "plan": "MT-036R",
+                        "planDisplay": "MITSU-036R"
+                      },
+                      "dependent": ""
+                    }
+                  },
+                  {
+                    "resource": {
+                      "resourceType": "Organization",
+                      "meta": {
+                        "tag": [
+                          {
+                            "code": "Payer",
+                            "display": "Payer"
+                          }
+                        ]
+                      },
+                      "text": {
+                        "status": "generated",
+                        "div": ""
+                      },
+                      "identifier": [
+                        {
+                          "use": "usual",
+                          "type": {
+                            "coding": [
+                              {
+                                "system": "http://hl7.org/fhir/v2/0203",
+                                "code": "BIN"
+                              }
+                            ]
+                          },
+                          "value": "001264"
+                        },
+                        {
+                          "use": "usual",
+                          "type": {
+                            "coding": [
+                              {
+                                "system": "http://hl7.org/fhir/v2/0203",
+                                "code": "PCN"
+                              }
+                            ]
+                          },
+                          "value": "MT-R23-36"
+                        },
+                        {
+                          "use": "usual",
+                          "type": {
+                            "coding": [
+                              {
+                                "system": "http://hl7.org/fhir/v2/0203",
+                                "code": "pbmid"
+                              }
+                            ]
+                          },
+                          "value": "T00000000021633"
+                        }
+                      ],
+                      "name": "PBMF"
+                    }
+                  },
+                  {
+                    "resource": {
+                      "resourceType": "Bundle",
+                      "id": "9a7349d6-8542-496d-83cc-35efe8fedb62",
+                      "meta": {
+                        "lastUpdated": "2019-05-17T09:03:50.7279Z",
+                        "tag": [
+                          {
+                            "system": "local",
+                            "code": "requested",
+                            "display": "requested"
+                          }
+                        ]
+                      },
+                      "identifier": {
+                        "system": "bundletype",
+                        "value": "priceinfo"
+                      },
+                      "type": "message",
+                      "entry": [
+                        {
+                          "resource": {
+                            "resourceType": "MedicationRequest",
+                            "id": "3ce88ef7-7d21-4c40-a2aa-a809fc47af2a",
+                            "text": {
+                              "status": "generated",
+                              "div": ""
+                            },
+                            "intent": "proposal",
+                            "contained": [
+                              {
+                                "resourceType": "Medication",
+                                "id": "092df5f5-c71a-4776-b593-b5dd95a0c61c",
+                                "code": {
+                                  "coding": [
+                                    {
+                                      "code": "50242010039",
+                                      "system": "http://hl7.org/fhir/sid/ndc",
+                                      "display": "PULMOZYME 1 MG/ML AMPULE"
+                                    }
+                                  ]
+                                },
+                                "form": {
+                                  "coding": [
+                                    {
+                                      "code": "Form code",
+                                      "system": "http://snomed.info/sct",
+                                      "display": "C48473"
+                                    }
+                                  ]
+                                }
+                              }
+                            ],
+                            "dispenseRequest": {
+                              "quantity": {
+                                "value": "30",
+                                "unit": "C48473",
+                                "system": "http://evs.nci.nih.gov/ftp1/NCPDP/About.html"
+                              },
+                              "expectedSupplyDuration": {
+                                "value": "15",
+                                "unit": "days",
+                                "system": "http://unitsofmeasure.org"
+                              }
+                            },
+                            "dosageInstruction": [
+                              {
+                                "doseQuantity": {
+                                  "extension": [
+                                    {
+                                      "url": "https://fhir.allscripts.com/pptx/dosageDose-strengthValue",
+                                      "valueString": "1 MG"
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "resource": {
+                            "resourceType": "MedicationRequest",
+                            "id": "PON Number",
+                            "text": {
+                              "status": "generated",
+                              "div": ""
+                            },
+                            "contained": [
+                              {
+                                "resourceType": "Medication",
+                                "id": "00000000-0000-0000-0000-000000000000",
+                                "code": {
+                                  "coding": [
+                                    {
+                                      "system": "http://hl7.org/fhir/sid/ndc",
+                                      "code": "00169413212",
+                                      "display": "Ozempic"
+                                    }
+                                  ]
+                                },
+                                "isBrand": true,
+                                "form": {
+                                  "coding": [
+                                    {
+                                      "system": "http://snomed.info/sct",
+                                      "code": "SOPN",
+                                      "display": "Solution Pen-injector"
+                                    }
+                                  ]
+                                }
+                              }
+                            ],
+                            "authoredOn": "2019-05-17",
+                            "dosageInstruction": [
+                              {
+                                "route": {
+                                  "coding": [
+                                    {
+                                      "system": "http://snomed.info/sct",
+                                      "code": "SC",
+                                      "display": "Subcutaneous"
+                                    }
+                                  ]
+                                },
+                                "doseQuantity": {
+                                  "extension": [
+                                    {
+                                      "url": "https://fhir.allscripts.com/pptx/dosageDose-strengthValue",
+                                      "valueString": "0.25 or 0.5 MG/DOSE"
+                                    }
+                                  ]
+                                }
+                              }
+                            ],
+                            "dispenseRequest": {
+                              "validityPeriod": {
+                                "start": "2019-05-17T04:00:00+00:00",
+                                "end": "2020-05-17T04:00:00+00:00"
+                              },
+                              "numberOfRepeatsAllowed": 0,
+                              "quantity": {
+                                "value": 30,
+                                "unit": "C28254",
+                                "system": "http://evs.nci.nih.gov/ftp1/NCPDP/About.html",
+                                "code": "C28254"
+                              },
+                              "expectedSupplyDuration": {
+                                "value": 30,
+                                "unit": "Days",
+                                "system": "http://unitsofmeasure.org"
+                              }
+                            },
+                            "substitution": { "allowed": false }
+                          }
+                        },
+                        {
+                          "resource": {
+                            "resourceType": "Basic",
+                            "id": "2691502a-5770-4b5c-8442-23cd63761739",
+                            "text": {
+                              "status": "generated",
+                              "div": "Pricing details"
+                            },
+                            "contained": [
+                              {
+                                "resourceType": "Organization",
+                                "meta": {
+                                  "lastUpdated": "2019-05-17T09:03:50Z",
+                                  "tag": {
+                                    "display": "local",
+                                    "code": "pharmacy",
+                                    "system": "pharmacy"
+                                  }
+                                },
+                                "identifier": [
+                                  {
+                                    "type": {
+                                      "coding": [
+                                        {
+                                          "system": "http://hl7.org/fhir/v2/0203",
+                                          "code": "NCPDP"
+                                        }
+                                      ]
+                                    },
+                                    "value": "9911557"
+                                  },
+                                  {
+                                    "type": {
+                                      "coding": [
+                                        {
+                                          "system": "http://hl7.org/fhir/v2/0203",
+                                          "code": "NPI"
+                                        }
+                                      ]
+                                    },
+                                    "value": "1801849179"
+                                  }
+                                ],
+                                "type": [
+                                  {
+                                    "coding": [
+                                      {
+                                        "display": "Retail",
+                                        "code": "Retail"
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "name": "CA Pharmacy 10.6MU",
+                                "telecom": [
+                                  {
+                                    "system": "phone",
+                                    "value": "7072107071",
+                                    "use": "work"
+                                  }
+                                ],
+                                "address": [
+                                  {
+                                    "use": "work",
+                                    "line": [ "65432 Cabernet Turn" ],
+                                    "city": "Sonoma",
+                                    "state": "CA",
+                                    "postalCode": "95476"
+                                  }
+                                ]
+                              },
+                              {
+                                "resourceType": "Flag",
+                                "id": "17e9d62a-5675-4bf1-8e19-449f15f7edfe",
+                                "status": "active",
+                                "category": {
+                                  "coding": [
+                                    {
+                                      "system": "https://fhir.allscripts.com/pptx/flag-type",
+                                      "code": "coverageAlert",
+                                      "display": "Coverage Limits Information"
+                                    }
+                                  ]
+                                },
+                                "code": {
+                                  "coding": [
+                                    {
+                                      "code": "QuantityLimits",
+                                      "display": "30 per 30 Days"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "resourceType": "Flag",
+                                "id": "badb1744-bbc4-4167-a046-921740df83e8",
+                                "status": "active",
+                                "category": {
+                                  "coding": [
+                                    {
+                                      "system": "https://fhir.allscripts.com/pptx/flag-type",
+                                      "code": "coverageAlert",
+                                      "display": "Coverage Limits Information"
+                                    }
+                                  ]
+                                },
+                                "code": {
+                                  "coding": [
+                                    {
+                                      "code": "ResourceLink",
+                                      "display": "www.pulmozyme.com"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "resourceType": "Flag",
+                                "id": "6f585e3b-79da-47c3-a78b-8334309bb9b6",
+                                "status": "active",
+                                "category": {
+                                  "coding": [
+                                    {
+                                      "system": "https://fhir.allscripts.com/pptx/flag-type",
+                                      "code": "coverageAlert",
+                                      "display": "Coverage Limits Information"
+                                    }
+                                  ]
+                                },
+                                "code": {
+                                  "coding": [
+                                    {
+                                      "code": "TextMessage",
+                                      "display": "THIS DRUG REQUIRES A NEBULIZER"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "resourceType": "Flag",
+                                "id": "646b52d1-af29-489b-a10a-906059a363bd",
+                                "status": "active",
+                                "category": {
+                                  "coding": [
+                                    {
+                                      "system": "https://fhir.allscripts.com/pptx/flag-type",
+                                      "code": "drugStatus",
+                                      "display": "Drug Coverage Status"
+                                    }
+                                  ]
+                                },
+                                "code": {
+                                  "coding": [
+                                    {
+                                      "code": "CoveredWithRestrictions",
+                                      "display": ""
+                                    }
+                                  ]
+                                }
+                              }
+                            ],
+                            "extension": [
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-type",
+                                "valueString": "pbm"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-partnerName",
+                                "valueString": "SureScripts"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-formularyStatus",
+                                "valueString": "1"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-daysSupplyPriced",
+                                "valueString": "15"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-planPayAmount",
+                                "valueString": "857"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-estimatedPatientPayAmount",
+                                "valueString": "3367"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-deductibleAppliedAmount",
+                                "valueString": "300"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-deductibleRemainingAmount",
+                                "valueString": "750"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-priorAuthRequired",
+                                "valueString": "Y"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-quantityPriced",
+                                "valueQuantity": {
+                                  "value": "30",
+                                  "unit": "C48473",
+                                  "system": "http://evs.nci.nih.gov/ftp1/NCPDP/About.html"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "resource": {
+                            "resourceType": "Basic",
+                            "id": "4dcaee50-26c8-491e-9603-5b0ae7e7be0a",
+                            "text": {
+                              "status": "generated",
+                              "div": "Pricing details"
+                            },
+                            "contained": [
+                              {
+                                "resourceType": "Organization",
+                                "meta": {
+                                  "lastUpdated": "2019-05-17T09:03:50Z",
+                                  "tag": {
+                                    "display": "local",
+                                    "code": "pharmacy",
+                                    "system": "pharmacy"
+                                  }
+                                },
+                                "identifier": [
+                                  {
+                                    "type": {
+                                      "coding": [
+                                        {
+                                          "system": "http://hl7.org/fhir/v2/0203",
+                                          "code": "NCPDP"
+                                        }
+                                      ]
+                                    },
+                                    "value": "9911557"
+                                  },
+                                  {
+                                    "type": {
+                                      "coding": [
+                                        {
+                                          "system": "http://hl7.org/fhir/v2/0203",
+                                          "code": "NPI"
+                                        }
+                                      ]
+                                    },
+                                    "value": "1801849179"
+                                  }
+                                ],
+                                "type": [
+                                  {
+                                    "coding": [
+                                      {
+                                        "display": "90DayAtRetail",
+                                        "code": "90DayAtRetail"
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "name": "CA Pharmacy 10.6MU",
+                                "telecom": [
+                                  {
+                                    "system": "phone",
+                                    "value": "7072107071",
+                                    "use": "work"
+                                  }
+                                ],
+                                "address": [
+                                  {
+                                    "use": "work",
+                                    "line": [ "65432 Cabernet Turn" ],
+                                    "city": "Sonoma",
+                                    "state": "CA",
+                                    "postalCode": "95476"
+                                  }
+                                ]
+                              },
+                              {
+                                "resourceType": "Flag",
+                                "id": "8d73eb0a-7e86-4121-a276-57fd3127948c",
+                                "status": "active",
+                                "category": {
+                                  "coding": [
+                                    {
+                                      "system": "https://fhir.allscripts.com/pptx/flag-type",
+                                      "code": "coverageAlert",
+                                      "display": "Coverage Limits Information"
+                                    }
+                                  ]
+                                },
+                                "code": {
+                                  "coding": [
+                                    {
+                                      "code": "QuantityLimits",
+                                      "display": "30 per 30 Days"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "resourceType": "Flag",
+                                "id": "4bccc0ff-fdc8-42c2-b98b-dcd4c584f83f",
+                                "status": "active",
+                                "category": {
+                                  "coding": [
+                                    {
+                                      "system": "https://fhir.allscripts.com/pptx/flag-type",
+                                      "code": "coverageAlert",
+                                      "display": "Coverage Limits Information"
+                                    }
+                                  ]
+                                },
+                                "code": {
+                                  "coding": [
+                                    {
+                                      "code": "ResourceLink",
+                                      "display": "www.pulmozyme.com"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "resourceType": "Flag",
+                                "id": "7d938dc8-8871-498c-828f-206864b5e281",
+                                "status": "active",
+                                "category": {
+                                  "coding": [
+                                    {
+                                      "system": "https://fhir.allscripts.com/pptx/flag-type",
+                                      "code": "coverageAlert",
+                                      "display": "Coverage Limits Information"
+                                    }
+                                  ]
+                                },
+                                "code": {
+                                  "coding": [
+                                    {
+                                      "code": "TextMessage",
+                                      "display": "THIS DRUG REQUIRES A NEBULIZER"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "resourceType": "Flag",
+                                "id": "5ced8a93-2cca-4dc2-bfbe-264c7f816e56",
+                                "status": "active",
+                                "category": {
+                                  "coding": [
+                                    {
+                                      "system": "https://fhir.allscripts.com/pptx/flag-type",
+                                      "code": "drugStatus",
+                                      "display": "Drug Coverage Status"
+                                    }
+                                  ]
+                                },
+                                "code": {
+                                  "coding": [
+                                    {
+                                      "code": "CoveredWithRestrictions",
+                                      "display": ""
+                                    }
+                                  ]
+                                }
+                              }
+                            ],
+                            "extension": [
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-type",
+                                "valueString": "pbm"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-partnerName",
+                                "valueString": "SureScripts"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-formularyStatus",
+                                "valueString": "1"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-daysSupplyPriced",
+                                "valueString": "15"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-planPayAmount",
+                                "valueString": "857"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-estimatedPatientPayAmount",
+                                "valueString": "3367"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-deductibleAppliedAmount",
+                                "valueString": "300"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-deductibleRemainingAmount",
+                                "valueString": "750"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-priorAuthRequired",
+                                "valueString": "Y"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-quantityPriced",
+                                "valueQuantity": {
+                                  "value": "30",
+                                  "unit": "C48473",
+                                  "system": "http://evs.nci.nih.gov/ftp1/NCPDP/About.html"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "resource": {
+                            "resourceType": "Basic",
+                            "id": "11e1df64-5d25-4173-b3b2-ff2b2db7c9ea",
+                            "text": {
+                              "status": "generated",
+                              "div": "Pricing details"
+                            },
+                            "contained": [
+                              {
+                                "resourceType": "Organization",
+                                "meta": {
+                                  "lastUpdated": "2019-05-17T09:03:50Z",
+                                  "tag": {
+                                    "display": "local",
+                                    "code": "pharmacy",
+                                    "system": "pharmacy"
+                                  }
+                                },
+                                "identifier": [
+                                  {
+                                    "type": {
+                                      "coding": [
+                                        {
+                                          "system": "http://hl7.org/fhir/v2/0203",
+                                          "code": "NCPDP"
+                                        }
+                                      ]
+                                    },
+                                    "value": "1629900"
+                                  },
+                                  {
+                                    "type": {
+                                      "coding": [
+                                        {
+                                          "system": "http://hl7.org/fhir/v2/0203",
+                                          "code": "NPI"
+                                        }
+                                      ]
+                                    },
+                                    "value": "1356606818"
+                                  }
+                                ],
+                                "type": [
+                                  {
+                                    "coding": [
+                                      {
+                                        "display": "mailorder",
+                                        "code": "mailorder"
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "name": "Mail Order Pharmacy 10.6MU NOCS",
+                                "telecom": [
+                                  {
+                                    "system": "phone",
+                                    "value": "3122603142",
+                                    "use": "work"
+                                  }
+                                ],
+                                "address": [
+                                  {
+                                    "use": "work",
+                                    "line": [ "1629-90 Supply Ln" ],
+                                    "city": "Chicago",
+                                    "state": "IL",
+                                    "postalCode": "60622"
+                                  }
+                                ]
+                              },
+                              {
+                                "resourceType": "Flag",
+                                "id": "799584ab-d0de-479f-a1bd-6634a7493b5f",
+                                "status": "active",
+                                "category": {
+                                  "coding": [
+                                    {
+                                      "system": "https://fhir.allscripts.com/pptx/flag-type",
+                                      "code": "coverageAlert",
+                                      "display": "Coverage Limits Information"
+                                    }
+                                  ]
+                                },
+                                "code": {
+                                  "coding": [
+                                    {
+                                      "code": "QuantityLimits",
+                                      "display": "30 per 30 Days"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "resourceType": "Flag",
+                                "id": "11d0879e-5503-401b-acc8-da8d7378bfe4",
+                                "status": "active",
+                                "category": {
+                                  "coding": [
+                                    {
+                                      "system": "https://fhir.allscripts.com/pptx/flag-type",
+                                      "code": "coverageAlert",
+                                      "display": "Coverage Limits Information"
+                                    }
+                                  ]
+                                },
+                                "code": {
+                                  "coding": [
+                                    {
+                                      "code": "ResourceLink",
+                                      "display": "www.pulmozyme.com"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "resourceType": "Flag",
+                                "id": "3c430cea-69c8-405c-809c-78a45b4b8d10",
+                                "status": "active",
+                                "category": {
+                                  "coding": [
+                                    {
+                                      "system": "https://fhir.allscripts.com/pptx/flag-type",
+                                      "code": "coverageAlert",
+                                      "display": "Coverage Limits Information"
+                                    }
+                                  ]
+                                },
+                                "code": {
+                                  "coding": [
+                                    {
+                                      "code": "TextMessage",
+                                      "display": "THIS DRUG REQUIRES A NEBULIZER"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "resourceType": "Flag",
+                                "id": "6b969dc6-a37a-4261-bc24-682a5ae99496",
+                                "status": "active",
+                                "category": {
+                                  "coding": [
+                                    {
+                                      "system": "https://fhir.allscripts.com/pptx/flag-type",
+                                      "code": "drugStatus",
+                                      "display": "Drug Coverage Status"
+                                    }
+                                  ]
+                                },
+                                "code": {
+                                  "coding": [
+                                    {
+                                      "code": "CoveredWithRestrictions",
+                                      "display": ""
+                                    }
+                                  ]
+                                }
+                              }
+                            ],
+                            "extension": [
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-type",
+                                "valueString": "pbm"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-partnerName",
+                                "valueString": "SureScripts"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-formularyStatus",
+                                "valueString": "1"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-daysSupplyPriced",
+                                "valueString": "15"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-planPayAmount",
+                                "valueString": "857"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-estimatedPatientPayAmount",
+                                "valueString": "3367"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-deductibleAppliedAmount",
+                                "valueString": "300"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-deductibleRemainingAmount",
+                                "valueString": "750"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-priorAuthRequired",
+                                "valueString": "Y"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-quantityPriced",
+                                "valueQuantity": {
+                                  "value": "30",
+                                  "unit": "C48473",
+                                  "system": "http://evs.nci.nih.gov/ftp1/NCPDP/About.html"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "resource": {
+                      "resourceType": "Bundle",
+                      "id": "c9729f9d-000c-4e96-ada8-879be165a321",
+                      "meta": {
+                        "lastUpdated": "2019-05-17T09:03:50.7435Z",
+                        "tag": [
+                          {
+                            "system": "local",
+                            "code": "alternative",
+                            "display": "alternative"
+                          }
+                        ]
+                      },
+                      "identifier": {
+                        "system": "bundletype",
+                        "value": "priceinfo"
+                      },
+                      "type": "message",
+                      "entry": [
+                        {
+                          "resource": {
+                            "resourceType": "MedicationRequest",
+                            "id": "be5ce845-b212-4a71-a667-fa172a0bb04d",
+                            "text": {
+                              "status": "generated",
+                              "div": ""
+                            },
+                            "intent": "proposal",
+                            "contained": [
+                              {
+                                "resourceType": "Medication",
+                                "id": "65a7891b-5497-4bb0-9311-78c796c0f992",
+                                "code": {
+                                  "coding": [
+                                    {
+                                      "code": "00409330703",
+                                      "system": "http://hl7.org/fhir/sid/ndc",
+                                      "display": "Acetylcysteine"
+                                    }
+                                  ]
+                                },
+                                "form": {
+                                  "coding": [
+                                    {
+                                      "code": "Form code",
+                                      "system": "http://snomed.info/sct",
+                                      "display": "Solution"
+                                    }
+                                  ]
+                                }
+                              }
+                            ],
+                            "dispenseRequest": {
+                              "quantity": {
+                                "value": "30",
+                                "unit": "C48473",
+                                "system": "http://evs.nci.nih.gov/ftp1/NCPDP/About.html"
+                              },
+                              "expectedSupplyDuration": {
+                                "value": "15",
+                                "unit": "days",
+                                "system": "http://unitsofmeasure.org"
+                              }
+                            },
+                            "dosageInstruction": [
+                              {
+                                "doseQuantity": {
+                                  "extension": [
+                                    {
+                                      "url": "https://fhir.allscripts.com/pptx/dosageDose-strengthValue",
+                                      "valueString": "10 %"
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "resource": {
+                            "resourceType": "Basic",
+                            "id": "a969163f-16b8-45b1-bcc7-bce7aba781e0",
+                            "text": {
+                              "status": "generated",
+                              "div": "Pricing details"
+                            },
+                            "contained": [
+                              {
+                                "resourceType": "Organization",
+                                "meta": {
+                                  "lastUpdated": "2019-05-17T09:03:50Z",
+                                  "tag": {
+                                    "display": "local",
+                                    "code": "pharmacy",
+                                    "system": "pharmacy"
+                                  }
+                                },
+                                "identifier": [
+                                  {
+                                    "type": {
+                                      "coding": [
+                                        {
+                                          "system": "http://hl7.org/fhir/v2/0203",
+                                          "code": "NCPDP"
+                                        }
+                                      ]
+                                    },
+                                    "value": "9911557"
+                                  },
+                                  {
+                                    "type": {
+                                      "coding": [
+                                        {
+                                          "system": "http://hl7.org/fhir/v2/0203",
+                                          "code": "NPI"
+                                        }
+                                      ]
+                                    },
+                                    "value": "1801849179"
+                                  }
+                                ],
+                                "type": [
+                                  {
+                                    "coding": [
+                                      {
+                                        "display": "Retail",
+                                        "code": "Retail"
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "name": "CA Pharmacy 10.6MU",
+                                "telecom": [
+                                  {
+                                    "system": "phone",
+                                    "value": "7072107071",
+                                    "use": "work"
+                                  }
+                                ],
+                                "address": [
+                                  {
+                                    "use": "work",
+                                    "line": [ "65432 Cabernet Turn" ],
+                                    "city": "Sonoma",
+                                    "state": "CA",
+                                    "postalCode": "95476"
+                                  }
+                                ]
+                              },
+                              {
+                                "resourceType": "Flag",
+                                "id": "5acbb4e3-f1eb-4450-b14a-30357dcd14a8",
+                                "status": "active",
+                                "category": {
+                                  "coding": [
+                                    {
+                                      "system": "https://fhir.allscripts.com/pptx/flag-type",
+                                      "code": "coverageAlert",
+                                      "display": "Coverage Limits Information"
+                                    }
+                                  ]
+                                },
+                                "code": {
+                                  "coding": [
+                                    {
+                                      "code": "QuantityLimits",
+                                      "display": "30 per 30 Days"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "resourceType": "Flag",
+                                "id": "4aac8277-4ef8-41d0-989d-038330569802",
+                                "status": "active",
+                                "category": {
+                                  "coding": [
+                                    {
+                                      "system": "https://fhir.allscripts.com/pptx/flag-type",
+                                      "code": "drugStatus",
+                                      "display": "Drug Coverage Status"
+                                    }
+                                  ]
+                                },
+                                "code": {
+                                  "coding": [
+                                    {
+                                      "code": "CoveredWithRestrictions",
+                                      "display": ""
+                                    }
+                                  ]
+                                }
+                              }
+                            ],
+                            "extension": [
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-type",
+                                "valueString": "pbm"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-partnerName",
+                                "valueString": "SureScripts"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-formularyStatus",
+                                "valueString": "2"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-daysSupplyPriced",
+                                "valueString": "15"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-planPayAmount",
+                                "valueString": "242.40"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-estimatedPatientPayAmount",
+                                "valueString": "231.90"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-deductibleAppliedAmount",
+                                "valueString": "150"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-deductibleRemainingAmount",
+                                "valueString": "900"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-priorAuthRequired",
+                                "valueString": "Y"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-quantityPriced",
+                                "valueQuantity": {
+                                  "value": "15",
+                                  "unit": "C48473",
+                                  "system": "http://evs.nci.nih.gov/ftp1/NCPDP/About.html"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "resource": {
+                            "resourceType": "Basic",
+                            "id": "97dae3d5-0789-45e6-867f-f0b92dba443b",
+                            "text": {
+                              "status": "generated",
+                              "div": "Pricing details"
+                            },
+                            "contained": [
+                              {
+                                "resourceType": "Organization",
+                                "meta": {
+                                  "lastUpdated": "2019-05-17T09:03:50Z",
+                                  "tag": {
+                                    "display": "local",
+                                    "code": "pharmacy",
+                                    "system": "pharmacy"
+                                  }
+                                },
+                                "identifier": [
+                                  {
+                                    "type": {
+                                      "coding": [
+                                        {
+                                          "system": "http://hl7.org/fhir/v2/0203",
+                                          "code": "NCPDP"
+                                        }
+                                      ]
+                                    },
+                                    "value": "9911557"
+                                  },
+                                  {
+                                    "type": {
+                                      "coding": [
+                                        {
+                                          "system": "http://hl7.org/fhir/v2/0203",
+                                          "code": "NPI"
+                                        }
+                                      ]
+                                    },
+                                    "value": "1801849179"
+                                  }
+                                ],
+                                "type": [
+                                  {
+                                    "coding": [
+                                      {
+                                        "display": "90DayAtRetail",
+                                        "code": "90DayAtRetail"
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "name": "CA Pharmacy 10.6MU",
+                                "telecom": [
+                                  {
+                                    "system": "phone",
+                                    "value": "7072107071",
+                                    "use": "work"
+                                  }
+                                ],
+                                "address": [
+                                  {
+                                    "use": "work",
+                                    "line": [ "65432 Cabernet Turn" ],
+                                    "city": "Sonoma",
+                                    "state": "CA",
+                                    "postalCode": "95476"
+                                  }
+                                ]
+                              },
+                              {
+                                "resourceType": "Flag",
+                                "id": "adede578-40d6-47e7-a0d4-41a9058680d5",
+                                "status": "active",
+                                "category": {
+                                  "coding": [
+                                    {
+                                      "system": "https://fhir.allscripts.com/pptx/flag-type",
+                                      "code": "coverageAlert",
+                                      "display": "Coverage Limits Information"
+                                    }
+                                  ]
+                                },
+                                "code": {
+                                  "coding": [
+                                    {
+                                      "code": "QuantityLimits",
+                                      "display": "30 per 30 Days"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "resourceType": "Flag",
+                                "id": "ccef57fc-2818-496e-9b69-bfb8b010e216",
+                                "status": "active",
+                                "category": {
+                                  "coding": [
+                                    {
+                                      "system": "https://fhir.allscripts.com/pptx/flag-type",
+                                      "code": "drugStatus",
+                                      "display": "Drug Coverage Status"
+                                    }
+                                  ]
+                                },
+                                "code": {
+                                  "coding": [
+                                    {
+                                      "code": "CoveredWithRestrictions",
+                                      "display": ""
+                                    }
+                                  ]
+                                }
+                              }
+                            ],
+                            "extension": [
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-type",
+                                "valueString": "pbm"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-partnerName",
+                                "valueString": "SureScripts"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-formularyStatus",
+                                "valueString": "2"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-daysSupplyPriced",
+                                "valueString": "15"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-planPayAmount",
+                                "valueString": "242.40"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-estimatedPatientPayAmount",
+                                "valueString": "231.90"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-deductibleAppliedAmount",
+                                "valueString": "150"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-deductibleRemainingAmount",
+                                "valueString": "900"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-priorAuthRequired",
+                                "valueString": "Y"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-quantityPriced",
+                                "valueQuantity": {
+                                  "value": "15",
+                                  "unit": "C48473",
+                                  "system": "http://evs.nci.nih.gov/ftp1/NCPDP/About.html"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "resource": {
+                            "resourceType": "Basic",
+                            "id": "283567cf-d8da-45ec-bc9c-1f4319817fe4",
+                            "text": {
+                              "status": "generated",
+                              "div": "Pricing details"
+                            },
+                            "contained": [
+                              {
+                                "resourceType": "Organization",
+                                "meta": {
+                                  "lastUpdated": "2019-05-17T09:03:50Z",
+                                  "tag": {
+                                    "display": "local",
+                                    "code": "pharmacy",
+                                    "system": "pharmacy"
+                                  }
+                                },
+                                "identifier": [
+                                  {
+                                    "type": {
+                                      "coding": [
+                                        {
+                                          "system": "http://hl7.org/fhir/v2/0203",
+                                          "code": "NCPDP"
+                                        }
+                                      ]
+                                    },
+                                    "value": "1629900"
+                                  },
+                                  {
+                                    "type": {
+                                      "coding": [
+                                        {
+                                          "system": "http://hl7.org/fhir/v2/0203",
+                                          "code": "NPI"
+                                        }
+                                      ]
+                                    },
+                                    "value": "1356606818"
+                                  }
+                                ],
+                                "type": [
+                                  {
+                                    "coding": [
+                                      {
+                                        "display": "mailorder",
+                                        "code": "mailorder"
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "name": "Mail Order Pharmacy 10.6MU NOCS",
+                                "telecom": [
+                                  {
+                                    "system": "phone",
+                                    "value": "3122603142",
+                                    "use": "work"
+                                  }
+                                ],
+                                "address": [
+                                  {
+                                    "use": "work",
+                                    "line": [ "1629-90 Supply Ln" ],
+                                    "city": "Chicago",
+                                    "state": "IL",
+                                    "postalCode": "60622"
+                                  }
+                                ]
+                              },
+                              {
+                                "resourceType": "Flag",
+                                "id": "98bb082f-afca-40fa-affa-c281675e5b81",
+                                "status": "active",
+                                "category": {
+                                  "coding": [
+                                    {
+                                      "system": "https://fhir.allscripts.com/pptx/flag-type",
+                                      "code": "coverageAlert",
+                                      "display": "Coverage Limits Information"
+                                    }
+                                  ]
+                                },
+                                "code": {
+                                  "coding": [
+                                    {
+                                      "code": "QuantityLimits",
+                                      "display": "30 per 30 Days"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "resourceType": "Flag",
+                                "id": "e5529342-3984-4ddf-bd76-fb1ffcc085ea",
+                                "status": "active",
+                                "category": {
+                                  "coding": [
+                                    {
+                                      "system": "https://fhir.allscripts.com/pptx/flag-type",
+                                      "code": "drugStatus",
+                                      "display": "Drug Coverage Status"
+                                    }
+                                  ]
+                                },
+                                "code": {
+                                  "coding": [
+                                    {
+                                      "code": "CoveredWithRestrictions",
+                                      "display": ""
+                                    }
+                                  ]
+                                }
+                              }
+                            ],
+                            "extension": [
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-type",
+                                "valueString": "pbm"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-partnerName",
+                                "valueString": "SureScripts"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-formularyStatus",
+                                "valueString": "2"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-daysSupplyPriced",
+                                "valueString": "15"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-planPayAmount",
+                                "valueString": "242.40"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-estimatedPatientPayAmount",
+                                "valueString": "231.90"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-deductibleAppliedAmount",
+                                "valueString": "150"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-deductibleRemainingAmount",
+                                "valueString": "900"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-priorAuthRequired",
+                                "valueString": "Y"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-quantityPriced",
+                                "valueQuantity": {
+                                  "value": "15",
+                                  "unit": "C48473",
+                                  "system": "http://evs.nci.nih.gov/ftp1/NCPDP/About.html"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "summary": "PPT+ Response from ConnectiveRx Partner",
+      "indicator": "warning",
+      "detail": "RTPS pricing information",
+      "source": { "label": "PPT+ Response from ConnectiveRx Partner" },
+      "suggestions": [
+        {
+          "label": "Create Operation",
+          "actions": [
+            {
+              "type": "create",
+              "resource": {
+                "id": "ad3c04b8-d4f5-4c8a-9111-44b7d49975ee",
+                "resourceType": "Bundle",
+                "meta": { "lastUpdated": "2019-05-17T09:03:51Z" },
+                "type": "transaction",
+                "identifier": {
+                  "system": "bundletype",
+                  "value": "drugPriceInfoResponse"
+                },
+                "entry": [
+                  {
+                    "resource": {
+                      "resourceType": "MessageHeader",
+                      "id": "57ec9b62-8b95-4238-823d-420283ac7b71",
+                      "event": {
+                        "system": "http://hl7.hub.allscriptscloud.com/fhir/message-events",
+                        "code": "pptx-response"
+                      },
+                      "sender": { "reference": "Organization/3141592653" },
+                      "receiver": { "reference": "Organization/2457242" },
+                      "timestamp": "2019-05-17T09:03:51Z",
+                      "source": {
+                        "name": "Allscripts-Hub",
+                        "software": "Hub-PPTx",
+                        "version": "1.0.0"
+                      },
+                      "response": {
+                        "identifier": "57ec9b62-8b95-4238-823d-420283ac7b71",
+                        "code": "ok",
+                        "details": { "reference": "OperationOutcome/08bbd4f3-e35a-44a9-ae1f-14ef0967076b" }
+                      },
+                      "extension": [
+                        {
+                          "url": "https://fhir.allscripts.com/pptx/messageHeader-partnerResponseId",
+                          "valueString": "b05fa2d0-7882-11e9-83b9-d1deff5d2d6e"
+                        },
+                        {
+                          "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-relatesToTxnID",
+                          "valueString": "57ec9b62-8b95-4238-823d-420283ac7b71"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "resource": {
+                      "resourceType": "OperationOutcome",
+                      "id": "08bbd4f3-e35a-44a9-ae1f-14ef0967076b",
+                      "issue": [
+                        {
+                          "severity": "information",
+                          "code": "processing",
+                          "details": {
+                            "coding": {
+                              "code": "200",
+                              "display": "<a href=\"https://www.ozempic.com/support-and-savings.html\">Learn more</a>. Eligibility and other restrictions apply"
+                            },
+                            "text": "Ozempic� (semaglutide)? injection 0.5 mg or 1 mg Savings Commercially insured Ozempic� patients may pay as little as $25 per 30 day supply.  Other restrictions apply.  Sponsored by Novo Nordisk. Click for <a href=\"https://www.novo-pi.com/ozempic.pdf\">Prescribing Information and Boxed Warning</a>"
+                          },
+                          "diagnostics": ""
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "resource": {
+                      "resourceType": "Organization",
+                      "id": "2457242",
+                      "text": {
+                        "status": "generated",
+                        "div": ""
+                      },
+                      "identifier": [
+                        {
+                          "system": "SiteId",
+                          "value": "1"
+                        }
+                      ],
+                      "name": "Site IL"
+                    }
+                  },
+                  {
+                    "resource": {
+                      "resourceType": "Organization",
+                      "id": "3141592653",
+                      "text": {
+                        "status": "generated",
+                        "div": ""
+                      },
+                      "identifier": [
+                        {
+                          "system": "subsystem",
+                          "value": "PPTplus"
+                        }
+                      ],
+                      "name": "Allscripts Rtbi hub"
+                    }
+                  },
+                  {
+                    "resource": {
+                      "resourceType": "Patient",
+                      "id": "f87f9f0d1fb14728b5cb65507d5da307",
+                      "text": {
+                        "status": "generated",
+                        "div": ""
+                      },
+                      "identifier": [
+                        {
+                          "use": "usual",
+                          "type": {
+                            "coding": [
+                              {
+                                "system": "http://hl7.org/fhir/v2/0203",
+                                "code": "MB"
+                              }
+                            ]
+                          },
+                          "value": "PBMF TESTKID 8951-001"
+                        }
+                      ],
+                      "active": true,
+                      "name": [
+                        {
+                          "use": "official",
+                          "family": "RODGERSSON",
+                          "given": [ "TEAGUE" ]
+                        }
+                      ],
+                      "telecom": [
+                        {
+                          "system": "phone",
+                          "use": "work"
+                        }
+                      ],
+                      "gender": "male",
+                      "birthDate": "2010-05-01",
+                      "address": [
+                        {
+                          "line": [ "191 SCREAMING VILLAGE BLVD", "" ],
+                          "city": "YONKERS",
+                          "state": "NY",
+                          "postalCode": "10705",
+                          "country": "USA"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "resource": {
+                      "resourceType": "Practitioner",
+                      "id": "7d468528-0442-49eb-b372-f05394baeffd",
+                      "text": {
+                        "status": "generated",
+                        "div": ""
+                      },
+                      "identifier": [
+                        {
+                          "use": "usual",
+                          "type": {
+                            "coding": [
+                              {
+                                "system": "http://hl7.org/fhir/v2/0203",
+                                "code": "NPI"
+                              }
+                            ]
+                          },
+                          "value": "1023052818"
+                        },
+                        {
+                          "use": "usual",
+                          "type": {
+                            "coding": [
+                              {
+                                "system": "http://hl7.org/fhir/v2/0203",
+                                "code": "DEA"
+                              }
+                            ]
+                          },
+                          "value": "AB1171189"
+                        }
+                      ],
+                      "name": [
+                        {
+                          "use": "official",
+                          "family": "PallaviENLN",
+                          "given": [ "ProviderTenENFN" ]
+                        }
+                      ],
+                      "telecom": [
+                        {
+                          "system": "phone",
+                          "value": "(312) 555-5555",
+                          "use": "work"
+                        },
+                        {
+                          "system": "email",
+                          "value": "Pallavi.Shailja@allscripts.com",
+                          "use": "work"
+                        }
+                      ],
+                      "address": [
+                        {
+                          "line": [ "123 Main St.", "Ste 104" ],
+                          "city": "Chicago",
+                          "state": "IL",
+                          "postalCode": "60115",
+                          "country": "USA"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "resource": {
+                      "resourceType": "Organization",
+                      "id": "affd36e8-f791-4c39-a529-cad718d639da",
+                      "meta": {
+                        "tag": [
+                          {
+                            "code": "Pharmacy",
+                            "display": "Pharmacy"
+                          }
+                        ]
+                      },
+                      "extension": [
+                        {
+                          "url": "Default",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "ExcludeLocal",
+                          "valueBoolean": false
+                        }
+                      ],
+                      "identifier": [
+                        {
+                          "use": "usual",
+                          "type": {
+                            "coding": [
+                              {
+                                "system": "http://hl7.org/fhir/v2/0203",
+                                "code": "NPI"
+                              }
+                            ]
+                          },
+                          "value": "1801849179"
+                        },
+                        {
+                          "use": "usual",
+                          "type": {
+                            "coding": [
+                              {
+                                "system": "http://hl7.org/fhir/v2/0203",
+                                "code": "NCPDP"
+                              }
+                            ]
+                          },
+                          "value": "9911557"
+                        }
+                      ],
+                      "active": true,
+                      "type": [
+                        {
+                          "coding": [
+                            {
+                              "code": "RETAIL",
+                              "display": "RETAIL"
+                            }
+                          ]
+                        }
+                      ],
+                      "name": "CA PHARMACY 10.6MU",
+                      "telecom": [
+                        {
+                          "system": "phone",
+                          "value": "(707) 515-7071",
+                          "use": "work"
+                        }
+                      ],
+                      "address": [
+                        {
+                          "line": [ "65432 CABERNET TURN", "" ],
+                          "city": "SONOMA",
+                          "state": "CA",
+                          "postalCode": "95476",
+                          "country": "USA"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "resource": {
+                      "resourceType": "Bundle",
+                      "id": "3f74b7f8-a938-458b-9440-8fa096047a2a",
+                      "meta": {
+                        "lastUpdated": "2019-05-17T09:03:51Z",
+                        "tag": [
+                          {
+                            "display": "local",
+                            "code": "Requested",
+                            "system": "Requested"
+                          }
+                        ]
+                      },
+                      "identifier": {
+                        "system": "bundletype",
+                        "value": "priceinfo"
+                      },
+                      "type": "transaction-response",
+                      "entry": [
+                        {
+                          "resource": {
+                            "resourceType": "MedicationRequest",
+                            "id": "b4a3a24a-808c-4fdb-a1bc-0667b102e57c",
+                            "text": {
+                              "status": "generated",
+                              "div": ""
+                            },
+                            "contained": [
+                              {
+                                "resourceType": "Medication",
+                                "id": "0678d7cb-f8f7-4a41-8de8-5b1ee0dea6d2",
+                                "code": {
+                                  "coding": [
+                                    {
+                                      "system": "http://hl7.org/fhir/sid/ndc",
+                                      "code": "00169413212",
+                                      "display": ""
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "resource": {
+                            "resourceType": "Basic",
+                            "id": "3a1468d9-4f79-410e-9cd2-307d5906da08",
+                            "contained": [
+                              {
+                                "resourceType": "Organization",
+                                "id": "affd36e8-f791-4c39-a529-cad718d639da",
+                                "meta": {
+                                  "tag": [
+                                    {
+                                      "code": "Pharmacy",
+                                      "display": "Pharmacy"
+                                    }
+                                  ]
+                                },
+                                "extension": [
+                                  {
+                                    "url": "Default",
+                                    "valueBoolean": true
+                                  },
+                                  {
+                                    "url": "ExcludeLocal",
+                                    "valueBoolean": false
+                                  }
+                                ],
+                                "identifier": [
+                                  {
+                                    "use": "usual",
+                                    "type": {
+                                      "coding": [
+                                        {
+                                          "system": "http://hl7.org/fhir/v2/0203",
+                                          "code": "NPI"
+                                        }
+                                      ]
+                                    },
+                                    "value": "1801849179"
+                                  },
+                                  {
+                                    "use": "usual",
+                                    "type": {
+                                      "coding": [
+                                        {
+                                          "system": "http://hl7.org/fhir/v2/0203",
+                                          "code": "NCPDP"
+                                        }
+                                      ]
+                                    },
+                                    "value": "9911557"
+                                  }
+                                ],
+                                "active": true,
+                                "type": [
+                                  {
+                                    "coding": [
+                                      {
+                                        "code": "RETAIL",
+                                        "display": "RETAIL"
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "name": "CA PHARMACY 10.6MU",
+                                "telecom": [
+                                  {
+                                    "system": "phone",
+                                    "value": "(707) 515-7071",
+                                    "use": "work"
+                                  }
+                                ],
+                                "address": [
+                                  {
+                                    "line": [ "65432 CABERNET TURN", "" ],
+                                    "city": "SONOMA",
+                                    "state": "CA",
+                                    "postalCode": "95476",
+                                    "country": "USA"
+                                  }
+                                ]
+                              }
+                            ],
+                            "extension": [
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-type",
+                                "valueString": "RTPS"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-couponUrl",
+                                "valueString": "https://rtps-offers-uat.connectiverx.com/04042019RTPSMessagesforDRFOzempic.pdf"
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-patientPayAmountAdjustedByOffer",
+                                "valueString": 25
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-offerAmount",
+                                "valueString": 25
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-offerAmountToApply",
+                                "valueString": 3342
+                              },
+                              {
+                                "url": "https://fhir.allscripts.com/pptx/priceDetailBasic-offerPharmacistNote",
+                                "valueString": null
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "create": {
+        "resourceType": "DocumentReference",
+        "id": "3a0b2e95-7ccc-4d5c-a853-754a6ab4ecb9",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "55112-7",
+              "display": "Document summary"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://fhir.allscripts.com/pptx/decisionDocumentReference-partnerBundleIDs",
+            "valueString": "fd9d21c7-55f8-4d4e-8a23-9de165142879,ad3c04b8-d4f5-4c8a-9111-44b7d49975ee"
+          }
+        ],
+        "created": "2019-05-17T09:03:55Z",
+        "indexed": "2019-05-17T09:03:55Z",
+        "text": {
+          "status": "generated",
+          "div": "<div class='summary ' style='border-width:1px;border-style:solid;background-color:#fff;position:relative;overflow: hidden;box-sizing:border-box;border-color:#007d8a;'><style>.summary {\r\n    font-family: HelveticaNeue, Arial !important;\r\n    min-height: 124px;\r\n}\r\n\r\n.summary-rtps_div_autosize {\r\n    min-height: 143px;\r\n}\r\n\r\n.ppt-header {\r\n    height: 24px;\r\n}\r\n\r\n.ppt-header-desc {\r\n    line-height: 23px;\r\n}\r\n\r\n.ppt-row {\r\n    margin: 0px;\r\n    height: 19px;\r\n    font-family: HelveticaNeue,Arial;\r\n    color: #333;\r\n}\r\n\r\n.ppt-value {\r\n    white-space: nowrap;\r\n}\r\n\r\n    .ppt-value i {\r\n        font-size: 11px;\r\n        display: inline-block;\r\n        font-weight: normal;\r\n    }\r\n\r\n.ppt-row:hover {\r\n    position: relative;\r\n}\r\n\r\n.ppt-alternative-data {\r\n    height: 19px;\r\n    line-height: 20px;\r\n}\r\n</style><div class='ppt-header' style='color:#fff;background-color:#007d8a;margin-bottom:4px;font-size: 10pt;'title='Ozempic 0.25 or 0.5 MG/DOSE Solution Pen-injector'><div class='ppt-header-desc' style='white-space: nowrap;font-weight:bold;padding-left: 3px;color:#fff;margin-bottom:0;width: 90%;text-overflow:  ellipsis;overflow: hidden;float: left;background-color:#007d8a'>Ozempic, <div  style='color:#fff;font-weight:normal;display: inline;text-overflow:  ellipsis;overflow:  hidden;width: 16%;'>0.25 or 0.5 MG/DOSE Solution Pen-injector</div></div><div  style=' width: 16px; object-fit: contain;float: right;margin-right: 3px padding-top: 3px;display: inline;position:absolute; right:0px'><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAKVJREFUOBGVUsENhDAMq24O1mAjBumPRW+O69kFVypJ2hIphDq2iyxSmlQpJaPDmsivNdShyZIBSZHJZ9khpe8Lbk/F7Qf6hzbVM50TFDtaYk6atUwciYUgOG+TQ1uZ6DydEOxPEk1qus7CkJ+cdoYLKwvAuwI7hQ1nlV8PBiMxEQY2/xIynappD2/W0hETammLF83oT9wigcGDLyCcDdkDBgZLJn8n7Unqr5/NzAAAAABJRU5ErkJggg=='/></div><span  style='display:none' id='spnVersion'>2019.2.0.50</span></div><div class='ppt-row' style='padding-right:3px;padding-left:3px;clear:both;'title='Ins: MITSU-036R&#010;Pharm: CA Pharmacy 10.6MU &#010;Insurance plan limits quantity for the requested drug...[More]'><div class='caption' style='min-width:15%;max-width:55%;padding-top: 3px;float:left;white-space:nowrap;font-size:11.5px;position:relative'>Insurance</div><div class='ppt-value' style='float:right;min-width:25%;max-width:70%;text-align:right;font-size:14px;position: relative;margin-right: 3px;'><i  >Est</i> $<span  style = 'margin-right:12px;font-weight:bold;font-size:14px'>3,367.00</span><span  style='position: absolute;top: -10%;right:-5px'><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAhZJREFUOBGlU01IVFEU/u59ozRDLZoGoU2DGBhMRDshsHRi/Alx50SbWtRiaikKLWocpE0lMkE/gq5cjq5EEh0SStoUUYgDTeBiqk05SUxQMM6b6/1u7715ugjC8+Ddn/N9555z7ncF9tv4ZAy2fUMo9AqBKN1KoaQElmFZM0gPF/wU4S0yuWbUP08C9ZvNVkAl2qLyVCRs/B/L2yq/WapX7Zpey2eQJ4aRSVbJ/RuAZLu0pM+KD51ux9OBBCKhoBebk/LvP7i1mMfcRpG0VVjRfgaxDOp8xyNNvjw12IP7iQsINTWZbf+Pe0Oxdhw/chiLxc1WoBLGy5XnAqy5VlvXTplLDkKkH0JKgXAwiIneLlw7G/PHMfNkbgFzhWIdgcAZyYaxZqbt2s7YCN6lruJ2/pW7tWcklhxyJbvNhvlrrto2lP7YoPVvWyarwtYPLwix5JAreVVut13Eyew0+mbnkb0UZ6o4GjzkNM9FAOSQG2hsNWZfRlLO9QBjq69x72Innrx5j0z3OQ+knJmkSHjPnsc32fhextfKL8RaIij9rMBfRlFzyJVUGEXCe6ap8VHvdKYf1unfebGGY6FGGcSSQ66kPKkwimS/zRc+Idsfx9r1K2ZkQBqxRpWUtrH0xGPcfaCm3n7Qaf3biCEW5GiTJgC1reWZWlgBReKWY3zOj3v0EWOkbDjuWyDoQI/JOcUM//mcdwGTBBy+Nr1EwgAAAABJRU5ErkJggg=='/></span></div></div><div class='ppt-row' style='padding-right:3px;padding-left:3px;clear:both;'title='Ins: MITSU-036R&#010;Pharm: CA Pharmacy 10.6MU &#010;Insurance plan limits quantity for the requested drug...[More]'><div class='caption' style='min-width:15%;max-width:55%;padding-top: 3px;float:left;white-space:nowrap;font-size:11.5px;position:relative'>Ins. 90-day</div><div class='ppt-value' style='float:right;min-width:25%;max-width:70%;text-align:right;font-size:14px;position: relative;margin-right: 3px;'> $<span  style = 'margin-right:12px;font-weight:bold;font-size:14px'>3,367.00</span><span  style='position: absolute;top: -10%;right:-5px'><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAhZJREFUOBGlU01IVFEU/u59ozRDLZoGoU2DGBhMRDshsHRi/Alx50SbWtRiaikKLWocpE0lMkE/gq5cjq5EEh0SStoUUYgDTeBiqk05SUxQMM6b6/1u7715ugjC8+Ddn/N9555z7ncF9tv4ZAy2fUMo9AqBKN1KoaQElmFZM0gPF/wU4S0yuWbUP08C9ZvNVkAl2qLyVCRs/B/L2yq/WapX7Zpey2eQJ4aRSVbJ/RuAZLu0pM+KD51ux9OBBCKhoBebk/LvP7i1mMfcRpG0VVjRfgaxDOp8xyNNvjw12IP7iQsINTWZbf+Pe0Oxdhw/chiLxc1WoBLGy5XnAqy5VlvXTplLDkKkH0JKgXAwiIneLlw7G/PHMfNkbgFzhWIdgcAZyYaxZqbt2s7YCN6lruJ2/pW7tWcklhxyJbvNhvlrrto2lP7YoPVvWyarwtYPLwix5JAreVVut13Eyew0+mbnkb0UZ6o4GjzkNM9FAOSQG2hsNWZfRlLO9QBjq69x72Innrx5j0z3OQ+knJmkSHjPnsc32fhextfKL8RaIij9rMBfRlFzyJVUGEXCe6ap8VHvdKYf1unfebGGY6FGGcSSQ66kPKkwimS/zRc+Idsfx9r1K2ZkQBqxRpWUtrH0xGPcfaCm3n7Qaf3biCEW5GiTJgC1reWZWlgBReKWY3zOj3v0EWOkbDjuWyDoQI/JOcUM//mcdwGTBBy+Nr1EwgAAAABJRU5ErkJggg=='/></span></div></div><div class='ppt-row' style='padding-right:3px;padding-left:3px;clear:both;' title=''><div class='caption' style='min-width:25%;max-width:55%;padding-top:3px;float:left;font-size:11.5px;white-space:nowrap;overflow: hidden'>Cash w/ Offer <span  /></div><div class='ppt-value' style='float:right;min-width:25%;max-width:70%;text-align:right;font-size:14px;margin-right: 3px;'><span class='style='font-weight:bold;font-size:14px'' style = 'font-weight:normal;font-size:12px;line-height:14px;'>N/A</span></div></div><div class='ppt-row' style='padding-right:3px;padding-left:3px;clear:both;' title=''><div class='caption' style='min-width:25%;max-width:55%;padding-top:3px;float:left;font-size:11.5px;white-space:nowrap;overflow: hidden'>Low As <span  /></div><div class='ppt-value' style='float:right;min-width:25%;max-width:70%;text-align:right;font-size:14px;margin-right: 3px;'><span class='style='font-weight:bold;font-size:14px'' style = 'font-weight:normal;font-size:12px;line-height:14px;'>N/A</span></div></div><div class='ppt-alternative-data' style='padding-left:3px;font-family: HelveticaNeue, Arial!important;color: #464646;float:left;width:100%;font-size: 11.5px;font-weight: bold;background-color: #e3e3e3;position:absolute;bottom:0px'>Therapeutic Alternatives Available</div></div>"
+        }
+      }
+    }
+  ]
+} 

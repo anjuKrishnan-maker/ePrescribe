@@ -1,0 +1,2716 @@
+﻿/*New CSS Coding starting 2017.1*/
+
+button[disabled], 
+html input[disabled]
+{
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+  background: -o-linear-gradient(to bottom, #ffffff, #cccccc); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(to bottom, #ffffff, #cccccc); /* For Firefox 3.6 to 15 */
+  background-image: linear-gradient(to bottom, #ffffff, #cccccc);
+  border: solid 1px #666666;
+  color: #464646;
+  text-shadow: 0 1px 0 #ffffff;
+}
+
+.ppt-header, #ppt-header {
+    background-color: #665999 !important;
+}
+
+.ppt-header div, #ppt-header div {
+    background-color: #665999 !important;
+}
+
+.summary, #summary {
+    border-color: #665999 !important;
+}
+
+#ppt-row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.erxRdbText{
+    font-weight: normal;
+    margin-left: 5px;
+    bottom: 2.8px;
+    position: relative;
+}
+
+
+.erxReviewHxTable,
+.erxReviewHxTableEmpty {
+    vertical-align: top; 
+    padding-left: 5px; 
+    overflow:auto; 
+    min-width: 600px
+}
+
+.eRxNavButton {
+    background-color: #2F2257 !important;
+    border: solid 1px #2F2257 !important;
+    color: white;
+}
+.erxBtn-arrow-right,
+.erxBtn-arrow-left {
+    position: relative;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+.erxBtn-arrow-right {
+    padding-left: 20px;
+    margin-right: 10px;
+}
+.erxBtn-arrow-left {
+    padding-right: 10px;
+    margin-left: 10px;
+}
+    .erxBtn-arrow-right:after,
+    .erxBtn-arrow-left:before { /* make two squares (before and after), looking similar to the button */
+        content: "";
+        position: absolute;
+        top: 3px; /* move it down because of rounded corners */
+        width: 14.5px; /* same as height */
+        height: 14.5px; /* button_outer_height / sqrt(2) */
+        background-color: #2F2257 !important;
+        border-right: solid 1px #2F2257 !important;
+        border-top: solid 1px #2F2257 !important;
+        border-left: none;
+        border-bottom: none;
+        border-radius: 0px 4px 0px 0px; /* round arrow corner, the shorthand property doesn't accept "inherit" so it is set to 4px */
+        -webkit-border-radius: 0px 4px 0px 0px;
+        -moz-border-radius: 0px 4px 0px 0px;
+    }
+.erxBtn-arrow-right:before,
+.erxBtn-arrow-right:after {
+    transform: rotate(45deg); /* rotate right arrow squares 45 deg to point right */
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+}
+.erxBtn-arrow-left:before,
+.erxBtn-arrow-left:after {
+    transform: rotate(225deg); /* rotate left arrow squares 225 deg to point left */
+    -webkit-transform: rotate(225deg);
+    -moz-transform: rotate(225deg);
+    -o-transform: rotate(225deg);
+    -ms-transform: rotate(225deg);
+}
+.erxBtn-arrow-right:before,
+.erxBtn-arrow-left:before { /* align the "before" square to the left */
+    left: -9px;
+}
+.erxBtn-arrow-right:after,
+.erxBtn-arrow-left:after { /* align the "after" square to the right */
+    right: -9px;
+}
+.erxBtn-arrow-right:after,
+.erxBtn-arrow-left:before { /* bring arrow pointers to front */
+    z-index: 1;
+}
+.erxBtn-arrow-right:before,
+.erxBtn-arrow-left:after { /* hide arrow tails background */
+    background-color: white;
+}
+
+/* inline message styles*/
+.erxSuccess-dialog {
+    vertical-align: middle;
+    background-color: #d6ecee;
+    padding: 5px;
+    min-height: inherit;
+}
+.erxSuccess-dialogImg{
+    background: url('../images/info-global-16-x-16.png') center top no-repeat;
+    content: url('../images/info-global-16-x-16.png');
+    height: 16px;
+    width: 16px;
+    display: -moz-box;
+}
+
+.erxError-dialog {
+    vertical-align: middle;
+    background-color: #ffe4e4;
+    padding: 5px;
+    min-height: inherit;
+}
+.erxError-dialogImg{
+    background: url('../images/alert-global-16-x-16.png') center top no-repeat;
+    content: url('../images/alert-global-16-x-16.png');
+    height: 16px;
+    width: 16px;
+    display: -moz-box;
+}
+
+.erxInformation-dialog {
+    vertical-align: middle;
+    background-color: #fff2cd;
+    padding: 5px;
+}
+
+.erxInformation-dialogImg{
+    background: url('../images/warning-global-16-x-16.png') center top no-repeat;
+    content: url('../images/warning-global-16-x-16.png');
+    height: 16px;
+    width: 16px;
+    display: -moz-box;
+}
+
+.erxTable {
+    width: 100%;
+}
+
+.erxTableReviewHistory {
+    max-height: 569px;
+    overflow-y: auto;
+}
+.erxReviewHistoryMainGrid {
+    width: 100%;
+    vertical-align: top;
+    table-layout: auto;
+    empty-cells: show;
+    overflow: auto
+}
+
+.erxTableHeader,
+.erxTableHeader a,
+.erxSortText {
+    height: 25px;
+    background-color: #e3e3e3;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.18;
+    letter-spacing: normal;
+    text-align: left;
+    color: #464646;
+    cursor: pointer;
+}
+
+.erxTableHeader:hover .erxSortUp img {
+    background: url('../images/sortUpAct.png') center center no-repeat;
+    content: url('../images/sortUpAct.png');
+    display: -moz-box;
+    height: 5px;
+    width: 9px;
+}
+
+.erxTableHeader:hover .erxSortDown img {
+    background: url('../images/sortDownAct.png') center center no-repeat;
+    content: url('../images/sortDownAct.png');
+    display: -moz-box;
+    height: 5px;
+    width: 9px;
+}
+
+.erxSortDown img {
+    background: url('../images/sortDown.png') center center no-repeat;
+    content: url('../images/sortDown.png');
+    display: -moz-box;
+    height: 5px;
+    width: 9px;
+}
+.erxSortDown:hover img {
+    background: url('../images/sortDownAct.png') center center no-repeat;
+    content: url('../images/sortDownAct.png');
+    display: -moz-box;
+    height: 5px;
+    width: 9px;
+}
+
+.erxSortUp img {
+    background: url('../images/sortUp.png') center center no-repeat;
+    content: url('../images/sortUp.png');
+    display: -moz-box;
+    height: 5px;
+    width: 9px;
+}
+
+.erxSortUp:hover img {
+    background: url('../images/sortUpAct.png') center center no-repeat;
+    content: url('../images/sortUpAct.png')
+    display: -moz-box;
+    height: 5px;
+    width: 9px;
+}
+
+.erxSelectedRow {
+    background-color: #d5ebed;
+}
+
+.erxAltRow {
+    background-color: #f2f2f2;
+    box-shadow: inset 0 -1px 0 0 #e3e3e3;
+}
+
+.erxRow {
+    background-color: white;
+    box-shadow: inset 0 -1px 0 0 #e3e3e3;
+}
+
+.erxSortedHeader {
+    background-color: #e4e4e4;
+}
+
+/*Code specific to IE 10 can be removed when we don't support IE 10'*/
+/********************************************************************/
+
+html[data-useragent*='MSIE 10.0']
+.btnStyleOneArrow,
+html[data-useragent*='MSIE 10.0']
+.btnStyleTwoArrows,
+html[data-useragent*='MSIE 10.0']
+.btnstyle,
+html[data-useragent*='MSIE 10.0']
+.combobtnstylespan,
+html[data-useragent*='MSIE 10.0']
+input[type="password"],
+html[data-useragent*='MSIE 10.0']
+select,
+html[data-useragent*='MSIE 10.0']
+input[type="text"]
+{
+    border-top-left-radius:4px;
+    border-top-right-radius:4px;
+    border-bottom-left-radius:4px;
+    border-bottom-right-radius:4px;
+}
+
+
+/********************************************************************/
+
+/*Code specific to IE 9 can be removed when we don't support IE 9'*/
+/********************************************************************/
+
+html[data-useragent*='MSIE 9.0']
+.btnstyle { height:22px; width:auto; background-image: url(../images/buttongradient.gif); background-repeat:repeat-x; border: solid 1px #858585; vertical-align:middle; }
+
+html[data-useragent*='MSIE 9.0']
+.RadPanelBar div.rpHeaderTemplate, a.rpLink {
+    background-color: #fdfdfd;
+    background-image: url('../telerik/Grid/Skins/Default2006/Img/GridHeaderBg.gif');
+    cursor: pointer;
+    text-decoration: none;
+    overflow: hidden;
+    background-repeat: repeat-x;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    zoom: 1;
+    color: black;
+}
+html[data-useragent*='MSIE 9.0']
+.iconHeighAdjustment {
+    margin-top: 15px;
+}
+html[data-useragent*='MSIE 9.0']
+.rpText {
+    color: black;
+}
+
+html[data-useragent*='MSIE 9.0']
+.btnStyleOneArrow
+{
+    background-position: 93%, center 50%, center;
+    white-space: pre-wrap;
+    text-shadow: 0 1px #ffffff;
+    height: 22px;
+    width: auto;
+    border-radius:3px;
+    /* Standard syntax */
+    border: solid 1px #858585;
+    background-repeat: no-repeat, repeat-x;
+    vertical-align: middle;
+}
+
+html[data-useragent*='MSIE 9.0']
+.btnStyleTwoArrows
+{
+    background-position: 89%, 96%, center 50%, 50%, center;
+    white-space: pre-wrap;
+    text-shadow: 0 1px #ffffff;
+    height: 22px;
+    width: auto;
+    border-radius:3px;
+    /* Standard syntax */
+    border: solid 1px #858585;
+    background-repeat:no-repeat, no-repeat, repeat-x;
+    vertical-align: middle;
+}
+
+
+html[data-useragent*='MSIE 9.0']
+.combobtnstylespan
+{ 
+    text-shadow: 0 1px #ffffff;
+    background: url(../images/buttongradient.gif); /* Standard syntax */
+	height:20px; 
+	width:auto; 
+	margin:0;
+	padding: 0 5px 0 5px;
+	background-position:top;
+    border-radius:3px;
+	border: solid 1px #858585;
+	display:run-in;
+	vertical-align:middle;
+}
+
+html[data-useragent*='MSIE 9.0']
+.RadComboBox_Allscripts td.rcbArrowCellLeft,
+.RadComboBox_Allscripts td.rcbArrowCellRight
+{
+    background: url(../images/buttongradient.gif);
+    -ms-border-top-right-radius: 3px;
+    -ms-border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border: 1px solid #666666 !important;
+}
+/********************************************************************/
+
+/********************************************************************/
+
+/*Code specific to IE 9 can be removed when we don't support IE 8'*/
+/********************************************************************/
+
+/********************************************************************/
+
+/********************************************************************/
+
+/*Code specific to IE 9 can be removed when we don't support IE 7'*/
+/********************************************************************/
+/********************************************************************/
+*
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+.headerIconDescription 
+{
+    text-align: center;
+    font-style: normal;
+    color: transparent;
+}
+
+.ExpandDown
+{
+    content:url("../images/chevrondown-nor-light-12-x-12.png");
+}
+
+.alignRight
+{
+    float: right;
+}
+
+ .rgAltRow{
+    background: #f2f2f2;
+    background-color: #f2f2f2;
+}
+
+
+.headerIcon
+{
+    text-align: center;
+    vertical-align: middle;
+    float: left;
+    margin-left: 5px;
+}
+
+#divMoLabel 
+{
+    margin-top: 0;
+}
+
+.listSelect
+{
+    /*need to use this for list boxes to use default arrow selection*/
+    background: none;
+}
+
+select
+{
+    -ms-border-radius: 3px;
+    border-radius:3px;
+    border: 1px solid #666666;
+}
+
+input[type="text"]
+{
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #666666;
+    height: 20px;
+}
+.imgMore
+{
+    height: 15px;
+}
+input[type="password"] {
+    -ms-border-radius: 3px;
+    border-radius:3px;
+    border: 1px solid #666666;
+    height: 20px;
+}
+
+.rpExpandHandle
+{
+    background-image: url(../images/arrowup-nor-light-12-x-12.png);
+    background-repeat: no-repeat;
+}
+
+.linkButton {
+    text-decoration: underline;
+    cursor: pointer;    
+}
+
+.btnstyle
+{
+    white-space: pre-wrap;
+    -ms-text-shadow: 0 1px #ffffff;
+    text-shadow: 0 1px #ffffff;
+    height: 22px;
+    width: auto;
+    -ms-border-radius: 3px;
+    border-radius:3px;
+    background: -webkit-linear-gradient(#ffffff, #cccccc); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#ffffff, #cccccc); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#ffffff, #cccccc); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#ffffff, #cccccc); /* Standard syntax */
+    border: solid 1px #858585;
+    vertical-align: middle;
+}
+
+.noWrapBtnstyle {
+    white-space: nowrap;
+    -ms-text-shadow: 0 1px #ffffff;
+    text-shadow: 0 1px #ffffff;
+    height: 22px;
+    width: auto;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+    background: -webkit-linear-gradient(#ffffff, #cccccc); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#ffffff, #cccccc); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#ffffff, #cccccc); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#ffffff, #cccccc); /* Standard syntax */
+    border: solid 1px #858585;
+    vertical-align: middle;
+}
+
+.BorderBottomBlack {
+    border-bottom: solid 1pt black;
+}
+.noEditRollover
+{
+    visibility: hidden;
+}
+
+.tooltipContainer:hover .divTooltip {
+    visibility: visible;
+}
+.divTooltip {
+    visibility: hidden;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #eaf9fa;
+    border: solid 1px #2F2257;
+    font-size: 12px;
+    line-height: 1.17;
+    color: #2F2257;
+    text-align: left;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+}
+
+.DurText {
+    font-size: larger;
+    vertical-align: middle;
+}
+
+.durAccents {
+    color: #e06020;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.changeRequestTable {
+    border: 1px solid #cccccc;
+}
+.changeRequestRow {
+    height: 30px;
+}
+
+.btnRRRight
+{
+    white-space: pre-wrap;
+    -ms-text-shadow: 0 1px #ffffff;
+    text-shadow: 0 1px #ffffff;
+    height: 22px;
+    width: auto;
+    position: relative;
+    right: 35px;
+    top: 10px;
+    -ms-border-radius: 3px;
+    border-radius:3px;
+    background: url(../images/arrowright-nor-dark-12-x-12.png), -webkit-linear-gradient(#ffffff, #cccccc); /* For Safari 5.1 to 6.0 */
+    background: url(../images/arrowright-nor-dark-12-x-12.png), -o-linear-gradient(#ffffff, #cccccc); /* For Opera 11.1 to 12.0 */
+    background: url(../images/arrowright-nor-dark-12-x-12.png), -moz-linear-gradient(#ffffff, #cccccc) ; /* For Firefox 3.6 to 15 */
+    background: url(../images/arrowright-nor-dark-12-x-12.png), linear-gradient(#ffffff, #cccccc); /* Standard syntax */
+    border: solid 1px #858585;
+	background-position: 60% 50%, 0% 0%;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.searchControlTextBox {
+    -ms-border-top-left-radius: 12px !important;
+    border-top-left-radius: 12px !important;
+    -ms-border-bottom-left-radius: 12px !important;
+    border-bottom-left-radius: 12px !important;
+    border: solid 1px #666666;
+    width: 150px;
+    height: 24px;
+    padding-left: 25px;
+    color: rgb(102, 102, 102);
+}
+
+.searchControlTextBoxOnly {
+    -ms-border-radius: 12px !important;
+    border-radius: 12px !important;
+    border: solid 1px #666666;
+    width: 150px;
+    height: 24px;
+    padding-left: 25px;
+    color: rgb(102, 102, 102);
+}
+
+.divPaddingTopPharmacies {
+    padding-top: 2px;
+}
+.searchControlButton {
+    -ms-border-top-right-radius: 12px !important;
+    border-top-right-radius: 12px !important;
+    -ms-border-bottom-right-radius: 12px !important;
+    border-bottom-right-radius: 12px !important;
+    height: 24px;
+    background-image: linear-gradient(to bottom, #ffffff, #cccccc);
+    border: solid 1px #666666;
+    margin-left: -7px;
+    color: #464646;
+    margin-right: 10px;
+}
+
+.searchControlImage {
+    position: relative;
+    margin-right: -20px;
+    z-index: 1;
+    vertical-align: middle;
+    margin-left: 13px;
+}
+
+.displayNone {
+    display: none;
+}
+.btnRRLeft
+{
+    white-space: pre-wrap;
+    -ms-text-shadow: 0 1px #ffffff;
+    text-shadow: 0 1px #ffffff;
+    height: 22px;
+    width: auto;
+    position: relative;
+    left: 35px;
+    top: 10px;
+    -ms-border-radius: 3px;
+    border-radius:3px;
+    background: url(../images/arrowleft-nor-dark-12-x-12.png), -webkit-linear-gradient(#ffffff, #cccccc); /* For Safari 5.1 to 6.0 */
+    background: url(../images/arrowleft-nor-dark-12-x-12.png), -o-linear-gradient(#ffffff, #cccccc); /* For Opera 11.1 to 12.0 */
+    background: url(../images/arrowleft-nor-dark-12-x-12.png), -moz-linear-gradient(#ffffff, #cccccc) ; /* For Firefox 3.6 to 15 */
+    background: url(../images/arrowleft-nor-dark-12-x-12.png), linear-gradient(#ffffff, #cccccc); /* Standard syntax */
+    border: solid 1px #858585;
+	background-position: 60% 50%, 0% 0%;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.btnStyleOneArrow
+{
+    white-space: pre-wrap;
+    -ms-text-shadow: 0 1px #ffffff;
+    text-shadow: 0 1px #ffffff;
+    height: 22px;
+    width: auto;
+    -ms-border-radius: 3px;
+    border-radius:3px;
+    background: url(../images/arrowright-nor-dark-12-x-12.png), -webkit-linear-gradient(#ffffff, #cccccc); /* For Safari 5.1 to 6.0 */
+    background: url(../images/arrowright-nor-dark-12-x-12.png), -o-linear-gradient(#ffffff, #cccccc); /* For Opera 11.1 to 12.0 */
+    background: url(../images/arrowright-nor-dark-12-x-12.png), -moz-linear-gradient(#ffffff, #cccccc) ; /* For Firefox 3.6 to 15 */
+    background: url(../images/arrowright-nor-dark-12-x-12.png), linear-gradient(#ffffff, #cccccc); /* Standard syntax */
+    border: solid 1px #858585;
+	background-position: 93% 50%, 0% 0%;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+.btnStyleAction {
+      background-image: -moz-linear-gradient(#ffffff, #c0e0e2);
+      background-image: -webkit-linear-gradient(#ffffff, #c0e0e2);
+      background-image: -o-linear-gradient(#ffffff, #c0e0e2);
+      background-image: linear-gradient(#ffffff, #c0e0e2);
+      border: solid 1px #007d8a;
+}
+.btnStyleTwoArrows
+{
+    white-space: pre-wrap;
+    -ms-text-shadow: 0 1px #ffffff;
+    text-shadow: 0 1px #ffffff;
+    height: 22px;
+    width: auto;
+    -ms-border-radius: 3px;
+    border-radius:3px;
+    background-image: url(../images/arrowright-nor-dark-12-x-12.png),url(../images/arrowright-nor-dark-12-x-12.png), -webkit-linear-gradient(#ffffff, #cccccc); /* For Safari 5.1 to 6.0 */
+    background-image: url(../images/arrowright-nor-dark-12-x-12.png),url(../images/arrowright-nor-dark-12-x-12.png), -o-linear-gradient(#ffffff, #cccccc); /* For Opera 11.1 to 12.0 */
+    background-image: url(../images/arrowright-nor-dark-12-x-12.png),url(../images/arrowright-nor-dark-12-x-12.png), -moz-linear-gradient(#ffffff, #cccccc) ; /* For Firefox 3.6 to 15 */
+    background-image: url(../images/arrowright-nor-dark-12-x-12.png),url(../images/arrowright-nor-dark-12-x-12.png), linear-gradient(#ffffff, #cccccc); /* Standard syntax */
+    border: solid 1px #858585;
+	background-position: 89% 50%, 96% 50%, 0% 0%;
+    background-repeat:no-repeat, no-repeat;
+    vertical-align: middle;
+}
+
+.largeText
+{
+    font-size: large;
+}
+
+.eRxHealthSheet_Panel
+{
+	max-width:200px; 
+	padding:5px 5px 5px 5px; 
+	border:solid 1px black; 
+	vertical-align:middle; 
+	text-align:center; 
+	background-color:#7AB800; 
+	color:Black; 
+	font-weight:bold;
+}
+
+.eRxHealthSheet_Link
+{
+	text-decoration:none; 
+	color:Black
+}
+/* added newly */
+
+img#loginLogo{background:url(../images/Allscripts/Allscripts_Logo.jpg); background-repeat:no-repeat; background-position:center;}
+
+.rightBoxHeader {
+	background-color:#7AB800;
+	text-align:center;
+	color: #ffffff;
+	font-size: 18px;
+	font-weight: bold;
+    padding: .5px;   
+    padding-left: 1px;
+    padding-top: 1px;
+    height: 16px;}
+.enterprisePanel {}
+.rightBoxTable 
+{
+	border: solid 2px #7AB800;
+	padding: 2 2 2 2;
+	background-color: #ffffff;
+}
+.sponsored {display:none;}
+
+.dashboardIcon img 
+{
+    border-width: 0px;
+    vertical-align: middle;
+}
+
+body {
+	margin: 0 !important;
+	text-decoration: none;
+    overflow-x:hidden;
+}
+.body__scroll--Hidden {
+    overflow-y: hidden;
+}
+
+.loginBody
+{
+	background-color:#E7E7E7;
+}
+
+.loginbanner
+{
+	height: 36px;
+	text-align: right;
+}
+
+.loginMessageTable
+{
+	border-bottom: solid 1px #595959;
+	border-left: solid 1px #595959;
+	border-right: solid 1px #595959;
+	text-align:left;
+}
+
+.loginMessageRow
+{
+	border-top: solid 3px #7AB800;
+	border-bottom: solid 1px #595959;
+	background-color:#CCCCCC;
+	color:#AD0808;
+	padding: 5px 5px 5px 5px;
+	vertical-align:middle
+}
+
+.loginLeftTopBorder
+{
+	width:20%;
+	height:6px;
+	background-color:#ffffff;
+}
+
+.loginLeftLogoBkgrnd
+{
+	height: 105px;
+	vertical-align:middle;
+	background-color:#ffffff;
+	text-align: center;
+}
+
+.btnHeaderAlign {
+    position: relative;
+    top: 1px;
+}
+@media print
+{
+	#IMG1{display:none}
+	#IMG2{display:none}
+	#header { 
+        height:75px; 
+         font-size: 24pt;
+	    color: black;
+	    border-color: transparent;
+	}
+
+	#footer, .ad  { display:none }
+
+
+	/*#btnSave{display:none}
+	#btnClear{display:none}
+	body
+	{
+		left:0px;z-index:1px;top:0px;position:absolute;margin: 0;right:0px; 
+		padding: 0;	border: 0; 
+		white-space:normal;float:none;width:auto;height:100%;
+	}*/
+
+}
+/* end */
+
+body, div, span, p, td
+{
+	font-weight: normal;
+    color: Black;
+	margin: 0px;
+	vertical-align:top;
+}				
+
+input[type="checkbox"]
+{
+    /*padding: 0px;
+    margin: 0px;*/
+    vertical-align: middle;
+}
+.HeaderLastName {
+    font-weight: bold;
+    font-style: normal;
+}
+.boundfield-hidden {
+   display: none;
+}
+.HeaderFirstName
+{
+    font-style: normal;
+}
+.Normal						{font-weight: normal; font-size: 12px; color:#FFFFFF; vertical-align:middle;}	
+.SubheadExplain      		{font-weight: normal; font-size: 12px; color:#AE0910; vertical-align:middle;}	
+.radio 						{margin-bottom: -3px; margin-top: -3px; margin-left: -3px; margin-right: -3px;}
+.link						{font-weight: normal; font-size: 12px; color:#FFFFFF;}
+.adminlink					{font-weight: normal; font-size: 12px; color:#000000;}
+.heading					{font-weight: normal; font-size: 14px; color:#FFFFFF;}
+.subheading					{font-weight: normal; font-size: 14px; color:#FFFFFF;}
+.adminlink1					{ font-weight: normal; font-size: 12px; color:#FFFFFF;vertical-align:middle;}
+.normal						{font-weight: normal; font-size: 12px; color:#000000;}
+.lomain						{font-weight: bold;font-size: 22px;color: #FFFFFF;}
+.info						{font-weight: normal; font-size: 14px; color:#333333; vertical-align:middle;}
+.buttontable				{font-weight: normal; font-size: 12px; color:#333333;}					
+.head						{font-size: 12px; color:#666666; vertical-align:middle; }
+.Phead						{font-weight: bold;  font-size: 12px; color:#ffffff; text-indent:5px;vertical-align:middle;}
+.PheadSmall					{font-weight: bold;  font-size: 12px; color:#ffffff; text-indent:10px;vertical-align:middle;}
+.Pheadblack					{font-weight: bold;  font-size: 12px; color:#000000; text-indent:10px;vertical-align:middle;}
+.Shead						{font-weight: bold;  font-size: 12px; color:#ffffff; text-indent:10px;vertical-align:middle;}
+.SheadText					{color:#ffffff;}
+.navi						{font-weight: bold;font-size: 12px; color:red; vertical-align:middle;}
+.overlaymain				
+{
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px 0 #000000;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    width:600px;
+}
+.overlayBasic {
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px 0 #000000;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+.overlayTitleText {
+    color: #007d8a;
+    text-shadow: 0 1px 0 #ffffff;
+    font-size: 1.5em;
+}
+
+.modal-top-override{
+    top:30% !important;
+}
+.serviceAlertTitleText span {
+    color: #e06020 !important;
+    text-shadow: 0 1px 0 #ffffff;
+    font-size: 100%;
+}
+
+.overlayTextLarger {
+    font-size: larger;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    text-align: left;
+    color: #464646;
+}
+
+.overlayTitle,
+.erxOverlayTitle {
+    -ms-border-top-left-radius: 10px;
+    border-top-left-radius: 10px;
+    -ms-border-top-right-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #e3e3e3;
+    text-align: left;
+    color: #007d8a;
+    text-shadow: 0 1px 0 #ffffff;
+    height: 30px;
+    padding-left: 15px;
+    padding-top: 10px;
+    font-size: 1.5em;
+}
+
+.erxOverlayTitle {
+    height: 43px;
+}
+
+.serviceAlertTitle {
+    -ms-border-top-left-radius: 10px;
+    border-top-left-radius: 10px;
+    -ms-border-top-right-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #e3e3e3;
+    text-align: left;
+    color: #c65b12;
+    text-shadow: 0 1px 0 #ffffff;
+    height: 30px;
+    padding-left: 15px;
+    padding-top: 10px;
+    font-size: 1.5em;
+    width: 100%
+}
+
+.overlaysub1,
+.overlayContent {
+    padding: 10px;
+}
+.cspAlertOverlayContent {
+    padding-bottom: 10px;
+    margin-left: 10px;
+}
+.overlayFooter,
+.erxOverlayFooter {
+    height: 30px;
+    background-color: #e3e3e3;
+    -ms-border-bottom-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    -ms-border-bottom-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    text-align: right;
+}
+
+.erxOverlayFooter {
+    height: 43px;
+}
+
+.overlayTitleAngular {
+    color: #007d8a;
+    text-shadow: 0 1px 0 #ffffff;
+    padding-left: 15px;
+    font-size: 2em;
+}
+.overlayHeaderAngular {
+    background-color: #e3e3e3;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+    -ms-border-radius: 6px;
+    border-radius: 6px;
+}
+.overlaymainwide				
+{
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px 0 #000000;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);   
+    width:710px;    
+}
+
+.overlayMainDynamicSize				
+{
+    border: solid 1px black; 
+    background-color:White; 
+    padding:5px;     
+}
+
+.overlayscrollable			
+{
+    max-height:200px; 
+    overflow:auto;
+}
+
+* html .overlayscrollable
+{
+    height: expression(this.scrollHeight > 199 ? "200px" : "auto"); 
+}
+
+
+.RadPanelBar div.rpHeaderTemplate, a.rpLink
+{
+    background: linear-gradient(#f6f6f6, #ececec);
+    background: -webkit-linear-gradient(#f6f6f6, #ececec); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#f6f6f6, #ececec); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#f6f6f6, #ececec); /* For Firefox 3.6 to 15 */
+    color: white;
+}
+.rpExpandHandle
+{
+    background-image: url(../images/arrowdown-nor-dark-12-x-12.png);
+    background-repeat: no-repeat;
+}
+
+.divReportWrapper {
+    height: 100%;
+    margin-right: 15px;
+    overflow: auto;
+}
+
+.factsComparisonModal		{border: solid 1px black; background-color:White; width:802px; height:547px}
+.factsComparisonControl		{background-color:White; width:798px; height:545px; position:absolute; top:1px; left:5px;}
+.factsComparisonButtons		{background-color:White; width:798px; height:27px; position:absolute; top:515px; left:5px;}
+.factsComparisonTopLeftControls		{ position:absolute; top:5px; left:1px;	}
+.factsComparisonTopRightControls	{ position:absolute; top:5px; left:230px;	}
+.factsComparisonContent		{background-color:White; width:788px; height:434px; position:absolute; top:75px; left:5px; overflow:hidden;}
+.factsComparisonJumpLink   a{font-weight: normal;font-size: 12px; text-indent:5px; padding-top:2px;}
+.portalPanel				{ min-width:220px; max-width:250px; overflow:hidden}
+.reportViewerPanel			{ top:1px; left:1px; width:837px; } 
+.interstitialAdModal		{ width:637px; height:550px; background-color:White; border:solid 1px black; }
+.interstitialAdMain			{ position:relative; top:1px; left:1px; width:635px; height:550px; background-color:Transparent; border-style:none; max-width:635px; max-height:550px; overflow:hidden;}
+a.interstitialAdSkip		{ position:relative; top:5px; right:21px; display:inline;font-weight: normal;font-size: 12px; font-size:small; color:Black; vertical-align:text-top; }
+img.interstitialAdClose		{ position:relative; top:5px; right:5px; vertical-align:bottom; }
+.interstitialAdContent	    { position:relative; top:10px; left:5px; width:625px; height:500px; overflow:hidden; text-align:left;}
+.interstitialAdModalContent	{ width:625px; overflow:hidden;}
+
+.LoginFailed
+{
+	font-weight: bold;
+	color: red;
+}
+
+.modalBackgroundNotTransparent 
+{
+    BACKGROUND-COLOR: gray;
+    /*-moz-opacity:0.8;*/
+    position: fixed;
+    _position:absolute !important; /* this is added to override the default position of the modalpopupextender and it is needed to correctly position the overlay in IE6*/
+}
+.GridHeader
+{
+    font-weight: normal;
+    font-size: 12px;
+	color: #000000;
+	background-image: url(../images/buttongradient.gif); 
+	background-repeat:repeat-x;
+	border: solid 1px #858585;
+}
+.GridSortedSortable
+{	
+	background-position: right center;
+	font-weight: bold;
+	font-size: 10pt;
+	background-image: url(images/sort-sortable.gif);
+	cursor: pointer;
+	color: #F1F1F1;
+	background-repeat: no-repeat;
+	position: relative;
+}
+.AlternateItem
+{
+	background-color: #f9f9f9;
+}
+.PagerStyle
+{
+	background-color: #B5B4B4;
+	text-align: center;
+	font: normal 12px arial, verdana, sans-serif;
+	color: #FFFFFF;
+}
+.CurrentPage
+{
+	font-weight: bold;
+	color: Black;
+}
+.SelectedRow
+{
+	color: #0033ff;
+	background-color: #CBCBCB !important;
+}
+.DiscontinueRx
+{
+	color: fuchsia;
+	background-color: silver;
+}
+.PagerLabel 
+{ 
+   float: left; 
+   padding-left: 5px; 
+   padding-top: 3px; 
+} 
+
+.PagerTable 
+{ 
+   float: left; 
+} 
+
+.PagerRecordLabel 
+{ 
+   padding-top: 3px; 
+   margin-right: 5px; 
+   float: right; 
+} 
+					
+.NormalCenter				{
+    font-style: italic;
+    font-weight: normal;
+    font-size: 16px;
+	color:#000000;
+	vertical-align:middle;
+	text-align: center;
+	font-weight:bold;
+}	
+.NormalVerticalCenter				{
+    font-weight: normal;
+    font-size: 16px;
+	color:#000000;
+	vertical-align:middle;
+	text-align: center;
+	font-weight:bold;
+}	
+.NormalCenterSmall				{
+    font-style: italic;
+    font-weight: bold;
+    font-size: 12px;
+	color:#000000;
+	vertical-align:middle;
+	text-align: center;
+}					
+.NormalRightSmall				{
+    font-weight: normal;
+    font-size: 10px;
+	color:#000000;
+	vertical-align:middle;
+	text-align: right;
+	font-weight:bold;
+}	
+.DURWarning
+{
+    font-size: 8.25pt;
+	color: #000000;
+	vertical-align: middle;
+	background-color: silver;
+}	
+.headName			{font-style: italic; font-weight: normal;font-size: 14px;color:#000000;vertical-align:middle;font-weight:bold;}			
+.Itallic			{font-style: italic; font-weight: bold;font-size: 10px;color:#000000;vertical-align:middle;}
+.ItallicSlim    {font-style: italic;}
+.center				{font-weight: normal;font-size: 12px;color:#000000;vertical-align:middle;text-align: center;}
+.NormalForScript	{font-weight: normal;font-size: 9px; color:#000000; vertical-align:middle; text-align: center;}									
+.table				{border-bottom-style: solid;border-bottom-color: #000000;border-bottom-width: thin;}
+.DEANUMBER			{font-style: italic; font-weight: normal;font-size: 11px;color:#000000;vertical-align:middle;}	
+.MousePointer
+{
+	cursor: auto;
+}
+.DURHeading
+{
+    font-weight: bold;
+    font-size: 12px;
+	vertical-align: middle;
+	background-color: #dfdfdf;
+}
+.Allergyhead				{font-weight: bold;font-size: 12px; color:#AE0910; vertical-align:middle;}
+.Allergysubhead				{font-size: 12px; color:#AE0910; vertical-align:middle;}
+.Message
+{
+	font-weight: bold;
+	color: white;
+	background-color: #b5b4b4;
+	vertical-align:middle;
+	text-align: center;
+}
+
+.hlClinicalViewer {height: 24px;width: 24px;border: none; background-image:url(../images/Allscripts/headerClinicalViewer.gif); background-repeat:no-repeat; background-position:center;}
+img#helpIcon {height: 24px;width: 24px;border: none; background-image:url(../images/Allscripts/headerhelp.gif); background-repeat:no-repeat; background-position:center;}
+img#helpIconLogin {height: 24px;width: 24px; background-image:url(../images/Allscripts/headerhelp.gif); background-repeat:no-repeat; background-position:center;}
+img#profileIcon{height: 24px;width: 24px;border: none; background-image:url(../images/Allscripts/header.gif); background-repeat:no-repeat; background-position:center;}
+img#logoutIcon {height: 24px;width: 24px;border: none; background-image:url(../images/Allscripts/headerlogout.gif); background-repeat:no-repeat; background-position:center;}
+img#documentIcon {height: 24px;width: 24px;border: none; background-image:url(../images/Allscripts/document_NonDark.gif); background-repeat:no-repeat; background-position:center;}
+img#messageQueueIcon {height: 24px;width: 24px;border: none; background-image:url(../images/Allscripts/headermsgqueue.gif); background-repeat:no-repeat; background-position:center;}
+img#iLearnIcon {height: 24px; width: 24px;border: none; background-image:url(../images/Allscripts/gradCap.png); background-repeat:no-repeat; background-position:center;}
+img#iLearnIcon:hover{height: 24px; width: 24px; background-image:url(../images/Allscripts/gradCapHover.png); background-repeat:no-repeat; background-position:center;}
+
+.ILsubheading
+{
+    font-weight: normal;
+    font-size: 14px;
+	color: black;
+}
+.RSSHeading
+{
+    font-weight: normal;
+    font-size: 11px; color:#000000; vertical-align:middle;
+}
+.RSSDetail
+{
+    font-weight: normal;
+    font-size: 10px; color:#000000; vertical-align:middle;
+}
+
+/* CSS Design by Kumar */
+
+a:hover {
+    color: #007d8a;
+}
+a:active {
+	color: #878787;
+}
+a.uniquelink:link, a.uniquelink:visited { font-weight:bold; color:White; }
+a.uniquelink:hover { font-weight:bold ; color:Red ;}
+
+.autowidth 
+{
+	width:auto;
+}
+
+.tblReports,
+.tblAdmin {
+    margin-left: 10px;
+}
+.indnt {
+   	text-indent:6px;
+	padding-top:2px;
+	padding-bottom:2px;
+}
+.h1title {
+	vertical-align: middle;
+	height: 20px;
+}
+.h2title {
+	height: 20px;
+	background-color: #868585;
+}
+.h3title {
+	height: 20px;
+	background-color: #B5B4B4;
+}
+.h4title {
+	height: 18px;
+	background-color: #E7e7e7;
+	text-decoration: none;
+}
+.h4titleText {
+	color: #000000;
+}
+.highlight
+{
+	font-size:12px;
+	font-weight:bolder;
+	color:white;
+	letter-spacing: 1px;
+}
+.h2 
+{
+	color:black;
+	font-weight:bold;
+	font-size:10px;
+}
+.redcolor 
+{
+	color:red;
+}
+.btmnav {
+	background-color: #E7E7E7;
+	height: 28px;
+}
+.floatclr {
+	float: left;
+}
+.btmbrdr {
+	border-bottom-width: thin;
+	border-bottom-style: solid;
+	border-bottom-color: #CCCCCC;
+}
+.Lftbrdr {
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: #666666;
+}
+.hname {
+    font-weight: bold;
+    font-size: 14px; color:#925E05; vertical-align:middle;
+	text-align:center;
+}
+
+.Titbarcolor1 
+{
+	background-color:#595959;
+}
+.Titbarcolor2 
+{
+	background-color:#868585;
+}
+.Titbarcolor3 
+{
+	background-color:#B5B4B4;
+}
+.Titbarcolor4 
+{
+	background-color:#E7E7E7;
+}
+.smltxt
+{
+	font-size:8pt; color:#50849A;
+}
+.valgn 
+{
+	vertical-align:middle;
+}
+
+.txtboxcolor 
+{
+	background-color:#FFFCDD;
+}
+.txtEIE
+{
+	text-decoration: line-through;
+}
+.caneltxt {
+	text-decoration: line-through;
+}
+.searchboxcolor 
+{
+	background-color: #F8F7EF;
+}
+.aligncentr 
+{
+	text-align:center;
+}
+
+#quickSearchContainer{
+	width: 	205px;
+	border: 2px solid #B5B4B4;
+	background: #B5B4B4;
+}
+
+#quickSearchContent{
+	margin: 			0px;
+	background: 		#868585;
+	width: 				182px;
+	padding: 			4px;
+}
+
+.content2backcolor 
+{
+	background-color:#FFFFFF;
+}
+
+.menustyle {
+	background-color:#e7e7e7;
+	border:dotted 1px black;
+	color:Black;
+	height:14px;
+	font-weight:bold;
+}
+/*.ErrorMsg
+{
+	color: red;
+}
+*/
+.SigErrorMsg
+{
+	color: red;
+}
+
+.tabSelected
+{	
+	text-align:center;
+	width:100px;
+    padding-top: 2px;
+    height: 22px;
+	cursor:pointer;
+	border:none;
+}
+
+.tabUnSelected
+{
+    text-align:center;
+    padding-top: 2px;
+	width:100px;
+	cursor:pointer;
+	border:none;
+}
+
+.tabHide
+{
+	width:0px;
+	display:none;
+	border:none;	
+}
+
+a.tabSelectedLink
+{		
+	text-align:center;
+	text-decoration:none;
+	font-weight:bold;
+    color: white !important;
+	border:none;
+    padding-top: 2px;
+	border-right:none;	
+	width:100px;
+	display:block;
+}
+
+.ddlProviderSearchPatient
+{
+    margin-top: 2px;
+    margin-right: 9px;
+}
+
+a.tabUnSelectedLink:visited,a.tabUnSelectedLink:link
+{
+	text-align:center;
+	text-decoration:none;
+    padding-top: 2px;
+	font-weight:normal;
+	color:black;
+	border:none;
+	border-right:none;
+	width:100px;
+	display:block;
+}
+
+a.tabHideLink
+{	
+	width:0px;
+	display:none;
+	border:none;
+}
+
+.divider
+{
+    background-color: #e2e2e2;
+	border-bottom:solid 1px;
+	height:1px;
+}
+
+.displayNone {
+    display: none;
+}
+
+
+/* *****************    LOGIN SCREEN      ************************ 
+ */
+
+#bottomcontainer{ height:100%; background-color:#858585; }
+#middlecontainer{ height:100%; }
+#topcontainer{height: 60px; border-bottom: black thin solid;}
+.redborder     { height:6px;}
+.brownborder   { background-color:#595959; height:28px; }
+.freespace     { height:10px; width:200px; }
+.logocontainer { width:200px; height:49px; background-image:url(allscripts_logo.gif); }
+
+
+ Text Styles 
+.title1			{ color:#333333; font-size:34px; font-weight:bolder; }
+.txt4			{ font-size:12px; font-weight:bold; color: #FFFFFF; }
+.normaltxt		{ font-size:12px; color:#000000; }
+.Msgtxt			{ font-size:12px; color:#FFFFFF; }
+.subheadred		{ font-size:12px; font-weight:bold; color: #5B8F22; }
+.borderbox		{ background-color: #ffffff; border:thin solid #000000; padding: 8px; height: 30px; width: 300px; text-align: center; margin: auto;}
+
+/*  ******************** TEXT  STYLES ************************ */
+
+.errormsg   { font-size: 12px; color: Red;}
+.infomsg	{ font-size: 12px; color: #FEE4AB;}
+.maintitle  { font-size: 34px; color: #334d55; margin: 0px; padding: 0px; }
+.title      { font-weight:bold; font-size:14px; color: #000000; margin: 0px; padding: 0px;}
+.subtitle   { font-weight:bold; font-size:12px;}
+.normaltext { font-weight:normal; font-size:12px;}
+.gridtext   { font-weight:normal; font-size:10px;  border-right-color:#e7e7e7; border-bottom-color:#e7e7e7; border-top-color:#e7e7e7; border-left-color:White;}
+.smalltext  { font-weight:normal; font-size:10px; color:Gray;}
+.whitetext  { color:#ffffff;}
+.uppercase	{ text-transform:uppercase;}
+/*   */
+
+/*  ******************** BUTTON  STYLES ************************ */
+
+
+.combobtnstyle
+{
+    height:20px; 
+	width:auto; 
+	margin:0;
+	padding:0;
+	background-position:top;
+     border: none;
+    text-shadow: 0 1px #ffffff;
+    background: transparent;
+	vertical-align:middle;
+}
+
+.combobtnstyledropdown
+{
+    height:20px;
+    margin-left: -20px;
+	width:auto; 
+	background-position:top;
+     border: none;
+    text-shadow: 0 1px #ffffff;
+    background: transparent;
+	vertical-align:middle;
+}
+
+a.combobtnstyle 
+{ 
+	height:20px; 
+	width:auto; 
+	margin:0;
+    text-shadow: 0 1px #ffffff;
+	padding:0;
+    background-color: inherit;
+	border: none;
+	vertical-align:middle;
+}
+.combobtnstylespan
+{ 
+    text-shadow: 0 1px #ffffff;
+    background: -webkit-linear-gradient(#ffffff, #cccccc); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#ffffff, #cccccc); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#ffffff, #cccccc); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#ffffff, #cccccc); /* Standard syntax */
+	height:20px; 
+	width:auto; 
+	margin:0;
+	padding: 0 5px 0 5px;
+	background-position:top;
+    -ms-border-radius: 3px;
+    border-radius:3px;
+	border: solid 1px #858585;
+	display:run-in;
+	vertical-align:middle;
+}
+/* ******************** ALIGNMENT  STYLES ************************ */
+
+.indnt       { text-indent: 8px; }
+.leftalign   { text-align:left; }
+.rightalign  { text-align: right; }
+.centeralign { text-align:center; }
+.topalign    { vertical-align:top; }
+.middlealign { vertical-align:middle; }
+
+.borderline  { height:4px; background-color:#BBCACF; }
+.floatleft   { float:left;}
+.floatright  { float:right; clear:left; }
+
+.searchTextBox{ width:250px; }
+
+/* Accordion */
+.accordionHeader
+{
+	font-size: 12px;
+	font-weight: bold;
+    padding: .5px;   
+    padding-left: 1px;
+    padding-top: 1px;  
+    cursor: pointer;
+    height: 18px;
+}
+
+.accordionHeaderText
+{
+    color: white;
+	font-size: 12px;
+	font-weight: bold;
+    padding: .5px;   
+    padding-left: 1px;
+    padding-top: 1px;  
+    cursor: pointer;
+    height: 16px;
+    margin-top: 2px;
+}
+.accordionHeaderScriptPad
+{
+    border: 1px solid #2F4F4F;
+    color: #445A9C;
+	background-color: #7AB800;
+	font-size: 12px;
+	font-weight: bold;
+    height: 18px;
+    padding:.5px;
+    padding-left: 1px;
+    padding-top: 1px;  
+    cursor: pointer;
+}
+
+.accordionHeaderTextScriptPad
+{
+    color: white;   
+	background-color: #7AB800;
+	font-size: 12px;
+	font-weight: bold;
+    padding: .5px;   
+    padding-left: 1px;
+    padding-top: 1px;  
+    height: 16px;
+    cursor: pointer;
+}
+#master_content .accordionHeader a
+{
+	color: #FFFFFF;
+	background: none;
+	text-decoration: none;
+}
+
+#master_content .accordionHeader a:hover
+{
+	background: none;
+	text-decoration: underline;
+}
+
+.accordionContent
+{
+    color:#595959;
+    border-top: none;
+    padding: 2px;
+}
+.accordionContentScriptPad
+{
+    color:#595959;
+    border-top: none;
+    padding: 5px;
+    padding-top: 5px;    
+}
+.nowrap { white-space:nowrap }
+
+.appStripe
+{
+    margin-bottom: 5px;
+}
+
+.modalBackground 
+{
+	FILTER: alpha(opacity=80);
+    BACKGROUND-COLOR: gray;
+    opacity: 0.8;
+    /*-moz-opacity:0.8;*/
+    position: fixed;
+    _position:absolute !important; /* this is added to override the default position of the modalpopupextender and it is needed to correctly position the overlay in IE6*/
+}
+
+.ContextMenuPanel 
+{
+	border: 1px solid #868686;
+	z-index: 1000;
+	background-color:Silver;
+	/*background: url(images/menu-bg.gif) repeat-y 0 0 #FAFAFA;*/
+	cursor: default;
+	padding: 1px 1px 0px 1px;
+	font-size: 11px;
+}
+
+a.ContextMenuItem
+{
+	margin: 1px 0 1px 0;
+	display: block;
+	color: #003399;
+	text-decoration: none;
+	cursor: pointer;	
+	padding: 4px 4px 4px 4px;
+	white-space: nowrap;
+	background-color:White;
+}
+
+a.ContextMenuItem-Selected
+{
+	font-weight: bold;
+	background-color:White
+}
+
+a.ContextMenuItem:hover
+{
+	background-color: Gray;
+	color: #003399;
+	/*border: 1px solid #D2B47A;*/
+	padding: 4px 4px 4px 4px;
+}
+
+.reportPanelContent
+{
+    background-color:White;
+    color:#595959;
+    border: 1px none #2F4F4F;
+    border-top: none;
+    width:95%;
+}
+
+.reportPanelHeader
+{
+	background-color:#ADBDDE;
+    border: 1px solid #2F4F4F;
+    color: white;
+	font-size: 12px;
+	font-weight: bold;
+    padding: .5px;   
+    padding-left: 1px;
+    padding-top: 1px;  
+    cursor: pointer;
+    height: 18px;
+    width:99%;
+}
+
+.PopUpTable
+{
+    width: 580px;
+    border-collapse: collapse;
+    border-spacing: 0px; 
+}
+td.PopUpHeader
+{ 
+    background-color: #7AB800;
+    border: 1px #000000 solid;
+    font-weight: bold;
+    font-size: 12px;
+    text-align:center;
+    color:Black;
+}
+td.PopUpTd
+{ 
+    border-bottom: 1px #6699CC;
+    font-weight: normal;
+    font-size: 10px;
+    color: #404040;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 0px; 
+}
+
+.deluxeComparisons
+{
+	width:100%;
+	border:solid 1px #7AB800;
+}
+
+.deluxeComparisons th
+{
+	 text-align:center;
+	 font:bold 18pt; 
+	 color:#5B8F22;
+	 height:10px;
+	 border:solid 1px #7AB800;
+}
+
+.deluxeComparisons td
+{
+	 border:solid 1px #7AB800;
+	 padding:5px
+}
+
+
+.sponsoredLink a
+{
+	font-size:large;
+	color:#000000
+}
+
+
+.sponsoredLink a:hover
+{
+	font-size:large;
+	color:#5B8F22
+}
+
+
+.sponsoredLink span
+{
+	font-size:smaller;
+	color:Blue
+}
+
+.scriptPadBottomRow
+{
+    width: 100%; 
+    margin-top: 10px;
+}
+
+.firstBox
+{
+    border-left:solid 1px black;
+}
+
+.mainBox
+{
+    float: left; 
+    min-height: 170px;
+    border-top: solid 1px black; 
+    border-bottom: solid 1px black; 
+    border-right: solid 1px black;
+}
+
+.patientReceipt
+{
+    width: 20%;
+}
+
+.coupons
+{
+    width: 95%;
+}
+
+.patientHealthRecord
+{
+    width: 39%; 
+}
+
+.scriptPadBottomRow p.header
+{
+    font-weight: bold; 
+    background-color: ActiveBorder; 
+    width: 100%
+}
+
+.scriptPadBottomRow p.headerPHR
+{
+    height: 19px;
+}
+
+.scriptPadBottomRow p.content
+{
+    padding: 3px;
+}
+
+a.couponLink
+{
+    color:Blue;
+    font-size: 10px;
+}
+
+a.couponDisclaimerLink
+{
+    cursor: default;
+    color:Blue;
+    font-size: 10px;
+    margin: 2px;
+}
+/* Shown in right-side panel when provider is not accepting referrals */
+#arnNotAcceptingReferralsMessage
+{
+	color: #ff0000;
+	font-weight: bold;
+}
+
+/* Used in right-side panel to evenly space telephone, fax, etc. */
+span.arnProviderTabularInfo
+{
+	float: left;
+	width: 54px;
+}
+
+/* Used by ArnReferralDetailPanel.ascx (right-side panel) */
+div.infoMessage
+{
+	background: #fffacd url(../images/information.png) no-repeat 3px 3px; 
+	border:solid 1px DarkGray;
+	color: Maroon;
+	padding: 1px 1px 1px 22px;
+}
+
+div.warningMessage
+{
+	background: #fffacd url(../images/warning-16x16.png) no-repeat 3px 3px; 
+	border:solid 1px DarkGray;
+	color: Maroon;
+	padding: 1px 1px 1px 22px;
+}
+
+/* Shown on ArnReferralForm.aspx to alert user no patient match, request has been declined, etc. */
+div.arnReferralWarning
+{
+	margin-top: 10px; 
+	margin-right: 10px; 
+	margin-left: 10px; 
+	margin-bottom: 10px; 
+	padding: 15px;	
+	background-color:  #FFFACD; 
+	border: solid 1px #800000; 
+	color:#800000; 
+}
+a.arnReferralWarning
+{
+	color: #800000;
+	font-weight: bold;
+}
+
+#arnReferralTabsDiv
+{
+	margin: 4px 10px 20px 10px; 
+}
+
+table.arnReferralViewTable td
+{
+	padding: 4px 4px 0px 4px;
+}
+
+table.arnReferralEditTable td
+{
+	padding: 4px 4px 0px 4px;
+	white-space: nowrap;
+}
+
+/* BEGIN: Classes used to display referral message history (third tab of ArnReferralForm.aspx) */
+div.arnReferralHistoryDivFieldRow
+{
+	padding: 4px 0px 0px 0px;
+}
+
+div.arnReferralHistoryDivRow
+{
+	border-top: solid 1px #d3d3d3;
+	background-color: #E7E7E7;
+	padding: 0px 4px 8px 4px;
+}
+div.arnReferralHistoryDivRow .fieldLabel
+{
+	float: left;
+	width: 84px;
+	font-weight: bold;
+}
+
+div.arnReferralHistoryDivAltRow
+{
+	border-top: solid 1px #d3d3d3;
+	background-color: #ffffff;
+	padding: 0px 4px 8px 4px;
+}
+div.arnReferralHistoryDivAltRow .fieldLabel
+{
+	float: left;
+	width: 84px;
+	font-weight: bold;
+}
+
+.arnReferralHistoryDivMessageType
+{
+	float:right;
+	font-weight: bold;
+}
+/* END: Classes used to display referral message history (third tab of ArnReferralForm.aspx) */
+.completionList
+{
+    visibility : hidden;
+    margin : 0px !important;
+    padding : 0px;
+    background-color : #f0f0f0;
+    color : windowtext;
+    border : buttonshadow;
+    border-width : 1px;
+    border-style : solid;
+    cursor : 'default';
+    overflow : auto;
+    text-align : left; 
+    list-style-type : none;
+}
+
+
+/* Classes used to display RadPanelBar in SelectAccountandSite.aspx*/
+ /* .RadPanelBar .rpOut
+{
+	background-color:#004185 !important;
+}
+
+.RadPanelBar a.rpLink
+{
+	background-color:#004185 !important ;
+}
+*/
+
+.RadPanelBar .rpText
+{
+	font-weight: bold;
+	font-size:larger;
+	margin-top:4px;
+}
+
+
+
+/* ePA Question Response Styles */
+
+.ePAQuestionResponseWindow
+{
+    width:800px;
+    padding:20px;
+    border: solid 1px black; 
+    background-color:White;     
+
+}
+
+.ePAQuestionResponseWindowNcpdp
+{
+    width:850px;
+    height:500px;
+    padding:20px;
+    border: solid 1px black; 
+    background-color:White;     
+    overflow-y:auto;
+}
+
+.ePAQuestionResponseHeader
+{
+    width:100%;
+    display:block;
+}
+
+.ePAQuestionResponseTitle
+{
+    font-size:14pt;
+    font-weight:bold;
+}
+
+.ePAQuestionList
+{
+    min-height:300px;
+}
+
+.ePAQuestionMiddle
+{
+    height:150px;
+    overflow:visible;
+}
+
+.ePAQuestionMiddleList
+{
+    height:150px;
+    overflow-x:hidden;
+    overflow-y:scroll;
+}
+
+.ePAQuestionMiddleNcpdp
+{
+    height:350px;
+    overflow:visible;
+}
+
+.ePAQuestionMiddleListNcpdp
+{
+    height:350px;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+   
+.ePAWarning
+{
+    color:Red;
+    font-style:italic;
+}
+
+.ePAbtnStyle
+{
+    height:22px; 
+    vertical-align:middle;    
+    margin-bottom:10px;
+}
+
+.ePAQuestionTitle
+{
+    border:solid 1px #858585; 
+    padding:10px;
+    width:75%;
+}
+
+.ePAQuestionTitleNcpdp
+{
+    border:solid 1px #858585; 
+    padding:10px;
+}
+
+.ePAQuestionHolder
+{
+    width:600px;
+}
+
+.ePAReviewTable
+{
+    width:100%;
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+
+.ePAHeaderRowColNum
+{
+    background-color:white;
+    color:Black;
+    font-size:11pt;
+    font-weight:bold;
+    padding:4px;
+    width:10px;
+}
+
+.ePAHeaderRowCol
+{
+    background-color:white;
+    color:Black;
+    font-size:11pt;
+    font-weight:bold;
+    padding:4px;
+}
+
+.ePARowColNum
+{
+    background-color:#E1E1E1;    
+    padding:2px;
+}
+
+.ePARowCol
+{
+    background-color:#E1E1E1;    
+    padding:2px;
+}
+
+.ePAAltRowCol
+{
+    padding:2px;
+}
+
+.ePAAltRowColNum
+{
+    padding:2px;
+}
+
+.ePADataUnorderedList
+{
+    padding-left:15px;
+    margin-top:0px;
+}
+.ePAOptionBox
+{
+    height:20px;
+    padding:4px;
+    padding-left:10px;
+    display:inline;
+    vertical-align:middle;
+}
+
+.ePARadioButton
+{
+    width:35px;
+}
+
+.ePACheckbox
+{
+    width:35px;
+}
+
+.ePAFileListing
+{
+    padding:5px;
+}
+
+.ePAReviewTableHolder
+{
+    width:90%;
+    height:300px;
+    max-height:300px;
+    overflow-x:hidden;
+    overflow-y:scroll;
+}
+
+.ePAReviewTableHolderNcpdp
+{
+    height:250px;
+    max-height:250px;
+    overflow-x:hidden;
+    overflow-y:scroll;
+    border:solid 1px #858585; 
+}
+
+.ePaTextarea {
+ resize: none;
+ }
+ 
+/* scriptPad EPCS Overlay Panel */
+.EpcsPanelTB
+{
+    /*background-color:#FFFCDD;*/
+    width: 350px;
+}
+
+.EpcsPanelLabel
+{
+    color: Black;
+    text-align: right;
+}
+
+/* Clinical Message Grid Cell Text*/
+.cellTextNormal
+{
+   font-style:normal;
+   font-weight:lighter;
+}
+
+.ePAAttachment
+{
+    float:left;
+    border:1px solid #858585;
+    padding:5px 5px 0px 5px;
+    margin-right:5px;
+    margin-bottom:5px;
+    background:#E1E1E1;
+    border-radius:5px;
+}
+
+.oval {
+	width: 34px;
+	height: 18px;
+	background: yellow;
+    border: 1px solid black;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+    text-align: center;
+    line-height: 18px;
+}
+
+.iLearnNotification
+{
+    color: white; 
+    background-color: red; 
+    padding: 2px; 
+    position: relative; 
+    border-radius: 4px; 
+    font-size: smaller; 
+    margin-left: 25px; 
+    margin-top: -30px;
+}
+
+/* inline message styles*/
+.success-dialog {
+  background-color: #d6ecee;
+}
+
+.error-dialog {
+  background-color: #ffe4e4;
+}
+
+.information-dialog {
+  background-color: #fff2cd;
+}
+
+#divLoading {
+    display: block;
+    z-index: 999999999;
+    background-color: #fefefe;
+    background-image: url('../images/loading.gif');
+    -ms-opacity: 0.4;
+    opacity: 0.4;
+    -ms-background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    -ms-background-position: center;
+    position: fixed;
+    background-position: center;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+}
+
+#loadinggif
+{
+    left : 50%;
+    top : 50%;
+    position : absolute;
+    z-index : 101;
+    width : 32px;
+    height : 32px;
+    margin-left : -16px;
+    margin-top : -16px;
+}
+
+/*
+    bootstrap modification
+*/
+.nav-tabs {
+    border-bottom: 0px;
+
+}
+.nav-tabs>li {
+    text-align: center;cursor:pointer;
+}
+.nav-tabs>li>a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+    padding-top:4px;
+    height: 27px;
+}
+
+.nav-tabs>li.active>a,.nav-tabs>li.active>a:focus,.nav-tabs>li.active>a:hover {
+    color: #fff;
+    cursor: default;
+    background-color: #017c89;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+    font-weight: bold;
+    width: 100%;	
+}
+
+.patientInfo {
+line-height:1.32857143;
+}
+patientInfo:hover{line-height:1.3285714}
+
+.patientInfo>td {
+    padding-bottom:0px;
+    padding-top:0px;
+}
+.popover {
+     max-width: 100%;
+}
+
+.conent-box {
+    height: 100%;
+    min-height: 78.2vh;
+}
+
+#content-place {
+    height: 100%;
+    min-height: 78.2vh;
+}
+@media only screen and (max-height: 800px) {
+    #content-place {
+        height: 100%;
+        min-height: 112vh;
+    }
+}
+@media only screen\0 and (max-height: 600px), screen and (-ms-high-contrast: active) and (max-height: 600px), (-ms-high-contrast: none) and (max-height: 600px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .conent-box {
+        height: 660px;
+    }
+}
+
+.report-table-width {
+    width: 100%
+}
+
+.tool {
+    border: none;
+    width: 50px
+}
+
+.epa-file-uploader {
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 1px solid #858585;
+    height: 100px;
+    width: 600px;
+}
+.epcs-sign {
+}
+
+.epcs-sign .rgDataDiv {
+    max-height: 150px !important;
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    .epcs-sign .rgDataDiv {
+        max-height: 100px !important;
+    }
+}
+
+@media only screen and (max-height: 800px) {
+   
+
+    .question-list {
+        height: 41vh;
+        overflow-y: scroll;
+    }
+
+    .ePAQuestionResponseWindowNcpdp {
+        width: 772px;
+        height: 360px;
+        padding: 15px;
+        border: solid 1px black;
+        background-color: White;
+        overflow-y: auto;
+    }
+
+    .ePAQuestionList {
+        min-height:78%;
+    }
+    .epcs-sign .rgDataDiv {
+        max-height: 100px !important;
+    }
+}
+@media only screen and (max-height: 660px) {
+ 
+    .question-list {
+        height: 35vh;
+        overflow-y: scroll;
+    }
+
+    .ePAQuestionResponseWindowNcpdp {
+        width: 676px;
+        height: 294px;
+        padding: 15px;
+        border: solid 1px black;
+        background-color: White;
+        overflow-y: auto;
+    }
+    .ePAQuestionList {
+        min-height: 75%;
+    }
+    .epa-panel-overlay {
+        left: 8.5px!important;
+    }
+    .epa-file-uploader {
+        width: 560px !important;
+    }
+   
+}
+@media only screen and (max-width: 1201px) {
+    .tool {
+        border: none;
+        width: 30px
+    }
+    .eaderIconDescription {
+        font-size: 6.3pt;
+    }
+    patient-info {
+        width: 68% !important;
+    }
+}
+@media only screen and (max-width: 950px){
+    patient-info {
+        width: 50% !important;
+    }
+}
+
+#divLoadingAng {
+    display: block;
+    z-index: 999999999;
+    background-color: #fefefe;
+    background-image: url('../images/loading.gif');
+    -ms-opacity: 0.4;
+    opacity: 0.4;
+    -ms-background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    -ms-background-position: center;
+    position: fixed;
+    background-position: center;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+}
+
+#divLoadingAngComponent {
+    display: block;
+    z-index: 999999999;
+    background-color: #fefefe;
+    background-image: url('../images/loading.gif');
+    -ms-opacity: 0.4;
+    opacity: 0.4;
+    -ms-background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    -ms-background-position: center;
+    position: fixed;
+    background-position: center;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+}
+
+.dur-hx-width {
+    width: 910px;
+}
+
+.dur-hx-content-height {
+    max-height: 400px;
+    overflow: auto;
+}
+
+@media screen and (max-width:1201px) {
+    .dur-hx-width {
+        width: auto;
+    }
+
+    .dur-hx-content-height {
+        max-height: 280px;
+    }
+}
+
+input:disabled 
+{
+    background:#dddddd;
+}
+
+input:disabled+label
+{
+    color:#ababab;
+
+}
+
+.divInlineBlock{
+    display : inline-block;
+}
+
+.divBorder{
+    border:1px solid; 
+    padding-left:3px; 
+    padding-right:3px
+}
+
+.linkText {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+.rgRow {
+    border-left: 1px solid #e4e4e4 !important;
+    border-bottom: 1px solid #e4e4e4 !important;
+}
+
+.rgRow td{
+    padding: 4px 7px 3px 7px;
+    border: 1px solid #e4e4e4 !important; 
+}
+
+
+.rgAltRow {
+    background: #f2f2f2;
+    background-color: #f2f2f2;
+}
+
+.rgAltRow td {
+    padding: 4px 7px 3px 7px;
+    border: 1px solid #e4e4e4 !important;
+}
+
+.patSearchElement {
+    float: left;
+    margin-left: 5px;
+}
+
+.patSearchDiv {
+    height: 30px;
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.patSearchText {
+    color: white;
+    font-weight: bold;
+    font-family: Arial;
+    vertical-align: bottom
+}
+
+.comboButtonLeft {
+    height: 22px;
+    text-shadow: 0 1px #ffffff;
+    -ms-border-top-left-radius: 3px;
+    border-top-left-radius: 3px;
+    -ms-border-bottom-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    background-image: linear-gradient(to bottom, #ffffff, #cccccc);
+    border: solid 1px #666666;
+}
+
+.comboButtonRight {
+    height: 22px;
+    width: 28px;
+    -ms-border-top-right-radius: 3px;
+    border-top-right-radius: 3px;
+    -ms-border-bottom-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background-image: linear-gradient(to bottom, #ffffff, #cccccc);
+    border: solid 1px #666666;
+}
+.comboButtonRightDiv {
+    position: relative;
+    left: -2px;
+    float: right;
+}
+.comboButtonArrow {
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    cursor: pointer;
+}
+
+.comboButtonMenuDiv {
+    position: absolute;
+    z-index: 999999;
+    background: white;
+    top: 23px;
+    right: -153px;
+    width: 187px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid darkgray;
+}
+
+.comboListItem:hover {
+    background-color: #eaf9fa;
+}
+
+.comboListItem {
+    height: 23px;
+    box-shadow: inset 0 -1px 0 0 #e3e3e3;
+    padding-top: 3px;
+    padding-left: 5px;
+    cursor: pointer;
+}
+
+.floatLeft {
+    float: left;
+}
+}
+
+.rightPanelTable {
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+.rightPanelTable td {
+    border: 1px solid white;
+}
+
+.pptDetailsModalContent {
+    -ms-border-radius: 0;
+    border-radius: 0;
+}
+
+.pptDetailsIframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+    margin-bottom: -5px;
+}
+
+.printReportIframe{
+    width: 90%;
+}
+.ac-textblock p {
+    font-weight: inherit !important;
+    color: inherit !important;
+    vertical-align: middle !important;
+}
+
+.billing-purchase_alignment {
+    font-size: large;
+    font-weight: bold;
+    padding: 10px 0px 5px 0px;
+}
+
+.billing-purchase-epcs_alignment {
+    padding: 10px;
+    padding-bottom: 20px;
+}
+
+.billing-purchase-epcs-content {
+    width: auto;
+    font-size: 18px;
+    font-weight: inherit;
+    color: #271A4C;
+}
+
+.erx_font-regularsize-bold {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.erx-hyperlink {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.erx-hyperlink-disabled{
+    text-decoration: none;
+    cursor: not-allowed;
+}
+
+.erx-float-left {
+    float: left;
+}
+
+.erx-clear-float {
+    clear: both;
+}
+
+.ma-form-mandatory-star {
+    color: #ff0000;
+}
+
+.ma-display-inline{
+    display: inline-block;
+}
+
+.approve-refill-grid-no-border {
+    border-style: none !important;
+    height: 420px;
+}
+
+.validation-color {
+    color: red;
+}

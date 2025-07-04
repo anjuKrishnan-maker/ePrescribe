@@ -1,0 +1,260 @@
+﻿/*{#PRIMARY#}: #004D43*/
+/*{#LIGHT#}: #ccdbd9*/
+/*{#CONTRASTING_FONT_COLOR_FOR_PRIMARY_COLOR_BACKGROUND#}*/
+/*{#LOGO_PATH#}*/
+
+.branded-background-color {
+    background-color: {#PRIMARY#};
+}
+
+.branded-font-color {
+    color: {#CONTRASTING_FONT_COLOR_FOR_PRIMARY_COLOR_BACKGROUND#};
+}
+
+.branded-logo {
+    background-image: {#LOGO_PATH#};/*url('{#LOGO_PATH#}');*/
+    background-repeat: no-repeat;
+    height: 70px;
+    background-size: contain;
+}
+    
+.branded-footer-stripe {
+    background-color: #ffffff; /*keep this white, for veradigm, its the orange stripe above the footer*/
+}
+
+.branded-footer-color {
+    background-color: {#PRIMARY#};
+    color: {#CONTRASTING_FONT_COLOR_FOR_PRIMARY_COLOR_BACKGROUND#};
+}
+/*End of Registration Page*/
+
+.eRxHealthSheet_Panel
+{
+	background-color:{#PRIMARY#}; 
+}
+
+img#loginLogo{background:url(logo.jpg); background-repeat:no-repeat; background-position:center;}
+img#mainLogo{background:url(logo.jpg); background-repeat:no-repeat; background-position:center;}
+
+#colapsable-panel-header-script-pad > div,
+#colapsable-panel-header-script-pad > div > table > tbody > tr > td.header-div > div > div:nth-child(2) > span {
+    background-color: {#PRIMARY#} !important;
+}
+.appStripe {
+    border-top: 5px {#PRIMARY#} solid;
+}
+.accordionHeader{background-color:{#PRIMARY#}}
+.accordionHeaderText{background-color:{#PRIMARY#}}
+.rightBoxHeader {
+	background-color:{#PRIMARY#};}
+.rightBoxTable 
+{
+	border: solid 2px {#PRIMARY#};
+}
+img#helpIcon:hover{background:url(help.gif) !important; background-repeat:no-repeat; background-position:center;}
+img#helpIconLogin:hover{background:url(help.gif); background-repeat:no-repeat; background-position:center;}
+img#logoutIcon:hover{background:url(logout.gif); background-repeat:no-repeat; background-position:center;}
+img#messageQueueIcon:hover{background:url(messageQueue.gif); background-repeat:no-repeat; background-position:center;}
+img#iLearnIcon:hover{height: 24px; width: 24px; background-image:url(ilearn.png); background-repeat:no-repeat; background-position:center;}
+
+.RadPanelBar div.rpHeaderTemplate, a.rpLink
+{
+    background: linear-gradient({#PRIMARY#}, {#LIGHT#});
+    background: -webkit-linear-gradient({#PRIMARY#}, {#LIGHT#}); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient({#PRIMARY#}, {#LIGHT#}); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient({#PRIMARY#}, {#LIGHT#}); /* For Firefox 3.6 to 15 */
+    color: white;
+}
+.editRollover:hover span
+{
+    color: {#PRIMARY#};
+	cursor:pointer;
+}
+.rpText
+{
+    color: white;
+}
+.headerIcon:hover span
+{
+    color: {#PRIMARY#}
+}
+.rgSelectedRow {
+    background: #e4eff6 0 -5900px repeat-x url('../../telerik/Skins/Allscripts/Grid/Img/sprite.gif') !important;
+}
+
+
+
+.primaryForeColor {
+    color: {#PRIMARY#}
+}
+
+
+
+.rightPanelMed {
+    border-left: 3px solid {#PRIMARY#} !important;
+    border-right: 3px solid {#PRIMARY#} !important;
+}
+
+.erxSelectedRow {
+    background-color: {#LIGHT#} !important;
+}
+
+
+.loginbanner
+{
+	background-color:{#PRIMARY#};
+}
+
+.loginMessageTable
+{
+	border-bottom: solid 1px {#PRIMARY#};
+	border-left: solid 1px {#PRIMARY#};
+	border-right: solid 1px {#PRIMARY#};
+}
+
+.loginMessageRow
+{
+	border-top: solid 3px {#PRIMARY#};
+	border-bottom: solid 1px {#PRIMARY#};
+}
+.adminlink					{font:normal 12px arial, verdana, sans-serif; color:{#PRIMARY#};}
+.normal						{font:normal 12px arial, verdana, sans-serif; color:{#PRIMARY#};}
+.head						{font:bold 12px arial, verdana, sans-serif; color:{#PRIMARY#}; vertical-align:middle;}
+.Pheadblack					{font:bold 12px arial, verdana, sans-serif; color:{#PRIMARY#}; text-indent:10px;vertical-align:middle;}
+
+
+.GridHeader
+{	
+	color: {#PRIMARY#};
+}
+.SelectedRow
+{
+	background-color: {#LIGHT#};
+}
+.NormalCenter				{
+	color:{#PRIMARY#};
+}	
+.NormalVerticalCenter				{
+	color:{#PRIMARY#};
+}	
+.NormalCenterSmall				{
+	color:{#PRIMARY#};
+}					
+.NormalRightSmall				{
+	color:{#PRIMARY#};
+}	
+.DURWarning
+{
+	color: {#PRIMARY#};
+}	
+.headName			{font:italic normal 14px arial, verdana, sans-serif;color:{#PRIMARY#};vertical-align:middle;font-weight:bold;}			
+.Itallic			{font:italic bold 10px arial, verdana, sans-serif;color:{#PRIMARY#};vertical-align:middle;}
+.center				{font:normal 12px arial, verdana, sans-serif;color:{#PRIMARY#};vertical-align:middle;text-align: center;}
+.NormalForScript	{font:normal 9px arial, verdana, sans-serif; color:{#PRIMARY#}; vertical-align:middle; text-align: center;}									
+.table				{border-bottom-style: solid;border-bottom-color: {#PRIMARY#};border-bottom-width: thin;}
+.DEANUMBER			{font:italic normal 11px arial, verdana, sans-serif;color:{#PRIMARY#};vertical-align:middle;}	
+
+.DURHeading
+{
+	color: #AE0910;
+}
+.RSSHeading
+{
+	font:normal 11px arial, sans-serif; color:{#PRIMARY#}; vertical-align:middle;
+}
+.RSSDetail
+{
+	font:normal 10px arial, sans-serif; color:{#PRIMARY#}; vertical-align:middle;
+}
+
+/* CSS Design by Kumar */
+
+a {
+	color: {#PRIMARY#};
+}
+a:visited {
+	color: {#PRIMARY#};
+}
+a:hover {
+	color: {#PRIMARY#};
+}
+.h1title {
+	background-color: {#PRIMARY#};
+}
+.h4titleText {
+	color: {#PRIMARY#};
+}
+.Titbarcolor1 
+{
+	background-color:{#PRIMARY#};
+}
+
+.tabSelected
+{	
+	background-color:{#PRIMARY#};
+}
+a.tabSelectedLink
+{		
+	background-color:{#PRIMARY#};
+}
+.divider
+{
+	border-bottom:solid 1px {#PRIMARY#};
+}
+
+.redborder     { height:1px; background-color:{#PRIMARY#}; }
+.normaltxt		{ font-size:12px; color:{#PRIMARY#}; }
+
+.subheadred		{ font-size:12px; font-weight:bold; color: {#PRIMARY#}; }
+.borderbox		{ background-color: #ffffff; border:thin solid {#PRIMARY#}; padding: 8px; height: 30px; width: 300px; text-align: center; margin: auto;}
+
+.title      { font-weight:bold; font-size:14px; font-family: Arial, sans-serif;  color: {#PRIMARY#}; margin: 0px; padding: 0px;}
+
+
+/*  ******************** BUTTON  STYLES ************************ */
+
+
+.accordionHeaderScriptPad
+{
+    color: {#PRIMARY#};
+	background-color: {#PRIMARY#};
+}
+
+.accordionHeaderTextScriptPad
+{
+	background-color: {#PRIMARY#};
+}
+
+
+.PopUpTable
+{
+    border: 1px {#PRIMARY#} solid;
+}
+td.PopUpHeader
+{ 
+    background-color: {#PRIMARY#};
+}
+
+.deluxeComparisons
+{
+	border:solid 1px {#PRIMARY#};
+}
+
+.deluxeComparisons th
+{
+	 color:{#PRIMARY#};
+	 border:solid 1px {#PRIMARY#};
+}
+
+.deluxeComparisons td
+{
+	 border:solid 1px {#PRIMARY#};
+}
+/*bootstrap override*/
+.nav-tabs>li>a:hover {
+  border:none;
+}
+.nav-tabs>li.active>a,.nav-tabs>li.active>a:focus,.nav-tabs>li.active>a:hover {
+     background-color:{#PRIMARY#};
+     border-color:{#PRIMARY#};
+}

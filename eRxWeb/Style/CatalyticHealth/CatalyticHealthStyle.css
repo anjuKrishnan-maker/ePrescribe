@@ -1,0 +1,374 @@
+﻿/*Registration Page*/
+.branded-background-color {
+    background-color: #6c64a3;
+}
+
+.branded-font-color {
+    color: #ffffff;
+}
+
+.branded-logo {
+    background-image: url(../images/CatalyticHealthPartners/logo.jpg);
+    background-repeat: no-repeat;
+    height: 70px;
+    background-size: contain;
+}
+
+.branded-footer-stripe {
+    background-color: #ffffff;
+}
+
+.branded-footer-color {
+    background-color: #6c64a3;
+    color: #ffffff;
+}
+/*End of Registration Page*/
+
+.eRxHealthSheet_Panel {
+    background-color: #6c64a3;
+}
+
+img#loginLogo {
+    background: url(../images/CatalyticHealthPartners/logo.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+img#mainLogo {
+    background: url(../images/CatalyticHealthPartners/logo.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#colapsable-panel-header-script-pad > div,
+#colapsable-panel-header-script-pad > div > table > tbody > tr > td.header-div > div > div:nth-child(2) > span {
+    background-color: #6c64a3 !important;
+}
+
+.appStripe {
+    border-top: 5px #6c64a3 solid;
+}
+
+.accordionHeader {
+    background-color: #6c64a3;
+}
+
+.accordionHeaderText {
+    background-color: #6c64a3;
+}
+
+.rightBoxHeader {
+    background-color: #6c64a3;
+}
+
+.rightBoxTable {
+    border: solid 2px #6c64a3;
+}
+
+img#helpIcon:hover {
+    background-image: url(../images/CatalyticHealthPartners/help.gif) !important;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+img#helpIconLogin:hover {
+    background-image: url(../images/CatalyticHealthPartners/help.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+img#profileIcon:hover {
+    background-image: url(../images/CatalyticHealthPartners/profile.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+img#logoutIcon:hover {
+    background-image: url(../images/CatalyticHealthPartners/logout.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+img#messageQueueIcon:hover {
+    background-image: url(../images/CatalyticHealthPartners/messageQueue.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+img#iLearnIcon:hover {
+    height: 24px;
+    width: 24px;
+    background-image: url(../images/CatalyticHealthPartners/iLearn.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.RadPanelBar div.rpHeaderTemplate, a.rpLink {
+    background: linear-gradient(#6c64a3, #6294b5);
+    background: -webkit-linear-gradient(#6c64a3, #6294b5); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#6c64a3, #6294b5); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#6c64a3, #6294b5); /* For Firefox 3.6 to 15 */
+    color: white;
+}
+
+.editRollover:hover span {
+    color: #6c64a3;
+    cursor: pointer;
+}
+
+.rpText {
+    color: white;
+}
+
+.headerIcon:hover span {
+    color: #6c64a3
+}
+
+.rgSelectedRow {
+    background: #eaeffb 0 -5900px repeat-x url('../telerik/Skins/Allscripts/Grid/Img/sprite.gif') !important;
+ }
+
+.primaryForeColor {
+    color: #6c64a3
+}
+
+.rightPanelMed {
+    border-left: 3px solid #6c64a3 !important;
+    border-right: 3px solid #6c64a3 !important;
+}
+
+.erxSelectedRow {
+    background-color: #eaeffb !important;
+}
+
+.loginbanner {
+    background-color: #6c64a3;
+}
+
+.loginMessageTable {
+    border-bottom: solid 1px #6c64a3;
+    border-left: solid 1px #6c64a3;
+    border-right: solid 1px #6c64a3;
+}
+
+.loginMessageRow {
+    border-top: solid 3px #6c64a3;
+    border-bottom: solid 1px #6c64a3;
+}
+
+.adminlink {
+    font: normal 12px arial, verdana, sans-serif;
+    color: #6c64a3;
+}
+
+.normal {
+    font: normal 12px arial, verdana, sans-serif;
+    color: #6c64a3;
+}
+
+.head {
+    font: bold 12px arial, verdana, sans-serif;
+    color: #6c64a3;
+    vertical-align: middle;
+}
+
+.Pheadblack {
+    font: bold 12px arial, verdana, sans-serif;
+    color: #6c64a3;
+    text-indent: 10px;
+    vertical-align: middle;
+}
+
+.GridHeader {
+    color: #6c64a3;
+}
+
+.SelectedRow {
+    background-color: #eaeffb;
+}
+
+.NormalCenter {
+    color: #6c64a3;
+}
+
+.NormalVerticalCenter {
+    color: #6c64a3;
+}
+
+.NormalCenterSmall {
+    color: #6c64a3;
+}
+
+.NormalRightSmall {
+    color: #6c64a3;
+}
+
+.DURWarning {
+    color: #6c64a3;
+}
+
+.headName {
+    font: italic normal 14px arial, verdana, sans-serif;
+    color: #6c64a3;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+.Itallic {
+    font: italic bold 10px arial, verdana, sans-serif;
+    color: #6c64a3;
+    vertical-align: middle;
+}
+
+.center {
+    font: normal 12px arial, verdana, sans-serif;
+    color: #6c64a3;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.NormalForScript {
+    font: normal 9px arial, verdana, sans-serif;
+    color: #6c64a3;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.table {
+    border-bottom-style: solid;
+    border-bottom-color: #6c64a3;
+    border-bottom-width: thin;
+}
+
+.DEANUMBER {
+    font: italic normal 11px arial, verdana, sans-serif;
+    color: #6c64a3;
+    vertical-align: middle;
+}
+
+.DURHeading {
+    color: #6c64a3;
+}
+
+.RSSHeading {
+    font: normal 11px arial, sans-serif;
+    color: #6c64a3;
+    vertical-align: middle;
+}
+
+.RSSDetail {
+    font: normal 10px arial, sans-serif;
+    color: #6c64a3;
+    vertical-align: middle;
+}
+
+a {
+    color: #6c64a3;
+}
+
+    a:visited {
+        color: #6c64a3;
+    }
+
+    a:hover {
+        color: #6c64a3;
+    }
+
+.h1title {
+    background-color: #6c64a3;
+}
+
+.h4titleText {
+    color: #6c64a3;
+}
+
+.Titbarcolor1 {
+    background-color: #6c64a3;
+}
+
+.tabSelected {
+    background-color: #0077C8;
+}
+
+a.tabSelectedLink {
+    background-color: #6c64a3;
+}
+
+.divider {
+    border-bottom: solid 1px #6c64a3;
+}
+
+.redborder {
+    height: 1px;
+    background-color: #6c64a3;
+}
+
+.normaltxt {
+    font-size: 12px;
+    color: #6c64a3;
+}
+
+.subheadred {
+    font-size: 12px;
+    font-weight: bold;
+    color: #6c64a3;
+}
+
+.borderbox {
+    background-color: #ffffff;
+    border: thin solid #6c64a3;
+    padding: 8px;
+    height: 30px;
+    width: 300px;
+    text-align: center;
+    margin: auto;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    color: #6c64a3;
+    margin: 0px;
+    padding: 0px;
+}
+
+.accordionHeaderScriptPad {
+    color: #6c64a3;
+    background-color: #6c64a3;
+}
+
+.accordionHeaderTextScriptPad {
+    background-color: #6c64a3;
+}
+
+.PopUpTable {
+    border: 1px #6c64a3 solid;
+}
+
+td.PopUpHeader {
+    background-color: #6c64a3;
+}
+
+.deluxeComparisons {
+    border: solid 1px #6c64a3;
+}
+
+    .deluxeComparisons th {
+        color: #6c64a3;
+        border: solid 1px #6c64a3;
+    }
+
+    .deluxeComparisons td {
+        border: solid 1px #6c64a3;
+    }
+
+/*bootstrap override*/
+.nav-tabs > li > a:hover {
+    border: none;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    background-color: #0077C8;
+    border-color: #0077C8;
+}

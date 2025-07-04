@@ -1,0 +1,234 @@
+/* Telerik RadGrid lime skin */
+
+.RadGrid_Lime
+{
+	background: #97bd25;
+}
+
+.RadGrid_Lime,
+.RadGrid_Lime table,
+.GridFilterMenu_Lime table
+{
+	font: normal 11px Arial, Verdana, Sans-serif;
+}
+
+.MasterTable_Lime
+{
+	background: #97bd25;
+	border-left: 1px solid #778e19 !important;
+	border-right: 1px solid #778e19;
+	border-collapse: separate !important;
+	/*-moz-user-select: none;*/ /*disables text selecting in Firefox to combat unpleasant visual appearance*/
+}
+
+th.GridHeader_Lime
+{
+	height: 41px;
+	margin:0;
+	border:0;
+	font-weight: bold;
+	color: white;
+	text-align:left;
+}
+
+th.GridHeader_Lime,
+th.ResizeHeader_Lime
+{
+	background: transparent url('Img/RadGridHeaderBg.gif') no-repeat right 0;
+	font-weight: bold;
+	color: white;
+}
+
+td.GridHeader_Lime input
+{
+	width: 50px;
+	float: left;
+	border: solid 1px #474b38;
+}
+
+.GroupPanel_Lime
+{
+	background: #778e19 url('Img/groupPanelBg.gif') repeat-x;
+	width: 100%;
+	color: white;
+}
+
+.GroupPanel_Lime table table
+{ 
+     border-collapse: collapse; 
+}
+
+.GridHeader_Lime a
+{
+	color: white;
+	text-decoration: none;
+}
+
+.GroupHeader_Lime td div div
+{
+	top:-0.5em;
+}
+
+.GroupHeader_Lime td div div div
+{
+	top:0;
+}
+
+.GridRow_Lime td,
+.GridAltRow_Lime td,
+.SelectedRow_Lime td,
+.ActiveRow_Lime td,
+.GridEditRow_Lime td
+{
+	border-bottom: solid 1px #ced3be;
+}
+
+.GridRow_Lime
+{
+	background: #edefe7;
+}
+.GridAltRow_Lime
+{
+	background: #e5e8dc url('Img/GridAltRowBg.gif') repeat-x;
+}
+.SelectedRow_Lime
+{
+	background: #fcfcfc none;
+	color: #6e9100;
+}
+.GridEditRow_Lime
+{
+	background: #ffffe1;
+}
+
+.GridEditRow_Lime input
+{
+	font-size: 11px;
+}
+.ActiveRow_Lime
+{
+	background: #b5baa5 none;
+	color: #fff;
+}
+
+.GridPager_Lime
+{
+	background: #b7bca7 url('Img/pagerBg.gif') repeat-y;
+	color: #edefe7;
+}
+.GridPager_Lime td
+{
+	padding-left: 6px;
+	border-bottom: 5px solid #4c503c;
+}
+.GridPager_Lime div /*slider mode*/
+{
+	color: #000;
+}
+.GridPager_Lime a
+{
+	color: #edefe7;
+}
+
+.GridCommandRow_Lime a
+{
+	color:#fff;
+}
+
+/* filtering button */
+.GroupPanelItems_Lime
+{
+	background: #a3c82a url('Img/groupPanelItem.gif') repeat-x;
+	color: #fff;
+	padding-left: 3px;
+	border-right: solid 1px #515d23;
+	border-bottom: solid 1px #515d23;
+	white-space:  nowrap;
+	font-size: 11px;
+	font-weight: bold;
+	color: white;
+}
+
+/* filtering direction input[image] */
+.GroupPanelItems_Lime input
+{
+	vertical-align: middle;
+}
+/* filtering table row */
+
+tr.GroupHeader_Lime
+{
+	color: #5b6048;
+	font-weight: bold;
+	background-color: #cacdb5;
+}
+
+.GridFooter_Lime td
+{
+}
+
+.GridFilterRow_Lime td
+{
+    background:none; /*td's inherit the background image of the table in IE*/
+}
+
+.TopReorderIndicator_Lime
+{
+	background: url('MoveDown.gif') no-repeat;
+}
+
+.BottomReorderIndicator_Lime
+{
+	background: url('MoveUp.gif') no-repeat;
+}
+
+.GridFilterMenu_Lime
+{
+    cursor:default;
+}
+
+.GridFilterMenu_Lime .GridFilterMenuSelectColumn_Lime,
+.GridFilterMenu_Lime .GridFilterMenuTextColumn_Lime
+{
+	padding:3px 4px;
+}
+
+.GridFilterMenu_Lime .GridFilterMenuSelectColumn_Lime
+{
+    background:#edefe7;
+    text-align:center;
+}
+
+.GridFilterMenu_Lime .GridFilterMenuTextColumn_Lime
+{
+    background:#fff;
+    color:#333;
+}
+
+.GridFilterMenu_Lime .GridFilterMenuHover_Lime
+{
+    background:#99cb00;
+    color:#fff;
+}
+
+/*AJAX Loading*/
+
+.GridLoadingTemplate_Lime
+{
+	background:#fff !important;
+	font:normal 24px/54px arial,sans-serif;
+	color:#75795f;
+}
+
+/* rtl support */
+
+.RadGridRTL_Lime th,
+.RadGridRTL_Lime td
+{
+    text-align:right;
+}
+
+.RadGridRTL_Lime.GridPager_Lime span
+{
+    float:none !important;
+}

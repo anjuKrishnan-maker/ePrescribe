@@ -1,0 +1,13 @@
+<div id="" class="accordionContentScriptPad" style="width: 92%; height: auto;">
+    <div style="word-wrap:break-word" *ngIf="scriptPadItems !== undefined && scriptPadItems.length > 0">
+        <ng-template ngFor let-data [ngForOf]="scriptPadItems">
+            <b *ngIf="data.IsBrandNameMed">{{data.Description}}</b>&nbsp;&nbsp;
+            <span *ngIf="!data.IsBrandNameMed">{{data.Description}}</span><br/>
+            <a *ngIf="isEditable === true" [attr.rxid]="data.rxId" href="javascript:void(0);" (click)="EditRx(data.RxEditUrl)" style="font-size: Smaller;">Edit</a>&nbsp;&nbsp;
+            <a [attr.rxid]="data.rxId" href="javascript:void(0);" (click)="RemoveScript(data.rxId)" style="font-size: Smaller;">Remove</a>
+            <hr style="margin-top: 6px; margin-bottom: 6px">
+        </ng-template>
+    </div>
+    
+    <div style="text-align:center;"><a class="NormalForScript" href="javascript:void(0);" (click)="ReviewScriptPad()" [comp-visible]="scriptPadItems.length >0">Review Script Pad</a></div>
+</div>

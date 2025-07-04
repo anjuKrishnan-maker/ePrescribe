@@ -1,0 +1,156 @@
+﻿<erx-modal-popup-control ModalId="mdlPdmpEnrollment" title="PDMP Enrollment Form" [Width]="'70%'" [Height]="''">
+    <div modal-body class="modal-body pdmp-modal-body">
+        <div *ngIf="EnrollmentSuccessMessage.length > 0" class="pdmp-enrollment-submit-message ">
+            <div [innerHTML]="EnrollmentSuccessMessage | safeHtml" id="pdmp-enrollment-success-message">
+            </div>
+        </div>
+        <form #pdmpform="ngForm">
+            <div *ngIf="ShowForm" id="pdmpEnrollmentFormContent">
+
+                <div id="practiceInformation" class="pdmp-table">
+                    <div class="pdmp-table-header">Practice Information</div>
+                    <!--left column-->
+                    <div class="column left-column">
+                        <div class="enrollment-form-item">
+                            <div class="enrollment-form-label">
+                                Account Name:
+                            </div>
+                            <div class="enrollment-form-value" id="pdmp-enrollment-accountname">
+                                {{pdmpEnrollmentModel.AccountName}}
+                            </div>
+                        </div>
+                        <div class="enrollment-form-item">
+                            <div class="enrollment-form-label">
+                                Primary Address of Practice:
+                            </div>
+                            <div class="enrollment-form-value" id="pdmp-enrollment-address">
+                                <br />{{pdmpEnrollmentModel.Address1}},
+                                <br />{{pdmpEnrollmentModel.Address2}},
+                                <br />{{pdmpEnrollmentModel.City}},
+                                <br />{{pdmpEnrollmentModel.State}} {{pdmpEnrollmentModel.ZipCode}}
+                            </div>
+                        </div>
+                        <div class="enrollment-form-item">
+                            <div class="enrollment-form-label">
+                                Account ID:
+                            </div>
+                            <div class="enrollment-form-value" id="pdmp-enrollment-accountnumber">
+                                {{pdmpEnrollmentModel.AccountNumber}}
+                            </div>
+                        </div>
+                        <div class="enrollment-form-item">
+                            <div class="enrollment-form-label">
+                                Veradigm Product:
+                            </div>
+                            <div class="enrollment-form-value" id="pdmp-enrollment-product">
+                                {{pdmpEnrollmentModel.Product}}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--right column-->
+                    <div class="column right-column">
+                        <div class="enrollment-form-item">
+                            <div class="enrollment-form-label">
+                                Contact Name and Title:
+                            </div>
+                            <div class="enrollment-form-value">
+                                <input form-required #contactname="ngModel" id="pdmp-enrollment-contactname" class="input-box-text" type="text" name="titlename" [(ngModel)]="pdmpEnrollmentModel.ContactNameAndTitle" placeholder="ex: Mr.John Smith" /><br>
+                            </div>
+                            <div *ngIf="ShowValidationMessage && (contactname.errors?.formRequired)" class="enrollment-form-validation" id="pdmp-enrollment-contactname-validation">
+                                *Enter valid name
+                            </div>
+                        </div>
+                        <div class="enrollment-form-item">
+                            <div class="enrollment-form-label">
+                                Contact Phone Number:
+                            </div>
+                            <div class="enrollment-form-value">
+                                <input phone-validate [isRequired]="true" #phone="ngModel" pattern="[0-9]{3}[-\. ]?[0-9]{7}" maxlength="11" id="pdmp-enrollment-phone" class="input-box-text" type="text" [(ngModel)]="pdmpEnrollmentModel.ContactPhoneNo" name="phonenumber" /><br>
+                            </div>                           
+                            <div *ngIf="ShowValidationMessage && (phone.errors?.formRequired || phone.errors?.pattern)" class="enrollment-form-validation" id="pdmp-enrollment-phone-validation">
+                                *Enter phone number in XXX-XXXXXXX format
+                            </div>
+                        </div>
+                        <div class="enrollment-form-item">
+                            <div class="enrollment-form-label">
+                                Contact Fax:
+                            </div>
+                            <div class="enrollment-form-value">
+                                <input phone-validate [isRequired]="false" #fax="ngModel" maxlength="11" pattern="[0-9]{3}[-\. ]?[0-9]{7}" id="pdmp-enrollment-fax" class="input-box-text contact-fax-value" type="text" [(ngModel)]="pdmpEnrollmentModel.ContactFax" name="fax" /><br>
+                            </div>
+                            <div *ngIf="ShowValidationMessage && (fax.errors?.pattern)" class="enrollment-form-validation" id="pdmp-enrollment-fax-validation">
+                                *Enter fax in XXX-XXXXXXX format (or leave it empty)
+                            </div>
+                        </div>
+                        <div class="enrollment-form-item">
+                            <div class="enrollment-form-label">
+                                Contact Email:
+                            </div>
+                            <div class="enrollment-form-value">
+                                <input form-required #email="ngModel" pattern="([a-zA-Z0-9_\-\.\']+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)" 
+                                       id="pdmp-enrollment-email" class="input-box-text contact-email-value" type="text" [(ngModel)]="pdmpEnrollmentModel.ContactEmail" name="email" /><br>
+                            </div>                           
+                            <div *ngIf="ShowValidationMessage && (email.errors?.formRequired || email.errors?.pattern)" class="enrollment-form-validation" id="pdmp-enrollment-email-validation">
+                                *Enter valid email
+                            </div>
+                        </div>
+
+                        </div>
+                    </div>
+                <div class="pdmp-terms-conditions">
+                    <span class="pdmp-notice"> IMPORTANT NOTE: Please go to your state’s PDMP Website and follow instructions for the Integration Process as this may be a prerequisite for completing your enrollment with Appriss.</span>
+                </div>
+                <div id="EnrollmentInformation" class="pdmp-enrollmentinfo">
+                    <table>
+                        <tr>
+                            <th>Appriss</th>
+                            <th>Number of (EPCS) Providers Licensed</th>
+                            <th>State</th>
+                        </tr>
+                        <tr>
+                            <td>PDMP Access</td>
+                            <td>
+                                <input form-required maxlength="8" #providercount="ngModel" pattern="[1-9]{1}\d{0,5}"
+                                       id="pdmp-enrollment-providercount" class="input-box-text" type="number" [(ngModel)]="pdmpEnrollmentModel.NumberOfProviders" name="epcsproviders" /><br>
+                                <div *ngIf="ShowValidationMessage && (providercount.errors?.formRequired || providercount.errors?.pattern)" class="enrollment-form-validation" id="pdmp-enrollment-providercount-validation">
+                                    *Enter valid provider count
+                                </div>
+                            </td>
+                            <td id="pdmp-enrollment-state">
+                                {{pdmpEnrollmentModel.State}}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="pdmp-terms-conditions">
+                    <div class="pdmp-terms-header">Terms and Conditions:</div>
+                    <div class="pdmp-terms-content" id="pdmp-enrollment-tnc" [innerHTML]="pdmpEnrollmentModel.TermsAndConditions | safeHtml"></div>
+                    <div class="pdmp-terms-acceptance">
+                        <input type="checkbox" [checked]="pdmpEnrollmentModel.TermsAndConditionsUserAcceptance"
+                               (change)="pdmpEnrollmentModel.TermsAndConditionsUserAcceptance = !pdmpEnrollmentModel.TermsAndConditionsUserAcceptance" id="pdmp-enrollment-tnc-acceptance" />
+                        <span class="pdmp-terms-acceptance-span">I agree to the above terms and conditions</span>
+                    </div>
+                </div>
+
+                <div *ngIf="FormSubmitMessage.length > 0" class="pdmp-enrollment-submit-message ">
+                    <div [ngClass]="{'pdmp-text__green' : IsMessagePositive , 'pdmp-text__red' : !IsMessagePositive}" [innerHTML]="FormSubmitMessage" id="pdmp-enrollment-form-submit-message">
+                    </div>
+
+                </div>
+
+            </div>
+
+          
+        </form>
+
+    </div>
+
+    <div modal-footer>
+        <div class="pdmp-form-controls left-column">
+            <button *ngIf="ShowForm" [disabled]="!pdmpEnrollmentModel.TermsAndConditionsUserAcceptance" (click)="SubmitButtonClick(pdmpform)" title="Kindly Accept Terms And Conditions Before Submitting" id="pdmp-enrollment-submit-button">Submit</button>
+            <button (click)="Close()" id="pdmp-enrollment-close-button">Close</button>
+        </div>
+    </div>
+</erx-modal-popup-control>

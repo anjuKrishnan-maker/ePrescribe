@@ -1,0 +1,7 @@
+!define TEST_SYSTEM {slim} 
+!define COMMAND_PATTERN {%m -a ..\..\eRxWeb\web.config -r fitSharp.Slim.Service.Runner,.\fitsharp\fitsharp.dll %p}
+!define TEST_RUNNER {.\fitsharp\Runner.exe}
+
+
+!path ..\Allscripts.ePrescribe.Client.AcceptanceTest\bin\Debug\Allscripts.ePrescribe.Client.AcceptanceTest.dll
+

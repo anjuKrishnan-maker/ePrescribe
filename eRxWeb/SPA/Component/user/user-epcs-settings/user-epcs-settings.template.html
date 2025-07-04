@@ -1,0 +1,98 @@
+﻿<div class="table">
+    <div class="table-row">
+        EPCS Permissions:
+        {{userEpcsSettings.EPCSPermissionLabel}} <a class="erx-hyperlink" (click)="openDefinitionsPopup()"><img src="../../../../images/question.png" alt="Learn More"></a>
+        &nbsp;
+        <span *ngIf="userEpcsSettings.ShowEPCSRegistartionLink">
+            <a href="{{userEpcsSettings.EpcsRegistrationLink}}" target="_blank" class="erx-hyperlink">{{userEpcsSettings.EpcsRegistrationLinkLabel}}</a>
+        </span>
+        &nbsp;
+        <input type="checkbox" id="chkEpcsApprover" [disabled]="!userEpcsSettings.ChkEPCSApproverEnabled" [(ngModel)]="userEpcsSettings.IsEPCSApprover"> EPCS Approver
+    </div>
+
+    <div class="table-row">
+        EPCS Approver:
+        &nbsp;
+        <span *ngIf="userEpcsSettings.ShowEPCSSecondFactor">
+            <a (click)="manageEpcsApprovals()" *ngIf="userEpcsSettings.ShowManageEpcsApprovalsLink" class="erx-hyperlink">Manage EPCS Approvals</a>
+            {{userEpcsSettings.EPCSSecondFactorLabel}}
+        </span>
+    </div>
+    <div class="table-row" *ngIf="userEpcsSettings.ShowManageSecondFactorForms">
+        <span>
+            EPCS 2<sup>nd</sup> Factor Form:
+            &nbsp;
+            <a (click)="manageSecondFactorForms()" class="erx-hyperlink">Manage EPCS Second Factor Forms</a>
+            &nbsp;
+            <a class="erx-hyperlink" (click)="redirectToiLearn()"><img src="../../../../images/question.png" alt="Learn More"></a>
+        </span>
+    </div>
+</div>
+
+
+<div class="modal-backdrop fade in" id="mdlEpcsDefinitionPopup" role="dialog" [style.display]="showDefinitionsPopup ? 'block' : 'none'"></div>
+<div class="modal" id="showEPCSPermissionsDefinition" role="dialog" [style.display]="'block'" *ngIf="showDefinitionsPopup">
+    <div class="modal-dialog">
+        <div class="overlaymain">
+            <div class="overlayTitle">
+                EPCS Permissions Definitions
+            </div>
+        </div>
+        <div class="overlayContent">
+            <div>
+                <p style="padding-bottom: 5px">
+                    <b>Not Registered</b> – You have not been registered for the EPCS registration process. Contact your Administrator.
+                </p>
+                <p style="padding-bottom: 5px">
+                    <b>Registered</b> - You have been registered and are ready to start the EPCS registration process.
+                </p>
+                <p style="padding-bottom: 5px">
+                    <b>Pending</b> – You have started the Identity Proofing process but have not achieved the required assurance level. You may attempt to continue this process electronically by logging into Verizon to try questions set again and or download the notary form.
+                </p>
+                <p style="padding-bottom: 5px">
+                    <b>Passed</b> - You have completed the registration process and have achieved the required assurance level. You need to be EPCS approved and then log into ePrescribe to complete your EPCS registration.
+                </p>
+                <p style="padding-bottom: 5px">
+                    <b>On</b> – You have completed the EPCS registration process and no further action is required.
+                </p>
+                <p style="padding-bottom: 5px">
+                    <b>Disabled</b> – Your EPCS Permissions have been Suspended. Contact your admin to reinstate these permissions.
+                </p>
+            </div>
+        </div>
+        <div class="overlayFooter">
+            <button id="btnCloseEpcsPermissionsDefinitions" class="btnstyle btnStyleAction" (click)="closeDefinitionsPopup()">Close</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal-backdrop fade in" id="mdlManageSecondFactorRedirectAlertPopup" role="dialog" [style.display]="showAlertsPopup ? 'block' : 'none'"></div>
+<div class="modal" id="showManageSecondFactorredirectAlert" role="dialog" [style.display]="'block'" *ngIf="showAlertsPopup">
+    <div class="modal-dialog">
+        <div class="overlaymain">
+            <div class="overlayTitle">
+                Alert
+            </div>
+        </div>
+        <div class="overlayContent">
+            <div>
+                <div *ngIf="userEpcsSettings.ZentryUser">
+                    <p style="padding-bottom: 10px">You are now being redirected to a separate site to manage your EPCS second factor forms.</p>
+                    <p style="padding-bottom: 10px">To log into this site, please use the username and password you setup during the identity proofing process while establishing your EPCS permissions.</p>
+                    <p style="padding-bottom: 10px">Note: This username and password may not be the same as your ePrescribe username and password.</p>
+                    <br />
+                    <br />
+                </div>
+                <div *ngIf="userEpcsSettings.CspUser">
+                    <p class="cspAlertOverlayContent">You will be redirected to sign into your Allscripts Security Account to access your second factor forms.</p>
+                    <p class="cspAlertOverlayContent"><b>Note:</b>Please sign in using your ePrescribe Username and Password.</p>
+                    <br />
+                </div>
+            </div>
+        </div>
+        <div class="overlayFooter">
+            <button id="btnAlertProceed" class="btnstyle btnStyleAction" (click)="proceedSecondFactorForms()">Proceed</button>&nbsp;&nbsp;
+            <button id="btnAlertClose" class="btnstyle btnStyleAction" (click)="closeAlertPopup()">Close</button>
+        </div>
+    </div>
+</div>

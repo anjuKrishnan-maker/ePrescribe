@@ -1,0 +1,18 @@
+﻿<div *ngIf="Page !== undefined"  class="rgPagerCell NextPrevAndNumeric rgPager">
+    <div class="rgWrap rgArrPart1">
+        <input type="button" value=" " onclick="return false;" title="First Page" class="rgPageFirst" [disabled]="Page.HasPrevious !== true" (click)="PageChange(0)" />
+        <input type="button" value=" " onclick="return false;" title="Previous Page" class="rgPagePrev" [disabled]="Page.HasPrevious !== true" (click)="PageChange(Page.CurrentPageNo-1)" />
+    </div>
+    <div class="rgWrap rgNumPart">
+
+        <span  *ngIf="Page">{{Page.CurrentPageNo+1}}</span>
+
+    </div>
+    <div class="rgWrap rgArrPart2">
+        <input type="button" value=" " title="Next Page" class="rgPageNext" [disabled]="Page.HasNext !== true" (click)="PageChange(Page.CurrentPageNo+1)">
+        <input type="button" value=" " title="Last Page" class="rgPageLast" [disabled]="Page.HasNext !== true" (click)="PageChange(Page.ToTalPageCount-1)">
+    </div>
+    <div class="rgWrap rgInfoPart">
+        &nbsp;<strong>{{Page.TotalNumberOfRecord}}</strong> items in <strong>{{Page.ToTalPageCount}}</strong> pages
+    </div>
+</div>

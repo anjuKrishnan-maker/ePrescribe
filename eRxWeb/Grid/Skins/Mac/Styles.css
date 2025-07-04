@@ -1,0 +1,254 @@
+/* Telerik RadGrid Mac / embedded skin */
+
+.RadGrid_Mac
+{
+	background: #fff;
+	border: solid 1px #666666;
+	scrollbar-face-color: #E9E9E9;
+	scrollbar-highlight-color: white;
+	scrollbar-shadow-color: #E9E9E9;
+	scrollbar-3dlight-color: #DBDBDB;
+	scrollbar-arrow-color: #787878;
+	scrollbar-track-color: #F5F5F5;
+	scrollbar-darkshadow-color: #AEAEAE;
+}
+
+.RadGrid_Mac,
+.RadGrid_Mac table,
+.GridFilterMenu_Mac table
+{
+	font: normal 11px Arial, Verdana, Sans-serif;
+}
+
+.MasterTable_Mac
+{
+	border: 0px !important;
+	color: #000;
+	border-collapse: separate !important;
+	/*-moz-user-select: none;*/ /*disables text selecting in Firefox to combat unpleasant visual appearance*/
+}
+
+.RadGrid_Mac a
+{ 
+	color: #000;
+}
+
+.MasterTable_Mac th
+{
+	padding:3px 6px 3px 4px;
+	text-align: left;
+}
+
+.MasterTable_Mac td
+{
+	padding:4px 6px 4px 3px;
+}
+
+th.GridHeader_Mac,
+th.ResizeHeader_Mac
+{
+	background: white url('Img/headerBg.gif') repeat-x top;
+	border-bottom: solid 1px #666;
+	/*padding-left: 6px; /*more than items to compensate for item borders!*/
+	height: 15px;
+	font-weight: normal;
+}
+
+.GridHeader_Mac a
+{
+	text-decoration: none;
+}
+
+.GridRow_Mac td
+{
+	border-top: solid 1px #fff; /* support for gridlines */
+	border-right: solid 1px #d9d9d9;
+}
+
+.GridAltRow_Mac
+{
+	background: #edf3fe;
+}
+.GridAltRow_Mac td
+{
+	border-top: solid 1px #edf3fe;
+	border-right: solid 1px #d9d9d9;
+}
+
+.SelectedRow_Mac
+{
+	background: #3d80df !important;
+	color: white;
+}
+.SelectedRow_Mac td
+{
+	border-top: solid 1px #3d80df; /* support for gridlines */
+	border-right: solid 1px #346dbe;
+}
+
+.ActiveRow_Mac
+{
+	background: #a6a6a6 !important;
+	color: black !important;
+}
+.ActiveRow_Mac td,
+.GridEditRow_Mac td
+{
+	border-top: solid 1px #a6a6a6;
+	border-right: solid 1px #d9d9d9;
+}
+
+.GridEditRow_Mac
+{
+	background: #ffffe1;
+}
+
+.GridEditRow_Mac input
+{
+	font-size: 11px;
+}
+
+.GridPager_Mac
+{
+	background: #white;
+	color: #666;
+}
+.GridPager_Mac td
+{
+	border: solid 1px white;
+	border-top: solid 1px #d9d9d9;
+}
+
+.GridFooter_Mac
+{
+	background: #white;
+	height: 15px;
+	color: #666;
+}
+.GridFooter_Mac td
+{
+	border-top: solid 1px #d9d9d9;
+}
+
+.GridFooter_Mac td a
+{
+	color: #666;
+}
+
+.GridPager_Mac td a
+{
+	color: #999;
+}
+
+.GridPager_Mac td a:hover,
+.GridFooter_Mac td a:hover
+{
+	color: #333;
+}
+
+
+tr.GroupHeader_Mac td
+{
+	height: 22px;
+	border: solid 1px #fff;
+}
+
+.GroupHeader_Mac td div div
+{
+	top:0.5em;
+}
+
+.GroupHeader_Mac td div div div
+{
+	top:0;
+}
+
+.GroupPanel_Mac
+{
+	background: #ababab url('Img/groupPanel.gif') repeat-y center;
+	width: 100%;
+	border-bottom: 1px solid #666;
+	border-top: solid 1px #c2c2c2;
+}
+
+.GroupPanelItems_Mac
+{
+	background: #efefef;
+	color: #999999;
+	border: solid 1px #7a7a7a;
+	white-space:  nowrap;
+}
+
+td.GridHeader_Mac input
+{
+	width: auto;
+	float: left;
+	border: solid 1px #666;
+	background: #fafafa;
+	font: bold 10px Verdana, Arial, Sans-serif;
+	color: #989cb0;
+	height: 14px;
+	vertical-align:middle;
+}
+
+.GridFooter_Mac td{padding:3px 5px 3px 4px}
+
+.TopReorderIndicator_Mac
+{
+	background: url('MoveDown.gif') no-repeat;
+}
+
+.BottomReorderIndicator_Mac
+{
+	background: url('MoveUp.gif') no-repeat;
+}
+
+.GridFilterMenu_Mac
+{
+    cursor:default;
+    background:url(Img/filterMenuBg.gif) !important;
+}
+
+.GridFilterMenu_Mac .GridFilterMenuSelectColumn_Mac,
+.GridFilterMenu_Mac .GridFilterMenuTextColumn_Mac
+{
+	padding:3px 4px;
+}
+
+.GridFilterMenu_Mac .GridFilterMenuSelectColumn_Mac
+{
+    text-align:center;
+}
+
+.GridFilterMenu_Mac .GridFilterMenuTextColumn_Mac
+{
+    color:#333;
+}
+
+.GridFilterMenu_Mac .GridFilterMenuHover_Mac
+{
+    background:#326eca;
+    color:#fff;
+}
+
+/*AJAX Loading*/
+
+.GridLoadingTemplate_Mac
+{
+	background:#fff !important;
+	font:normal 24px/54px arial,sans-serif;
+	color:#000;
+}
+
+/* rtl support */
+
+.RadGridRTL_Mac th,
+.RadGridRTL_Mac td
+{
+    text-align:right;
+}
+
+.RadGridRTL_Mac .GridPager_Mac span
+{
+    float:none !important;
+}

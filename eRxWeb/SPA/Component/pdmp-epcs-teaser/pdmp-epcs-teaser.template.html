@@ -1,0 +1,17 @@
+﻿<erx-modal-popup-control title="ePrescribe Deluxe with EPCS" [Width]="'35%'" [Height]="''" data-backdrop="static" data-keyboard="false">
+    <div modal-body class="pdmp-modal-body" id="mdlPdmpEpcsTeaser">      
+        <div>
+            <h2 style="margin: 0pt; padding: 0px 0pt 3pt; font-size: 1.5em; color: rgb(255, 88, 0);"> Sorry! </h2>
+            <p>
+                This feature is only available to ePrescribe Deluxe Users with EPCS.  To take advantage of this feature and the many other product  enhancements,
+                <button (click)="onCloseModal($event)" style="font:italic; color:#FF5800; text-decoration:underline;background-color:white;border:none">Click this message to get started.</button>
+            </p>
+        </div>
+    </div>
+    <div modal-footer class="footer-content">
+        <div class="pdmp-form-controls">            
+            <button class="modal-close-button" (click)="Close()">OK</button>
+
+        </div>
+    </div>
+</erx-modal-popup-control>

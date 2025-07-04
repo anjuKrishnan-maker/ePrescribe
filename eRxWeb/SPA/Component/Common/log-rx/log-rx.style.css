@@ -1,0 +1,23 @@
+﻿#logRx-frame {
+    border: none;
+    height: 668px;
+    margin-left: -13px;
+    margin-top: -8px;
+    min-width: 173px;
+    width: 173px;
+    top: 29px;
+}
+
+#divRightHandAd {
+    float: right;
+    width: 160px;
+    min-height: 600px;
+    min-width: 160px;
+    margin-right: 7px;
+    position: relative;
+    top: 16px;
+}
+
+#topStripe {
+    margin-left: -2px;
+}

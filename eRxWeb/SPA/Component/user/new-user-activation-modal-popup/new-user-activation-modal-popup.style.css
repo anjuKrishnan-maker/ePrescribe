@@ -1,0 +1,44 @@
+﻿.header {
+    background-color: #E3E3E3;
+    padding: 10px;
+}
+
+.footer {
+    background-color: #E3E3E3;
+    padding: 6px;
+}
+
+
+.modal-dialog {
+    padding-top: 10%;
+    border-radius: 10px;
+    width: 50% !important;
+}
+
+.validation-color {
+    color: red;
+}
+
+.close {
+    display: none;
+}
+
+input[type=checkbox], input[type=radio] {
+    margin: 3px 0px 0 0;
+    line-height: normal;
+    vertical-align: baseline;
+}
+
+.user-input-large {
+    line-height: normal;
+    border-radius: 5px;
+    border: 0.5px solid rgba(0, 0, 0, 0.5);
+    height: 23px;
+    padding-left: 5px;
+    width: 275px;
+}
+
+.new-user-label {
+    padding: 0px 7px 0px 3px;
+    line-height: 1.7;
+}

@@ -1,0 +1,219 @@
+<%@ Master Language="C#" Inherits="eRxWeb.HelpMasterPage" Codebehind="HelpMasterPage.master.cs" AutoEventWireup="True" %>
+<%@ Import Namespace="Allscripts.ePrescribe.Common" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ Register Src="~/Controls/UserHeader.ascx" TagName="UserHeader" TagPrefix="ePrescribe" %>
+<%@ Register Src="~/Controls/Message.ascx" TagName="Message" TagPrefix="ePrescribe" %>
+<!--15.1.3 Changes- New Tool Tips link added - Rags -12/15/10 -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Veradigm ePrescribe</title>
+    <link href="~/Style/DefaultHelp.css" rel="stylesheet" type="text/css" />
+    <link id="lnkEnterpriseClientStyle" runat="server" href="~/Style/DefaultHelp.css"
+        rel="stylesheet" type="text/css" />
+    <link id="PageIcon" rel="SHORTCUT ICON" runat="server" href="~/images/Allscripts/favicon.ico" />
+    <link href="~/telerik/Skins/Allscripts/Grid/Grid.Allscripts.css" runat="server" rel="stylesheet"
+        type="text/css" />
+    <link href="~/telerik/Skins/Allscripts/ComboBox/ComboBox.Allscripts.css" runat="server"
+        rel="stylesheet" type="text/css" />
+    <link href="~/telerik/Skins/Allscripts/Input/Input.Allscripts.css" runat="server"
+        rel="stylesheet" type="text/css" />
+</head>
+<%if (PlacementResponse != null)
+  { %>
+<%=PlacementResponse.Header%>
+<%} %>
+<body>
+    <script language="javascript" type="text/javascript" src="../js/gridUtil.js">
+    </script>
+    <%--<script type="text/javascript" language="javascript" src="../js/formUtil.js"></script>--%>
+    <form id="masterForm" runat="server" autocomplete="off">
+    <asp:ScriptManager ID="masterScriptManager" runat="server" EnablePartialRendering="true"
+        ScriptMode="Release">
+    </asp:ScriptManager>
+    <table width="100%">
+        <tr>
+            <td>
+                <div class="help">
+                    <div class="helpHeader">
+                        <table width="100%" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>
+                                    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                        <tr align="right" height="40px" class="appStripe" width="100%">
+                                            <td colspan="2">
+                                                <ePrescribe:UserHeader ID="userLogin" runat="server" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="nav" valign="top" style="padding-top: 5px;">        
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <a href="#">
+                                                    <div id="helpMainLogo" alt="Allscripts">
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <table width="98%" cellpadding="0" cellspacing="0">
+                        <tr style="padding: 0px; margin: 0px;">
+                            <td>
+                                <div class="helpMainContent">
+                                    <div style="margin: 5px; margin-left: 10px;">
+                                        <h1 style="font-size: 12pt;" id="contentHeader" runat="server">
+                                        </h1>
+                                    </div>
+                                    <table cellpadding="0" cellspacing="0">
+                                        <tr style="padding: 0px; margin: 0px;">
+                                            <td style="padding: 0px 0px 0px 0px; margin: 0px; position: relative; vertical-align: top;"
+                                                width="68%">
+                                                <div class="helpMainContentBlob">
+                                                    <table cellpadding="0" cellspacing="0" width="588" border="0">
+                                                        <tr>
+                                                            <td colspan="3">
+                                                                <ePrescribe:Message ID="ucMessage" runat="server" Visible="false" />
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="3">
+                                                                <div id="roundTop">
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="background-color: #CCCCCC">
+                                                                <div id="greySidesLeft">
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="copy" style="margin: 10px;">
+                                                                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                                                    </asp:ContentPlaceHolder>
+                                                                </div>
+                                                            </td>
+                                                            <td style="background-color: #CCCCCC">
+                                                                <div id="greySidesRight">
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="3">
+                                                                <div id="roundBottom">
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </td>
+                                            <td style="padding: 0px 0px 0px 0px; margin: 0px; vertical-align: top;"
+                                                width="32%">
+                                                <div id="idHelpRightHandPanel" runat="server" style="margin-bottom: 10px; margin-top: 12px;
+                                                    vertical-align: top;">
+                                                    <div id="questions" runat="server" class="helpRightHandPanelBlob" visible="false">
+                                                        <p class="sideBoxHeader">
+                                                            Still Have Questions?</p>
+                                                        <div class="sideBoxBold">
+                                                            <span class="copyBold"><a href="contactus.aspx">Contact Customer Support</a></span>
+                                                        </div>
+                                                    </div>
+                                                    <div id="quickAnswer" runat="server" class="helpRightHandPanelBlob" visible="false">
+                                                        <p class="sideBoxHeader">
+                                                           Looking for Guides, Tutorials, Tool Tips or FAQs?  
+                                                            <br /><br />Click the i-Learn icon in ePrescribe or 
+                                                            <span class="sideBoxBold"><a target="_blank" runat="server" id="ancILearn">click here</a></span>
+                                                        </p>
+                                                            
+                                                    </div>
+                                                    <div id="call" runat="server" class="helpRightHandPanelBlob" visible="false">
+                                                        <span class="copy"><a id="callInfo" runat="server" style="text-indent: 5px;"></a>
+                                                        </span>
+                                                    </div>
+                                                    <div id="version" runat="server" class="helpRightHandPanelBlob" visible="false">
+                                                        <p class="copyBold">
+                                                            Latest Version <asp:Label ID="lblVersion" runat="server"></asp:Label></p>
+                                                        <div class="sideBoxBold">
+                                                            <ul>
+                                                                <li><span class="copyBold"><a runat="server" id="ancRelease"
+                                                                    class="sideBox" style="text-align: justify;" target="_blank">New Features &amp;
+                                                                    Enhancements</a></span> </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div id="contact" runat="server" class="helpRightHandPanelBlob" visible="true">
+                                                        <p class="copyBold">
+                                                            Contact Customer Support <asp:Label ID="Label1" runat="server"></asp:Label></p>
+                                                        <div class="sideBoxBold">
+                                                            <span class="copyBold primaryColor" >Email  - ePrescribeSupport@allscripts.com</span> 
+                                                        </div>
+                                                        <div ID="contactPhone" runat="server" class="sideBoxBold" visible="false">
+                                                            <br /> 
+                                                            <span class="copyBold primaryColor" >Phone - (877) 933-7274</span>                                                             
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    <%if (PlacementResponse != null)
+                                                    { %>
+                                                    <div id="divRightHandAd" runat="server">
+                                                        <div style="margin-top: 5px;">
+                                                             <%= PlacementResponse.Content["right_hand"] %>
+                                                         </div>
+                                                        <% if (PlacementResponse.Content["right_hand"].ToString() != string.Empty)
+                                                           {%>
+                                                        <div id="divADPrivacyPolicy" runat="server" visible="true">
+                                                            <span class="smalltext">
+                                                                <asp:HyperLink ID="lnkADPrivacyPolicy" runat="server" Visible="true"
+                                                                    NavigateUrl="~/AdPrivacyPolicy.aspx" Target="_blank">Ad Privacy Policy
+                                                                </asp:HyperLink>
+                                                            </span>
+                                                        </div>
+                                                        <%  }%>
+                                                    </div>
+                                                       <%} %>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                    <span class="copy">
+                        <br />
+                        <div id="greyHR">
+                        </div>
+                        <br />
+                        <a href="/Help/Documents/ePrescribePrivacyPolicy.pdf" target="_blank">Privacy Policy</a> |
+                        <%= Copyright.ShortText %></span>
+                </div>
+                <div id="divBottomAd" runat="server" style="margin-top: 5px; margin-left: 135px;">
+                    <%if (PlacementResponse != null)
+                    { %>
+                    <%= PlacementResponse.Content["bottom"]  %>
+                    <%} %>
+                </div>
+            </td>
+        </tr>
+    </table>
+    </form>
+   <%if (PlacementResponse != null)
+        { %>
+        
+    <%=PlacementResponse.Footer%>
+    <%} %>
+</body>
+</html>

@@ -1,0 +1,78 @@
+﻿.accordion-header {
+    width: 100%;
+    height: inherit;
+    border-radius: 4px;
+    padding: 4px 0px;
+}
+
+    .accordion-header > table {
+        border: none;
+        width:100%
+    }
+
+        .accordion-header > table > tr {
+            vertical-align: top;
+        }
+
+
+
+    .accordion-header  .no-border {
+        border: none;
+    }
+
+    .accordion-header .image-toggle {
+        width: 14px;
+        padding-top: 2px;
+        text-align: left;
+    }
+
+    .accordion-header  .header-div {
+        width: 160px;
+        text-align: left;
+    }
+.accordion-body {
+    width:98%;
+}
+.collaps .in {
+    background-image:url('images/chevrondown-nor-light-12-x-12.png')
+}
+
+.collaps {
+    background-image:url('images/chevronup-nor-light-16-x-16.png')
+}
+
+.collapsible-border {
+    border: 1px solid rgba(102,89,153,0.34);
+    margin-bottom: 5px;
+    padding: 2px;
+    border-radius: 3px;
+}
+
+.panel-header-spacing {
+    padding: 2px;
+}
+
+.headertext-spacing {
+    padding-left: 8px;
+}
+
+.erx-collapsible-panel-spinner {
+    display: block;
+    width: 15px;
+    height: 15px;
+    margin: 1px;
+    border-radius: 50%;
+    border: 1.5px solid #fff;
+    border-color: #ffffff transparent #ffffff  transparent;
+    animation:erx-collapsible-panel-spinner 1s linear infinite;
+  }
+ 
+@keyframes erx-collapsible-panel-spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+ 
+    100% {
+        transform: rotate(360deg);
+    }
+}

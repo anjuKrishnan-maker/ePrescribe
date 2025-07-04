@@ -1,0 +1,65 @@
+﻿<div>
+    <div class="h1title"></div>
+    <div class="h2title">
+        <erx-message [Messages]="StaticMessageStrip"></erx-message>
+    </div>
+    <br />
+    <div colspan="7" class="action-bar-inner__layout upload-btn-group">
+        <button type="button" id="btnBack" class="upload-btn btnstyle" (click)="navigateToSettings()">Back</button>
+        <button type="button" id="btnBack" class="upload-btn btnstyle" *ngIf="AllowUpload && CurrentJob" (click)="CurrentJob = null">Back to Upload</button>
+        <select id="jobSelect" class="btnstyle pull-right" *ngIf="JobHistory && JobHistory.length > 0" (ngModelChange)="onCurrentJobChanged($event)" [ngModel]="CurrentJob">
+            <option [selected]="!CurrentJob" disabled [ngValue]="null">--Select Past Import Job--</option>
+            <option class="text-center" *ngFor="let job of JobHistory" [ngValue]="job">
+                {{ job.ProcessBegin | date: 'MM/dd/yyyy' }} - {{ job.Status }}
+            </option>
+        </select>
+        <div style="margin-top: 10px; margin-left: 20px;">
+            <main role="main" class="container-fluid">
+                <div class="row text-center col-6">
+                    <div class="panel panel-default" *ngIf="!isPageLoading">
+                        <div class="panel panel-heading">
+                        </div>
+                        <div class="panel-body" *ngIf="AllowUpload && !isPageLoading && !CurrentJob ">
+                            <div class="col-lg-4 col-lg-offset-4">
+                                <div class="justify-content-md-center">
+                                    <div class="form-group">
+                                        <input #fileUploadCtrl class="form-control custom-file-input" type="file" accept=".txt" pattern="^.+\.(txt)$" id='fileUploadCtrl' name='fileUploadCtrl' (change)="fileChangeEvent($event)">
+                                        <small *ngIf="!ErrorMessage">Max File Size: 1 MB</small>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="form-group">
+                                    <div class="upload-btn-group">
+                                        <button type="button" class="upload-btn btnstyle" (click)="resetControls()" [disabled]="!fileSelected" title="Remove selected patient file">Remove</button>
+                                        <button type="button" class="upload-btn btnstyle" (click)="createPatientFile()" [disabled]="!fileValid" title="Sends patient file to be processed">Upload</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body" *ngIf="!isPageLoading && CurrentJob">
+                            <h5 [ngClass]="{'text-info' : !ErrorMessage, 'text-danger' : ErrorMessage}">Status: {{ CurrentJob.Status }}</h5>
+                            <h5 [ngClass]="{'text-info' : !ErrorMessage, 'text-danger' : ErrorMessage}">Upload Submitted On: {{ CurrentJob.ProcessBegin | date: 'MM/dd/yyyy' }}</h5>
+                            <h5 [ngClass]="{'text-info' : !ErrorMessage, 'text-danger' : ErrorMessage}">Valid Records Found: {{ CurrentJob.BatchSize }}</h5>
+                            <h5 [ngClass]="{'text-info' : !ErrorMessage, 'text-danger' : ErrorMessage}">Invalid Records Found: {{ CurrentJob.RecordsFailed }}</h5>
+                            <h5 *ngIf="CurrentJob.ErrorLines" class="text-danger error-wrap">Malformed Data Found on Lines: {{ CurrentJob.ErrorLines }}</h5>
+                            <div *ngIf="CurrentJob && CurrentJob.Status === 'COMPLETE'">
+                                <hr />
+                                <div class="btn-group">
+                                    <button (click)="generateJobReport()">Generate Failure Report</button>
+                                </div>
+                            </div>
+                            <div *ngIf="CurrentJob && CurrentJob.Status === 'FAILED' && ErrorMessage">
+                                <hr />
+                                <div class="btn-group">
+                                    <button class="upload-btn-group" (click)="resetControls()">Retry</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</div>
+<div id="divLoadingAngComponent" *ngIf="isPageLoading">
+</div>

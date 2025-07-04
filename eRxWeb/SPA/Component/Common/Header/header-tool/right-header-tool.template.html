@@ -1,0 +1,36 @@
+﻿<div class="alignRight" style="">
+   
+
+    <div *ngIf="!isRestrictedMenu" class="headerIcon tool" >
+        <a (click)="MessageQueueClicked()" href="javascript:void(0);" id="ctl00_lnkMessageQueue" style="display: inline-block; height: 25px; width: 24px;">
+            <img id="messageQueueIcon" src="images/shim.gif" style="vertical-align: middle; border: 0px;" />
+        </a>
+        <br />
+        &nbsp;<span class="headerIconDescription">msg</span>
+    </div>
+    &nbsp;&nbsp;
+        
+    <div class="headerIcon tool" >
+        <a id="lnkILearn"  [href]="targetUrl" Target="_blank" Height="25px" Width="24px"><img src="images/shim.gif" id="iLearnIcon" style="vertical-align:middle; border:0px;" /></a>
+        <div class="iLearnNotification" id="notification" [comp-visible]="notificationCount > 0">{{notificationCount}}</div>
+        <br>
+        &nbsp;<span class="headerIconDescription">i-Learn</span>
+    </div>
+
+    <div class="headerIcon tool" >
+        <a href="help/default.aspx" id="ctl00_lnkHelp" style="display: inline-block; height: 25px; width: 24px;" target="_blank">
+            <img id="helpIcon" src="images/shim.gif" style="vertical-align: middle; border: 0px">
+        </a>
+        <br>
+        &nbsp;<span class="headerIconDescription">help</span>
+    </div>
+    &nbsp;&nbsp;
+
+    <div class="headerIcon tool" >
+        <a href="Logout.aspx" id="ctl00_lnkLogout" style="display: inline-block; height: 25px; width: 24px;">
+            <img id="logoutIcon" src="images/shim.gif" style="vertical-align: middle; border: 0px">
+        </a>
+        <br>
+        &nbsp;<span class="headerIconDescription">logout</span>
+    </div>
+</div>

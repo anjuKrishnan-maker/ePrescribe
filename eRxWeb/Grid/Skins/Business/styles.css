@@ -1,0 +1,139 @@
+/* Telerik RadGrid Business skin */
+
+.RadGrid_Business
+{
+    background:#cae4ff;
+	border-left: solid 1px #abd5f3;
+	border-right: solid 1px #abd5f3;
+}
+
+.RadGrid_Business,
+.MasterTable_Business,
+.RadGrid_Business A
+{
+    font:11px/1.2 verdana,sans-serif;
+    color:#507485;
+}
+
+.MasterTable_Business
+{
+    border-collapse:separate !important;
+}
+
+.MasterTable_Business td, .MasterTable_Business th
+{
+	 padding:0.8em 6px;
+}
+
+.GroupPanel_Business,
+.GridCommandRow_Business td
+{
+    height:32px;
+	padding-left: 17px;
+    background:url(img/commandItemsArea.gif) repeat-x 0 100% #f6fdff;
+}
+
+.GroupPanel_Business
+{
+    border-top: solid 1px #9bbdee;
+}
+
+.GridFilterRow_Business td
+{
+    background:#7ea5e4;
+    border-bottom:1px solid #4e75b3;
+	border-top:1px solid #b5d0fa;
+}
+
+.GroupHeader_Business td
+{
+    background:#ecf5ff;
+    color:#333;
+
+}
+
+.GridHeader_Business,
+.ResizeHeader_Business
+{
+    background:url(img/headerBg.gif) repeat-x 0 100% #b0cef6;
+    border-style:solid;
+    border-width:1px;
+    border-color:#9cc9ed #5c9fde #6daddb #b4d2f0;
+    text-align:center;
+}
+
+.GridHeader_Business,
+.ResizeHeader_Business,
+.GridHeader_Business a,
+.ResizeHeader_Business a
+{
+    color:#13597d;
+    text-decoration:none;
+}
+
+.GridRow_Business td,
+.GridAltRow_Business td
+{
+    border-style:solid;
+    border-width:1px;
+    border-color:#e0f5ff #abd5f3 #abd5f3 #ddf5fa;
+}
+
+.GridRow_Business td
+{
+    background:#cae4ff;
+}
+
+.GridAltRow_Business td
+{
+    background:#d9ecff;
+}
+
+.SelectedRow_Business td,
+.GridEditRow_Business td
+{
+    background:#a7cdf4;
+    border-right-color:#9dc1e6;
+    border-left-color:#b5daf4;
+}
+
+td.ResizeItem_Business
+{
+    border-left-color:#f5f8fc;
+}
+
+.GridFooter_Business td,
+.GridPager_Business td
+{
+    background:url(img/footerBg.gif) repeat-x 0 100% #f1f6ff;
+    padding: 4px 6px !important;
+}
+
+.GridFilterMenu_Outlook2007
+{
+    cursor:default;
+}
+
+.GridFilterMenu_Business .GridFilterMenuSelectColumn_Business,
+.GridFilterMenu_Business .GridFilterMenuTextColumn_Business
+{
+	padding:3px 4px;
+}
+
+.GridFilterMenu_Business .GridFilterMenuSelectColumn_Business
+{
+    background:#e4e4e4;
+    text-align:center;
+}
+
+.GridFilterMenu_Business .GridFilterMenuTextColumn_Business
+{
+    background:#fff;
+    color:#333;
+}
+
+.GridFilterMenu_Business .GridFilterMenuHover_Business
+{
+    background:#4c4c4c;
+    color:#fff;
+}

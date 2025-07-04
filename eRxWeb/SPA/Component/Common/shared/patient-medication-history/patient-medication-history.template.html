@@ -1,0 +1,39 @@
+﻿<div class="modal fade" id="mdlPopupPatientMedHistory" role="dialog">
+    <div class="modal-dialog" style="width: 40%; margin-top: 10%;">
+        <!-- Modal content-->
+        <div class="modal-content overlaymainwide">
+            <div class="modal-header overlayTitle" style="height: 40px">
+                Patient Medication History
+            </div>
+            <div class="modal-body">
+                <div id="divMedHistory" class="overlaysub1">
+                    <div>
+                        <div style="overflow-x:hidden; overflow-y:auto; max-height:400px">
+                            <table ID="grdPatMedHistory" class="erxTable">
+                                <tr>
+                                    <th class="erxTableHeader" style="width: 79px; padding:5px">Rx Date</th>
+                                    <th class="erxTableHeader" style="width: 79px; padding:5px">Diagnosis</th>
+                                    <th class="erxTableHeader" style="width: 79px; padding:5px">Status</th>
+                                    <th class="erxTableHeader" style="width: 79px; padding:5px">Source</th>
+                                    <th class="erxTableHeader" style="width: 125px; padding:5px">Medication & Sig</th>
+                                </tr>
+                                <ng-template let-patHistoryMedDetail ngFor [ngForOf]="patHistoryMedDetails" let-even="even" let-odd="odd">
+                                    <tr [ngClass] = "{ 'eRxRow': (even), 'erxAltRow': (odd) }">
+                                        <td style="width: 79px; padding:5px">{{patHistoryMedDetail.rxDate}}</td>
+                                        <td style="width: 79px; padding:5px">{{patHistoryMedDetail.diagnosis}}</td>
+                                        <td style="width: 79px; color:red; padding:5px; font-weight:bold">{{patHistoryMedDetail.status}}</td>
+                                        <td style="width: 79px; padding:5px">{{patHistoryMedDetail.source}}</td>
+                                        <td style="width: 125px; padding:5px" [innerHTML] ='patHistoryMedDetail.medDetail'></td>
+                                    </tr>
+                                </ng-template>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="overlayFooter" style="height: 40px;">
+                <input type="button" (click) ="closePatientMedModal()" value="Close" class="btnstyle" width="100px" />
+            </div>
+        </div>
+    </div>
+</div>

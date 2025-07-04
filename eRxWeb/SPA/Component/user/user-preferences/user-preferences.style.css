@@ -1,0 +1,11 @@
+﻿.user-preference-label {
+    width: 145px;
+    font-weight: 500;
+}
+
+.user-preference-select {
+    width: 283px;
+    margin-left: 7px;
+    margin-right: 10px;
+    height: 23px;
+}

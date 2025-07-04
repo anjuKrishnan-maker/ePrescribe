@@ -1,0 +1,103 @@
+﻿<form #homeAddressForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="h1title home-address-title">
+        Home Address
+    </div>
+
+    <div class="home-address-container">
+        <div *ngIf="homeAddressStartUpModel" class="home-address-container-body">
+            <div class="home-address-content-row">
+                <label class="home-address-input-label"><span class="ma-form-mandatory-star">*</span>Home Address</label>
+                <input id="txtAddress1" class="home-address-input-large"
+                       type="text"
+                       name="HomeAddress"   
+                       maxlength="35"
+                       required
+                       [(ngModel)]="homeAddressDetail.HomeAddress"
+                       #HomeAddress="ngModel" />
+
+                <span *ngIf="HomeAddress.invalid && (HomeAddress.dirty || HomeAddress.touched)">
+                    <span id="addressRequiredError" *ngIf="HomeAddress.errors.required"
+                          class="validation-color">
+                        Home Address is required.
+                    </span>
+                </span>
+            </div>
+            <div class="home-address-content-row">
+                <label class="home-address-input-label">Home Address 2</label>
+                <input id="txtAddress2" class="home-address-input-large"
+                       type="text"
+                       name="HomeAddress2"
+                       maxlength="35"
+                       [(ngModel)]="homeAddressDetail.HomeAddress2" />
+            </div>
+            <div class="home-address-content-row">
+                <label class="home-address-input-label"><span class="ma-form-mandatory-star">*</span>City</label>
+                <input id="txtCity" class="home-address-input-large"
+                       type="text"
+                       name="city"
+                       maxlength="20"
+                       required
+                       [pattern]="cityPattern"
+                       [(ngModel)]="homeAddressDetail.City"
+                       #city="ngModel" />
+                <span *ngIf="city.invalid && (city.dirty || city.touched)">
+                    <span *ngIf="city.errors.required"
+                          id="cityMandatoryError"
+                          class="validation-color">
+                        City is required.
+                    </span>
+                    <span id="CityPatternError" *ngIf="city.errors.pattern" class="validation-color">
+                        Enter a valid city.
+                    </span>
+                </span>
+            </div>
+            <div class="home-address-content-row">
+                <label class="home-address-input-label"><span class="ma-form-mandatory-star">*</span>State</label>
+                <select id="ddlState" class="home-address-input-medium"
+                        type="text"
+                        name="State"
+                        required
+                        [(ngModel)]="homeAddressDetail.State"
+                        #state="ngModel">
+                    <option [value]="undefined" selected disabled>-- Select a State --</option>"
+                    <option *ngFor="let item of homeAddressStartUpModel.States" [value]="item.State">
+                        {{item.Description}}
+                    </option>
+                </select>
+                <span *ngIf="state.invalid && (state.dirty || state.touched)">
+                    <span *ngIf="state.errors.required"
+                          id="stateMandatoryError"
+                          class="validation-color">
+                        State is required.
+                    </span>
+                </span>
+            </div>
+            <div class="home-address-content-row">
+                <label class="home-address-input-label"><span class="ma-form-mandatory-star">*</span>ZIP Code</label>
+                <input id="txtZip" class="home-address-input-medium"
+                       type="text"
+                       name="zipCode"
+                       maxlength="9"
+                       required
+                       [pattern]="zipCodePattern"
+                       [(ngModel)]="homeAddressDetail.ZipCode"
+                       #zipCode="ngModel" />
+                <span *ngIf="zipCode.invalid && (zipCode.dirty || zipCode.touched)">
+                    <span *ngIf="zipCode.errors.required"
+                          id="zipMandatoryError"
+                          class="validation-color">
+                        ZIP Code is required.
+                    </span>
+                    <span id="zipCodePatternError" *ngIf="zipCode.errors.pattern" class="validation-color">
+                        Enter a valid 5 or 9 digit ZIP code
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="home-address-content-row">
+            <input type="submit" id="btnSubmit" value="Submit" class="btnstyle home-address-btn" />
+            <input type="button" id="btnCancel" value="Cancel" class="btnstyle home-address-btn" (click)="OnCancel();" />
+        </div>
+    </div>
+</form>
+

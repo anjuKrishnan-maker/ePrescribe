@@ -1,0 +1,135 @@
+<form #userAccountForm="ngForm" (ngSubmit)="onSubmit(userAccountForm)">
+    <div id="user-creation-title" class="title-bar title-bar-heading branded-background-color branded-font-color">
+        Create New Account
+    </div>
+    <div>
+        <span *ngIf="isValidationFailed" class="validation-color">
+            {{errorMessage}}
+        </span>
+        
+    </div>
+    <div class="erx-form-content-offset font-color-dimmed-black">
+        <div class="erx-form-sub-heading font-setting-bold font-uppercase">
+            Personal Information
+        </div>
+        <div>
+                <div class="erx-form-row">
+                    <span class="erx-form-label account-creation-form-label-spacing">
+                        <label><span class="highlight-star erx-form-star-position">*</span>First Name</label>
+                    </span>
+
+                    <span class="erx-form-input">
+                        <input id="firstname" name="firstname" class="input-large" type="text"
+                               required maxlength="35" [pattern]="namePattern"
+                               [(ngModel)]="userAccount.firstname" #firstname="ngModel">
+                        <span *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)">
+                            <span id="firstNameRequiredError" *ngIf="firstname.errors.required" class="validation-color">
+                                First Name is required.
+                            </span>
+                            <span id="firstnamePatternError" *ngIf="firstname.errors.pattern" class="validation-color">
+                                Invalid first name. First name has to be characters, maximum of 35.
+                            </span>
+                        </span>
+
+                    </span>
+                </div>
+
+                <div class="erx-form-row">
+                    <span class="erx-form-label account-creation-form-label-spacing">
+                        <label>Middle Name</label>
+                    </span>
+                    <span class="erx-form-input">
+                        <input id="middlename" name="middleName" class="input-large"
+                               maxlength="35" [pattern]="namePattern"
+                               [(ngModel)]="userAccount.middleName" #middleName="ngModel" />
+                    </span>
+                    <span *ngIf="middleName.invalid && (middleName.dirty || middleName.touched)">
+                        <span id="middleNamePatternError" *ngIf="middleName.errors.pattern" class="validation-color">
+                            Invalid middle name. Middle name has to be characters, maximum of 35.
+                        </span>
+                    </span>
+                </div>
+
+                <div class="erx-form-row">
+                    <span class="erx-form-label account-creation-form-label-spacing">
+                        <label><span class="highlight-star erx-form-star-position">*</span>Last Name</label>
+                    </span>
+                    <span class="erx-form-input">
+                        <input type="text" id="lastName" name="lastName" class="input-large"
+                               [pattern]="namePattern"
+                               required maxlength="35" [(ngModel)]="userAccount.lastName" #lastName="ngModel" />
+                        <span *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+                            <span id="lastNameRequiredError" *ngIf="lastName.errors.required" class="validation-color">
+                                Last Name is required.
+                            </span>
+                            <span id="firstnamePatternError" *ngIf="lastName.errors.pattern" class="validation-color">
+                                Invalid first name. Last name has to be characters, maximum of 35.
+                            </span>
+                        </span>
+
+                    </span>
+                </div>
+
+                <div class="erx-form-row">
+                    <span class="erx-form-label account-creation-form-label-spacing">
+                        <label><span class="highlight-star erx-form-star-position">*</span>Personal Email</label>
+                    </span>
+                    <span class="erx-form-input">
+                        <input type="email" id="personalEmail" name="personalEmail" class="input-large"
+                               required maxlength="70"
+                               [(ngModel)]="userAccount.personalEmail" #personalEmail="ngModel" email />
+                        <span *ngIf="personalEmail.invalid && (personalEmail.dirty || personalEmail.touched)">
+                            <span id="emailRequiredError" *ngIf="personalEmail.errors.required" class="validation-color">
+                                Personal Email is required.
+                            </span>
+                            <span id="emailPatternError" *ngIf="personalEmail.errors.email && !personalEmail.errors.required " class="validation-color">
+                                Enter valid email address.
+                            </span>
+                        </span>
+                    </span>
+                </div>
+                <!--</div>-->
+            </div>
+
+        <div class="erx-form-sub-heading font-setting-bold font-uppercase">
+            USER CREDENTIALS & SECURITY
+        </div>
+        <div>
+            <div class="account-creation-user-name-control-spacing">
+                <app-user-account #userNameChild [userExistsErrorMessage]="userExistsErrorMessage" [userNameLabel]="userNameLabel"></app-user-account>
+            </div>
+            <div class="account-creation-user-password-control-spacing">
+                <app-user-password #pwdChild></app-user-password>
+            </div>
+            <div class="account-creation-security-control-spacing">
+                <app-user-security-questions #securityQuestion></app-user-security-questions>
+            </div>
+        </div>
+     
+        <div class="erx-form-sub-heading font-setting-bold font-uppercase">
+            ACKNOWLEDGEMENT
+        </div>
+        <div>
+            <div class="erx-form-row account-creation-captcha-control-spacing">
+                <show-captcha #captchaControl></show-captcha>
+            </div>
+
+            <div class="erx-form-row">
+                <input type="checkbox" [(ngModel)]="userAccount.isTermsAccepted" id="chkAcceptedIDmeTerms"
+                       name="isTermsAccepted" #isTermsAccepted="ngModel" required> I have reviewed my registration entries
+
+                <span *ngIf="isTermsAccepted.invalid && (isTermsAccepted.dirty || isTermsAccepted.touched)" class="validation-color">
+                    Kindly acknowledge the registration entries.
+                </span>
+            </div>
+        </div>
+        <div class="erx-form-row">
+            <button id="btnSubmit" type="submit" class="button-style">Submit</button>
+            <span *ngIf="isValidationFailed" class="validation-color">
+                Kindly review the form, there seems to be an incomplete entry.
+            </span>
+        </div>
+    </div>
+</form>
+
+

@@ -1,0 +1,51 @@
+﻿<div class="modal fade" id="mdlPopupFormularyOverride" role="dialog">
+    <div class="modal-dialog" style="width: 40%; margin-top: 10%;">
+        <!-- Modal content-->
+        <div class="modal-content overlaymainwide">
+            <div class="modal-header overlayTitle" style="height: 40px">
+                Formulary Warning
+            </div>
+            <div class="modal-body">
+                <div class="overlaysub1">
+                    <div>
+                        <div style="margin-bottom:5px"><b>There are formulary alternatives for one or more of the drugs you are adding to the script pad. Please select a reason why you have not chosen an alternative.</b></div>
+                        <div style="overflow-x:hidden; overflow-y:auto; max-height:400px" class="overlayscrollable">
+                            <div *ngIf="ShowError" style="width:100%; height:25px; padding:5px; margin: 0px 0 10px 0;" class="error-dialog">
+                                <img src="images/alert-global-16-x-16.png" style="margin-right:10px" />
+                                <label ID="ucFAErrorMessage" style="font-weight:normal" Visible="false">Please select an ignore reason for all Rxs that require override.</label>
+                            </div>
+                            <table ID="grdFAReasons" class="erxTable">
+                                <tr>
+                                    <th class="erxTableHeader" style="width: 100px; padding:5px">Medication</th>
+                                    <th class="erxTableHeader" style="width: 150px; padding:5px">Reason</th>
+                                </tr>
+
+                                <ng-template let-Med ngFor [ngForOf]="medication" let-even="even" let-odd="odd">
+                                    <tr [ngClass]="{ 'eRxRow': (even), 'erxAltRow': (odd) }">
+                                        <td style="width: 30px; padding: 5px">{{Med.Medication}} </td>
+                                        <td style="width: 30px; padding: 5px">
+                                            <form>
+                                                <div class="form-group" style="margin-bottom:0px">
+                                                    <select class="form-control" style="font-size:12px" name="FAReason" (change)="onChange($event.target)">
+                                                        <option [value]="Med.RxID">Choose Ignore Option</option>
+                                                        <option *ngFor="let reason of ignoreReasons" [value]="Med.RxID">
+                                                            {{ reason }}
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                </ng-template>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="overlayFooter" style="height: 40px;">
+                <input type="button" ID="btnFormularyOverrideProcess" (click)="process()" value="Process" Class="btnstyle btnStyleAction" width="100"/>
+                <input type="button" ID="btnFormularyOverrideCancel" (click)="cancel()" value="Close" Class="btnstyle" width="100"/>
+            </div>
+        </div>
+    </div>
+</div>

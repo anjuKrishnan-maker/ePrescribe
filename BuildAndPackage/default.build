@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Publish>WebDeploymentFiles\Publish</Publish>
+    <FromWebProjectToBuildAndPackage>..\BuildAndPackage\</FromWebProjectToBuildAndPackage>
+    <MsiOut>MSI\eprescribe_web_setup.msi</MsiOut>
+    <WebSiteContentCode>Setup_Files.wxs</WebSiteContentCode>
+    <BuildConfiguration>Release</BuildConfiguration>
+    
+    <WixPath></WixPath>
+  </PropertyGroup>
+
+
+  <!-- The list of WIX input files -->
+  <ItemGroup>
+    <WixCode Include="MSI_UI.wxs" />
+    <WixCode Include="Product.wxs" />
+    <WixCode Include="$(WebSiteContentCode)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SharedFiles Include="..\..\Shared\Wix\*.*"/>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Referencedll Include="\eRxWeb\Bin\$(BuildConfiguration)\*.dll"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PdbFiles Include="..\eRxWeb\Bin\$(BuildConfiguration)\*.pdb"/>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Referencedll Include="..\eRxWeb\Bin\$(BuildConfiguration)\*.dll"/>
+  </ItemGroup>
+
+  <!-- The list of WIX after candle files -->
+  <ItemGroup>
+    <WixObject Include="MSI_UI.wixobj" />
+    <WixObject Include="Product.wixobj" />
+    <WixObject Include="Setup_Files.wixobj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SharedFile Include="MSI_UI.wix" />
+    <SharedFile Include="$(WebSiteContentCode)" />
+  </ItemGroup>
+
+  <Target Name="Build">
+    <MSBuild
+      Projects="..\..\Shared\Allscripts.ePrescribe.Shared\Allscripts.ePrescribe.Shared.sln"
+      Targets="ReBuild"
+      Properties="Configuration=$(BuildConfiguration)" />
+	  
+    <MSBuild
+		Projects="..\ePrescribe.sln"
+		Targets="ReBuild"
+		Properties="Configuration=$(BuildConfiguration);OutDir=bin\$(BuildConfiguration)\" />
+	
+  </Target>
+
+  <Target Name="BuildAndPackage">
+    
+    <CallTarget Targets="Build"/>
+    <CallTarget Targets="CreateInstaller"/>
+    <CallTarget Targets="DeleteTmpFiles"/>
+
+  </Target>
+
+  <Target Name="BuildWebSiteOutput">
+    <MSBuild
+        Projects="..\eRxWeb\eRxWeb.csproj"
+        Targets="ResolveReferences;_CopyWebApplication"
+        Properties="OutDir=$(FromWebProjectToBuildAndPackage)$(Publish)bin\;WebProjectOutputDir=
+                        $(FromWebProjectToBuildAndPackage)$(Publish);Configuration=$(BuildConfiguration);Platform=AnyCPU" />
+
+  </Target>
+
+  <Target Name="CreateInstaller">
+    <CallTarget Targets="BuildWebSiteOutput"/>
+    <Delete Files="@(WixObject)" />
+    <Delete Files="@(SharedFile)"/>
+    <Copy SourceFiles="@(Referencedll)" DestinationFolder="$(FromWebProjectToBuildAndPackage)$(Publish)\bin"/>
+    <Copy SourceFiles="@(SharedFiles)" DestinationFolder="."/>
+    <Copy SourceFiles="@(PdbFiles)" DestinationFolder="$(Publish)\bin"/>
+    
+
+    <!-- Harvest all content of published result -->
+
+    <Exec
+        Command='"$(WixPath)heat" dir $(Publish) -dr INSTALLLOCATION -ke -srd -cg ePrescribeWebComponents -var var.publishDir -gg -out $(WebSiteContentCode)'
+        ContinueOnError="false"
+        WorkingDirectory="." />
+
+    <Exec
+        Command='"$(WixPath)candle" -ext WixIISExtension -ext WixUtilExtension -ext WiXNetFxExtension -dpublishDir=$(Publish) -dConfiguration=$(BuildConfiguration) @(WixCode, &apos; &apos;)'
+        ContinueOnError="false"
+        WorkingDirectory="." />
+
+    <Exec
+        Command='"$(WixPath)light" -ext WixUIExtension -ext WixIISExtension -ext WixUtilExtension -ext WiXNetFxExtension -sice:ICE69 -out $(MsiOut) @(WixObject, &apos; &apos;)'
+        ContinueOnError="false"
+        WorkingDirectory="." />
+
+    <!-- A message at the end -->
+
+    <Message Text="Install package has been created." />
+  </Target>
+  
+    <Target Name="DeleteTmpFiles">
+	  
+      <Delete Files="@(WixObject)" />
+	  
+    </Target>
+  </Project>

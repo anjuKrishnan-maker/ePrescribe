@@ -1,0 +1,58 @@
+﻿<div id="pnlUserPreferenceDetail">
+    <div>
+        <div>
+            <label class="user-preference-label">Default Fax Location Site</label>
+            <select id="ddlDefaultFaxSite"
+                    type="text"
+                    name="ddlDefaultFaxSite"
+                    class="user-preference-select"
+                    [(ngModel)]="userPreferences.DefaultFaxSiteID">
+                <option *ngFor="let item of userPreferences.SiteList" [value]="item.Value">
+                    {{item.Description}}
+                </option>
+            </select>
+        </div>
+        <div>
+            <div id="divEditRxFavorites" *ngIf="userPreferences.IsShowRxFavourites">
+                <a id="lnklEditFavorites" class="erx-hyperlink" (click)="navigateToRxFavourites()">Edit Rx Favorites</a>
+            </div>
+        </div>
+        <div>
+            <div id="divRTBPPTUserPreference">
+                <div>
+                    <input type="checkbox" id="chkRTBPreference" [(ngModel)]="userPreferences.RTBPreference" (ngModelChange)="updateRtbChildCheckBoxCheckState()">
+                    <span class="user-list-label">
+                        Show patient Rx insurance price
+                    </span>
+                </div>
+                <div class="user-list-spacing">
+                    <input type="checkbox" id="chkAutoTherapeuticAlternativesPreference" [(ngModel)]="userPreferences.AutoTherapeuticAlternativesPreference"
+                           [disabled]="!userPreferences.RTBPreference">
+                    <span class="user-list-label">
+                        Allow certain payers to automatically display therapeutic alternatives
+                    </span>
+                </div>
+                <div class="user-list-spacing">
+                    <input type="checkbox" id="chkRTPSPreference" [(ngModel)]="userPreferences.RTPSPreference"
+                           [disabled]="!userPreferences.RTBPreference">
+                    <span class="user-list-label">
+                        Show price when using branded coupon
+                    </span>
+                </div>
+                <div>
+                    <input type="checkbox" id="chkPPTPreference" [(ngModel)]="userPreferences.PPTPreference" (ngModelChange)="updateUserPreferencePPTChildCheckState()">
+                    <span class="user-list-label">
+                        Show Rx Cash Price and Discount Offer
+                    </span>
+                </div>
+                <div class="user-list-spacing">
+                    <input type="checkbox" id="chkPPTOffersPreference" [(ngModel)]="userPreferences.PPTOffersPreference"
+                           [disabled]="!userPreferences.PPTPreference">
+                    <span class="user-list-label">
+                        Print Discount Offer automatically
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,201 @@
+/* r.a.d.tooltip Allscripts skin */
+
+/* r.a.d.tooltip resize element */
+div.radtooltip_Allscripts.ResizeElement
+{
+	border: solid 1px #bbb;
+	background: #f8fce0;
+}
+
+div.radtooltip_Allscripts
+{
+	position: absolute;
+	cursor: default;
+	border: solid 1px #e3d7c0;
+	background: #f9f6dd;
+}
+
+div.radtooltip_Allscripts.LoadingSign
+{	
+	background: url(Img/Loading.gif)  no-repeat center;
+	width: 100%; height: 100%;
+	border:0;
+}
+
+div.radtooltip_Allscripts div.ToolTipCallout
+{
+	display:none;
+}
+
+div.radtooltip_Allscripts.visiblecallout
+{
+	/**/
+}
+
+div.radtooltip_Allscripts.visiblecallout div.ToolTipCallout
+{
+	display: block;
+}
+
+
+div.radtooltip_Allscripts table.ToolTipWrapper
+{
+	padding: 0; margin: 0;
+	border-collapse: collapse;
+}
+
+div.radtooltip_Allscripts table.ToolTipWrapper td
+{		
+	padding: 0; margin: 0;
+	background: #f9f6dd;
+	text-align: left;
+}
+
+/* -------------------------- CORNER SETTINGS BEGIN ---------------------------------- */
+div.radtooltip_Allscripts table.ToolTipWrapper td.ToolTipTopLeft,
+div.radtooltip_Allscripts table.ToolTipWrapper td.ToolTipTopRight,
+div.radtooltip_Allscripts table.ToolTipWrapper td.ToolTipBottomLeft,
+div.radtooltip_Allscripts table.ToolTipWrapper td.ToolTipBottomRight
+{
+	height: 4px; width: 4px; line-height: 4px;
+}
+
+div.radtooltip_Allscripts table.ToolTipWrapper td.ToolTipTopCenter,
+div.radtooltip_Allscripts table.ToolTipWrapper td.ToolTipBottomCenter
+{
+	height: 4px; line-height: 4px;
+}
+
+div.radtooltip_Allscripts table.ToolTipWrapper td.ToolTipLeftMiddle,
+div.radtooltip_Allscripts table.ToolTipWrapper td.ToolTipRightMiddle
+{
+	width: 4px;
+}
+
+/* -------------------------- CORNER SETTINGS END ---------------------------------- */
+
+div.radtooltip_Allscripts table.ToolTipWrapper td.ToolTipContent
+{
+	font: normal 11px Tahoma, Arial, Verdana, Sans-serif;
+	height: 100%;
+	color: #333;
+}
+
+div.radtooltip_Allscripts div.ToolTipTitlebar
+{	
+	color: #333;
+	font: bold 11px Tahoma, Verdana, Arial, Sans-serif;
+	float:left;
+}
+
+div.radtooltip_Allscripts table.ToolTipWrapper td.ToolTipTopCenter div.ToolTipTitlebar div
+{
+	float: left;
+	margin-right: 12px;
+	line-height: 21px;	
+}
+
+/* close button */
+div.radtooltip_Allscripts a.CloseButton,
+div.radtooltip_Allscripts a.CloseButton:hover
+{
+	display: block; float: right;
+	width: 16px; line-height: 16px; height: 16px;
+	margin-right: -4px;
+	background: url(Img/close.gif)  no-repeat;
+	text-indent: -9999px;
+	outline: none;
+}
+
+/* --------------------------------------------- TOOLTIP CALLOUT SETTINGS BEGIN --------------------------------------------- */
+div.radtooltip_Allscripts div.ToolTipCallout
+{
+	position: absolute; top: 0; left: 0;
+	line-height: 11px; height: 11px; width: 11px;
+	background-image: url(Img/Callouts.gif) ;
+	background-repeat: no-repeat;
+}
+
+/* position="Center" */
+div.radtooltip_Allscripts .Center
+{
+	background: none !important;
+}
+
+/* position="BottomRight" */
+.radtooltip_Allscripts .TopLeft
+{
+	margin-top: -11px; margin-left: 15px;
+}
+
+/* position="BottomCenter" */
+.radtooltip_Allscripts .TopCenter
+{
+	left: 50% !important;
+	margin-top: -11px; margin-left: -5px;
+	background-position: 0 -11px !important;
+}
+
+/* position="BottomLeft" */
+.radtooltip_Allscripts .TopRight
+{
+	left: 100% !important;
+	margin-top: -11px; margin-left: -26px;
+	background-position: 0 -22px !important;
+}
+
+/* position="TopCenter" */
+.radtooltip_Allscripts .BottomCenter
+{
+	top: 100% !important; left: 50% !important;
+	margin-left: -5px !important; margin-top: 0 !important;
+	width: 100% !important;
+	background-position: 0 -55px !important;
+}
+
+/* position="TopLeft" */
+.radtooltip_Allscripts .BottomRight
+{
+	top: 100% !important; left: 100% !important;
+	margin-left: -25px !important; margin-top: 0px !important;
+	background-position: 0 -66px !important;
+}
+
+/* position="TopRight" */
+.radtooltip_Allscripts .BottomLeft
+{
+	top: 100% !important;
+	margin-left: 26px !important; margin-top: 0px !important;
+	background-position: 0 -88px !important;
+}
+
+/* position="MiddleRight" */
+.radtooltip_Allscripts .MiddleLeft
+{
+	top: 50% !important;
+	margin-left: -11px; margin-top: -5px;
+	background-position: 0 -44px !important;
+}
+
+/* position="MiddleLeft" */
+.radtooltip_Allscripts .MiddleRight
+{
+	left: 100% !important; top: 50% !important;
+	margin-left: 0px; margin-top: -5px;
+	background-position: 0 -33px;
+}
+/* --------------------------------------------- TOOLTIP CALLOUT SETTINGS END --------------------------------------------- */
+
+div.radtooltip_Allscripts table.ToolTipWrapper td.ToolTipTopLeft,   
+div.radtooltip_Allscripts table.ToolTipWrapper td.ToolTipTopCenter,   
+div.radtooltip_Allscripts table.ToolTipWrapper td.ToolTipTopRight,   
+div.radtooltip_Allscripts table.ToolTipWrapper td.ToolTipLeftMiddle,   
+div.radtooltip_Allscripts table.ToolTipWrapper td.ToolTipContent,   
+div.radtooltip_Allscripts table.ToolTipWrapper td.ToolTipRightMiddle,   
+div.radtooltip_Allscripts table.ToolTipWrapper td.ToolTipBottomLeft,   
+div.radtooltip_Allscripts table.ToolTipWrapper td.ToolTipBottomCenter,   
+div.radtooltip_Allscripts table.ToolTipWrapper td.ToolTipBottomRight   
+{
+    padding: 0;
+    border: 0;
+}

@@ -1,0 +1,38 @@
+﻿<div class="modal-backdrop fade in" [style.display]="IsLinkedUser ? 'block' : 'none'"></div>
+<div *ngIf="IsLinkedUser">
+    <div class="modal" id="mdlLinkedAccount" [style.display]="'block'" role="dialog" [style.top]="'20%'">
+       <div class="modal-dialog  link-existing-account-dialog-size">
+            <div class="modal-content">
+                <div class="reg-overlayTitle">
+                    Veradigm Security Account: Link to Existing Account
+                </div>
+                <div class="modal-body">
+                    <div id="dvMessage" [class]="linkImageIcon" *ngIf="showLinkMessage">
+                        <span  class="status-image-size">
+                            <img id="imgStatus" [src]="linkImageUrl" />
+                        </span>
+                        <span>
+                            {{ linkMessageText }}
+                        </span>
+                    </div>
+                    <div class="erx-form-row">
+                        Please enter your Veradigm Security Account credentials to link to your existing account.
+                    </div>
+                    <div class="erx-form-row">
+                        <user-existing-account #userExisting></user-existing-account>
+                    </div>
+                    <div class="erx-form-row">
+                        If you have forgotten your User Name or Password, please log into the system you originally used to configure your
+                        Veradigm Security Account to view user name and/or change password.
+                    </div>
+                </div>
+                <div class="reg-overlayFooter">
+                        <span><button type="submit" class="button-style" (click)="linkUserToExistingAccount()"> Link Account </button> </span>
+                        <span class="not-registered-style">Not a registered user?</span>
+                        <span> <a routerLink="" (click)="createUser()"> Enroll now </a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<link-account-confirmation-popup #linkedAccountConfirmPopup></link-account-confirmation-popup>

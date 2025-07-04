@@ -1,0 +1,24 @@
+﻿.branded-background-color {
+    background-color: #1B4585;
+}
+
+.branded-font-color {
+    color: #ffffff;
+}
+
+.branded-logo {
+    background-image: url('../images/CUMC/CUMCRegistration.jpg');
+    background-repeat: no-repeat;
+    height: 31px;
+    margin: 5px 4px;
+    background-size: contain;
+}
+    
+.branded-footer-stripe {
+    background-color: #ffffff; /*keep this white, for veradigm, its the orange stripe above the footer*/
+}
+
+.branded-footer-color {
+    background-color: #1B4585;
+    color: #ffffff;
+}

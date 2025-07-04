@@ -1,0 +1,29 @@
+/* added newly */
+
+img#mainLogo{background:url(../images/sandlot.gif); background-repeat:no-repeat; background-position:center;}
+.appStripe { background-color:#B32017;}
+.accordionHeader{background-color:#000000;color:#E0BE9E}
+.accordionHeaderText{background-color:#000000;color:#E0BE9E;}
+.sponsored {display:block;}
+img#helpIcon{background:url(../images/headerhelp.gif); background-repeat:no-repeat; background-position:center;}
+img#helpIconLogin{background:url(../images/NewCo/headerhelpNewCoLogin.gif); background-repeat:no-repeat; background-position:center;}
+img#profileIcon{background:url(../images/headerprofile.gif); background-repeat:no-repeat; background-position:center;}
+img#logoutIcon{background:url(../images/headerlogout.gif); background-repeat:no-repeat; background-position:center;}
+img#messageQueueIcon{background:url(../images/headerMsgQueue.gif); background-repeat:no-repeat; background-position:center;}
+img#iLearnIcon {height: 24px; width: 24px;border: none; background-image:url(../images/Allscripts/gradCap.png); background-repeat:no-repeat; background-position:center;}
+img#iLearnIcon:hover{height: 24px; width: 24px; background-image:url(../images/Allscripts/gradCapHover.png); background-repeat:no-repeat; background-position:center;}
+
+a:hover {
+	color: #ff0000;
+}
+.redborder     { height:1px; background-color:#AD0808; }
+.subheadred		{ font-size:12px; font-weight:bold; color: #AD0808; }
+.accordionContent
+{
+    background-color: #E0E1E2;
+    color:#595959;
+    border: 1px dashed #2F4F4F;
+    border-top: none;
+    padding: 5px;
+    padding-top: 10px;
+}

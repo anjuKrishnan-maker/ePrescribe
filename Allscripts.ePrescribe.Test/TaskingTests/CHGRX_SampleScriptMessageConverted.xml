@@ -1,0 +1,283 @@
+﻿<?xml version="1.0"?>
+
+<AllscriptsMessageEnvelope>
+
+
+  <MessageDispatchHeader>
+
+    <ID>8090ca07-0901-49e2-bc88-c163bd9e7cca</ID>
+
+    <RequestID/>
+
+    <ClientID>00000000000002800734</ClientID>
+
+    <SiteID>001</SiteID>
+
+    <Noun>CHGRES</Noun>
+
+    <Verb>CHGRES</Verb>
+
+    <TimeStamp>2016-03-09T17:55:14</TimeStamp>
+
+  </MessageDispatchHeader>
+
+
+  <EntityContext>
+
+
+    <KeyedValues>
+
+
+      <KeyedValue>
+
+        <Key>SiteID</Key>
+
+        <Value>001</Value>
+
+      </KeyedValue>
+
+    </KeyedValues>
+
+  </EntityContext>
+
+
+  <MessageContent>
+
+
+    <PrescriptionMessage>
+
+
+      <Switch>
+
+        <TestIndicator>N</TestIndicator>
+
+        <RecipientID>3105551</RecipientID>
+
+        <RecipientIdLevelTwo/>
+
+        <RecipientIdLevelThree>285</RecipientIdLevelThree>
+
+        <SenderID>3562107060001</SenderID>
+
+        <SenderPassword/>
+
+        <SenderIdLevelThree>165</SenderIdLevelThree>
+
+        <AppID>NOW</AppID>
+
+        <PartnerPortal>Perse106</PartnerPortal>
+
+        <MessageType>CHGRES</MessageType>
+
+        <TransactionControlNumber>HELLO</TransactionControlNumber>
+
+        <InitiatedTransactionControlReferecenID>23f53454fd034ca099f3301ff3e07ef8</InitiatedTransactionControlReferecenID>
+
+        <ProviderID>6d9dd5ef-84ca-4cc7-8e2d-248b4f324e37</ProviderID>
+
+        <PrescriberOrderNo></PrescriberOrderNo>
+        
+        <AppVersion>2016.2.0.102</AppVersion>
+
+        <ProviderIDNode>6d9dd5ef-84ca-4cc7-8e2d-248b4f324e37</ProviderIDNode>
+
+      </Switch>
+
+
+      <Prescription>
+
+        <PrescriberOrderNo>ECHO FROM NEWRX</PrescriberOrderNo>
+
+        <NDCNumber>42254033578</NDCNumber>
+
+        <DrugDescription>Captopril 25 MG TABS - QUANTITY 60 EA - REFILL 4 - Take one tablet twice a day for 30 days. - 0 DAYS - DAW</DrugDescription>
+
+        <Quantity>60</Quantity>
+
+        <QuantityQualifier>C48542</QuantityQualifier>
+
+        <Created/>
+
+        <DosageFormCode/>
+
+        <StrengthUOM/>
+
+        <SIGText>Take one tablet twice a day for 30 days.</SIGText>
+
+        <RefillQuantity>4</RefillQuantity>
+
+        <RefillQuantityQual/>
+
+        <DaysSupply/>
+
+        <DAW>True</DAW>
+
+        <DAWDetail>1</DAWDetail>
+
+        <PharmacyNotes/>
+
+        <RxNotes/>
+
+        <RxNormCUI/>
+
+        <RxNormQual/>
+
+        <NCPDPQuantityUOM>C48542</NCPDPQuantityUOM>
+
+      </Prescription>
+
+
+      <Patient>
+
+        <PatientID/>
+
+        <Ssn/>
+
+        <MedicareNumber/>
+
+        <PbmID/>
+
+        <FirstName>Ci</FirstName>
+
+        <LastName>Li</LastName>
+
+        <Dob>1923-10-18T00:00:00</Dob>
+
+        <GenderCode>M</GenderCode>
+
+        <Address1/>
+
+        <City/>
+
+        <State/>
+
+        <ZipCode/>
+
+        <RelationshipCD/>
+
+        <Contact/>
+
+      </Patient>
+
+
+      <Provider>
+
+        <ProviderID>6d9dd5ef-84ca-4cc7-8e2d-248b4f324e37</ProviderID>
+
+        <ProviderQual/>
+
+        <DeaNumber>BM1690937</DeaNumber>
+
+        <NpiNumber>1649299207</NpiNumber>
+
+        <StateLicenseNumb>12345</StateLicenseNumb>
+
+        <AccountID>00000000002800734001</AccountID>
+
+        <PracticeName>Duke NY</PracticeName>
+
+        <FirstName>Ethan</FirstName>
+
+        <MiddleName>!</MiddleName>
+
+        <LastName>IntTwoMain</LastName>
+
+        <Suffix>!</Suffix>
+
+        <Prefix>!</Prefix>
+
+        <Address1>123 Main St.</Address1>
+
+        <Address2>Ste 104</Address2>
+
+        <City>Chicago</City>
+
+        <State>NY</State>
+
+        <ZipCode>60115</ZipCode>
+
+
+        <Contact>
+
+          <Phone>9199396542</Phone>
+
+          <Fax>9196545123</Fax>
+
+          <Email>TestProv@Util.com</Email>
+
+        </Contact>
+
+        <NUCCSpecialtyCd>207N00000X</NUCCSpecialtyCd>
+
+      </Provider>
+
+
+      <Pharmacy>
+
+        <Ncpdp>3105551</Ncpdp>
+
+        <NpiNumber>1700134780</NpiNumber>
+
+        <PharmacistLastName/>
+
+        <PharmacistFirstName/>
+
+        <PharmacistMiddleName/>
+
+        <Name>10Dot6 Pharmacy Store1 MU Long Name</Name>
+
+        <Address1>56789 Long Pharmacy Name for 10.6MU</Address1>
+
+        <Address2/>
+
+        <City>ReallyLongCityNameForPharmacy 106MU</City>
+
+        <State>CA</State>
+
+        <ZipCode>900098989</ZipCode>
+
+
+        -<Contact>
+
+          <Phone>3105153115x123456789</Phone>
+
+          <Fax>3105153116</Fax>
+
+        </Contact>
+
+      </Pharmacy>
+
+
+      -<Status>
+
+        <Type/>
+
+        <Code>0</Code>
+
+        <Message/>
+
+      </Status>
+
+
+      -<Request>
+
+        <ChangeRequestType>G</ChangeRequestType>
+
+      </Request>
+
+
+      -<Response>
+
+        <Type>C</Type>
+
+        <CodeQualifier/>
+
+        <Message/>
+
+      </Response>
+
+    </PrescriptionMessage>
+
+  </MessageContent>
+
+</AllscriptsMessageEnvelope>

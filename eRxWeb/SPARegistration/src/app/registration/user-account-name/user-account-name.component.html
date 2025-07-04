@@ -1,0 +1,29 @@
+<form #userAccForm="ngForm" id="userAccForm">
+    <div class="erx-form-row">
+        <span class="erx-form-label">
+            <label><span class="highlight-star erx-form-star-position">*</span>{{userNameLabel}}</label>
+        </span>
+
+        <span class="erx-form-input">
+            <input type="text" id="newShieldUserName" name="newShieldUserName" class="input-medium" maxlength="30" [pattern]="shieldUserNamePattern"
+                   required [(ngModel)]="userAccountName.shieldUserName" #newShieldUserName="ngModel" (blur)="validateUserName();" />
+            <span *ngIf="!isUserExists && newShieldUserName.valid">
+                <img id="validUserImage" src="/images/GreenCheck.png" />
+            </span>
+
+            <span *ngIf="newShieldUserName.invalid && (newShieldUserName.dirty || newShieldUserName.touched)">
+                <span id="userNameMandatoryError" *ngIf="newShieldUserName.errors.required" class="validation-color">
+                    Username is required.
+                </span>
+                <span id="userNamePatternError" *ngIf="newShieldUserName.errors.pattern" class="validation-color">
+                    Username can contain alphanumeric characters and the following symbols _ . , -
+                </span>
+                <span id="userNameinvalidError" *ngIf="newShieldUserName.errors.uniqueShieldUserName && !newShieldUserName.errors.pattern" class="validation-color">
+                    {{userExistsErrorMessage}}
+                </span>
+            </span>
+        </span>
+    </div>
+</form>
+
+

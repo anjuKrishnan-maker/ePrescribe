@@ -1,0 +1,23 @@
+<div class="reg-container">
+    <div class="reg-header">
+        <div class="branded-logo"></div>
+    </div>
+    <ng-container *ngIf="{ isPageLoadInProgress: this.loadingNavigation | async, isApiInProgress: this.loaderService.isLoading | async} as spinner;">
+        <div id="divLoading" *ngIf="spinner.isApiInProgress || spinner.isPageLoadInProgress" class="loader">
+        </div>
+    </ng-container>
+    <div class="reg-content">
+        <router-outlet></router-outlet>
+    </div>
+    <div class="reg-footer branded-footer-color">
+        <hr class="reg-divider branded-footer-stripe" />
+        <div class="reg-contactus">ePrescribe Customer Support</div>
+        <a class="reg-supportlink-anchor" [href]="supportMailAddressHref">
+            <span class="reg-supportlink">{{supportMailAddress}}</span>
+        </a>
+        <span class="reg-app-version">{{version}}</span>
+    </div>
+</div>
+
+
+

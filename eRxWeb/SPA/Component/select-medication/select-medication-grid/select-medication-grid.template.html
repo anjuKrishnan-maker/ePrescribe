@@ -1,0 +1,113 @@
+﻿<div id="selectmedication-grid" class="RadGrid RadGrid_Veradigm med-div-wrapper selectmedication-grid-parent__layout" tabindex="0">
+    <table class="rgMasterTable selectmedication-grid-table__layout" border="0" id="selectmedication-grid__table">
+        <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+        </colgroup>
+        <thead *ngIf="gridData">
+            <tr>
+                <th scope="col" class="rgHeader rgCheck selectmedication-grid-head__size">
+                    <input *ngIf="MultiSelect == true" id="selectmedication-grid__select-all-check-box" (click)="OnGridSelectAllChecked($event)" [checked]="SelectAll" type="checkbox">
+                </th>
+                <th scope="col" class="rgHeader selectmedication-grid-head__size">&nbsp;</th>
+                <th scope="col" class="rgHeader selectmedication-grid-head__size">&nbsp;</th>
+                <th scope="col" class="rgHeader selectmedication-grid-head__size">&nbsp;</th>
+                <th scope="col" class="rgHeader selectmedication-grid-head__size">
+                    <a (click)="Sort('DrugName')" title="Click here to sort" href="javascript:void(0);">{{gridData.IsAllMedSearch === false ? 'Medication And Sig' : 'Drug Name'}}</a>
+                    <input type="submit" value=" " title="Sorted asc" class="sortPointer" [class.Asc]="SortOrder == 1" [class.Desc]="SortOrder == 2">
+
+                    <span class="selectmedication-grid-brand-drugs">(Brand drugs are in <span class="selectmedication-grid-brand-drugs__bold">BOLD</span>)</span>
+                </th>
+                <th scope="col" class="rgHeader selectmedication-grid-head__size" *ngIf="gridData.IsAllMedSearch === false">Quantity</th>
+                <th scope="col" class="rgHeader selectmedication-grid-head__size" *ngIf="gridData.IsAllMedSearch === false">DAW</th>
+                <th scope="col" class="rgHeader selectmedication-grid-head__size" *ngIf="gridData.IsAllMedSearch === false">Refills</th>
+                <th scope="col" class="rgHeader selectmedication-grid-head__size" *ngIf="gridData.IsAllMedSearch === false">Days</th>
+                <th scope="col" class="rgHeader selectmedication-grid-head__size" *ngIf="gridData.IsAllMedSearch === true">Strength</th>
+                <th scope="col" class="rgHeader selectmedication-grid-head__size" *ngIf="gridData.IsAllMedSearch === true">Unit</th>
+                <th scope="col" class="rgHeader selectmedication-grid-head__size" *ngIf="gridData.IsAllMedSearch === true">Dosage Form</th>
+                <th scope="col" class="rgHeader selectmedication-grid-head__size" *ngIf="gridData.IsAllMedSearch === true">Route</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="gridData">
+            <tr [class.rgRow]="even == true" [class.rgAltRow]="odd == true" [class.rgSelectedRow]="item.RowStatus  == 1 || item.RowStatus  == 6|| item.RowStatus  == 5" [class.rightPanelMed]="item.RowStatus == 6" (click)="OnGridItemSelected(item, i,$event)" *ngFor="let item of gridData.Meds;let i = index; let odd = odd; let even = even;">
+                <td class="selectmedication-grid-data__layout-20">
+                    <input *ngIf="gridData.IsAllMedSearch === false" id="selectmedication-grid__med-check-box-{{i}}" type="checkbox" [(ngModel)]="item.Selected">
+                    <input *ngIf="gridData.IsAllMedSearch === true" value="rbSelect" type="radio" id="selectmedication-grid__med-radio-{{i}}" ddi="047338" [checked]="item.Selected == true">
+                </td>
+                <td class="selectmedication-grid-data__layout-37">
+                    <img [title]="item.FormularyImage.ToolTip" [src]="item.FormularyImage.ImageUrl" style="border-width:0px;cursor:pointer;">
+                    <span *ngIf="item.LevelOfPreferedness > 0" style="font-size:7px;">{{item.LevelOfPreferedness}}</span>
+                </td>
+                <td class="selectmedication-grid-data__layout-20">
+                    <img *ngIf="IsValid(item.BenefitImage)" [title]="item.BenefitImage.ToolTip" [src]="item.BenefitImage.ImageUrl" style="width:18px;border-width:0px;cursor:pointer;">
+                </td>
+                <td class="selectmedication-grid-data__layout-20">
+                    <img *ngIf="IsDURImgValid(item.DURImage.ToolTip)" [title]="item.DURImage.ToolTip" [src]="item.DURImage.ImageUrl" style="width:18px;border-width:0px;cursor:pointer;">
+                </td>
+                <td class="selectmedication-grid-data__layout-mednsig">
+
+                    <a class="medName" href="javascript:void(0);" (click)="MedNameClicked(item)" [style.font-weight]="item.IsGeneric == true ? 'normal' : 'bold'">
+                        {{item.DrugName}}
+                    </a>
+                    <span id="selectmedication-grid__label-drug-ext-{{i}}" [style.font-weight]="item.IsGeneric ? 'normal' : 'bold'">{{item.DrugExt}}</span>
+                    <br>
+                    <div *ngIf="gridData.RequestFor == 1">
+                        <div *ngIf="item.RxDate " id="selectmedication-grid__label-rx-date-{{i}}" class="smalltext RxDate">Rx Date: {{item.RxDate}}</div>
+                        <div *ngIf="item.RxStatus" id="selectmedication-grid__label-rx-status-{{i}}" class="smalltext RxStatus">Status: {{item.RxStatus}}</div>
+                        <div *ngIf="item.RxStatusInfo" id="selectmedication-grid__label-rx-status-info-{{i}}" class="smalltext RxStatusInfo">{{item.RxStatusInfo}}</div>
+                    </div>
+                </td>
+                <td *ngIf="gridData.IsAllMedSearch === false" class="selectmedication-grid-data__layout-60">
+                    <span id="selectmedication-grid__txt-quantity-wrapper-{{i}}" class="riSingle RadInput RadInput_Veradigm selectmedication-grid-data__layout-45">
+                        <input (click)="TextBoxSelected($event)" (blur)="OnGridItemModified(item, i, $event)" id="selectmedication-grid__txt-quantity-{{i}}" class="riTextBox riEnabled" [(ngModel)]="item.Quantity" type="text">
+                    </span>
+                </td>
+                <td *ngIf="gridData.IsAllMedSearch === false" align="center" class="selectmedication-grid-data__layout-30">
+                    <input (click)="TextBoxSelected($event);" id="selectmedication-grid__check-daw-{{i}}" type="checkbox" (change)="DawChanged($event,item)" [ngModel]="item.DAW">
+                </td>
+                <td *ngIf="gridData.IsAllMedSearch === false" class="selectmedication-grid-data__layout-40">
+                    <span id="selectmedication-grid__txt-refill-wrapper-{{i}}" class="riSingle RadInput RadInput_Veradigm selectmedication-grid-data__layout-30">
+                        <input (click)="TextBoxSelected($event)" (blur)="OnGridItemModified(item, i, $event)" id="selectmedication-grid__txt-refill-{{i}}" class="riTextBox riEnabled" [(ngModel)]="item.Refill" type="text">
+                    </span>
+                </td>
+                <td *ngIf="gridData.IsAllMedSearch === false" class="selectmedication-grid-data__layout-40">
+                    <span id="selectmedication-grid__txt-days-wrapper-{{i}}" class="riSingle RadInput RadInput_Veradigm selectmedication-grid-data__layout-30">
+                        <input (click)="TextBoxSelected($event)" (blur)="OnGridItemModified(item, i, $event)" id="selectmedication-grid__txt-days-{{i}}" class="riTextBox riEnabled" [(ngModel)]="item.DayOfSupply" type="text">
+                    </span>
+                </td>
+                <td *ngIf="gridData.IsAllMedSearch === true">
+                    {{item.Strength}}
+                </td>
+                <td *ngIf="gridData.IsAllMedSearch === true">
+                    {{item.StrengthUOM}}
+                </td>
+                <td *ngIf="gridData.IsAllMedSearch === true">
+                    {{item.DosageForm}}
+                </td>
+                <td *ngIf="gridData.IsAllMedSearch === true">
+                    {{item.RouteofAdmin}}
+                </td>
+            </tr>
+            <tr *ngIf="gridData.Meds && gridData.Meds.length == 0">
+                <td colspan="13">No meds found for this view</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <erx-modal-popup-control [Width]="'45%'" [Height]="'100%'" ModalId="delux-ad">
+        <div modal-body class="selectmedication-modal-body">
+            <iframe *ngIf="_src_delux_ad !== undefined" name="modal-frame" [src]="_src_delux_ad | safeUrl" frameborder="0" class="selectmedication-modal-iframe"></iframe>
+        </div>
+        <div modal-footer class="selectmedication-modal-footer">
+            <input type="button" class="btnstyle btnStyleAction" value="OK" (click)="closeModalPopup()" />
+        </div>
+    </erx-modal-popup-control>
+</div>
+<erx-select-medication-url-popup-content></erx-select-medication-url-popup-content>

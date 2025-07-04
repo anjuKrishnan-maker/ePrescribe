@@ -1,0 +1,173 @@
+/* Telerik RadGrid Monochrome skin */
+
+.RadGrid_Monochrome
+{
+	border: solid 1px #d3d3d3;
+}
+
+.RadGrid_Monochrome,
+.MasterTable_Monochrome
+{
+	font: normal 11px Arial, Verdana, Sans-serif;
+}
+
+.MasterTable_Monochrome
+{
+	border: 0px !important;
+	border-collapse: separate !important;
+	/*-moz-user-select: none;*/ /*disables text selecting in Firefox to combat unpleasant visual appearance*/
+}
+
+.RadGrid_Monochrome th,
+.RadGrid_Monochrome th a
+{
+    font-weight:bold;
+	color: #fff;
+	text-align: left;
+}
+
+.RadGrid_Monochrome td,
+.RadGrid_Monochrome td a
+{ 
+	color: #000;
+}
+
+.GridHeader_Monochrome,
+.ResizeHeader_Monochrome
+{
+	color: white;
+	height: 34px;
+	background: #494949;
+}
+
+.GridRow_Monochrome td,
+.GridAltRow_Monochrome td,
+.SelectedRow_Monochrome td,
+.ActiveRow_Monochrome td,
+.GridEditRow_Monochrome td
+{
+	border-bottom:1px solid #d3d3d3;
+	padding-top:4px;
+	padding-bottom:5px;
+}
+
+.GridRow_Monochrome
+{
+	background-color: #f7f7f7;
+}
+.GridAltRow_Monochrome
+{
+	background-color: #eeeeee;
+}
+.SelectedRow_Monochrome
+{
+    background-color: #fff;
+	border-bottom:1px solid #d3d3d3;
+}
+.GridEditRow_Monochrome
+{
+	background-color: #ffffe1;
+	border-bottom:1px solid #d3d3d3;
+}
+
+.GridEditRow_Monochrome input
+{
+	font-size: 11px;
+}
+.ActiveRow_Monochrome
+{
+	background-color: #d3d3d3 !important;
+}
+
+.GridPager_Monochrome
+{
+	background: #d8d8d8;
+}
+.GridPager_Monochrome td
+{
+	border-top: 1px solid #d3d3d3;
+	padding-left: 11px;
+	padding-top:2px;
+	padding-bottom:3px;
+}
+.GridPager_Monochrome a
+{
+	color: #333;	
+}
+
+.GridHeader_Monochrome img,
+.GroupPanelItems_Monochrome input
+{
+	vertical-align: middle;
+}
+
+/* grouping button */
+.GroupPanelItems_Monochrome
+{
+	background: #686868;
+	color: white !important;
+	border: solid 1px #bababa;
+	white-space:  nowrap;
+	font-size: 11px;
+}
+
+tr.GroupHeader_Monochrome
+{
+	background: #d8d8d8;
+	font-weight: bold;
+	height:20px;
+	border-bottom:1px solid #d3d3d3;
+}
+
+.GroupPanel_Monochrome
+{
+	height: 30px;
+	width: 100%;
+	background: #000;
+	border-bottom: 1px solid #d3d3d3;
+	border-collapse: collapse;
+}
+
+.GroupPanel_Monochrome td
+{
+	color: #fff;
+}
+
+.TopReorderIndicator_Monochrome
+{
+	background: url('MoveDown.gif') no-repeat;
+}
+
+.BottomReorderIndicator_Monochrome
+{
+	background: url('MoveUp.gif') no-repeat;
+}
+
+.GridFilterMenu_Monochrome
+{
+    cursor:default;
+}
+
+.GridFilterMenu_Monochrome .GridFilterMenuSelectColumn_Monochrome,
+.GridFilterMenu_Monochrome .GridFilterMenuTextColumn_Monochrome
+{
+	padding:3px 4px;
+}
+
+.GridFilterMenu_Monochrome .GridFilterMenuSelectColumn_Monochrome
+{
+    background:#e4e4e4;
+    text-align:center;
+}
+
+.GridFilterMenu_Monochrome .GridFilterMenuTextColumn_Monochrome
+{
+    background:#fff;
+    color:#333;
+}
+
+.GridFilterMenu_Monochrome .GridFilterMenuHover_Monochrome
+{
+    background:#4c4c4c;
+    color:#fff;
+}

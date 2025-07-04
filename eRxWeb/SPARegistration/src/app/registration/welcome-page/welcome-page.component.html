@@ -1,0 +1,46 @@
+﻿<div id="welcome-title" class="title-bar title-bar-heading branded-background-color branded-font-color">
+    Welcome to {{title}}!
+</div>
+
+<div class="welcome-left-panel">
+    <div class="welcome-group welcome-congratulations">
+        Congratulations on completing Step 1 of the {{title}} Registration!
+    </div>
+    <div class="welcome-group">
+        In order to send prescriptions electronically you will need to complete our identity proofing process through our trusted vendor ID.me.
+    </div>
+
+    <div class="welcome-group">
+        <div class="erx-form-sub-heading font-setting-bold font-uppercase">
+            Before You Proceed
+        </div>
+        <ul>
+            <li>Download and install the ID.me Authenticator app from the application store associated with your smart phone <span>(Apple Store or Google Play).</span></li>
+            <li>Be sure that your smart phone <span class="highlight-star">*</span> (or tablet) has a functioning camera and browser that can receive text messages</li>
+            <li>Once you begin the ID.me identity proofing registration, you will need the following information</li>
+        </ul>
+        <div class="welcome-nested-list-style">
+            <ol>
+                <li>Your ePrescribe User ID and Password that you just created</li>
+                <li>Your individual email address (group/shared emails are NOT allowed)</li>
+                <li>Either your Drivers License or Passport or State Issued ID</li>
+                <li>Your Social Security Number</li>
+            </ol>
+        </div>
+    </div>
+   
+    <div class="welcome-group">
+        <span class="highlight-star">*</span> This must be the same device you will always use to generate the passcodes when prescribing controlled substances.
+    </div>
+    <div class="welcome-group welcome-download-process-document">
+        <a target="_blank" href="/Help/Documents/IDmeRegistrationProcess.pdf"> Click here to review the process</a>.
+    </div>
+</div>
+<div class="welcome-right-panel">
+    <img src="/images/registration/idmePlayStoreImage.png" />
+</div>
+
+<div class="welcome-buttons">
+    <input type="button" (click)="navigateToCSP()" class="button-style" value="Continue">
+</div>
+

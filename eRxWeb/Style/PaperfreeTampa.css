@@ -1,0 +1,23 @@
+﻿.branded-background-color {
+    background-color: #005A41;
+}
+
+.branded-font-color {
+    color: #ffffff;
+}
+
+.branded-logo {
+    background-image: url('../images/PaperFreeTampaBay/TampaLogo_RGB_Final_150.jpg');
+    background-repeat: no-repeat;
+    height: 70px;
+    background-size: contain;
+}
+    
+.branded-footer-stripe {
+    background-color: #ffffff; /*keep this white, for veradigm, its the orange stripe above the footer*/
+}
+
+.branded-footer-color {
+    background-color: #005A41;
+    color: #ffffff;
+}

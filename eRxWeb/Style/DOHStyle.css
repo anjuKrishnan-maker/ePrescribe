@@ -1,0 +1,25 @@
+﻿/* added newly */
+
+img#mainLogo{background:url(../images/DOHLogo.JPG); background-repeat:no-repeat; background-position:center;}
+.sponsored {display:inline; text-align:center}
+.tabSelected
+{
+	color:White;
+
+
+	height:18px;
+	text-decoration:none;
+	text-align:center;
+}
+
+.tabUnSelected
+{
+	color:#E3E3E3;
+	font-weight:normal;
+	height:18px;
+}
+.divider
+{
+	background-color:#595959;
+}
+

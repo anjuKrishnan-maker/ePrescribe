@@ -1,0 +1,13 @@
+﻿<div *ngIf="PdmpUISummary">
+    <div [class.pdmp-available-summary]="PdmpUISummary.SummaryStatus === 1"
+         [class.pdmp-no-information-summary]="PdmpUISummary.SummaryStatus === 2"
+         [class.pdmp-connection-issue-summary]="PdmpUISummary.SummaryStatus === 3"
+         [innerHTML]="PdmpUISummary.SummaryHtml | safeHtml"
+         (click)="PdmpUISummary.SummaryStatus === 1 ? OpenDetails() : false">
+    </div>
+</div>
+<div>
+    <erx-pdmp-details></erx-pdmp-details>
+</div>
+
+

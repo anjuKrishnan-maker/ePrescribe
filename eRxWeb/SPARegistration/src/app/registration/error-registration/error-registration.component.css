@@ -1,0 +1,15 @@
+﻿.reg-error-message {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    padding: .9em;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin: 1em;
+}
+
+    .reg-error-message p {
+        max-width: 60%;
+        line-height: 2em;
+    }

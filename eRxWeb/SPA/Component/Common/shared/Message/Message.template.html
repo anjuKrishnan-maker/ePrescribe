@@ -1,0 +1,7 @@
+﻿<div id="erxMessagesTemplate">
+    <div *ngFor="let message of Messages" [ngClass]="{'erxSuccess-dialog': message.Icon === 0, 'erxError-dialog': message.Icon === 1, 'erxInformation-dialog': message.Icon === 2}">
+        <img [ngClass]="{'erxSuccess-dialogImg': message.Icon === 0, 'erxError-dialogImg': message.Icon === 1, 'erxInformation-dialogImg': message.Icon === 2}"/>
+        <span [innerHTML]="message.Message | safeHtml" style="padding-left: 5px;"></span>
+        <img *ngIf="message.ShowCloseButton == true" class="alignRight" src="../images/Delete.gif" (click)="removeMessage(message)"/>
+    </div>
+</div>

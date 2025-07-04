@@ -1,0 +1,55 @@
+﻿<!--When Summary UI has data-->
+
+<div *ngIf="!ShowEmptySummaryScreen" [innerHTML]="summaryHtml | safeHtml" (click)="OpenDetails()" style='cursor:pointer;line-height:11.5px'>
+</div>
+
+<!--When Summary UI doesnt have data-->
+<div *ngIf="ShowEmptySummaryScreen" id='summary' style='border-width:1px;border-style:solid;min-height:124px;background-color:#fff; position: relative'>
+
+    <div *ngIf="ShowNoDetailsOverlay" id='summary' (click)="CloseNoDetails()" style='border-width:1px; border-style:solid; min-height:124px; z-index: 10; background: #665999; opacity: .7; width:100%; text-align: center; position: absolute;'>
+        <div style='margin-top: 7px;'>
+            <img src='/images/info-nor-light-16-x-16@2x.png'>
+        </div>
+        <div style='margin-top: 11px;color:white;font-size: larger;font-weight: bold;'>Pricing and therapeutic <br /> alternative information <br />unavailable </div>
+    </div>
+
+    <div (click)="OpenDetails()">
+        <div *ngIf="IsLoading" id='summary' style='border-width:1px;border-style:solid; width:100%; min-height:124px;  z-index: 10; text-align: center; position: absolute; text-align: right; padding-top: 33px;'>
+            <div style='margin-top: 7px;'>
+                <img src='/images/loading.gif'>
+            </div>
+        </div>
+
+        <div id='ppt-header' style='color:#fff;margin-bottom:0;height:24px;'>
+            <div id="summary-template-header__layout-no-overflow ppt-header">
+                <span style='font-weight: bold; white-space: nowrap; padding-left: 3px; color: #fff;margin-bottom: 0; line-height: 23px; cursor: default;'
+                      title='{{medName}}, {{medExtension}}'>{{medName}}, {{medExtension}}</span>
+            </div>
+        </div>
+        <div id='ppt-row' style='padding-top:2px;padding-bottom:4px;padding-right:18px;padding-left:17px;font-family:HelveticaNeue,Arial;height:19px;color:#333;'>
+            <div id='caption' style='width:60%;float:left;font-size:12px;'>Insurance</div>
+            <div *ngIf="!IsLoading" id='value' style='float:right;width:35%;text-align:right;font-size:12px;position: relative;margin-right:3px;'>
+                <span>N/A</span>
+            </div>
+        </div>
+        <div id='ppt-row' style='padding-top:2px;padding-bottom:4px;padding-right:18px;padding-left:17px;font-family:HelveticaNeue,Arial;height:19px;color:#333;'>
+            <div id='caption' style='width:60%;float:left;font-size:12px;'>Ins. 90-day</div>
+            <div *ngIf="!IsLoading" id='value' style='float:right;width:35%;text-align:right;font-size:12px;position: relative;margin-right:3px;'>
+                <span>N/A</span>
+            </div>
+        </div>
+        <div id='ppt-row' style='padding-top:2px;padding-bottom:4px;padding-right:18px;padding-left:17px;font-family:HelveticaNeue,Arial;height:19px;color:#333;'>
+            <div id='caption' style='width:60%;float:left;font-size:12px;'>Cash w/ Offer </div>
+            <div *ngIf="!IsLoading" id='value' style='float:right;width:35%;text-align:right;font-size:12px;position: relative;margin-right:3px;'>
+                <span>N/A</span>
+            </div>
+        </div>
+        <div id='ppt-row' style='padding-top:2px;padding-bottom:4px;padding-right:18px;padding-left:17px;font-family:HelveticaNeue,Arial;height:19px;color:#333;'>
+            <div id='caption' style='width:60%;float:left;font-size:12px;'>Low As</div>
+            <div *ngIf="!IsLoading" id='value' style='float:right;width:35%;text-align:right;font-size:12px;position: relative;margin-right:3px;'>
+                <span>N/A</span>
+            </div>
+        </div>
+    </div>    
+</div>
+

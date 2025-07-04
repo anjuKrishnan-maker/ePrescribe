@@ -1,0 +1,35 @@
+<form #userExisting="ngForm" id="userExisting">
+    <div>
+        <div class="erx-form-row">
+            <span class="erx-form-label user-existing-account-form-label-spacing">
+                <label><span class="highlight-star erx-form-star-position">*</span>Username</label>
+            </span>
+            <span class="erx-form-input">
+                <input type="text" id="existingShieldUserName" name="existingShieldUserName" class="input-medium" maxlength="30"
+                       required [(ngModel)]="userExistingAccount.shieldUserName" #existingShieldUserName="ngModel" autocomplete="none" (change)="onCredentialChanged()"/>
+                <span *ngIf="existingShieldUserName.invalid && (existingShieldUserName.dirty || existingShieldUserName.touched)">
+                    <span id="userNameMandatoryError" *ngIf="existingShieldUserName.errors.required" class="validation-color">
+                        Username is required.
+                    </span>
+                </span>
+                <span *ngIf="ShowInValidExistingShieldAccountError" class="validation-color">
+                    Invalid user credentials
+                </span>
+            </span>
+        </div>
+    </div>
+    <div class="erx-form-row">
+        <span class="erx-form-label user-existing-account-form-label-spacing">
+            <label><span class="highlight-star erx-form-star-position">*</span>Password</label>
+        </span>
+        <span class="erx-form-input">
+            <input type="password" id="existingShieldUserPassword" name="existingShieldUserPassword" class="input-medium"
+                   required [(ngModel)]="userExistingAccount.password" #existingShieldUserPassword="ngModel" maxlength="25" (change)="onCredentialChanged()"/>
+            <span *ngIf="existingShieldUserPassword.invalid && (existingShieldUserPassword.dirty || existingShieldUserPassword.touched)">
+                <span id="passwordRequiredError" *ngIf="existingShieldUserPassword.errors.required" class="validation-color">
+                    Password is required.
+                </span>
+            </span>
+        </span>
+    </div>
+</form>

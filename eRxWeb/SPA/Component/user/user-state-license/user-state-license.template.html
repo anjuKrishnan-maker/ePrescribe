@@ -1,0 +1,41 @@
+﻿<div>
+    <div id='state-license-details'>
+
+        <div id="btn-add-state-license" [ngClass]="userStateLicensesModel.IsRestrictedMode ? 'user-license-add-lic-btn-disabled' : 'user-license-add-lic-btn'" (click)="addLicense()">
+            <img src="../../../../images/Insert.gif" ID="imgColExpStateLic" />
+            Add<span *ngIf="userStateLicensesModel.UserStateLicenses.length != 0"> Additional</span> State License
+        </div>
+
+
+        <div class="user-state-license-table">
+            <div class="user-state-license-table-header">
+                <div id="state-lic-header-state" class="user-state-license-table-header-cell">State</div>
+                <div id="state-lic-header-number" class="user-state-license-table-header-cell">License Number</div>
+                <div id="state-lic-header-exp-date" class="user-state-license-table-header-cell">Expiration Date</div>
+                <div id="state-lic-header-lic-type" class="user-state-license-table-header-cell">License Type</div>
+                <div class="user-state-license-table-header-cell"></div>
+                <div class="user-state-license-table-header-cell"></div>
+            </div>
+
+            <div class="add-user-state-license-table-row">
+
+                <erx-add-user-state-license (status)="statusHandler($event)" (updatedLicense)="updateHandler($event)" [userStateLicenseRequest]="userStateLicenseRequest"
+                                            [userStateLicense]="userStateLicense" [userStateLicensesModel]="userStateLicensesModel">
+                </erx-add-user-state-license>
+
+            </div>
+
+            <div class="user-state-license-table-row" *ngFor="let license of userStateLicensesModel.UserStateLicenses; let i=index">
+                <div id="statename-state-lic-row-{{i}}" class="user-state-license-table-cell">{{license.State}}</div>
+                <div id="lic-number-state-lic-row-{{i}}" class="user-state-license-table-cell">{{license.LicenseNo}}</div>
+                <div id="exp-date-state-state-lic-row-{{i}}" class="user-state-license-table-cell">{{license.ExpiringDate | date:'MM/dd/yyyy'}}</div>
+                <div id="lic-type-state-state-lic-row-{{i}}" class="user-state-license-table-cell">{{license.LicenseType}}</div>
+                <div id="edit-state-state-lic-row-{{i}}" class="user-state-license-table-cell"><a [ngClass]="userStateLicensesModel.IsRestrictedMode ? 'erx-hyperlink-disabled' : 'erx-hyperlink'" (click)="editLicense(license)">Edit</a></div>
+                <div id="delete-state-state-lic-row-{{i}}" class="user-state-license-table-cell"><a [ngClass]="userStateLicensesModel.IsRestrictedMode ? 'erx-hyperlink-disabled' : 'erx-hyperlink'" (click)="deleteLicense(license)">Delete</a></div>
+            </div>
+            <div class="user-state-license-table-row">
+                <div class="user-state-license-table-cell" *ngIf="userStateLicensesModel.UserStateLicenses.length == 0">No state licenses exist for this user</div>
+            </div>
+        </div>
+    </div>
+</div>

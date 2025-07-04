@@ -1,0 +1,63 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            80:7c:e0:e5:99:54:fc:fd
+        Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=US, ST=Nebraska, L=Freemont, O=Sav-Rx, Inc., CN=*.savrx.com
+        Validity
+            Not Before: May 15 16:14:00 2009 GMT
+            Not After : May 17 16:14:00 2019 GMT
+        Subject: C=US, ST=Nebraska, L=Freemont, O=Sav-Rx, Inc., CN=*.savrx.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+            RSA Public Key: (1024 bit)
+                Modulus (1024 bit):
+                    00:c2:b3:82:fa:43:64:01:4d:ae:a9:57:df:48:cf:
+                    ae:d3:e3:ef:bc:19:2d:01:3e:7d:71:42:b9:fa:69:
+                    54:a8:83:db:b2:c0:fb:ae:95:c6:50:e5:44:51:46:
+                    61:93:12:10:f7:0c:30:fb:1d:6f:d1:b8:63:6c:62:
+                    af:15:51:ee:04:98:bd:07:8c:d7:ce:b7:94:ec:4f:
+                    1a:41:dc:cf:d8:a2:a8:ab:36:a8:3f:54:0a:22:b3:
+                    65:56:c4:83:11:0c:32:7f:0d:d5:ff:49:c7:94:04:
+                    e2:34:4c:1e:04:1e:bd:4f:e2:ce:c3:ca:8d:a3:43:
+                    17:77:67:af:b6:2f:dd:63:9f
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Subject Key Identifier: 
+                D1:D9:89:27:90:85:1F:19:13:93:B5:33:E5:82:15:CC:26:F3:BE:0F
+            X509v3 Authority Key Identifier: 
+                keyid:D1:D9:89:27:90:85:1F:19:13:93:B5:33:E5:82:15:CC:26:F3:BE:0F
+                DirName:/C=US/ST=Nebraska/L=Freemont/O=Sav-Rx, Inc./CN=*.savrx.com
+                serial:80:7C:E0:E5:99:54:FC:FD
+
+            X509v3 Basic Constraints: 
+                CA:TRUE
+    Signature Algorithm: sha1WithRSAEncryption
+        5d:ea:b5:a4:b8:e1:bd:68:8a:b0:19:4e:2d:85:13:82:27:bf:
+        e0:e9:5a:0e:a3:2c:66:2d:e1:a0:5f:07:56:12:49:f5:dd:24:
+        e1:e9:7b:c8:52:d4:1d:5a:25:9a:10:f8:c2:a4:81:d7:0c:18:
+        10:a9:5c:1a:93:a9:0c:c6:8f:f1:90:bc:7a:22:c3:79:db:4c:
+        57:a0:f1:72:90:bc:ba:63:b5:17:94:ae:ae:62:15:2b:34:3f:
+        ce:d8:5f:eb:ed:a2:29:a7:4d:43:a6:62:fe:53:80:17:e9:f5:
+        9c:06:43:0b:b7:d7:ee:10:75:83:52:0f:86:6a:57:0e:0b:37:
+        5f:a8
+-----BEGIN CERTIFICATE-----
+MIIDBDCCAm2gAwIBAgIJAIB84OWZVPz9MA0GCSqGSIb3DQEBBQUAMGAxCzAJBgNV
+BAYTAlVTMREwDwYDVQQIEwhOZWJyYXNrYTERMA8GA1UEBxMIRnJlZW1vbnQxFTAT
+BgNVBAoTDFNhdi1SeCwgSW5jLjEUMBIGA1UEAxQLKi5zYXZyeC5jb20wHhcNMDkw
+NTE1MTYxNDAxWhcNMTkwNTE3MTYxNDAxWjBgMQswCQYDVQQGEwJVUzERMA8GA1UE
+CBMITmVicmFza2ExETAPBgNVBAcTCEZyZWVtb250MRUwEwYDVQQKEwxTYXYtUngs
+IEluYy4xFDASBgNVBAMUCyouc2F2cnguY29tMIGfMA0GCSqGSIb3DQEBAQUAA4GN
+ADCBiQKBgQDCs4L6Q2QBTa6pV99Iz67T4++8GS0BPn1xQrn6aVSog9uywPuulcZQ
+5URRRmGTEhD3DDD7HW/RuGNsYq8VUe4EmL0HjNfOt5TsTxpB3M/YoqirNqg/VAoi
+s2VWxIMRDDJ/DdX/SceUBOI0TB4EHr1P4s7Dyo2jQxd3Z6+2L91jnwIDAQABo4HF
+MIHCMB0GA1UdDgQWBBTR2YknkIUfGROTtTPlghXMJvO+DzCBkgYDVR0jBIGKMIGH
+gBTR2YknkIUfGROTtTPlghXMJvO+D6FkpGIwYDELMAkGA1UEBhMCVVMxETAPBgNV
+BAgTCE5lYnJhc2thMREwDwYDVQQHEwhGcmVlbW9udDEVMBMGA1UEChMMU2F2LVJ4
+LCBJbmMuMRQwEgYDVQQDFAsqLnNhdnJ4LmNvbYIJAIB84OWZVPz9MAwGA1UdEwQF
+MAMBAf8wDQYJKoZIhvcNAQEFBQADgYEAXeq1pLjhvWiKsBlOLYUTgie/4OlaDqMs
+Zi3hoF8HVhJJ9d0k4el7yFLUHVolmhD4wqSB1wwYEKlcGpOpDMaP8ZC8eiLDedtM
+V6DxcpC8umO1F5SurmIVKzQ/zthf6+2iKadNQ6Zi/lOAF+n1nAZDC7fX7hB1g1IP
+hmpXDgs3X6g=
+-----END CERTIFICATE-----

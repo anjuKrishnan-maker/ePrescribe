@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="https://eprescribe.allscripts.com/DataManagerService" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="https://eprescribe.allscripts.com/DataManagerService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://eprescribe.allscripts.com/DataManagerService">
+      <s:element name="Version">
+        <s:complexType />
+      </s:element>
+      <s:element name="VersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VersionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDatabasePointer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityID" type="tns:EntityIdentifier" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="EntityIdentifier">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Type" type="tns:IdentifierType" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="IdentifierType">
+        <s:restriction base="s:string">
+          <s:enumeration value="AccountID" />
+          <s:enumeration value="LicenseGUID" />
+          <s:enumeration value="UserGUID" />
+          <s:enumeration value="UserName" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetDatabasePointerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetDatabasePointerResult" type="tns:ConnectionStringPointer" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="ConnectionStringPointer">
+        <s:restriction base="s:string">
+          <s:enumeration value="SHARED_DB" />
+          <s:enumeration value="ERXDB_SERVER_1" />
+          <s:enumeration value="ERXDB_SERVER_2" />
+          <s:enumeration value="ERXDB_SERVER_3" />
+          <s:enumeration value="ERXDB_SERVER_4" />
+          <s:enumeration value="ERXDB_SERVER_5" />
+          <s:enumeration value="ERXDB_SERVER_6" />
+          <s:enumeration value="ERXDB_SERVER_7" />
+          <s:enumeration value="ERXDB_SERVER_8" />
+          <s:enumeration value="ERXDB_SERVER_9" />
+          <s:enumeration value="ERXDB_SERVER_10" />
+          <s:enumeration value="ERXDB_DEFAULT" />
+          <s:enumeration value="SERVICE_MGR_DB" />
+          <s:enumeration value="REPLICA_DB" />
+          <s:enumeration value="REGISTRATION_DB" />
+          <s:enumeration value="UTILITIES_DB" />
+          <s:enumeration value="DEBUG_DB" />
+          <s:enumeration value="REPORTING_DB" />
+          <s:enumeration value="AUDIT_ERXDB_SERVER_1" />
+          <s:enumeration value="AUDIT_ERXDB_SERVER_2" />
+          <s:enumeration value="AUDIT_ERXDB_SERVER_3" />
+          <s:enumeration value="AUDIT_ERXDB_SERVER_4" />
+          <s:enumeration value="AUDIT_ERXDB_SERVER_5" />
+          <s:enumeration value="AUDIT_ERXDB_SERVER_6" />
+          <s:enumeration value="AUDIT_ERXDB_SERVER_7" />
+          <s:enumeration value="AUDIT_ERXDB_SERVER_8" />
+          <s:enumeration value="AUDIT_ERXDB_SERVER_9" />
+          <s:enumeration value="AUDIT_ERXDB_SERVER_10" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetDatabasePointerForNewAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="newAccountRequest" type="tns:NewAccountRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="NewAccountRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PartnerID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EnterpriseClientID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CallingApplication" type="tns:CallingApplication" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="CallingApplication">
+        <s:restriction base="s:string">
+          <s:enumeration value="FullRegistration" />
+          <s:enumeration value="PartnerRegistration" />
+          <s:enumeration value="RegWebService" />
+          <s:enumeration value="Utilities" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetDatabasePointerForNewAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetDatabasePointerForNewAccountResult" type="tns:ConnectionStringPointer" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateLicenseXref">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="createLicenseXrefRequest" type="tns:CreateLicenseXrefRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreateLicenseXrefRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PartnerID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EnterpriseClientID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CallingApplication" type="tns:CallingApplication" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateLicenseXrefResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateLicenseXrefResult" type="tns:CreateLicenseXrefResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreateLicenseXrefResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IResponse">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="DBID" type="tns:ConnectionStringPointer" />
+              <s:element minOccurs="0" maxOccurs="1" name="LicenseID" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="AccountID" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="IResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ResponseStatus" type="tns:ResponseStatus" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ResponseStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="SUCCESS" />
+          <s:enumeration value="FAILURE" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="DeleteLicenseXref">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteLicenseXrefRequest" type="tns:DeleteLicenseXrefRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DeleteLicenseXrefRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AccountID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DeleteLicenseXrefResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteLicenseXrefResult" type="tns:DeleteLicenseXrefResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DeleteLicenseXrefResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateUserXref">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="createUserXrefRequest" type="tns:CreateUserXrefRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreateUserXrefRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="DBID" type="tns:ConnectionStringPointer" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccountID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreateNewLicense" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="PartnerID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EnterpriseClientID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CallingApplication" type="tns:CallingApplication" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserGUID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateUserXrefResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateUserXrefResult" type="tns:CreateUserXrefResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreateUserXrefResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:IResponse">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="DBID" type="tns:ConnectionStringPointer" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserGUID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LicenseID" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="AccountID" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="DeleteUserXref">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deleteUserXrefRequest" type="tns:DeleteUserXrefRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DeleteUserXrefRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserGUID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DeleteUserXrefResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteUserXrefResult" type="tns:DeleteUserXrefResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DeleteUserXrefResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDBIDCache">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDBIDCacheResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDBIDCacheResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForceDBIDCacheRefresh">
+        <s:complexType />
+      </s:element>
+      <s:element name="ForceDBIDCacheRefreshResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ForceDBIDCacheRefreshResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="VersionSoapIn">
+    <wsdl:part name="parameters" element="tns:Version" />
+  </wsdl:message>
+  <wsdl:message name="VersionSoapOut">
+    <wsdl:part name="parameters" element="tns:VersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDatabasePointerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDatabasePointer" />
+  </wsdl:message>
+  <wsdl:message name="GetDatabasePointerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDatabasePointerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDatabasePointerForNewAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDatabasePointerForNewAccount" />
+  </wsdl:message>
+  <wsdl:message name="GetDatabasePointerForNewAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDatabasePointerForNewAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateLicenseXrefSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateLicenseXref" />
+  </wsdl:message>
+  <wsdl:message name="CreateLicenseXrefSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateLicenseXrefResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteLicenseXrefSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteLicenseXref" />
+  </wsdl:message>
+  <wsdl:message name="DeleteLicenseXrefSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteLicenseXrefResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateUserXrefSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateUserXref" />
+  </wsdl:message>
+  <wsdl:message name="CreateUserXrefSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateUserXrefResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserXrefSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteUserXref" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserXrefSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteUserXrefResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDBIDCacheSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDBIDCache" />
+  </wsdl:message>
+  <wsdl:message name="GetDBIDCacheSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDBIDCacheResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForceDBIDCacheRefreshSoapIn">
+    <wsdl:part name="parameters" element="tns:ForceDBIDCacheRefresh" />
+  </wsdl:message>
+  <wsdl:message name="ForceDBIDCacheRefreshSoapOut">
+    <wsdl:part name="parameters" element="tns:ForceDBIDCacheRefreshResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DataManagerSvcSoap">
+    <wsdl:operation name="Version">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves the current version of the ePrescribe data manager API.</wsdl:documentation>
+      <wsdl:input message="tns:VersionSoapIn" />
+      <wsdl:output message="tns:VersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatabasePointer">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves the database pointer for the entity (accountID, licenseGUID, userGUID, username).</wsdl:documentation>
+      <wsdl:input message="tns:GetDatabasePointerSoapIn" />
+      <wsdl:output message="tns:GetDatabasePointerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatabasePointerForNewAccount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves the database pointer that should be used for this new account/user.</wsdl:documentation>
+      <wsdl:input message="tns:GetDatabasePointerForNewAccountSoapIn" />
+      <wsdl:output message="tns:GetDatabasePointerForNewAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateLicenseXref">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates an entry in the mother database License_Xref table. This is a prereq for creating a license in the License table in the child database.</wsdl:documentation>
+      <wsdl:input message="tns:CreateLicenseXrefSoapIn" />
+      <wsdl:output message="tns:CreateLicenseXrefSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLicenseXref">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deletes entry in the mother database License_Xref table. Used for cleaning up create user errors.</wsdl:documentation>
+      <wsdl:input message="tns:DeleteLicenseXrefSoapIn" />
+      <wsdl:output message="tns:DeleteLicenseXrefSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateUserXref">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates an entry in the mother database User_Xref table. This is a prereq for creating a user in the Sec_Users table in the child database.</wsdl:documentation>
+      <wsdl:input message="tns:CreateUserXrefSoapIn" />
+      <wsdl:output message="tns:CreateUserXrefSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserXref">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Deletes entry in the mother database User_Xref table. Used for cleaning up create user errors.</wsdl:documentation>
+      <wsdl:input message="tns:DeleteUserXrefSoapIn" />
+      <wsdl:output message="tns:DeleteUserXrefSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDBIDCache">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retrieves the dataset of datatables stored in cache for DBID lookup. For investigative and auditing purposes only.</wsdl:documentation>
+      <wsdl:input message="tns:GetDBIDCacheSoapIn" />
+      <wsdl:output message="tns:GetDBIDCacheSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ForceDBIDCacheRefresh">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Forces a refresh of UserGUID, UserName, LicenseGUID, and AccountID DBID lookup cache.</wsdl:documentation>
+      <wsdl:input message="tns:ForceDBIDCacheRefreshSoapIn" />
+      <wsdl:output message="tns:ForceDBIDCacheRefreshSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DataManagerSvcSoap" type="tns:DataManagerSvcSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Version">
+      <soap:operation soapAction="https://eprescribe.allscripts.com/DataManagerService/Version" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatabasePointer">
+      <soap:operation soapAction="https://eprescribe.allscripts.com/DataManagerService/GetDatabasePointer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatabasePointerForNewAccount">
+      <soap:operation soapAction="https://eprescribe.allscripts.com/DataManagerService/GetDatabasePointerForNewAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateLicenseXref">
+      <soap:operation soapAction="https://eprescribe.allscripts.com/DataManagerService/CreateLicenseXref" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLicenseXref">
+      <soap:operation soapAction="https://eprescribe.allscripts.com/DataManagerService/DeleteLicenseXref" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUserXref">
+      <soap:operation soapAction="https://eprescribe.allscripts.com/DataManagerService/CreateUserXref" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserXref">
+      <soap:operation soapAction="https://eprescribe.allscripts.com/DataManagerService/DeleteUserXref" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDBIDCache">
+      <soap:operation soapAction="https://eprescribe.allscripts.com/DataManagerService/GetDBIDCache" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForceDBIDCacheRefresh">
+      <soap:operation soapAction="https://eprescribe.allscripts.com/DataManagerService/ForceDBIDCacheRefresh" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DataManagerSvcSoap12" type="tns:DataManagerSvcSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Version">
+      <soap12:operation soapAction="https://eprescribe.allscripts.com/DataManagerService/Version" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatabasePointer">
+      <soap12:operation soapAction="https://eprescribe.allscripts.com/DataManagerService/GetDatabasePointer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatabasePointerForNewAccount">
+      <soap12:operation soapAction="https://eprescribe.allscripts.com/DataManagerService/GetDatabasePointerForNewAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateLicenseXref">
+      <soap12:operation soapAction="https://eprescribe.allscripts.com/DataManagerService/CreateLicenseXref" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLicenseXref">
+      <soap12:operation soapAction="https://eprescribe.allscripts.com/DataManagerService/DeleteLicenseXref" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUserXref">
+      <soap12:operation soapAction="https://eprescribe.allscripts.com/DataManagerService/CreateUserXref" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserXref">
+      <soap12:operation soapAction="https://eprescribe.allscripts.com/DataManagerService/DeleteUserXref" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDBIDCache">
+      <soap12:operation soapAction="https://eprescribe.allscripts.com/DataManagerService/GetDBIDCache" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForceDBIDCacheRefresh">
+      <soap12:operation soapAction="https://eprescribe.allscripts.com/DataManagerService/ForceDBIDCacheRefresh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DataManagerSvc">
+    <wsdl:port name="DataManagerSvcSoap" binding="tns:DataManagerSvcSoap">
+      <soap:address location="http://localhost:1646/DataManagerService/DataManagerSvc.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DataManagerSvcSoap12" binding="tns:DataManagerSvcSoap12">
+      <soap12:address location="http://localhost:1646/DataManagerService/DataManagerSvc.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

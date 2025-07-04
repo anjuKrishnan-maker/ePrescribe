@@ -1,0 +1,229 @@
+﻿.eRxHealthSheet_Panel
+{
+	background-color:#1B3769; 
+}
+
+img#loginLogo{background:url(../images/Dentrix/DentrixLogo.png); background-repeat:no-repeat; background-position:center;}
+img#mainLogo{background:url(../images/Dentrix/DentrixLogo.png); background-repeat:no-repeat; background-position:center;}
+
+.appStripe {
+    border-top: 5px #1B3769 solid;
+}
+
+.accordionHeader{background-color:#1B3769}
+.accordionHeaderText{background-color:#1B3769}
+.rightBoxHeader {
+	background-color:#1B3769;}
+.rightBoxTable 
+{
+	border: solid 2px #1B3769;
+}
+
+img#helpIcon:hover{background:url(../images/Dentrix/headerhelpDentrix.gif); background-repeat:no-repeat; background-position:center;}
+img#helpIconLogin:hover{background:url(../images/Dentrix/headerhelpDentrix.gif); background-repeat:no-repeat; background-position:center;}
+img#profileIcon:hover{background:url(../images/Dentrix/headerprofileDentrix.gif); background-repeat:no-repeat; background-position:center;}
+img#logoutIcon:hover{background:url(../images/Dentrix/headerlogoutDentrix.gif); background-repeat:no-repeat; background-position:center;}
+img#messageQueueIcon:hover{background:url(../images/Dentrix/headerMsgQueueDentrix.gif); background-repeat:no-repeat; background-position:center;}
+img#iLearnIcon {height: 24px; width: 24px;border: none; background-image:url(../images/Allscripts/gradCap.png); background-repeat:no-repeat; background-position:center;}
+img#iLearnIcon:hover{height: 24px; width: 24px; background-image:url(../images/Dentrix/Dentrix_ILearn.png); background-repeat:no-repeat; background-position:center;}
+
+.RadPanelBar div.rpHeaderTemplate, a.rpLink
+{
+    background: linear-gradient(#1B3769, #618ebe);
+    background: -webkit-linear-gradient(#1B3769, #618ebe); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#1B3769, #618ebe); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#1B3769, #618ebe); /* For Firefox 3.6 to 15 */
+    color: white;
+}
+.editRollover:hover span
+{
+    color: #1B3769;
+	cursor:pointer;
+}
+.rpText
+{
+    color: white;
+}
+.headerIcon {
+    width: 35px !important;
+}
+.headerIcon:hover span
+{
+    color: #1B3769
+}
+.rgSelectedRow
+{
+    background: #c9ddff 0 -5900px repeat-x url('../telerik/Skins/Allscripts/Grid/Img/sprite.gif');
+}
+
+
+.primaryForeColor {
+    color: #1B3769
+}
+
+
+
+.rightPanelMed {
+    border-left: 3px solid #1B3769 !important;
+    border-right: 3px solid #1B3769 !important;
+}
+
+.erxSelectedRow {
+    background-color: #c9ddff !important;
+}
+
+.loginbanner
+{
+	background-color:#1B3769;
+}
+
+.loginMessageTable
+{
+	border-bottom: solid 1px #1B3769;
+	border-left: solid 1px #1B3769;
+	border-right: solid 1px #1B3769;
+}
+
+.loginMessageRow
+{
+	border-top: solid 3px #1B3769;
+	border-bottom: solid 1px #1B3769;
+}
+
+.adminlink					{font:normal 12px arial, verdana, sans-serif; color:#1B3769;}
+.normal						{font:normal 12px arial, verdana, sans-serif; color:#1B3769;}
+.head						{font:bold 12px arial, verdana, sans-serif; color:#1B3769; vertical-align:middle;}
+.Pheadblack					{font:bold 12px arial, verdana, sans-serif; color:#1B3769; text-indent:10px;vertical-align:middle;}
+
+.GridHeader
+{	
+	color: #1B3769;
+}
+.SelectedRow
+{
+	background-color: #CBCBCB;
+}
+.NormalCenter				{
+	color:#1B3769;
+}	
+.NormalVerticalCenter				{
+	color:#1B3769;
+}	
+.NormalCenterSmall				{
+	color:#1B3769;
+}					
+.NormalRightSmall				{
+	color:#1B3769;
+}	
+.DURWarning
+{
+	color: #1B3769;
+}	
+.headName			{font:italic normal 14px arial, verdana, sans-serif;color:#1B3769;vertical-align:middle;font-weight:bold;}			
+.Itallic			{font:italic bold 10px arial, verdana, sans-serif;color:#1B3769;vertical-align:middle;}
+.center				{font:normal 12px arial, verdana, sans-serif;color:#1B3769;vertical-align:middle;text-align: center;}
+.NormalForScript	{font:normal 9px arial, verdana, sans-serif; color:#1B3769; vertical-align:middle; text-align: center;}									
+.table				{border-bottom-style: solid;border-bottom-color: #1B3769;border-bottom-width: thin;}
+.DEANUMBER			{font:italic normal 11px arial, verdana, sans-serif;color:#1B3769;vertical-align:middle;}	
+
+.DURHeading
+{
+	color: #AE0910;
+}
+.RSSHeading
+{
+	font:normal 11px arial, sans-serif; color:#1B3769; vertical-align:middle;
+}
+.RSSDetail
+{
+	font:normal 10px arial, sans-serif; color:#1B3769; vertical-align:middle;
+}
+
+/* CSS Design by Kumar */
+
+a {
+	color: #1B3769;
+}
+a:visited {
+	color: #1B3769;
+}
+a:hover {
+	color: #1B3769;
+}
+.h1title {
+	background-color: #1B3769;
+}
+.h4titleText {
+	color: #1B3769;
+}
+.Titbarcolor1 
+{
+	background-color:#1B3769;
+}
+
+.tabSelected
+{	
+	background-color:#1B3769;
+}
+a.tabSelectedLink
+{		
+	background-color:#1B3769;
+}
+
+
+.divider
+{
+	border-bottom:solid 1px #1B3769;
+}
+
+
+.redborder     { height:1px; background-color:#1B3769; }
+.normaltxt		{ font-size:12px; color:#1B3769; }
+.subheadred		{ font-size:12px; font-weight:bold; color: #1B3769; }
+.borderbox		{ background-color: #ffffff; border:thin solid #1B3769; padding: 8px; height: 30px; width: 300px; text-align: center; margin: auto;}
+.title      { font-weight:bold; font-size:14px; font-family: Arial, sans-serif;  color: #1B3769; margin: 0px; padding: 0px;}
+
+.accordionHeaderScriptPad
+{
+    color: #1B3769;
+	background-color: #1B3769;
+}
+
+.accordionHeaderTextScriptPad
+{
+	background-color: #1B3769;
+}
+
+
+.PopUpTable
+{
+    border: 1px #1B3769 solid;
+}
+td.PopUpHeader
+{ 
+    background-color: #1B3769;
+    border: 1px #1B3769 solid;
+}
+.deluxeComparisons
+{
+	border:solid 1px #1B3769;
+}
+
+.deluxeComparisons th
+{
+	 color:#1B3769;
+	 border:solid 1px #1B3769;
+}
+
+.deluxeComparisons td
+{
+	 border:solid 1px #1B3769;
+}
+/*bootstrap override*/
+.nav-tabs>li>a:hover {
+  border:none;
+}
+.nav-tabs>li.active>a,.nav-tabs>li.active>a:focus,.nav-tabs>li.active>a:hover {
+     background-color:#1B3769;
+     border-color:#1B3769;
+}

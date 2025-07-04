@@ -1,0 +1,84 @@
+﻿<div id="userSettingsPanelDetail">
+    <div class="user-settings-group">
+        <div class="user-settings-title">
+            Provider
+        </div>
+        <div class="user-settings-list">
+            <input type="radio" id="rbProvider" [(ngModel)]="userSettings.UserType" [value]="userCategoryEnum.PROVIDER" [disabled]="IsSwitchingDenied(userSettings.UserType, userCategoryEnum.PROVIDER) || userSettings.IsRestrictedMode" (ngModelChange)="userTypeSet()" />
+            <span class="user-settings-label">
+                Doctor or Physician (including DO)
+            </span>
+        </div>
+        <div class="user-settings-list">
+            <input type="radio" id="rbPAWithoutSuper" [(ngModel)]="userSettings.UserType" [value]="userCategoryEnum.PHYSICIAN_ASSISTANT" [disabled]="IsSwitchingDenied(userSettings.UserType, userCategoryEnum.PHYSICIAN_ASSISTANT) || userSettings.IsRestrictedMode" (ngModelChange)="userTypeSet()" />
+            <span class="user-settings-label">
+                Midlevel (including Physician Assistant and Nurse Practitioner <u>without</u> supervision)
+            </span>
+        </div>
+        <div class="user-settings-list">
+            <input type="radio" id="rbPAWithSuper" [(ngModel)]="userSettings.UserType" [value]="userCategoryEnum.PHYSICIAN_ASSISTANT_SUPERVISED" [disabled]="IsSwitchingDenied(userSettings.UserType, userCategoryEnum.PHYSICIAN_ASSISTANT_SUPERVISED) || userSettings.IsRestrictedMode" (ngModelChange)="userTypeSet()" />
+            <span class="user-settings-label">
+                Midlevel (including Physician Assistant and Nurse Practitioner <u>with</u> supervision)
+            </span>
+        </div>
+    </div>
+
+    <div id="pobTitle" class="user-settings-group">
+        <div>
+            <div class="user-settings-title ma-display-inline">
+                Prescribe On Behalf Of (POB)
+            </div>
+            <div id="spanAssociateProvidors" class="user-settings-pob-association" *ngIf="(userSettings.UserType==userCategoryEnum.POB_SUPER)||(userSettings.UserType==userCategoryEnum.POB_REGULAR)||(userSettings.UserType==userCategoryEnum.POB_LIMITED)">
+                <div class="user-settings-title user-settings-list ma-display-inline">
+                    <input type="radio" name="PobAssociation" id="rbAllProviders" Style="font-weight: bold;" [(ngModel)]="userSettings.SupervisingProviderSelectionMode" [value]="supervisingProviderSelectionModeEnum.All" [disabled]="userSettings.IsRestrictedMode"/>
+                    <span class="user-settings-label">
+                        POB associated to ALL Providers
+                    </span>
+                </div>
+                <div class="user-settings-title user-settings-list ma-display-inline">
+                    <input type="radio" name="PobAssociation" id="rbSelectedProviders" Style="font-weight: bold;" [(ngModel)]="userSettings.SupervisingProviderSelectionMode" [value]="supervisingProviderSelectionModeEnum.Select" [disabled]="userSettings.IsRestrictedMode" />
+                    <span class="user-settings-label">
+                        POB associated to Selected Providers
+                        <a id="lbSelectProviders" class="erx-hyperlink" *ngIf="userSettings.SupervisingProviderSelectionMode === supervisingProviderSelectionModeEnum.Select" (click)="openSelectSupervisingProvider()">
+                            Edit Selected Providers
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="erx-float-left">
+            <div class="user-settings-list">
+                <input type="radio" id="rbPOBSuper" [(ngModel)]="userSettings.UserType" [value]="userCategoryEnum.POB_SUPER" [disabled]="IsSwitchingDenied(userSettings.UserType, userCategoryEnum.POB_SUPER) || userSettings.IsRestrictedMode" (ngModelChange)="userTypeSet()" />
+                <span class="user-settings-label">
+                    No Review Required
+                </span>
+            </div>
+            <div class="user-settings-list">
+                <input type="radio" id="rbPOBRegular" [(ngModel)]="userSettings.UserType" [value]="userCategoryEnum.POB_REGULAR" [disabled]="IsSwitchingDenied(userSettings.UserType, userCategoryEnum.POB_REGULAR)  || userSettings.IsRestrictedMode" (ngModelChange)="userTypeSet()" />
+                <span class="user-settings-label">
+                    Some Review Required
+                </span>
+            </div>
+            <div class="user-settings-list">
+                <input type="radio" id="rbPOBLimited" [(ngModel)]="userSettings.UserType" [value]="userCategoryEnum.POB_LIMITED" [disabled]="IsSwitchingDenied(userSettings.UserType, userCategoryEnum.POB_LIMITED)  || userSettings.IsRestrictedMode" (ngModelChange)="userTypeSet()" />
+                <span class="user-settings-label">
+                    All Review Required
+                </span>
+            </div>
+        </div>        
+    </div>
+
+    <div class="user-settings-group erx-clear-float">
+        <div class="user-settings-title">
+            Other
+        </div>
+        <div class="user-settings-list">
+            <input type="radio" id="rbGeneralUser" [(ngModel)]="userSettings.UserType" [value]="userCategoryEnum.GENERAL_USER" [disabled]="IsSwitchingDenied(userSettings.UserType, userCategoryEnum.GENERAL_USER)  || userSettings.IsRestrictedMode" (ngModelChange)="userTypeSet()" />
+            <span class="user-settings-label">
+                Staff
+            </span>
+        </div>
+    </div>
+</div>
+<erx-user-supervising-providers #UserSupervisingProviders [userSupervisingProvidersList]="userSettings.UserSupervisingProvidersList" (togglePOBSelectProviders)="changeSupervisingProviderSelectionMode($event)"></erx-user-supervising-providers>

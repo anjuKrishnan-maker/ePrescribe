@@ -1,0 +1,32 @@
+﻿.show-captcha-label-group {
+    float: left;
+    padding-right: 10px;
+}
+.show-captcha-label-item{
+    text-align:right;
+}
+.show-captcha-refresh-img {
+    cursor: pointer;
+}
+
+.show-captcha-input-group {
+    display: inline-block;
+    padding-left: 15px;
+    position: relative;
+}
+.show-captcha-input-item {
+    text-align: left;
+}
+.show-captcha-dimensions {
+    height: 50px;
+    width: 200px;
+}
+
+
+.show-captcha-input-block {
+    display: block;
+}
+
+.show-captcha-label-top {
+   padding-left: 10px;
+}

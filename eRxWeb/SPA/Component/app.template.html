@@ -1,0 +1,38 @@
+﻿<div id="appContainer" [style.min-width]="applicationMinWidth" (click)="topDivClicked()">
+    <ng-container *ngIf="{ isPageLoadInProgress: this.spinnerSvc.isPageLoading | async, isApiInProgress: this.spinnerSvc.isApiLoading | async} as spinner;">
+        <div id="divLoading" *ngIf="spinner.isApiInProgress || spinner.isPageLoadInProgress">
+        </div>
+    </ng-container>
+    <div id="erxMainContent">
+        <erx-header>Loading...</erx-header>
+        <erx-menu style='padding: 0px;margin:0px' [NavigationModel]="NavigationModel" class="main-content">Loading....</erx-menu>
+        <div>
+            <div [style.position]="(isOverlayVisible) == true? 'fixed':''" [style.z-index]="(isOverlayVisible) == true? '999999':'0'"
+                 style="width: 80%; float: left; height:auto; padding-bottom: 5px;" id="angular-content-place">
+                <div class="main-content-angular">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+            <div style="width:19%; padding: 2px; margin-right: 5px; float:right">
+                <erx-right-panel [page]="page" [NavigationModel]="NavigationModel">Loading</erx-right-panel>
+            </div>
+        </div>
+        <erx-message-info>Loading..</erx-message-info>
+        <erx-footer>Loading...</erx-footer>
+    </div>
+    <div id="logRxPanel">
+        <erx-log-rx></erx-log-rx>
+    </div>
+    <div class="modal-backdrop fade in" [style.display]="(isOverlayVisible) == true? 'block':'none'">
+    </div>
+    <erx-popup-content [src]="NavigationModel.PopupSrc" [title]="NavigationModel.PopupTitle"></erx-popup-content>
+    <erx-pdf-viewer-modal-popup></erx-pdf-viewer-modal-popup>
+    <erx-html-through-overlay></erx-html-through-overlay>
+    <erx-external-html-through-overlay></erx-external-html-through-overlay>
+    <erx-feature-comparison></erx-feature-comparison>
+    <erx-sup-prov-prompt></erx-sup-prov-prompt>
+    <erx-completed-rx-cancel-rx></erx-completed-rx-cancel-rx>
+    <ecoupon-to-pharm-unchecked-warning></ecoupon-to-pharm-unchecked-warning>
+    <erx-popover-control></erx-popover-control>    
+    <privacy-override  *ngIf="this.page== taskPage">Loading...</privacy-override>
+</div>

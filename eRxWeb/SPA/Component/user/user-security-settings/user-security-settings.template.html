@@ -1,0 +1,14 @@
+﻿<div ID="secSettingsPanelDetail">
+    <input type="checkbox" [(ngModel)]="userSecurity.IsAdmin" [disabled]="!userSecurity.IsAdminEnabled || userSecurity.IsRestrictedMode" /><span class="user-settings-span">Administrator</span>
+</div>
+
+<div id="pnlChangePassword" *ngIf="userSecurity.IsShowChangePassword">
+    <a id="lnkChangePassword" class="user-security-links erx-hyperlink" (click)="openChangePasswordPopup()">Change Password</a>
+</div>
+<div id="pnlEditSecretQuestions" *ngIf="userSecurity.IsShowEditSecretQuestions">
+    <a id="lnkEditSecretQuestions" class="user-security-links erx-hyperlink" (click)="openEditSecretQuestionsPopup()">Edit Secret Questions</a>
+    <erx-edit-secret-questions-modal-popup [userSecretQuestions]="userSecurity.UserSecretQuestions"
+                                           [secretQuestionsList]="userSecurity.SecretQuestionsList"></erx-edit-secret-questions-modal-popup>
+</div>
+
+<erx-change-password-popup></erx-change-password-popup>

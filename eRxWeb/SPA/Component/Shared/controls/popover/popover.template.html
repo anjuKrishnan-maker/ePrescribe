@@ -1,0 +1,10 @@
+﻿<div class = "popover__wrapper" [class.popover__wrapper-visible]="popoverVisible == true">
+    <div class = "popover__content" [class.popover__content-visible]="popoverVisible == true">
+        <div class="arrow"></div>
+        <div class="popover__title">
+            {{title}}
+        </div>
+            <ng-content select="[popover-body]"></ng-content>
+        <br />
+    </div>
+</div>

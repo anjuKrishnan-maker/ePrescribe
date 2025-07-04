@@ -1,0 +1,168 @@
+/* Telerik RadGrid Orange skin */
+
+.RadGrid_Orange
+{
+	background: #cc9b00;
+	border: solid 1px #d3d2a8;
+	font:11px arial, verdana, sans-serif;
+	text-align: left;
+}
+
+.MasterTable_Orange
+{
+    font:11px tahoma, sans-serif;
+	border: 0px !important;
+	border-collapse: separate !important;
+	/*-moz-user-select: none;*/ /*disables text selecting in Firefox to combat unpleasant visual appearance*/
+}
+
+.RadGrid_Orange th,
+.RadGrid_Orange th a
+{ 
+	color: #fff;
+	font-weight: bold;
+}
+
+.RadGrid_Orange td,
+.RadGrid_Orange td a
+{ 
+	color: #000;
+}
+
+.GridHeader_Orange
+{
+	color: #fff;
+	height: 34px;
+	background: #cc9b00;
+}
+
+.GridRow_Orange td,
+.GridAltRow_Orange td,
+.SelectedRow_Orange td,
+.ActiveRow_Orange td,
+.GridEditRow_Orange td
+{
+	border-bottom:1px solid #d3d2a8;
+}
+
+.GridRow_Orange
+{
+	background-color: #fefce8;
+}
+.GridAltRow_Orange
+{
+	background-color: #fdf6d8;
+}
+.SelectedRow_Orange
+{
+	background-color: #fff !important;
+}
+.GridEditRow_Orange
+{
+	background-color: #e9faff;
+}
+.GridEditRow_Orange input
+{
+	font-size: 11px;
+}
+.ActiveRow_Orange
+{
+	background-color: #e2dbb9 !important;
+}
+
+.GridPager_Orange
+{
+	background: #e2dbb9;
+}
+.GridPager_Orange td
+{
+	border-top: 1px solid #d3d2a8;
+	padding-left: 11px;
+	padding-top:2px;
+	padding-bottom:3px;
+}
+
+.GridPager_Orange a
+{
+	color: #333;	
+}
+
+.GridHeader_Orange img,
+.GroupPanelItems_Orange input
+{
+	vertical-align: middle;
+}
+
+/* grouping button */
+.GroupPanelItems_Orange
+{
+	background: #cc9b00;
+	color: white !important;
+	border: solid 1px #e4e3ca;
+	white-space:  nowrap;
+	font-size: 11px;
+}
+
+tr.GroupHeader_Orange
+{
+	background: #9b7500;
+	height:20px;
+	color: #fff;
+}
+tr.GroupHeader_Orange td
+{
+	border-bottom:1px solid #e2dbb9;
+}
+
+.GroupPanel_Orange
+{
+	height: 30px;
+	width: 100%;
+	background: #9b7500;
+	border-bottom: 1px solid #d3d2a8;
+	border-collapse: collapse;
+}
+
+.GridFooter_Orange td
+{
+}
+
+.TopReorderIndicator_Orange
+{
+	background: url('MoveDown.gif') no-repeat;
+}
+
+.BottomReorderIndicator_Orange
+{
+	background: url('MoveUp.gif') no-repeat;
+}
+
+
+.GridFilterMenu_Orange
+{
+    cursor:default;
+}
+
+.GridFilterMenu_Orange .GridFilterMenuSelectColumn_Orange,
+.GridFilterMenu_Orange .GridFilterMenuTextColumn_Orange
+{
+	padding:3px 4px;
+}
+
+.GridFilterMenu_Orange .GridFilterMenuSelectColumn_Orange
+{
+    background:#e4e4e4;
+    text-align:center;
+}
+
+.GridFilterMenu_Orange .GridFilterMenuTextColumn_Orange
+{
+    background:#fff;
+    color:#333;
+}
+
+.GridFilterMenu_Orange .GridFilterMenuHover_Orange
+{
+    background:#4c4c4c;
+    color:#fff;
+}

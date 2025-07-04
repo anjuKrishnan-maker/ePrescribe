@@ -1,0 +1,5 @@
+﻿<ng-template  ngFor let-data [ngForOf]="ipmInfoItems">
+    <i>{{data.StartDate}}</i><br><B [innerHtml]="data.InfoTitle | safeHtml"></B><BR>
+    <div [innerHtml]="data.InfoBody| safeHtml"></div>
+    <hr />
+</ng-template>

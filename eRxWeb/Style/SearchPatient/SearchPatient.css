@@ -1,0 +1,135 @@
+﻿#SearchPatient {
+    background-color: #04525F;
+    display: inline;
+    width: 100%;
+}
+
+    #SearchPatient td {
+        background-color: #04525F;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-bottom: 5px;
+        padding-top: 5px
+    }
+
+    #SearchPatient tr:nth-child(even) {
+        background-color: #04525F;
+        width: 100%;
+        padding: 5px;
+    }
+
+span {
+    background-color: #04525F;
+    color: white;
+    font-weight: bold;
+}
+
+#innerSearchPatientTable {
+    display: inline;
+    width: 100%;
+}
+
+#innerSearchPatientTable td {
+    background-color: #D7D7D7;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px
+}
+
+.RadMenu ul.rmActive,
+.RadMenu ul.rmRootGroup {
+    display: block;
+}
+
+.RadMenu_Default,
+.RadMenu_Default a.rmLink {
+    font: normal 12px/23px "Segoe UI",Arial,sans-serif;
+    color: #000;
+    text-decoration: none;
+}
+
+.RadMenu_Context {
+    /*z-index: 1000;*/
+    overflow: visible;
+}
+
+.RadMenu .rmSlide, 
+.RadMenu_Context {
+    position: absolute;
+    overflow: hidden;
+    display: none;
+    float: left;
+}
+
+.RadMenu {
+    white-space: nowrap;
+    float: left;
+    position: relative;
+    z-index: 7000\9;
+}
+
+.RadMenu ul.rmVertical, 
+.RadMenu ul.rmHorizontal, 
+.RadMenu ul.rmRootScrollGroup, 
+.RadMenu_Context ul.rmHorizontal {
+    margin: 0;
+    padding: 0;
+    display: none;
+    position: relative;
+    left: 0;
+    float: left;
+}
+
+.RadMenu_Default .rmGroup, 
+.RadMenu_Default .rmMultiColumn, 
+.RadMenu_Default .rmGroup .rmVertical {
+    border: 1px solid #979797;
+    background: white repeat-y 0 0;
+}
+
+.RadMenu_Default .rmVertical .rmFirst, 
+.RadMenu_Default .rmVertical .rmLast {
+    background: 0;
+}
+
+.RadMenu .rmGroup .rmItem {
+    padding: 0;
+}
+
+.RadMenu .rmVertical .rmItem {
+    clear: both;
+}
+
+.RadMenu .rmItem {
+    padding: 0;
+}
+
+.RadMenu .rmItem {
+    float: left;
+    position: relative;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style: none;
+}
+
+.RadMenu_Default .rmGroup .rmItem a.rmLink, 
+.RadMenu_Default .rmGroup .rmItem a.rmLink:hover, 
+.RadMenu_Default .rmGroup .rmItem a.rmFocused, 
+.RadMenu_Default .rmGroup .rmItem a.rmSelected, 
+.RadMenu_Default .rmGroup .rmItem a.rmExpanded {
+    padding-top: 0;
+    padding-bottom: 0;
+    border: 0;
+}
+
+.RadMenu_Default .rmGroup a.rmLink, 
+.RadMenu_Default .rmGroup .rmText, 
+.RadMenu_Default .rmGroup .rmItem a.rmDisabled, 
+.RadMenu_Default .rmGroup .rmItem a.rmDisabled:hover, 
+.RadMenu_Default .rmGroup .rmItem a.rmDisabled .rmText, 
+.RadMenu_Default .rmGroup .rmItem a.rmDisabled:hover .rmText {
+    background-position: 0 500px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}

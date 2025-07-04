@@ -1,0 +1,45 @@
+﻿<div (keyup.enter)="btnSearch_Click()">
+    <div *ngIf="!isValidPatientSearchCriteria" id="searchError" Style="padding: 5px 10px; width: auto; height: auto; background-color: White; border: solid 1px red">
+        <span id="spanSearchError" runat="server" Style="color: Red; white-space: pre-wrap;">{{spanSearchErrorMessage}}</span>
+    </div>
+    <div class="patSearchDiv">
+        <div class="patSearchElement">
+            <span id="lblLastName" class="patSearchText">Last Name: </span>
+            <input id="txtLastName" type="text" [(ngModel)]="this.patientSearchBarModel.LastName" style="width:82px" title="Enter patient's last name" tabindex="1" />
+        </div>
+        <div class="patSearchElement">
+            <span id="lblFirstName" class="patSearchText">First Name: </span>
+            <input id="txtFirstName" type="text" [(ngModel)]="this.patientSearchBarModel.FirstName" style="width:82px" title="Enter patient's first name" tabindex="2" />
+        </div>
+        <div class="patSearchElement">
+            <span id="lblDOB" class="patSearchText">DOB: </span>
+            <input id="txtPatientDOB" type="text" [(ngModel)]="this.patientSearchBarModel.DateOfBirth" placeholder="mm/dd/yyyy" style="width:82px" title="Enter patient's Date of Birth (mm/dd/yyyy)" tabindex="3" />
+        </div>
+        <div class="patSearchElement">
+            <span id="lblPatientID" class="patSearchText">Patient ID: </span>
+            <input id="txtPatientID" type="text" [(ngModel)]="this.patientSearchBarModel.PatientId" style="width:82px" title="Enter patient's MRN" tabindex="4" />
+        </div>
+        <div class="patSearchElement">
+            <div style="position: relative">
+                <div class="floatLeft">
+                    <input type="button" id="btnSearch" class="comboButtonLeft" (click)="btnSearch_Click()" value="Search" title="Search patient" tabindex="5" />
+                </div>
+                <div (click)="toggleMenu()" class="comboButtonRightDiv">
+                    <input type="button" class="comboButtonRight" />
+                    <img class="comboButtonArrow" src="/images/arrowdown-nor-dark-12-x-12.png" tabindex="6" />
+                </div>
+                <div *ngIf="menuVisible" (mouseleave)="toggleMenu()" id="PatientSearch_searchTypeMenu_detached" class="comboButtonMenuDiv">
+                    <div class="comboListItem" (click)="btnSearch_Click()">
+                        Search Active Patients
+                    </div>
+                    <div class="comboListItem" (click)="SearchInactiveAndActive()">
+                        Search Active + Inactive Patients
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="patSearchElement">
+            <input type="button" id="btnAddPatient" class="btnstyle" (click)="btnAddPatient_Click()" value="Add Patient" title="Add a new patient" Style="vertical-align: middle; display: inline;" tabindex="7" />
+        </div>
+    </div>
+</div>

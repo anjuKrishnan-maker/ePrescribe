@@ -1,0 +1,20 @@
+﻿<div class="modal-backdrop fade in" id="mdluserMobileMessageDescription" role="dialog" [style.display]="showModalPopup ? 'block' : 'none'"></div>
+<div class="modal" id="userMobileMessageDescription" role="dialog" [style.display]="'block'" *ngIf="showModalPopup">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="overlayTitle ummd-overlay-formatting">
+                Mobile Messaging (SMS) Settings
+            </div>
+            <div class="overlayContent">
+                <div>
+                    Register your mobile device to receive text message alerts regarding your ePrescribe account. 
+                    Click Enroll in SMS Alerts to complete registration in two easy steps. Once registered, you may customize alert preferences via the available checkboxes.
+                </div>
+            </div>
+            <div class="overlayFooter ummd-overlay-formatting">
+                <input type="button" id="btnCloseMobileMessagingDesc" value="Close" class="btnstyle btnStyleAction" (click)="toggleModalPopup()" />
+            </div>
+        </div>
+    </div>
+</div>
+

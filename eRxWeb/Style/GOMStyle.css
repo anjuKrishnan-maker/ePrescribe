@@ -1,0 +1,159 @@
+﻿.branded-background-color {
+    background-color: #000000;
+}
+
+.branded-font-color {
+    color: #ffffff;
+}
+
+.branded-logo {
+    background-image: url('../images/GOM/GOMHealthcareLogo.gif');
+    background-repeat: no-repeat;
+    height: 70px;
+    background-size: contain;
+}
+
+.branded-footer-stripe {
+    background-color: #c3d040; /*keep this white, for veradigm, its the orange stripe above the footer*/
+}
+
+.branded-footer-color {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* added newly */
+
+img#mainLogo{background:url(../images/GOM/GOMHealthcareLogo_sm.gif); background-repeat:no-repeat; background-position:center;}
+
+.appStripe {
+    border-top: 5px #0029cc solid;
+}
+.accordionHeader{background-color:#0029cc}
+.accordionHeaderText{background-color:#0029cc}
+.rightBoxHeader {
+	background-color:#0029cc;}
+.rightBoxTable 
+{
+	border: solid 2px #0029cc;
+}
+.sponsored {display:inline; text-align:center}
+img#helpIcon:hover{background:url(../images/GOM/headerhelpGOM.gif); background-repeat:no-repeat; background-position:center;}
+img#helpIconLogin:hover{background:url(../images/NewCo/headerhelpNewCoLogin.gif); background-repeat:no-repeat; background-position:center;}
+img#profileIcon:hover{background:url(../images/GOM/headerprofileGOM.gif); background-repeat:no-repeat; background-position:center;}
+img#logoutIcon:hover{background:url(../images/GOM/headerlogoutGOM.gif); background-repeat:no-repeat; background-position:center;}
+img#messageQueueIcon:hover{background:url(../images/GOM/headerMsgQueueGOM.gif); background-repeat:no-repeat; background-position:center;}
+img#iLearnIcon {height: 24px; width: 24px;border: none; background-image:url(../images/Allscripts/gradCap.png); background-repeat:no-repeat; background-position:center;}
+img#iLearnIcon:hover{height: 24px; width: 24px; background-image:url(../images/GOM/GOM_ILearn.png); background-repeat:no-repeat; background-position:center;}
+
+.editRollover:hover span
+{
+    color: #0029cc;
+	cursor:pointer;
+}
+.rpText
+{
+    color: black;
+}
+.headerIcon:hover span
+{
+    color: #0029cc
+}
+.rgSelectedRow {
+    background: #e8efff 0 -5900px repeat-x url('../telerik/Skins/Allscripts/Grid/Img/sprite.gif');
+}
+
+.primaryForeColor {
+    color: #0b2972
+}
+
+
+
+.rightPanelMed {
+    border-left: 3px solid #0029cc !important;
+    border-right: 3px solid #0029cc !important;
+}
+
+.erxSelectedRow {
+    background-color: #e8efff !important;
+}
+
+
+a.tabUnSelectedLink:visited, a.tabUnSelectedLink:link
+{
+    color: white;
+}
+
+a:hover
+{
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+.GridHeader
+{	
+	background-image: url(../images/GOM/gradient_GOM.gif); 
+}
+.SelectedRow
+{
+	background-color: #5f76ce;
+}
+.h1title {
+	background-color: #0029cc;
+}
+.h2title {
+	background-color: #5f76ce;
+}
+.h3title {
+	background-color: #5f76ce;
+}
+.tabSelected
+{	
+	background-color:#0029cc;
+}
+
+a.tabSelectedLink
+{		
+	background-color:#0029cc;
+}
+
+.divider {
+    border-bottom: solid 1px #0029cc;
+    background-color: #5f76ce;
+}
+
+/* *****************    LOGIN SCREEN      ************************ 
+ */
+
+.redborder     { height:1px; background-color:#AD0808; }
+.subheadred		{ font-size:12px; font-weight:bold; color: #AD0808; }
+.accordionHeaderScriptPad
+{
+	background-color: #AA5908;
+}
+
+.accordionHeaderTextScriptPad
+{
+	background-color: #AA5908;
+}
+
+.nav-tabs>li>a {
+   color:white;
+}
+
+.nav-tabs>li>a:hover {
+  background-color: #5f76ce;
+  border:none;
+}
+.nav-tabs>li.active>a,.nav-tabs>li.active>a:focus,.nav-tabs>li.active>a:hover {
+     background-color:#0029cc;
+     border-color:#0029cc;
+}
+

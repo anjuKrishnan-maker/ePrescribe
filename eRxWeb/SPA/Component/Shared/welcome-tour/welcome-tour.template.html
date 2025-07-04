@@ -1,0 +1,9 @@
+﻿<div id="mdlWelcomeTour" class="modal fade" role="dialog">
+    <div class="modal-dialog welcome-tour__modal-dialog">
+        <div id="welcomeTourControls" class="welcome-tour__controls">
+            <button id="btnSkipForNow" class="welcome-tour__control-button" (click)="btnSkipForNowClicked()">Skip For Now</button>
+            <button id="btnDoNotShowAgain" class="welcome-tour__control-button welcome-tour__control-button-do-not-show" (click)="btnDoNotShowAgainClicked()">Do Not Show Again</button>
+        </div>
+        <iframe id="welcomeTourPath" class="welcome-tour__iFrame" [src]="frameSource"></iframe>
+    </div>
+</div>

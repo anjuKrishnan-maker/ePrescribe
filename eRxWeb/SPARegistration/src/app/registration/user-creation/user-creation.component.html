@@ -1,0 +1,529 @@
+<form #userDetailForm="ngForm" (ngSubmit)="onSubmit(userDetailForm)">
+    <div id="user-creation-title" class="title-bar title-bar-heading branded-background-color branded-font-color">
+        Create New Account
+    </div>
+    <div class="erx-form-content-offset font-color-dimmed-black">
+        <div class="user-creation-already-completed">
+            <span>Already completed this step?</span> <a [href]="mainAppLink">Click here</a> and then login to continue registration.
+        </div>
+        <div>
+            Welcome to ePrescribe. The first step to prescribing is to create a user account and go through our identity proofing process. Please enter your information below.
+        </div>
+        <div class="user-creation-information">
+            <img src="/images/info-global-16-x-16.png" />
+            Please have your <span>Driver's License/State Issued ID/Passport and Social Security Number</span> available to complete the registration credentialing process.
+        </div>
+        <div class="erx-form-sub-heading font-setting-bold font-uppercase">
+            Personal Information
+        </div>
+        <div>
+            <div class="erx-form-row">
+                <span class="erx-form-label user-creation-form-label-spacing">
+                    <label>Title</label>
+                </span>
+                <span class="erx-form-input">
+                    <input id="title" name="title" class="input-x-small" autofocus
+                           maxlength="10" #title="ngModel"
+                           [(ngModel)]="userDetail.title">
+                </span>
+            </div>
+            <div class="erx-form-row">
+                <span class="erx-form-label user-creation-form-label-spacing">
+                    <label><span class="highlight-star erx-form-star-position">*</span>First Name</label>
+                </span>
+
+                <span class="erx-form-input">
+                    <input id="firstname" name="firstname" class="input-large" type="text"
+                           required maxlength="35" [pattern]="namePattern"
+                           [(ngModel)]="userDetail.firstname" #firstname="ngModel">
+                    <span *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)">
+                        <span id="firstNameRequiredError" *ngIf="firstname.errors.required" class="validation-color">
+                            First Name is required.
+                        </span>
+                        <span id="firstnamePatternError" *ngIf="firstname.errors.pattern" class="validation-color">
+                            Invalid first name. First name has to be characters, maximum of 35.
+                        </span>
+                    </span>
+
+                </span>
+            </div>
+
+            <div class="erx-form-row">
+                <span class="erx-form-label user-creation-form-label-spacing">
+                    <label>Middle Name</label>
+                </span>
+                <span class="erx-form-input">
+                    <input id="middlename" name="middleName" class="input-large"
+                           maxlength="35" [pattern]="namePattern"
+                           [(ngModel)]="userDetail.middleName" #middleName="ngModel" />
+                </span>
+                <span *ngIf="middleName.invalid && (middleName.dirty || middleName.touched)">
+                    <span id="middleNamePatternError" *ngIf="middleName.errors.pattern" class="validation-color">
+                        Invalid middle name. Middle name has to be characters, maximum of 35.
+                    </span>
+                </span>
+            </div>
+
+            <div class="erx-form-row">
+                <span class="erx-form-label user-creation-form-label-spacing">
+                    <label><span class="highlight-star erx-form-star-position">*</span>Last Name</label>
+                </span>
+                <span class="erx-form-input">
+                    <input type="text" id="lastName" name="lastName" class="input-large"
+                           [pattern]="namePattern"
+                           required maxlength="35" [(ngModel)]="userDetail.lastName" #lastName="ngModel" />
+                    <span *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+                        <span id="lastNameRequiredError" *ngIf="lastName.errors.required" class="validation-color">
+                            Last Name is required.
+                        </span>
+                        <span id="firstnamePatternError" *ngIf="lastName.errors.pattern" class="validation-color">
+                            Invalid first name. Last name has to be characters, maximum of 35.
+                        </span>
+                    </span>
+
+                </span>
+            </div>
+
+            <div class="erx-form-row">
+                <span class="erx-form-label user-creation-form-label-spacing">
+                    <label>Suffix</label>
+                </span>
+
+                <span class="erx-form-input">
+                    <input id="suffix" name="suffix" class="input-x-small"
+                           maxlength="6" #suffix="ngModel" [pattern]="suffixPattern"
+                           [(ngModel)]="userDetail.suffix">
+                    <span *ngIf="suffix.invalid && (suffix.dirty || suffix.touched)">
+                        <span id="suffixPatternError" *ngIf="suffix.errors.pattern" class="validation-color">
+                            Invalid suffix. Kindly enter a valid suffix (letters only).
+                        </span>
+                    </span>
+
+                </span>
+            </div>
+            <div class="erx-form-row">
+                <span class="erx-form-label user-creation-form-label-spacing">
+                    <label><span class="highlight-star erx-form-star-position">*</span>Personal Email</label>
+                </span>
+                <span class="erx-form-input">
+                    <input type="email" id="personalEmail" name="personalEmail" class="input-large"
+                           required maxlength="70"
+                           [(ngModel)]="userDetail.personalEmail" #personalEmail="ngModel" email />
+                    <span *ngIf="personalEmail.invalid && (personalEmail.dirty || personalEmail.touched)">
+                        <span id="emailRequiredError" *ngIf="personalEmail.errors.required" class="validation-color">
+                            Personal Email is required.
+                        </span>
+                        <span id="emailPatternError" *ngIf="personalEmail.errors.email && !personalEmail.errors.required " class="validation-color">
+                            Enter valid email address.
+                        </span>
+                    </span>
+                </span>
+            </div>
+
+            <div class="erx-form-row">
+                <span class="erx-form-label user-creation-form-label-spacing">
+                    <label><span class="highlight-star erx-form-star-position">*</span>Contact Phone Number</label>
+                </span>
+                <span class="erx-form-input">
+                    <input type="text"
+                           id="txtContactPhoneNumber"
+                           name="contactPhoneNumber"
+                           class="input-large"
+                           required
+                           [pattern]="phoneFaxPattern"
+                           maxlength="14"
+                           [(ngModel)]="userDetail.contactPhoneNumber"
+                           #contactPhoneNumber="ngModel" />
+
+                    <span *ngIf="contactPhoneNumber.touched || (contactPhoneNumber.invalid && contactPhoneNumber.dirty)">
+                        <span id="contactPhoneNumberError" *ngIf="contactPhoneNumber.errors" class="validation-color">
+                            Enter a valid contact phone number.
+                        </span>
+                    </span>
+                </span>
+            </div>
+
+            <div class="erx-form-row">
+                <span class="erx-form-label user-creation-form-label-spacing">
+                    <label><span class="highlight-star erx-form-star-position">*</span>Home Address</label>
+                </span>
+                <span class="erx-form-input">
+                    <input id="txtAddress1" class="input-large"
+                           type="text"
+                           name="HomeAddress"
+                           maxlength="35"
+                           required
+                           [(ngModel)]="userDetail.HomeAddress"
+                           #HomeAddress="ngModel" />
+
+                    <span *ngIf="HomeAddress.invalid && (HomeAddress.dirty || HomeAddress.touched)">
+                        <span id="addressRequiredError" *ngIf="HomeAddress.errors.required"
+                              class="validation-color">
+                            Home Address is required.
+                        </span>
+                    </span>
+                </span>
+            </div>
+            <div class="erx-form-row">
+                <span class="erx-form-label user-creation-form-label-spacing">
+                    <label>Home Address 2</label>
+                </span>
+                <span class="erx-form-input">
+                    <input id="txtAddress2" class="input-large"
+                           type="text"
+                           name="HomeAddress2"
+                           maxlength="35"
+                           [(ngModel)]="userDetail.HomeAddress2" />
+                </span>
+            </div>
+            <div class="erx-form-row">
+                <span class="erx-form-label user-creation-form-label-spacing">
+                    <label><span class="highlight-star erx-form-star-position">*</span>City</label>
+                </span>
+                <span class="erx-form-input">
+                    <input id="txtCity" class="input-large"
+                           type="text"
+                           name="city"
+                           maxlength="20"
+                           required
+                           [pattern]="cityPattern"
+                           [(ngModel)]="userDetail.city"
+                           #city="ngModel" />
+
+                    <span *ngIf="city.invalid && (city.dirty || city.touched)">
+                        <span *ngIf="city.errors.required"
+                              id="cityMandatoryError"
+                              class="validation-color">
+                            City is required.
+                        </span>
+                        <span id="CityPatternError" *ngIf="city.errors.pattern" class="validation-color">
+                            Enter a valid city.
+                        </span>
+                    </span>
+
+                </span>
+            </div>
+            <div class="erx-form-row">
+                <span class="erx-form-label user-creation-form-label-spacing">
+                    <label><span class="highlight-star erx-form-star-position">*</span>State</label>
+                </span>
+                <span class="erx-form-input">
+                    <select id="ddlState" class="input-medium"
+                            type="text"
+                            name="State"
+                            required
+                            [(ngModel)]="userDetail.state"
+                            #state="ngModel">
+                        <option [value]="undefined" selected disabled>-- Select a State --</option>"
+                        <option *ngFor="let item of states" [value]="item.state">
+                            {{item.description}}
+                        </option>
+                    </select>
+                    <span *ngIf="state.invalid && (state.dirty || state.touched)">
+                        <span *ngIf="state.errors.required"
+                              id="stateMandatoryError"
+                              class="validation-color">
+                            State is required.
+                        </span>
+                    </span>
+                </span>
+            </div>
+            <div class="erx-form-row">
+                <span class="erx-form-label user-creation-form-label-spacing">
+                    <label><span class="highlight-star erx-form-star-position">*</span>ZIP Code</label>
+                </span>
+                <span class="erx-form-input">
+                    <input id="txtZip" class="input-medium"
+                           type="text"
+                           name="zipCode"
+                           maxlength="9"
+                           required
+                           [pattern]="zipCodePattern"
+                           [(ngModel)]="userDetail.zipCode"
+                           #zipCode="ngModel" />
+
+                    <span *ngIf="zipCode.invalid && (zipCode.dirty || zipCode.touched)">
+                        <span *ngIf="zipCode.errors.required"
+                              id="zipMandatoryError"
+                              class="validation-color">
+                            ZIP Code is required.
+                        </span>
+                        <span id="zipCodePatternError" *ngIf="zipCode.errors.pattern" class="validation-color">
+                            Enter a valid 5 or 9 digit ZIP code
+                        </span>
+
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="erx-form-sub-heading font-setting-bold font-uppercase">
+            Provider Information
+        </div>
+        <div>
+            <div class="erx-form-row">
+                <span class="erx-form-label user-creation-form-label-spacing">
+                    <label><span class="highlight-star erx-form-star-position">*</span>NPI</label>
+                </span>
+
+                <span class="erx-form-input">
+                    <input id="npi" name="npi" class="input-medium"
+                           required maxlength="10"
+                           [(ngModel)]="userDetail.npi" #npi="ngModel" (change)="onNpiChanged()">
+
+                    <span *ngIf="npi.invalid && (npi.dirty || npi.touched)">
+                        <span id="NPIMandatoryError" *ngIf="npi.errors.required" class="validation-color">
+                            NPI is required.
+                        </span>
+                    </span>
+                    <span id="NPIinvalidError" *ngIf="!isValidNPI" class="validation-color">
+                        Provide valid NPI number.
+                    </span>
+                </span>
+            </div>
+            <div class="erx-form-row">
+                <span class="erx-form-label user-creation-form-label-spacing">
+                    <label><span class="highlight-star erx-form-star-position">*</span>Specialty 1</label>
+                </span>
+                <span class="erx-form-input">
+
+                    <select id="ddlSpecialty1"
+                            type="text"
+                            name="speciality1"
+                            class="input-large"
+                            required
+                            [(ngModel)]="userDetail.speciality1"
+                            #speciality1="ngModel">
+                        <option [value]="undefined" selected disabled>-- Select a Specialty --</option>
+                        <option *ngFor="let item of SpecialityList" [value]="item.Specialty_CD">
+                            {{item.Specialty}}
+                        </option>
+                    </select>
+                    <span *ngIf="speciality1.invalid && (speciality1.dirty || speciality1.touched)">
+                        <span *ngIf="speciality1.errors.required"
+                              id="speciality1MandatoryError"
+                              class="validation-color">
+                            Select a valid Specialty 1.
+                        </span>
+                    </span>
+                </span>
+            </div>
+            <div class="erx-form-row">
+                <span class="erx-form-label user-creation-form-label-spacing">
+                    <label>Specialty 2</label>
+                </span>
+                <span class="erx-form-input">
+                    <select id="ddlSpecialty2"
+                            type="text"
+                            name="speciality2"
+                            class="input-large"
+                            [(ngModel)]="userDetail.speciality2"
+                            #speciality2="ngModel">
+                        <option [value]="undefined" selected>-- Select a Specialty --</option>
+                        <option *ngFor="let item of SpecialityList" [value]="item.Specialty_CD">
+                            {{item.Specialty}}
+                        </option>
+                    </select>
+                </span>
+            </div>
+            <div class="erx-form-row">
+                <span class="erx-form-label user-creation-form-label-spacing">
+                    <label>DEA Number</label>
+                </span>
+                <span class="erx-form-input">
+                    <input type="text" id="deaNumber" name="deaNumber" class="input-medium"
+                           maxlength="35" [(ngModel)]="userDetail.deaNumber" #deaNumber="ngModel"
+                           (change)="setDeaValidation()" [pattern]="noLeadingSpacePattern" />
+                    <span id="DEAMandatoryError" 
+                          *ngIf="isDEARequired && (deaExpirationDate.dirty || deaExpirationDate.touched)" 
+                          class="validation-color">
+                        DEA Number is required.
+                    </span>
+                    <span *ngIf="(deaNumber.invalid && (deaNumber.dirty || deaNumber.touched)) 
+                          || showInvalidDeaError">
+                        <span id="DEAinvalidError" 
+                              *ngIf="showInvalidDeaError 
+                              || (!isDEARequired && deaNumber.errors.pattern)" class="validation-color">
+                            Provide valid DEA Number.
+                        </span>
+                    </span>
+                </span>
+            </div>
+
+            <div class="erx-form-row">
+                <span class="erx-form-label user-creation-form-label-spacing">
+                    <label>DEA Number Exp. Date</label>
+                </span>
+                <span class="erx-form-input">
+                    <input type="text" id="deaExpirationDate" name="deaExpirationDate" class="input-medium" [pattern]="datePattern"
+                           placeholder="MM-DD-YYYY" [(ngModel)]="userDetail.deaExpirationDate" #deaExpirationDate="ngModel" (change)="setDeaValidation()">
+                    <span *ngIf="deaExpirationDate.invalid && (deaExpirationDate.dirty || deaExpirationDate.touched)">
+                        <span id="DEAExpiryDatePatternError" 
+                              *ngIf="deaExpirationDate.errors.pattern && !isDEAExpDateRequired" class="validation-color">
+                            Enter a valid DEA Number Exp. Date(MM-DD-YYYY).
+                        </span>
+                    </span>
+                    <span id="DEAExpiryDateRequiredError" 
+                          *ngIf="isDEAExpDateRequired && (deaExpirationDate.dirty || deaExpirationDate.touched)" class="validation-color">
+                        DEA Number Exp. Date is required.
+                    </span>
+
+                </span>
+            </div>
+            <div class="erx-form-row">
+                <span class="erx-form-label user-creation-form-label-spacing">
+                    <label>DEA Schedule</label>
+                </span>
+                <span class="erx-form-input">
+
+                    <input type="checkbox" [(ngModel)]="userDetail.deaScheduleII" id="deaSchedule2"
+                           name="deaSchedule2" #deaScheduleII="ngModel" (change)="setDeaValidation()">
+                    <span class="user-creation-dea-schedule">
+                        II
+                    </span>
+                    <input type="checkbox" [(ngModel)]="userDetail.deaScheduleIII" id="deaSchedule3"
+                           name="deaSchedule3" #deaScheduleIII="ngModel" (change)="setDeaValidation()">
+                    <span class="user-creation-dea-schedule">
+                        III
+                    </span>
+                    <input type="checkbox" [(ngModel)]="userDetail.deaScheduleIV" id="deaSchedule4"
+                           name="deaSchedule4" #deaScheduleIV="ngModel" (change)="setDeaValidation()">
+                    <span class="user-creation-dea-schedule">
+                        IV
+                    </span>
+                    <input type="checkbox" [(ngModel)]="userDetail.deaScheduleV" id="deaSchedule5"
+                           name="deaSchedule5" #deaScheduleV="ngModel" (change)="setDeaValidation()">
+                    <span class="user-creation-dea-schedule">
+                        V
+                    </span>
+
+                    <span id="ControlSubstanceSelectionError" 
+                          *ngIf="isDEAScheduleRequired &&  
+                           (deaScheduleII.dirty || deaScheduleII.touched
+                           || deaScheduleIII.dirty || deaScheduleIII.touched
+                           || deaScheduleIV.dirty || deaScheduleIV.touched
+                          || deaScheduleV.dirty || deaScheduleV.touched)" class="validation-color">
+                        Select atleast one DEA Schedule.
+                    </span>
+                </span>
+            </div>
+            <div class="erx-form-row">
+                <span class="erx-form-label user-creation-form-label-spacing">
+                    <label><span class="highlight-star erx-form-star-position">*</span>State License Number</label>
+                </span>
+                <span class="erx-form-input">
+                    <input id="stateLicenseNumber" name="stateLicenseNumber" class="input-medium"
+                           required maxlength="35" [pattern]="noLeadingSpacePattern"
+                           [(ngModel)]="userDetail.stateLicenseNumber" #stateLicenseNumber="ngModel">
+
+                    <span *ngIf="stateLicenseNumber.invalid && (stateLicenseNumber.dirty || stateLicenseNumber.touched)">
+                        <span id="StateLicenseMandatoryError" *ngIf="stateLicenseNumber.errors.required" class="validation-color">
+                            State License Number is required.
+                        </span>
+                        <span id="StateLicensePatternError" *ngIf="stateLicenseNumber.errors.pattern" class="validation-color">
+                            Enter a valid State License Number.
+                        </span>
+                    </span>
+                </span>
+            </div>
+            <div class="erx-form-row">
+                <span class="erx-form-label user-creation-form-label-spacing">
+                    <label><span class="highlight-star erx-form-star-position">*</span>State License Issuing State</label>
+                </span>
+                <span class="erx-form-input">
+                    <select id="ddlStateLicenseIssueState"
+                            type="text"
+                            name="stateLicenseIssueState"
+                            class="input-medium"
+                            required
+                            [(ngModel)]="userDetail.stateLicenseIssueState"
+                            #stateLicenseIssueState="ngModel">
+                        <option [value]="undefined" selected disabled>-- Select a State --</option>
+                        <option *ngFor="let item of states" [value]="item.state">
+                            {{item.description}}
+                        </option>
+                    </select>
+                    <span *ngIf="stateLicenseIssueState.invalid && (stateLicenseIssueState.dirty || stateLicenseIssueState.touched)">
+                        <span *ngIf="stateLicenseIssueState.errors.required"
+                              id="stateLicenseIssuingStateMandatoryError"
+                              class="validation-color">
+                            State License Issuing State is required.
+                        </span>
+                    </span>
+                </span>
+            </div>
+            <div class="erx-form-row">
+                <span class="erx-form-label user-creation-form-label-spacing">
+                    <label><span class="highlight-star erx-form-star-position">*</span>State License Exp. Date</label>
+                </span>
+
+                <span class="erx-form-input">
+                    <input type="text" id="stateLicenseExpirationDate" name="stateLicenseExpirationDate" class="input-medium"
+                           required [pattern]="datePattern" placeholder="MM-DD-YYYY"
+                           [(ngModel)]="userDetail.stateLicenseExpirationDate" #stateLicenseExpirationDate="ngModel">
+
+                    <span *ngIf="stateLicenseExpirationDate.invalid && (stateLicenseExpirationDate.dirty || stateLicenseExpirationDate.touched)">
+                        <span *ngIf="stateLicenseExpirationDate.errors.required" id="stateLicenseExpDateMandatoryError" class="validation-color">
+                            State License Exp. Date is required.
+                        </span>
+                        <span id="stateLicenseExpirationDatePatternError" *ngIf="stateLicenseExpirationDate.errors.pattern" class="validation-color">
+                            Enter a valid State License Exp. Date(MM-DD-YYYY).
+                        </span>
+                    </span>
+
+                </span>
+            </div>
+        </div>
+        <!--Cut started here-->
+        <div class="erx-form-sub-heading font-setting-bold font-uppercase">
+            User Credentials & Security
+        </div>
+        <div>
+            <input type="radio" [value]="false" name="isLinkExistingShieldUser" checked [(ngModel)]="isLinkExistingShieldUser"> Create a New ePrescribe Account
+            <input type="radio" [value]="true" name="isLinkExistingShieldUser" [(ngModel)]="isLinkExistingShieldUser"> Link to an existing Account
+        </div>
+        <div [style.display]="!isLinkExistingShieldUser ? 'block' : 'none'">
+            <div class="user-creation-user-name-control-spacing">
+                <app-user-account #userNameChild [userExistsErrorMessage]="userExistsErrorMessage" [userNameLabel]="userNameLabel"></app-user-account>
+            </div>
+            <div class="user-creation-user-password-control-spacing">
+                <app-user-password #pwdChild></app-user-password>
+            </div>
+            <div class="user-creation-security-control-spacing">
+                <app-user-security-questions #securityQuestion></app-user-security-questions>
+            </div>
+        </div>
+        <div [style.display]="isLinkExistingShieldUser ? 'block' : 'none'">
+            <div class="user-creation-existing-user-control-spacing">
+                <user-existing-account #userExisting></user-existing-account>
+            </div> 
+        </div>
+        <div class="erx-form-sub-heading font-setting-bold font-uppercase">
+            Acknowledgement
+        </div>
+        <div class="erx-form-row user-creation-captcha-control-spacing">
+            <show-captcha #captchaControl ></show-captcha>         
+        </div>
+        <div class="erx-form-row">
+            The next step is to verify you are who you say you are through an online identity management process provided by ID.me. ID.me will ask you to provide information about yourself to verify your identity including  driver's license or passport information or state issued ID and social security number. Please review the ID.me Terms of Service listed below and then click on Submit.
+        </div>
+        <div class="erx-form-row">
+            <input type="checkbox" [(ngModel)]="userDetail.idMeTermsAccepted" id="chkAcceptedIDmeTerms"
+                   name="idMeTermsAccepted" #idMeTermsAccepted="ngModel" required> I have reviewed my registration entries and
+            <a [href]="idmeTerms" target="_blank" id="lnkIDmeTerms">ID.me Terms of Service</a>.
+            <span *ngIf="idMeTermsAccepted.invalid && (idMeTermsAccepted.dirty || idMeTermsAccepted.touched)" class="validation-color">
+                Kindly review the ID.me Terms of Service and accept it.
+            </span>
+        </div>
+        <div class="erx-form-row">
+            <button id="btnSubmit" type="submit" class="button-style">Submit</button>
+            <span *ngIf="isValidationFailed" class="validation-color">
+                Kindly review the form, there seems to be an incomplete entry.
+            </span>
+        </div>
+    </div>
+</form>
+<div class="modal-backdrop fade in" [style.display]="showModal ? 'block' : 'none'"></div>
+<div *ngIf="showModal">
+    <max-retry-failure-popup [shieldUserName]="userDetail.shieldUserName"></max-retry-failure-popup>
+</div>
+

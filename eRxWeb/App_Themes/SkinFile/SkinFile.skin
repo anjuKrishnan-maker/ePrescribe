@@ -1,0 +1,10 @@
+
+
+<asp:GridView runat="server" AllowPaging="True" AllowSorting="True" 
+  AutoGenerateColumns="False" Width="100%" CaptionAlign="Left" CssClass="gridtext" GridLines="Horizontal"   >
+   <SelectedRowStyle CssClass="SelectedRow" />
+       <PagerStyle BackColor="#E7E7E7" Font-Size="14px" Font-Names="verdana, arial, sans-serif" ForeColor="black" HorizontalAlign="Center" Font-Bold="True" />
+       <HeaderStyle Height="16px" CssClass="GridHeader" HorizontalAlign="Left" />
+                                                
+       
+</asp:GridView>

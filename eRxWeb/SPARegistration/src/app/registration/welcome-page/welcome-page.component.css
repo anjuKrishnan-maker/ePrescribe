@@ -1,0 +1,52 @@
+﻿.welcome-left-panel {
+    padding: 15px 10px 10px 10px;
+    margin: 10px;
+    float: left;
+}
+
+.welcome-right-panel {
+    padding: 15px 10px 10px 10px;
+    margin: 10px;
+    padding-right: 0px;
+    margin-right: 0px;
+}
+
+    .welcome-right-panel > img {
+        width: 360px;
+    }
+
+.welcome-group {
+    margin-bottom: 2px;
+}
+
+.welcome-buttons {
+    padding: 10px;
+    margin: 10px;
+    clear: both;
+}
+
+ul {
+    padding-left: 18px;
+}
+
+li {
+    padding-bottom: 3px;
+}
+
+.welcome-nested-list-style {
+    padding-left: 10px;
+    margin-top: -10px;
+}
+
+.welcome-congratulations {
+    margin-bottom: 15px;
+    font-weight: 900;
+}
+
+.welcome-download-process-document {
+    margin-top: 12px;
+}
+
+    .welcome-download-process-document > a {
+        font-weight: 900;
+    }

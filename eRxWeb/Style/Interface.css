@@ -1,0 +1,143 @@
+/* added newly */
+
+img#mainLogo{background:url(../images/logo.gif); background-repeat:no-repeat; background-position:center;}
+
+.appStripe {
+    border-top: 5px #AD0808 solid;
+}
+
+img#helpIcon{background:url(../images/headerhelp.gif); background-repeat:no-repeat; background-position:center;}
+img#servicesIcon{background:url(../images/headerservices.gif); background-repeat:no-repeat; background-position:center;}
+img#profileIcon{background:url(../images/headerprofile.gif); background-repeat:no-repeat; background-position:center;}
+img#logoutIcon{background:url(../images/headerlogout.gif); background-repeat:no-repeat; background-position:center;}
+img#iLearnIcon {height: 24px; width: 24px;border: none; background-image:url(../images/Allscripts/gradCap.png); background-repeat:no-repeat; background-position:center;}
+img#iLearnIcon:hover{height: 24px; width: 24px; background-image:url(../images/Allscripts/gradCapHover.png); background-repeat:no-repeat; background-position:center;}
+
+
+.head						{font:bold 18px arial, verdana, sans-serif; color:#000000; vertical-align:middle;}
+
+.SelectedRow
+{
+	background-color: #CBCBCB;
+}
+.DURHeading
+{
+	color: #AE0910;
+}
+
+a {
+	color: #FF5800;
+}
+a:hover {
+	color: #cccccc;
+}
+.h1title {
+	height: 10px;
+}
+
+.tabSelected
+{
+	color:White;
+
+	height:18px;
+
+	text-decoration:none;
+	text-align:center;
+}
+
+.tabUnSelected
+{
+	color:#E3E3E3;
+	font-weight:normal;
+	height:18px;
+	text-decoration:none;
+}
+.tabSpacer
+{
+
+	font-weight:bold;
+
+	height:18px;
+}
+.divider
+{
+	background-color:#595959;
+}
+
+
+/* *****************    LOGIN SCREEN      ************************ 
+ */
+.redborder     { height:1px; background-color:#AD0808; }
+.subheadred		{ font-size:12px; font-weight:bold; color: #AD0808; }
+.gridtext   { font-weight:normal; font-size:10px; font-family:Arial, Sans-Serif;}
+
+
+/*.btnstyle 
+{
+	height:25px;
+	width:auto;
+	background-color:#e7e7e7;
+	border: single .5px #6E6E6E ;
+    
+    font-weight:bold;
+    background-color:#585858;
+    filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr='#FFFFFF',EndColorStr='#BDBDBD');
+}*/
+
+a.btnstyle{
+background: transparent url('../images/square-gray-left.gif') no-repeat top left;
+display:table;
+float: left;
+font: normal 12px Arial; /* Change 12px as desired */
+line-height: 14px; /* This value + 4px + 4px (top and bottom padding of SPAN) must equal height of button background (default is 23px) */
+height: 23px; /* Height of button background height */
+padding-left: 9px; /* Width of left menu image */
+text-decoration: none;
+}
+
+a:link.btnstyle, a:visited.btnstyle, a:active.btnstyle{
+color: #494949; /*button text color*/
+}
+
+a.btnstyle span{
+background: transparent url('../images/square-gray-right.gif') no-repeat top right;
+display: block;
+padding: 4px 9px 4px 0; /*Set 9px below to match value of 'padding-left' value above*/
+}
+
+a.btnstyle:hover{ /* Hover state CSS */
+background-position: bottom left;
+}
+
+a.btnstyle:hover span{ /* Hover state CSS */
+background-position: bottom right;
+color: #AD0808;
+}
+
+.buttonwrapper{ /* Container you can use to surround a CSS button to clear float */
+overflow: hidden; /*See: http://www.quirksmode.org/css/clearing.html */
+width: 100%;
+}
+
+
+
+
+
+.accordionHeaderScriptPad
+{
+	background-color: #AA5908;
+}
+
+.accordionHeaderTextScriptPad
+{
+    color: white;
+	background-color: #AA5908;
+}
+
+/*bootstrap override*/
+
+
+.nav-tabs>li>a:hover {
+    	background-color:#595959;
+  border:none;
+}

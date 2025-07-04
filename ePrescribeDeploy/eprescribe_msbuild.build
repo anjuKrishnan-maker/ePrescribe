@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PublishF>publish</PublishF>
+    <Publish>..\WebDeploymentFiles\$(PublishF)</Publish>
+    <MsiOut>..\eprescribe_web_setup\Release\eprescribe_web_setup.msi</MsiOut>
+    <WebSiteContentCode>Setup_Files.wxs</WebSiteContentCode>
+    <WebSiteContentCodeTemplate>Setup_Files_template.wxs</WebSiteContentCodeTemplate>
+    <WebSiteContentObject>..\WebDeploymentFiles\$(PublishF)</WebSiteContentObject>
+    <BuildConfiguration>Release</BuildConfiguration>
+    <WixPath></WixPath>
+  </PropertyGroup>
+
+
+  <!-- The list of WIX input files -->
+  <ItemGroup>
+    <WixCode Include="MSI_UI.wxs" />
+    <WixCode Include="Product.wxs" />
+    <WixCode Include="$(WebSiteContentCode)" />
+  </ItemGroup>
+
+  <!-- The list of WIX after candle files -->
+  <ItemGroup>
+    <WixObject Include="MSI_UI.wixobj" />
+    <WixObject Include="Product.wixobj" />
+    <WixObject Include="Setup_Files.wixobj" />
+  </ItemGroup>
+
+  <!-- Define default target with name 'Build' -->
+  <Target Name="Build">
+
+    <Exec Command="del /F /Q &quot;$(WebSiteContentCode)&quot;"/>
+    
+    <Copy SourceFiles="$(WebSiteContentCodeTemplate)" DestinationFiles="$(WebSiteContentCode)"/>
+
+    <!-- Compile whole solution in release mode -->
+    <MSBuild
+        Projects="..\ePrescribe.sln"
+        Targets="ReBuild"
+        Properties="Configuration=$(BuildConfiguration);OutDir=bin\$(BuildConfiguration)\" />
+
+
+    <MSBuild
+    Projects="..\..\Shared\Allscripts.ePrescribe.Shared\Allscripts.ePrescribe.Shared.sln"
+    Targets="ReBuild"
+    Properties="Configuration=$(BuildConfiguration);OutDir=bin\$(BuildConfiguration)\" />
+
+  </Target>
+
+  <Target Name="BuildAndPackage">
+    
+    <CallTarget Targets="Build"/>
+    <CallTarget Targets="CreateInstaller"/>
+    <CallTarget Targets="DeleteTmpFiles"/>
+
+  </Target>
+
+  <Target Name="BuildWebSiteOutput">
+    <MSBuild
+        Projects="..\eRxWeb\eRxWeb.csproj"
+        Targets="ResolveReferences;_CopyWebApplication"
+        Properties="OutDir=$(Publish)bin\;WebProjectOutputDir=
+                        $(Publish);Configuration=$(BuildConfiguration);Platform=AnyCPU" />
+
+  </Target>
+
+  <Target Name="CreateInstaller">
+    <RemoveDir Directories="$(PublishF)" ContinueOnError="false" />  
+    <CallTarget Targets="BuildWebSiteOutput"/>
+    
+    <Delete Files="@(WixObject)" />
+
+    <!-- Harvest all content of published result -->
+
+    <Exec
+        Command='"$(WixPath)heat" dir $(Publish) -dr INSTALLLOCATION -ke -srd -cg ePrescribeWebComponents -var var.publishDir -gg -out $(WebSiteContentCode)'
+        ContinueOnError="false"
+        WorkingDirectory="." />
+
+    <Exec
+        Command='"$(WixPath)candle" -ext WixIISExtension -ext WixUtilExtension -ext WiXNetFxExtension -dpublishDir=$(Publish) -dConfiguration=$(BuildConfiguration) @(WixCode, &apos; &apos;)'
+        ContinueOnError="false"
+        WorkingDirectory="." />
+
+    <Exec
+        Command='"$(WixPath)light" -ext WixUIExtension -ext WixIISExtension -ext WixUtilExtension -ext WiXNetFxExtension -sice:ICE69 -out $(MsiOut) @(WixObject, &apos; &apos;)'
+        ContinueOnError="false"
+        WorkingDirectory="." />
+
+    <!-- A message at the end -->
+
+    <Message Text="Install package has been created." />
+  </Target>
+  
+    <Target Name="DeleteTmpFiles">
+      <RemoveDir Directories="$(PublishF)" ContinueOnError="false" />
+      <Delete Files="@(WixObject)" />
+    </Target>
+  </Project>

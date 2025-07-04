@@ -1,0 +1,20 @@
+﻿.user-settings-title {
+    font-weight: 700;
+}
+
+.user-settings-group {
+    padding-top: 5px;
+}
+
+.user-settings-pob-association {
+    margin-left: 80px;
+    display: inline-block;
+}
+
+.user-settings-list {
+    margin-left: 10px;
+}
+
+.user-settings-label {
+    line-height: 1.7;
+}

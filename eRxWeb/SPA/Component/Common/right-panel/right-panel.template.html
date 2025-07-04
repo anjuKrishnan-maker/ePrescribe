@@ -1,0 +1,115 @@
+﻿<div class="content2backcolor">
+    <erx-right-box>Loading.....</erx-right-box>
+    <erx-collapsible-panel id="pdmp-summary" HeaderText="PDMP" CheckComponentVisibility="false" [page]='page'>
+        <div>
+            <erx-pdmp-summary id="pdmp-summary">Loading....</erx-pdmp-summary>
+        </div>
+    </erx-collapsible-panel>
+    <erx-collapsible-panel id="epcs-notice" HeaderText="PROVIDER NOTICE" [page]='page'>
+        <div>
+            <erx-epcs-notice id="epcs-notice" (onLinkSelected)="NavigateMainContent($event)">Loading.....</erx-epcs-notice>
+        </div>
+    </erx-collapsible-panel>
+    <erx-collapsible-panel id="pharmacy-info" HeaderText="PHARMACY INFORMATION" [page]='page'>
+        <div>
+            <erx-pharmacy-info id="pharmacy-info">Loading.....</erx-pharmacy-info>
+        </div>
+    </erx-collapsible-panel>
+    <erx-collapsible-panel id="urgent-message" HeaderText="URGENT MESSAGE" HeaderBgColor="#e60606" [page]='page' InfoImageUrl="images/exclamation.gif">
+        <div>
+            <erx-urgent-message id="urgent-message" (onLinkSelected)="NavigateMainContent($event)" [isUrgentMessageCountChanged]="urgentMessageCountChange">Loading....</erx-urgent-message>
+        </div>
+    </erx-collapsible-panel>
+    <erx-collapsible-panel id="ppt-plus-summary" HeaderText="RxTruePrice™" [page]='page'>
+        <erx-ppt-plus-summary id="ppt-plus-summary">Loading....</erx-ppt-plus-summary>
+    </erx-collapsible-panel>
+    <erx-collapsible-panel id="ppt-plus-script-pad-summary" HeaderText="RxTruePrice™" [page]='page'>
+        <erx-ppt-plus-script-pad-summary id="ppt-plus-script-pad-summary">Loading....</erx-ppt-plus-script-pad-summary>
+    </erx-collapsible-panel>
+    <erx-collapsible-panel id="formulary-alternatives" HeaderText="FORMULARY ALTERNATIVES" [page]='page'>
+        <div>
+            <erx-formulary-alternatives id="formulary-alternatives" (onLinkSelected)="NavigateMainContent($event)">Loading....</erx-formulary-alternatives>
+        </div>
+    </erx-collapsible-panel>
+    <erx-collapsible-panel id="robust-link" HeaderText="SPONSORED LINKS" [page]='page'>
+        <div>
+            <erx-robust-link id="robust-link">Loading....</erx-robust-link>
+        </div>
+    </erx-collapsible-panel>
+    <erx-collapsible-panel id="copay-coverage" HeaderText="COVERAGE & CO-PAY" [page]='page'>
+        <div>
+            <erx-copay-coverage id="copay-coverage">Loading.....</erx-copay-coverage>
+        </div>
+    </erx-collapsible-panel>
+    <erx-collapsible-panel id="script-pad" HeaderText="SCRIPT PAD" HeaderBgColor="#665999" [page]='page'>
+        <div>
+            <erx-script-pad id='script-pad' (onLinkSelected)="NavigateMainContent($event)">Loading.....</erx-script-pad>
+        </div>
+    </erx-collapsible-panel>
+    <erx-collapsible-panel id="sig-copay" HeaderText="SELECTED MEDICATION" [page]='page'>
+        <div>
+            <erx-sig-copay id="sig-copay">Loading.....</erx-sig-copay>
+        </div>
+    </erx-collapsible-panel>
+    <erx-collapsible-panel id="imp-info" HeaderText="IMPORTANT INFORMATION" [page]='page'>
+        <div>
+            <erx-imp-info id="imp-info">Loading.....</erx-imp-info>
+        </div>
+    </erx-collapsible-panel>
+    <erx-collapsible-panel id="e-auth-msg" HeaderText="ePA Message Action Required" [page]='page' HeaderBgColor="#df6020" InfoImageUrl="images/ExclamOrange.png" [IsVisibleOnFly]="false">
+        <div>
+            <erx-e-auth-msg id="e-auth-msg">Loading.....</erx-e-auth-msg>
+        </div>
+    </erx-collapsible-panel>
+    <erx-collapsible-panel id="generic-alternatives" HeaderText="GENERIC ALTERNATIVES" [page]='page'>
+        <div>
+            <erx-generic-alternatives id="generic-alternatives" (onLinkSelected)="NavigateMainContent($event)">Loading.....</erx-generic-alternatives>
+        </div>
+    </erx-collapsible-panel>
+    <erx-collapsible-panel id="rx-detail" HeaderText="Rx Details" [page]='page'>
+        <div>
+            <erx-rx-detail id="rx-detail">Loading.....</erx-rx-detail>
+        </div>
+    </erx-collapsible-panel>
+    <erx-collapsible-panel id="help-content" HeaderText="HELP WITH THIS SCREEN" [page]='page' [IsDefaultOpen]="false">
+        <erx-help-panel id="help-content">Loading</erx-help-panel>
+    </erx-collapsible-panel>
+    <erx-collapsible-panel id="epcs-send-to-pharmacy" HeaderText="EPCS SEND TO PHARMACY" [page]='page'>
+        <div>
+            <erx-epcs-send-to-pharmacy id="epcs-send-to-pharmacy">loading...</erx-epcs-send-to-pharmacy>
+        </div>
+    </erx-collapsible-panel>
+    <erx-collapsible-panel id="new-pharmacy" HeaderText="Can't find a pharmacy?" [page]='page'>
+        <div>
+            <erx-new-pharmacy id="new-pharmacy">Loading.....</erx-new-pharmacy>
+        </div>
+    </erx-collapsible-panel>
+    <erx-collapsible-panel id="program-alert" HeaderText="PROGRAM ALERTS" [page]='page'>
+        <div>
+            <erx-program-alert id="program-alert">Loading.....</erx-program-alert>
+        </div>
+    </erx-collapsible-panel>
+    <erx-collapsible-panel id="spec-med-info" HeaderText="PATIENT ACCESS SERVICES">
+        <erx-spec-med-info id="spec-med-info"></erx-spec-med-info>
+    </erx-collapsible-panel>
+    <erx-collapsible-panel id="getEpcs" HeaderText="GET EPCS" [page]='page'>
+        <div>
+            <erx-get-epcs id="getEpcs">Loading....</erx-get-epcs>
+        </div>
+    </erx-collapsible-panel>
+    <erx-collapsible-panel id="privacy-override-reason" HeaderText="PRIVACY OVERRIDE REASON" [page]='page'>
+        <div>
+            <erx-privacy-override-reason id="privacy-override-reason">Loading... </erx-privacy-override-reason>
+        </div>
+    </erx-collapsible-panel>
+    <erx-collapsible-panel id="audit-log-info" HeaderText="AUDIT RECORD DETAILS" [page]='page'>
+        <div>
+            <erx-audit-log-info id="audit-log-info">Loading... </erx-audit-log-info>
+        </div>
+    </erx-collapsible-panel>
+    <erx-ppt-plus-details></erx-ppt-plus-details>
+    <erx-message-queue>loading...</erx-message-queue>
+    <erx-med-hist-competion>loading......</erx-med-hist-competion>
+    <erx-pharmacy-sig-alert>loading......</erx-pharmacy-sig-alert>
+    <erx-failed-reg-msg (FailedRegMessagesChange)="FailedRegMessageCountChanged($event)">Loading....</erx-failed-reg-msg>
+</div>

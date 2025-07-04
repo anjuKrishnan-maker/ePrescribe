@@ -1,0 +1,179 @@
+.fourUpScript
+{
+	height:4.6in;
+}
+
+.fourUpScriptTopPart
+{
+	height:5.1in;
+}
+
+.fourUpScriptBottomPart
+{
+	height:4.2in;
+}
+
+.fourUpScriptNJ
+{
+	height:2.75in;
+	width:3.125in;
+}
+
+.fourUpScriptNJHeader
+{
+	height:1.125in;
+}
+
+.oneUpScript
+{
+	height:500px;
+	width:340px;
+}
+
+.oneUpScriptBigger
+{
+	height:600px;
+	width:475px;
+}
+
+
+.pageBreak				{page-break-after:always; height:1px; }
+body,div,span,p,td		{font:normal 12px verdana, arial, sans-serif;color:#333333;vertical-align:top;background-position: left;margin-top: 0px;}
+
+.Itallic				{font:italic 8px  verdana, arial, sans-serif;color:#000000;vertical-align:top; font-weight:bold;}
+.BottomItallic			{font:italic 8px  verdana, arial, sans-serif;color:#000000;vertical-align:bottom; font-weight:bold;}
+.headNameSmaller		{font:italic 9px  verdana, arial, sans-serif;color:#000000;vertical-align:top;font-weight:bold;}
+.DOBNJ					{font:italic 9px  verdana, arial, sans-serif;color:#000000;vertical-align:top;}
+.DOB					{font:italic 10px verdana, arial, sans-serif;color:#000000;vertical-align:top;}
+.NormalRight			{font:italic 10px verdana, arial, sans-serif;color:#000000;vertical-align:top;text-align: right;}		
+.NormalCenterSmallBold	{font:italic 10px verdana, arial, sans-serif;color:#000000;vertical-align:middle;text-align:center;font-weight: bolder;}	
+.NormalCenterSmall		{font:italic 9px verdana, arial, sans-serif;color:#000000;vertical-align:top;text-align: center;}					
+.NormalCenterSmallNJ	{font:italic 8px verdana, arial, sans-serif;color:#000000;vertical-align:top;text-align: center;}					
+.headName				{font:italic 10px verdana, arial, sans-serif;color:#000000;vertical-align:top;font-weight:bold;}
+.headNameNJ             {font:italic 9px verdana, arial, sans-serif;color:#000000;vertical-align:top;font-weight:bold;}
+.headNampxiddle			{font:italic 10px verdana, arial, sans-serif;color:#000000;vertical-align:middle;font-weight:bold;}
+.NormalCenter			{font:italic 10px verdana, arial, sans-serif;color:#000000;Vertical-align:top;text-align: center;font-weight:bold;}	
+.NormalCenterNJ			{font:italic 9px verdana, arial, sans-serif;color:#000000;Vertical-align:top;text-align: center;font-weight:bold;}	
+.subheading				{font:italic 10px verdana, arial, sans-serif;color:#000000;vertical-align:top;}	
+.subheadingNJ			{font:italic 9px verdana, arial, sans-serif;color:#000000;vertical-align:top;}	
+.NormalVerticalCenter	{font:italic 16px verdana, arial, sans-serif;color:#000000;vertical-align:middle;text-align: center;font-weight:bold;}	
+
+.footer					{font:normal 7px  verdana, arial, sans-serif;color:#000000;vertical-align:top;}
+.Normal					{font:normal 8px  verdana, arial, sans-serif;color:#000000;vertical-align:top;text-align:center;}					
+.NYDAW2					{font:normal 8px  verdana, arial, sans-serif;color:#000000;vertical-align:middle;text-align:center;}
+.centerSmall			{font:normal 9px  verdana, arial, sans-serif;color:#000000;vertical-align:top;text-align:center;}
+.MiddleSmall			{font:normal 9px  verdana, arial, sans-serif;color:#000000;vertical-align:middle;text-align:center;}
+.Small					{font:normal 10px verdana, arial, sans-serif;color:#000000;vertical-align:top;}
+.center					{font:normal 9px verdana, arial, sans-serif;color:#000000;vertical-align:top;text-align:center;}
+.centerNJ				{font:normal 8px verdana, arial, sans-serif;color:#000000;vertical-align:top;text-align:center;}
+.middle					{font:normal 10px verdana, arial, sans-serif;color:#000000;vertical-align:middle;text-align:center;}
+.centerRight			{font:normal 10px verdana, arial, sans-serif;color:#000000;vertical-align:top;text-align:right;}
+.NormalCenterSmallNor	{font:normal 10px verdana, arial, sans-serif;color:#000000;vertical-align:top;text-align:center;}					
+.NormalRightSmall		{font:normal 10px verdana, arial, sans-serif;color:#000000;vertical-align:top;text-align:right;font-weight:bold;}					
+.NYDAW					{font:normal 10px verdana, arial, sans-serif;color:#000000;vertical-align:middle;text-align:center;}
+.BottomCenter			{font:normal 10px verdana, arial, sans-serif;color:#000000;vertical-align:bottom;text-align:center;}
+.centerBold				{font:normal 11px verdana, arial, sans-serif;color:#000000;vertical-align:top;text-align:center;font-weight:bold;}
+.subheadingNor			{font:normal 11px verdana, arial, sans-serif;color:#000000;vertical-align:top;}	
+.Allergyhead			{font:normal 12px verdana, arial, sans-serif;color:#AE0910;vertical-align:top;font-weight:bold;}
+.Allergysubhead			{font:normal 12px verdana, arial, sans-serif;color:#AE0910;vertical-align:top;}
+.Phead					{font:normal 17px verdana, arial, sans-serif;color:#AE0910;font-weight:bold;}
+.navi					{font:normal 12px verdana, arial, sans-serif;color:#ffffff;vertical-align:top;font-weight:bold;}
+
+
+
+
+
+
+
+.table				{border-bottom-style: solid;border-bottom-color: #000000;border-bottom-width: thin;}
+.tableAll			{
+	border-bottom-style: solid;
+	border-bottom-color: #000000;
+	border-bottom-width: thin;
+	border-top-width: thin;
+	border-right-width: thin;
+	border-left-width: thin;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-top-color: #000000;
+	border-right-color: #000000;
+	border-left-color: #000000;
+}
+.radio 				{margin-bottom: -3px; margin-top: -3px; margin-left: -3px; margin-right: -3px;}
+/* AKS on Oct 31*/
+.leftalign {font:normal 9px verdana, arial, sans-serif; color:#000000; vertical-align:top; text-align: left;}
+.leftalignNJ {font:normal 8px verdana, arial, sans-serif; color:#000000; vertical-align:top; text-align: left;}
+.leftboldsmall {font:bold 9px verdana, arial, sans-serif; color:#000000;text-align: left;}
+.leftboldsmaller {font:bold 7px verdana, arial, sans-serif; color:#000000;text-align: left;}
+.rightalign {font:normal 10px verdana, arial, sans-serif; color:#000000; vertical-align:top; text-align: right;}
+.rightboldsmall {font:bold 9px verdana, arial, sans-serif; color:#000000;text-align: right;}
+.rightboldsmaller {font:bold 7px verdana, arial, sans-serif; color:#000000;text-align: right;}
+
+.ROW_Normal				{font:normal bold	14px	verdana, arial, sans-serif;	color:#000000;	vertical-align:top; text-align: left;}					
+.ROW_NormalCenter		{font:normal bold	14px	verdana, arial, sans-serif;	color:#000000;	vertical-align:top; text-align: center;}	
+.ROW_NormalSmall		{font:normal		13px	verdana, arial, sans-serif;	color:#000000;	vertical-align:top; text-align: left;}
+.ROW_NormalCenterSmall	{font:normal		13px	verdana, arial, sans-serif;	color:#000000;	vertical-align:top; text-align: center;}					
+.ROW_headName			{font:bold			13px	verdana, arial, sans-serif;	color:#000000;	vertical-align:top; text-align: left;}
+.ROW_leftboldsmall		{font:bold			12px	verdana, arial, sans-serif; color:#000000;	vertical-align:top; text-align: left;}
+.ROW_Itallic			{font:italic bold	11px	verdana, arial, sans-serif;	color:#000000;	vertical-align:top; text-align: left;}
+.ROW_footer				{font:normal		10px	verdana, arial, sans-serif; color:#000000;	vertical-align:top; text-align: left;}
+
+
+/* JJ on Oct 30*/
+.centerjustify {font:normal 8px verdana, arial, sans-serif;color:#000000;text-align: left; text-align:justify;}
+
+/* JJ on 3rd Nov - applied in Indiana */
+.tableAllRefill			{
+	border-bottom-style: solid;
+	border-bottom-color: #000000;
+	border-bottom-width: thin;
+	border-top-width: thin;
+	border-right-width: thin;
+	border-left-width: thin;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-top-color: #000000;
+	border-right-color: #000000;
+	border-left-color: #000000;
+	
+	font:italic bold 10px verdana, arial, sans-serif;
+	color:#000000;vertical-align:top;
+}
+.NormalBold	{font:normal 8px verdana, arial, sans-serif; color:#000000; vertical-align:top; text-align: center;font-weight:bold;}					
+/* Kumra on NOv 07*/
+.indnt	{ text-indent:10px;}
+.bigcenterbold {font:normal 14px arial, sans-serif; color:#000000; text-align: center;font-weight:bold;}
+.bigcenterboldNJ {font:normal 12px arial, sans-serif; color:#000000; text-align: center;font-weight:bold;}
+.smallcenterbold{font:normal 12px arial, sans-serif; color:#000000; text-align: center;font-weight:bold;}
+.smallcenterboldNJ{font:normal 11px arial, sans-serif; color:#000000; text-align: center;font-weight:bold;}
+.xbigcenterbold {font:normal 18px arial, sans-serif; color:#000000; font-weight:bold;}
+.tablebordrTop_bottom {border-top-style: solid;border-top-color: #000000;border-top-width: thin;border-bottom-style: solid;border-bottom-color: #000000;border-bottom-width: thin; padding:16px;}
+.indnt2 {  text-indent:100px;}
+.LeftMargin {margin-left: 0px;}
+.LeftLabelMargin {margin-left: 0px;}
+.MiniLabelMargin {margin-left: 0px; margin-top: 0px}
+.topMarginIN {height :0px;}
+.headNameCenterIN {font:italic normal 10px verdana, arial, sans-serif;color:#000000;Vertical-align:top;text-align: center;font-weight:bold;}	
+.NormalCenterCA {font:italic normal 10px verdana, arial, sans-serif;color:#000000;Vertical-align:top;text-align:center;font-weight:normal;}	
+
+.receiptleftboldsmall {font:normal 13px verdana, arial, sans-serif; color:#000000; text-align:left; height:14px;}
+.labelItalMedSig {font:italic normal 13px verdana, arial, sans-serif; color:#000000; text-align:justify; height:14px;}
+.labelNormSmall {font:normal 9px verdana, arial, sans-serif; color:#000000; text-align:justify; height:10px;}
+.labelNormMed {font:normal 11px verdana, arial, sans-serif; color:#000000; text-align:justify; height:12px;}
+.labelNormBig {font:normal 13px verdana, arial, sans-serif; color:#000000; text-align:justify; height:14px;}
+.labelBoldSmall {font:bold 9px verdana, arial, sans-serif; color:#000000; text-align:justify; height:10px;}
+.labelBoldMed {font:bold 11px verdana, arial, sans-serif; color:#000000; text-align:justify; height:12px;}
+.labelBoldBig {font:bold 13px verdana, arial, sans-serif; color:#000000; text-align:justify; height:14px;}
+.labelSignLine {vertical-align:top }
+
+.minilabelItalMedSig {font:italic normal 13px verdana, arial, sans-serif; color:#000000; text-align:justify; height:14px;}
+.minilabelNormSmall {font:normal 9px verdana, arial, sans-serif; color:#000000; text-align:justify; height:10px;}
+.minilabelNormMed {font:normal 11px verdana, arial, sans-serif; color:#000000; text-align:justify; height:12px;}
+.minilabelNormBig {font:normal 13px verdana, arial, sans-serif; color:#000000; text-align:justify; height:14px;}
+.minilabelBoldSmall {font:bold 9px verdana, arial, sans-serif; color:#000000; text-align:justify; height:10px;}
+.minilabelBoldMed {font:bold 11px verdana, arial, sans-serif; color:#000000; text-align:justify; height:12px;}
+.minilabelBoldBig {font:bold 13px verdana, arial, sans-serif; color:#000000; text-align:justify; height:14px;}
+.minilabelSignLine {vertical-align:top }
+

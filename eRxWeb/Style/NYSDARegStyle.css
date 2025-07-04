@@ -1,0 +1,24 @@
+﻿.branded-background-color {
+    background-color: #0051BA;
+}
+
+.branded-font-color {
+    color: #ffffff;
+}
+
+.branded-logo {
+    background-image: url('../images/NYSDA/NYSDA_Reg.png');
+    background-repeat: no-repeat;
+    height: 70px;
+    background-size: contain;
+    margin-left: 2px;
+}
+    
+.branded-footer-stripe {
+    background-color: #ffffff; /*keep this white, for veradigm, its the orange stripe above the footer*/
+}
+
+.branded-footer-color {
+    background-color: #0051BA;
+    color: #ffffff;
+}

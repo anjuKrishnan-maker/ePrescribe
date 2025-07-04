@@ -1,0 +1,34 @@
+﻿<form #captchaForm="ngForm">
+    <div class="show-captcha-label-group">
+        <div class="show-captcha-label-item">
+            <label>Captcha</label>
+        </div>
+        <div class="show-captcha-label-item">
+            <img (click)="refreshCaptcha()" title="Reload Captcha" src="/images/registration/Refresh.gif" class="show-captcha-refresh-img" />
+        </div>
+    </div>
+    <div>
+        <img [src]="captchaImgSrc" id="imgCaptcha" class="show-captcha-dimensions" />
+        <div class="show-captcha-input-group">
+            <div class="show-captcha-input-item">
+                <span class="show-captcha-label-top">Type the Captcha code here</span>
+            </div>
+            <div class="show-captcha-input-item">
+                <span class="erx-form-input">
+                    <span class="highlight-star erx-form-star-position">*</span>
+                    <input type="text" id="txtCaptchaResponse" name="txtCaptchaResponse" class="input-small"
+                           required [(ngModel)]="captchaModel.captchaText" (change)="onCaptchaChanged()" #txtCaptchaResponse="ngModel" />
+                    <span *ngIf="txtCaptchaResponse.invalid && (txtCaptchaResponse.dirty || txtCaptchaResponse.touched)">
+                        <span id="captchaRequiredError" *ngIf="txtCaptchaResponse.errors.required" class="validation-color">
+                            Captcha is required.
+                        </span>
+                    </span>
+                    <span id="invalidCaptchaError" *ngIf="ShowInValidCaptchaError" class="validation-color">
+                        Invalid Captcha.
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>
+</form>
+

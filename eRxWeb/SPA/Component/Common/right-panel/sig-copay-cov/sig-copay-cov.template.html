@@ -1,0 +1,10 @@
+﻿<div *ngIf="FormularyAlternative" id="" class="accordionContentScriptPad" style="width: 95%; height: auto;">
+
+    <img *ngIf="FormularyAlternative.ImageUrl !== null" id="sig_imgFormularyStatus" [title]="FormularyAlternative.ToolTip" [src]="FormularyAlternative?.ImageUrl" style="border-width:0px;">
+    <span *ngIf="FormularyAlternative.LevelOfPreferedness > 0" id="sig_lblLevelOfPreferedness" style="font-size:7pt;">{{FormularyAlternative.LevelOfPreferedness}}</span>&nbsp;&nbsp;
+    <span id="sig_lblMedName" style="font-weight:bold;">{{FormularyAlternative.DrugName}}</span><br>
+    <br>
+    <!--<span id="ctl00_ContentPlaceHolder2_lblCovCopay"><b>Patient Co-pay:</b><br>No dollar amount range available.<br><b>Coverage Limits:</b><br> <b style="color: #335dbb;">Prior authorization required.</b><br></span>-->
+    <erx-copay-coverage>Loading....</erx-copay-coverage>
+
+</div>

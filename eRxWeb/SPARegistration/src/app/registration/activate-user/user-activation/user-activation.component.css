@@ -1,0 +1,52 @@
+﻿.activation-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 45px;
+}
+
+.activation-card {
+    float: left;
+    width: 45%;
+    min-width: 400px;
+    margin: 10px;
+    text-align: center;
+    padding: 15px 0px;
+    border-radius: 10px;
+    border: solid;
+    border-color: #5a5353;
+    border-width: thin;
+    background-color: #ffffff;
+}
+
+.activation-card-header {
+    margin: 0;
+    padding-bottom: 20px;
+}
+
+.activation-header-title {
+    font-size: 19px;
+    font-weight: bold;
+    color: #5a5353;
+    padding-top: 13px;
+    text-align: center;
+    height: 50px;
+}
+
+.activation-card-body {
+    font-weight: 400;
+    height: 100px;
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.activation-card-row {
+    height: 50px;
+}
+
+.activationText {
+    font-style: italic;
+}
+
+

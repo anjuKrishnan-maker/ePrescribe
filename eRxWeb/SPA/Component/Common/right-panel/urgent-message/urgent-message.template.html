@@ -1,0 +1,109 @@
+<div id="urgent_msg_panelMessage" style="width: 92%;">
+
+    <div id="urgent_msg_daysLeftBeforePasswordExpires" *ngIf="urgentMessage?.IsPasswordExpiryNotice">
+        <br />
+        <p style="font-weight:bold">Password Expiration Notice</p>
+        <br />
+        <p *ngIf="urgentMessage?.DaysLeftBeforePasswordExpires != 'expired'">
+            Your password is set to expire {{urgentMessage.DaysLeftBeforePasswordExpires}}
+        </p>
+        <p *ngIf="urgentMessage?.DaysLeftBeforePasswordExpires == 'expired'">
+            Your password has expired.
+        </p>
+        <p>
+            <a (click)="OpenChangePassword()" href="javascript:void(0);"><u>Click here to change your password.</u></a>
+        </p>
+        <br />
+    </div>
+
+    <div id="deluxeMessages" *ngIf="urgentMessage?.IsDeluxMessageVisible">
+        <span id="lblDeluxeDisabled" style="font-weight: bold;">Your ePrescribe subscription is currently disabled</span>
+        <div id="deluxeAcctMgmtLink">            
+            <a href="javascript:void(0);" (click)="RedirectToViewAccount()"><u>View Account Information</u></a>
+        </div>
+        <br />
+        <br />
+    </div>
+
+    <div id="urgent_msg_failedRxMessages">
+        <div id="urgent_msg_failedUserMessage" *ngIf="urgentMessage?.IsFailedUserMessageVisible">
+            <a href="javascript:void(0);" (click)="RedirectToMessages()" id="urgent_msg_lnkFailedRxUserMessage">{{urgentMessage.FailedRxUserMessage}}</a>
+            <br>
+        </div>
+        <div id="urgent_msg_failedLicenseMessage" *ngIf="urgentMessage?.IsFailedLicenseMessageVisible">
+            <a href="javascript:void(0);" (click)="RedirectToLicenseMessage()" id="urgent_msg_lnkFailedRxLicenseSiteMessage">{{urgentMessage.FailedLicenseMessage}}</a>
+            <br>
+        </div>
+        <div id="urgent_failedRxMessage" *ngIf="urgentMessage?.IsFailedRxMessageVisible == true">
+            <span id="urgent_msg_lblFailedRxMessage">{{urgentMessage.FailedRxMessage}}</span>
+            <br />
+            <a href="javascript:void(0);" id="urgent_msg_lnkFailedRxMessage" (click)="OpenFailedRx()">{{urgentMessage.FailedRxMessageLinkText}}</a>
+            <br>
+        </div>
+        <br>
+        <br>
+    </div>
+    <div id="urgent_msg_deniedRefReqMessages" *ngIf="urgentMessage?.IsDeniedRefReqMessagesVisible">
+        <span id="urgent_msg_lblDeniedRefReqs">{{urgentMessage.DeniedRefReqMessages}}</span>
+        <div id="urgent_msg_failedRegMessage">
+            <a href="javascript:void(0);" id="urgent_msg_lnkDeniedRefReqs" (click)="OpenDeniedREFREQ()">{{urgentMessage.DeniedRefReqMessagesLinkText}}</a>
+        </div>
+        <br>
+        <br>
+    </div>
+    <div id="urgent_msg_registrationMessages" *ngIf="urgentMessage?.IsrRgistrationMessagesVisible">
+        <span id="urgent_msg_lblFailedRegs" style="font-weight: bold;">
+            {{urgentMessage.FailedRegistrationMessage}}<br>
+            <br>
+        </span>
+        <a href="javascript:void(0);" id="urgent_msg_lnkFailedRegs" (click)="OpenFailedReg()"><u>{{urgentMessage.FailedegistrationMessageLinkText}}</u></a>
+        <br>
+    </div>
+    <div id="urgent_msg_divEcpsMessages">
+        <span id="urgent_msg_lblCanEnroll"></span>
+
+        <div id="urgent_msg_divCanEnroll" *ngIf="urgentMessage?.IsEpcsCanEnrollVisible == true">
+            <br>
+            <a id="urgent_msg_lbEpcsCanEnroll" href="javascript:void(0);" (click)="RedirectEpcsRegistration(urgentMessage.EpcsCanEnrollUrl)">{{urgentMessage.EpcsCanEnrollText}}</a>
+        </div>
+        <div id="urgent_msg_divCanApprove" *ngIf="urgentMessage?.IsEpcsApproverVisible == true">
+            <br>
+            <a id="urgent_msg_lkBtnEcpsApprover" href="javascript:void(0);" (click)="RedirectToManageEpcs()">Manage EPCS Approvals</a>
+        </div>
+        <br>
+    </div>
+    <div id="urgent_msg_stateLicenseExpiryMessages" *ngIf="urgentMessage?.IsStateLicenseExpiryVisible ==  true">
+        <span id="span_urgent_msg_stateLicenseExpiryMessages" style="font-weight: bold;">
+            <br>
+            State License Expiration Notice
+        </span>
+        <br>
+        {{urgentMessage.StateLicenseExpiryMessage}}
+        <br>
+        <a id="urgent_msg_lbEpcsCanEnroll" href="javascript:void(0);" (click)="RedirectToEditUser()">Click here to update the expiration date</a>
+    </div>
+    <div id="urgent_msg_deaExpiryMessages" *ngIf="urgentMessage?.IsDeaExpiryVisible ==  true">
+        <span id="span_urgent_msg_deaExpiryMessages" style="font-weight: bold;">
+            <br>
+            DEA License Number Expiration Notice
+        </span>
+        <br>
+        {{urgentMessage.DeaExpiryMessage}}
+        <br>
+        <a id="urgent_msg_lbEpcsCanEnroll" href="javascript:void(0);" (click)="RedirectToEditUser()">Click here to update the DEA License number expiration date</a>
+    </div>
+    <div id="urgent_msg_trialPeriodExpiryMessages" *ngIf="urgentMessage?.IsTrialPeriodExpiryVisible ==  true">
+        <span id="span_urgent_msg_trialPeriodExpiryMessages" style="font-weight: bold;">
+            <br>
+            Trial Period Expiration Notice
+        </span>
+        <br>
+        {{urgentMessage.TrialPeriodExpiryMessage}}
+        <br>
+        <a href="javascript:void(0);" (click)="RedirectToBillingPage()"><u>Subscribe to ePrescribe</u></a>
+    </div>
+</div>
+<erx-change-password-popup></erx-change-password-popup>
+<denied-ref-req-message>Loading...denied ref req</denied-ref-req-message>
+
+<failed-rx-message (FailedMessagesChange) ="MessageCountChanged">Loading...failed rx</failed-rx-message>

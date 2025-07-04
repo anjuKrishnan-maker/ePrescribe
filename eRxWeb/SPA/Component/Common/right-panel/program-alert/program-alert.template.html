@@ -1,0 +1,15 @@
+﻿<div *ngIf="isSpecialtyMed">
+    <p>
+        <b>Patient Access Services for specialty medications bundled with electronic prior authorization</b>
+    </p>
+    <p>
+        ePrescribe has integration with a 3rd party, AssistRx, for patient access services to help address the complexities of prescribing specialty medications.
+        An iAssist Workflow is available for this drug to help you electronically provide additional patient access services such  as prior authorization, treatment initiation and training, copay assistance and drug starter kits.
+    </p>
+    <p>
+        Actual patient access services may vary by patient and medication.
+    </p>
+    <div *ngIf="isProviderEnrolledInSpecialtyMed !==  true">
+        To start using this functionality at no additional cost, please contact our Patient Access Services Program Enrollment team at: iassist@allscripts.com
+    </div>
+</div>

@@ -1,0 +1,228 @@
+﻿.eRxHealthSheet_Panel
+{
+	background-color:#0268AA; 
+}
+
+img#loginLogo{background:url(../images/EasyDental/EasyDental.jpg); background-repeat:no-repeat; background-position:center;}
+img#mainLogo{background:url(../images/EasyDental/EasyDental.jpg); background-repeat:no-repeat; background-position:center;}
+
+.appStripe {
+    border-top: 5px #0268AA solid;
+}
+.accordionHeader{background-color:#0268AA}
+.accordionHeaderText{background-color:#0268AA}
+.rightBoxHeader {
+	background-color:#0268AA;}
+.rightBoxTable 
+{
+	border: solid 2px #0268AA;
+}
+img#helpIcon:hover{background:url(../images/EasyDental/headerhelpEasyDental.gif); background-repeat:no-repeat; background-position:center;}
+img#helpIconLogin:hover{background:url(../images/EasyDental/headerhelpEasyDental.gif); background-repeat:no-repeat; background-position:center;}
+img#profileIcon:hover{background:url(../images/EasyDental/headerprofileEasyDental.gif); background-repeat:no-repeat; background-position:center;}
+img#logoutIcon:hover{background:url(../images/EasyDental/headerlogoutEasyDental.gif); background-repeat:no-repeat; background-position:center;}
+img#messageQueueIcon:hover{background:url(../images/EasyDental/headerMsgQueueEasyDental.gif); background-repeat:no-repeat; background-position:center;}
+img#iLearnIcon {height: 24px; width: 24px;border: none; background-image:url(../images/Allscripts/gradCap.png); background-repeat:no-repeat; background-position:center;}
+img#iLearnIcon:hover{height: 24px; width: 24px; background-image:url(../images/EasyDental/EasyDental_ILearn.png); background-repeat:no-repeat; background-position:center;}
+
+.RadPanelBar div.rpHeaderTemplate, a.rpLink
+{
+    background: linear-gradient(#0268AA, #6294b5);
+    background: -webkit-linear-gradient(#0268AA, #6294b5); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#0268AA, #6294b5); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#0268AA, #6294b5); /* For Firefox 3.6 to 15 */
+    color: white;
+}
+.editRollover:hover span
+{
+    color: #0268AA;
+	cursor:pointer;
+}
+.rpText
+{
+    color: white;
+}
+.headerIcon:hover span
+{
+    color: #0268AA
+}
+.rgSelectedRow {
+    background: #e4eff6 0 -5900px repeat-x url('../telerik/Skins/Allscripts/Grid/Img/sprite.gif');
+}
+
+
+
+.primaryForeColor {
+    color: #0268AA
+}
+
+
+
+.rightPanelMed {
+    border-left: 3px solid #0268AA !important;
+    border-right: 3px solid #0268AA !important;
+}
+
+.erxSelectedRow {
+    background-color: #e4eff6 !important;
+}
+
+
+.loginbanner
+{
+	background-color:#0268AA;
+}
+
+.loginMessageTable
+{
+	border-bottom: solid 1px #0268AA;
+	border-left: solid 1px #0268AA;
+	border-right: solid 1px #0268AA;
+}
+
+.loginMessageRow
+{
+	border-top: solid 3px #0268AA;
+	border-bottom: solid 1px #0268AA;
+}
+.adminlink					{font:normal 12px arial, verdana, sans-serif; color:#0268AA;}
+.normal						{font:normal 12px arial, verdana, sans-serif; color:#0268AA;}
+.head						{font:bold 12px arial, verdana, sans-serif; color:#0268AA; vertical-align:middle;}
+.Pheadblack					{font:bold 12px arial, verdana, sans-serif; color:#0268AA; text-indent:10px;vertical-align:middle;}
+
+
+.GridHeader
+{	
+	color: #0268AA;
+}
+.SelectedRow
+{
+	background-color: #CBCBCB;
+}
+.NormalCenter				{
+	color:#0268AA;
+}	
+.NormalVerticalCenter				{
+	color:#0268AA;
+}	
+.NormalCenterSmall				{
+	color:#0268AA;
+}					
+.NormalRightSmall				{
+	color:#0268AA;
+}	
+.DURWarning
+{
+	color: #0268AA;
+}	
+.headName			{font:italic normal 14px arial, verdana, sans-serif;color:#0268AA;vertical-align:middle;font-weight:bold;}			
+.Itallic			{font:italic bold 10px arial, verdana, sans-serif;color:#0268AA;vertical-align:middle;}
+.center				{font:normal 12px arial, verdana, sans-serif;color:#0268AA;vertical-align:middle;text-align: center;}
+.NormalForScript	{font:normal 9px arial, verdana, sans-serif; color:#0268AA; vertical-align:middle; text-align: center;}									
+.table				{border-bottom-style: solid;border-bottom-color: #0268AA;border-bottom-width: thin;}
+.DEANUMBER			{font:italic normal 11px arial, verdana, sans-serif;color:#0268AA;vertical-align:middle;}	
+
+.DURHeading
+{
+	color: #AE0910;
+}
+.RSSHeading
+{
+	font:normal 11px arial, sans-serif; color:#0268AA; vertical-align:middle;
+}
+.RSSDetail
+{
+	font:normal 10px arial, sans-serif; color:#0268AA; vertical-align:middle;
+}
+
+/* CSS Design by Kumar */
+
+a {
+	color: #0268AA;
+}
+a:visited {
+	color: #0268AA;
+}
+a:hover {
+	color: #0268AA;
+}
+.h1title {
+	background-color: #0268AA;
+}
+.h4titleText {
+	color: #0268AA;
+}
+.Titbarcolor1 
+{
+	background-color:#0268AA;
+}
+
+.tabSelected
+{	
+	background-color:#0268AA;
+}
+a.tabSelectedLink
+{		
+	background-color:#0268AA;
+}
+.divider
+{
+	border-bottom:solid 1px #0268AA;
+}
+
+.redborder     { height:1px; background-color:#0268AA; }
+.normaltxt		{ font-size:12px; color:#0268AA; }
+
+.subheadred		{ font-size:12px; font-weight:bold; color: #0268AA; }
+.borderbox		{ background-color: #ffffff; border:thin solid #0268AA; padding: 8px; height: 30px; width: 300px; text-align: center; margin: auto;}
+
+.title      { font-weight:bold; font-size:14px; font-family: Arial, sans-serif;  color: #0268AA; margin: 0px; padding: 0px;}
+
+
+/*  ******************** BUTTON  STYLES ************************ */
+
+
+.accordionHeaderScriptPad
+{
+    color: #0268AA;
+	background-color: #0268AA;
+}
+
+.accordionHeaderTextScriptPad
+{
+	background-color: #0268AA;
+}
+
+
+.PopUpTable
+{
+    border: 1px #0268AA solid;
+}
+td.PopUpHeader
+{ 
+    background-color: #0268AA;
+}
+
+.deluxeComparisons
+{
+	border:solid 1px #0268AA;
+}
+
+.deluxeComparisons th
+{
+	 color:#0268AA;
+	 border:solid 1px #0268AA;
+}
+
+.deluxeComparisons td
+{
+	 border:solid 1px #0268AA;
+}
+/*bootstrap override*/
+.nav-tabs>li>a:hover {
+  border:none;
+}
+.nav-tabs>li.active>a,.nav-tabs>li.active>a:focus,.nav-tabs>li.active>a:hover {
+     background-color:#0268AA;
+     border-color:#0268AA;
+}

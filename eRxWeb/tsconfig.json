@@ -1,0 +1,57 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "types": [ "jquery", "bootstrap" ],
+    "lib": [
+      "es2018",
+      "es2019",
+      "dom"
+    ]
+  },
+  "angularCompilerOptions": {
+    "disableTypeScriptVersionCheck": true
+  }
+}
+
+//{
+//  "compilerOptions": {
+//    "target": "es5",
+//    "module": "commonjs",
+//    "moduleResolution": "node",
+//    "sourceMap": true,
+//    "lib": [ "es5","ES7", "es2015","es2016","ES2017","ES2018","ESNext", "dom" ],
+//    "emitDecoratorMetadata": true,
+//    "experimentalDecorators": true,
+//    "removeComments": true,
+//    "noImplicitAny": false,
+//    "skipLibCheck": true,
+//    "noEmit": true
+//  },
+//  "types": [
+//    "jasmine",
+//    "jquery",
+//    "bootstrap"
+//  ],
+//  "exclude": [
+//    "node_modules",
+//    "typings",
+//    "SPA/Lib",
+//    "SPA/Test"
+//  ],
+//  "awesomeTypeScriptLoaderOptions": {
+//    "useWebpackText": true
+//  }
+//}

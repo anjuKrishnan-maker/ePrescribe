@@ -1,0 +1,526 @@
+﻿<?xml version="1.0"?>
+
+<AllscriptsMessageEnvelope>
+
+
+	<MessageDispatchHeader>
+
+		<ID/>
+
+		<RequestID/>
+
+		<ClientID>00000000000002800734</ClientID>
+
+		<SiteID>001</SiteID>
+
+		<Noun>RXCHG</Noun>
+
+		<Verb>RXCHG</Verb>
+
+		<TimeStamp>2016-03-09T16:53:24</TimeStamp>
+
+	</MessageDispatchHeader>
+
+
+	<EntityContext>
+
+
+		<KeyedValues>
+
+
+			<KeyedValue>
+
+				<Key>SiteID</Key>
+
+				<Value>001</Value>
+
+			</KeyedValue>
+
+		</KeyedValues>
+
+	</EntityContext>
+
+
+	<MessageContent>
+
+
+		<PrescriptionMessage>
+
+
+			<Switch>
+
+				<TestIndicator>N</TestIndicator>
+
+				<RecipientID>3562107060001</RecipientID>
+
+				<RecipientIDQualfier>D</RecipientIDQualfier>
+
+				<RecipientIdLevelTwo/>
+
+				<RecipientIdLevelThree>285</RecipientIdLevelThree>
+
+				<SenderID>3105551</SenderID>
+
+				<SenderIDQualifier>P</SenderIDQualifier>
+
+				<SenderPassword/>
+
+				<SenderIdLevelThree>165</SenderIdLevelThree>
+
+				<AppID>NOW</AppID>
+
+				<PartnerPortal>Perse106</PartnerPortal>
+
+				<MessageType>RXCHG</MessageType>
+
+				<TransactionControlNumber>HELLO</TransactionControlNumber>
+
+				<InitiatedTransactionControlReferecenID>23f53454fd034ca099f3301ff3e07ef8</InitiatedTransactionControlReferecenID>
+
+				<ProviderID>6d9dd5ef-84ca-4cc7-8e2d-248b4f324e37</ProviderID>
+
+        <PrescriberOrderNo></PrescriberOrderNo>
+
+			</Switch>
+
+
+			<Prescription>
+
+				<PrescriberOrderNo>ECHO FROM NEWRX</PrescriberOrderNo>
+
+				<NDCNumber>68001020900</NDCNumber>
+
+				<DrugDescription>Lisinopril 40 MG Tablet</DrugDescription>
+
+				<Quantity>30</Quantity>
+
+				<QuantityQualifier>TABS</QuantityQualifier>
+
+				<Created>2015-07-01T00:00:00</Created>
+
+				<DosageFormCode/>
+
+				<StrengthUOM/>
+
+				<SIGText>Take one tablet daily.</SIGText>
+
+				<RefillQuantity>3</RefillQuantity>
+
+				<RefillQuantityQual/>
+
+				<DaysSupply/>
+
+				<DAW>1</DAW>
+
+				<DAWDetail>1</DAWDetail>
+
+				<PharmacyNotes/>
+
+				<RxNotes/>
+
+				<RxNormCUI/>
+
+				<RxNormQual/>
+
+				<NCPDPQuantityUOM>C48542</NCPDPQuantityUOM>
+
+			</Prescription>
+
+
+			<RequestedPrescription>
+
+				<NDCNumber>42254033578</NDCNumber>
+
+				<DrugDescription>CAPTOPRIL 25 MG TABLET</DrugDescription>
+
+				<Quantity>60</Quantity>
+
+				<QuantityQualifier>C48542</QuantityQualifier>
+
+				<Created>2015-07-01T00:00:00</Created>
+
+				<SIGText>Take one tablet twice a day for 30 days.</SIGText>
+
+				<RefillQuantity>3</RefillQuantity>
+
+				<RefillQuantityQual/>
+
+				<DAW>1</DAW>
+
+				<DAWDetail>1</DAWDetail>
+
+				<NCPDPQuantityUOM>C48542</NCPDPQuantityUOM>
+
+			</RequestedPrescription>
+
+
+			<RequestedPrescription>
+
+				<NDCNumber>68084073995</NDCNumber>
+
+				<DrugDescription>BENAZEPRIL HCL 40 MG TABLET</DrugDescription>
+
+				<Quantity>30</Quantity>
+
+				<QuantityQualifier>C48542</QuantityQualifier>
+
+				<Created>2015-07-01T00:00:00</Created>
+
+				<SIGText>Take one tablet once a day for 30 days.</SIGText>
+
+				<RefillQuantity>3</RefillQuantity>
+
+				<RefillQuantityQual/>
+
+				<DAW>1</DAW>
+
+				<DAWDetail>1</DAWDetail>
+
+				<NCPDPQuantityUOM>C48542</NCPDPQuantityUOM>
+
+			</RequestedPrescription>
+
+
+			<RequestedPrescription>
+
+				<NDCNumber>68682014601</NDCNumber>
+
+				<DrugDescription>ENALAPRIL-HYDROCHLOROTHIAZIDE 10-25 MG TABLET</DrugDescription>
+
+				<Quantity>30</Quantity>
+
+				<QuantityQualifier>C48542</QuantityQualifier>
+
+				<Created>2015-07-01T00:00:00</Created>
+
+				<SIGText>Take one tablet once a day for 30 days.</SIGText>
+
+				<RefillQuantity>3</RefillQuantity>
+
+				<RefillQuantityQual/>
+
+				<DAW>1</DAW>
+
+				<DAWDetail>1</DAWDetail>
+
+				<NCPDPQuantityUOM>C48542</NCPDPQuantityUOM>
+
+			</RequestedPrescription>
+
+
+			<RequestedPrescription>
+
+				<NDCNumber>68001018705</NDCNumber>
+
+				<DrugDescription>QUINAPRIL 20 MG TABLET</DrugDescription>
+
+				<Quantity>60</Quantity>
+
+				<QuantityQualifier>C48542</QuantityQualifier>
+
+				<Created>2015-07-01T00:00:00</Created>
+
+				<SIGText>Take one tablet twice a day for 30 days.</SIGText>
+
+				<RefillQuantity>3</RefillQuantity>
+
+				<RefillQuantityQual/>
+
+				<DAW>1</DAW>
+
+				<DAWDetail>1</DAWDetail>
+
+				<NCPDPQuantityUOM>C48542</NCPDPQuantityUOM>
+
+			</RequestedPrescription>
+
+
+			<RequestedPrescription>
+
+				<NDCNumber>00527192001</NDCNumber>
+
+				<DrugDescription>PERINDOPRIL ERBUMINE 8 MG TAB</DrugDescription>
+
+				<Quantity>60</Quantity>
+
+				<QuantityQualifier>C48542</QuantityQualifier>
+
+				<Created>2015-07-01T00:00:00</Created>
+
+				<SIGText>Take one tablet twice a day for 30 days.</SIGText>
+
+				<RefillQuantity>3</RefillQuantity>
+
+				<RefillQuantityQual/>
+
+				<DAW>1</DAW>
+
+				<DAWDetail>1</DAWDetail>
+
+				<NCPDPQuantityUOM>C48542</NCPDPQuantityUOM>
+
+			</RequestedPrescription>
+
+
+			<RequestedPrescription>
+
+				<NDCNumber>35356089390</NDCNumber>
+
+				<DrugDescription>RAMIPRIL 10 MG CAPSULE</DrugDescription>
+
+				<Quantity>60</Quantity>
+
+				<QuantityQualifier>C48542</QuantityQualifier>
+
+				<Created>2015-07-01T00:00:00</Created>
+
+				<SIGText>Take one tablet twice a day for 30 days.</SIGText>
+
+				<RefillQuantity>3</RefillQuantity>
+
+				<RefillQuantityQual/>
+
+				<DAW>1</DAW>
+
+				<DAWDetail>1</DAWDetail>
+
+				<NCPDPQuantityUOM>C48542</NCPDPQuantityUOM>
+
+			</RequestedPrescription>
+
+
+			<RequestedPrescription>
+
+				<NDCNumber>35356089390</NDCNumber>
+
+				<DrugDescription>RAMIPRIL 10 MG CAPSULE</DrugDescription>
+
+				<Quantity>60</Quantity>
+
+				<QuantityQualifier>C48542</QuantityQualifier>
+
+				<Created>2015-07-01T00:00:00</Created>
+
+				<SIGText>Take one tablet twice a day for 30 days.</SIGText>
+
+				<RefillQuantity>3</RefillQuantity>
+
+				<RefillQuantityQual/>
+
+				<DAW>1</DAW>
+
+				<DAWDetail>1</DAWDetail>
+
+				<NCPDPQuantityUOM>C48542</NCPDPQuantityUOM>
+
+			</RequestedPrescription>
+
+
+			<RequestedPrescription>
+
+				<NDCNumber>54569591600</NDCNumber>
+
+				<DrugDescription>MOEXIPRIL HCL 15 MG TABLET</DrugDescription>
+
+				<Quantity>60</Quantity>
+
+				<QuantityQualifier>C48542</QuantityQualifier>
+
+				<Created>2015-07-01T00:00:00</Created>
+
+				<SIGText>Take one tablet twice a day for 30 days.</SIGText>
+
+				<RefillQuantity>3</RefillQuantity>
+
+				<RefillQuantityQual/>
+
+				<DAW>1</DAW>
+
+				<DAWDetail>1</DAWDetail>
+
+				<NCPDPQuantityUOM>C48542</NCPDPQuantityUOM>
+
+			</RequestedPrescription>
+
+
+			<RequestedPrescription>
+
+				<NDCNumber>51552107205</NDCNumber>
+
+				<DrugDescription>CAPTOPRIL POWDER</DrugDescription>
+
+				<Quantity>60</Quantity>
+
+				<QuantityQualifier>C48155</QuantityQualifier>
+
+				<Created>2015-07-01T00:00:00</Created>
+
+				<SIGText>Take one tablet twice a day for 30 days.</SIGText>
+
+				<RefillQuantity>3</RefillQuantity>
+
+				<RefillQuantityQual/>
+
+				<DAW>1</DAW>
+
+				<DAWDetail>1</DAWDetail>
+
+				<NCPDPQuantityUOM>C48155</NCPDPQuantityUOM>
+
+			</RequestedPrescription>
+
+
+			<Patient>
+
+				<PatientID/>
+
+				<Ssn/>
+
+				<MedicareNumber/>
+
+				<PbmID/>
+
+				<FirstName>Ci</FirstName>
+
+				<LastName>Li</LastName>
+
+				<Dob>1923-10-18T00:00:00</Dob>
+
+				<GenderCode>M</GenderCode>
+
+				<Address1/>
+
+				<City/>
+
+				<State/>
+
+				<ZipCode/>
+
+				<RelationshipCD/>
+
+				<Contact/>
+
+			</Patient>
+
+
+			<Provider>
+
+				<ProviderID>6d9dd5ef-84ca-4cc7-8e2d-248b4f324e37</ProviderID>
+
+				<ProviderQual/>
+
+				<DeaNumber>BM1690937</DeaNumber>
+
+				<NpiNumber>1649299207</NpiNumber>
+
+				<StateLicenseNumb>12345</StateLicenseNumb>
+
+				<AccountID>00000000002800734001</AccountID>
+
+				<PracticeName>Duke NY</PracticeName>
+
+				<FirstName>Ethan</FirstName>
+
+				<MiddleName>!</MiddleName>
+
+				<LastName>IntTwoMain</LastName>
+
+				<Suffix>!</Suffix>
+
+				<Prefix>!</Prefix>
+
+				<Address1>123 Main St.</Address1>
+
+				<Address2>Ste 104</Address2>
+
+				<City>Chicago</City>
+
+				<State>NY</State>
+
+				<ZipCode>60115</ZipCode>
+
+
+-<Contact>
+
+					<Phone>9199396542</Phone>
+
+					<Fax>9196545123</Fax>
+
+					<Email>TestProv@Util.com</Email>
+
+				</Contact>
+
+				<NUCCSpecialtyCd>207N00000X</NUCCSpecialtyCd>
+
+			</Provider>
+
+
+-<Pharmacy>
+
+				<Ncpdp>3105551</Ncpdp>
+
+				<NpiNumber>1700134780</NpiNumber>
+
+				<PharmacistLastName/>
+
+				<PharmacistFirstName/>
+
+				<PharmacistMiddleName/>
+
+				<Name>10Dot6 Pharmacy Store1 MU Long Name</Name>
+
+				<Address1>56789 Long Pharmacy Name for 10.6MU</Address1>
+
+				<Address2/>
+
+				<City>ReallyLongCityNameForPharmacy 106MU</City>
+
+				<State>CA</State>
+
+				<ZipCode>900098989</ZipCode>
+
+
+-<Contact>
+
+					<Phone>3105153115x123456789</Phone>
+
+					<Fax>3105153116</Fax>
+
+				</Contact>
+
+			</Pharmacy>
+
+
+-<Status>
+
+				<Type/>
+
+				<Code>0</Code>
+
+				<Message/>
+
+			</Status>
+
+
+-<Request>
+
+				<ChangeRequestType>G</ChangeRequestType>
+
+			</Request>
+
+
+      -<Response>
+
+        <Type>A</Type>
+
+        <CodeQualifier/>
+
+        <Message/>
+
+      </Response>
+
+		</PrescriptionMessage>
+
+	</MessageContent>
+
+</AllscriptsMessageEnvelope>

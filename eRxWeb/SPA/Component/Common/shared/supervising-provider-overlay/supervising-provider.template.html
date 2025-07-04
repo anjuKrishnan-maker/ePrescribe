@@ -1,0 +1,29 @@
+﻿<div class="modal fade" id="mdlSupervisingProvider" role="dialog">
+    <div class="modal-dialog" style="width: 350px;">
+        <div class="overlayTitle">
+        </div>
+        <div class="overlayContent" style="background-color: White">
+            <table style="margin: 0 auto">
+                <tr></tr>
+                <tr>
+                    <td>
+                        <b>Please select a supervising provider below.</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <select [(ngModel)]="currentProvId" class="form-control" style="font-size: 12px">
+                            <option *ngFor="let provider of providers, let i = index" [value]="provider.ProviderId" [attr.selected]="i == 0 ? true : null">
+                                {{ provider.ProviderName }}
+                            </option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="overlayFooter">
+            <button type="button" CssClass="btnstyle" (click)="Cancel()">Cancel</button>
+            <button type="button" CssClass="btnstyle btnStyleAction" (click)="btnSetSupervisingProviderClick()">Set Supervising Provider</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<table *ngIf="rxDetails" width="100%">
+    <tbody>
+        <tr *ngIf="rxDetails.Pharmacy">
+            <td>
+                <b><u>Pharmacy</u></b><br>
+                <span id="lblPharmacyNameDetail">{{rxDetails.Pharmacy.PharmacyNameDetail}}   </span><br>
+                <span id="lblPharmacyAddressDetail">{{rxDetails.Pharmacy.PharmacyAddressDetail}}  </span><br>
+                <span id="lblPharmacyCityStateZipDetail">{{rxDetails.Pharmacy.PharmacyCityStateZipDetail}}  </span><br>
+                (P)
+                <span id="lblPharmacyPhoneDetail">{{rxDetails.Pharmacy.PharmacyPhoneDetail}}</span><br>
+                (F)
+                <span id="lblPharmacyFaxDetail">{{rxDetails.Pharmacy.PharmacyFaxDetail}}</span>
+            </td>
+        </tr>
+        <tr *ngIf="rxDetails.History">
+            <td>
+                <b><u>Provider</u></b><br>
+                <span id="lblProviderName">{{rxDetails.History.ProviderName}}   </span><br>
+            </td>
+        </tr>
+        <tr  *ngIf="rxDetails.History">
+            <td>
+                <b><u>Practice</u></b><br>
+                <span id="lblPracticeName">{{rxDetails.History.PracticeName}}   </span><br>
+                <span id="lblProviderAddress">{{rxDetails.History.ProviderAddress}}  </span><br>
+                <span id="lblProviderCityStateZip">{{rxDetails.History.ProviderCityStateZip}}  </span><br>
+                (P)
+                <span id="lblProviderPhone">{{rxDetails.History.lProviderPhone}}</span><br>
+                (F)
+                <span id="lblProviderFax">{{rxDetails.History.ProviderFax}}</span><br>
+                (E)
+                <span id="lblProviderEmail">{{rxDetails.History.ProviderEmail}}</span>
+            </td>
+        </tr>
+        <tr *ngIf="rxDetails.History">
+            <td>
+                <b><u>Pharmacy</u></b><br>
+                <span id="lblPharmacyName">{{rxDetails.History.PharmacyName}}   </span><br>
+                <span id="lblPharmacyAddress">{{rxDetails.History.PharmacyAddress}}  </span><br>
+                <span id="lblPharmacyCityStateZip">{{rxDetails.History.PharmacyCityStateZip}}  </span><br>
+                (P)
+                <span id="lblPharmacyPhone">{{rxDetails.History.PharmacyPhone}}</span><br>
+                (F)
+                <span id="lblPharmacyFax">{{rxDetails.History.PharmacyFax}}</span><br>
+                (E)
+                <span id="lblPharmacyEmail">{{rxDetails.History.PharmacyEmail}}</span>
+            </td>
+        </tr>
+        <tr *ngIf="rxDetails.History">
+            <td>
+                <b><u>Pharmacist</u></b><br>
+                <span id="lblPharmacistName">{{rxDetails.History.PharmacistName}}   </span><br>
+            </td>
+        </tr>
+    </tbody>
+</table>

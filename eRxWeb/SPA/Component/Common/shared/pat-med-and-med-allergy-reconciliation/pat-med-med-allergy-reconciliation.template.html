@@ -1,0 +1,28 @@
+﻿<erx-modal-popup-control ModalId="{{ModalId}}" title="Patient Medication and Medication Allergy Reconciliation" [Width]="''" [Height]="''">
+    <div modal-body *ngIf="DoesHaveValidMedAndAllergy">
+        <div style="padding-bottom: 10px; padding-left: 10px">
+            <span id="lblLastDoneDetail" style="font-style: italic">{{PatientMedRecDetails.ReconciliationMessage}}</span>
+        </div>
+        Select an option:<br />
+        <input type="radio" id="rTC" name="actionType" [checked]="PatientMedRecDetails.Type === 'TC'" value="TC" (click)="updateSelectedActionType($event.target.value)"> <label for="rTC">Transfer of Care Encounter</label> <br />
+        <input type="radio" id="rMR" name="actionType" [checked]="PatientMedRecDetails.Type === 'MR'" value="MR" (click)="updateSelectedActionType($event.target.value)">  <label for="rMR">Relevant Encounter</label> <br />
+        <br />
+        <div style="padding-bottom: 10px">
+            <i>Click Save to acknowledge you've reviewed and reconciled BOTH the medication list and medication allergy list for this patient.</i>
+        </div>
+    </div>
+    <div modal-body style="padding-left: 10px" *ngIf="!DoesHaveValidMedAndAllergy" id="divReconcileWarning" runat="server">
+        <br />
+        1. There must be at least one allergy or <i>No Known Allergies</i> present in the Active Allergies list.
+        <br />
+        2. There must be at least one medication or <i>No Active Medications</i> present in the Active Medications list.
+        <br />
+        <br />
+        Make sure that both conditions are present to successfully document the encounter.
+    </div>
+    <div modal-footer>
+        <button *ngIf="DoesHaveValidMedAndAllergy && ShouldShowSaveNPrescribe == true" (click)="SaveAndPrescribeButtonClicked()" [disabled]="EnableSaveButtons()" type="button" id="btnSaveAndPrescribe" class="btnStyleTwoArrows">Save & Prescribe</button>
+        <button *ngIf="DoesHaveValidMedAndAllergy" type="button" style="width: 100px" [disabled]="EnableSaveButtons()" (click)="SaveButtonClicked()" class="btnstyle btnStyleAction" value="Save" width="100px">Save</button>
+        <button type="button" style="width: 100px" (click)="cancel()" class="btnstyle btnStyleAction" value="Cancel" width="100px">Cancel</button>
+    </div>
+</erx-modal-popup-control>

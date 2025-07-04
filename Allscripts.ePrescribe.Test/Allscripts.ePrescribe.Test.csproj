@@ -1,0 +1,479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8CDBD8EF-6680-451C-B2CF-5D81DE152958}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Allscripts.ePrescribe.Test</RootNamespace>
+    <AssemblyName>Allscripts.ePrescribe.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.4.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentSpace.SAML">
+      <HintPath>..\..\Shared\Libs\ComponentSpace.SAML.dll</HintPath>
+    </Reference>
+    <Reference Include="JSTest, Version=1.1.1.0, Culture=neutral, PublicKeyToken=8c82fc3dfc859ad4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Shared\Libs\JSTest.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1358.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.3.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1358.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1358.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1358.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Moq, Version=4.14.0.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moq.4.14.5\lib\net45\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Shared\Libs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\..\Shared\Libs\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.1\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Shared\Libs\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Telerik.Web.UI, Version=2020.1.219.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\eRxWeb\ReferencedComponents\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="TieServiceClient, Version=2016.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Shared\Libs\TieServiceClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Veradigm.AdAgent.Business">
+      <HintPath>..\..\Shared\Libs\Veradigm.AdAgent.Business.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppCodeTests\BasePageTests\IsAnyTourToBeShownTests.cs" />
+    <Compile Include="AppCodeTests\CompulsoryBasicUtilTests\DisplayPromoTeaserAdTests.cs" />
+    <Compile Include="AppCodeTests\CompulsoryBasicUtilTests\ForceCompulsoryRestrictionsTests.cs" />
+    <Compile Include="AppCodeTests\CompulsoryBasicUtilTests\HasCompulsoryBasicStartedTests.cs" />
+    <Compile Include="AppCodeTests\CompulsoryBasicUtilTests\IsCompulsoryBasicEnterpriseAndLicenseDisabledTests.cs" />
+    <Compile Include="AppCodeTests\CompulsoryBasicUtilTests\IsCompulsoryBasicOrDeluxeNotPurchasedTests.cs" />
+    <Compile Include="AppCodeTests\CompulsoryBasicUtilTests\IsLicenseInFreeTrialPeriod.cs" />
+    <Compile Include="AppCodeTests\CompulsoryBasicUtilTests\IsCompulsoryBasicPurchasedTests.cs" />
+    <Compile Include="AppCodeTests\RegistrationTests\RegistrationStatusProgressCheckerTests.cs" />
+    <Compile Include="AppCodeTests\UsersTests\UserSecurityModelHelperTests\CalculateIfChangePasswordTests.cs" />
+    <Compile Include="AppCodeTests\UsersTests\UserSecurityModelHelperTests\CalculateIfEditSecretQuestionsLinkTests.cs" />
+    <Compile Include="AppCodeTests\UsersTests\UserPreferencesModelHelperTests\GetRxFavouritesDisplaySettingTests.cs" />
+    <Compile Include="AppCodeTests\UsersTests\UserStateLicenseTests.cs" />
+    <Compile Include="Authorization\AuthorizationPageRulesTest.cs" />
+    <Compile Include="Authorization\AuthorizationManagerTest.cs" />
+    <Compile Include="Common\ExtensionMethodTests\SecuredStringTests.cs" />
+    <Compile Include="Common\ExtensionMethodTests\ObjectExtensionTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\ApproveRefillTaskTests\UpdateOrRemovePharmNotesTests.cs" />
+    <Compile Include="AppCodeTests\ScriptPadUtilTests\IsRefillQuantConsistentWithStateCSTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\ContentLoadAsyncUtilTests\CreateTask.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\ContentLoadAsyncUtilTests\GetTimerNameTests.cs" />
+    <Compile Include="AppCodeTests\DeluxeAccountUtilTests\ConstructCancelReasonsTests.cs" />
+    <Compile Include="DurTests\DurWarningMultiSelectTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\PatientFileUploadTests\PatientFileUploadTests.cs" />
+    <Compile Include="ERxWebTests\ControllerTests\PatientFileUploadApiTests\CheckUploadJobStatusTests.cs" />
+    <Compile Include="ERxWebTests\ControllerTests\PatientFileUploadApiTests\UploadPatientDataTests.cs" />
+    <Compile Include="ERxWebTests\ControllerTests\RxDurReviewApiControllerTest\GetDurWarningTests.cs" />
+    <Compile Include="AppCodeTests\JsonHelperTests\ConvertUrlParametersTests.cs" />
+    <Compile Include="AppCodeTests\MedicationSearchDisplayTests\GetFormularyImagePathWithTooltipTests.cs" />
+    <Compile Include="AppCodeTests\PPT\PPTPlusDisableTests.cs" />
+    <Compile Include="AppCodeTests\RegistrationTests\SetupRegistrationPricingStructuresTests.cs" />
+    <Compile Include="AppCodeTests\ReportTests\ReportViewerHelperTests\SetExportFormatVisibilityTests.cs" />
+    <Compile Include="Common\MockedObjects.cs" />
+    <Compile Include="DurTests\DurMultiSelectTest.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\EPSBrokerTests\ConvertEnumFromCommonToEPSTests.cs" />
+    <Compile Include="ERxWebTests\ControllerTests\CancelRxApiControllerTests\RetrieveCanceledByIdUnitTests.cs" />
+    <Compile Include="ERxWebTests\ControllerTests\CancelRxApiControllerTests\RetrieveCanceledByProviderIdUnitTests.cs" />
+    <Compile Include="ERxWebTests\ControllerTests\CancelRxApiControllerTests\RetrieveCanceledBySupervisingProviderIdUnitTests.cs" />
+    <Compile Include="AppCodeTests\ReportTests\ReportMenuUtilTests\ShowDeluxeAdForReportTests.cs" />
+    <Compile Include="AppCodeTests\ReportTests\ReportMenuUtilTests\GenerateReportMenuTests.cs" />
+    <Compile Include="DurTests\ComputeReasonIDAndUpdateRxToProviderListTests.cs" />
+    <Compile Include="ERxWebTests\ControllerTests\ContentLoadControllerTests\BuildRefreshTaskListTests.cs" />
+    <Compile Include="ERxWebTests\ControllerTests\ContentLoadControllerTests\BuildMedSelectedTaskListTests.cs" />
+    <Compile Include="ERxWebTests\ControllerTests\ContentLoadControllerTests\BuildInitialContentTaskListTests.cs" />
+    <Compile Include="ERxWebTests\ControllerTests\EPCSApiControllerTests\EPCSApiControllerTests.cs" />
+    <Compile Include="ERxWebTests\ControllerTests\RxDurReviewApiControllerTest\RxDurReviewApiControllerTest.cs" />
+    <Compile Include="ERxWebTests\ControllerTests\RightPanelControllerTests\BuildAsyncTaskListTests.cs" />
+    <Compile Include="ERxWebTests\ControllerTests\SettingsApiControllerTests\PatientUploadLinkTests.cs" />
+    <Compile Include="ERxWebTests\RxProcessorTests\RxCreationTypeTests.cs" />
+    <Compile Include="ERxWebTests\ServerModelTests\FillHistoryTimeLineModelTests\FillHistoryTimeLineModelTests.cs" />
+    <Compile Include="ERxWebTests\ServerModelTests\ReviewHistoryModelCreatorTests\CreatePrescriptionTextTests.cs" />
+    <Compile Include="ERxWebTests\SPATests\APITests\UrgentMessageApiTests\ConstructEpcsLinksTests.cs" />
+    <Compile Include="ERxWebTests\SPATests\APITests\UrgentMessageApiTests\GetCachedShieldTraitsTests.cs" />
+    <Compile Include="Login\LogonAuthenticateTest.cs" />
+    <Compile Include="MockHelpers.cs" />
+    <Compile Include="ProviderTests\ProviderTests.cs" />
+    <Compile Include="RtpsTests\AlternateMedDispositionRequestCRxTests.cs" />
+    <Compile Include="AppCodeTests\PPT\RetrieveSurescriptsResponseMessageIdOrEmptyTests.cs" />
+    <Compile Include="AppCodeTests\PPT\ComputePricingRequestDelayTimeTests.cs" />
+    <Compile Include="AppCodeTests\PPT\GetCouponDispositionValueTests.cs" />
+    <Compile Include="AppCodeTests\PPT\GetCouponDistributionValueTests.cs" />
+    <Compile Include="AppCodeTests\PPT\PptPlusHandlerTests\HandleInitPricingTests.cs" />
+    <Compile Include="AppCodeTests\PrescriberOnRecordTests\SetInSessionTests.cs" />
+    <Compile Include="AppCodeTests\SupervisingProviderTests\SetInSessionTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\AddPatientAspxTests\CompareHeightOnLoadTests.cs" />
+    <Compile Include="EditUserPageTests\EditUserTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\AnnouncementsTests\CheckForServiceAlertsToShowTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\BrowserUtilTests\GetBrowserHeightTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\BrowserUtilTests\IsBrowserUpgradeNeededTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\CancelRxTests\GetScriptsToCancelTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\CancelRxTests\IsScriptCancelRxEligileTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\DateTimeHelperTests\GetValidFutureDateOrTodayTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\MedicationSearchDisplayTests\SetBenifitImgAsSpecialtyMedTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\MedicationSearchDisplayTests\SetBenefitsImageTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\MenuApiTests\IsPatientLockDownModeUnitTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\PatientCoverageTests\PatientCoverageTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\LogTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\TaskDisplayTests\GetDateOrNotSpecifiedTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\TaskDisplayTests\GetRefillTextTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\TaskDisplayTests\CreateRxDetailTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\TaskDisplayTests\GetFormattedRxDetailsTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\UserPropertiesTests\GetUserPropertyValueTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\UserPropertiesTests\GetBoolOrFalseUserPropertyValueTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\TieUtilityTests\AddDeaSchedulesToCookieTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\TieUtilityTests\GetAccountTypeTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\TieUtilityTests\GetAdForMasterPageTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\TieUtilityTests\GetAdPlacementTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\TieUtilityTests\GetHelpPageAdPlacementTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\TieUtilityTests\GetHelpPageTieLocationNameTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\TieUtilityTests\GetMasterPageTieLocationNameTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\TieUtilityTests\GetTargetKeysTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\TieUtilityTests\GetUserTypeCodeTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\TieUtilityTests\IsLicenseAdsEnabledTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\TieUtilityTests\ParseAbsoluteUrlForPageNameTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\TieUtilityTests\ShouldShowAdsTests.cs" />
+    <Compile Include="Common\ExtensionMethodTests\GetFirstRowValueTests.cs" />
+    <Compile Include="Common\ExtensionMethodTests\ToEnumIntTests.cs" />
+    <Compile Include="Common\ExtensionMethodTests\ToEnumObject.cs" />
+    <Compile Include="Common\ExtensionMethodTests\ToEnumStringTests.cs" />
+    <Compile Include="Common\ExtensionMethodTests\ToGuidTests.cs" />
+    <Compile Include="Common\GetUserGuidForBroswerLogTests.cs" />
+    <Compile Include="DateUtilsTests.cs" />
+    <Compile Include="Common\ExtensionMethodTests\ExtensionMethodsTests.cs" />
+    <Compile Include="Common\ExtensionMethodTests\GetValueTests.cs" />
+    <Compile Include="DeluxeBillingPageTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\AddPatientAspxTests\CompareWeightOnLoadTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\ApproveRefillTaskTests\BuildApproveRadioButtonTcTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\ApproveRefillTaskTests\BuildDetailsBlockTcTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\ApproveRefillTaskTests\BuildDetailsBlockTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\ApproveRefillTaskTests\DoesChangeRequestLinkExistTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\ApproveRefillTaskTests\VerifyDispensedQuantityAndUpdateUiTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\ApproveRefillTaskTests\GetDenyMessageTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\ApproveRefillTaskTests\GetDenyMessageTypeTextTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\ApproveRefillTaskTests\GetDispensedLabelTextTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\ApproveRefillTaskTests\GetFormattedRequestedRxDetailsTableTextTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\ApproveRefillTaskTests\IsCsMedTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\ApproveRefillTaskTests\IsValidPaCodeTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\ApproveRefillTaskTests\ShowDenialReasonErrorTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\ApproveRefillTaskTests\ShouldLaunchEPCSWorkflowTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\ActiveMedicationsTests\LoadFromDataSetTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SpecialtyMedTests\NPIFromDelegateProviderUnitTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SpecialtyMedTests\ProviderIDForSpecialtyMedUnitTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SpecialtyMedTests\GetNPIUnitTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SpecialtyMedTests\RetrieveFormNameUnitTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SpecialtyMedTests\SetEnrollmentLabelsTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SpecialtyMedTests\SetRadioButtonTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SpecialtyMedTests\SetSpecialtyPaStatusLabelsTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SpecialtyMedTests\BuildConfirmOfferUnitTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SpecialtyMedTests\RetrieveDestinationsForSpecialtyMedTasksUnitTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SpecialtyMedTests\SpecialtyMedDestinationsOptionsParametersUnitTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SpecialtyMedTests\RetrieveDocumentsVisibilityUnitTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SpecialtyMedTests\SpecialtyMedSendMailOrderPharmacyTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SpecialtyMedTests\SpecialtyMedSendPrescriptionTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SpecialtyMedTests\UpdateDXCRecommendationContextOrganizationInformationUnitTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SpecialtyMedTests\UpdateDXCRecommendationContextProviderInformationUnitTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SpecialtyMedTests\UpdateDXCRecommendationContextPatientInformationUnitTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\ChangeRxTests\BuildChangeRequestLinkTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\ChangeRxTests\CheckForDelegateProviderTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\ChangeRxTests\CompleteApprovePriorAuthWorkflowTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\ChangeRxTests\CompleteDenyPriorAuthWorkflowTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\ChangeRxTests\ChangeRxWorkflowUnitTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\ChangeRxTests\GetRXCHGApprovalDisplayMessageTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\ChangeRxTests\UpdateChangeRxWorkflowNotesBeforeSigPageTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\ChangeRxTests\CreateChangeRequestLiteralTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\CsMedUtilTests\ShouldShowCsRegistryControlsOverloadTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\CsMedUtilTests\ShouldShowCsRegistryControlsTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\LoginTests\GetAndSetDimensionsTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\MedicationAspxTests\AddClientEventToGridTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\MedicationAspxTests\SetSearchOptionsTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\PharmRefillDetailsTests\PharmRefillDetailsUnitTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\RefReqTests\GetREFREQApprovalDisplayMessageTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SigAspxTests\CheckAndSetControlsForEpcsTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\ChangeRxWorkflowTests\ChangeRxWorkFlowTests.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ERxWebTests\AppCodeTests\SigAspxTests\SigAspxHelperTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SigAspxTests\SigChangeRxWorkflowTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SsoTests\SetPartnerSessionTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SsoTests\FindPartnerByIssuerTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SsoTests\GetAuthenticationStatementTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SsoTests\GetOperationValueTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SsoTests\FindPartnerByGuidTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SsoTests\IsEpaTaskModeTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SsoTests\GetPatientGuidGetWithAttributeTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SsoTests\GetAssertionTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SsoTests\SetSsoModeTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SsoTests\CheckForActivationWizardRedirectTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SsoTests\GetTaskRedirectUrlTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SsoTests\GetRedirectForTaskModeTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SsoTests\GetTaskRedirectForEpaLockDownTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SsoTests\ValidateTimeOnSsoPostTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\SsoTests\VerifyPartnerCertificateTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\TasksTests\RefReqTaskTests\AddToAuditLogTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\TasksTests\RefReqTaskTests\ProcessApprovalTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\TasksTests\RefReqTaskTests\ProcessDenialTests.cs" />
+    <Compile Include="ERxWebTests\AppCodeTests\TasksTests\RefReqTaskTests\ProcessTaskingWorkflowTests.cs" />
+    <Compile Include="ERxWebTests\ControllerTests\PatientHeaderAPIControllerTests\GetPharmacyInfoTests.cs" />
+    <Compile Include="ERxWebTests\ControllerTests\PatientHeaderAPIControllerTests\GetDiagnosisInfoTests.cs" />
+    <Compile Include="ERxWebTests\ControllerTests\PatientHeaderAPIControllerTests\GetAllergyInfoTests.cs" />
+    <Compile Include="ERxWebTests\ControllerTests\PatientHeaderAPIControllerTests\GetPatientActiveMedsTests.cs" />
+    <Compile Include="ERxWebTests\ControllerTests\SelectMedicationAPITests\GetParsedSigTextTests.cs" />
+    <Compile Include="ERxWebTests\ControllerTests\SelectMedicationAPITests\GetProviderHistorySearchNoMedMsgTests.cs" />
+    <Compile Include="ERxWebTests\ControllerTests\SelectMedicationAPITests\isMDDSiteEnabledTests.cs" />
+    <Compile Include="ERxWebTests\ControllerTests\SelectMedicationAPITests\ShowCSErrorTests.cs" />
+    <Compile Include="ERxWebTests\ControllerTests\SelectMedicationAPITests\HasScriptPadMedTests.cs" />
+    <Compile Include="ERxWebTests\ControllerTests\SettingsApiControllerTests\PreBuildRxLinkTests.cs" />
+    <Compile Include="ERxWebTests\ControllerTests\SettingsApiControllerTests\ManageEpcsLinkTests.cs" />
+    <Compile Include="ERxWebTests\ControllerTests\SettingsApiControllerTests\MergePatientsLinkTests.cs" />
+    <Compile Include="ERxWebTests\ControllerTests\SettingsApiControllerTests\SiteManagementLinkTests.cs" />
+    <Compile Include="ERxWebTests\ControllerTests\SettingsApiControllerTests\DurSettingsLinkTests.cs" />
+    <Compile Include="ERxWebTests\ControllerTests\SettingsApiControllerTests\EditUserLinkTests.cs" />
+    <Compile Include="ERxWebTests\ControllerTests\SettingsApiControllerTests\AddUserLinkTests.cs" />
+    <Compile Include="ERxWebTests\ControllerTests\SettingsApiControllerTests\PrivacyLinkTests.cs" />
+    <Compile Include="ERxWebTests\ControllerTests\SettingsApiControllerTests\PdmpEnrollmentLinkTests.cs" />
+    <Compile Include="ERxWebTests\ControllerTests\SettingsApiControllerTests\ViewEpcsDroiLinksTests.cs" />
+    <Compile Include="ERxWebTests\FreeFormDrugTests\SetValuesBasedOnCsChkBoxTests.cs" />
+    <Compile Include="ERxWebTests\RxProcessorTests\RouteRxChangeWorkflowTests.cs" />
+    <Compile Include="ERxWebTests\ScriptPadTests\ShouldShowPatMissingInfoTests.cs" />
+    <Compile Include="ERxWebTests\SPATests\APITests\FormularyAlternativeApiTests\FormularyAlternativeApiTests.cs" />
+    <Compile Include="ERxWebTests\SPATests\APITests\FormularyOverrideApiTests\FormularyOverrideAPITests.cs" />
+    <Compile Include="ERxWebTests\SPATests\APITests\MessageQueueApiTests\GetPharmNotesLabelTests.cs" />
+    <Compile Include="ERxWebTests\SPATests\APITests\PatientMedHistoryAPITests\PatientMedHistoryAPITests.cs" />
+    <Compile Include="ERxWebTests\SPATests\APITests\UrgentMessageApiTests\ConstructFailedRegMessagesUnitTests.cs" />
+    <Compile Include="ILearnTests\ILearnTests.cs" />
+    <Compile Include="AppCodeTests\IdologyClassTests\IsProviderAddressValidatedByIDologyUnitTests.cs" />
+    <Compile Include="JavaScript\EditUserTest.cs" />
+    <Compile Include="LoginTests.cs" />
+    <Compile Include="PhysicianMasterPageTests\PropertiesTests.cs" />
+    <Compile Include="PurchaseModeTests.cs" />
+    <Compile Include="RtpsTests\RtpsHelperTests.cs" />
+    <Compile Include="ScriptPadTests\IsPharmacyDestinationTest.cs" />
+    <Compile Include="ScriptPadTests\IsSpecMedDestTests.cs" />
+    <Compile Include="ScriptPadTests\ShouldShowPharmacySigAlertUnitTests.cs" />
+    <Compile Include="ScriptPadTests\ShouldPrescriptionBeSentToProvider.cs" />
+    <Compile Include="ERxWebTests\SigTests\GetPharmacyNotesTests.cs" />
+    <Compile Include="SiteManagementTests.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="AppCodeTests\StateUtilsTests\UserInfoTests.cs" />
+    <Compile Include="TaskingTests\ApproveRxTaskTests\ApproveRxTaskTests.cs" />
+    <Compile Include="TaskingTests\ChangeRxTasksTests\ProcessTaskingWorkflowUnitTests.cs" />
+    <Compile Include="TaskingTests\ChangeRxTasksTests\ProcessDenialUnitTests.cs" />
+    <Compile Include="TaskingTests\ChangeRxTasksTests\ProcessRXCHGPriorAuthDenialUnitTests.cs" />
+    <Compile Include="TaskingTests\ChangeRxTasksTests\ProcessRXCHGDenialUnitTests.cs" />
+    <Compile Include="TaskingTests\ChangeRxTasksTests\ProcessApprovalUnitTests.cs" />
+    <Compile Include="TaskingTests\ChangeRxTasksTests\ProcessRxChgPriorAuthApprovalUnitTests.cs" />
+    <Compile Include="TaskingTests\ChangeRxTasksTests\ProcessRXCHGApprovalUnitTests.cs" />
+    <Compile Include="TaskingTests\TasksFactoryTests\GetCurrentTaskUnitTests.cs" />
+    <Compile Include="medispanDURTests.cs" />
+    <Compile Include="RxUtilTests.cs" />
+    <Compile Include="UtilitiesTests\RetryHelperTests.cs" />
+    <Compile Include="UserCreationTests\AddUserTests\AddUserTests.cs" />
+    <Compile Include="UtilitiesTests\StringHelperTests\StringHelperTests.cs" />
+    <Compile Include="UtilitiesTests\StringHelperTests\ConvertToUxNameTests.cs" />
+    <Compile Include="Common\GenericListToDataTable.cs" />
+    <Compile Include="EPCSRegistrationPage\RedirectForNonAdminTests.cs" />
+    <Compile Include="Common\UserAgentParserTests.cs" />
+    <Compile Include="JavaScript\JsTestUtil.cs" />
+    <Compile Include="ObjectTypeExtensionMethodsTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="JavaScript\ePA_QuestionsIsNumericTest.cs" />
+    <Compile Include="RxUserTests.cs" />
+    <Compile Include="ScriptPadTests\CheckForSecondaryWorkflowTests.cs" />
+    <Compile Include="ScriptPadTests\ScriptPadTests.cs" />
+    <Compile Include="ScriptPadTests\IsMailOrderDestTests.cs" />
+    <Compile Include="ServiceTaskInfoTests.cs" />
+    <Compile Include="PageNameTest.cs" />
+    <Compile Include="TaskManagerGroupRawTasksTest.cs" />
+    <Compile Include="UtilitiesTests\StringHelperTests\ConvertToUxDate.cs" />
+    <Compile Include="UtilitiesTests\StringHelperTests\StripZeroAfterDeciamlTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\Allscripts.ePrescribe.Shared\Allscripts.ePrescribe.ExtensionMethods\Allscripts.ePrescribe.ExtensionMethods.csproj">
+      <Project>{4867e5a9-2bda-4f74-b991-2ea055d959e3}</Project>
+      <Name>Allscripts.ePrescribe.ExtensionMethods</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\Allscripts.ePrescribe.Shared\Allscripts.ePrescribe.Medispan.Clinical.Model\Allscripts.ePrescribe.Medispan.Clinical.Model.csproj">
+      <Project>{682d02b9-120f-4528-a4bf-56743f64965c}</Project>
+      <Name>Allscripts.ePrescribe.Medispan.Clinical.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\Allscripts.ePrescribe.Shared\Allscripts.ePrescribe.Shared.DatabaseSelector\Allscripts.ePrescribe.DatabaseSelector.csproj">
+      <Project>{94f1713d-8145-409a-a8d9-f5323b4ab966}</Project>
+      <Name>Allscripts.ePrescribe.DatabaseSelector</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\Allscripts.ePrescribe.Shared\Allscripts.ePrescribe.Shared.DataHelpers\Allscripts.ePrescribe.DataHelpers.csproj">
+      <Project>{e6145ee4-afba-407c-a8c3-9ac5c8805af7}</Project>
+      <Name>Allscripts.ePrescribe.DataHelpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\Allscripts.ePrescribe.Shared\Allscripts.ePrescribe.Shared.Data\Allscripts.ePrescribe.Shared.Data.csproj">
+      <Project>{E74E4217-BC77-4D7F-8AFC-3EAC302AACF6}</Project>
+      <Name>Allscripts.ePrescribe.Shared.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\Allscripts.ePrescribe.Shared\Allscripts.ePrescribe.Shared.Logging\Allscripts.ePrescribe.Shared.Logging.csproj">
+      <Project>{ff870e98-188d-40af-a023-2e16285ba2f6}</Project>
+      <Name>Allscripts.ePrescribe.Shared.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\Allscripts.ePrescribe.Shared\Allscripts.ePrescribe.Common\Allscripts.ePrescribe.Common.csproj">
+      <Project>{064B73F5-49BD-4456-B68F-4C410145EC74}</Project>
+      <Name>Allscripts.ePrescribe.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\Allscripts.ePrescribe.Shared\Allscripts.ePrescribe.Data\Allscripts.ePrescribe.Data.csproj">
+      <Project>{0d9e94c9-8f14-48ed-a54a-54e24b23ce45}</Project>
+      <Name>Allscripts.ePrescribe.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\Allscripts.ePrescribe.Shared\Allscripts.ePrescribe.Shared.Objects\Allscripts.ePrescribe.Objects.csproj">
+      <Project>{dd72418f-efff-4f9a-b580-92f476c5a028}</Project>
+      <Name>Allscripts.ePrescribe.Objects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\Allscripts.ePrescribe.Shared\Allscripts.Impact.Utilities\Allscripts.Impact.Utilities.csproj">
+      <Project>{381F83B3-D0FB-416D-B6A2-B334A0062ECE}</Project>
+      <Name>Allscripts.Impact.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\Allscripts.ePrescribe.Shared\Allscripts.Impact\Allscripts.Impact.csproj">
+      <Project>{bc97f0e8-6421-4f5a-8bf2-342863ffb887}</Project>
+      <Name>Allscripts.Impact</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eRxWeb\eRxWeb.csproj">
+      <Project>{3f6fda91-4706-48ec-b0f7-627596491dd2}</Project>
+      <Name>eRxWeb</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EmbeddedResource Include="SampleJsons\Rtps_Display_Disposition.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AppCodeTests\UserSessionUtilTests\" />
+    <Folder Include="AppCode\" />
+    <Folder Include="Controls\" />
+    <Folder Include="ERxWebTests\AppCodeTests\AdAgentLoggerTests\" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="TaskingTests\CHGRX_SampleScriptMessageConverted.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaskingTests\CHGRX_SampleScriptMessageInput.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /Y /S "$(SolutionDir)eRxWeb\js\*" "$(TargetDir)"
+xcopy /Y /S "$(SolutionDir)Allscripts.ePrescribe.Test\Javascript\*.js" "$(TargetDir)"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

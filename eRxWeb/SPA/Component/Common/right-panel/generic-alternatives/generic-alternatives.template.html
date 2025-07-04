@@ -1,0 +1,18 @@
+﻿<div style="width: 92%; height: auto;">
+    <table *ngIf="GenericAlternatives && GenericAlternatives.length > 0" rules="rows" width="95%" class="rightPanelTable" >
+        <tbody>
+            <tr>
+                <td><b>Drug Name</b></td>
+            </tr>
+            <tr *ngFor="let data of GenericAlternatives">
+                <td style="font-size: 11px;">
+                    <a href="javascript:void(0);" (click)="AlternativeClicked(data.DrugName)" besylate="">{{data.DrugName}}</a>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="GenericAlternatives && GenericAlternatives.length == 0">
+        No Alternatives
+    </div>
+</div>

@@ -1,0 +1,272 @@
+﻿    <table id="Header" width="100%" cellspacing="0" cellpadding="0" style="height: 126px; border-color: transparent;" class="patientInfo">
+        <tbody>
+            <tr>
+                <td class="appStripe" rowspan="7" style="height: 8%; vertical-align: top; width: 100px">
+                    <img id="mainLogo" src="images/shim.gif" width="120" height="65" alt="Allscripts">
+                    <img src="images/powered_by.gif" id="poweredByImage" class="sponsored" alt="Allscripts">
+                    <div>
+                        <img [comp-visible]="isLoadingData" src="images/spinner.gif" id="loading">
+                    </div>
+                </td>
+                <td class="appStripe" style="height: 5px" colspan="3"></td>
+
+            </tr>
+            <tr [style.visibility]="(visible) && !isException  ? 'visible':'hidden' "style="height: 50px">
+                <td class="indent head valgn" style="width: 90px">
+                    Patient
+                </td>
+                <td class="indent head valgn" style="width: 1015px">
+                    
+
+                    <img alt='' [title]="showRealName == false ?  patientHeader?.ToolTip:''" src="images\PrivacyImages\sensitivehealth-global-24-x-24.png" *ngIf="patientHeader.IsRestrictedPatient || patientHeader.IsVipPatient" (click)="ToggleRealName($event)" />
+                    <div *ngIf="showRealName" class="popover fade bottom in" id="realNamePopover">
+                        <div class="arrow" style="left: 50%;"></div>
+                        <h3 class="popover-title" style="display: none;"></h3>
+                        <div class="popover-content">{{RealName}}</div>
+                    </div>
+
+
+                    <span [class.editRollover]="isEditable === true && patientHasMrn && isRestrictedUser == false && allowPatientEdit === true" id="spneditPatient" (click)="openPopup('Patients','AddPatient.aspx')" [headerEdit]="isEditable === true && patientHasMrn && isRestrictedUser == false && allowPatientEdit ==true">
+                        <span [class.editRollover]="isEditable" [headerEdit]="isEditable" id="lblPatientLast" class="HeaderLastName largeText">{{patientHeader.LastName}} </span>
+                        <span [class.editRollover]="isEditable" [headerEdit]="isEditable" id="lblPatientFirst" class="HeaderFirstName largeText">{{patientHeader.FirstName}}  </span>
+                    </span>
+                    <img type="image" *ngIf="patientHeader.PatientID !== null" title="Edit" class="editLi hide" src="images/Edit.gif" />
+                    <div id="pnlPatientDetails" [comp-visible]='patientHeader.DOB'>
+
+                        &nbsp;<span id="lblGenderDob">{{patientHeader.DOB}}</span>
+                        &nbsp;|
+
+                        <span style="font-style: italic; font-size: smaller">MRN</span>&nbsp;
+                        <span id="lblMrn"> {{patientHeader.MRN}}</span>
+
+                        <div id="pnlPatientWeight" [style.display]="patientHeader.WeightLabel != undefined && patientHeader.WeightLabel.length > 0 ?'inline':'none'">
+                            &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                            <span id="lblWeight">{{patientHeader.WeightLabel}}</span>
+                        </div>
+
+                        <div id="pnlPatientHeight" [style.display]="patientHeader.HeightLabel != undefined && patientHeader.HeightLabel.length > 0 ?'inline':'none'">
+                       
+                            &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                            <span id="lblHeight">{{patientHeader.HeightLabel}}</span>
+
+                        </div>
+                    </div>
+                </td>
+
+
+            </tr>
+            <tr [style.visibility]="(visible) && !isException  ? 'visible':'hidden' ">
+                <td class="indent head valgn nowrap">
+                    <span id="lblAllergyLabel" class="head">Act. Allergies</span>
+                </td>
+                <td class="indent valgn">
+                    <span id="spnAllergy" [class.editRollover]="patientHeader.AllowAllergyEdit == true && isEditable == true && !hideAllergy" (click)="openAllergyPopup('Act. Allergies','PatientAllergy.aspx')" [headerEdit]="patientHeader.AllowAllergyEdit && isEditable == true && !hideAllergy">
+                        <span id="lblAllergy" class="navi">{{patientHeader.Allergy}}</span>
+                    </span>
+                    <a href="javascript:void(0);" [comp-visible]="patientHeader.MoreActiveAllergy" (click)="actAlergyMoreClicked($event)">
+                        <img class="imgMore" src="images/more_icon.gif" />
+                    </a>
+                    <erx-popover-control #activeAlergies>
+                        <div popover-body>
+                            <div class="modal-title">
+                                Active Allergies
+                            </div>
+                            <br />
+                            <div id="grdViewAllergies" style="width: 360px;" tabindex="0">
+
+                                <table align="Left" id="grdViewAllergies_ctl00" class="patient-info-gridView-table">
+                                    <colgroup>
+                                        <col>
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="rgHeader" style="font-weight: bold;">Class/Medication</th>
+                                            <th scope="col" class="rgHeader" style="font-weight: bold;">Start Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="rgRow" *ngFor="let alg of patientHeader.ActiveAllergies">
+                                            <td style="width: 280px;">{{alg.Name}}</td>
+                                            <td style="width: 70px;">{{alg.StartDate}}</td>
+                                        </tr>
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                    </erx-popover-control>
+                        <img type="image" title="Edit" class="editLi hide" src="images/Edit.gif" />
+
+                </td>
+            </tr>
+            <tr [style.visibility]="(visible) && !isException  ? 'visible':'hidden' " style="height: 19px;">
+                <td class="indent head valgn nowrap">
+                    <span id="lblProblemLabel" class="head">Act. Problems</span>
+                </td>
+                <td class="indent valgn">
+                    <span id="spnProblem" [class.editRollover]="patientHeader.AllowDiagnosisEdit == true && isEditable == true && !hideProblems" (click)="openDiagnosisPopup('Act. Problems','PatientDiagnosis.aspx')" [headerEdit]="patientHeader.AllowDiagnosisEdit && isEditable == true && !hideProblems">
+                        <span id="lblDx">{{patientHeader.Dx}}</span>
+                    </span>
+                    <a href="javascript:void(0);" [comp-visible]="patientHeader.MoreActiveProblem" (click)="actProblemMoreClicked($event)">
+                        <img class="imgMore" src="images/more_icon.gif" />
+                    </a>
+                    <erx-popover-control #activeProblems>
+                        <div popover-body>
+                            <img type="image" title="Edit" class="editLi hide" src="images/Edit.gif">
+                            <div class="modal-title">
+                                Active Problems
+                            </div>
+                            <br />
+                            <div id="radGrdActiveProbs patient-info-grid-position"  tabindex="0">
+
+                                <table id="radGrdActiveProbs_ctl00" class="patient-info-gridView-table">
+                                    <colgroup>
+                                        <col>
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="rgHeader" style="font-weight: bold;">Diagnosis</th>
+                                            <th scope="col" class="rgHeader" style="font-weight: bold;">Start Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="rgRow" *ngFor="let dea of patientHeader.ActiveDignosises">
+                                            <td style="width: 280px;">{{dea.Diagnosis}}</td>
+                                            <td style="width: 70px;">{{dea.StartDate}}</td>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                    </erx-popover-control>
+                    <img type="image" title="Edit" class="editLi hide" src="images/Edit.gif" />
+                </td>
+
+            </tr>
+            <tr [style.visibility]="(visible) && !isException  ? 'visible':'hidden' " valign="top">
+                <td class="indent head nowrap">
+                    <span id="lblActiveMedLabel" class="head">Act. Meds</span>
+                </td>
+                <td class="indent valgn">
+                    <span id="lblActiveMed">{{patientHeader.ActiveMed}}</span>
+                    <a href="javascript:void(0);" [comp-visible]="patientHeader.MoreActiveMedVisible" (click)="actMedsMoreClicked($event)">
+                        <img class="imgMore" src="images/more_icon.gif" />
+                    </a>
+                    <erx-popover-control #activeMeds>
+                        <div popover-body>
+                            <div class="modal-title">
+                                Active Medications
+                            </div>
+                            <br />
+                            <div id="radgrdActiveMed" class="RadGrid RadGrid_Allscripts patient-info-grid-position" tabindex="0">
+
+                                <table class="rgMasterTable patient-info-gridView-table">
+                                    <colgroup>
+                                        <col>
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="rgHeader" style="font-weight: bold;">Medication</th>
+                                            <th scope="col" class="rgHeader" style="font-weight: bold;">Start Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="rgRow" *ngFor="let med of patientHeader.ActiveMeds">
+                                            <td style="width: 280px;">{{med.Name}}</td>
+                                            <td style="width: 70px;">{{med.StartDate}}</td>
+                                        </tr>
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                        </erx-popover-control>
+                </td>
+            </tr>
+            <tr [style.visibility]="(visible) && !isException  ? 'visible':'hidden' " style="height: 17px">
+
+                <td class="indent head valgn nowrap">
+                    <span id="lblPharmacyLabel" class="head">Pref. Pharm.</span>
+                </td>
+                <td class="indent valgn nowrap">
+                    <div class="floatleft" [headerEdit]="patientHasMrn && isPharmaciesEditable && isEditable == true">
+                        <!-- old pharmacy star logic has been replaced with EPCS indicator -->
+                        <span id="spnRetailPharm" [class.editRollover]="isPharmaciesEditable == true && isEditable == true" class="valgn" (click)="headerLinkClicked('Pharmacy.aspx?Mode=Edit&amp;From=selectpatient')">
+                            <div class="floatleft" style="margin-right:3px"><img *ngIf="patientHeader.IsRetailEpcs" src="images/ControlSubstance_sm.gif" alt="epcsEnabled" class="imgPaddingLeft" /></div>
+                            <div class="floatleft divMarginLeft divPaddingTopPharmacies"><span id="lblLastPharmacyName">{{patientHeader.LastPharmacyName}}</span></div>
+                        </span>
+                        <a href="javascript:void(0);" rel="popover" hidden data-popover-content="#PopoverRetailPherm" data-trigger="focus">>
+                            <img class="imgMore" src="images/more_icon.gif" />
+                        </a>
+
+                        <img *ngIf="patientHeader.MoreRetailPharm" alt="more" id="ctl00_imgMoreRetailPharm" class="imgMore" src="images/more_icon.gif" style="border-width:0px;" tabindex="0" (click)="openPharmaDetails(2)" />&nbsp;
+
+                        <img alt="edit" title="Edit" class="editLi hide" src="images/Edit.gif" />
+
+                        <img *ngIf="patientHeader.MoreRetailPharm && isPharmaciesEditable && isEditable == true" alt="del" id="ctl00_lnkRemPharmacy" title="Remove" src="images/Delete.gif" style="border-width:0px;margin-left:15px;" tabindex="0" (click)="deletePharmacy(2)">
+
+
+                    </div>
+
+                </td>
+
+            </tr>
+            <tr [style.visibility]="(visible) && !isException  ? 'visible':'hidden' ">
+
+                <td class="indent head valgn nowrap">
+                    <span id="lblMailOPharm" class="head">MO. Pharm.</span>&nbsp;
+                </td>
+                <td class="indent head valgn nowrap">
+                    <div class="floatleft" [headerEdit]="patientHasMrn && isPharmaciesEditable && isEditable == true">
+                        <div class="floatleft">
+                            <span id="spnMoPharm" [class.editRollover]="isPharmaciesEditable ==true && isEditable == true" class="valgn" (click)="headerLinkClicked('Pharmacy.aspx?Mode=Edit&amp;From=selectpatient&amp;SetMO=true')">
+                                <div class="floatleft" style="margin-right:3px"><img *ngIf="patientHeader.IsMoEpcs" alt="epcsEnabled" src="images/ControlSubstance_sm.gif" class="imgPaddingLeft" /></div>
+                                <div id="divMoLabel" class="floatleft divMarginLeft divPaddingTopPharmacies"><span id="lblPrefMOP">{{patientHeader.PrefMOP}}</span></div>
+                            </span>
+                        </div>
+
+                        <img *ngIf="patientHeader.MoreMailOrderPharmVisible" alt="more"   id="ctl00_imgMoreMailOrderPharm" class="imgMore" src="images/more_icon.gif" style="border-width:0px;" tabindex="0"  (click)="openPharmaDetails(1)"/>&nbsp;
+
+                        <img alt="edit" title="Edit" class="editLi hide" src="images/Edit.gif" />
+
+                        <img *ngIf="patientHeader.MoreMailOrderPharmVisible && isPharmaciesEditable && isEditable == true"  alt="del" name="ctl00$lnkRemMOPharm" id="ctl00_lnkRemMOPharm" title="Remove" src="images/Delete.gif" style="border-width:0px;margin-left:15px;" tabindex="0" (click)="deletePharmacy(1)" />
+
+                    </div>
+
+
+
+                </td>
+
+            </tr>
+
+
+
+        </tbody>
+    </table>    
+
+    <div class="modal fade" id="mdlMorePharma" role="dialog">
+        <div class="modal-dialog" style="width:350px">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">{{pharmaModalTitle}}</h4>
+                </div>
+                <div class="modal-body">
+
+
+                    <pharmacy-details [pharmaModel]="pharmaModel">Loading</pharmacy-details>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>

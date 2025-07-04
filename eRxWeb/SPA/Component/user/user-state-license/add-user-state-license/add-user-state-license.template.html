@@ -1,0 +1,60 @@
+﻿<erx-message [Messages]="MessageStripArray"></erx-message>
+<form #userStateLicenseForm="ngForm">
+    <div *ngIf="showForm">
+        <div class="add-user-state-license-table">
+            <div class="add-user-state-license-table-row">
+                <div class="add-user-state-license-table-cell-label">
+                    <span class="ma-form-mandatory-star">* </span>State of License
+                </div>
+                <div class="add-user-state-license-table-cell-field">
+                    <select [(ngModel)]="userStateLicense.State" name ="state" class="user-license-select">
+                        <option *ngFor="let state of states" [selected]="state==userStateLicense.State" value={{state}}>{{state}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="add-user-state-license-table-row">
+                <div class="add-user-state-license-table-cell-label">
+                    <span class="ma-form-mandatory-star">* </span>License Number
+                </div>
+                <div class="add-user-state-license-table-cell-field"><input type="text" name="licenseNo" [(ngModel)]="userStateLicense.LicenseNo" value={{userStateLicense.LicenseNo}} /></div>
+            </div>
+            <div class="add-user-state-license-table-row">
+                <div class="add-user-state-license-table-cell-label">
+                    <span class="ma-form-mandatory-star">* </span>License Type
+                </div>
+                <div class="add-user-state-license-table-cell-field">
+                    <select [(ngModel)]="userStateLicense.LicenseType" name="licenseType" class="user-license-select">
+                        <option *ngFor="let license of licensetypes" [selected]="license==userStateLicense.LicenseType" value={{license}}>{{license}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="add-user-state-license-table-row">
+                <div class="add-user-state-license-table-cell-label">
+                    <span class="ma-form-mandatory-star">* </span>Expiration Date
+                </div>
+                <div class="add-user-state-license-table-cell-field user-date-picker-row-padding-override">
+                    <mat-form-field>
+                        <input matInput [matDatepicker]="picker" type="text" id="stateLicenseExpirationDate" [(ngModel)]="userStateLicense.DatePickerDate" name="expiringDate" />
+                        <mat-datepicker-toggle matSuffix [for]="picker"  class="user-date-picker-toggle"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="add-user-state-license-table-row">
+                <div class="add-user-state-license-table-cell-label"></div>
+                <div class="add-user-state-license-table-cell-field">
+                    <div class="add-user-state-license-button-alignment">
+                        <button *ngIf="edit==false" class="btnstyle" (click)="insert();$event.preventDefault()">Insert</button>
+                        <button *ngIf="edit==true" class="btnstyle" (click)="update();$event.preventDefault()">Update</button>
+                        &nbsp; &nbsp;
+                        <button class="btnstyle" (click)="cancel()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</form>

@@ -1,0 +1,141 @@
+﻿/* added newly */
+
+img#mainLogo{background:url(../images/SmartID/logo_smartRXorder.gif); background-repeat:no-repeat; background-position:center;}
+.appStripe {
+    border-top: 5px #b60209 solid;
+}
+.accordionHeader{background-color:#fbb03b}
+.accordionHeaderText{background-color:#fbb03b}
+.rightBoxHeader {
+	background-color:#0029cc;}
+.rightBoxTable 
+{
+	border: solid 2px #0029cc;
+}
+.sponsored {display:inline; text-align:center}
+img#helpIcon:hover{background:url(../images/SmartID/headerhelpSmartID.gif); background-repeat:no-repeat; background-position:center;}
+img#helpIconLogin:hover{background:url(../images/NewCo/headerhelpNewCoLogin.gif); background-repeat:no-repeat; background-position:center;}
+img#profileIcon:hover{background:url(../images/SmartID/headerprofileSmartID.gif); background-repeat:no-repeat; background-position:center;}
+img#logoutIcon:hover{background:url(../images/SmartID/headerlogoutSmartID.gif); background-repeat:no-repeat; background-position:center;}
+img#messageQueueIcon:hover{background:url(../images/SmartID/headerMsgQueueSmartID.gif); background-repeat:no-repeat; background-position:center;}
+img#iLearnIcon {height: 24px; width: 24px;border: none; background-image:url(../images/Allscripts/gradCap.png); background-repeat:no-repeat; background-position:center;}
+img#iLearnIcon:hover{height: 24px; width: 24px; background-image:url(../images/SmartID/SmartID_ILearn.png); background-repeat:no-repeat; background-position:center;}
+
+.editRollover:hover span
+{
+    color: #ff0000;
+	cursor:pointer;
+}
+.rpText
+{
+    color: black;
+}
+.headerIcon:hover span
+{
+    color: #e0393d
+}
+.rgSelectedRow {
+    background: #faf2f2 0 -5900px repeat-x url('../telerik/Skins/Allscripts/Grid/Img/sprite.gif');
+}
+
+
+.primaryForeColor {
+    color: #e0393d
+}
+
+
+
+.rightPanelMed {
+    border-left: 3px solid #e0393d !important;
+    border-right: 3px solid #e0393d !important;
+}
+
+.erxSelectedRow {
+    background-color: #faf2f2 !important;
+}
+
+
+
+.GridHeader
+{	
+	background-image: url(../images/SmartID/buttongradient.gif); 
+}
+.GridSortedSortable
+{	
+	background-image: url(images/SmartID/sort-sortable.gif);
+}
+.SelectedRow
+{
+	background-color: #fbb03b;
+}
+a:hover {
+	color: #b60209;
+}
+a.uniquelink:hover { font-weight:bold ; color:#b60209 ;}
+.h1title {
+	background-color: #b60209;
+}
+.h2title {
+	background-color: #b5b4b4;
+}
+.h3title {
+	background-color: #b5b4b4;
+}
+.redcolor 
+{
+	color:#b60209;
+}
+.SigErrorMsg
+{
+	color: #b60209;
+}
+.tabSelected
+{	
+	text-align:center;
+	background-color:#b60209;
+	width:100px;
+	cursor:pointer;
+	border:none;
+}
+
+a.tabSelectedLink
+{		
+	background-color:#b60209;
+}
+
+a.tabUnSelectedLink:visited,a.tabUnSelectedLink:link
+{
+    color: #e3e3e3;
+}
+
+.divider
+{
+	background-color:#fbb03b;
+	border-bottom:solid 1px #b60209;
+}
+
+
+.redborder     { height:1px; background-color:#b60209; }
+.subheadred		{ font-size:12px; font-weight:bold; color: #b60209; }
+.accordionHeaderScriptPad
+{
+	background-color: #AA5908;
+}
+
+.accordionHeaderTextScriptPad
+{
+	background-color: #AA5908;
+}
+/*bootstrap override*/
+.nav-tabs>li>a {
+  color: #e3e3e3;
+}
+
+.nav-tabs>li>a:hover {	
+    background-color:#fbb03b;
+  border:none;
+}
+.nav-tabs>li.active>a,.nav-tabs>li.active>a:focus,.nav-tabs>li.active>a:hover {
+     background-color:#b60209;
+     border-color:#b60209;
+}

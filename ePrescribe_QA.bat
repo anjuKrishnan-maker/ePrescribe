@@ -1,0 +1,1 @@
+AutomatedBuild\NAnt\bin\nant.exe /f:AutomatedBuild\allscripts.build -D:build.file="..\ePrescribe.sln" -D:release.mode="QA"

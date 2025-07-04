@@ -1,0 +1,161 @@
+﻿.eRxHealthSheet_Panel
+{
+	background-color:#000000; 
+}
+
+img#loginLogo{background:url(../images/HenryScheinSpecialty/HenryScheinSpecialty.jpg); background-repeat:no-repeat; background-position:center;}
+img#mainLogo{background:url(../images/HenryScheinSpecialty/HenryScheinSpecialty.jpg); background-repeat:no-repeat; background-position:center;}
+
+.appStripe {
+    border-top: 5px #000000 solid;
+}
+.accordionHeader{background-color:#000000}
+.accordionHeaderText{background-color:#000000}
+.rightBoxHeader {
+	background-color:#000000;}
+.rightBoxTable 
+{
+	border: solid 2px #000000;
+}
+img#helpIcon:hover{background:url(../images/HenryScheinSpecialty/headerhelpHenryScheinSpecialty.gif); background-repeat:no-repeat; background-position:center;}
+img#helpIconLogin:hover{background:url(../images/HenryScheinSpecialty/headerhelpHenryScheinSpecialty.gif); background-repeat:no-repeat; background-position:center;}
+img#profileIcon:hover{background:url(../images/HenryScheinSpecialty/headerprofileHenryScheinSpecialty.gif); background-repeat:no-repeat; background-position:center;}
+img#logoutIcon:hover{background:url(../images/HenryScheinSpecialty/headerlogoutHenryScheinSpecialty.gif); background-repeat:no-repeat; background-position:center;}
+img#messageQueueIcon:hover{background:url(../images/HenryScheinSpecialty/headerMsgQueueHenryScheinSpecialty.gif); background-repeat:no-repeat; background-position:center;}
+img#iLearnIcon {height: 24px; width: 24px;border: none; background-image:url(../images/Allscripts/gradCap.png); background-repeat:no-repeat; background-position:center;}
+img#iLearnIcon:hover{height: 24px; width: 24px; background-image:url(../images/HenryScheinSpecialty/HenryScheinSpecialty_ILearn.png); background-repeat:no-repeat; background-position:center;}
+
+
+.editRollover:hover span
+{
+    color: #000000;
+	cursor:pointer;
+}
+.rpText
+{
+    color: black;
+}
+.headerIcon:hover span
+{
+    color: #000000
+}
+.rgSelectedRow {
+    background: #adbdde 0 -5900px repeat-x url('../telerik/Skins/Allscripts/Grid/Img/sprite.gif');
+}
+
+
+
+.primaryForeColor {
+    color: #000000
+}
+
+
+
+.rightPanelMed {
+    border-left: 3px solid #000000 !important;
+    border-right: 3px solid #000000 !important;
+}
+
+.erxSelectedRow {
+    background-color: #adbdde !important;
+}
+
+
+.loginbanner
+{
+	background-color:#000000;
+}
+
+.loginMessageTable
+{
+	border-bottom: solid 1px #000000;
+	border-left: solid 1px #000000;
+	border-right: solid 1px #000000;
+}
+
+.loginMessageRow
+{
+	border-top: solid 3px #000000;
+	border-bottom: solid 1px #000000;
+}
+
+.overlaysub1				{margin:10px; }
+.overlayscrollable			{max-height:200px; overflow:auto;}
+.SelectedRow
+{
+	background-color: #CBCBCB;
+}		
+.DURHeading
+{
+	color: #AE0910;
+}
+a:hover {
+	color: #000000;
+}
+.h1title {
+	background-color: #000000;
+}
+.Titbarcolor1 
+{
+	background-color:#000000;
+}
+.tabSelected
+{	
+	background-color:#000000;
+}
+a.tabSelectedLink
+{		
+	background-color:#000000;
+}
+.divider
+{
+	border-bottom:solid 1px #000000;
+}
+
+
+/* *****************    LOGIN SCREEN      ************************ 
+ */
+
+.redborder     { height:1px; background-color:#000000; }
+.subheadred		{ font-size:12px; font-weight:bold; color: #000000; }
+
+
+.accordionHeaderScriptPad
+{
+    color: #000000;
+	background-color: #000000;
+}
+
+.accordionHeaderTextScriptPad
+{
+	background-color: #000000;
+}
+
+td.PopUpHeader
+{ 
+    background-color: #000000;
+}
+.deluxeComparisons
+{
+	border:solid 1px #000000;
+}
+
+.deluxeComparisons th
+{
+	 color:#000000;
+	 border:solid 1px #000000;
+}
+
+.deluxeComparisons td
+{
+	 border:solid 1px #000000;
+}
+
+/*bootstrap override*/
+.nav-tabs>li>a:hover {
+  border:none;
+}
+.nav-tabs>li.active>a,.nav-tabs>li.active>a:focus,.nav-tabs>li.active>a:hover {
+     background-color:#000000;
+     border-color:#000000;
+}

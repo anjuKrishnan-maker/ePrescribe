@@ -1,0 +1,20 @@
+﻿<div class="modal fade" id="pdmp-details-modal" role="dialog">
+    <div class="modal-dialog pdmpDetailsModalDialog">
+        <div class="modal-content pdmpDetailsModalContent">
+             <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">PDMP Report</h4>
+            </div>
+            <div class="modal-body" style="padding: 0">
+                <div *ngIf="showDetailsIFrame">
+                    <iframe name="pdmp-details-iframe" id="pdmp-details-iframe" [src]="frameSrc | safeUrl" class="pdmpDetailsIframe"></iframe>
+                </div>
+                <div *ngIf="!showDetailsIFrame" style="width: 90%; height: 90%;">
+                </div>
+                <div *ngIf="showDetailsUserMessages">
+                    <span>{{detailsUserMessage}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

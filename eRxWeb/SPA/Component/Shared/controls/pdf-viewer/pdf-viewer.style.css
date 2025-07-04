@@ -1,0 +1,69 @@
+﻿
+.rgAdd,
+.rgRefresh,
+.rgEdit,
+.rgDel,
+.rgFilter,
+.rgPagePrev,
+.rgPageNext,
+.rgPageFirst,
+.rgPageLast,
+.rgExpand,
+.rgCollapse,
+.rgSortAsc,
+.rgSortDesc,
+.rgUpdate,
+.rgCancel,
+.rgUngroup,
+.rgExpXLS,
+.rgExpDOC,
+.rgExpPDF,
+.rgExpCSV {
+    background-image: url('/telerik/Skins/Allscripts/Grid/Img/sprite.gif');
+}
+
+.RadGrid .rgAdd, .RadGrid .rgRefresh, .RadGrid .rgEdit, .RadGrid .rgDel, .RadGrid .rgDrag, .RadGrid .rgFilter, .RadGrid .rgPagePrev, .RadGrid .rgPageNext, .RadGrid .rgPageFirst, .RadGrid .rgPageLast, .RadGrid .rgExpand, .RadGrid .rgCollapse, .RadGrid .rgSortAsc, .RadGrid .rgSortDesc, .RadGrid .rgUpdate, .RadGrid .rgCancel, .RadGrid .rgUngroup, .RadGrid .rgExpXLS, .RadGrid .rgExpDOC, .RadGrid .rgExpPDF, .RadGrid .rgExpCSV {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    font-size: 1px;
+    cursor: pointer;
+}
+
+.rgPageFirst, .rgPagePrev, .rgPageNext, .rgPageLast {
+    width: 22px;
+    height: 22px;
+    vertical-align: top;
+    margin: 0;
+    border: 0;
+}
+
+.rgWrap {
+    float: left;
+    padding: 0 10px;
+    line-height: 22px;
+    white-space: nowrap;
+}
+.rgPageFirst {
+    background-position: 0 -550px;
+}
+
+.rgPageNext {
+    background-position: 0 -850px;
+}
+
+.rgPageLast {
+    background-position: 0 -1000px;
+}
+
+.rgPagePrev {
+    background-position: 0 -700px;
+}
+
+.rgInfoPart {
+    float: right;
+    color: #8a8a8a;
+}

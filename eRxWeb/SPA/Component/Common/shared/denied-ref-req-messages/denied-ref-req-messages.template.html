@@ -1,0 +1,47 @@
+﻿<erx-modal-popup-control title="Denied error" ModalId="mdl-denied-ref-req-msg" [Width]="''" [Height]="''">
+
+    <div modal-body>
+        <table *ngIf="deniedRefReqMessages" class="rgMasterTable" border="0" style="width:100%;width:100%;table-layout:auto;empty-cells:show;">
+            <colgroup>
+                <col>
+                <col>
+                <col>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col" class="rgHeader">Patient</th>
+                    <th scope="col" class="rgHeader">Medication</th>
+                    <th scope="col" class="rgHeader">Pharmacy</th>
+                    <th scope="col" class="rgHeader">&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="rgRow" *ngFor="let data of deniedRefReqMessages.RefReqErrors">
+                    <td style="width:55%;">
+                        <b>Name:</b>   <span>{{data.PatientName}}</span>
+                        <br/>
+                        <b>DOB:</b>     <span>{{data.PatientName}}</span>
+                    </td>
+                    <td style="width:40%;">
+                        <b>Rx:</b> <span>{{data.DrugDescription}}</span> 
+                        <br />
+                        <b>Refills:</b><span>{{data.Refills}}</span> 
+                    </td>
+                    <td style="width:40%;">
+                        <b>Name:</b> <span>{{data.PharmacyName}}</span>
+                        <br />
+                        <b>Address:</b><span>{{data.PharmacyAddress}}</span>
+                        <br />
+                        <b>Phone:</b><span>{{data.PharmacyPhone}}</span>
+                        <br />
+                        <b>Fax:</b> <span>{{data.PharmacyFax}}</span>
+                    </td>
+                    <td style="width:5%;">
+                        <a href="javascript:void(0);" >Confirm</a>
+                    </td>
+                </tr>
+
+            </tbody>
+            </table>
+    </div>
+</erx-modal-popup-control>

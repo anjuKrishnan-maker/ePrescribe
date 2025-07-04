@@ -1,0 +1,246 @@
+﻿<div *ngIf="messageQueInfo" id="msq_panelMsgDetailHeader" class="accordionHeader">
+
+    <table cellspacing="0" cellpadding="0" width="95%" border="0">
+        <tbody>
+        <tr>
+            <td class="accordionHeaderText">
+                Message Detail
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+<div *ngIf="messageQueInfo" class="RadAjaxPanel" id="ctl00_ContentPlaceHolder1_ucPatientSearchWithResults_msq_panelMsgDetailPanel" style="display: block;">
+    <div id="msq_panelMsgDetail" class="accordionContent">
+
+        <table width="95%" style="table-layout: fixed">
+
+
+        <tbody>
+        <tr *ngIf="messageQueInfo.PharmacyNotes">
+            <td style="width: 81px;">
+                <b>Pharmacy Notes:</b>
+            </td>
+            <td>
+                <span id="msq_lblPharmacyNotes">{{messageQueInfo.PharmacyNotes}}</span>
+            </td>
+        </tr>
+        <tr *ngIf="messageQueInfo.PharmacyNotes">
+            <td colspan="2">
+                <hr>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 81px;">
+                <b>Patient:</b>
+            </td>
+            <td>
+                <span id="msq_lblPtName">{{messageQueInfo.Patient}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Address:</b>
+            </td>
+            <td>
+                <span id="msq_lblPtAddress">{{messageQueInfo.Address}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>City:</b>
+            </td>
+            <td>
+                <span id="msq_lblPtCity">{{messageQueInfo.City}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>State:</b>
+            </td>
+            <td>
+                <span id="msq_lblPtState">{{messageQueInfo.State}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>ZIP:</b>
+            </td>
+            <td>
+                <span id="msq_lblPtZIP">{{messageQueInfo.ZIP}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Phone:</b>
+            </td>
+            <td>
+                <span id="msq_lblPtPhone">{{messageQueInfo.Phone}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Gender:</b>
+            </td>
+            <td>
+                <span id="msq_lblPtGender">{{messageQueInfo.Gender}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <hr>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Rx Date:</b>
+            </td>
+            <td>
+                <span id="msq_lblRxDate">{{messageQueInfo.RxDate}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Rx:</b>
+            </td>
+            <td>
+                <span id="msq_lblRxDesc">{{messageQueInfo.RxDrug}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Sig:</b>
+            </td>
+            <td  style="word-wrap: break-word">
+                <span id="msq_lblSig">{{messageQueInfo.Sig}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Quantity:</b>
+            </td>
+            <td>
+                <span id="msq_lblQty">{{messageQueInfo.Quantity}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>{{messageQueInfo.RefillsDisplayText}}:</b>
+            </td>
+            <td>
+                <span id="msq_lblRefills">{{messageQueInfo.Refills}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>DAW:</b>
+            </td>
+            <td>
+                <span id="msq_lblDAW">{{messageQueInfo.DAW == "1" ? "Yes" : "No"}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Notes:</b>
+            </td>
+            <td>
+                <span id="msq_lblNotes">{{messageQueInfo.Notes}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <hr>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Pharmacy:</b>
+            </td>
+            <td>
+                <span id="msq_lblPharmName">{{messageQueInfo.PharmacyName}}</span>
+            </td>
+        </tr>
+
+                <tr>
+                    <td>
+                        <b>NABP:</b>
+                    </td>
+                    <td>
+                        <span id="msq_lblPharmNABP">{{messageQueInfo.DBPharmacyNetworkID}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Address:</b>
+                    </td>
+                    <td>
+                        <span id="msq_lblPharmAddress">{{messageQueInfo.PharmacyAddress1}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>City:</b>
+                    </td>
+                    <td>
+                        <span id="msq_lblPharmCity">{{messageQueInfo.PharmacyCity}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>State:</b>
+                    </td>
+                    <td>
+                        <span id="msq_lblPharmState">{{messageQueInfo.PharmacyState}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>ZIP:</b>
+                    </td>
+                    <td>
+                        <span id="msq_lblPharmZIP">{{messageQueInfo.PharmacyZip}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Phone:</b>
+                    </td>
+                    <td>
+                        <span id="msq_lblPharmPhone">{{messageQueInfo.PharmacyPhoneNumber}}</span>
+                    </td>
+                </tr>
+            <tr>
+                <td>
+                    <b>Fax:</b>
+                </td>
+                <td>
+                    <span id="msq_lblPharmFax">{{messageQueInfo.PharmacyFaxNumber}}</span>
+                </td>
+            </tr>
+                <tr *ngIf="messageQueInfo.ConfirmedBy || messageQueInfo.ConfirmedOn">
+                    <td colspan="2">
+                        <hr>
+                    </td>
+                </tr>
+                <tr *ngIf="messageQueInfo.ConfirmedBy">
+                    <td>
+                        <b>Confirmed by:</b>
+                    </td>
+                    <td>
+                        <span id="msq_lblConfirmedBy">{{messageQueInfo.ConfirmedBy}}</span>
+                    </td>
+                </tr>
+                <tr *ngIf="messageQueInfo.ConfirmedOn">
+                    <td>
+                        <b>Confirmed on:</b>
+                    </td>
+                    <td>
+                        <span id="msq_lblConfirmedOn">{{messageQueInfo.ConfirmedOn}}</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

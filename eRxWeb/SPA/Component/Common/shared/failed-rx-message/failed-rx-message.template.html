@@ -1,0 +1,30 @@
+﻿<erx-modal-popup-control title="Rx error" ModalId="mdl-failed-rx-msg" [Width]="''" [Height]="''">
+
+    <div modal-body>
+        <table *ngIf="failedRxMessage" class="rgMasterTable" border="0" style="width:100%;width:100%;table-layout:auto;empty-cells:show;">
+            <colgroup>
+                <col>
+                <col>
+                <col>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col" class="rgHeader">Message</th>
+                    <th scope="col" class="rgHeader">&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="rgRow" *ngFor="let data of failedRxMessage.FailedRxMessages">
+                    <td style="width:55%;">
+                        <span>{{data.RequestText}}</span>
+                        
+                    </td>
+                    <td style="width:5%;">
+                        <a href="javascript:void(0);" (click)="ConfirmRequest(data.RequestID)">Confirm</a>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</erx-modal-popup-control>

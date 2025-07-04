@@ -1,0 +1,6 @@
+﻿<div class="reg-error-message" *ngIf="messageService.message && messageService.message.length>0">
+    <div class="message"><p>{{messageService.message}}</p></div>
+</div>
+<div class="reg-error-message" *ngIf="!messageService.message || messageService!.message!.length<=0">
+    <div class="message"><p>{{defaultErrorMessage}}</p></div>
+</div>

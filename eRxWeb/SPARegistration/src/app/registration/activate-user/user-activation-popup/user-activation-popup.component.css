@@ -1,0 +1,16 @@
+﻿.user-activation-dialog-size{
+    width:750px;
+}
+.erx-activation-label {
+    float: left;
+    padding-right: 10px;
+}
+
+.btn-spacing{
+    margin-left:20px;
+}
+
+
+.user-activation-captcha-control-spacing {
+    padding-left: 68px;
+}
