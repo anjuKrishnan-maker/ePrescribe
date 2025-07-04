@@ -8,5 +8,6 @@ namespace eRxWeb.Controller
     public class Class1
     {
         private EnvironmentVariableTarget EnvironmentVariableTarget;
+        int addtest = 1;
     }
 }
